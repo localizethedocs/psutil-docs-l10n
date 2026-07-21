@@ -1,0 +1,523 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2026 Giampaolo Rodola
+# This file is distributed under the same license as the psutil package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: psutil 8.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 07:42+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../stdlib-equivalents.rst:2
+msgid "Stdlib equivalents"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:4
+msgid ""
+"This page maps psutil's Python API to the closest equivalent in the Python "
+"standard library. This is useful for understanding what psutil replaces and "
+"how the two APIs differ. The most common difference is that stdlib functions "
+"only operate on the **current process**, while psutil works on **any "
+"process** (PID)."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:11
+msgid ":doc:`shell-equivalents`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:12
+msgid ":doc:`alternatives`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:15
+msgid "System-wide functions"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:18
+msgid "CPU"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:25 ../../../stdlib-equivalents.rst:50
+#: ../../../stdlib-equivalents.rst:73 ../../../stdlib-equivalents.rst:89
+#: ../../../stdlib-equivalents.rst:109 ../../../stdlib-equivalents.rst:140
+#: ../../../stdlib-equivalents.rst:165 ../../../stdlib-equivalents.rst:210
+#: ../../../stdlib-equivalents.rst:228 ../../../stdlib-equivalents.rst:244
+#: ../../../stdlib-equivalents.rst:263
+msgid "psutil"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:26 ../../../stdlib-equivalents.rst:51
+#: ../../../stdlib-equivalents.rst:74 ../../../stdlib-equivalents.rst:90
+#: ../../../stdlib-equivalents.rst:110 ../../../stdlib-equivalents.rst:141
+#: ../../../stdlib-equivalents.rst:166 ../../../stdlib-equivalents.rst:211
+#: ../../../stdlib-equivalents.rst:229 ../../../stdlib-equivalents.rst:245
+#: ../../../stdlib-equivalents.rst:264
+msgid "stdlib"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:27 ../../../stdlib-equivalents.rst:52
+#: ../../../stdlib-equivalents.rst:75 ../../../stdlib-equivalents.rst:91
+#: ../../../stdlib-equivalents.rst:111 ../../../stdlib-equivalents.rst:142
+#: ../../../stdlib-equivalents.rst:167 ../../../stdlib-equivalents.rst:212
+#: ../../../stdlib-equivalents.rst:230 ../../../stdlib-equivalents.rst:246
+#: ../../../stdlib-equivalents.rst:265
+msgid "notes"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:28 ../../../stdlib-equivalents.rst:33
+msgid ":func:`cpu_count`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:29
+msgid ":func:`os.cpu_count`, :func:`multiprocessing.cpu_count`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:31
+msgid ""
+"Same as ``cpu_count(logical=True)``; no support for physical cores "
+"(``logical=False``). See :ref:`FAQ <faq_cpu_count>`."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:34
+msgid ":func:`os.process_cpu_count`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:35
+msgid ""
+"CPUs the process is allowed to use (Python 3.13+). Equivalent to "
+"``len(psutil.Process().cpu_affinity())``. See :ref:`FAQ <faq_cpu_count>`."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:38
+msgid ":func:`getloadavg`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:39
+msgid ":func:`os.getloadavg`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:40
+msgid "Same on POSIX; psutil also supports Windows."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:43
+msgid "Disk"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:53
+msgid ":func:`disk_usage`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:54
+msgid ":func:`shutil.disk_usage`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:55
+msgid ""
+"Same as :func:`shutil.disk_usage`; psutil also adds :field:`percent`. Added "
+"to CPython 3.3 (:bpo:`12442`)."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:57
+msgid ":func:`disk_partitions`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:58
+msgid ":func:`os.listdrives`, :func:`os.listmounts`, :func:`os.listvolumes`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:61
+msgid ""
+"Windows only (Python 3.12+). Low-level APIs: drive letters, volume GUIDs, "
+"mount points. psutil combines them in one cross-platform call."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:66
+msgid "Network"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:76
+msgid ":func:`net_if_addrs`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:77
+msgid ":func:`socket.if_nameindex`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:78
+msgid ""
+"Stdlib returns :term:`NIC` names only; psutil also returns addresses, "
+"netmasks, broadcast, and PTP."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:82
+msgid "Process"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:92
+msgid ":func:`pid_exists`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:93
+msgid "``os.kill(pid, 0)``"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:94
+msgid "Common POSIX idiom; psutil also supports Windows."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:97
+msgid "Process methods"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:99
+msgid "Assuming ``p = psutil.Process()``."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:102
+msgid "Identity"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:112
+msgid ":meth:`p.pid <Process.pid>`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:114
+msgid ":func:`os.getpid`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:116
+msgid ":meth:`p.ppid() <Process.ppid>`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:117
+msgid ":func:`os.getppid`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:119
+msgid ":meth:`p.cwd() <Process.cwd>`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:120
+msgid ":func:`os.getcwd`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:122
+msgid ":meth:`p.environ() <Process.environ>`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:123
+msgid ":data:`os.environ`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:124
+msgid "Will differ from launch environment if modified at runtime."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:125
+msgid ":meth:`p.exe() <Process.exe>`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:126
+msgid ":data:`sys.executable`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:127
+msgid "Python interpreter path only."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:128
+msgid ":meth:`p.cmdline() <Process.cmdline>`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:129
+msgid ":data:`sys.argv`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:130
+msgid "Python process only."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:133
+msgid "Credentials"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:143
+msgid ":meth:`p.uids() <Process.uids>`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:144
+msgid ":func:`os.getuid`, :func:`os.geteuid`, :func:`os.getresuid`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:148
+msgid ":meth:`p.gids() <Process.gids>`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:149
+msgid ":func:`os.getgid`, :func:`os.getegid`, :func:`os.getresgid`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:153
+msgid ":meth:`p.username() <Process.username>`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:154
+msgid ":func:`os.getlogin`, :func:`getpass.getuser`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:155
+msgid "Rough equivalent; not per-process."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:158
+msgid "CPU / scheduling"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:168 ../../../stdlib-equivalents.rst:172
+msgid ":meth:`p.cpu_times() <Process.cpu_times>`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:169
+msgid ":func:`os.times`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:170
+msgid ""
+":func:`os.times` also has ``elapsed``; psutil adds :field:`iowait` (Linux)."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:173 ../../../stdlib-equivalents.rst:176
+#: ../../../stdlib-equivalents.rst:214 ../../../stdlib-equivalents.rst:217
+#: ../../../stdlib-equivalents.rst:232
+msgid ":func:`resource.getrusage`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:174
+msgid "``ru_utime`` / ``ru_stime`` match; have higher precision."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:175
+msgid ":meth:`p.num_ctx_switches() <Process.num_ctx_switches>`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:177
+msgid "Current process only; psutil works for any PID."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:178 ../../../stdlib-equivalents.rst:183
+msgid ":meth:`p.nice() <Process.nice>`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:179
+msgid ":func:`os.getpriority`, :func:`os.setpriority`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:181
+msgid ""
+"POSIX only; psutil also supports Windows. Added to CPython 3.3 (:bpo:"
+"`10784`)."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:184
+msgid ":func:`os.nice`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:185
+msgid "POSIX only; psutil also supports Windows."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:186
+msgid "*no equivalent*"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:187
+msgid ":func:`os.sched_getscheduler`, :func:`os.sched_setscheduler`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:189
+msgid ""
+"Sets scheduling *policy* (``SCHED_*``). Unlike nice, which sets priority "
+"within ``SCHED_OTHER``. Real-time policies preempt normal processes."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:192
+msgid ":meth:`p.cpu_affinity() <Process.cpu_affinity>`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:193
+msgid ":func:`os.sched_getaffinity`, :func:`os.sched_setaffinity`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:195
+msgid ""
+"Nearly equivalent; both accept a PID. Stdlib is Linux/BSD; psutil also "
+"supports Windows."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:197
+msgid ":meth:`p.rlimit() <Process.rlimit>`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:198
+msgid ":func:`resource.getrlimit`, :func:`resource.setrlimit`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:200
+msgid "Same interface; psutil works for any PID (Linux only)."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:203
+msgid "Memory"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:213
+msgid ":meth:`p.memory_info() <Process.memory_info>`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:215
+msgid ""
+"Only :term:`peak_rss` (``ru_maxrss``); psutil returns :term:`RSS`, :term:"
+"`VMS`, and more."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:216
+msgid ":meth:`p.page_faults() <Process.page_faults>`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:218
+msgid "Current process only."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:221
+msgid "I/O"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:231
+msgid ":meth:`p.io_counters() <Process.io_counters>`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:233
+msgid ""
+"Block I/O only (``ru_inblock`` / ``ru_oublock``), current process. psutil "
+"returns bytes and counts for any PID."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:237
+msgid "Threads"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:247
+msgid ":meth:`p.num_threads() <Process.num_threads>`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:248
+msgid ":func:`threading.active_count`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:249
+msgid "Stdlib counts Python threads only; psutil counts all OS threads."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:250
+msgid ":meth:`p.threads() <Process.threads>`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:251
+msgid ":func:`threading.enumerate`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:252
+msgid ""
+"Stdlib returns :class:`threading.Thread` objects; psutil returns OS thread "
+"IDs with CPU times."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:256
+msgid "Signals"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:266
+msgid ":meth:`p.send_signal() <Process.send_signal>`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:267
+msgid ":func:`os.kill`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:268
+msgid ""
+"Same on POSIX; limited on Windows. psutil adds :exc:`NoSuchProcess` / :exc:"
+"`AccessDenied` and avoids killing reused PIDs."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:271
+msgid ":meth:`p.suspend() <Process.suspend>`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:272
+msgid ":func:`os.kill` + :data:`signal.SIGSTOP`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:273 ../../../stdlib-equivalents.rst:276
+msgid "Same as above."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:274
+msgid ":meth:`p.resume() <Process.resume>`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:275
+msgid ":func:`os.kill` + :data:`signal.SIGCONT`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:277
+msgid ":meth:`p.terminate() <Process.terminate>`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:278
+msgid ":func:`os.kill` + :data:`signal.SIGTERM`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:279 ../../../stdlib-equivalents.rst:282
+msgid "Same as above. On Windows uses ``TerminateProcess()``."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:280
+msgid ":meth:`p.kill() <Process.kill>`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:281
+msgid ":func:`os.kill` + :data:`signal.SIGKILL`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:283 ../../../stdlib-equivalents.rst:286
+msgid ":meth:`p.wait() <Process.wait>`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:284
+msgid ":func:`os.waitpid`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:285
+msgid "Child processes only; psutil works for any PID."
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:287
+msgid ":meth:`subprocess.Popen.wait`"
+msgstr ""
+
+#: ../../../stdlib-equivalents.rst:288
+msgid ""
+"Equivalent; psutil uses efficient OS-level waiting on Linux/BSD. Added to "
+"CPython 3.15 (:cpy-pr:`144047`)."
+msgstr ""

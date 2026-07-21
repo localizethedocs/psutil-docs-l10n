@@ -1,0 +1,412 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2026 Giampaolo Rodola
+# This file is distributed under the same license as the psutil package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: psutil 8.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 07:42+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:9
+msgid "From Python 3.3 to today: ending 15 years of subprocess polling"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:11
+msgid ""
+"One of the less fun aspects of process management on POSIX systems is "
+"waiting for a process to terminate. The standard library's :mod:`subprocess` "
+"module has relied on a busy-loop polling approach since the *timeout* "
+"parameter was added to :meth:`subprocess.Popen.wait` in Python 3.3, around "
+"15 years ago (see `source <https://github.com/python/cpython/"
+"blob/8def603d853c7f5e4ff57f95de289f99e1943669/Lib/subprocess.py#L2056-"
+"L2077>`__). And psutil's :meth:`Process.wait` method uses exactly the same "
+"technique (see `source <https://github.com/giampaolo/psutil/blob/700b7e6a/"
+"psutil/_psposix.py#L95-L160>`__)."
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:19
+msgid ""
+"The logic is straightforward: check whether the process has exited using non-"
+"blocking ``waitpid(WNOHANG)``, sleep briefly, check again, sleep a bit "
+"longer, and so on."
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:23
+msgid ""
+"import os, time\n"
+"\n"
+"def wait_busy(pid, timeout):\n"
+"    end = time.monotonic() + timeout\n"
+"    interval = 0.0001\n"
+"    while time.monotonic() < end:\n"
+"        pid_done, _ = os.waitpid(pid, os.WNOHANG)\n"
+"        if pid_done:\n"
+"            return\n"
+"        time.sleep(interval)\n"
+"        interval = min(interval * 2, 0.04)\n"
+"    raise TimeoutExpired"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:38
+msgid ""
+"In this blog post I'll show how I finally addressed this long-standing "
+"inefficiency, first in psutil, and most excitingly, directly in CPython's "
+"standard library :mod:`subprocess` module."
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:43
+msgid "The problem with busy-polling"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:45
+msgid ""
+"CPU wake-ups: even with exponential backoff (starting at 0.1ms, capping at "
+"40ms), the system constantly wakes up to check process status, wasting CPU "
+"cycles and draining batteries."
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:48
+msgid ""
+"Latency: there's always a gap between when a process actually terminates and "
+"when you detect it."
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:50
+msgid ""
+"Scalability: monitoring many processes simultaneously magnifies all of the "
+"above."
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:54
+msgid "Event-driven waiting"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:56
+msgid ""
+"All POSIX systems provide at least one mechanism to be notified when a file "
+"descriptor becomes ready. These are :manpage:`select(2)`, :manpage:"
+"`poll(2)`, :manpage:`epoll(7)` (Linux) and `kqueue() <https://man.freebsd."
+"org/cgi/man.cgi?query=kqueue>`__ (BSD / macOS) system calls. Until recently, "
+"I believed they could only be used with file descriptors referencing "
+"sockets, pipes, etc., but it turns out they can also be used to wait for "
+"events on process PIDs!"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:65
+msgid "Linux"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:67
+msgid ""
+"In 2019, Linux 5.3 introduced a new syscall, :func:`os.pidfd_open`, which "
+"was added in Python 3.9. It returns a :term:`file descriptor` referencing a "
+"process PID. The interesting thing is that :manpage:`pidfd_open(2)` can be "
+"used in conjunction with :manpage:`select(2)`, :manpage:`poll(2)` or :"
+"manpage:`epoll(7)` to effectively wait until the process exits. E.g. by "
+"using ``poll()``:"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:74
+msgid ""
+"import os, select\n"
+"\n"
+"def wait_pidfd(pid, timeout):\n"
+"    pidfd = os.pidfd_open(pid)\n"
+"    poller = select.poll()\n"
+"    poller.register(pidfd, select.POLLIN)\n"
+"    # block until process exits or timeout occurs\n"
+"    events = poller.poll(timeout * 1000)\n"
+"    if events:\n"
+"        return\n"
+"    raise TimeoutError"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:88
+msgid ""
+"This approach has zero busy-looping. The kernel wakes us up exactly when the "
+"process terminates or when the timeout expires if the PID is still alive."
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:91
+msgid ""
+"I chose ``poll()`` over ``select()`` because ``select()`` has a historical "
+"file descriptor limit (``FD_SETSIZE``), which typically caps it at 1024 :"
+"term:`file descriptors <file descriptor>` per-process (reminded me of :bpo:"
+"`1685000`)."
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:96
+msgid ""
+"I chose ``poll()`` over ``epoll()`` because it does not require creating an "
+"additional :term:`file descriptor`. It also needs only a single syscall, "
+"which should make it a bit more efficient when monitoring a single FD rather "
+"than many."
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:102
+msgid "macOS and BSD"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:104
+msgid ""
+"BSD-derived systems (including macOS) provide the ``kqueue()`` syscall. It's "
+"conceptually similar to ``select()``, ``poll()`` and ``epoll()``, but more "
+"powerful (e.g. it can also handle regular files). ``kqueue()`` can be passed "
+"a PID directly, and it will return once the PID disappears or the timeout "
+"expires:"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:110
+msgid ""
+"import select\n"
+"\n"
+"def wait_kqueue(pid, timeout):\n"
+"    kq = select.kqueue()\n"
+"    kev = select.kevent(\n"
+"        pid,\n"
+"        filter=select.KQ_FILTER_PROC,\n"
+"        flags=select.KQ_EV_ADD | select.KQ_EV_ONESHOT,\n"
+"        fflags=select.KQ_NOTE_EXIT,\n"
+"    )\n"
+"    # block until process exits or timeout occurs\n"
+"    events = kq.control([kev], 1, timeout)\n"
+"    if events:\n"
+"        return\n"
+"    raise TimeoutError"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:129
+msgid "Windows"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:131
+msgid ""
+"Windows does not busy-loop, both in psutil and :mod:`subprocess` module, "
+"thanks to ``WaitForSingleObject``. This means Windows has effectively had "
+"event-driven process waiting from the start. So nothing to do on that front."
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:136
+msgid "Graceful fallbacks"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:138
+msgid ""
+"Both ``pidfd_open()`` and ``kqueue()`` can fail for different reasons. For "
+"example, with ``EMFILE`` if the process runs out of :term:`file descriptors "
+"<file descriptor>` (usually 1024), or with ``EACCES`` / ``EPERM`` if the "
+"syscall was explicitly blocked at the system level by the sysadmin (e.g. via "
+"SECCOMP). In all cases, psutil silently falls back to the traditional busy-"
+"loop polling approach rather than raising an exception."
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:145
+msgid ""
+"This fast-path-with-fallback approach is similar in spirit to :bpo:`33671`, "
+"where I sped up :func:`shutil.copyfile` by using zero-copy system calls back "
+"in 2018. In there, more efficient :func:`os.sendfile` is attempted first, "
+"and if it fails (e.g. on network filesystems) we fall back to the "
+"traditional :manpage:`read(2)` / :manpage:`write(2)` approach to copy "
+"regular files."
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:152
+msgid "Measurement"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:154
+msgid ""
+"As a simple experiment, here's a simple program which waits on itself for 10 "
+"seconds without terminating:"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:157
+msgid ""
+"# test.py\n"
+"import psutil, os\n"
+"try:\n"
+"    psutil.Process(os.getpid()).wait(timeout=10)\n"
+"except psutil.TimeoutExpired:\n"
+"    pass"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:166
+msgid ""
+"We can measure the CPU context switching using ``/usr/bin/time -v``. Before "
+"the patch (the busy-loop):"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:171
+msgid ""
+"$ /usr/bin/time -v python3 test.py 2>&1 | grep context\n"
+"    Voluntary context switches: 258\n"
+"    Involuntary context switches: 4"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:175
+msgid "After the patch (the event-driven approach):"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:179
+msgid ""
+"$ /usr/bin/time -v python3 test.py 2>&1 | grep context\n"
+"    Voluntary context switches: 2\n"
+"    Involuntary context switches: 1"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:183
+msgid ""
+"This shows that instead of spinning in userspace, the process blocks in "
+"``poll()`` / ``kqueue()``, and is woken up only when the kernel notifies it, "
+"resulting in just a few CPU :term:`context switches <context switch>`."
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:188
+msgid "Sleeping state"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:190
+msgid ""
+"It's also interesting to note that waiting via ``poll()`` (or ``kqueue()``) "
+"puts the process into the exact same sleeping state as a plain :func:`time."
+"sleep` call. From the kernel's perspective, both are interruptible sleeps: "
+"the process is de-scheduled, consumes zero CPU, and sits quietly in kernel "
+"space."
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:196
+msgid ""
+"The ``\"S+\"`` state shown below by ``ps`` means that the process “sleeps in "
+"foreground”."
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:199
+msgid ":func:`time.sleep`:"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:203
+msgid ""
+"$ (python3 -c 'import time; time.sleep(10)' & pid=$!; sleep 0.3; ps -o pid,"
+"stat,comm -p $pid) && fg &>/dev/null\n"
+"    PID STAT COMMAND\n"
+" 491573 S+   python3"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:207
+msgid ":func:`select.poll`:"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:211
+msgid ""
+"$ (python3 -c 'import os,select; fd = os.pidfd_open(os.getpid(),0); p = "
+"select.poll(); p.register(fd,select.POLLIN); p.poll(10_000)' & pid=$!; sleep "
+"0.3; ps -o pid,stat,comm -p $pid) && fg &>/dev/null\n"
+"    PID STAT COMMAND\n"
+" 491748 S+   python3"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:216
+msgid "CPython contribution"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:218
+msgid ""
+"After landing the psutil implementation (:pr:`2706`), I took the extra step "
+"and submitted a matching pull request for CPython :mod:`subprocess` module: :"
+"cpy-pr:`144047`."
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:222
+msgid ""
+"I'm especially proud of this one: this is the **third time** in psutil's 17+ "
+"year history that a feature developed in psutil made its way upstream into "
+"the Python standard library."
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:226
+msgid ""
+"The first was back in 2010, when :meth:`Process.nice` inspired :func:`os."
+"getpriority` and :func:`os.setpriority`, see :bpo:`10784`. Landed in Python "
+"3.3."
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:230
+msgid ""
+"The second was back in 2011, when :func:`psutil.disk_usage` inspired :func:"
+"`shutil.disk_usage`, see `python-ideas ML proposal <https://mail.python.org/"
+"archives/list/python-ideas@python.org/"
+"thread/67A7ML2TJ7MBS3WOL6IZKLD2C3B3VCQG>`__. Landed in Python 3.3."
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:235
+msgid ""
+"*Funny thing:* 15 years ago, Python 3.3 added the *timeout* parameter to :"
+"meth:`subprocess.Popen.wait` (see `commit <https://github.com/python/cpython/"
+"commit/31aa7dd1419>`__). That's probably where I took inspiration when I "
+"first added the *timeout* parameter to psutil's :meth:`Process.wait` around "
+"the same time (see :commit:`886710daf`). Now, 15 years later, I'm "
+"contributing back a similar improvement for that very same *timeout* "
+"parameter. **The circle is complete**."
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:244
+msgid "Links"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:246
+msgid "Topics related to this:"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:248
+msgid ""
+":gh:`2712`: proposal to extend this to multiple PIDs (:func:`psutil."
+"wait_procs`)."
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:250
+msgid ""
+":gh:`2703`: proposal for asynchronous :meth:`Process.wait` integration with :"
+"mod:`asyncio`."
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:252
+msgid ""
+":cpy:`144211`: proposal to extend the :mod:`selectors` module to enable :mod:"
+"`asyncio` optimization on BSD / macOS via ``kqueue()``."
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:256
+msgid "Discussion"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:258
+msgid ""
+"`Reddit <https://www.reddit.com/r/Python/comments/1qpp42k/"
+"from_python_33_to_today_ending_15_years_of/>`__"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:259
+msgid "`Hacker News <https://news.ycombinator.com/item?id=46802061>`__"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:260
+msgid ""
+"`Medium <https://medium.com/@g.rodola/from-python-3-3-to-today-ending-15-"
+"years-of-subprocess-polling-e8a83ba17c86>`__"
+msgstr ""
+
+#: ../../../blog/2026/event-driven-process-waiting.rst:261
+msgid ""
+"`Linkedin <https://www.linkedin.com/feed/update/urn:li:"
+"share:7422396026449391616/>`__"
+msgstr ""

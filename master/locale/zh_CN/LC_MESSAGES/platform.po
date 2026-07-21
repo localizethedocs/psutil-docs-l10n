@@ -1,0 +1,388 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2026 Giampaolo Rodola
+# This file is distributed under the same license as the psutil package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: psutil 8.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 07:42+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../platform.rst:2
+msgid "Platform support"
+msgstr ""
+
+#: ../../../platform.rst:5
+msgid "Python"
+msgstr ""
+
+#: ../../../platform.rst:11
+msgid "Feature"
+msgstr ""
+
+#: ../../../platform.rst:11
+msgid "Supported"
+msgstr ""
+
+#: ../../../platform.rst:11
+msgid "Notes"
+msgstr ""
+
+#: ../../../platform.rst:13
+msgid "Minimum Python version"
+msgstr ""
+
+#: ../../../platform.rst:13
+msgid "3.8"
+msgstr ""
+
+#: ../../../platform.rst:13
+msgid ""
+"last version supporting 3.6 / 3.7 is `psutil 7.2.2 <https://pypi.org/project/"
+"psutil/7.2.2/>`_ (Jan 2026)"
+msgstr ""
+
+#: ../../../platform.rst:14
+msgid "PyPy3"
+msgstr ""
+
+#: ../../../platform.rst:14 ../../../platform.rst:15 ../../../platform.rst:16
+#: ../../../platform.rst:17 ../../../platform.rst:32 ../../../platform.rst:33
+#: ../../../platform.rst:34 ../../../platform.rst:35 ../../../platform.rst:36
+#: ../../../platform.rst:37
+msgid "yes"
+msgstr ""
+
+#: ../../../platform.rst:14
+msgid "not tested on CI"
+msgstr ""
+
+#: ../../../platform.rst:15
+msgid "Free threading (no-GIL)"
+msgstr ""
+
+#: ../../../platform.rst:15
+msgid "``cp313t`` and ``cp314t`` wheels are published"
+msgstr ""
+
+#: ../../../platform.rst:16
+msgid "Stable ABI (abi3)"
+msgstr ""
+
+#: ../../../platform.rst:16
+msgid "one ``cp38-abi3`` wheel serves 3.8 and above"
+msgstr ""
+
+#: ../../../platform.rst:17
+msgid "Inline type hints"
+msgstr ""
+
+#: ../../../platform.rst:18
+msgid "Sub-interpreters"
+msgstr ""
+
+#: ../../../platform.rst:18 ../../../platform.rst:19 ../../../platform.rst:20
+#: ../../../platform.rst:39
+msgid "no"
+msgstr ""
+
+#: ../../../platform.rst:18
+msgid ""
+"only legacy shared-GIL ones; ``concurrent.interpreters`` fails (:gh:`2576`)"
+msgstr ""
+
+#: ../../../platform.rst:19
+msgid "PEP 561 (``py.typed``)"
+msgstr ""
+
+#: ../../../platform.rst:20
+msgid "Python 2.7"
+msgstr ""
+
+#: ../../../platform.rst:20
+msgid ""
+"last version supporting it is `psutil 6.1.1 <https://pypi.org/project/"
+"psutil/6.1.1/>`_ (Dec 2024)"
+msgstr ""
+
+#: ../../../platform.rst:24
+msgid "Operating systems"
+msgstr ""
+
+#: ../../../platform.rst:30
+msgid "Platform"
+msgstr ""
+
+#: ../../../platform.rst:30
+msgid "Minimum version"
+msgstr ""
+
+#: ../../../platform.rst:30
+msgid "Year"
+msgstr ""
+
+#: ../../../platform.rst:30
+msgid "How enforced"
+msgstr ""
+
+#: ../../../platform.rst:30
+msgid "CI tested"
+msgstr ""
+
+#: ../../../platform.rst:32
+msgid "Linux"
+msgstr ""
+
+#: ../../../platform.rst:32
+msgid "2.6.13 (soft)"
+msgstr ""
+
+#: ../../../platform.rst:32
+msgid "2005"
+msgstr ""
+
+#: ../../../platform.rst:32
+msgid "graceful fallbacks; no hard check"
+msgstr ""
+
+#: ../../../platform.rst:33
+msgid "Windows"
+msgstr ""
+
+#: ../../../platform.rst:33
+msgid "Vista"
+msgstr ""
+
+#: ../../../platform.rst:33
+msgid "2007"
+msgstr ""
+
+#: ../../../platform.rst:33
+msgid "hard check at import + build time"
+msgstr ""
+
+#: ../../../platform.rst:34
+msgid "macOS"
+msgstr ""
+
+#: ../../../platform.rst:34
+msgid "10.7 (Lion)"
+msgstr ""
+
+#: ../../../platform.rst:34
+msgid "2011"
+msgstr ""
+
+#: ../../../platform.rst:34
+msgid "``MAC_OS_X_VERSION_MIN_REQUIRED`` in C"
+msgstr ""
+
+#: ../../../platform.rst:35
+msgid "FreeBSD"
+msgstr ""
+
+#: ../../../platform.rst:35
+msgid "12.0"
+msgstr ""
+
+#: ../../../platform.rst:35
+msgid "2018"
+msgstr ""
+
+#: ../../../platform.rst:35
+msgid "graceful fallbacks via ``#if __FreeBSD_version``"
+msgstr ""
+
+#: ../../../platform.rst:36
+msgid "NetBSD"
+msgstr ""
+
+#: ../../../platform.rst:36
+msgid "5.0"
+msgstr ""
+
+#: ../../../platform.rst:36
+msgid "2009"
+msgstr ""
+
+#: ../../../platform.rst:36
+msgid "graceful fallbacks via ``#if __NetBSD_Version__``"
+msgstr ""
+
+#: ../../../platform.rst:37
+msgid "OpenBSD"
+msgstr ""
+
+#: ../../../platform.rst:37 ../../../platform.rst:38 ../../../platform.rst:39
+msgid "unknown"
+msgstr ""
+
+#: ../../../platform.rst:38
+msgid "SunOS / Solaris"
+msgstr ""
+
+#: ../../../platform.rst:38
+msgid "memleak tests only"
+msgstr ""
+
+#: ../../../platform.rst:39
+msgid "AIX"
+msgstr ""
+
+#: ../../../platform.rst:42
+msgid ""
+"Note: psutil may work on older versions of the above platforms but it is not "
+"guaranteed."
+msgstr ""
+
+#: ../../../platform.rst:46
+msgid "Architectures"
+msgstr ""
+
+#: ../../../platform.rst:48
+msgid ""
+"Supported CPU architectures and platforms tested in CI or with prebuilt "
+"wheels:"
+msgstr ""
+
+#: ../../../platform.rst:54
+msgid "Architecture"
+msgstr ""
+
+#: ../../../platform.rst:54
+msgid "CI-tested platforms"
+msgstr ""
+
+#: ../../../platform.rst:54
+msgid "Wheel builds"
+msgstr ""
+
+#: ../../../platform.rst:56
+msgid "x86_64"
+msgstr ""
+
+#: ../../../platform.rst:56 ../../../platform.rst:57
+msgid "Linux, macOS, Windows"
+msgstr ""
+
+#: ../../../platform.rst:57
+msgid "aarch64 / ARM64"
+msgstr ""
+
+#: ../../../platform.rst:60
+msgid "Notes:"
+msgstr ""
+
+#: ../../../platform.rst:62
+msgid "Linux wheels are built for both glibc (manylinux) and musl."
+msgstr ""
+
+#: ../../../platform.rst:63
+msgid "macOS wheels are universal2 (include both x86_64 and arm64 slices)."
+msgstr ""
+
+#: ../../../platform.rst:64
+msgid "Windows wheels are labeled AMD64 or ARM64 according to architecture."
+msgstr ""
+
+#: ../../../platform.rst:65
+msgid ""
+"Other architectures (i686, ppc64le, s390x, riscv64, ...) are supported but "
+"not CI-tested. They can be compiled from the source tarball (``pip install "
+"psutil --no-binary psutil``)."
+msgstr ""
+
+#: ../../../platform.rst:70
+msgid "Support history"
+msgstr ""
+
+#: ../../../platform.rst:72
+msgid "psutil 8.0.0 (2026-XX): drop Python 3.6 and 3.7"
+msgstr ""
+
+#: ../../../platform.rst:73
+msgid "psutil 7.2.0 (2025-12): publish wheels for **Linux musl**"
+msgstr ""
+
+#: ../../../platform.rst:74
+msgid "psutil 7.1.2 (2025-10): publish wheels for **free-threaded Python**"
+msgstr ""
+
+#: ../../../platform.rst:75
+msgid ""
+"psutil 7.1.2 (2025-10): no longer publish wheels for 32-bit Python (Linux "
+"and Windows)"
+msgstr ""
+
+#: ../../../platform.rst:77
+msgid "psutil 7.1.1 (2025-10): drop **SunOS 10**"
+msgstr ""
+
+#: ../../../platform.rst:78
+msgid "psutil 7.1.0 (2025-09): drop **FreeBSD 8**"
+msgstr ""
+
+#: ../../../platform.rst:79
+msgid "psutil 7.0.0 (2025-02): drop Python 2.7"
+msgstr ""
+
+#: ../../../platform.rst:80
+msgid "psutil 5.9.6 (2023-10): drop Python 3.4 and 3.5"
+msgstr ""
+
+#: ../../../platform.rst:81
+msgid "psutil 5.9.1 (2022-05): drop Python 2.6"
+msgstr ""
+
+#: ../../../platform.rst:82
+msgid "psutil 5.9.0 (2021-12): add **MidnightBSD**"
+msgstr ""
+
+#: ../../../platform.rst:83
+msgid "psutil 5.8.0 (2020-12): add **PyPy2** on Windows"
+msgstr ""
+
+#: ../../../platform.rst:84
+msgid "psutil 5.7.1 (2020-07): add **Windows Nano**"
+msgstr ""
+
+#: ../../../platform.rst:85
+msgid "psutil 5.7.0 (2020-02): drop Windows XP & Windows Server 2003"
+msgstr ""
+
+#: ../../../platform.rst:86
+msgid "psutil 5.7.0 (2020-02): add **PyPy3** on Windows"
+msgstr ""
+
+#: ../../../platform.rst:87
+msgid "psutil 5.4.0 (2017-11): add **AIX**"
+msgstr ""
+
+#: ../../../platform.rst:88
+msgid "psutil 3.4.1 (2016-01): add **NetBSD**"
+msgstr ""
+
+#: ../../../platform.rst:89
+msgid "psutil 3.3.0 (2015-11): add **OpenBSD**"
+msgstr ""
+
+#: ../../../platform.rst:90
+msgid "psutil 1.0.0 (2013-07): add **Solaris**"
+msgstr ""
+
+#: ../../../platform.rst:91
+msgid "psutil 0.1.1 (2009-03): add **FreeBSD**"
+msgstr ""
+
+#: ../../../platform.rst:92
+msgid "psutil 0.1.0 (2009-01): add **Linux, Windows, macOS**"
+msgstr ""

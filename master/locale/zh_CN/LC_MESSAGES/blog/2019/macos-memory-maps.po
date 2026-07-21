@@ -1,0 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2026 Giampaolo Rodola
+# This file is distributed under the same license as the psutil package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: psutil 8.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 07:42+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../blog/2019/macos-memory-maps.rst:9
+msgid "Removing Process.memory_maps() on macOS"
+msgstr ""
+
+#: ../../../blog/2019/macos-memory-maps.rst:11
+msgid ""
+"This is part of the psutil 5.6.0 release (see the full :doc:`release notes </"
+"blog/2019/announcing-560>`)."
+msgstr ""
+
+#: ../../../blog/2019/macos-memory-maps.rst:14
+msgid "As of 5.6.0, :meth:`Process.memory_maps` is no longer defined on macOS."
+msgstr ""
+
+#: ../../../blog/2019/macos-memory-maps.rst:17
+msgid "The bug"
+msgstr ""
+
+#: ../../../blog/2019/macos-memory-maps.rst:19
+msgid ""
+":gh:`1291`: on macOS, :meth:`Process.memory_maps` would either raise "
+"``OSError: [Errno 22] Invalid argument`` or segfault the whole Python "
+"process! Both triggered from code as simple as ``psutil.Process()."
+"as_dict()``, since :meth:`~Process.as_dict` iterates every attribute, and :"
+"meth:`~Process.memory_maps` is one of them."
+msgstr ""
+
+#: ../../../blog/2019/macos-memory-maps.rst:25
+msgid ""
+"The root cause was inside Apple's undocumented ``proc_regionfilename()`` "
+"syscall. On some memory regions it returns ``EINVAL``. On others it takes "
+"the process down. Which regions? Nobody figured out. Arnon Yaari (:user:"
+"`wiggin15`) did most of the investigation: he wrote a `standalone C "
+"reproducer <https://gist.github.com/"
+"wiggin15/0a4c51b5bc6c52e6e31e2234f88558ab>`__ and walked me through what "
+"he'd tried."
+msgstr ""
+
+#: ../../../blog/2019/macos-memory-maps.rst:33
+msgid ""
+"In :pr:`1436` I attempted a fix by reverse-engineering ``vmmap(1)`` but it "
+"didn't work. The fundamental problem is that ``vmmap`` is closed source and "
+"``proc_regionfilename`` is undocumented. Neither my virtualized macOS "
+"(10.11.6) nor Travis CI (10.12.1) could reproduce the bug, which reproduced "
+"reliably only on 10.14.3."
+msgstr ""
+
+#: ../../../blog/2019/macos-memory-maps.rst:40
+msgid "Why remove outright"
+msgstr ""
+
+#: ../../../blog/2019/macos-memory-maps.rst:42
+msgid ""
+"While removing the C code I noticed that the macOS unit test had been "
+"disabled long ago, presumably by me after recurring flaky Travis runs. "
+"Meaning that the method had been broken on some macOS versions far longer "
+"than the 2018 bug report suggested."
+msgstr ""
+
+#: ../../../blog/2019/macos-memory-maps.rst:47
+msgid ""
+"Deprecating for a cycle didn't help either: raising :exc:`AccessDenied` "
+"breaks code that relied on a successful return, returning an empty list does "
+"the same silently, and leaving the method in place doesn't stop the "
+"segfault. Basically there was no sane solution, so since 5.6 is a major "
+"version I decided to just remove :meth:`Process.memory_maps` for good."
+msgstr ""
+
+#: ../../../blog/2019/macos-memory-maps.rst:53
+msgid ""
+"On macOS it never supported other processes anyway. Calling it on any PID "
+"other than the current one (or its children) raised :exc:`AccessDenied`, "
+"even as root."
+msgstr ""
+
+#: ../../../blog/2019/macos-memory-maps.rst:57
+msgid ""
+"If someone finds a Mach API path that works, the method can return. Nobody "
+"has found one so far."
+msgstr ""

@@ -1,0 +1,122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2026 Giampaolo Rodola
+# This file is distributed under the same license as the psutil package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: psutil 8.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 07:42+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../blog/2019/announcing-560.rst:9
+msgid "Announcing psutil 5.6.0"
+msgstr ""
+
+#: ../../../blog/2019/announcing-560.rst:11
+msgid ""
+"psutil 5.6.0 is out. Highlights: a new :meth:`Process.parents` method, "
+"several important Windows improvements, and the removal of :meth:`Process."
+"memory_maps` on macOS."
+msgstr ""
+
+#: ../../../blog/2019/announcing-560.rst:16
+msgid "Process parents()"
+msgstr ""
+
+#: ../../../blog/2019/announcing-560.rst:18
+msgid ""
+"The new method returns the parents of a process as a list of :class:"
+"`Process` instances. If no parents are known, an empty list is returned."
+msgstr ""
+
+#: ../../../blog/2019/announcing-560.rst:21
+msgid ""
+">>> import psutil\n"
+">>> p = psutil.Process(5312)\n"
+">>> p.parents()\n"
+"[psutil.Process(pid=4699, name='bash', started='09:06:44'),\n"
+" psutil.Process(pid=4689, name='gnome-terminal-server', "
+"started='09:06:44'),\n"
+" psutil.Process(pid=1, name='systemd', started='05:56:55')]"
+msgstr ""
+
+#: ../../../blog/2019/announcing-560.rst:30
+msgid ""
+"Nothing fundamentally new here, since this is a convenience wrapper around :"
+"meth:`Process.parent`, but it's still nice to have it built in. It pairs "
+"well with :meth:`Process.children` when working with process trees. The idea "
+"was proposed by Ghislain Le Meur."
+msgstr ""
+
+#: ../../../blog/2019/announcing-560.rst:36
+msgid "Windows"
+msgstr ""
+
+#: ../../../blog/2019/announcing-560.rst:38
+msgid ""
+"Certain Windows APIs that need to be dynamically loaded from DLLs are now "
+"loaded only once at startup, instead of on every function call. This makes "
+"some operations **50% to 100% faster**; see benchmarks in :pr:`1422`."
+msgstr ""
+
+#: ../../../blog/2019/announcing-560.rst:42
+msgid ""
+":meth:`Process.suspend` and :meth:`Process.resume` previously iterated over "
+"all process threads via ``CreateToolhelp32Snapshot()``, which was unorthodox "
+"and broke when the process had been suspended by Process Hacker. They now "
+"call the undocumented ``NtSuspendProcess()`` / ``NtResumeProcess()`` NT "
+"APIs, same as Process Hacker and Sysinternals tools. Discussed in :gh:"
+"`1379`, implemented in :pr:`1435`."
+msgstr ""
+
+#: ../../../blog/2019/announcing-560.rst:49
+msgid ""
+"``SE DEBUG`` is a privilege bit set on the Python process at startup so "
+"psutil can query processes owned by other users (Administrator, Local "
+"System), meaning fewer :exc:`AccessDenied` exceptions for low-PID processes. "
+"The code setting it had presumably been broken for years and is now finally "
+"fixed in :pr:`1429`."
+msgstr ""
+
+#: ../../../blog/2019/announcing-560.rst:55
+msgid "Removal of Process.memory_maps() on macOS"
+msgstr ""
+
+#: ../../../blog/2019/announcing-560.rst:57
+msgid ""
+":meth:`Process.memory_maps` is gone on macOS (:gh:`1291`). The underlying "
+"Apple API would randomly raise ``EINVAL`` or segfault the host process, and "
+"no amount of reverse-engineering produced a safe fix. So I removed it. This "
+"is covered in a :doc:`separate post </blog/2019/macos-memory-maps>`."
+msgstr ""
+
+#: ../../../blog/2019/announcing-560.rst:63
+msgid "Improved exceptions"
+msgstr ""
+
+#: ../../../blog/2019/announcing-560.rst:65
+msgid ""
+"One problem that affected psutil maintenance over the years was receiving "
+"bug reports whose tracebacks did not indicate which syscall had actually "
+"failed. This was especially painful on Windows, where a single routine may "
+"invoke multiple Windows APIs. Now the :exc:`OSError` (or ``WindowsError``) "
+"exception includes the syscall from which the error originated. See :pr:"
+"`1428`."
+msgstr ""
+
+#: ../../../blog/2019/announcing-560.rst:72
+msgid "Other changes"
+msgstr ""
+
+#: ../../../blog/2019/announcing-560.rst:74
+msgid "See the :ref:`changelog <560>`."
+msgstr ""

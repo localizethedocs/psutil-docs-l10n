@@ -1,0 +1,146 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2026 Giampaolo Rodola
+# This file is distributed under the same license as the psutil package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: psutil 8.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 07:42+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../blog/2015/openbsd-support.rst:9
+msgid "OpenBSD support"
+msgstr ""
+
+#: ../../../blog/2015/openbsd-support.rst:11
+msgid ""
+"Starting from version 3.3.0 (released just now) psutil officially supports "
+"OpenBSD. This was contributed by `Landry Breuil <https://github.com/"
+"landryb>`__ and myself in :pr:`615`."
+msgstr ""
+
+#: ../../../blog/2015/openbsd-support.rst:16
+msgid "Differences with FreeBSD"
+msgstr ""
+
+#: ../../../blog/2015/openbsd-support.rst:18
+msgid ""
+"As expected, the OpenBSD implementation is very similar to FreeBSD's, so I "
+"merged most of it into a single C file (`_psutil_bsd.c <https://github.com/"
+"giampaolo/psutil/blob/release-3.3.0/psutil/_psutil_bsd.c>`__), with 2 "
+"separate files (`freebsd.c <https://github.com/giampaolo/psutil/blob/"
+"release-3.3.0/psutil/arch/bsd/freebsd.c>`__, `openbsd.c <https://github.com/"
+"giampaolo/psutil/blob/release-3.3.0/psutil/arch/bsd/openbsd.c>`__) for the "
+"parts that differ. Here are the functional differences with FreeBSD:"
+msgstr ""
+
+#: ../../../blog/2015/openbsd-support.rst:26
+msgid ""
+":meth:`Process.memory_maps` is not implemented. The kernel provides the "
+"necessary pieces but I haven't done this yet (hopefully later)."
+msgstr ""
+
+#: ../../../blog/2015/openbsd-support.rst:28
+msgid ""
+":meth:`Process.num_ctx_switches`'s :field:`involuntary` field is always 0. "
+"`kinfo_proc <https://github.com/giampaolo/psutil/blob/"
+"fc1e59d08c968898c2ede425a621b62ccf44681c/psutil/_psutil_bsd.c#L335>`__ "
+"provides this info but it is always set to 0."
+msgstr ""
+
+#: ../../../blog/2015/openbsd-support.rst:31
+msgid ":meth:`Process.cpu_affinity` (get and set) is not supported."
+msgstr ""
+
+#: ../../../blog/2015/openbsd-support.rst:32
+msgid ""
+":meth:`Process.exe` is determined by inspecting the command line, so it may "
+"not always be available (returns ``None``)."
+msgstr ""
+
+#: ../../../blog/2015/openbsd-support.rst:34
+msgid ""
+":func:`psutil.swap_memory` :field:`sin` and :field:`sout` (:term:`swap in "
+"<swap-in>` and :term:`swap out <swap-out>`) values are not available, and "
+"are therefore always set to 0."
+msgstr ""
+
+#: ../../../blog/2015/openbsd-support.rst:37
+msgid ":func:`psutil.cpu_count` ``(logical=False)`` always returns ``None``."
+msgstr ""
+
+#: ../../../blog/2015/openbsd-support.rst:39
+msgid ""
+"As with FreeBSD, :meth:`Process.open_files` can't return file paths (FreeBSD "
+"can sometimes). Otherwise everything is there and I'm satisfied with the "
+"result."
+msgstr ""
+
+#: ../../../blog/2015/openbsd-support.rst:44
+msgid "Considerations about BSD platforms"
+msgstr ""
+
+#: ../../../blog/2015/openbsd-support.rst:46
+msgid ""
+"psutil has supported FreeBSD since the beginning (year 2009). At the time, "
+"it made sense to prefer it as the preferred BSD variant as it's the most "
+"`most popular <https://en.wikipedia.org/wiki/"
+"Comparison_of_BSD_operating_systems#Popularity>`__."
+msgstr ""
+
+#: ../../../blog/2015/openbsd-support.rst:50
+msgid ""
+"Compared to FreeBSD, OpenBSD appears to be more \"minimal\", both in terms "
+"of kernel facilities and the number of CLI tools available. One thing I "
+"particularly appreciate about FreeBSD is that the source code for all CLI "
+"tools is available under ``/usr/src``, which was a big help when "
+"implementing psutil APIs."
+msgstr ""
+
+#: ../../../blog/2015/openbsd-support.rst:56
+msgid ""
+"OpenBSD source code is `also available <https://github.com/openbsd/src>`__, "
+"but it uses CVS and I am not sure it includes the source code for all CLI "
+"tools."
+msgstr ""
+
+#: ../../../blog/2015/openbsd-support.rst:59
+msgid ""
+"There are still two more BSD variants worth supporting: NetBSD and "
+"DragonFlyBSD (in this order). About a year ago, someone provided a patch (:"
+"gh:`429`) adding basic NetBSD support, so that will likely happen sooner or "
+"later."
+msgstr ""
+
+#: ../../../blog/2015/openbsd-support.rst:64
+msgid "Other enhancements available in this release"
+msgstr ""
+
+#: ../../../blog/2015/openbsd-support.rst:66
+msgid ""
+"The only other enhancement is :gh:`558`, which allows specifying a different "
+"location for the /proc filesystem on Linux."
+msgstr ""
+
+#: ../../../blog/2015/openbsd-support.rst:70
+msgid "Discussion"
+msgstr ""
+
+#: ../../../blog/2015/openbsd-support.rst:72
+msgid ""
+"`Reddit <https://www.reddit.com/r/Python/comments/3u8wm3/"
+"openbsd_support_for_psutil_330/>`__"
+msgstr ""
+
+#: ../../../blog/2015/openbsd-support.rst:73
+msgid "`Hacker News <https://news.ycombinator.com/item?id=10628726>`__"
+msgstr ""

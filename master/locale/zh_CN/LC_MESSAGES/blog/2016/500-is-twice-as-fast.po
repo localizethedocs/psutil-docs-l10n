@@ -1,0 +1,289 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2026 Giampaolo Rodola
+# This file is distributed under the same license as the psutil package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: psutil 8.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 07:42+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:10
+msgid "Making psutil twice as fast"
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:12
+msgid ""
+"Starting from psutil 5.0.0 you can query multiple :class:`Process` fields "
+"around twice as fast as before (see :gh:`799` and :meth:`Process.oneshot`). "
+"It took 7 months, 108 commits, and a massive refactoring of psutil internals "
+"(:pr:`937`), and I think it's one of the best improvements ever shipped in a "
+"psutil release."
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:19
+msgid "The problem"
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:21
+msgid ""
+"How process information is retrieved varies by OS. Sometimes it means "
+"reading a file in /proc (Linux), other times calling C (Windows, BSD, macOS, "
+"SunOS), but it's always done differently. Psutil abstracts this away: you "
+"call :meth:`Process.name` without worrying about what happens under the hood "
+"or which OS you're on."
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:27
+msgid ""
+"Internally, multiple pieces of process info (e.g. :meth:`Process.name`, :"
+"meth:`Process.ppid`, :meth:`Process.uids`, :meth:`Process.create_time`) are "
+"fetched by the same syscall. On Linux we read :proc:`/proc/pid/stat` to get "
+"the process name, terminal, CPU times, creation time, status and parent PID, "
+"but only one value is returned: the others are discarded. On Linux this code "
+"reads :proc:`/proc/pid/stat` 6 times:"
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:34
+msgid ""
+">>> import psutil\n"
+">>> p = psutil.Process()\n"
+">>> p.name()\n"
+">>> p.cpu_times()\n"
+">>> p.create_time()\n"
+">>> p.ppid()\n"
+">>> p.status()\n"
+">>> p.terminal()"
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:45
+msgid ""
+"On BSD most process metrics can be fetched with a single ``sysctl()``, yet "
+"psutil was invoking it for each process method (e.g. see `here <https://"
+"github.com/giampaolo/psutil/blob/2fe3f456321ca1605aaa2b71a7193de59d93075c/"
+"psutil/_psutil_bsd.c#L242-L258>`__ and `here <https://github.com/giampaolo/"
+"psutil/blob/2fe3f456321ca1605aaa2b71a7193de59d93075c/psutil/_psutil_bsd."
+"c#L261-L277>`__)."
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:52
+msgid "Do it in one shot"
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:54
+msgid ""
+"It's clear that this approach is inefficient, especially in tools like top "
+"or htop, where process info is continuously fetched in a loop. psutil 5.0.0 "
+"introduces a new :meth:`Process.oneshot` context manager. Inside it, the "
+"internal routine runs once (in the example, on the first :meth:`Process."
+"name` call) and the other values are cached. Subsequent calls sharing the "
+"same internal routine (read :proc:`/proc/pid/stat`, call ``sysctl()`` or "
+"whatever) return the cached value. The code above can now be rewritten like "
+"this, and on Linux it runs 2.4 times faster:"
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:63
+msgid ""
+">>> import psutil\n"
+">>> p = psutil.Process()\n"
+">>> with p.oneshot():\n"
+"...     p.name()\n"
+"...     p.cpu_times()\n"
+"...     p.create_time()\n"
+"...     p.ppid()\n"
+"...     p.status()\n"
+"...     p.terminal()"
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:76
+msgid "Implementation"
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:78
+msgid ""
+"One great thing about psutil's design is its abstraction. It is divided into "
+"3 \"layers\". Layer 1 is represented by the main `Process class <https://"
+"github.com/giampaolo/psutil/blob/88ea5e0b2cc15c37fdeb3e38857f6dab6fd87d12/"
+"psutil/__init__.py#L340>`__ (Python), which exposes the high-level API. "
+"Layer 2 is the `OS-specific Python module <https://github.com/giampaolo/"
+"psutil/blob/88ea5e0b2cc15c37fdeb3e38857f6dab6fd87d12/psutil/_pslinux."
+"py#L1097>`__, which is a thin wrapper on top of the OS-specific `C extension "
+"module <https://github.com/giampaolo/psutil/"
+"blob/88ea5e0b2cc15c37fdeb3e38857f6dab6fd87d12/psutil/_psutil_linux.c>`__ "
+"(layer 3)."
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:87
+msgid ""
+"Because the code was organized this way (modular), the refactoring was "
+"reasonably smooth. I first refactored those C functions that collect "
+"multiple pieces of info and grouped them into a single function (e.g. see "
+"`BSD implementation <https://github.com/giampaolo/psutil/"
+"blob/88ea5e0b2cc15c37fdeb3e38857f6dab6fd87d12/psutil/_psutil_bsd.c#L198-"
+"L338>`__). Then I wrote a `decorator <https://github.com/giampaolo/psutil/"
+"blob/88ea5e0b2cc15c37fdeb3e38857f6dab6fd87d12/psutil/_common.py#L264-"
+"L314>`__ that enables the cache only when requested (when entering the "
+"context manager), and decorated the `\"grouped functions\" <https://github."
+"com/giampaolo/psutil/blob/88ea5e0b2cc15c37fdeb3e38857f6dab6fd87d12/psutil/"
+"_psbsd.py#L491>`__ with it. The caching mechanism is controlled by the :meth:"
+"`Process.oneshot` context manager, which is the only thing exposed to the "
+"end user. Here's the decorator:"
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:100
+msgid ""
+"def memoize_when_activated(fun):\n"
+"    \"\"\"A memoize decorator which is disabled by default. It can be\n"
+"    activated and deactivated on request.\n"
+"    \"\"\"\n"
+"    @functools.wraps(fun)\n"
+"    def wrapper(self):\n"
+"        if not wrapper.cache_activated:\n"
+"            return fun(self)\n"
+"        else:\n"
+"            try:\n"
+"                ret = cache[fun]\n"
+"            except KeyError:\n"
+"                ret = cache[fun] = fun(self)\n"
+"            return ret\n"
+"\n"
+"    def cache_activate():\n"
+"        \"\"\"Activate cache.\"\"\"\n"
+"        wrapper.cache_activated = True\n"
+"\n"
+"    def cache_deactivate():\n"
+"        \"\"\"Deactivate and clear cache.\"\"\"\n"
+"        wrapper.cache_activated = False\n"
+"        cache.clear()\n"
+"\n"
+"    cache = {}\n"
+"    wrapper.cache_activated = False\n"
+"    wrapper.cache_activate = cache_activate\n"
+"    wrapper.cache_deactivate = cache_deactivate\n"
+"    return wrapper"
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:132
+msgid ""
+"To measure the speedup I wrote a `benchmark script <https://github.com/"
+"giampaolo/psutil/blob/b5582380ac70ca8c180344d9b22aacdff73b1e0b/scripts/"
+"internal/bench_oneshot.py>`__ (well, `two <https://github.com/giampaolo/"
+"psutil/blob/b5582380ac70ca8c180344d9b22aacdff73b1e0b/scripts/internal/"
+"bench_oneshot_2.py>`__ actually), and kept tuning until I was sure the "
+"change actually made psutil faster. The scripts report the speedup for "
+"calling all the \"grouped\" methods together (best-case scenario)."
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:141
+msgid "Linux: +2.56x speedup"
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:143
+msgid ""
+"The Linux implementation is mostly Python, reading files in ``/proc``. These "
+"files typically expose multiple pieces of info per process; :proc:`/proc/pid/"
+"stat` and :proc:`/proc/pid/status` are the perfect example. We aggregate "
+"them into three groups. See the relevant code `here <https://github.com/"
+"giampaolo/psutil/blob/b5582380ac70ca8c180344d9b22aacdff73b1e0b/psutil/"
+"_pslinux.py#L1108-L1153>`__."
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:150
+msgid "Windows: from +1.9x to +6.5x speedup"
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:152
+msgid ""
+"Windows is an interesting one. For a process owned by our user, we group "
+"only :meth:`Process.num_threads`, :meth:`Process.num_ctx_switches` and :meth:"
+"`Process.num_handles`, for a +1.9x speedup if we access those methods in one "
+"shot."
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:157
+msgid ""
+"Windows is special though, because certain methods have a dual "
+"implementation (:gh:`304`): a \"fast method\" is tried first, but if the "
+"process is owned by another user it fails with :exc:`AccessDenied`. psutil "
+"then falls back to a second, \"slower\" method (see `here <https://github."
+"com/giampaolo/psutil/blob/0ccd1373c6e7a189e095df5c436568fb1e8b4d14/psutil/"
+"_pswindows.py#L681>`__ for example)."
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:164
+msgid ""
+"It's slower because it `iterates over all PIDs <https://github.com/giampaolo/"
+"psutil/blob/0ccd1373c6e7a189e095df5c436568fb1e8b4d14/psutil/arch/windows/"
+"process_info.c#L790>`__, but unlike the \"plain\" Windows APIs it can still "
+"`retrieve multiple pieces of information in one shot <https://github.com/"
+"giampaolo/psutil/blob/0ccd1373c6e7a189e095df5c436568fb1e8b4d14/psutil/"
+"_psutil_windows.c#L2789>`__: number of threads, :term:`context switches "
+"<context switch>`, handles, CPU times, create time, and I/O counters."
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:171
+msgid ""
+"That's why querying processes owned by other users results in an impressive "
+"+6.5x speedup."
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:175
+msgid "macOS: +1.92x speedup"
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:177
+msgid ""
+"On macOS we can get 2 groups of information. With `sysctl() <https://github."
+"com/giampaolo/psutil/blob/0ccd1373c6e7a189e095df5c436568fb1e8b4d14/psutil/"
+"_psutil_osx.c#L129>`__ we get process parent PID, uids, gids, terminal, "
+"create time, name. With `proc_info() <https://github.com/giampaolo/psutil/"
+"blob/0ccd1373c6e7a189e095df5c436568fb1e8b4d14/psutil/_psutil_osx.c#L183>`__ "
+"we get CPU times (for PIDs owned by another user), memory metrics and ctx "
+"switches. Not bad."
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:185
+msgid "BSD: +2.18x speedup"
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:187
+msgid ""
+"On BSD we gather tons of process info just by calling ``sysctl()`` (see "
+"`implementation <https://github.com/giampaolo/psutil/"
+"blob/0ccd1373c6e7a189e095df5c436568fb1e8b4d14/psutil/_psutil_bsd."
+"c#L199>`__): process name, ppid, status, uids, gids, IO counters, CPU and "
+"create times, terminal and ctx switches."
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:193
+msgid "SunOS: +1.37x speedup"
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:195
+msgid ""
+"SunOS is like Linux (it reads files in ``/proc``), but the code is in C. "
+"Here too, we group different metrics together (see `here <https://github.com/"
+"giampaolo/psutil/blob/b5582380ac70ca8c180344d9b22aacdff73b1e0b/psutil/"
+"_psutil_sunos.c#L83-L142>`__ and `here <https://github.com/giampaolo/psutil/"
+"blob/b5582380ac70ca8c180344d9b22aacdff73b1e0b/psutil/_psutil_sunos.c#L171-"
+"L189>`__)."
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:202
+msgid "Discussion"
+msgstr ""
+
+#: ../../../blog/2016/500-is-twice-as-fast.rst:204
+msgid ""
+"`Reddit <https://www.reddit.com/r/Python/comments/5bhn4q/"
+"psutil_500_is_around_twice_as_fast/>`__"
+msgstr ""

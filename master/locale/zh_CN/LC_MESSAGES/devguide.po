@@ -1,0 +1,314 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2026 Giampaolo Rodola
+# This file is distributed under the same license as the psutil package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: psutil 8.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 07:42+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../devguide.rst:2
+msgid "Development guide"
+msgstr ""
+
+#: ../../../devguide.rst:4
+msgid ""
+"`Contributing to psutil project <https://github.com/giampaolo/psutil/blob/"
+"master/CONTRIBUTING.md>`_"
+msgstr ""
+
+#: ../../../devguide.rst:7
+msgid "Build, setup and test"
+msgstr ""
+
+#: ../../../devguide.rst:9
+msgid ""
+"psutil makes extensive use of C extension modules, meaning a C compiler is "
+"required, see :doc:`install instructions <install>`. Once installed run:"
+msgstr ""
+
+#: ../../../devguide.rst:12
+msgid ""
+"git clone git@github.com:giampaolo/psutil.git\n"
+"make install-sysdeps      # install gcc and python headers\n"
+"make install-pydeps-test  # install test dependencies\n"
+"make build\n"
+"make install\n"
+"make test"
+msgstr ""
+
+#: ../../../devguide.rst:21
+msgid ""
+"``make`` (via the :src:`Makefile`) is used for building, testing and general "
+"development tasks, including on Windows (see below):"
+msgstr ""
+
+#: ../../../devguide.rst:24
+msgid ""
+"make clean\n"
+"make install-pydeps-dev   # install dev deps (ruff, black, coverage, ...)\n"
+"make test\n"
+"make test-parallel\n"
+"make test-memleaks\n"
+"make test-coverage\n"
+"make lint-all\n"
+"make fix-all\n"
+"make uninstall\n"
+"make help"
+msgstr ""
+
+#: ../../../devguide.rst:37
+msgid "To run a specific test:"
+msgstr ""
+
+#: ../../../devguide.rst:39
+msgid "make test ARGS=tests/test_system.py"
+msgstr ""
+
+#: ../../../devguide.rst:43
+msgid ""
+"Do not use ``sudo``. ``make install`` installs psutil in editable mode, so "
+"you can modify the code while developing."
+msgstr ""
+
+#: ../../../devguide.rst:46
+msgid "To target a specific Python version:"
+msgstr ""
+
+#: ../../../devguide.rst:48
+msgid "make test PYTHON=python3.8"
+msgstr ""
+
+#: ../../../devguide.rst:53
+msgid "Windows"
+msgstr ""
+
+#: ../../../devguide.rst:55
+msgid "The recommended way to develop on Windows is to use ``make``."
+msgstr ""
+
+#: ../../../devguide.rst:56
+msgid ""
+"Install `Git for Windows`_ and launch a *Git Bash shell*, which provides a "
+"Unix-like environment where ``make`` works."
+msgstr ""
+
+#: ../../../devguide.rst:58
+msgid "Then run:"
+msgstr ""
+
+#: ../../../devguide.rst:60
+msgid ""
+"make build\n"
+"make test-parallel"
+msgstr ""
+
+#: ../../../devguide.rst:68
+msgid "Debug mode"
+msgstr ""
+
+#: ../../../devguide.rst:70
+msgid ""
+"If you need to debug unusual situations or report a bug, you can enable "
+"debug mode via the :envvar:`PSUTIL_DEBUG` environment variable. In this "
+"mode, psutil may print additional information to stderr. Usually these are "
+"non-severe error conditions that are ignored instead of causing a crash. "
+"Unit tests automatically run with debug mode enabled. On UNIX:"
+msgstr ""
+
+#: ../../../devguide.rst:76
+msgid ""
+"$ PSUTIL_DEBUG=1 python3 script.py\n"
+"psutil-debug [psutil/_psutil_linux.c:150]> setmntent() failed (ignored)"
+msgstr ""
+
+#: ../../../devguide.rst:81
+msgid "On Windows:"
+msgstr ""
+
+#: ../../../devguide.rst:83
+msgid ""
+"set PSUTIL_DEBUG=1 && python.exe script.py\n"
+"psutil-debug [psutil/arch/windows/proc.c:90]> "
+"NtWow64ReadVirtualMemory64(...) -> 998 (Unknown error) (ignored)"
+msgstr ""
+
+#: ../../../devguide.rst:89
+msgid "Coding style"
+msgstr ""
+
+#: ../../../devguide.rst:91
+msgid ""
+"All style and formatting checks are enforced locally on each ``git commit`` "
+"and via a GitHub Actions pipeline."
+msgstr ""
+
+#: ../../../devguide.rst:94
+msgid ""
+"Python: follows `PEP-8`_, formatted and linted with ``black`` and ``ruff``."
+msgstr ""
+
+#: ../../../devguide.rst:95
+msgid "C: generally follows `PEP-7`_, formatted with ``clang-format``."
+msgstr ""
+
+#: ../../../devguide.rst:96
+msgid ""
+"Other files (``.rst``, ``.toml``, ``.md``, ``.yml``): validated by linters."
+msgstr ""
+
+#: ../../../devguide.rst:98
+msgid "The pipeline re-runs all checks for consistency (``make lint-all``)."
+msgstr ""
+
+#: ../../../devguide.rst:100
+msgid ""
+"Run ``make fix-all`` before committing; it usually fixes Python issues (via "
+"``black`` and ``ruff``) and C issues (via ``clang-format``)."
+msgstr ""
+
+#: ../../../devguide.rst:104
+msgid "Code organization"
+msgstr ""
+
+#: ../../../devguide.rst:106
+msgid ""
+"psutil/__init__.py                   # Main API namespace (\"import "
+"psutil\")\n"
+"psutil/_common.py                    # Generic utilities\n"
+"psutil/_ntuples.py                   # Named tuples returned by psutil APIs\n"
+"psutil/_enums.py                     # Enum containers\n"
+"psutil/_ps{platform}.py              # OS-specific python wrapper\n"
+"psutil/_psutil_{platform}.c          # OS-specific C extension (entry "
+"point)\n"
+"psutil/arch/all/*.c                  # C code common to all OSes\n"
+"psutil/arch/{platform}/*.c           # OS-specific C extension\n"
+"tests/test_process|system.py         # Main system/process API tests\n"
+"tests/test_{platform}.py             # OS-specific tests"
+msgstr ""
+
+#: ../../../devguide.rst:120
+msgid "Adding a new API"
+msgstr ""
+
+#: ../../../devguide.rst:122
+msgid "Define the API in :src:`psutil/__init__.py`."
+msgstr ""
+
+#: ../../../devguide.rst:123
+msgid ""
+"Implement it in ``psutil/_ps{platform}.py`` (e.g. :src:`psutil/_pslinux.py`)."
+msgstr ""
+
+#: ../../../devguide.rst:124
+msgid "If needed, add C code in ``psutil/arch/{platform}/file.c``."
+msgstr ""
+
+#: ../../../devguide.rst:125
+msgid ""
+"Add a generic test in :src:`tests/test_system.py` or :src:`tests/"
+"test_process.py`."
+msgstr ""
+
+#: ../../../devguide.rst:127
+msgid "Add a platform-specific test in ``tests/test_{platform}.py``."
+msgstr ""
+
+#: ../../../devguide.rst:128
+msgid "Update :src:`docs/api.rst`."
+msgstr ""
+
+#: ../../../devguide.rst:129
+msgid "Open a pull request."
+msgstr ""
+
+#: ../../../devguide.rst:132
+msgid "Make a pull request"
+msgstr ""
+
+#: ../../../devguide.rst:134
+msgid "Fork psutil on GitHub."
+msgstr ""
+
+#: ../../../devguide.rst:135
+msgid "Clone your fork: ``git clone git@github.com:YOUR-USERNAME/psutil.git``"
+msgstr ""
+
+#: ../../../devguide.rst:136
+msgid "Create a branch: ``git checkout -b new-feature``"
+msgstr ""
+
+#: ../../../devguide.rst:137
+msgid "Commit changes: ``git commit -am 'add some feature'``"
+msgstr ""
+
+#: ../../../devguide.rst:138
+msgid "Push: ``git push origin new-feature``"
+msgstr ""
+
+#: ../../../devguide.rst:139
+msgid "Open a PR and sign off your work (see :src:`CONTRIBUTING.md`)."
+msgstr ""
+
+#: ../../../devguide.rst:142
+msgid "Continuous integration"
+msgstr ""
+
+#: ../../../devguide.rst:144
+msgid ""
+"Unit tests run automatically on every ``git push`` on all platforms except "
+"AIX. See `.github/workflows <https://github.com/giampaolo/psutil/tree/"
+"master/.github/workflows>`_."
+msgstr ""
+
+#: ../../../devguide.rst:149
+msgid "Documentation"
+msgstr ""
+
+#: ../../../devguide.rst:151
+msgid "Source is in the :src:`docs/ <docs/>` directory."
+msgstr ""
+
+#: ../../../devguide.rst:152
+msgid "To build HTML:"
+msgstr ""
+
+#: ../../../devguide.rst:154
+msgid ""
+"cd docs/\n"
+"python3 -m pip install -r requirements.txt\n"
+"make html"
+msgstr ""
+
+#: ../../../devguide.rst:160
+msgid ""
+"Doc is hosted at https://psutil.io. It's a single version, rebuilt and "
+"deployed automatically on every push to ``master``."
+msgstr ""
+
+#: ../../../devguide.rst:164
+msgid "Releases"
+msgstr ""
+
+#: ../../../devguide.rst:166
+msgid "Uploaded to `PyPI`_ via ``make release``."
+msgstr ""
+
+#: ../../../devguide.rst:167
+msgid "Git tags use the ``vX.Y.Z`` format (e.g. ``v7.2.2``)."
+msgstr ""
+
+#: ../../../devguide.rst:168
+msgid ""
+"The version string is defined in :src:`psutil/__init__.py` (``__version__``)."
+msgstr ""

@@ -1,0 +1,181 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2026 Giampaolo Rodola
+# This file is distributed under the same license as the psutil package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: psutil 8.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 07:42+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../blog/2025/drop-py27.rst:10
+msgid "Letting go of Python 2.7"
+msgstr ""
+
+#: ../../../blog/2025/drop-py27.rst:12
+msgid ""
+"About dropping Python 2.7 support in psutil, 3 years ago I stated (:gh:"
+"`2014`):"
+msgstr ""
+
+#: ../../../blog/2025/drop-py27.rst:14
+msgid ""
+"Not a chance, for many years to come. [Python 2.7] currently represents "
+"7-10% of total downloads, meaning around 70k / 100k downloads per day."
+msgstr ""
+
+#: ../../../blog/2025/drop-py27.rst:18
+msgid ""
+"Only 3 years later, and to my surprise, **downloads for Python 2.7 dropped "
+"to 0.36%**! As such, as of psutil 7.0.0, I finally decided to drop support "
+"for Python 2.7!"
+msgstr ""
+
+#: ../../../blog/2025/drop-py27.rst:23
+msgid "The numbers"
+msgstr ""
+
+#: ../../../blog/2025/drop-py27.rst:25
+msgid "These are downloads per month:"
+msgstr ""
+
+#: ../../../blog/2025/drop-py27.rst:27
+msgid ""
+"$ pypinfo --percent psutil pyversion\n"
+"Served from cache: False\n"
+"Data processed: 4.65 GiB\n"
+"Data billed: 4.65 GiB\n"
+"Estimated cost: $0.03\n"
+"\n"
+"| python_version | percent | download_count |\n"
+"| -------------- | ------- | -------------- |\n"
+"| 3.10           |  23.84% |     26,354,506 |\n"
+"| 3.8            |  18.87% |     20,862,015 |\n"
+"| 3.7            |  17.38% |     19,217,960 |\n"
+"| 3.9            |  17.00% |     18,798,843 |\n"
+"| 3.11           |  13.63% |     15,066,706 |\n"
+"| 3.12           |   7.01% |      7,754,751 |\n"
+"| 3.13           |   1.15% |      1,267,008 |\n"
+"| 3.6            |   0.73% |        803,189 |\n"
+"| 2.7            |   0.36% |        402,111 |\n"
+"| 3.5            |   0.03% |         28,656 |\n"
+"| Total          |         |    110,555,745 |"
+msgstr ""
+
+#: ../../../blog/2025/drop-py27.rst:49
+msgid ""
+"According to `pypistats.org <https://archive.is/wip/knzql>`__ Python 2.7 "
+"downloads represent 0.28% of the total, around 15,000 downloads per day."
+msgstr ""
+
+#: ../../../blog/2025/drop-py27.rst:53
+msgid "The pain"
+msgstr ""
+
+#: ../../../blog/2025/drop-py27.rst:55
+msgid ""
+"Keeping 2.7 alive had become increasingly difficult, but still possible: "
+"tests ran via `old PyPI backports <https://github.com/giampaolo/psutil/blob/"
+"fbb6d9ce98f930d3d101b7df5a4f4d0f1d2b35a3/setup.py#L76-L85>`__ and a `tweaked "
+"GitHub Actions workflow <https://github.com/giampaolo/psutil/blob/"
+"fbb6d9ce98f930d3d101b7df5a4f4d0f1d2b35a3/.github/workflows/build.yml#L77-"
+"L112>`__ on Linux and macOS, plus a separate third-party service (Appveyor) "
+"for Windows. But the workarounds in the source kept piling up:"
+msgstr ""
+
+#: ../../../blog/2025/drop-py27.rst:63
+msgid ""
+"A Python compatibility layer (`psutil/\\_compat.py <https://github.com/"
+"giampaolo/psutil/blob/fbb6d9ce98f930d3d101b7df5a4f4d0f1d2b35a3/psutil/"
+"_compat.py>`__) plus ``#if PY_MAJOR_VERSION <= 3`` branches in C, with "
+"constant str-vs-unicode juggling on both sides."
+msgstr ""
+
+#: ../../../blog/2025/drop-py27.rst:67
+msgid ""
+"No f-strings, and no free use of :mod:`enum` for constants (which ended up "
+"with a different API shape than on Python 3)."
+msgstr ""
+
+#: ../../../blog/2025/drop-py27.rst:69
+msgid ""
+"An outdated ``pip`` and `outdated deps <https://github.com/giampaolo/psutil/"
+"blob/fbb6d9ce98f930d3d101b7df5a4f4d0f1d2b35a3/setup.py#L76-L85>`__."
+msgstr ""
+
+#: ../../../blog/2025/drop-py27.rst:71
+msgid ""
+"4 extra CI jobs per commit (Linux, macOS, Windows 32-bit and 64-bit), making "
+"the pipeline slower and flakier."
+msgstr ""
+
+#: ../../../blog/2025/drop-py27.rst:73
+msgid "7 wheels specific to Python 2.7 to ship on every release:"
+msgstr ""
+
+#: ../../../blog/2025/drop-py27.rst:75
+msgid ""
+"psutil-6.1.1-cp27-cp27m-macosx_10_9_x86_64.whl\n"
+"psutil-6.1.1-cp27-none-win32.whl\n"
+"psutil-6.1.1-cp27-none-win_amd64.whl\n"
+"psutil-6.1.1-cp27-cp27m-manylinux2010_i686.whl\n"
+"psutil-6.1.1-cp27-cp27m-manylinux2010_x86_64.whl\n"
+"psutil-6.1.1-cp27-cp27mu-manylinux2010_i686.whl\n"
+"psutil-6.1.1-cp27-cp27mu-manylinux2010_x86_64.whl"
+msgstr ""
+
+#: ../../../blog/2025/drop-py27.rst:86
+msgid "The removal"
+msgstr ""
+
+#: ../../../blog/2025/drop-py27.rst:88
+msgid ""
+"The removal was done in :pr:`2481`, which dropped around 1500 lines of code "
+"(nice!). **It felt liberating**. In doing so, in the doc I still made the "
+"promise that the 6.1.\\* series will keep supporting Python 2.7 and will "
+"receive **critical bug-fixes only** (no new features). It will be maintained "
+"in a specific `python2 branch <https://github.com/giampaolo/psutil/tree/"
+"release-6.1.1>`__. I explicitly kept the `setup.py <https://github.com/"
+"giampaolo/psutil/blob/fbb6d9ce98f930d3d101b7df5a4f4d0f1d2b35a3/setup.py>`__ "
+"script compatible with Python 2.7 in terms of syntax, so that, when the "
+"tarball is fetched from PyPI, it will emit an informative error message on "
+"``pip install psutil``. The user trying to install psutil on Python 2.7 will "
+"see:"
+msgstr ""
+
+#: ../../../blog/2025/drop-py27.rst:101
+msgid ""
+"$ pip2 install psutil\n"
+"As of version 7.0.0 psutil no longer supports Python 2.7.\n"
+"Latest version supporting Python 2.7 is psutil 6.1.X.\n"
+"Install it with: \"pip2 install psutil==6.1.*\"."
+msgstr ""
+
+#: ../../../blog/2025/drop-py27.rst:109
+msgid "Related"
+msgstr ""
+
+#: ../../../blog/2025/drop-py27.rst:111
+msgid "2017-06: :gh:`1053` (2.7 ticket)"
+msgstr ""
+
+#: ../../../blog/2025/drop-py27.rst:112
+msgid "2022-04: :pr:`2099` (Drop 2.6)"
+msgstr ""
+
+#: ../../../blog/2025/drop-py27.rst:113
+msgid "2023-04: :pr:`2246` (Drop 3.4 & 3.5)"
+msgstr ""
+
+#: ../../../blog/2025/drop-py27.rst:114
+msgid "2024-12: :pr:`2481` (Drop 2.7)"
+msgstr ""
