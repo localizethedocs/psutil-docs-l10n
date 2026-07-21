@@ -1,0 +1,160 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2026 Giampaolo Rodola
+# This file is distributed under the same license as the psutil package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: psutil 8.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 07:42+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../blog/2017/sensors-support.rst:10
+msgid "Sensors: temperatures, battery, CPU frequency"
+msgstr ""
+
+#: ../../../blog/2017/sensors-support.rst:12
+msgid ""
+"psutil 5.1.0 is out. This release introduces new APIs to retrieve hardware "
+"temperatures, battery status, and CPU frequency information."
+msgstr ""
+
+#: ../../../blog/2017/sensors-support.rst:16
+msgid "Temperatures"
+msgstr ""
+
+#: ../../../blog/2017/sensors-support.rst:18
+msgid ""
+"You can now retrieve hardware temperatures (:pr:`962`). This is currently "
+"available on Linux only."
+msgstr ""
+
+#: ../../../blog/2017/sensors-support.rst:21
+msgid ""
+"On Windows it's hard to do in a hardware-agnostic way. I ran into 3 WMI-"
+"based approaches, none of which worked with my hardware, so I gave up."
+msgstr ""
+
+#: ../../../blog/2017/sensors-support.rst:23
+msgid ""
+"On macOS it seems relatively easy, but my virtualized macOS box doesn't "
+"support sensors, so I gave up for lack of hardware. If someone wants to give "
+"it a try, be my guest (:gh:`371`)."
+msgstr ""
+
+#: ../../../blog/2017/sensors-support.rst:27
+msgid ""
+">>> import psutil\n"
+">>> psutil.sensors_temperatures()\n"
+"{'acpitz': [shwtemp(label='', current=47.0, high=103.0, critical=103.0)],\n"
+" 'asus': [shwtemp(label='', current=47.0, high=None, critical=None)],\n"
+" 'coretemp': [shwtemp(label='Physical id 0', current=52.0, high=100.0, "
+"critical=100.0),\n"
+"              shwtemp(label='Core 0', current=45.0, high=100.0, "
+"critical=100.0),\n"
+"              shwtemp(label='Core 1', current=52.0, high=100.0, "
+"critical=100.0),\n"
+"              shwtemp(label='Core 2', current=45.0, high=100.0, "
+"critical=100.0),\n"
+"              shwtemp(label='Core 3', current=47.0, high=100.0, "
+"critical=100.0)]}"
+msgstr ""
+
+#: ../../../blog/2017/sensors-support.rst:40
+msgid "Battery status"
+msgstr ""
+
+#: ../../../blog/2017/sensors-support.rst:42
+msgid ""
+"Battery status information is now available on Linux, Windows and FreeBSD (:"
+"pr:`963`)."
+msgstr ""
+
+#: ../../../blog/2017/sensors-support.rst:45
+msgid ""
+">>> import psutil\n"
+">>>\n"
+">>> def secs2hours(secs):\n"
+"...     mm, ss = divmod(secs, 60)\n"
+"...     hh, mm = divmod(mm, 60)\n"
+"...     return \"%d:%02d:%02d\" % (hh, mm, ss)\n"
+"...\n"
+">>> battery = psutil.sensors_battery()\n"
+">>> battery\n"
+"sbattery(percent=93, secsleft=16628, power_plugged=False)\n"
+">>> print(\"charge = %s%%, time left = %s\" % (battery.percent, "
+"secs2hours(battery.secsleft)))\n"
+"charge = 93%, time left = 4:37:08"
+msgstr ""
+
+#: ../../../blog/2017/sensors-support.rst:61
+msgid "CPU frequency"
+msgstr ""
+
+#: ../../../blog/2017/sensors-support.rst:63
+msgid ""
+"Available on Linux, Windows and macOS (:pr:`952`). Only Linux reports the "
+"real-time value (always changing); other platforms return the nominal "
+"\"fixed\" value."
+msgstr ""
+
+#: ../../../blog/2017/sensors-support.rst:67
+msgid ""
+">>> import psutil\n"
+">>> psutil.cpu_freq()\n"
+"scpufreq(current=931.42925, min=800.0, max=3500.0)\n"
+">>> psutil.cpu_freq(percpu=True)\n"
+"[scpufreq(current=2394.945, min=800.0, max=3500.0),\n"
+" scpufreq(current=2236.812, min=800.0, max=3500.0),\n"
+" scpufreq(current=1703.609, min=800.0, max=3500.0),\n"
+" scpufreq(current=1754.289, min=800.0, max=3500.0)]"
+msgstr ""
+
+#: ../../../blog/2017/sensors-support.rst:79
+msgid "What CPU a process is on"
+msgstr ""
+
+#: ../../../blog/2017/sensors-support.rst:81
+msgid ""
+"Tells you which CPU a process is currently running on, somewhat related to :"
+"meth:`Process.cpu_affinity` (:pr:`954`). It's interesting for visualizing "
+"how the OS scheduler keeps evenly reassigning processes across CPUs (see "
+"the :src:`scripts/cpu_distribution.py` script)."
+msgstr ""
+
+#: ../../../blog/2017/sensors-support.rst:87
+msgid "CPU affinity"
+msgstr ""
+
+#: ../../../blog/2017/sensors-support.rst:89
+msgid "A new shorthand is available to set affinity against all eligible CPUs:"
+msgstr ""
+
+#: ../../../blog/2017/sensors-support.rst:91
+msgid "Process().cpu_affinity([])"
+msgstr ""
+
+#: ../../../blog/2017/sensors-support.rst:95
+msgid ""
+"This was added because on Linux (:gh:`956`) it is not always possible to set "
+"affinity against all CPUs directly. It is equivalent to:"
+msgstr ""
+
+#: ../../../blog/2017/sensors-support.rst:98
+msgid "psutil.Process().cpu_affinity(list(range(psutil.cpu_count())))"
+msgstr ""
+
+#: ../../../blog/2017/sensors-support.rst:103
+msgid "Other bug fixes"
+msgstr ""
+
+#: ../../../blog/2017/sensors-support.rst:105
+msgid "See the full list in the :ref:`changelog <510>`."
+msgstr ""

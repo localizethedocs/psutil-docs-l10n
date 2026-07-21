@@ -1,0 +1,59 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2026 Giampaolo Rodola
+# This file is distributed under the same license as the psutil package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: psutil 8.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 07:42+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../404.rst:4
+msgid "404 - Page not found"
+msgstr ""
+
+#: ../../../404.rst:6
+msgid ""
+"Traceback (most recent call last):\n"
+"  File \"<browser>\", line 1, in <module>\n"
+"    fetch_page(url)\n"
+"psutil.NoSuchProcess: process no longer exists (pid=404)"
+msgstr ""
+
+#: ../../../404.rst:13
+msgid ""
+"The page you're looking for doesn't exist. Or it does, as a :class:`~psutil."
+"ZombieProcess` we can't reap."
+msgstr ""
+
+#: ../../../404.rst:17
+msgid "What now?"
+msgstr ""
+
+#: ../../../404.rst:19
+msgid "Hit ``Ctrl + K`` (or ``Cmd + K``) to open the search box."
+msgstr ""
+
+#: ../../../404.rst:20
+msgid ""
+"Jump to the :doc:`install guide <install>`, :doc:`API reference <api>`, :doc:"
+"`FAQ <faq>` or :doc:`recipes <recipes>`."
+msgstr ""
+
+#: ../../../404.rst:22
+msgid "Read the :doc:`blog <blog>` for posts and release notes."
+msgstr ""
+
+#: ../../../404.rst:23
+msgid ""
+"If you got here from a link that *should* work, please `open an issue on "
+"GitHub`_."
+msgstr ""

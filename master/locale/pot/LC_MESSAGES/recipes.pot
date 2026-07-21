@@ -1,0 +1,628 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2026 Giampaolo Rodola
+# This file is distributed under the same license as the psutil package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: psutil 8.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 07:42+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../recipes.rst:2
+msgid "Recipes"
+msgstr ""
+
+#: ../../../recipes.rst:4
+msgid ""
+"A collection of standalone, copy-paste solutions to specific problems. Each "
+"recipe focuses on a single problem and provides a minimal solution which can "
+"be adapted to real-world code. The examples are intentionally short and "
+"avoid unnecessary abstractions so that the underlying psutil APIs are easy "
+"to understand. Most of them are not meant to be used in production."
+msgstr ""
+
+#: ../../../recipes.rst:11
+msgid "Processes"
+msgstr ""
+
+#: ../../../recipes.rst:14
+msgid "Finding processes"
+msgstr ""
+
+#: ../../../recipes.rst:18
+msgid "Find process by name:"
+msgstr ""
+
+#: ../../../recipes.rst:20
+msgid ""
+"import psutil\n"
+"\n"
+"def find_procs_by_name(name):\n"
+"    ls = []\n"
+"    for p in psutil.process_iter([\"name\"]):\n"
+"        if p.name() == name:\n"
+"            ls.append(p)\n"
+"    return ls"
+msgstr ""
+
+#: ../../../recipes.rst:33
+msgid ""
+"A bit more advanced, check string against :meth:`Process.name`, :meth:"
+"`Process.exe` and :meth:`Process.cmdline`:"
+msgstr ""
+
+#: ../../../recipes.rst:36
+msgid ""
+"import os, psutil\n"
+"\n"
+"def find_procs_by_name_ex(name):\n"
+"    ls = []\n"
+"    for p in psutil.process_iter([\"name\", \"exe\", \"cmdline\"]):\n"
+"        if (\n"
+"            name == p.name()\n"
+"            or (p.exe() and os.path.basename(p.exe()) == name)\n"
+"            or (p.cmdline() and p.cmdline()[0] == name)\n"
+"        ):\n"
+"            ls.append(p)\n"
+"    return ls"
+msgstr ""
+
+#: ../../../recipes.rst:53
+msgid "Find the process listening on a given TCP port:"
+msgstr ""
+
+#: ../../../recipes.rst:55
+msgid ""
+"import psutil\n"
+"\n"
+"def find_proc_by_port(port):\n"
+"    for proc in psutil.process_iter():\n"
+"        try:\n"
+"            cons = proc.net_connections(kind=\"tcp\")\n"
+"        except psutil.Error:\n"
+"            pass\n"
+"        else:\n"
+"            for conn in cons:\n"
+"                if conn.laddr.port == port and conn.status == psutil."
+"CONN_LISTEN:\n"
+"                    return proc\n"
+"    return None"
+msgstr ""
+
+#: ../../../recipes.rst:73
+msgid "Find all processes that have an active connection to a given remote IP:"
+msgstr ""
+
+#: ../../../recipes.rst:75
+msgid ""
+"import psutil\n"
+"\n"
+"def find_procs_by_remote_host(host):\n"
+"    ls = []\n"
+"    for proc in psutil.process_iter():\n"
+"        try:\n"
+"            cons = proc.net_connections(kind=\"inet\")\n"
+"        except psutil.Error:\n"
+"            pass\n"
+"        else:\n"
+"            for conn in cons:\n"
+"                if conn.raddr and conn.raddr.ip == host:\n"
+"                    ls.append(proc)\n"
+"    return ls"
+msgstr ""
+
+#: ../../../recipes.rst:94
+msgid "Find all processes that have a given file open (useful on Windows):"
+msgstr ""
+
+#: ../../../recipes.rst:96
+msgid ""
+"import psutil\n"
+"\n"
+"def find_procs_using_file(path):\n"
+"    ls = []\n"
+"    for p in psutil.process_iter([\"open_files\"]):\n"
+"        for f in p.open_files() or []:\n"
+"            if f.path == path:\n"
+"                ls.append(p)\n"
+"                break\n"
+"    return ls"
+msgstr ""
+
+#: ../../../recipes.rst:110
+msgid "Filtering and sorting processes"
+msgstr ""
+
+#: ../../../recipes.rst:112
+msgid "Processes owned by user:"
+msgstr ""
+
+#: ../../../recipes.rst:114
+msgid ""
+"import getpass, psutil\n"
+"\n"
+"def procs_by_user(user=None):\n"
+"    if user is None:\n"
+"        user = getpass.getuser()\n"
+"    return [\n"
+"        (p.pid, p.name())\n"
+"        for p in psutil.process_iter([\"name\", \"username\"])\n"
+"        if p.username() == user\n"
+"    ]"
+msgstr ""
+
+#: ../../../recipes.rst:129
+msgid "Processes using log files:"
+msgstr ""
+
+#: ../../../recipes.rst:131
+msgid ""
+">>> for p in psutil.process_iter([\"name\", \"open_files\"]):\n"
+"...      for file in p.open_files() or []:\n"
+"...          if file.path.endswith(\".log\"):\n"
+"...               print(\"{:<5} {:<10} {}\".format(p.pid, p.name()[:10], "
+"file.path))\n"
+"...\n"
+"1510  upstart    /home/giampaolo/.cache/upstart/unity-settings-daemon.log\n"
+"2174  nautilus   /home/giampaolo/.local/share/gvfs-metadata/home-ce08efac."
+"log\n"
+"2650  chrome     /home/giampaolo/.config/google-chrome/Default/"
+"data_reduction_proxy_leveldb/000003.log"
+msgstr ""
+
+#: ../../../recipes.rst:144
+msgid "Processes consuming more than 500M of memory:"
+msgstr ""
+
+#: ../../../recipes.rst:146
+msgid ""
+"import psutil\n"
+"\n"
+"def procs_by_memory(min_bytes=500 * 1024 * 1024):\n"
+"    return [\n"
+"        (p.pid, p.name(), p.memory_info().rss)\n"
+"        for p in psutil.process_iter([\"name\", \"memory_info\"])\n"
+"        if p.memory_info().rss > min_bytes\n"
+"    ]"
+msgstr ""
+
+#: ../../../recipes.rst:159
+msgid "Top N processes by :term:`cumulative <cumulative counter>` CPU time:"
+msgstr ""
+
+#: ../../../recipes.rst:161
+msgid ""
+"import psutil\n"
+"\n"
+"def top_cpu_procs(n=3):\n"
+"    procs = sorted(\n"
+"        psutil.process_iter([\"name\", \"cpu_times\"]),\n"
+"        key=lambda p: sum(p.cpu_times()[:2]),\n"
+"    )\n"
+"    return [(p.pid, p.name(), sum(p.cpu_times())) for p in procs[-n:]]"
+msgstr ""
+
+#: ../../../recipes.rst:174
+msgid ""
+"Top N processes by :term:`cumulative <cumulative counter>` disk read + write "
+"bytes (similar to ``iotop``):"
+msgstr ""
+
+#: ../../../recipes.rst:177
+msgid ""
+"import psutil\n"
+"\n"
+"def top_io_procs(n=5):\n"
+"    procs = []\n"
+"    for p in psutil.process_iter([\"io_counters\"]):\n"
+"        io = p.io_counters()\n"
+"        procs.append((io.read_bytes + io.write_bytes, p))\n"
+"    procs.sort(key=lambda x: x[0], reverse=True)\n"
+"    return procs[:n]"
+msgstr ""
+
+#: ../../../recipes.rst:191
+msgid ""
+"Top N processes by open file descriptors (useful for diagnosing fd leaks):"
+msgstr ""
+
+#: ../../../recipes.rst:193
+msgid ""
+"import psutil\n"
+"\n"
+"def top_open_files(n=5):\n"
+"    procs = []\n"
+"    for p in psutil.process_iter([\"num_fds\"]):\n"
+"        procs.append((p.num_fds(), p))\n"
+"    procs.sort(key=lambda x: x[0], reverse=True)\n"
+"    return procs[:n]"
+msgstr ""
+
+#: ../../../recipes.rst:205
+msgid "Monitoring processes"
+msgstr ""
+
+#: ../../../recipes.rst:207
+msgid ""
+"Periodically monitor CPU and memory usage of a process using :meth:`Process."
+"oneshot` for efficiency:"
+msgstr ""
+
+#: ../../../recipes.rst:210
+msgid ""
+"import time, psutil\n"
+"\n"
+"def monitor(pid, interval=1):\n"
+"    p = psutil.Process(pid)\n"
+"    while p.is_running():\n"
+"        with p.oneshot():\n"
+"            cpu = p.cpu_percent()\n"
+"            mem = p.memory_info().rss\n"
+"            print(\"cpu={:<6} mem={}\".format(str(cpu) + \"%\", mem / 1024 / "
+"1024))\n"
+"        time.sleep(interval)"
+msgstr ""
+
+#: ../../../recipes.rst:223
+msgid ""
+"cpu=4.2%   mem=23.4M\n"
+"cpu=3.1%   mem=23.5M"
+msgstr ""
+
+#: ../../../recipes.rst:229
+msgid "Controlling processes"
+msgstr ""
+
+#: ../../../recipes.rst:233
+msgid "Kill a process tree (including grandchildren):"
+msgstr ""
+
+#: ../../../recipes.rst:235
+msgid ""
+"import os, signal, psutil\n"
+"\n"
+"def kill_proc_tree(\n"
+"    pid,\n"
+"    sig=signal.SIGTERM,\n"
+"    include_parent=True,\n"
+"    timeout=None,\n"
+"    on_terminate=None,\n"
+"):\n"
+"    \"\"\"Kill a process tree (including grandchildren) with signal\n"
+"    \"sig\" and return a (gone, still_alive) tuple.\n"
+"    \"on_terminate\", if specified, is a callback function which is\n"
+"    called as soon as a child terminates.\n"
+"    \"\"\"\n"
+"    assert pid != os.getpid(), \"I won't kill myself!\"\n"
+"    parent = psutil.Process(pid)\n"
+"    children = parent.children(recursive=True)\n"
+"    if include_parent:\n"
+"        children.append(parent)\n"
+"    for p in children:\n"
+"        try:\n"
+"            p.send_signal(sig)\n"
+"        except psutil.NoSuchProcess:\n"
+"            pass\n"
+"    gone, alive = psutil.wait_procs(\n"
+"        children, timeout=timeout, callback=on_terminate\n"
+"    )\n"
+"    return (gone, alive)"
+msgstr ""
+
+#: ../../../recipes.rst:268
+msgid ""
+"Terminate a process gracefully, falling back to ``SIGKILL`` if it does not "
+"exit within the timeout:"
+msgstr ""
+
+#: ../../../recipes.rst:271
+msgid ""
+"import psutil\n"
+"\n"
+"def graceful_kill(pid, timeout=3):\n"
+"    p = psutil.Process(pid)\n"
+"    p.terminate()\n"
+"    try:\n"
+"        p.wait(timeout=timeout)\n"
+"    except psutil.TimeoutExpired:\n"
+"        p.kill()"
+msgstr ""
+
+#: ../../../recipes.rst:285
+msgid "Temporarily pause and resume a process using a context manager:"
+msgstr ""
+
+#: ../../../recipes.rst:287
+msgid ""
+"import contextlib, psutil\n"
+"\n"
+"@contextlib.contextmanager\n"
+"def suspended(pid):\n"
+"    p = psutil.Process(pid)\n"
+"    p.suspend()\n"
+"    try:\n"
+"        yield p\n"
+"    finally:\n"
+"        p.resume()\n"
+"\n"
+"# usage\n"
+"with suspended(pid):\n"
+"    pass  # process is paused here"
+msgstr ""
+
+#: ../../../recipes.rst:306
+msgid ""
+"CPU throttle: limit a process's CPU usage to a target percentage by "
+"alternating :meth:`Process.suspend` and :meth:`Process.resume`:"
+msgstr ""
+
+#: ../../../recipes.rst:309
+msgid ""
+"import time, psutil\n"
+"\n"
+"def throttle(pid, max_cpu_percent=50, interval=0.1):\n"
+"    \"\"\"Slow down a process so it uses at most max_cpu_percent% CPU."
+"\"\"\"\n"
+"    p = psutil.Process(pid)\n"
+"    while p.is_running():\n"
+"        cpu = p.cpu_percent(interval=interval)\n"
+"        if cpu > max_cpu_percent:\n"
+"            p.suspend()\n"
+"            time.sleep(interval * cpu / max_cpu_percent)\n"
+"            p.resume()"
+msgstr ""
+
+#: ../../../recipes.rst:325
+msgid "Restart a process automatically if it dies:"
+msgstr ""
+
+#: ../../../recipes.rst:327
+msgid ""
+"import subprocess, time, psutil\n"
+"\n"
+"def watchdog(cmd, max_restarts=None, interval=1):\n"
+"    \"\"\"Run cmd as a persistent process. Restart on failure, optionally\n"
+"    with a max restarts. Logs start, exit, and restart events.\n"
+"    \"\"\"\n"
+"    restarts = 0\n"
+"    while True:\n"
+"        proc = subprocess.Popen(cmd)\n"
+"        p = psutil.Process(proc.pid)\n"
+"        print(f\"started PID {p.pid}\")\n"
+"        proc.wait()\n"
+"\n"
+"        if proc.returncode == 0:\n"
+"            # success\n"
+"            print(f\"PID {p.pid} exited cleanly\")\n"
+"            break\n"
+"\n"
+"        # failure\n"
+"        restarts += 1\n"
+"        print(f\"PID {p.pid} died, restarting ({restarts})\")\n"
+"\n"
+"        if max_restarts is not None and restarts > max_restarts:\n"
+"            print(\"max restarts reached, giving up\")\n"
+"            break\n"
+"\n"
+"        time.sleep(interval)\n"
+"\n"
+"\n"
+"if __name__ == \"__main__\":\n"
+"    watchdog([\"python3\", \"script.py\"])"
+msgstr ""
+
+#: ../../../recipes.rst:362
+msgid "System"
+msgstr ""
+
+#: ../../../recipes.rst:364
+msgid ""
+"All APIs returning amounts (memory, disk, network I/O) express them in "
+"bytes. This ``bytes2human()`` utility function used in the examples below "
+"converts them to a human-readable string:"
+msgstr ""
+
+#: ../../../recipes.rst:368
+msgid ""
+"def bytes2human(n):\n"
+"    \"\"\"\n"
+"    >>> bytes2human(10000)\n"
+"    '9.8K'\n"
+"    >>> bytes2human(100001221)\n"
+"    '95.4M'\n"
+"    \"\"\"\n"
+"    symbols = (\"K\", \"M\", \"G\", \"T\", \"P\", \"E\", \"Z\", \"Y\")\n"
+"    prefix = {}\n"
+"    for i, s in enumerate(symbols):\n"
+"        prefix[s] = 1 << (i + 1) * 10\n"
+"    for s in reversed(symbols):\n"
+"        if abs(n) >= prefix[s]:\n"
+"            value = float(n) / prefix[s]\n"
+"            return \"{:.1f}{}\".format(value, s)\n"
+"    return \"{}B\".format(n)"
+msgstr ""
+
+#: ../../../recipes.rst:388
+msgid "CPU"
+msgstr ""
+
+#: ../../../recipes.rst:390
+msgid "Print real-time CPU usage percentage:"
+msgstr ""
+
+#: ../../../recipes.rst:392
+msgid ""
+"import psutil\n"
+"\n"
+"while True:\n"
+"    print(\"CPU: {}%\".format(psutil.cpu_percent(interval=1)))"
+msgstr ""
+
+#: ../../../recipes.rst:399
+msgid ""
+"CPU: 2.1%\n"
+"CPU: 1.4%\n"
+"CPU: 0.9%"
+msgstr ""
+
+#: ../../../recipes.rst:406
+msgid "Memory"
+msgstr ""
+
+#: ../../../recipes.rst:410
+msgid ""
+"Show real-time swap activity *(Linux, BSD)*. ``sout`` (:term:`swap-out`) is "
+"the key metric: a non-zero and growing rate means the OS is moving memory "
+"from RAM to disk because RAM is full. ``sin`` (:term:`swap-in`) alone is not "
+"alarming; it just means the system is moving previously evicted pages back "
+"into RAM. High ``sin`` and ``sout`` together may indicate heavy swapping (:"
+"term:`thrashing`)."
+msgstr ""
+
+#: ../../../recipes.rst:416
+msgid ""
+"import psutil, time\n"
+"\n"
+"def swap_activity(interval=1):\n"
+"    before = psutil.swap_memory()\n"
+"    while True:\n"
+"        time.sleep(interval)\n"
+"        after = psutil.swap_memory()\n"
+"        sin  = after.sin  - before.sin\n"
+"        sout = after.sout - before.sout\n"
+"        print(\"swap-in={}/s  swap-out={}/s  used={}%\".format(\n"
+"            bytes2human(sin), bytes2human(sout), after.percent))\n"
+"        before = after"
+msgstr ""
+
+#: ../../../recipes.rst:431
+msgid ""
+"swap-in=0.0B/s  swap-out=0.0B/s  used=23%\n"
+"swap-in=0.0B/s  swap-out=1.2M/s  used=24%"
+msgstr ""
+
+#: ../../../recipes.rst:437
+msgid "Disks"
+msgstr ""
+
+#: ../../../recipes.rst:441
+msgid "Show real-time disk I/O:"
+msgstr ""
+
+#: ../../../recipes.rst:443
+msgid ""
+"import psutil, time\n"
+"\n"
+"def disk_io():\n"
+"    while True:\n"
+"        before = psutil.disk_io_counters()\n"
+"        time.sleep(1)\n"
+"        after = psutil.disk_io_counters()\n"
+"        r = after.read_bytes - before.read_bytes\n"
+"        w = after.write_bytes - before.write_bytes\n"
+"        print(\"Read: {}/s, Write: {}/s\".format(bytes2human(r), "
+"bytes2human(w)))"
+msgstr ""
+
+#: ../../../recipes.rst:456
+msgid ""
+"Read: 1.2M/s, Write: 256.0K/s\n"
+"Read: 0.0B/s, Write: 128.0K/s"
+msgstr ""
+
+#: ../../../recipes.rst:465
+msgid "Show real-time disk utilization percentage *(Linux, FreeBSD)*:"
+msgstr ""
+
+#: ../../../recipes.rst:467
+msgid ""
+"import psutil, time\n"
+"\n"
+"def disk_io_percent(interval=1):\n"
+"    while True:\n"
+"        before = psutil.disk_io_counters()\n"
+"        time.sleep(interval)\n"
+"        after = psutil.disk_io_counters()\n"
+"        busy_ms = after.busy_time - before.busy_time\n"
+"        util = min(busy_ms / (interval * 1000) * 100, 100)\n"
+"        print(\"Disk: {:.1f}%\".format(util))"
+msgstr ""
+
+#: ../../../recipes.rst:480
+msgid ""
+"Disk: 3.2%\n"
+"Disk: 78.5%"
+msgstr ""
+
+#: ../../../recipes.rst:486
+msgid "Network"
+msgstr ""
+
+#: ../../../recipes.rst:488
+msgid "Show real-time network I/O per interface:"
+msgstr ""
+
+#: ../../../recipes.rst:490
+msgid ""
+"import psutil, time\n"
+"\n"
+"def net_io():\n"
+"    while True:\n"
+"        before = psutil.net_io_counters(pernic=True)\n"
+"        time.sleep(1)\n"
+"        after = psutil.net_io_counters(pernic=True)\n"
+"        for iface in after:\n"
+"            s = after[iface].bytes_sent - before[iface].bytes_sent\n"
+"            r = after[iface].bytes_recv - before[iface].bytes_recv\n"
+"            print(\n"
+"                \"{:<10} sent={:<10} recv={}\".format(\n"
+"                    iface, bytes2human(s) + \"/s\", bytes2human(r) + \"/s\"\n"
+"                )\n"
+"            )\n"
+"        print()"
+msgstr ""
+
+#: ../../../recipes.rst:509
+msgid ""
+"lo         sent=0.0B/s    recv=0.0B/s\n"
+"eth0       sent=12.3K/s   recv=45.6K/s"
+msgstr ""
+
+#: ../../../recipes.rst:516
+msgid "List all active TCP connections with their status:"
+msgstr ""
+
+#: ../../../recipes.rst:518
+msgid ""
+"import psutil\n"
+"\n"
+"def netstat():\n"
+"    templ = \"{:<20} {:<20} {:<13} {:<6}\"\n"
+"    print(templ.format(\"Local\", \"Remote\", \"Status\", \"PID\"))\n"
+"    for conn in psutil.net_connections(kind=\"tcp\"):\n"
+"        laddr = \"{}:{}\".format(conn.laddr.ip, conn.laddr.port)\n"
+"        raddr = (\n"
+"            \"{}:{}\".format(conn.raddr.ip, conn.raddr.port)\n"
+"            if conn.raddr\n"
+"            else \"-\"\n"
+"        )\n"
+"        print(templ.format(laddr, raddr, conn.status, conn.pid or \"\"))"
+msgstr ""
+
+#: ../../../recipes.rst:534
+msgid ""
+"Local             Remote              Status        PID\n"
+":::1716           -                   LISTEN        223441\n"
+"127.0.0.1:631     -                   LISTEN\n"
+"10.0.0.4:45278    20.222.111.74:443   ESTABLISHED   437213\n"
+"10.0.0.4:40130    172.14.148.135:443  ESTABLISHED\n"
+"0.0.0.0:22        -                   LISTEN        723345"
+msgstr ""

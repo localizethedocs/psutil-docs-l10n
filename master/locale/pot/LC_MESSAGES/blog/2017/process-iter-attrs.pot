@@ -1,0 +1,130 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2026 Giampaolo Rodola
+# This file is distributed under the same license as the psutil package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: psutil 8.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 07:42+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../blog/2017/process-iter-attrs.rst:10
+msgid "Improved process_iter()"
+msgstr ""
+
+#: ../../../blog/2017/process-iter-attrs.rst:12
+msgid ""
+"This is part of the psutil 5.3.0 release (see the :ref:`changelog <530>` for "
+"the full list of changes)."
+msgstr ""
+
+#: ../../../blog/2017/process-iter-attrs.rst:16
+msgid "The old pattern"
+msgstr ""
+
+#: ../../../blog/2017/process-iter-attrs.rst:18
+msgid ""
+"Iterating over processes and collecting attributes requires more boilerplate "
+"than it should. A process returned by :func:`process_iter` may disappear "
+"before you access it, or require elevated privileges, so every lookup has to "
+"be guarded with a ``try / except``:"
+msgstr ""
+
+#: ../../../blog/2017/process-iter-attrs.rst:23
+msgid ""
+">>> import psutil\n"
+">>> for proc in psutil.process_iter():\n"
+"...     try:\n"
+"...         pinfo = proc.as_dict(attrs=['pid', 'name'])\n"
+"...     except (psutil.NoSuchProcess, psutil.AccessDenied):\n"
+"...         pass\n"
+"...     else:\n"
+"...         print(pinfo)\n"
+"...\n"
+"{'pid': 1, 'name': 'systemd'}\n"
+"{'pid': 2, 'name': 'kthreadd'}\n"
+"{'pid': 3, 'name': 'ksoftirqd/0'}"
+msgstr ""
+
+#: ../../../blog/2017/process-iter-attrs.rst:38
+msgid "This is not decorative. It's necessary to avoid the race condition."
+msgstr ""
+
+#: ../../../blog/2017/process-iter-attrs.rst:41
+msgid "The new pattern"
+msgstr ""
+
+#: ../../../blog/2017/process-iter-attrs.rst:43
+msgid ""
+"5.3.0 adds ``attrs`` and ``ad_value`` parameters to :func:`psutil."
+"process_iter`. With these, the loop body becomes:"
+msgstr ""
+
+#: ../../../blog/2017/process-iter-attrs.rst:46
+msgid ""
+">>> import psutil\n"
+">>> for proc in psutil.process_iter(attrs=['pid', 'name']):\n"
+"...     print(proc.info)\n"
+"...\n"
+"{'pid': 1, 'name': 'systemd'}\n"
+"{'pid': 2, 'name': 'kthreadd'}\n"
+"{'pid': 3, 'name': 'ksoftirqd/0'}"
+msgstr ""
+
+#: ../../../blog/2017/process-iter-attrs.rst:56
+msgid ""
+"Internally, :func:`process_iter` attach an ``info`` dict to the :class:"
+"`Process` instance. The attributes are pre-fetched in one shot. Processes "
+"that disappear during iteration are silently skipped, and attributes that "
+"would raise :exc:`AccessDenied` gets assigned ``ad_value`` , which defaults "
+"to ``None``:"
+msgstr ""
+
+#: ../../../blog/2017/process-iter-attrs.rst:62
+msgid ""
+"for p in psutil.process_iter(['name', 'username'], ad_value=\"N/A\"):\n"
+"    print(p.name(), p.username())"
+msgstr ""
+
+#: ../../../blog/2017/process-iter-attrs.rst:68
+msgid "Performance"
+msgstr ""
+
+#: ../../../blog/2017/process-iter-attrs.rst:70
+msgid ""
+"Beyond the syntactic win, the new syntax is also faster than calling "
+"individual methods in a loop. ``process_iter(attrs=[...])`` is equivalent to "
+"using :meth:`Process.oneshot` on each process (see :doc:`One shot, twice as "
+"fast </blog/2016/500-is-twice-as-fast>` for how that works): attributes that "
+"share a syscall or a ``/proc`` file are fetched together instead of re-read "
+"on every method call, which is a lot faster."
+msgstr ""
+
+#: ../../../blog/2017/process-iter-attrs.rst:78
+msgid "Comprehensions"
+msgstr ""
+
+#: ../../../blog/2017/process-iter-attrs.rst:80
+msgid ""
+"With the exception boilerplate out of the way, comprehensions finally work "
+"cleanly. E.g. getting processes owned by the current user can be written as:"
+msgstr ""
+
+#: ../../../blog/2017/process-iter-attrs.rst:83
+msgid ""
+">>> import getpass\n"
+">>> from pprint import pprint as pp\n"
+">>> pp([(p.pid, p.info['name']) for p in psutil.process_iter(attrs=['name', "
+"'username']) if p.info['username'] == getpass.getuser()])\n"
+"[(16832, 'bash'),\n"
+" (19772, 'ssh'),\n"
+" (20492, 'python')]"
+msgstr ""
