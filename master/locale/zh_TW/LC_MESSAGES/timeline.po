@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../timeline.rst:2
 msgid "Timeline"
-msgstr ""
+msgstr "時間線"
 
 #: ../../../timeline.rst:5
 msgid "2026"

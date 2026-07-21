@@ -278,7 +278,7 @@ msgstr ""
 
 #: ../../../shell-equivalents.rst:112
 msgid "Disks"
-msgstr ""
+msgstr "磁碟"
 
 #: ../../../shell-equivalents.rst:123
 msgid ":func:`disk_usage`"
@@ -387,7 +387,7 @@ msgstr ""
 
 #: ../../../shell-equivalents.rst:173
 msgid "Sensors"
-msgstr ""
+msgstr "感測器"
 
 #: ../../../shell-equivalents.rst:184
 msgid ":func:`sensors_temperatures`"

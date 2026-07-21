@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../faq.rst:2
 msgid "FAQ"
-msgstr ""
+msgstr "常見問題"
 
 #: ../../../faq.rst:4
 msgid "This section answers common questions and pitfalls when using psutil."
@@ -200,7 +200,7 @@ msgstr ""
 
 #: ../../../faq.rst:139
 msgid "Processes"
-msgstr ""
+msgstr "進程"
 
 #: ../../../faq.rst:144
 msgid "PID reuse"

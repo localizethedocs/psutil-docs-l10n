@@ -844,7 +844,7 @@ msgstr ""
 
 #: ../../../api.rst:473
 msgid "Disks"
-msgstr ""
+msgstr "磁碟"
 
 #: ../../../api.rst:477
 msgid ""
@@ -1485,7 +1485,7 @@ msgstr ""
 
 #: ../../../api.rst:818
 msgid "Sensors"
-msgstr ""
+msgstr "感測器"
 
 #: ../../../api.rst:822
 msgid ""
@@ -1679,7 +1679,7 @@ msgstr ""
 
 #: ../../../api.rst:959
 msgid "Processes"
-msgstr ""
+msgstr "進程"
 
 #: ../../../api.rst:962
 msgid "Functions"

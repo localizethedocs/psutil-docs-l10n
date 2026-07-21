@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../platform.rst:2
 msgid "Platform support"
-msgstr ""
+msgstr "平臺支援"
 
 #: ../../../platform.rst:5
 msgid "Python"
