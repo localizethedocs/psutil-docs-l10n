@@ -62,9 +62,9 @@ set(MODE_OF_INSTALL "COMPARE"
     # (1) COMPARE:  Install the requirements only if the current reference is different than the previous one.
     # (2) ALWAYS:   Install the requirements even if the current reference is the same as    the previous one.
 
-set(SPHINX_BUILDER "html"
+set(SPHINX_BUILDER "dirhtml"
     CACHE STRING "The builder for the Sphinx documentation system.")
-    # Possible values are "html".
+    # Possible values are "dirhtml".
     # See https://www.sphinx-doc.org/en/master/usage/builders/index.html for details.
 
 set(SPHINX_JOB_NUMBER "4"
@@ -253,7 +253,7 @@ if (NOT MODE_OF_INSTALL MATCHES "^(COMPARE|ALWAYS)$")
     message(FATAL_ERROR "Invalid MODE_OF_INSTALL value. (${MODE_OF_INSTALL})")
 endif()
 
-if (NOT SPHINX_BUILDER MATCHES "^(html)$")
+if (NOT SPHINX_BUILDER MATCHES "^(dirhtml)$")
     message(FATAL_ERROR "Invalid SPHINX_BUILDER value. (${SPHINX_BUILDER})")
 endif()
 
