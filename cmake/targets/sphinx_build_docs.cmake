@@ -208,7 +208,7 @@ restore_cmake_message_indent()
 #]============================================================]
 
 
-set(UPSTREAM_DOCS   "https://psutil.readthedocs.io/")
+set(UPSTREAM_DOCS   "https://psutil.io/")
 set(UPSTREAM_REPO   "https://github.com/giampaolo/psutil")
 set(INSERT_POINT    "div[class=\"article-column\"]")
 
