@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../alternatives.rst:2
 msgid "Alternatives"
-msgstr ""
+msgstr "备选方案"
 
 #: ../../../alternatives.rst:4
 msgid ""

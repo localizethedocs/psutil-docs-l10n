@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../platform.rst:2
 msgid "Platform support"
-msgstr ""
+msgstr "平台支持"
 
 #: ../../../platform.rst:5
 msgid "Python"
@@ -188,7 +188,7 @@ msgstr ""
 
 #: ../../../platform.rst:35
 msgid "FreeBSD"
-msgstr ""
+msgstr "FreeBSD"
 
 #: ../../../platform.rst:35
 msgid "12.0"
@@ -204,7 +204,7 @@ msgstr ""
 
 #: ../../../platform.rst:36
 msgid "NetBSD"
-msgstr ""
+msgstr "NetBSD"
 
 #: ../../../platform.rst:36
 msgid "5.0"
@@ -220,7 +220,7 @@ msgstr ""
 
 #: ../../../platform.rst:37
 msgid "OpenBSD"
-msgstr ""
+msgstr "OpenBSD"
 
 #: ../../../platform.rst:37 ../../../platform.rst:38 ../../../platform.rst:39
 msgid "unknown"

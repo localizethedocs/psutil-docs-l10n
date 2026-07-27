@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../recipes.rst:2
 msgid "Recipes"
-msgstr ""
+msgstr "食谱"
 
 #: ../../../recipes.rst:4
 msgid ""
@@ -32,7 +32,7 @@ msgstr ""
 
 #: ../../../recipes.rst:11
 msgid "Processes"
-msgstr ""
+msgstr "进程"
 
 #: ../../../recipes.rst:14
 msgid "Finding processes"
@@ -512,7 +512,7 @@ msgstr ""
 
 #: ../../../recipes.rst:437
 msgid "Disks"
-msgstr ""
+msgstr "磁盘"
 
 #: ../../../recipes.rst:441
 msgid "Show real-time disk I/O:"

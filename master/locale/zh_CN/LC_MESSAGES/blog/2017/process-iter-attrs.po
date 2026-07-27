@@ -97,7 +97,7 @@ msgstr ""
 
 #: ../../../blog/2017/process-iter-attrs.rst:68
 msgid "Performance"
-msgstr ""
+msgstr "性能"
 
 #: ../../../blog/2017/process-iter-attrs.rst:70
 msgid ""

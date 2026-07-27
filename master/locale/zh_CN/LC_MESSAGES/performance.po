@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../performance.rst:2
 msgid "Performance"
-msgstr ""
+msgstr "性能"
 
 #: ../../../performance.rst:4
 msgid "This page describes how to use psutil efficiently."

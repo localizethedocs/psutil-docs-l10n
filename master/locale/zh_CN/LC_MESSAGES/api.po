@@ -526,7 +526,7 @@ msgstr ""
 
 #: ../../../api.rst:332 ../../../api.rst:1928
 msgid "FreeBSD"
-msgstr ""
+msgstr "FreeBSD"
 
 #: ../../../api.rst:333
 msgid "total"
@@ -844,7 +844,7 @@ msgstr ""
 
 #: ../../../api.rst:473
 msgid "Disks"
-msgstr ""
+msgstr "磁盘"
 
 #: ../../../api.rst:477
 msgid ""
@@ -1485,7 +1485,7 @@ msgstr ""
 
 #: ../../../api.rst:818
 msgid "Sensors"
-msgstr ""
+msgstr "传感器"
 
 #: ../../../api.rst:822
 msgid ""
@@ -1679,7 +1679,7 @@ msgstr ""
 
 #: ../../../api.rst:959
 msgid "Processes"
-msgstr ""
+msgstr "进程"
 
 #: ../../../api.rst:962
 msgid "Functions"

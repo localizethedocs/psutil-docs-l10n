@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../devguide.rst:2
 msgid "Development guide"
-msgstr ""
+msgstr "开发指南"
 
 #: ../../../devguide.rst:4
 msgid ""
@@ -273,7 +273,7 @@ msgstr ""
 
 #: ../../../devguide.rst:149
 msgid "Documentation"
-msgstr ""
+msgstr "文档"
 
 #: ../../../devguide.rst:151
 msgid "Source is in the :src:`docs/ <docs/>` directory."

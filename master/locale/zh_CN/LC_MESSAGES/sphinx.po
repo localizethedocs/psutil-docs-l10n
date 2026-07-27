@@ -3039,7 +3039,7 @@ msgstr ""
 
 #: builders/html/__init__.py:496 themes/basic/defindex.html:23
 msgid "General Index"
-msgstr ""
+msgstr "基本索引"
 
 #: themes/basic/defindex.html:24
 msgid "all functions, classes, terms"

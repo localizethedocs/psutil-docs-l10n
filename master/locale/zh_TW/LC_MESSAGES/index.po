@@ -290,7 +290,7 @@ msgstr ""
 
 #: ../../../index.rst:131
 msgid ":ref:`See more → <api-overview-cpu>`"
-msgstr ""
+msgstr ":ref:`查看更多 → <api-overview-cpu>`"
 
 #: ../../../index.rst:0
 msgid "Memory"
@@ -316,7 +316,7 @@ msgstr ""
 
 #: ../../../index.rst:145
 msgid ":ref:`See more → <api-overview-memory>`"
-msgstr ""
+msgstr ":ref:`查看更多 → <api-overview-memory>`"
 
 #: ../../../index.rst:0
 msgid "Disks"
@@ -352,7 +352,7 @@ msgstr ""
 
 #: ../../../index.rst:162
 msgid ":ref:`See more → <api-overview-disks>`"
-msgstr ""
+msgstr ":ref:`查看更多 → <api-overview-disks>`"
 
 #: ../../../index.rst:0
 msgid "Network"
@@ -390,7 +390,7 @@ msgstr ""
 
 #: ../../../index.rst:181
 msgid ":ref:`See more → <api-overview-network>`"
-msgstr ""
+msgstr ":ref:`查看更多 → <api-overview-network>`"
 
 #: ../../../index.rst:0
 msgid "Sensors"
@@ -426,7 +426,7 @@ msgstr ""
 
 #: ../../../index.rst:199
 msgid ":ref:`See more → <api-overview-sensors>`"
-msgstr ""
+msgstr ":ref:`查看更多 → <api-overview-sensors>`"
 
 #: ../../../index.rst:0
 msgid "Processes"
@@ -464,7 +464,7 @@ msgstr ""
 
 #: ../../../index.rst:220
 msgid ":ref:`See more → <api-overview-processes>`"
-msgstr ""
+msgstr ":ref:`查看更多 → <api-overview-processes>`"
 
 #: ../../../index.rst:227
 msgid ""
@@ -492,6 +492,8 @@ msgid ""
 "<div id=\"sponsors\">\n"
 "  <div class=\"home-section-label\">Sponsors</div>"
 msgstr ""
+"<div id=\"sponsors\">\n"
+"  <div class=\"home-section-label\">贊助者</div>"
 
 #: ../../../index.rst:254
 msgid ""

@@ -19,43 +19,46 @@ msgstr ""
 
 #: ../../../install.rst:2
 msgid "Install psutil"
-msgstr ""
+msgstr "安装 psutil"
 
 #: ../../../install.rst:5
 msgid "Linux, Windows, macOS (wheels)"
-msgstr ""
+msgstr "Linux, Windows, macOS (wheels)"
 
 #: ../../../install.rst:7
 msgid ""
 "Pre-compiled wheels are distributed for these platforms, so you usually "
 "won't need a C compiler. Install psutil with:"
 msgstr ""
+"为这些平台提供了预编译的 wheel 包，不需要 C 编译器就可以通过以下方式下载："
 
 #: ../../../install.rst:10
 msgid "pip install psutil"
-msgstr ""
+msgstr "pip install psutil"
 
 #: ../../../install.rst:14
 msgid "Or with `uv <https://docs.astral.sh/uv/>`_:"
-msgstr ""
+msgstr "或者通过 `uv <https://docs.astral.sh/uv/>`_:"
 
 #: ../../../install.rst:16
 msgid "uv add psutil"
-msgstr ""
+msgstr "uv add psutil"
 
 #: ../../../install.rst:20
 msgid ""
 "If wheels are not available for your platform or architecture, or you wish "
 "to build & install psutil from sources, keep reading."
 msgstr ""
+"如果你的平台或系统架构不允许通过 wheels 构建，或者你想从源码构建或安装，请继"
+"续阅读。"
 
 #: ../../../install.rst:24
 msgid "Compile psutil from source"
-msgstr ""
+msgstr "从源码编译"
 
 #: ../../../install.rst:27
 msgid "UNIX"
-msgstr ""
+msgstr "UNIX"
 
 #: ../../../install.rst:29
 msgid ""
@@ -63,78 +66,88 @@ msgid ""
 "install the system dependencies necessary to compile psutil from sources. "
 "You can invoke this script from the Makefile as:"
 msgstr ""
+"`install-sysdeps.sh`_script 适用于所有的 UNIX 系统，它将会安装必要的系统依赖"
+"进而从源码编译 psutil， 你可以像这样从 Makefile 调用这个脚本："
 
 #: ../../../install.rst:33
 msgid "make install-sysdeps"
-msgstr ""
+msgstr "make install-sysdeps"
 
 #: ../../../install.rst:37
 msgid ""
 "After system deps are installed, you can compile and install psutil with:"
-msgstr ""
+msgstr "在系统依赖安装成功后，你可以编译并安装 psutil："
 
 #: ../../../install.rst:39 ../../../install.rst:99
 msgid ""
 "make build\n"
 "make install"
-msgstr ""
+msgstr "make build"
 
 #: ../../../install.rst:44
 msgid ""
 "...or this, which will fetch the latest source distribution from `PyPI`_:"
-msgstr ""
+msgstr "或者通过 `PyPI` 拉取最新的源码"
 
 #: ../../../install.rst:46 ../../../install.rst:90
 msgid "pip install --no-binary :all: psutil"
-msgstr ""
+msgstr "pip install --no-binary :all: psutil"
 
 #: ../../../install.rst:51
 msgid "Linux"
-msgstr ""
+msgstr "Linux"
 
 #: ../../../install.rst:53
 msgid "Debian / Ubuntu:"
-msgstr ""
+msgstr "Debian / Ubuntu"
 
 #: ../../../install.rst:55
 msgid ""
 "sudo apt install gcc python3-dev\n"
 "pip install --no-binary :all: psutil"
 msgstr ""
+"sudo apt install gcc python3-dev\n"
+"pip install --no-binary :all: psutil"
 
 #: ../../../install.rst:60
 msgid "RedHat / CentOS:"
-msgstr ""
+msgstr "RedHat / CentOS:"
 
 #: ../../../install.rst:62
 msgid ""
 "sudo yum install gcc python3-devel\n"
 "pip install --no-binary :all: psutil"
 msgstr ""
+"sudo yum install gcc python3-devel\n"
+"pip install --no-binary :all: psutil"
 
 #: ../../../install.rst:67
 msgid "Arch:"
-msgstr ""
+msgstr "Arch:"
 
 #: ../../../install.rst:69
 msgid ""
 "sudo pacman -S gcc python\n"
 "pip install --no-binary :all: psutil"
 msgstr ""
+"sudo pacman -S gcc python\n"
+"pip install --no-binary :all: psutil"
 
 #: ../../../install.rst:74
 msgid "Alpine:"
-msgstr ""
+msgstr "Alpine:"
 
 #: ../../../install.rst:76
 msgid ""
 "sudo apk add gcc python3-dev musl-dev linux-headers\n"
 "pip install --no-binary :all: psutil"
 msgstr ""
+"sudo apk add gcc python3-dev musl-dev linux-headers\n"
+"pip install --no-binary :all: psutil"
 
 #: ../../../install.rst:82
 msgid "Windows"
-msgstr ""
+msgstr "Windows"
 
 #: ../../../install.rst:84
 msgid ""
@@ -142,14 +155,16 @@ msgid ""
 "Studio 2017`_ or later installed. For detailed instructions, see the "
 "`CPython Developer Guide`_."
 msgstr ""
+"想要在 Windows 上通过源码构建或安装 psutil，你需要安装 `Visual Studio 2017` "
+"或更新的版本，有关详细说明请参考 `CPython Developer Guide`_."
 
 #: ../../../install.rst:87
 msgid "MinGW is not supported for building psutil on Windows."
-msgstr ""
+msgstr "MinGW 不支持在 Windows 上构建 psutil 。"
 
 #: ../../../install.rst:88
 msgid "To build directly from the source tarball (.tar.gz) on PYPI, run:"
-msgstr ""
+msgstr "直接从 PyPI 提供的源码包 （.tar.gz）构建："
 
 #: ../../../install.rst:94
 msgid ""
@@ -157,38 +172,42 @@ msgid ""
 "first install `Git for Windows`_ and launch a Git Bash shell. This provides "
 "a Unix-like environment where ``make`` works."
 msgstr ""
+"如果你想从 Git 仓库克隆 psutil 在本地构建或开发，先下载 `Git for Windows`_ 并"
+"启动 Git Bash Shell 。你可以在它提供的类似于 Unix 的环境中使用 ``make`` 。"
 
 #: ../../../install.rst:97
 msgid "Once inside Git Bash, you can run the usual ``make`` commands:"
-msgstr ""
+msgstr "在 Git Bash 中，你可以运行常见的 ``make`` 命令："
 
 #: ../../../install.rst:105
 msgid "macOS"
-msgstr ""
+msgstr "macOS"
 
 #: ../../../install.rst:107
 msgid "Install Xcode first:"
-msgstr ""
+msgstr "请先安装 Xcode"
 
 #: ../../../install.rst:109
 msgid ""
 "xcode-select --install\n"
 "pip install --no-binary :all: psutil"
-msgstr ""
+msgstr "xcode-select --install"
 
 #: ../../../install.rst:115
 msgid "FreeBSD"
-msgstr ""
+msgstr "FreeBSD"
 
 #: ../../../install.rst:117
 msgid ""
 "pkg install python3 gcc\n"
 "python3 -m pip install psutil"
 msgstr ""
+"pkg install python3 gcc\n"
+"python3 -m pip install psutil"
 
 #: ../../../install.rst:123
 msgid "OpenBSD"
-msgstr ""
+msgstr "OpenBSD"
 
 #: ../../../install.rst:125
 msgid ""
@@ -197,14 +216,18 @@ msgid ""
 "pkg_add -v python3 gcc\n"
 "pip install psutil"
 msgstr ""
+"export PKG_PATH=https://cdn.openbsd.org/pub/OpenBSD/`uname -r`/packages/"
+"`uname -m`/\n"
+"pkg_add -v python3 gcc\n"
+"pip install psutil"
 
 #: ../../../install.rst:132
 msgid "NetBSD"
-msgstr ""
+msgstr "NetBSD"
 
 #: ../../../install.rst:134
 msgid "Assuming Python 3.11:"
-msgstr ""
+msgstr "假定 Python 3.11:"
 
 #: ../../../install.rst:136
 msgid ""
@@ -214,71 +237,78 @@ msgid ""
 "pkgin install python311-* gcc12-* py311-setuptools-* py311-pip-*\n"
 "python3.11 -m pip install psutil"
 msgstr ""
+"export PKG_PATH=\"https://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/`uname -"
+"m`/`uname -r`/All\"\n"
+"pkg_add -v pkgin\n"
+"pkgin install python311-* gcc12-* py311-setuptools-* py311-pip-*\n"
+"python3.11 -m pip install psutil"
 
 #: ../../../install.rst:144
 msgid "Sun Solaris"
-msgstr ""
+msgstr "Sun Solaris"
 
 #: ../../../install.rst:146
 msgid "If ``cc`` compiler is not installed create a symbolic link to ``gcc``:"
-msgstr ""
+msgstr "如果``cc`` 编译器未安装，则创建 ``gcc`` 的符号链接："
 
 #: ../../../install.rst:148
 msgid "sudo ln -s /usr/bin/gcc /usr/local/bin/cc"
-msgstr ""
+msgstr "sudo ln -s /usr/bin/gcc /usr/local/bin/cc"
 
 #: ../../../install.rst:152
 msgid "Install:"
-msgstr ""
+msgstr "安装:"
 
 #: ../../../install.rst:154
 msgid ""
 "pkg install gcc\n"
 "pip install psutil"
-msgstr ""
+msgstr "pkg install gcc"
 
 #: ../../../install.rst:160
 msgid "Troubleshooting"
-msgstr ""
+msgstr "疑难解答"
 
 #: ../../../install.rst:163
 msgid "Install pip"
-msgstr ""
+msgstr "安装 pip"
 
 #: ../../../install.rst:165
 msgid "If you don't have pip you can install it with wget:"
-msgstr ""
+msgstr "如果你没有 pip，你可以用 weget 安装它："
 
 #: ../../../install.rst:167
 msgid "wget https://bootstrap.pypa.io/get-pip.py -O - | python3"
-msgstr ""
+msgstr "wget https://bootstrap.pypa.io/get-pip.py -O - | python3"
 
 #: ../../../install.rst:171
 msgid "...or with curl:"
-msgstr ""
+msgstr "...或者通过 curl ："
 
 #: ../../../install.rst:173
 msgid "python3 < <(curl -s https://bootstrap.pypa.io/get-pip.py)"
-msgstr ""
+msgstr "python3 < <(curl -s https://bootstrap.pypa.io/get-pip.py)"
 
 #: ../../../install.rst:177
 msgid "On Windows, `download pip`_, open cmd.exe and install it with:"
-msgstr ""
+msgstr "在 Windows 上，`download pip`_, 打开 cmd.exe 并通过以下内容下载："
 
 #: ../../../install.rst:179
 msgid "py get-pip.py"
-msgstr ""
+msgstr "py get-pip.py"
 
 #: ../../../install.rst:184
 msgid "Permission errors (UNIX)"
-msgstr ""
+msgstr "权限错误 (UNIX)"
 
 #: ../../../install.rst:186
 msgid ""
 "If you want to install psutil system-wide and you bump into permission "
 "errors either run as root user or prepend ``sudo``:"
 msgstr ""
+"如果你想为整个系统安装 psutil 并且遇到了权限错误，请先以 root 用户的身份运行"
+"或添加 ``sudo`` ："
 
 #: ../../../install.rst:189
 msgid "sudo pip install psutil"
-msgstr ""
+msgstr "sudo pip install psutil"
