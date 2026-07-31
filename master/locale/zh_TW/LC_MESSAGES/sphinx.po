@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-21 07:42+0000\n"
+"POT-Creation-Date: 2026-07-27 11:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,6 +53,10 @@ msgstr ""
 
 #: ../../../_templates/breadcrumbs.html:24
 msgid "Subscribe (Atom feed)"
+msgstr ""
+
+#: ../../../_templates/comments.html:12
+msgid "Comments"
 msgstr ""
 
 #: ../../../_templates/footer.html:8

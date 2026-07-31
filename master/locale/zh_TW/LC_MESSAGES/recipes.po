@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-21 07:42+0000\n"
+"POT-Creation-Date: 2026-07-27 11:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -305,6 +305,11 @@ msgid ""
 "    assert pid != os.getpid(), \"I won't kill myself!\"\n"
 "    parent = psutil.Process(pid)\n"
 "    children = parent.children(recursive=True)\n"
+"    # Reverse the list so that descendants are killed before\n"
+"    # their ancestors (bottom-up order). ``children()`` returns\n"
+"    # processes in top-down order; reversing ensures a grandchild\n"
+"    # is terminated before its parent.\n"
+"    children.reverse()\n"
 "    if include_parent:\n"
 "        children.append(parent)\n"
 "    for p in children:\n"
@@ -318,13 +323,41 @@ msgid ""
 "    return (gone, alive)"
 msgstr ""
 
-#: ../../../recipes.rst:268
+#: ../../../recipes.rst:271
+msgid ""
+"On Unix, if you started the subprocess with ``subprocess.Popen`` you can "
+"often use the stdlib ``os.killpg()`` instead of this recipe. Create the "
+"process with ``process_group=0`` so that it gets its own process group, then "
+"call ``os.killpg(pgid, sig)``. This is simpler, does not require psutil, and "
+"still cleans up all descendants even when an intermediate process has "
+"exited::"
+msgstr ""
+
+#: ../../../recipes.rst:277
+msgid ""
+"import os\n"
+"import signal\n"
+"import subprocess\n"
+"\n"
+"proc = subprocess.Popen([\"cmd\", \"arg1\"], process_group=0)\n"
+"# ... later:\n"
+"os.killpg(proc.pid, signal.SIGTERM)"
+msgstr ""
+
+#: ../../../recipes.rst:285
+msgid ""
+"This approach does not work on Windows (``os.killpg`` is not available) and "
+"it only works for PIDs that you started yourself as a new process group. For "
+"arbitrary PIDs, use the psutil recipe above."
+msgstr ""
+
+#: ../../../recipes.rst:291
 msgid ""
 "Terminate a process gracefully, falling back to ``SIGKILL`` if it does not "
 "exit within the timeout:"
 msgstr ""
 
-#: ../../../recipes.rst:271
+#: ../../../recipes.rst:294
 msgid ""
 "import psutil\n"
 "\n"
@@ -337,11 +370,11 @@ msgid ""
 "        p.kill()"
 msgstr ""
 
-#: ../../../recipes.rst:285
+#: ../../../recipes.rst:308
 msgid "Temporarily pause and resume a process using a context manager:"
 msgstr ""
 
-#: ../../../recipes.rst:287
+#: ../../../recipes.rst:310
 msgid ""
 "import contextlib, psutil\n"
 "\n"
@@ -359,13 +392,13 @@ msgid ""
 "    pass  # process is paused here"
 msgstr ""
 
-#: ../../../recipes.rst:306
+#: ../../../recipes.rst:329
 msgid ""
 "CPU throttle: limit a process's CPU usage to a target percentage by "
 "alternating :meth:`Process.suspend` and :meth:`Process.resume`:"
 msgstr ""
 
-#: ../../../recipes.rst:309
+#: ../../../recipes.rst:332
 msgid ""
 "import time, psutil\n"
 "\n"
@@ -381,11 +414,11 @@ msgid ""
 "            p.resume()"
 msgstr ""
 
-#: ../../../recipes.rst:325
+#: ../../../recipes.rst:348
 msgid "Restart a process automatically if it dies:"
 msgstr ""
 
-#: ../../../recipes.rst:327
+#: ../../../recipes.rst:350
 msgid ""
 "import subprocess, time, psutil\n"
 "\n"
@@ -420,18 +453,18 @@ msgid ""
 "    watchdog([\"python3\", \"script.py\"])"
 msgstr ""
 
-#: ../../../recipes.rst:362
+#: ../../../recipes.rst:385
 msgid "System"
 msgstr ""
 
-#: ../../../recipes.rst:364
+#: ../../../recipes.rst:387
 msgid ""
 "All APIs returning amounts (memory, disk, network I/O) express them in "
 "bytes. This ``bytes2human()`` utility function used in the examples below "
 "converts them to a human-readable string:"
 msgstr ""
 
-#: ../../../recipes.rst:368
+#: ../../../recipes.rst:391
 msgid ""
 "def bytes2human(n):\n"
 "    \"\"\"\n"
@@ -451,15 +484,15 @@ msgid ""
 "    return \"{}B\".format(n)"
 msgstr ""
 
-#: ../../../recipes.rst:388
+#: ../../../recipes.rst:411
 msgid "CPU"
 msgstr ""
 
-#: ../../../recipes.rst:390
+#: ../../../recipes.rst:413
 msgid "Print real-time CPU usage percentage:"
 msgstr ""
 
-#: ../../../recipes.rst:392
+#: ../../../recipes.rst:415
 msgid ""
 "import psutil\n"
 "\n"
@@ -467,18 +500,18 @@ msgid ""
 "    print(\"CPU: {}%\".format(psutil.cpu_percent(interval=1)))"
 msgstr ""
 
-#: ../../../recipes.rst:399
+#: ../../../recipes.rst:422
 msgid ""
 "CPU: 2.1%\n"
 "CPU: 1.4%\n"
 "CPU: 0.9%"
 msgstr ""
 
-#: ../../../recipes.rst:406
+#: ../../../recipes.rst:429
 msgid "Memory"
 msgstr ""
 
-#: ../../../recipes.rst:410
+#: ../../../recipes.rst:433
 msgid ""
 "Show real-time swap activity *(Linux, BSD)*. ``sout`` (:term:`swap-out`) is "
 "the key metric: a non-zero and growing rate means the OS is moving memory "
@@ -488,7 +521,7 @@ msgid ""
 "term:`thrashing`)."
 msgstr ""
 
-#: ../../../recipes.rst:416
+#: ../../../recipes.rst:439
 msgid ""
 "import psutil, time\n"
 "\n"
@@ -504,21 +537,21 @@ msgid ""
 "        before = after"
 msgstr ""
 
-#: ../../../recipes.rst:431
+#: ../../../recipes.rst:454
 msgid ""
 "swap-in=0.0B/s  swap-out=0.0B/s  used=23%\n"
 "swap-in=0.0B/s  swap-out=1.2M/s  used=24%"
 msgstr ""
 
-#: ../../../recipes.rst:437
+#: ../../../recipes.rst:460
 msgid "Disks"
 msgstr "磁碟"
 
-#: ../../../recipes.rst:441
+#: ../../../recipes.rst:464
 msgid "Show real-time disk I/O:"
 msgstr ""
 
-#: ../../../recipes.rst:443
+#: ../../../recipes.rst:466
 msgid ""
 "import psutil, time\n"
 "\n"
@@ -533,17 +566,17 @@ msgid ""
 "bytes2human(w)))"
 msgstr ""
 
-#: ../../../recipes.rst:456
+#: ../../../recipes.rst:479
 msgid ""
 "Read: 1.2M/s, Write: 256.0K/s\n"
 "Read: 0.0B/s, Write: 128.0K/s"
 msgstr ""
 
-#: ../../../recipes.rst:465
+#: ../../../recipes.rst:488
 msgid "Show real-time disk utilization percentage *(Linux, FreeBSD)*:"
 msgstr ""
 
-#: ../../../recipes.rst:467
+#: ../../../recipes.rst:490
 msgid ""
 "import psutil, time\n"
 "\n"
@@ -557,21 +590,21 @@ msgid ""
 "        print(\"Disk: {:.1f}%\".format(util))"
 msgstr ""
 
-#: ../../../recipes.rst:480
+#: ../../../recipes.rst:503
 msgid ""
 "Disk: 3.2%\n"
 "Disk: 78.5%"
 msgstr ""
 
-#: ../../../recipes.rst:486
+#: ../../../recipes.rst:509
 msgid "Network"
 msgstr ""
 
-#: ../../../recipes.rst:488
+#: ../../../recipes.rst:511
 msgid "Show real-time network I/O per interface:"
 msgstr ""
 
-#: ../../../recipes.rst:490
+#: ../../../recipes.rst:513
 msgid ""
 "import psutil, time\n"
 "\n"
@@ -591,17 +624,17 @@ msgid ""
 "        print()"
 msgstr ""
 
-#: ../../../recipes.rst:509
+#: ../../../recipes.rst:532
 msgid ""
 "lo         sent=0.0B/s    recv=0.0B/s\n"
 "eth0       sent=12.3K/s   recv=45.6K/s"
 msgstr ""
 
-#: ../../../recipes.rst:516
+#: ../../../recipes.rst:539
 msgid "List all active TCP connections with their status:"
 msgstr ""
 
-#: ../../../recipes.rst:518
+#: ../../../recipes.rst:541
 msgid ""
 "import psutil\n"
 "\n"
@@ -618,7 +651,7 @@ msgid ""
 "        print(templ.format(laddr, raddr, conn.status, conn.pid or \"\"))"
 msgstr ""
 
-#: ../../../recipes.rst:534
+#: ../../../recipes.rst:557
 msgid ""
 "Local             Remote              Status        PID\n"
 ":::1716           -                   LISTEN        223441\n"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-21 07:42+0000\n"
+"POT-Creation-Date: 2026-07-27 11:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -208,14 +208,15 @@ msgstr ""
 msgid ""
 "New releases and deep-dives are written up on the :doc:`blog <blog>`. Blog "
 "provides a RSS feed (the icon at the top of the blog page) so you can "
-"receive notifications of new blog posts from your reader."
+"receive notifications of new blog posts from your reader + a commenting "
+"system provided by `giscus <https://giscus.app/>`_."
 msgstr ""
 
-#: ../../../about.rst:130
+#: ../../../about.rst:131
 msgid "Other internal optimizations"
 msgstr ""
 
-#: ../../../about.rst:132
+#: ../../../about.rst:133
 msgid ""
 "Fonts and icons are served directly from this site, not from third-party "
 "CDNs such as Google Fonts. This means the docs renders the same from all "
@@ -223,27 +224,27 @@ msgid ""
 "the site, keeping page weight small."
 msgstr ""
 
-#: ../../../about.rst:137
+#: ../../../about.rst:138
 msgid "Links to this site shared on social medias show rich preview cards."
 msgstr ""
 
-#: ../../../about.rst:139
+#: ../../../about.rst:140
 msgid ""
 "Every page declares a canonical URL and is listed in a generated ``sitemap."
 "xml``, so search engines can discover and index the whole site."
 msgstr ""
 
-#: ../../../about.rst:142
+#: ../../../about.rst:143
 msgid ""
 "The docs build is strict: Python code snippets are syntax-checked, and "
 "broken links or unresolved API cross-references make the build fail."
 msgstr ""
 
-#: ../../../about.rst:146
+#: ../../../about.rst:147
 msgid "Linking from your own docs"
 msgstr ""
 
-#: ../../../about.rst:148
+#: ../../../about.rst:149
 msgid ""
 "Other Sphinx projects can cross-reference psutil's API directly through the "
 "`intersphinx <https://www.sphinx-doc.org/en/master/usage/extensions/"
@@ -251,23 +252,23 @@ msgid ""
 "``conf.py``:"
 msgstr ""
 
-#: ../../../about.rst:152
+#: ../../../about.rst:153
 msgid ""
 "intersphinx_mapping = {\n"
 "    \"psutil\": (\"https://psutil.io/\", None),\n"
 "}"
 msgstr ""
 
-#: ../../../about.rst:158
+#: ../../../about.rst:159
 msgid ""
 "You can then reference any psutil object and it links straight here, e.g.:"
 msgstr ""
 
-#: ../../../about.rst:160
+#: ../../../about.rst:161
 msgid "See :func:`psutil.cpu_times` function."
 msgstr ""
 
-#: ../../../about.rst:164
+#: ../../../about.rst:165
 msgid ""
 "This will automatically turn ``psutil.cpu_times`` into a link pointing to "
 "this site."
