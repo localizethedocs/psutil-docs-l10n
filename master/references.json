@@ -37,9 +37,9 @@
     "branch" : "master",
     "commit" : 
     {
-      "date" : "2026-07-21 09:21:10 +0200",
-      "hash" : "a3f13a5edb137f5d41a037858affcbdb4d0d2409",
-      "title" : "Declare type hints for enum CONSTANTS"
+      "date" : "2026-07-27 13:11:20 +0200",
+      "hash" : "2e0369157d55e34e465fa7be54a48f70d102aa72",
+      "title" : "CI: use much faster macos-15-intel"
     }
   },
   "type" : "branch",
