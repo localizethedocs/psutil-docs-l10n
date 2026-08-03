@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-21 07:42+0000\n"
+"POT-Creation-Date: 2026-07-27 11:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -164,7 +164,7 @@ msgstr ""
 #: ../../../blog/2025/heap-introspection-apis.rst:86
 #: ../../../blog/2025/heap-introspection-apis.rst:89
 msgid "Windows"
-msgstr ""
+msgstr "Windows"
 
 #: ../../../blog/2025/heap-introspection-apis.rst:84
 msgid "``HeapAlloc()`` without ``HeapFree()``"

@@ -480,7 +480,7 @@ msgstr ""
 
 #: ../../../faq.rst:328
 msgid "Memory"
-msgstr ""
+msgstr "記憶體"
 
 #: ../../../faq.rst:333
 msgid "What is the difference between virtual_memory() available and free?"

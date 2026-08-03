@@ -404,7 +404,7 @@ msgstr ""
 
 #: ../../../api.rst:272
 msgid "Memory"
-msgstr ""
+msgstr "記憶體"
 
 #: ../../../api.rst:276
 msgid ""
@@ -507,22 +507,22 @@ msgstr ""
 
 #: ../../../api.rst:328
 msgid "Field"
-msgstr ""
+msgstr "欄位"
 
 #: ../../../api.rst:329 ../../../api.rst:1705 ../../../api.rst:1797
 #: ../../../api.rst:1932
 msgid "Linux"
-msgstr ""
+msgstr "Linux"
 
 #: ../../../api.rst:330 ../../../api.rst:1705 ../../../api.rst:1797
 msgid "macOS"
-msgstr ""
+msgstr "macOS"
 
 #: ../../../api.rst:331 ../../../api.rst:1705 ../../../api.rst:1797
 #: ../../../api.rst:1932 ../../../api.rst:2329 ../../../api.rst:2331
 #: ../../../api.rst:2333
 msgid "Windows"
-msgstr ""
+msgstr "Windows"
 
 #: ../../../api.rst:332 ../../../api.rst:1932
 msgid "FreeBSD"
@@ -1056,7 +1056,7 @@ msgstr ""
 
 #: ../../../api.rst:603
 msgid "Network"
-msgstr ""
+msgstr "網路"
 
 #: ../../../api.rst:607
 msgid ""
@@ -1609,7 +1609,7 @@ msgstr ""
 
 #: ../../../api.rst:914
 msgid "Other system info"
-msgstr ""
+msgstr "其他系統資訊"
 
 #: ../../../api.rst:918
 msgid ""
@@ -1683,7 +1683,7 @@ msgstr "進程"
 
 #: ../../../api.rst:962
 msgid "Functions"
-msgstr ""
+msgstr "函數"
 
 #: ../../../api.rst:966
 msgid ""
@@ -1930,7 +1930,7 @@ msgstr ""
 
 #: ../../../api.rst:1137
 msgid "Process class"
-msgstr ""
+msgstr "進程類別"
 
 #: ../../../api.rst:1141
 msgid ""

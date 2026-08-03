@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-21 07:42+0000\n"
+"POT-Creation-Date: 2026-07-27 11:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../adoption.rst:2
 msgid "Who uses psutil"
-msgstr ""
+msgstr "誰在使用 psutil"
 
 #: ../../../adoption.rst:8
 msgid ""
@@ -34,12 +34,12 @@ msgstr ""
 
 #: ../../../adoption.rst:17
 msgid "Infrastructure / automation"
-msgstr ""
+msgstr "基礎設施/自動化"
 
 #: ../../../adoption.rst:23 ../../../adoption.rst:63 ../../../adoption.rst:91
 #: ../../../adoption.rst:119
 msgid "Project"
-msgstr ""
+msgstr "專案"
 
 #: ../../../adoption.rst:24 ../../../adoption.rst:64 ../../../adoption.rst:92
 #: ../../../adoption.rst:120
@@ -82,7 +82,7 @@ msgstr ""
 
 #: ../../../adoption.rst:32
 msgid "IT automation platform"
-msgstr ""
+msgstr "IT 自動化平臺"
 
 #: ../../../adoption.rst:33
 msgid "|ansible-stars|"
@@ -185,7 +185,7 @@ msgstr ""
 
 #: ../../../adoption.rst:52
 msgid "Web-based server administration panel"
-msgstr ""
+msgstr "基於網頁的伺服器管理面板"
 
 #: ../../../adoption.rst:53
 msgid "|ajenti-stars|"
@@ -201,7 +201,7 @@ msgstr ""
 
 #: ../../../adoption.rst:57
 msgid "AI / machine learning"
-msgstr ""
+msgstr "AI/機器學習"
 
 #: ../../../adoption.rst:67
 msgid "`TensorFlow <https://github.com/tensorflow/tensorflow>`__"
@@ -221,7 +221,7 @@ msgstr ""
 
 #: ../../../adoption.rst:70
 msgid "unit tests"
-msgstr ""
+msgstr "單元測試"
 
 #: ../../../adoption.rst:71
 msgid "`PyTorch <https://github.com/pytorch/pytorch>`__"
@@ -269,7 +269,7 @@ msgstr ""
 
 #: ../../../adoption.rst:80
 msgid "AI/ML engineering platform"
-msgstr ""
+msgstr "AI/ML 工程平臺"
 
 #: ../../../adoption.rst:81
 msgid "|mlflow-stars|"
@@ -281,11 +281,11 @@ msgstr ""
 
 #: ../../../adoption.rst:82
 msgid "deep system monitoring integration"
-msgstr ""
+msgstr "深度系統監控整合"
 
 #: ../../../adoption.rst:85
 msgid "Developer tools"
-msgstr ""
+msgstr "開發者工具"
 
 #: ../../../adoption.rst:95
 msgid "`Sentry <https://github.com/getsentry/sentry>`__"
@@ -369,7 +369,7 @@ msgstr ""
 
 #: ../../../adoption.rst:113
 msgid "System monitoring"
-msgstr ""
+msgstr "系統監控"
 
 #: ../../../adoption.rst:123
 msgid "`Glances <https://github.com/nicolargo/glances>`__"
@@ -474,7 +474,7 @@ msgstr ""
 
 #: ../../../adoption.rst:144
 msgid "Apple Silicon performance monitoring CLI"
-msgstr ""
+msgstr "Apple Silicon 效能監控 CLI"
 
 #: ../../../adoption.rst:145
 msgid "|asitop-stars|"
@@ -576,7 +576,7 @@ msgstr ""
 msgid ""
 "Star counts are pulled dynamically from `shields.io <https://shields.io/>`__ "
 "badges."
-msgstr ""
+msgstr "星標數為動態擷取自 `shields.io <https://shields.io/>`__ 徽章。"
 
 #: ../../../adoption.rst:176
 msgid ""

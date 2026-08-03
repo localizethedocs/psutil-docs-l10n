@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-21 07:42+0000\n"
+"POT-Creation-Date: 2026-07-27 11:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,7 +53,7 @@ msgstr ""
 #: ../../../stdlib-equivalents.rst:228 ../../../stdlib-equivalents.rst:244
 #: ../../../stdlib-equivalents.rst:263
 msgid "psutil"
-msgstr ""
+msgstr "psutil"
 
 #: ../../../stdlib-equivalents.rst:26 ../../../stdlib-equivalents.rst:51
 #: ../../../stdlib-equivalents.rst:74 ../../../stdlib-equivalents.rst:90
@@ -71,11 +71,11 @@ msgstr ""
 #: ../../../stdlib-equivalents.rst:230 ../../../stdlib-equivalents.rst:246
 #: ../../../stdlib-equivalents.rst:265
 msgid "notes"
-msgstr ""
+msgstr "備註"
 
 #: ../../../stdlib-equivalents.rst:28 ../../../stdlib-equivalents.rst:33
 msgid ":func:`cpu_count`"
-msgstr ""
+msgstr ":func:`cpu_count`"
 
 #: ../../../stdlib-equivalents.rst:29
 msgid ":func:`os.cpu_count`, :func:`multiprocessing.cpu_count`"
@@ -89,7 +89,7 @@ msgstr ""
 
 #: ../../../stdlib-equivalents.rst:34
 msgid ":func:`os.process_cpu_count`"
-msgstr ""
+msgstr ":func:`os.process_cpu_count`"
 
 #: ../../../stdlib-equivalents.rst:35
 msgid ""
@@ -99,11 +99,11 @@ msgstr ""
 
 #: ../../../stdlib-equivalents.rst:38
 msgid ":func:`getloadavg`"
-msgstr ""
+msgstr ":func:`getloadavg`"
 
 #: ../../../stdlib-equivalents.rst:39
 msgid ":func:`os.getloadavg`"
-msgstr ""
+msgstr ":func:`os.getloadavg`"
 
 #: ../../../stdlib-equivalents.rst:40
 msgid "Same on POSIX; psutil also supports Windows."
@@ -115,11 +115,11 @@ msgstr ""
 
 #: ../../../stdlib-equivalents.rst:53
 msgid ":func:`disk_usage`"
-msgstr ""
+msgstr ":func:`disk_usage`"
 
 #: ../../../stdlib-equivalents.rst:54
 msgid ":func:`shutil.disk_usage`"
-msgstr ""
+msgstr ":func:`shutil.disk_usage`"
 
 #: ../../../stdlib-equivalents.rst:55
 msgid ""
@@ -129,7 +129,7 @@ msgstr ""
 
 #: ../../../stdlib-equivalents.rst:57
 msgid ":func:`disk_partitions`"
-msgstr ""
+msgstr ":func:`disk_partitions`"
 
 #: ../../../stdlib-equivalents.rst:58
 msgid ":func:`os.listdrives`, :func:`os.listmounts`, :func:`os.listvolumes`"
@@ -143,15 +143,15 @@ msgstr ""
 
 #: ../../../stdlib-equivalents.rst:66
 msgid "Network"
-msgstr ""
+msgstr "網路"
 
 #: ../../../stdlib-equivalents.rst:76
 msgid ":func:`net_if_addrs`"
-msgstr ""
+msgstr ":func:`net_if_addrs`"
 
 #: ../../../stdlib-equivalents.rst:77
 msgid ":func:`socket.if_nameindex`"
-msgstr ""
+msgstr ":func:`socket.if_nameindex`"
 
 #: ../../../stdlib-equivalents.rst:78
 msgid ""
@@ -165,7 +165,7 @@ msgstr ""
 
 #: ../../../stdlib-equivalents.rst:92
 msgid ":func:`pid_exists`"
-msgstr ""
+msgstr ":func:`pid_exists`"
 
 #: ../../../stdlib-equivalents.rst:93
 msgid "``os.kill(pid, 0)``"
@@ -177,7 +177,7 @@ msgstr ""
 
 #: ../../../stdlib-equivalents.rst:97
 msgid "Process methods"
-msgstr ""
+msgstr "進程方法"
 
 #: ../../../stdlib-equivalents.rst:99
 msgid "Assuming ``p = psutil.Process()``."
@@ -189,35 +189,35 @@ msgstr ""
 
 #: ../../../stdlib-equivalents.rst:112
 msgid ":meth:`p.pid <Process.pid>`"
-msgstr ""
+msgstr ":meth:`p.pid <Process.pid>`"
 
 #: ../../../stdlib-equivalents.rst:114
 msgid ":func:`os.getpid`"
-msgstr ""
+msgstr ":func:`os.getpid`"
 
 #: ../../../stdlib-equivalents.rst:116
 msgid ":meth:`p.ppid() <Process.ppid>`"
-msgstr ""
+msgstr ":meth:`p.ppid() <Process.ppid>`"
 
 #: ../../../stdlib-equivalents.rst:117
 msgid ":func:`os.getppid`"
-msgstr ""
+msgstr ":func:`os.getppid`"
 
 #: ../../../stdlib-equivalents.rst:119
 msgid ":meth:`p.cwd() <Process.cwd>`"
-msgstr ""
+msgstr ":meth:`p.cwd() <Process.cwd>`"
 
 #: ../../../stdlib-equivalents.rst:120
 msgid ":func:`os.getcwd`"
-msgstr ""
+msgstr ":func:`os.getcwd`"
 
 #: ../../../stdlib-equivalents.rst:122
 msgid ":meth:`p.environ() <Process.environ>`"
-msgstr ""
+msgstr ":meth:`p.environ() <Process.environ>`"
 
 #: ../../../stdlib-equivalents.rst:123
 msgid ":data:`os.environ`"
-msgstr ""
+msgstr ":data:`os.environ`"
 
 #: ../../../stdlib-equivalents.rst:124
 msgid "Will differ from launch environment if modified at runtime."
@@ -225,11 +225,11 @@ msgstr ""
 
 #: ../../../stdlib-equivalents.rst:125
 msgid ":meth:`p.exe() <Process.exe>`"
-msgstr ""
+msgstr ":meth:`p.exe() <Process.exe>`"
 
 #: ../../../stdlib-equivalents.rst:126
 msgid ":data:`sys.executable`"
-msgstr ""
+msgstr ":data:`sys.executable`"
 
 #: ../../../stdlib-equivalents.rst:127
 msgid "Python interpreter path only."
@@ -237,11 +237,11 @@ msgstr ""
 
 #: ../../../stdlib-equivalents.rst:128
 msgid ":meth:`p.cmdline() <Process.cmdline>`"
-msgstr ""
+msgstr ":meth:`p.cmdline() <Process.cmdline>`"
 
 #: ../../../stdlib-equivalents.rst:129
 msgid ":data:`sys.argv`"
-msgstr ""
+msgstr ":data:`sys.argv`"
 
 #: ../../../stdlib-equivalents.rst:130
 msgid "Python process only."
@@ -253,7 +253,7 @@ msgstr ""
 
 #: ../../../stdlib-equivalents.rst:143
 msgid ":meth:`p.uids() <Process.uids>`"
-msgstr ""
+msgstr ":meth:`p.uids() <Process.uids>`"
 
 #: ../../../stdlib-equivalents.rst:144
 msgid ":func:`os.getuid`, :func:`os.geteuid`, :func:`os.getresuid`"
@@ -378,7 +378,7 @@ msgstr ""
 
 #: ../../../stdlib-equivalents.rst:203
 msgid "Memory"
-msgstr ""
+msgstr "記憶體"
 
 #: ../../../stdlib-equivalents.rst:213
 msgid ":meth:`p.memory_info() <Process.memory_info>`"
@@ -494,7 +494,7 @@ msgstr ""
 
 #: ../../../stdlib-equivalents.rst:280
 msgid ":meth:`p.kill() <Process.kill>`"
-msgstr ""
+msgstr ":meth:`p.kill() <Process.kill>`"
 
 #: ../../../stdlib-equivalents.rst:281
 msgid ":func:`os.kill` + :data:`signal.SIGKILL`"

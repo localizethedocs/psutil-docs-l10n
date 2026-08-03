@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-21 07:42+0000\n"
+"POT-Creation-Date: 2026-07-27 11:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -116,7 +116,7 @@ msgstr ""
 
 #: ../../../platform.rst:24
 msgid "Operating systems"
-msgstr ""
+msgstr "作業系統"
 
 #: ../../../platform.rst:30
 msgid "Platform"
@@ -140,7 +140,7 @@ msgstr ""
 
 #: ../../../platform.rst:32
 msgid "Linux"
-msgstr ""
+msgstr "Linux"
 
 #: ../../../platform.rst:32
 msgid "2.6.13 (soft)"
@@ -156,7 +156,7 @@ msgstr ""
 
 #: ../../../platform.rst:33
 msgid "Windows"
-msgstr ""
+msgstr "Windows"
 
 #: ../../../platform.rst:33
 msgid "Vista"
@@ -172,7 +172,7 @@ msgstr ""
 
 #: ../../../platform.rst:34
 msgid "macOS"
-msgstr ""
+msgstr "macOS"
 
 #: ../../../platform.rst:34
 msgid "10.7 (Lion)"

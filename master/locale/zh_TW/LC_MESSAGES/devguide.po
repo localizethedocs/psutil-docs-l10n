@@ -91,7 +91,7 @@ msgstr ""
 
 #: ../../../devguide.rst:53
 msgid "Windows"
-msgstr ""
+msgstr "Windows"
 
 #: ../../../devguide.rst:55
 msgid "The recommended way to develop on Windows is to use ``make``."

@@ -2464,7 +2464,7 @@ msgstr ""
 
 #: writers/latex.py:1118 writers/manpage.py:258 writers/texinfo.py:663
 msgid "Footnotes"
-msgstr ""
+msgstr "腳註"
 
 #: writers/texinfo.py:1217
 msgid "caption not inside a figure."

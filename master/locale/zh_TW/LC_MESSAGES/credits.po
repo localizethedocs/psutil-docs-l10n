@@ -230,27 +230,27 @@ msgstr ""
 
 #: ../../../credits.rst:71
 msgid "Kahntent"
-msgstr ""
+msgstr "Kahntent"
 
 #: ../../../credits.rst:72
 msgid "Kristjan Võrk"
-msgstr ""
+msgstr "Kristjan Võrk"
 
 #: ../../../credits.rst:73
 msgid "Mahmut Dumlupinar"
-msgstr ""
+msgstr "Mahmut Dumlupinar"
 
 #: ../../../credits.rst:74
 msgid "Marco Schrank"
-msgstr ""
+msgstr "Marco Schrank"
 
 #: ../../../credits.rst:75
 msgid "Matthew Callow"
-msgstr ""
+msgstr "Matthew Callow"
 
 #: ../../../credits.rst:76
 msgid "Mindview LLC"
-msgstr ""
+msgstr "Mindview LLC"
 
 #: ../../../credits.rst:77
 msgid ":user:`Maximilian Wu <maxesisn>`"

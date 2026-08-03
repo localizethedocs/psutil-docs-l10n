@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-21 07:42+0000\n"
+"POT-Creation-Date: 2026-07-27 11:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -95,7 +95,7 @@ msgstr ""
 
 #: ../../../api-overview.rst:71 ../../../api-overview.rst:394
 msgid "Memory"
-msgstr ""
+msgstr "記憶體"
 
 #: ../../../api-overview.rst:73
 msgid ""
@@ -156,7 +156,7 @@ msgstr ""
 
 #: ../../../api-overview.rst:129
 msgid "Network"
-msgstr ""
+msgstr "網路"
 
 #: ../../../api-overview.rst:131
 msgid ""
@@ -269,7 +269,7 @@ msgstr ""
 
 #: ../../../api-overview.rst:238
 msgid "Other system info"
-msgstr ""
+msgstr "其他系統資訊"
 
 #: ../../../api-overview.rst:240
 msgid ""

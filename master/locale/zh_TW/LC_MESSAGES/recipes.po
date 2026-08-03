@@ -509,7 +509,7 @@ msgstr ""
 
 #: ../../../recipes.rst:429
 msgid "Memory"
-msgstr ""
+msgstr "記憶體"
 
 #: ../../../recipes.rst:433
 msgid ""
@@ -598,7 +598,7 @@ msgstr ""
 
 #: ../../../recipes.rst:509
 msgid "Network"
-msgstr ""
+msgstr "網路"
 
 #: ../../../recipes.rst:511
 msgid "Show real-time network I/O per interface:"
