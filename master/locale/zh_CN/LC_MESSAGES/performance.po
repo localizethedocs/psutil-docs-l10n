@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-27 11:50+0000\n"
+"POT-Creation-Date: 2026-08-12 07:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -134,159 +134,125 @@ msgstr ""
 
 #: ../../../performance.rst:96
 msgid ""
-"The table below lists methods that benefit from :meth:`Process.oneshot`, "
-"grouped by platform. Methods separated by an empty row share the same "
-"underlying system call. The *speedup* row estimates the gain when all listed "
-"methods are called together (best case), as measured by :src:`scripts/"
-"internal/bench_oneshot.py`."
+"Here's a list of method groups for each platform which can benefit from :"
+"meth:`Process.oneshot`. Methods in each group (in the same comma-separated "
+"list) share the same underlying system call."
 msgstr ""
 
-#: ../../../performance.rst:106
+#: ../../../performance.rst:100
+msgid ""
+"The *Speedup* represents the estimated gain when all listed methods are "
+"called together (best case), as measured by :src:`scripts/internal/"
+"bench_oneshot.py`."
+msgstr ""
+
+#: ../../../performance.rst:104
 msgid "Linux"
 msgstr ""
 
-#: ../../../performance.rst:107
+#: ../../../performance.rst:106
+msgid ""
+":meth:`~Process.cpu_num`, :meth:`~Process.cpu_percent`, :meth:`~Process."
+"cpu_times`, :meth:`~Process.create_time`, :meth:`~Process.name`, :meth:"
+"`~Process.page_faults`, :meth:`~Process.ppid`, :meth:`~Process.status`, :"
+"meth:`~Process.terminal`"
+msgstr ""
+
+#: ../../../performance.rst:111
+msgid ""
+":meth:`~Process.gids`, :meth:`~Process.memory_info_ex`, :meth:`~Process."
+"num_ctx_switches`, :meth:`~Process.num_threads`, :meth:`~Process.uids`, :"
+"meth:`~Process.username`"
+msgstr ""
+
+#: ../../../performance.rst:115
+msgid ":meth:`~Process.memory_footprint`, :meth:`~Process.memory_maps`"
+msgstr ""
+
+#: ../../../performance.rst:117
+msgid "*Speedup: +2.6×*"
+msgstr ""
+
+#: ../../../performance.rst:120
 msgid "Windows"
 msgstr ""
 
-#: ../../../performance.rst:108
+#: ../../../performance.rst:122
+msgid ""
+":meth:`~Process.cpu_percent`, :meth:`~Process.cpu_times`, :meth:`~Process."
+"io_counters`, :meth:`~Process.memory_info`, :meth:`~Process."
+"memory_info_ex`, :meth:`~Process.memory_percent`, :meth:`~Process."
+"num_ctx_switches`, :meth:`~Process.num_handles`, :meth:`~Process."
+"num_threads`, :meth:`~Process.page_faults`, :meth:`~Process.status`"
+msgstr ""
+
+#: ../../../performance.rst:129
+msgid ":meth:`~Process.exe`, :meth:`~Process.name`"
+msgstr ""
+
+#: ../../../performance.rst:131
+msgid ""
+"Some of these first try a faster dedicated call, and only use the shared one "
+"if it raises :exc:`AccessDenied`. The second figure is for such processes."
+msgstr ""
+
+#: ../../../performance.rst:134
+msgid "*Speedup: +1.8× / +6.5×*"
+msgstr ""
+
+#: ../../../performance.rst:137
 msgid "macOS"
 msgstr ""
 
-#: ../../../performance.rst:109
+#: ../../../performance.rst:139
+msgid ""
+":meth:`~Process.cpu_percent`, :meth:`~Process.cpu_times`, :meth:`~Process."
+"memory_info`, :meth:`~Process.memory_percent`, :meth:`~Process."
+"num_ctx_switches`, :meth:`~Process.num_threads`, :meth:`~Process.page_faults`"
+msgstr ""
+
+#: ../../../performance.rst:144
+msgid ""
+":meth:`~Process.create_time`, :meth:`~Process.gids`, :meth:`~Process.name`, :"
+"meth:`~Process.ppid`, :meth:`~Process.status`, :meth:`~Process.terminal`, :"
+"meth:`~Process.uids`, :meth:`~Process.username`"
+msgstr ""
+
+#: ../../../performance.rst:148
+msgid "*Speedup: +1.9×*"
+msgstr ""
+
+#: ../../../performance.rst:151
 msgid "BSD"
 msgstr ""
 
-#: ../../../performance.rst:110 ../../../performance.rst:113
-msgid ":meth:`~Process.cpu_num`"
-msgstr ""
-
-#: ../../../performance.rst:111 ../../../performance.rst:112
-#: ../../../performance.rst:114 ../../../performance.rst:117
-msgid ":meth:`~Process.cpu_percent`"
-msgstr ""
-
-#: ../../../performance.rst:115 ../../../performance.rst:116
-#: ../../../performance.rst:118 ../../../performance.rst:121
-msgid ":meth:`~Process.cpu_times`"
-msgstr ""
-
-#: ../../../performance.rst:119 ../../../performance.rst:133
-msgid ":meth:`~Process.io_counters`"
-msgstr ""
-
-#: ../../../performance.rst:120 ../../../performance.rst:123
-#: ../../../performance.rst:141
-msgid ":meth:`~Process.memory_info`"
-msgstr ""
-
-#: ../../../performance.rst:122 ../../../performance.rst:125
-#: ../../../performance.rst:140
-msgid ":meth:`~Process.create_time`"
-msgstr ""
-
-#: ../../../performance.rst:124 ../../../performance.rst:145
-msgid ":meth:`~Process.memory_percent`"
-msgstr ""
-
-#: ../../../performance.rst:126 ../../../performance.rst:137
-#: ../../../performance.rst:148 ../../../performance.rst:151
-msgid ":meth:`~Process.name`"
-msgstr ""
-
-#: ../../../performance.rst:127 ../../../performance.rst:154
-msgid ":meth:`~Process.memory_info_ex`"
-msgstr ""
-
-#: ../../../performance.rst:128 ../../../performance.rst:131
-#: ../../../performance.rst:149 ../../../performance.rst:158
-msgid ":meth:`~Process.num_ctx_switches`"
-msgstr ""
-
-#: ../../../performance.rst:129 ../../../performance.rst:144
-#: ../../../performance.rst:150
-msgid ":meth:`~Process.gids`"
-msgstr ""
-
-#: ../../../performance.rst:130
-msgid ":meth:`~Process.page_faults`"
-msgstr ""
-
-#: ../../../performance.rst:132 ../../../performance.rst:139
-#: ../../../performance.rst:162
-msgid ":meth:`~Process.num_threads`"
-msgstr ""
-
-#: ../../../performance.rst:134 ../../../performance.rst:152
 #: ../../../performance.rst:153
-msgid ":meth:`~Process.ppid`"
+msgid ""
+":meth:`~Process.cpu_num` , :meth:`~Process.cpu_percent`, :meth:`~Process."
+"cpu_times`, :meth:`~Process.create_time`, :meth:`~Process.gids`, :meth:"
+"`~Process.io_counters`, :meth:`~Process.memory_info`, :meth:`~Process."
+"memory_percent`, :meth:`~Process.name`, :meth:`~Process.nice`, :meth:"
+"`~Process.num_ctx_switches`, :meth:`~Process.page_faults`, :meth:`~Process."
+"ppid`, :meth:`~Process.status`, :meth:`~Process.terminal`, :meth:`~Process."
+"uids`, :meth:`~Process.username`"
 msgstr ""
 
-#: ../../../performance.rst:135
-msgid ":meth:`~Process.num_handles`"
+#: ../../../performance.rst:162
+msgid "*Speedup: +2.0×*"
 msgstr ""
 
-#: ../../../performance.rst:138 ../../../performance.rst:156
-#: ../../../performance.rst:157
-msgid ":meth:`~Process.status`"
-msgstr ""
-
-#: ../../../performance.rst:142 ../../../performance.rst:160
-#: ../../../performance.rst:161 ../../../performance.rst:164
-#: ../../../performance.rst:165
-msgid ":meth:`~Process.terminal`"
-msgstr ""
-
-#: ../../../performance.rst:147
-msgid ":meth:`~Process.exe`"
-msgstr ""
-
-#: ../../../performance.rst:166 ../../../performance.rst:168
-#: ../../../performance.rst:169
-msgid ":meth:`~Process.uids`"
-msgstr ""
-
-#: ../../../performance.rst:170 ../../../performance.rst:172
-#: ../../../performance.rst:173
-msgid ":meth:`~Process.username`"
-msgstr ""
-
-#: ../../../performance.rst:178
-msgid ":meth:`~Process.memory_footprint`"
-msgstr ""
-
-#: ../../../performance.rst:182
-msgid ":meth:`~Process.memory_maps`"
-msgstr ""
-
-#: ../../../performance.rst:186
-msgid "*speedup: +1.8x*"
-msgstr ""
-
-#: ../../../performance.rst:187
-msgid "*speedup: +1.8x / +6.5x*"
-msgstr ""
-
-#: ../../../performance.rst:188
-msgid "*speedup: +1.9x*"
-msgstr ""
-
-#: ../../../performance.rst:189
-msgid "*speedup: +2.0x*"
-msgstr ""
-
-#: ../../../performance.rst:194
+#: ../../../performance.rst:167
 msgid "Measuring oneshot() speedup"
 msgstr ""
 
-#: ../../../performance.rst:196
+#: ../../../performance.rst:169
 msgid ""
 ":src:`scripts/internal/bench_oneshot.py` measures :meth:`Process.oneshot` "
 "speedup. It also shows which APIs share the same internal kernel routines. E."
 "g. on Linux:"
 msgstr ""
 
-#: ../../../performance.rst:200
+#: ../../../performance.rst:173
 msgid ""
 "$ python3 scripts/internal/bench_oneshot.py --times 10000\n"
 "17 methods pre-fetched by oneshot() on platform 'linux' (10,000 times, "
@@ -315,18 +281,18 @@ msgid ""
 "speedup:  +1.80x"
 msgstr ""
 
-#: ../../../performance.rst:230
+#: ../../../performance.rst:203
 msgid "Measuring APIs speed"
 msgstr ""
 
-#: ../../../performance.rst:232
+#: ../../../performance.rst:205
 msgid ""
 ":src:`scripts/internal/print_api_speed.py` shows the relative cost of each "
 "API call. This helps you understand which operations are more expensive. E."
 "g. on Linux:"
 msgstr ""
 
-#: ../../../performance.rst:236
+#: ../../../performance.rst:209
 msgid ""
 "$ python3 scripts/internal/print_api_speed.py\n"
 "SYSTEM APIS                NUM CALLS      SECONDS\n"
