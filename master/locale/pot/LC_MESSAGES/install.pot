@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-27 11:50+0000\n"
+"POT-Creation-Date: 2026-08-12 07:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,8 +27,8 @@ msgstr ""
 
 #: ../../../install.rst:7
 msgid ""
-"Pre-compiled wheels are distributed for these platforms, so you usually "
-"won't need a C compiler. Install psutil with:"
+"Prebuilt wheels are distributed for these platforms, so a C compiler is not "
+"required. Install psutil with:"
 msgstr ""
 
 #: ../../../install.rst:10
@@ -36,249 +36,253 @@ msgid "pip install psutil"
 msgstr ""
 
 #: ../../../install.rst:14
-msgid "Or with `uv <https://docs.astral.sh/uv/>`_:"
-msgstr ""
-
-#: ../../../install.rst:16
-msgid "uv add psutil"
-msgstr ""
-
-#: ../../../install.rst:20
 msgid ""
-"If wheels are not available for your platform or architecture, or you wish "
-"to build & install psutil from sources, keep reading."
+"Inside a virtual environment you can also use `uv <https://docs.astral.sh/uv/"
+">`_:"
 msgstr ""
 
-#: ../../../install.rst:24
-msgid "Compile psutil from source"
+#: ../../../install.rst:17
+msgid "uv pip install psutil"
+msgstr ""
+
+#: ../../../install.rst:21
+msgid ""
+"If no wheel is available for your platform or architecture, pip will build "
+"psutil from source (see below)."
 msgstr ""
 
 #: ../../../install.rst:27
-msgid "UNIX"
+msgid "Build psutil from source"
 msgstr ""
 
 #: ../../../install.rst:29
 msgid ""
-"On all UNIX systems you can use the `install-sysdeps.sh`_ script. This will "
-"install the system dependencies necessary to compile psutil from sources. "
-"You can invoke this script from the Makefile as:"
+"Building psutil from source requires a C compiler and the Python development "
+"headers. On Linux, FreeBSD, NetBSD, OpenBSD and Solaris, the `install-"
+"sysdeps.sh`_ script can install them for you:"
 msgstr ""
 
 #: ../../../install.rst:33
-msgid "make install-sysdeps"
+msgid ""
+"curl -fsSL https://raw.githubusercontent.com/giampaolo/psutil/master/scripts/"
+"internal/install-sysdeps.sh | sh"
 msgstr ""
 
 #: ../../../install.rst:37
-msgid ""
-"After system deps are installed, you can compile and install psutil with:"
+msgid "Alternatively, install them manually as described below."
 msgstr ""
 
-#: ../../../install.rst:39 ../../../install.rst:99
+#: ../../../install.rst:40
+msgid "Linux"
+msgstr ""
+
+#: ../../../install.rst:42
+msgid "Debian / Ubuntu:"
+msgstr ""
+
+#: ../../../install.rst:44
+msgid "sudo apt-get install gcc python3-dev"
+msgstr ""
+
+#: ../../../install.rst:48
+msgid "Red Hat / CentOS:"
+msgstr ""
+
+#: ../../../install.rst:50
+msgid "sudo yum install gcc python3-devel"
+msgstr ""
+
+#: ../../../install.rst:54
+msgid "Fedora:"
+msgstr ""
+
+#: ../../../install.rst:56
+msgid "sudo dnf install gcc python3-devel"
+msgstr ""
+
+#: ../../../install.rst:60
+msgid "Arch:"
+msgstr ""
+
+#: ../../../install.rst:62
+msgid "sudo pacman -S gcc python"
+msgstr ""
+
+#: ../../../install.rst:66
+msgid "Alpine:"
+msgstr ""
+
+#: ../../../install.rst:68
+msgid "sudo apk add gcc python3-dev musl-dev linux-headers"
+msgstr ""
+
+#: ../../../install.rst:75
+msgid "Windows"
+msgstr ""
+
+#: ../../../install.rst:77
 msgid ""
+"To build psutil from source, install `Microsoft C++ Build Tools <https://"
+"visualstudio.microsoft.com/visual-cpp-build-tools/>`_ with the **Desktop "
+"development with C++** option selected."
+msgstr ""
+
+#: ../../../install.rst:80
+msgid "MinGW is not supported."
+msgstr ""
+
+#: ../../../install.rst:81
+msgid ""
+"To clone psutil's Git repository and build or develop it locally, first "
+"install `Git for Windows`_ and GNU Make. To install GNU Make, open "
+"PowerShell and run:"
+msgstr ""
+
+#: ../../../install.rst:85
+msgid "winget install --exact --id ezwinports.make"
+msgstr ""
+
+#: ../../../install.rst:89
+msgid "Close and reopen Git Bash, then follow :ref:`build_and_install`."
+msgstr ""
+
+#: ../../../install.rst:92
+msgid "macOS"
+msgstr ""
+
+#: ../../../install.rst:94
+msgid "Install the Xcode command line tools:"
+msgstr ""
+
+#: ../../../install.rst:96
+msgid "xcode-select --install"
+msgstr ""
+
+#: ../../../install.rst:101
+msgid "FreeBSD"
+msgstr ""
+
+#: ../../../install.rst:103
+msgid "pkg install python3"
+msgstr ""
+
+#: ../../../install.rst:108
+msgid "OpenBSD"
+msgstr ""
+
+#: ../../../install.rst:110
+msgid ""
+"export PKG_PATH=https://cdn.openbsd.org/pub/OpenBSD/`uname -r`/packages/"
+"`uname -m`/\n"
+"pkg_add -v python%3"
+msgstr ""
+
+#: ../../../install.rst:116
+msgid "NetBSD"
+msgstr ""
+
+#: ../../../install.rst:118
+msgid ""
+"pkgsrc has no version-agnostic python3 package, so choose one of the "
+"available Python 3 versions. For example:"
+msgstr ""
+
+#: ../../../install.rst:121
+msgid ""
+"export PKG_PATH=\"https://cdn.netbsd.org/pub/pkgsrc/packages/NetBSD/`uname -"
+"m`/`uname -r`/All\"\n"
+"pkg_add -v pkgin\n"
+"pkgin update\n"
+"pkgin install python314"
+msgstr ""
+
+#: ../../../install.rst:129
+msgid "Solaris"
+msgstr ""
+
+#: ../../../install.rst:131
+msgid "pkg install developer/gcc"
+msgstr ""
+
+#: ../../../install.rst:135
+msgid ""
+"If ``cc`` is unavailable, set ``CC=gcc`` when running the commands in :ref:"
+"`build_and_install`."
+msgstr ""
+
+#: ../../../install.rst:139
+msgid "AIX"
+msgstr ""
+
+#: ../../../install.rst:141
+msgid ""
+"``install-sysdeps.sh`` has no AIX branch. Install a C compiler and the "
+"Python development headers from the `AIX Toolbox`_."
+msgstr ""
+
+#: ../../../install.rst:147
+msgid "Build and install"
+msgstr ""
+
+#: ../../../install.rst:149
+msgid "To build and install psutil from a Git checkout:"
+msgstr ""
+
+#: ../../../install.rst:151
+msgid ""
+"git clone https://github.com/giampaolo/psutil.git\n"
+"cd psutil\n"
+"make install-sysdeps\n"
 "make build\n"
 "make install"
 msgstr ""
 
-#: ../../../install.rst:44
+#: ../../../install.rst:161
 msgid ""
-"...or this, which will fetch the latest source distribution from `PyPI`_:"
+"By default C source files are compiled in parallel, one job per CPU, which "
+"makes building from source 2x to 3.6x faster. Use :envvar:"
+"`PSUTIL_BUILD_JOBS` to change the number of jobs."
 msgstr ""
 
-#: ../../../install.rst:46 ../../../install.rst:90
-msgid "pip install --no-binary :all: psutil"
-msgstr ""
-
-#: ../../../install.rst:51
-msgid "Linux"
-msgstr ""
-
-#: ../../../install.rst:53
-msgid "Debian / Ubuntu:"
-msgstr ""
-
-#: ../../../install.rst:55
-msgid ""
-"sudo apt install gcc python3-dev\n"
-"pip install --no-binary :all: psutil"
-msgstr ""
-
-#: ../../../install.rst:60
-msgid "RedHat / CentOS:"
-msgstr ""
-
-#: ../../../install.rst:62
-msgid ""
-"sudo yum install gcc python3-devel\n"
-"pip install --no-binary :all: psutil"
-msgstr ""
-
-#: ../../../install.rst:67
-msgid "Arch:"
-msgstr ""
-
-#: ../../../install.rst:69
-msgid ""
-"sudo pacman -S gcc python\n"
-"pip install --no-binary :all: psutil"
-msgstr ""
-
-#: ../../../install.rst:74
-msgid "Alpine:"
-msgstr ""
-
-#: ../../../install.rst:76
-msgid ""
-"sudo apk add gcc python3-dev musl-dev linux-headers\n"
-"pip install --no-binary :all: psutil"
-msgstr ""
-
-#: ../../../install.rst:82
-msgid "Windows"
-msgstr ""
-
-#: ../../../install.rst:84
-msgid ""
-"To build or install psutil from source on Windows, you need to have `Visual "
-"Studio 2017`_ or later installed. For detailed instructions, see the "
-"`CPython Developer Guide`_."
-msgstr ""
-
-#: ../../../install.rst:87
-msgid "MinGW is not supported for building psutil on Windows."
-msgstr ""
-
-#: ../../../install.rst:88
-msgid "To build directly from the source tarball (.tar.gz) on PYPI, run:"
-msgstr ""
-
-#: ../../../install.rst:94
-msgid ""
-"If you want to clone psutil's Git repository and build / develop locally, "
-"first install `Git for Windows`_ and launch a Git Bash shell. This provides "
-"a Unix-like environment where ``make`` works."
-msgstr ""
-
-#: ../../../install.rst:97
-msgid "Once inside Git Bash, you can run the usual ``make`` commands:"
-msgstr ""
-
-#: ../../../install.rst:105
-msgid "macOS"
-msgstr ""
-
-#: ../../../install.rst:107
-msgid "Install Xcode first:"
-msgstr ""
-
-#: ../../../install.rst:109
-msgid ""
-"xcode-select --install\n"
-"pip install --no-binary :all: psutil"
-msgstr ""
-
-#: ../../../install.rst:115
-msgid "FreeBSD"
-msgstr ""
-
-#: ../../../install.rst:117
-msgid ""
-"pkg install python3 gcc\n"
-"python3 -m pip install psutil"
-msgstr ""
-
-#: ../../../install.rst:123
-msgid "OpenBSD"
-msgstr ""
-
-#: ../../../install.rst:125
-msgid ""
-"export PKG_PATH=https://cdn.openbsd.org/pub/OpenBSD/`uname -r`/packages/"
-"`uname -m`/\n"
-"pkg_add -v python3 gcc\n"
-"pip install psutil"
-msgstr ""
-
-#: ../../../install.rst:132
-msgid "NetBSD"
-msgstr ""
-
-#: ../../../install.rst:134
-msgid "Assuming Python 3.11:"
-msgstr ""
-
-#: ../../../install.rst:136
-msgid ""
-"export PKG_PATH=\"https://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/`uname -"
-"m`/`uname -r`/All\"\n"
-"pkg_add -v pkgin\n"
-"pkgin install python311-* gcc12-* py311-setuptools-* py311-pip-*\n"
-"python3.11 -m pip install psutil"
-msgstr ""
-
-#: ../../../install.rst:144
-msgid "Sun Solaris"
-msgstr ""
-
-#: ../../../install.rst:146
-msgid "If ``cc`` compiler is not installed create a symbolic link to ``gcc``:"
-msgstr ""
-
-#: ../../../install.rst:148
-msgid "sudo ln -s /usr/bin/gcc /usr/local/bin/cc"
-msgstr ""
-
-#: ../../../install.rst:152
-msgid "Install:"
-msgstr ""
-
-#: ../../../install.rst:154
-msgid ""
-"pkg install gcc\n"
-"pip install psutil"
-msgstr ""
-
-#: ../../../install.rst:160
+#: ../../../install.rst:166
 msgid "Troubleshooting"
 msgstr ""
 
-#: ../../../install.rst:163
+#: ../../../install.rst:169
 msgid "Install pip"
 msgstr ""
 
-#: ../../../install.rst:165
-msgid "If you don't have pip you can install it with wget:"
-msgstr ""
-
-#: ../../../install.rst:167
-msgid "wget https://bootstrap.pypa.io/get-pip.py -O - | python3"
-msgstr ""
-
 #: ../../../install.rst:171
-msgid "...or with curl:"
+msgid "Python installations normally include pip. If it is missing, first try:"
 msgstr ""
 
 #: ../../../install.rst:173
-msgid "python3 < <(curl -s https://bootstrap.pypa.io/get-pip.py)"
+msgid "python3 -m ensurepip --upgrade"
 msgstr ""
 
 #: ../../../install.rst:177
-msgid "On Windows, `download pip`_, open cmd.exe and install it with:"
-msgstr ""
-
-#: ../../../install.rst:179
-msgid "py get-pip.py"
-msgstr ""
-
-#: ../../../install.rst:184
-msgid "Permission errors (UNIX)"
-msgstr ""
-
-#: ../../../install.rst:186
 msgid ""
-"If you want to install psutil system-wide and you bump into permission "
-"errors either run as root user or prepend ``sudo``:"
+"Some OS-packaged Python installations do not include ``ensurepip``. There, "
+"either install the pip package or download `get-pip.py`_ and run:"
 msgstr ""
 
-#: ../../../install.rst:189
-msgid "sudo pip install psutil"
+#: ../../../install.rst:180
+msgid "python3 get-pip.py"
+msgstr ""
+
+#: ../../../install.rst:185
+msgid "Permission errors"
+msgstr ""
+
+#: ../../../install.rst:187
+msgid ""
+"If you encounter permission errors, install psutil inside a virtual "
+"environment instead of modifying the system Python installation:"
+msgstr ""
+
+#: ../../../install.rst:190
+msgid ""
+"python3 -m venv .venv\n"
+"source .venv/bin/activate\n"
+"python -m pip install psutil"
 msgstr ""
