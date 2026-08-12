@@ -254,19 +254,14 @@ elseif (CMAKE_HOST_WIN32)
 else()
     message(FATAL_ERROR "Invalid OS platform. (${CMAKE_HOST_SYSTEM_NAME})")
 endif()
-set(REQUIREMENTS_TXT_PATH "${PROJ_OUT_REPO_DIR}/docs/requirements.txt")
-file(READ "${REQUIREMENTS_TXT_PATH}" REQUIREMENTS_TXT_CNT)
 remove_cmake_message_indent()
-message("")
-message("${REQUIREMENTS_TXT_PATH}")
-message("${REQUIREMENTS_TXT_CNT}")
 message("")
 execute_process(
     COMMAND ${CMAKE_COMMAND} -E env
             ${ENV_VARS_OF_SYSTEM}
             ${Python_EXECUTABLE} -m pip install
             .
-            --requirement=${REQUIREMENTS_TXT_PATH}
+            --group docs
             --progress-bar=off
             --verbose
     WORKING_DIRECTORY ${PROJ_OUT_REPO_DIR}
