@@ -37,9 +37,9 @@
     "branch" : "master",
     "commit" : 
     {
-      "date" : "2026-07-27 13:11:20 +0200",
-      "hash" : "2e0369157d55e34e465fa7be54a48f70d102aa72",
-      "title" : "CI: use much faster macos-15-intel"
+      "date" : "2026-08-12 00:37:22 +0200",
+      "hash" : "51aa68e2a6035b696485a0aa0ed8e2ca96c101df",
+      "title" : "Add label_role.py sphinx ext + update model in changelog bot"
     }
   },
   "type" : "branch",
