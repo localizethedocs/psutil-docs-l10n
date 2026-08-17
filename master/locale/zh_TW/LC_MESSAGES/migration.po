@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-12 07:48+0000\n"
+"POT-Creation-Date: 2026-08-17 09:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -492,279 +492,185 @@ msgid ""
 "        print(p.pid, p.name())"
 msgstr ""
 
-#: ../../../migration.rst:327
-msgid "Migrating to 5.0"
-msgstr "遷移至 5.0"
-
-#: ../../../migration.rst:329
-msgid ""
-"5.0.0 introduced the largest API renaming in psutil history. All ``get_*`` "
-"and ``set_*`` :class:`Process` methods lost their prefix, and several module-"
-"level names were changed."
-msgstr ""
-
-#: ../../../migration.rst:333
-msgid ""
-"The old :class:`Process` method names continued to work with :exc:"
-"`DeprecationWarning` until they were removed in 6.0."
-msgstr ""
-
-#: ../../../migration.rst:337
-msgid "Process methods"
-msgstr "進程方法"
-
-#: ../../../migration.rst:343 ../../../migration.rst:397
-msgid "Old (< 5.0)"
-msgstr ""
-
-#: ../../../migration.rst:344 ../../../migration.rst:398
-msgid "New (>= 5.0)"
-msgstr ""
-
-#: ../../../migration.rst:345
-msgid "``p.get_children()``"
-msgstr "``p.get_children()``"
-
-#: ../../../migration.rst:346
-msgid "``p.children()``"
-msgstr "``p.children()``"
-
-#: ../../../migration.rst:347
-msgid "``p.get_connections()``"
-msgstr "``p.get_connections()``"
-
-#: ../../../migration.rst:348
-msgid "``p.connections()`` → ``p.net_connections()`` in 6.0"
-msgstr ""
-
-#: ../../../migration.rst:349
-msgid "``p.get_cpu_affinity()``"
-msgstr "``p.get_cpu_affinity()``"
-
-#: ../../../migration.rst:350
-msgid "``p.cpu_affinity()``"
-msgstr "``p.cpu_affinity()``"
-
-#: ../../../migration.rst:351
-msgid "``p.get_cpu_percent()``"
-msgstr "``p.get_cpu_percent()``"
-
-#: ../../../migration.rst:352
-msgid "``p.cpu_percent()``"
-msgstr "``p.cpu_percent()``"
-
-#: ../../../migration.rst:353
-msgid "``p.get_cpu_times()``"
-msgstr "``p.get_cpu_times()``"
-
-#: ../../../migration.rst:354
-msgid "``p.cpu_times()``"
-msgstr "``p.cpu_times()``"
-
-#: ../../../migration.rst:355
-msgid "``p.get_ext_memory_info()``"
-msgstr "``p.get_ext_memory_info()``"
-
-#: ../../../migration.rst:356
-msgid "``p.memory_info_ex()`` → ``p.memory_full_info()`` in 4.0"
-msgstr ""
-
-#: ../../../migration.rst:357
-msgid "``p.get_io_counters()``"
-msgstr "``p.get_io_counters()``"
-
-#: ../../../migration.rst:358
-msgid "``p.io_counters()``"
-msgstr "``p.io_counters()``"
-
-#: ../../../migration.rst:359
-msgid "``p.get_ionice()``"
-msgstr "``p.get_ionice()``"
-
-#: ../../../migration.rst:360
-msgid "``p.ionice()``"
-msgstr "``p.ionice()``"
-
-#: ../../../migration.rst:361
-msgid "``p.get_memory_info()``"
-msgstr "``p.get_memory_info()``"
-
-#: ../../../migration.rst:362
-msgid "``p.memory_info()``"
-msgstr "``p.memory_info()``"
-
-#: ../../../migration.rst:363
-msgid "``p.get_memory_maps()``"
-msgstr "``p.get_memory_maps()``"
+#~ msgid "Migrating to 5.0"
+#~ msgstr "遷移至 5.0"
 
-#: ../../../migration.rst:364
-msgid "``p.memory_maps()``"
-msgstr "``p.memory_maps()``"
+#~ msgid "Process methods"
+#~ msgstr "進程方法"
 
-#: ../../../migration.rst:365
-msgid "``p.get_memory_percent()``"
-msgstr "``p.get_memory_percent()``"
+#~ msgid "``p.get_children()``"
+#~ msgstr "``p.get_children()``"
 
-#: ../../../migration.rst:366
-msgid "``p.memory_percent()``"
-msgstr "``p.memory_percent()``"
+#~ msgid "``p.children()``"
+#~ msgstr "``p.children()``"
 
-#: ../../../migration.rst:367
-msgid "``p.get_nice()``"
-msgstr "``p.get_nice()``"
+#~ msgid "``p.get_connections()``"
+#~ msgstr "``p.get_connections()``"
 
-#: ../../../migration.rst:368
-msgid "``p.nice()``"
-msgstr "``p.nice()``"
+#~ msgid "``p.get_cpu_affinity()``"
+#~ msgstr "``p.get_cpu_affinity()``"
 
-#: ../../../migration.rst:369
-msgid "``p.get_num_ctx_switches()``"
-msgstr "``p.get_num_ctx_switches()``"
+#~ msgid "``p.cpu_affinity()``"
+#~ msgstr "``p.cpu_affinity()``"
 
-#: ../../../migration.rst:370
-msgid "``p.num_ctx_switches()``"
-msgstr "``p.num_ctx_switches()``"
+#~ msgid "``p.get_cpu_percent()``"
+#~ msgstr "``p.get_cpu_percent()``"
 
-#: ../../../migration.rst:371
-msgid "``p.get_num_fds()``"
-msgstr "``p.get_num_fds()``"
+#~ msgid "``p.cpu_percent()``"
+#~ msgstr "``p.cpu_percent()``"
 
-#: ../../../migration.rst:372
-msgid "``p.num_fds()``"
-msgstr "``p.num_fds()``"
+#~ msgid "``p.get_cpu_times()``"
+#~ msgstr "``p.get_cpu_times()``"
 
-#: ../../../migration.rst:373
-msgid "``p.get_num_threads()``"
-msgstr "``p.get_num_threads()``"
+#~ msgid "``p.cpu_times()``"
+#~ msgstr "``p.cpu_times()``"
 
-#: ../../../migration.rst:374
-msgid "``p.num_threads()``"
-msgstr "``p.num_threads()``"
+#~ msgid "``p.get_ext_memory_info()``"
+#~ msgstr "``p.get_ext_memory_info()``"
 
-#: ../../../migration.rst:375
-msgid "``p.get_open_files()``"
-msgstr "``p.get_open_files()``"
+#~ msgid "``p.get_io_counters()``"
+#~ msgstr "``p.get_io_counters()``"
 
-#: ../../../migration.rst:376
-msgid "``p.open_files()``"
-msgstr "``p.open_files()``"
+#~ msgid "``p.io_counters()``"
+#~ msgstr "``p.io_counters()``"
 
-#: ../../../migration.rst:377
-msgid "``p.get_rlimit()``"
-msgstr "``p.get_rlimit()``"
+#~ msgid "``p.get_ionice()``"
+#~ msgstr "``p.get_ionice()``"
 
-#: ../../../migration.rst:378
-msgid "``p.rlimit()``"
-msgstr "``p.rlimit()``"
+#~ msgid "``p.ionice()``"
+#~ msgstr "``p.ionice()``"
 
-#: ../../../migration.rst:379
-msgid "``p.get_threads()``"
-msgstr "``p.get_threads()``"
+#~ msgid "``p.get_memory_info()``"
+#~ msgstr "``p.get_memory_info()``"
 
-#: ../../../migration.rst:380
-msgid "``p.threads()``"
-msgstr "``p.threads()``"
+#~ msgid "``p.memory_info()``"
+#~ msgstr "``p.memory_info()``"
 
-#: ../../../migration.rst:381
-msgid "``p.getcwd()``"
-msgstr "``p.getcwd()``"
+#~ msgid "``p.get_memory_maps()``"
+#~ msgstr "``p.get_memory_maps()``"
 
-#: ../../../migration.rst:382
-msgid "``p.cwd()``"
-msgstr "``p.cwd()``"
+#~ msgid "``p.memory_maps()``"
+#~ msgstr "``p.memory_maps()``"
 
-#: ../../../migration.rst:383
-msgid "``p.set_nice(v)``"
-msgstr "``p.set_nice(v)``"
+#~ msgid "``p.get_memory_percent()``"
+#~ msgstr "``p.get_memory_percent()``"
 
-#: ../../../migration.rst:384
-msgid "``p.nice(v)``"
-msgstr "``p.nice(v)``"
+#~ msgid "``p.memory_percent()``"
+#~ msgstr "``p.memory_percent()``"
 
-#: ../../../migration.rst:385
-msgid "``p.set_ionice(cls)``"
-msgstr "``p.set_ionice(cls)``"
+#~ msgid "``p.get_nice()``"
+#~ msgstr "``p.get_nice()``"
 
-#: ../../../migration.rst:386
-msgid "``p.ionice(cls)``"
-msgstr "``p.ionice(cls)``"
+#~ msgid "``p.nice()``"
+#~ msgstr "``p.nice()``"
 
-#: ../../../migration.rst:387
-msgid "``p.set_cpu_affinity(cpus)``"
-msgstr "``p.set_cpu_affinity(cpus)``"
+#~ msgid "``p.get_num_ctx_switches()``"
+#~ msgstr "``p.get_num_ctx_switches()``"
 
-#: ../../../migration.rst:388
-msgid "``p.cpu_affinity(cpus)``"
-msgstr "``p.cpu_affinity(cpus)``"
+#~ msgid "``p.num_ctx_switches()``"
+#~ msgstr "``p.num_ctx_switches()``"
 
-#: ../../../migration.rst:391
-msgid "Module-level renames"
-msgstr ""
+#~ msgid "``p.get_num_fds()``"
+#~ msgstr "``p.get_num_fds()``"
 
-#: ../../../migration.rst:399
-msgid "``psutil.NUM_CPUS``"
-msgstr "``psutil.NUM_CPUS``"
+#~ msgid "``p.num_fds()``"
+#~ msgstr "``p.num_fds()``"
 
-#: ../../../migration.rst:400
-msgid "``psutil.cpu_count()``"
-msgstr "``psutil.cpu_count()``"
+#~ msgid "``p.get_num_threads()``"
+#~ msgstr "``p.get_num_threads()``"
 
-#: ../../../migration.rst:401
-msgid "``psutil.BOOT_TIME``"
-msgstr "``psutil.BOOT_TIME``"
+#~ msgid "``p.num_threads()``"
+#~ msgstr "``p.num_threads()``"
 
-#: ../../../migration.rst:402 ../../../migration.rst:410
-msgid "``psutil.boot_time()``"
-msgstr "``psutil.boot_time()``"
+#~ msgid "``p.get_open_files()``"
+#~ msgstr "``p.get_open_files()``"
 
-#: ../../../migration.rst:403
-msgid "``psutil.TOTAL_PHYMEM``"
-msgstr "``psutil.TOTAL_PHYMEM``"
+#~ msgid "``p.open_files()``"
+#~ msgstr "``p.open_files()``"
 
-#: ../../../migration.rst:404
-msgid "``psutil.virtual_memory().total``"
-msgstr "``psutil.virtual_memory().total``"
+#~ msgid "``p.get_rlimit()``"
+#~ msgstr "``p.get_rlimit()``"
 
-#: ../../../migration.rst:405
-msgid "``psutil.get_pid_list()``"
-msgstr "``psutil.get_pid_list()``"
+#~ msgid "``p.rlimit()``"
+#~ msgstr "``p.rlimit()``"
 
-#: ../../../migration.rst:406
-msgid "``psutil.pids()``"
-msgstr "``psutil.pids()``"
+#~ msgid "``p.get_threads()``"
+#~ msgstr "``p.get_threads()``"
 
-#: ../../../migration.rst:407
-msgid "``psutil.get_users()``"
-msgstr "``psutil.get_users()``"
+#~ msgid "``p.threads()``"
+#~ msgstr "``p.threads()``"
 
-#: ../../../migration.rst:408
-msgid "``psutil.users()``"
-msgstr "``psutil.users()``"
+#~ msgid "``p.getcwd()``"
+#~ msgstr "``p.getcwd()``"
 
-#: ../../../migration.rst:409
-msgid "``psutil.get_boot_time()``"
-msgstr "``psutil.get_boot_time()``"
+#~ msgid "``p.cwd()``"
+#~ msgstr "``p.cwd()``"
 
-#: ../../../migration.rst:411
-msgid "``psutil.network_io_counters()``"
-msgstr "``psutil.network_io_counters()``"
+#~ msgid "``p.set_nice(v)``"
+#~ msgstr "``p.set_nice(v)``"
 
-#: ../../../migration.rst:412
-msgid "``psutil.net_io_counters()``"
-msgstr "``psutil.net_io_counters()``"
+#~ msgid "``p.nice(v)``"
+#~ msgstr "``p.nice(v)``"
 
-#: ../../../migration.rst:413
-msgid "``psutil.phymem_usage()``"
-msgstr "``psutil.phymem_usage()``"
+#~ msgid "``p.set_ionice(cls)``"
+#~ msgstr "``p.set_ionice(cls)``"
 
-#: ../../../migration.rst:414
-msgid "``psutil.virtual_memory()``"
-msgstr "``psutil.virtual_memory()``"
+#~ msgid "``p.ionice(cls)``"
+#~ msgstr "``p.ionice(cls)``"
 
-#: ../../../migration.rst:415
-msgid "``psutil.virtmem_usage()``"
-msgstr "``psutil.virtmem_usage()``"
+#~ msgid "``p.set_cpu_affinity(cpus)``"
+#~ msgstr "``p.set_cpu_affinity(cpus)``"
 
-#: ../../../migration.rst:416
-msgid "``psutil.swap_memory()``"
-msgstr "``psutil.swap_memory()``"
+#~ msgid "``p.cpu_affinity(cpus)``"
+#~ msgstr "``p.cpu_affinity(cpus)``"
+
+#~ msgid "``psutil.NUM_CPUS``"
+#~ msgstr "``psutil.NUM_CPUS``"
+
+#~ msgid "``psutil.cpu_count()``"
+#~ msgstr "``psutil.cpu_count()``"
+
+#~ msgid "``psutil.BOOT_TIME``"
+#~ msgstr "``psutil.BOOT_TIME``"
+
+#~ msgid "``psutil.boot_time()``"
+#~ msgstr "``psutil.boot_time()``"
+
+#~ msgid "``psutil.TOTAL_PHYMEM``"
+#~ msgstr "``psutil.TOTAL_PHYMEM``"
+
+#~ msgid "``psutil.virtual_memory().total``"
+#~ msgstr "``psutil.virtual_memory().total``"
+
+#~ msgid "``psutil.get_pid_list()``"
+#~ msgstr "``psutil.get_pid_list()``"
+
+#~ msgid "``psutil.pids()``"
+#~ msgstr "``psutil.pids()``"
+
+#~ msgid "``psutil.get_users()``"
+#~ msgstr "``psutil.get_users()``"
+
+#~ msgid "``psutil.users()``"
+#~ msgstr "``psutil.users()``"
+
+#~ msgid "``psutil.get_boot_time()``"
+#~ msgstr "``psutil.get_boot_time()``"
+
+#~ msgid "``psutil.network_io_counters()``"
+#~ msgstr "``psutil.network_io_counters()``"
+
+#~ msgid "``psutil.net_io_counters()``"
+#~ msgstr "``psutil.net_io_counters()``"
+
+#~ msgid "``psutil.phymem_usage()``"
+#~ msgstr "``psutil.phymem_usage()``"
+
+#~ msgid "``psutil.virtual_memory()``"
+#~ msgstr "``psutil.virtual_memory()``"
+
+#~ msgid "``psutil.virtmem_usage()``"
+#~ msgstr "``psutil.virtmem_usage()``"
+
+#~ msgid "``psutil.swap_memory()``"
+#~ msgstr "``psutil.swap_memory()``"

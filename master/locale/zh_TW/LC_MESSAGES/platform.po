@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-12 07:48+0000\n"
+"POT-Creation-Date: 2026-08-17 09:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -142,7 +142,7 @@ msgstr ""
 msgid "CI coverage"
 msgstr ""
 
-#: ../../../platform.rst:54
+#: ../../../platform.rst:54 ../../../platform.rst:119 ../../../platform.rst:123
 msgid "Linux"
 msgstr "Linux"
 
@@ -282,301 +282,311 @@ msgid "aarch64 / ARM64"
 msgstr ""
 
 #: ../../../platform.rst:117
-msgid "i686"
+msgid "ppc64le"
 msgstr ""
 
-#: ../../../platform.rst:120 ../../../platform.rst:124
-#: ../../../platform.rst:132
+#: ../../../platform.rst:120 ../../../platform.rst:128
+#: ../../../platform.rst:136
 msgid "Debian 13"
 msgstr ""
 
 #: ../../../platform.rst:121
-msgid "ppc64le"
+msgid "s390x"
 msgstr ""
 
 #: ../../../platform.rst:125
-msgid "ppc64 (big endian)"
-msgstr ""
-
-#: ../../../platform.rst:128 ../../../platform.rst:136
-msgid "Debian 14"
+msgid "i686"
 msgstr ""
 
 #: ../../../platform.rst:129
-msgid "riscv64"
+msgid "ppc64 (big endian)"
+msgstr ""
+
+#: ../../../platform.rst:132 ../../../platform.rst:140
+msgid "Debian 14"
 msgstr ""
 
 #: ../../../platform.rst:133
+msgid "riscv64"
+msgstr ""
+
+#: ../../../platform.rst:137
 msgid "sparc64"
 msgstr ""
 
-#: ../../../platform.rst:138
+#: ../../../platform.rst:142
 msgid ""
 "Occasional manual testing is done on the `GCC compile farm <https://portal."
 "cfarm.net/>`_, which provides free shell access to uncommon hardware."
 msgstr ""
 
-#: ../../../platform.rst:142
+#: ../../../platform.rst:146
 msgid ""
 "On architectures without prebuilt wheels, psutil can be installed from "
 "source (see :ref:`install_from_source`):"
 msgstr ""
 
-#: ../../../platform.rst:145
+#: ../../../platform.rst:149
 msgid "pip install psutil --no-binary psutil"
 msgstr ""
 
-#: ../../../platform.rst:149
-msgid "Linux wheels are published for both glibc (manylinux) and musl."
+#: ../../../platform.rst:153
+msgid ""
+"Linux wheels are published for both glibc (manylinux) and musl. The musl "
+"ones cover x86_64 and aarch64 only."
 msgstr ""
 
-#: ../../../platform.rst:152
+#: ../../../platform.rst:157
 msgid "Support history"
 msgstr ""
 
-#: ../../../platform.rst:158
+#: ../../../platform.rst:163
 msgid "Version"
 msgstr ""
 
-#: ../../../platform.rst:159
+#: ../../../platform.rst:164
 msgid "Date"
 msgstr ""
 
-#: ../../../platform.rst:160
+#: ../../../platform.rst:165
 msgid "Change"
 msgstr ""
 
-#: ../../../platform.rst:161 ../../../platform.rst:164
-#: ../../../platform.rst:167 ../../../platform.rst:170
-#: ../../../platform.rst:173
+#: ../../../platform.rst:166 ../../../platform.rst:169
+#: ../../../platform.rst:172 ../../../platform.rst:175
+#: ../../../platform.rst:178 ../../../platform.rst:181
 msgid ":pypi:`8.0.0`"
 msgstr ""
 
-#: ../../../platform.rst:163
+#: ../../../platform.rst:168
+msgid "add wheels for Linux ppc64le and s390x architectures"
+msgstr ""
+
+#: ../../../platform.rst:171
 msgid "drop Python 3.6 and 3.7"
 msgstr ""
 
-#: ../../../platform.rst:166
+#: ../../../platform.rst:174
 msgid "drop PyPy older than 7.3.14 on Windows"
 msgstr ""
 
-#: ../../../platform.rst:169
+#: ../../../platform.rst:177
 msgid "drop Windows Vista, 7, 8 and 8.1 (+ Server 2008 to 2012 R2)"
 msgstr ""
 
-#: ../../../platform.rst:172
+#: ../../../platform.rst:180
 msgid "drop Intel wheel support for macOS < 10.15"
 msgstr ""
 
-#: ../../../platform.rst:175
+#: ../../../platform.rst:183
 msgid "drop wheels for free-threaded Python 3.13"
 msgstr ""
 
-#: ../../../platform.rst:176
+#: ../../../platform.rst:184
 msgid ":pypi:`7.2.0`"
 msgstr ""
 
-#: ../../../platform.rst:177
+#: ../../../platform.rst:185
 msgid "2025-12"
 msgstr ""
 
-#: ../../../platform.rst:178
+#: ../../../platform.rst:186
 msgid "drop wheels for Linux musl"
 msgstr ""
 
-#: ../../../platform.rst:179 ../../../platform.rst:182
+#: ../../../platform.rst:187 ../../../platform.rst:190
 msgid ":pypi:`7.1.2`"
 msgstr ""
 
-#: ../../../platform.rst:180 ../../../platform.rst:183
-#: ../../../platform.rst:186
+#: ../../../platform.rst:188 ../../../platform.rst:191
+#: ../../../platform.rst:194
 msgid "2025-10"
 msgstr ""
 
-#: ../../../platform.rst:181
+#: ../../../platform.rst:189
 msgid "drop wheels for free-threaded Python"
 msgstr ""
 
-#: ../../../platform.rst:184
+#: ../../../platform.rst:192
 msgid "drop wheels for 32-bit Python (Linux and Windows)"
 msgstr ""
 
-#: ../../../platform.rst:185
+#: ../../../platform.rst:193
 msgid ":pypi:`7.1.1`"
 msgstr ""
 
-#: ../../../platform.rst:187
+#: ../../../platform.rst:195
 msgid "drop SunOS 10"
 msgstr ""
 
-#: ../../../platform.rst:188
+#: ../../../platform.rst:196
 msgid ":pypi:`7.1.0`"
 msgstr ""
 
-#: ../../../platform.rst:189
+#: ../../../platform.rst:197
 msgid "2025-09"
 msgstr ""
 
-#: ../../../platform.rst:190
+#: ../../../platform.rst:198
 msgid "drop FreeBSD 8"
 msgstr ""
 
-#: ../../../platform.rst:191
+#: ../../../platform.rst:199
 msgid ":pypi:`7.0.0`"
 msgstr ""
 
-#: ../../../platform.rst:192
+#: ../../../platform.rst:200
 msgid "2025-02"
 msgstr ""
 
-#: ../../../platform.rst:193
+#: ../../../platform.rst:201
 msgid "drop Python 2.7"
 msgstr ""
 
-#: ../../../platform.rst:194
+#: ../../../platform.rst:202
 msgid ":pypi:`5.9.6`"
 msgstr ""
 
-#: ../../../platform.rst:195
+#: ../../../platform.rst:203
 msgid "2023-10"
 msgstr ""
 
-#: ../../../platform.rst:196
+#: ../../../platform.rst:204
 msgid "drop Python 3.4 and 3.5"
 msgstr ""
 
-#: ../../../platform.rst:197
+#: ../../../platform.rst:205
 msgid ":pypi:`5.9.1`"
 msgstr ""
 
-#: ../../../platform.rst:198
+#: ../../../platform.rst:206
 msgid "2022-05"
 msgstr ""
 
-#: ../../../platform.rst:199
+#: ../../../platform.rst:207
 msgid "drop Python 2.6"
 msgstr ""
 
-#: ../../../platform.rst:200
+#: ../../../platform.rst:208
 msgid ":pypi:`5.9.0`"
 msgstr ""
 
-#: ../../../platform.rst:201
+#: ../../../platform.rst:209
 msgid "2021-12"
 msgstr ""
 
-#: ../../../platform.rst:202
+#: ../../../platform.rst:210
 msgid "add MidnightBSD"
 msgstr ""
 
-#: ../../../platform.rst:203
+#: ../../../platform.rst:211
 msgid ":pypi:`5.8.0`"
 msgstr ""
 
-#: ../../../platform.rst:204
+#: ../../../platform.rst:212
 msgid "2020-12"
 msgstr ""
 
-#: ../../../platform.rst:205
+#: ../../../platform.rst:213
 msgid "add PyPy2 on Windows"
 msgstr ""
 
-#: ../../../platform.rst:206
+#: ../../../platform.rst:214
 msgid ":pypi:`5.7.1`"
 msgstr ""
 
-#: ../../../platform.rst:207
+#: ../../../platform.rst:215
 msgid "2020-07"
 msgstr ""
 
-#: ../../../platform.rst:208
+#: ../../../platform.rst:216
 msgid "add Windows Nano"
 msgstr ""
 
-#: ../../../platform.rst:209 ../../../platform.rst:212
+#: ../../../platform.rst:217 ../../../platform.rst:220
 msgid ":pypi:`5.7.0`"
 msgstr ""
 
-#: ../../../platform.rst:210 ../../../platform.rst:213
+#: ../../../platform.rst:218 ../../../platform.rst:221
 msgid "2020-02"
 msgstr ""
 
-#: ../../../platform.rst:211
+#: ../../../platform.rst:219
 msgid "drop Windows XP & Windows Server 2003"
 msgstr ""
 
-#: ../../../platform.rst:214
+#: ../../../platform.rst:222
 msgid "add PyPy3 on Windows"
 msgstr ""
 
-#: ../../../platform.rst:215
+#: ../../../platform.rst:223
 msgid ":pypi:`5.4.0`"
 msgstr ""
 
-#: ../../../platform.rst:216
+#: ../../../platform.rst:224
 msgid "2017-11"
 msgstr ""
 
-#: ../../../platform.rst:217
+#: ../../../platform.rst:225
 msgid "add AIX"
 msgstr ""
 
-#: ../../../platform.rst:218
+#: ../../../platform.rst:226
 msgid ":pypi:`3.4.1`"
 msgstr ""
 
-#: ../../../platform.rst:219
+#: ../../../platform.rst:227
 msgid "2016-01"
 msgstr ""
 
-#: ../../../platform.rst:220
+#: ../../../platform.rst:228
 msgid "add NetBSD"
 msgstr ""
 
-#: ../../../platform.rst:221
+#: ../../../platform.rst:229
 msgid ":pypi:`3.3.0`"
 msgstr ""
 
-#: ../../../platform.rst:222
+#: ../../../platform.rst:230
 msgid "2015-11"
 msgstr ""
 
-#: ../../../platform.rst:223
+#: ../../../platform.rst:231
 msgid "add OpenBSD"
 msgstr ""
 
-#: ../../../platform.rst:224
+#: ../../../platform.rst:232
 msgid ":pypi:`1.0.0`"
 msgstr ""
 
-#: ../../../platform.rst:225
+#: ../../../platform.rst:233
 msgid "2013-07"
 msgstr ""
 
-#: ../../../platform.rst:226
+#: ../../../platform.rst:234
 msgid "add Solaris"
 msgstr ""
 
-#: ../../../platform.rst:227
+#: ../../../platform.rst:235
 msgid ":pypi:`0.1.1`"
 msgstr ""
 
-#: ../../../platform.rst:228
+#: ../../../platform.rst:236
 msgid "2009-03"
 msgstr ""
 
-#: ../../../platform.rst:229
+#: ../../../platform.rst:237
 msgid "add FreeBSD"
 msgstr ""
 
-#: ../../../platform.rst:230
+#: ../../../platform.rst:238
 msgid ":pypi:`0.1.0`"
 msgstr ""
 
-#: ../../../platform.rst:231
+#: ../../../platform.rst:239
 msgid "2009-01"
 msgstr ""
 
-#: ../../../platform.rst:232
+#: ../../../platform.rst:240
 msgid "add Linux, Windows, macOS"
 msgstr ""

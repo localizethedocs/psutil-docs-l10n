@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-12 07:48+0000\n"
+"POT-Creation-Date: 2026-08-17 09:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -361,8 +361,8 @@ msgid "2026"
 msgstr "2026"
 
 #: ../../../credits.rst:112
-msgid ":user:`Alex Chen <l46983284-cpu>` - :gh:`2859`"
-msgstr ":user:`Alex Chen <l46983284-cpu>` - :gh:`2859`"
+msgid ":user:`Alex Chen <l46983284-cpu>` - :gh:`2859`, :gh:`1959`"
+msgstr ""
 
 #: ../../../credits.rst:113
 msgid ":user:`Amaan Qureshi <amaanq>` - :gh:`2770`"
@@ -429,874 +429,881 @@ msgid ":user:`Omprakash Chauhan <omprakash2929>` - :gh:`2655`"
 msgstr ""
 
 #: ../../../credits.rst:129
-msgid ":user:`Santhosh Raju <fraggerfox>` - :gh:`2805`"
+msgid ":user:`Robert Kirkman <robertkirkman>` - :gh:`2611`"
 msgstr ""
 
 #: ../../../credits.rst:130
-msgid ":user:`Sebastian Cao <cycsmail>` - :gh:`2628`"
+msgid ":user:`Santhosh Raju <fraggerfox>` - :gh:`2805`"
 msgstr ""
 
 #: ../../../credits.rst:131
-msgid ":user:`Sergey Fedorov <barracuda156>` - :gh:`2701`"
+msgid ":user:`Sebastian Cao <cycsmail>` - :gh:`2628`"
 msgstr ""
 
 #: ../../../credits.rst:132
+msgid ":user:`Sergey Fedorov <barracuda156>` - :gh:`2701`"
+msgstr ""
+
+#: ../../../credits.rst:133
 msgid ":user:`Tobias Klauser <tklauser>` - :gh:`2711`"
 msgstr ""
 
-#: ../../../credits.rst:135
+#: ../../../credits.rst:136
 msgid "2025"
 msgstr ""
 
-#: ../../../credits.rst:137
+#: ../../../credits.rst:138
 msgid ":user:`Ben Peddell <klightspeed>` - :gh:`2495`, :gh:`2568`"
 msgstr ""
 
-#: ../../../credits.rst:138
+#: ../../../credits.rst:139
 msgid ":user:`Ben Raz <ben9923>` - :gh:`2643`"
 msgstr ""
 
-#: ../../../credits.rst:139
+#: ../../../credits.rst:140
 msgid ":user:`Eli Wenig <elisw93>` - :gh:`2638`"
 msgstr ""
 
-#: ../../../credits.rst:140
+#: ../../../credits.rst:141
 msgid ":user:`Fabien Bousquet <fafanoulele>` - :gh:`2529`"
 msgstr ":user:`Fabien Bousquet <fafanoulele>` - :gh:`2529`"
 
-#: ../../../credits.rst:141
+#: ../../../credits.rst:142
 msgid ":user:`Irene Sheen <ceda-ei>` - :gh:`2606`"
 msgstr ":user:`Irene Sheen <ceda-ei>` - :gh:`2606`"
 
-#: ../../../credits.rst:142
+#: ../../../credits.rst:143
 msgid ":user:`Isaac K. Ko <1saac-k>` - :gh:`2612`"
 msgstr ":user:`Isaac K. Ko <1saac-k>` - :gh:`2612`"
 
-#: ../../../credits.rst:143
+#: ../../../credits.rst:144
 msgid ":user:`Jonathan Kohler <kohlerjl>` - :gh:`2527`"
 msgstr ":user:`Jonathan Kohler <kohlerjl>` - :gh:`2527`"
 
-#: ../../../credits.rst:144
+#: ../../../credits.rst:145
 msgid ""
 ":user:`Lysandros Nikolaou <lysnikolaou>` - :gh:`2565`, :gh:`2588`, :gh:"
 "`2589`, :gh:`2590`, :gh:`2591`, :gh:`2609`, :gh:`2615`, :gh:`2627`, :gh:"
 "`2659` (wheels for free-threaded Python)"
 msgstr ""
 
-#: ../../../credits.rst:147
+#: ../../../credits.rst:148
 msgid ""
 ":user:`Marcel Telka <mtelka>` - :gh:`2469`, :gh:`2545`, :gh:`2546`, :gh:"
 "`2592`, :gh:`2594`"
 msgstr ""
 
-#: ../../../credits.rst:149
+#: ../../../credits.rst:150
 msgid ""
 ":user:`Matthieu Darbois <mayeut>` - :gh:`2503`, :gh:`2581` (Windows ARM64 "
 "wheels)"
 msgstr ""
 
-#: ../../../credits.rst:151
+#: ../../../credits.rst:152
 msgid ":user:`Sergey Fedorov <barracuda156>` - :gh:`2694`"
 msgstr ""
 
-#: ../../../credits.rst:152
+#: ../../../credits.rst:153
 msgid ":user:`Will Hawes <wdh>` - :gh:`2496`"
 msgstr ":user:`Will Hawes <wdh>` - :gh:`2496`"
 
-#: ../../../credits.rst:153
+#: ../../../credits.rst:154
 msgid ":user:`Xianpeng Shen <shenxianpeng>` - :gh:`2640`"
 msgstr ":user:`Xianpeng Shen <shenxianpeng>` - :gh:`2640`"
 
-#: ../../../credits.rst:156
+#: ../../../credits.rst:157
 msgid "2024"
 msgstr "2024"
 
-#: ../../../credits.rst:158
+#: ../../../credits.rst:159
 msgid ":user:`Aleksey Lobanov <AlekseyLobanov>` - :gh:`2457`"
 msgstr ":user:`Aleksey Lobanov <AlekseyLobanov>` - :gh:`2457`"
 
-#: ../../../credits.rst:159
+#: ../../../credits.rst:160
 msgid ":user:`Cristian Vîjdea <cvijdea-bd>` - :gh:`2442`"
 msgstr ":user:`Cristian Vîjdea <cvijdea-bd>` - :gh:`2442`"
 
-#: ../../../credits.rst:160
+#: ../../../credits.rst:161
 msgid ""
 ":user:`Matthieu Darbois <mayeut>` - :gh:`2370`, :gh:`2375`, :gh:`2417`, :gh:"
 "`2425`, :gh:`2429`, :gh:`2450`, :gh:`2479`, :gh:`2486` (macOS and Linux "
 "ARM64 wheels)"
 msgstr ""
 
-#: ../../../credits.rst:163
+#: ../../../credits.rst:164
 msgid ":user:`Mayank Jha <maynk27>` - :gh:`2379`"
 msgstr ""
 
-#: ../../../credits.rst:164
+#: ../../../credits.rst:165
 msgid ":user:`Oliver Tomé <snom3ad>` - :gh:`2222`"
 msgstr ""
 
-#: ../../../credits.rst:165
+#: ../../../credits.rst:166
 msgid ""
 ":user:`Ryan Carsten Schmidt <ryandesign>` - :gh:`2361`, :gh:`2364`, :gh:"
 "`2365`"
 msgstr ""
 
-#: ../../../credits.rst:167
+#: ../../../credits.rst:168
 msgid ""
 ":user:`Sam Gross <colesbury>` - :gh:`2401`, :gh:`2402`, :gh:`2427`, :gh:"
 "`2428` (free-threading Python)"
 msgstr ""
 
-#: ../../../credits.rst:169
+#: ../../../credits.rst:170
 msgid ":user:`Shade Gladden <shadeyg56>` - :gh:`2376`"
 msgstr ""
 
-#: ../../../credits.rst:172
+#: ../../../credits.rst:173
 msgid "2023"
 msgstr ""
 
-#: ../../../credits.rst:174
+#: ../../../credits.rst:175
 msgid ":user:`Amir Rossert <arossert>` - :gh:`2346`"
 msgstr ""
 
-#: ../../../credits.rst:175
+#: ../../../credits.rst:176
 msgid ""
 ":user:`Matthieu Darbois <mayeut>` - :gh:`2211`, :gh:`2216`, :gh:`2246`, :gh:"
 "`2247`, :gh:`2252`, :gh:`2269`, :gh:`2270`, :gh:`2315`"
 msgstr ""
 
-#: ../../../credits.rst:177
+#: ../../../credits.rst:178
 msgid ":user:`Po-Chuan Hsieh <sunpoet>` - :gh:`2186`, :gh:`1646`"
 msgstr ""
 
-#: ../../../credits.rst:178
+#: ../../../credits.rst:179
 msgid ":user:`Thomas Klausner <0-wiz-0>` - :gh:`2241`"
 msgstr ""
 
-#: ../../../credits.rst:179
+#: ../../../credits.rst:180
 msgid ":user:`Xuehai Pan <XuehaiPan>` - :gh:`2266`"
 msgstr ""
 
-#: ../../../credits.rst:182
+#: ../../../credits.rst:183
 msgid "2022"
 msgstr ""
 
-#: ../../../credits.rst:184
+#: ../../../credits.rst:185
 msgid ":user:`Amir Rossert <arossert>` - :gh:`2156`, :gh:`2345`"
 msgstr ""
 
-#: ../../../credits.rst:185
+#: ../../../credits.rst:186
 msgid ":user:`Bernhard Urban-Forster <lewurm>` - :gh:`2135`"
 msgstr ""
 
-#: ../../../credits.rst:186
+#: ../../../credits.rst:187
 msgid ""
 ":user:`Chris Lalancette <clalancette>` - :gh:`2037` (:func:`net_if_stats` "
 "flags arg on POSIX)"
 msgstr ""
 
-#: ../../../credits.rst:188
+#: ../../../credits.rst:189
 msgid ":user:`Daniel Li <li-dan>` - :gh:`2150`"
 msgstr ""
 
-#: ../../../credits.rst:189
+#: ../../../credits.rst:190
 msgid ":user:`Daniel Widdis <dbwiddis>` - :gh:`2077`, :gh:`2160`"
 msgstr ""
 
-#: ../../../credits.rst:190
+#: ../../../credits.rst:191
 msgid ":user:`Garrison Carter <garrisoncarter>` - :gh:`2096`"
 msgstr ""
 
-#: ../../../credits.rst:191
+#: ../../../credits.rst:192
 msgid ":user:`Hiroyuki Tanaka <myheroyuki>` - :gh:`2086`"
 msgstr ""
 
-#: ../../../credits.rst:192
+#: ../../../credits.rst:193
 msgid ""
 ":user:`Hugo van Kemenade <hugovk>` - :gh:`2099` (Drop Python 2.6 support)"
 msgstr ""
 
-#: ../../../credits.rst:193
+#: ../../../credits.rst:194
 msgid ":user:`Lawrence D'Anna <smoofra>` - :gh:`2010`"
 msgstr ""
 
-#: ../../../credits.rst:194
+#: ../../../credits.rst:195
 msgid ""
 ":user:`Matthieu Darbois <mayeut>` - :gh:`1954`, :gh:`2021`, :gh:`2039`, :gh:"
 "`2040`, :gh:`2102`, :gh:`2111`, :gh:`2142`, :gh:`2145`, :gh:`2146`, :gh:"
 "`2147`, :gh:`2153`, :gh:`2155`, :gh:`2168`"
 msgstr ""
 
-#: ../../../credits.rst:197
+#: ../../../credits.rst:198
 msgid ":user:`Steve Dower <zooba>` - :gh:`2080`"
 msgstr ""
 
-#: ../../../credits.rst:198
+#: ../../../credits.rst:199
 msgid ":user:`Thomas Klausner <0-wiz-0>` - :gh:`2088`, :gh:`2128`"
 msgstr ""
 
-#: ../../../credits.rst:199
+#: ../../../credits.rst:200
 msgid ":user:`Torsten Blum <Torsten-B>` - :gh:`2114`"
 msgstr ""
 
-#: ../../../credits.rst:202
+#: ../../../credits.rst:203
 msgid "2021"
 msgstr ""
 
-#: ../../../credits.rst:204
+#: ../../../credits.rst:205
 msgid ":user:`David Knaack <davidkna>` - :gh:`1921`"
 msgstr ""
 
-#: ../../../credits.rst:205
+#: ../../../credits.rst:206
 msgid ":user:`Guillermo <guille>` - :gh:`1913`"
 msgstr ""
 
-#: ../../../credits.rst:206
+#: ../../../credits.rst:207
 msgid ":user:`Martin Liška <marxin>` - :gh:`1851`"
 msgstr ""
 
-#: ../../../credits.rst:207
+#: ../../../credits.rst:208
 msgid ":user:`MaWe2019 <MaWe2019>` - :gh:`1953`"
 msgstr ""
 
-#: ../../../credits.rst:208
+#: ../../../credits.rst:209
 msgid ":user:`Nikita Radchenko <nradchenko>` - :gh:`1940`"
 msgstr ""
 
-#: ../../../credits.rst:209
+#: ../../../credits.rst:210
 msgid ":user:`Oleksii Shevchuk <alxchk>` - :gh:`1904`"
 msgstr ""
 
-#: ../../../credits.rst:210
+#: ../../../credits.rst:211
 msgid ":user:`Olivier Dormond <odormond>` - :gh:`1956`"
 msgstr ""
 
-#: ../../../credits.rst:211
+#: ../../../credits.rst:212
 msgid ":user:`Pablo Baeyens <mx-psi>` - :gh:`1598`"
 msgstr ""
 
-#: ../../../credits.rst:212
+#: ../../../credits.rst:213
 msgid ":user:`PetrPospisil <PetrPospisil>` - :gh:`1980`"
 msgstr ""
 
-#: ../../../credits.rst:213
+#: ../../../credits.rst:214
 msgid ":user:`Saeed Rasooli <ilius>` - :gh:`1996`"
 msgstr ""
 
-#: ../../../credits.rst:214
+#: ../../../credits.rst:215
 msgid ":user:`Wilfried Goesgens <dothebart>` - :gh:`1990`"
 msgstr ""
 
-#: ../../../credits.rst:215
+#: ../../../credits.rst:216
 msgid ":user:`Xuehai Pan <XuehaiPan>` - :gh:`1949`"
 msgstr ""
 
-#: ../../../credits.rst:218
+#: ../../../credits.rst:219
 msgid "2020"
 msgstr ""
 
-#: ../../../credits.rst:220
+#: ../../../credits.rst:221
 msgid ":user:`Anselm Kruis <akruis>` - :gh:`1695`"
 msgstr ""
 
-#: ../../../credits.rst:221
+#: ../../../credits.rst:222
 msgid ""
 ":user:`Armin Gruner <ArminGruner>` - :gh:`1800` (:meth:`Process.environ` on "
 "BSD)"
 msgstr ""
 
-#: ../../../credits.rst:223
+#: ../../../credits.rst:224
 msgid ":user:`Chris Burger <phobozad>` - :gh:`1830`"
 msgstr ""
 
-#: ../../../credits.rst:224
+#: ../../../credits.rst:225
 msgid ":user:`vser1 <vser1>` - :gh:`1637`"
 msgstr ""
 
-#: ../../../credits.rst:225
+#: ../../../credits.rst:226
 msgid ":user:`Grzegorz Bokota <Czaki>` - :gh:`1758`, :gh:`1762`"
 msgstr ""
 
-#: ../../../credits.rst:226
+#: ../../../credits.rst:227
 msgid ":user:`Jake Omann <jomann09>` - :gh:`1876`"
 msgstr ""
 
-#: ../../../credits.rst:227
+#: ../../../credits.rst:228
 msgid ":user:`Jakob P. Liljenberg <aristocratos>` - :gh:`1837`, :gh:`1838`"
 msgstr ""
 
-#: ../../../credits.rst:228
+#: ../../../credits.rst:229
 msgid ":user:`Javad Karabi <karabijavad>` - :gh:`1648`"
 msgstr ""
 
-#: ../../../credits.rst:229
+#: ../../../credits.rst:230
 msgid ""
 ":user:`Julien Lebot <julien-lebot>` - :gh:`1768` (Windows Nano server "
 "support)"
 msgstr ""
 
-#: ../../../credits.rst:231
+#: ../../../credits.rst:232
 msgid ":user:`Michał Górny <mgorny>` - :gh:`1726`"
 msgstr ""
 
-#: ../../../credits.rst:232
+#: ../../../credits.rst:233
 msgid ":user:`Mike Hommey <glandium>` - :gh:`1665`"
 msgstr ""
 
-#: ../../../credits.rst:233
+#: ../../../credits.rst:234
 msgid ":user:`Po-Chuan Hsieh <sunpoet>` - :gh:`1646`"
 msgstr ""
 
-#: ../../../credits.rst:234
+#: ../../../credits.rst:235
 msgid ":user:`Riccardo Schirone <ret2libc>` - :gh:`1616`"
 msgstr ""
 
-#: ../../../credits.rst:235
+#: ../../../credits.rst:236
 msgid ":user:`Tim Schlueter <modelrockettier>` - :gh:`1708`"
 msgstr ""
 
-#: ../../../credits.rst:236
+#: ../../../credits.rst:237
 msgid ":user:`Vincent A. Arcila <jandrovins>` - :gh:`1620`, :gh:`1727`"
 msgstr ""
 
-#: ../../../credits.rst:239
+#: ../../../credits.rst:240
 msgid "2019"
 msgstr ""
 
-#: ../../../credits.rst:241
+#: ../../../credits.rst:242
 msgid ":user:`qcha0 <qcha0>` - :gh:`1491`"
 msgstr ""
 
-#: ../../../credits.rst:242
+#: ../../../credits.rst:243
 msgid ":user:`Alex Manuskin <amanusk>` - :gh:`1487`"
 msgstr ""
 
-#: ../../../credits.rst:243
+#: ../../../credits.rst:244
 msgid ""
 ":user:`Ammar Askar <ammaraskar>` - :gh:`1485` (:func:`getloadavg` on Windows)"
 msgstr ""
 
-#: ../../../credits.rst:244
+#: ../../../credits.rst:245
 msgid ""
 ":user:`Arnon Yaari <wiggin15>` - :gh:`607`, :gh:`1349`, :gh:`1409`, :gh:"
 "`1500`, :gh:`1505`, :gh:`1507`, :gh:`1533`"
 msgstr ""
 
-#: ../../../credits.rst:246
+#: ../../../credits.rst:247
 msgid ":user:`Athos Ribeiro <athos-ribeiro>` - :gh:`1585`"
 msgstr ""
 
-#: ../../../credits.rst:247
+#: ../../../credits.rst:248
 msgid ":user:`Benjamin Drung <bdrung>` - :gh:`1462`"
 msgstr ""
 
-#: ../../../credits.rst:248
+#: ../../../credits.rst:249
 msgid ":user:`Bernát Gábor <gaborbernat>` - :gh:`1565`"
 msgstr ""
 
-#: ../../../credits.rst:249
+#: ../../../credits.rst:250
 msgid ":user:`Cedric Lamoriniere <clamoriniere>` - :gh:`1470`"
 msgstr ""
 
-#: ../../../credits.rst:250
+#: ../../../credits.rst:251
 msgid ":user:`Daniel Beer <dbeer1>` - :gh:`1471`"
 msgstr ""
 
-#: ../../../credits.rst:251
+#: ../../../credits.rst:252
 msgid ":user:`David Brochart <davidbrochart>` - :gh:`1493`, :gh:`1496`"
 msgstr ""
 
-#: ../../../credits.rst:252
+#: ../../../credits.rst:253
 msgid ":user:`EccoTheFlintstone <EccoTheFlintstone>` - :gh:`1368`, :gh:`1348`"
 msgstr ""
 
-#: ../../../credits.rst:253
+#: ../../../credits.rst:254
 msgid ":user:`Erwan Le Pape <erwan-le-pape>` - :gh:`1570`"
 msgstr ""
 
-#: ../../../credits.rst:254
+#: ../../../credits.rst:255
 msgid ":user:`Ghislain Le Meur <gigi206>` - :gh:`1379`"
 msgstr ""
 
-#: ../../../credits.rst:255
+#: ../../../credits.rst:256
 msgid ""
 ":user:`Kamil Rytarowski <krytarowski>` - :gh:`1526`, :gh:`1530`, :gh:`1534` "
 "(:meth:`Process.cwd` for NetBSD)"
 msgstr ""
 
-#: ../../../credits.rst:257
+#: ../../../credits.rst:258
 msgid ":user:`Nathan Houghton <n1000>` - :gh:`1619`"
 msgstr ""
 
-#: ../../../credits.rst:258
+#: ../../../credits.rst:259
 msgid ":user:`Samer Masterson <samertm>` - :gh:`1480`"
 msgstr ""
 
-#: ../../../credits.rst:259
+#: ../../../credits.rst:260
 msgid ":user:`Xiaoling Bao <xiaolingbao>` - :gh:`1223`"
 msgstr ""
 
-#: ../../../credits.rst:260
+#: ../../../credits.rst:261
 msgid "Mozilla Foundation - Sample code for process :term:`USS` memory"
 msgstr ""
 
-#: ../../../credits.rst:263
+#: ../../../credits.rst:264
 msgid "2018"
 msgstr ""
 
-#: ../../../credits.rst:265
+#: ../../../credits.rst:266
 msgid ""
 ":user:`Alex Manuskin <amanusk>` - :gh:`1284`, :gh:`1345`, :gh:`1350`, :gh:"
 "`1369` (:func:`sensors_temperatures` for macOS, FreeBSD, Linux)"
 msgstr ""
 
-#: ../../../credits.rst:267
+#: ../../../credits.rst:268
 msgid ":user:`Arnon Yaari <wiggin15>` - :gh:`1214`"
 msgstr ""
 
-#: ../../../credits.rst:268
+#: ../../../credits.rst:269
 msgid ":user:`Dan Vinakovsky <hexaclock>` - :gh:`1216`"
 msgstr ""
 
-#: ../../../credits.rst:269
+#: ../../../credits.rst:270
 msgid ":user:`Denis Krienbühl <href>` - :gh:`1260`"
 msgstr ""
 
-#: ../../../credits.rst:270
+#: ../../../credits.rst:271
 msgid ":user:`Ilya Yanok <yanok>` - :gh:`1332`"
 msgstr ""
 
-#: ../../../credits.rst:271
+#: ../../../credits.rst:272
 msgid ":user:`janderbrain <janderbrain>` - :gh:`1169`"
 msgstr ""
 
-#: ../../../credits.rst:272
+#: ../../../credits.rst:273
 msgid ":user:`Jaime Fullaondo <truthbk>` - :gh:`1320`"
 msgstr ""
 
-#: ../../../credits.rst:273
+#: ../../../credits.rst:274
 msgid ":user:`Jean-Luc Migot <jmigot-tehtris>` - :gh:`1258`, :gh:`1289`"
 msgstr ""
 
-#: ../../../credits.rst:274
+#: ../../../credits.rst:275
 msgid ":user:`Koen Kooi <koenkooi>` - :gh:`1360`"
 msgstr ""
 
-#: ../../../credits.rst:275
+#: ../../../credits.rst:276
 msgid ":user:`Lawrence Ye <LEAFERx>` - :gh:`1321`"
 msgstr ""
 
-#: ../../../credits.rst:276
+#: ../../../credits.rst:277
 msgid ":user:`Maxime Mouial <hush-hush>` - :gh:`1239`"
 msgstr ""
 
-#: ../../../credits.rst:277
+#: ../../../credits.rst:278
 msgid ":user:`Nikhil Marathe <nikhilm>` - :gh:`1278`"
 msgstr ""
 
-#: ../../../credits.rst:278
+#: ../../../credits.rst:279
 msgid ":user:`stswandering <stswandering>` - :gh:`1243`"
 msgstr ""
 
-#: ../../../credits.rst:279
+#: ../../../credits.rst:280
 msgid ":user:`Sylvain Duchesne <sylvainduchesne>` - :gh:`1294`"
 msgstr ""
 
-#: ../../../credits.rst:282
+#: ../../../credits.rst:283
 msgid "2017"
 msgstr ""
 
-#: ../../../credits.rst:284
+#: ../../../credits.rst:285
 msgid ":user:`Adrian Page <adpag>` - :gh:`1160`"
 msgstr ""
 
-#: ../../../credits.rst:285
+#: ../../../credits.rst:286
 msgid ":user:`Akos Kiss <akosthekiss>` - :gh:`1150`"
 msgstr ""
 
-#: ../../../credits.rst:286
+#: ../../../credits.rst:287
 msgid ":user:`Alexander Hasselhuhn <alexanha>` - :gh:`1022`"
 msgstr ""
 
-#: ../../../credits.rst:287
+#: ../../../credits.rst:288
 msgid ":user:`Antoine Pitrou <pitrou>` - :gh:`1186`"
 msgstr ""
 
-#: ../../../credits.rst:288
+#: ../../../credits.rst:289
 msgid ""
 ":user:`Arnon Yaari <wiggin15>` - :gh:`1130`, :gh:`1137`, :gh:`1145`, :gh:"
 "`1156`, :gh:`1164`, :gh:`1174`, :gh:`1177`, :gh:`1123` (AIX implementation)"
 msgstr ""
 
-#: ../../../credits.rst:291
+#: ../../../credits.rst:292
 msgid ":user:`Baruch Siach <baruchsiach>` - :gh:`872`"
 msgstr ""
 
-#: ../../../credits.rst:292
+#: ../../../credits.rst:293
 msgid ":user:`Danek Duvall <dhduvall>` - :gh:`1002`"
 msgstr ""
 
-#: ../../../credits.rst:293
+#: ../../../credits.rst:294
 msgid ":user:`Gleb Smirnoff <glebius>` - :gh:`1070`, :gh:`1076`, :gh:`1079`"
 msgstr ""
 
-#: ../../../credits.rst:294
+#: ../../../credits.rst:295
 msgid ":user:`Himanshu Shekhar <himanshub16>` - :gh:`1036`"
 msgstr ""
 
-#: ../../../credits.rst:295
+#: ../../../credits.rst:296
 msgid ":user:`Jakub Bacic <jakub-bacic>` - :gh:`1127`"
 msgstr ""
 
-#: ../../../credits.rst:296
+#: ../../../credits.rst:297
 msgid ":user:`Matthew Long <matray>` - :gh:`1167`"
 msgstr ""
 
-#: ../../../credits.rst:297
+#: ../../../credits.rst:298
 msgid ":user:`Nicolas Hennion <nicolargo>` - :gh:`974`"
 msgstr ""
 
-#: ../../../credits.rst:298
+#: ../../../credits.rst:299
 msgid ""
 ":user:`Oleksii Shevchuk <alxchk>` - :gh:`1091`, :gh:`1093`, :gh:`1220`, :gh:"
 "`1346`"
 msgstr ""
 
-#: ../../../credits.rst:300
+#: ../../../credits.rst:301
 msgid ":user:`Pierre Fersing <PierreF>` - :gh:`950`"
 msgstr ""
 
-#: ../../../credits.rst:301
+#: ../../../credits.rst:302
 msgid ":user:`Sebastian Saip <ssaip>` - :gh:`1141`"
 msgstr ""
 
-#: ../../../credits.rst:302
+#: ../../../credits.rst:303
 msgid ":user:`Thiago Borges Abdnur <bolaum>` - :gh:`959`"
 msgstr ""
 
-#: ../../../credits.rst:303
+#: ../../../credits.rst:304
 msgid ":user:`Yannick Gingras <ygingras>` - :gh:`1057`"
 msgstr ""
 
-#: ../../../credits.rst:306
+#: ../../../credits.rst:307
 msgid "2016"
 msgstr ""
 
-#: ../../../credits.rst:308
+#: ../../../credits.rst:309
 msgid ":user:`Andre Caron <AndreLouisCaron>` - :gh:`880`"
 msgstr ""
 
-#: ../../../credits.rst:309
+#: ../../../credits.rst:310
 msgid ":user:`Arcadiy Ivanov <arcivanov>` - :gh:`919`"
 msgstr ""
 
-#: ../../../credits.rst:310
+#: ../../../credits.rst:311
 msgid ":user:`ewedlund <ewedlund>` - :gh:`874`"
 msgstr ""
 
-#: ../../../credits.rst:311
+#: ../../../credits.rst:312
 msgid ""
 ":user:`Eric Rahm <EricRahm>` - :gh:`745`, :gh:`746` (:term:`USS` memory on "
 "macOS and Windows)"
 msgstr ""
 
-#: ../../../credits.rst:313
+#: ../../../credits.rst:314
 msgid ":user:`Farhan Khan <khanzf>` - :gh:`823`"
 msgstr ""
 
-#: ../../../credits.rst:314
+#: ../../../credits.rst:315
 msgid ""
 ":user:`Frank Benkstein <fbenkstein>` - :gh:`732`, :gh:`733`, :gh:`736`, :gh:"
 "`738`, :gh:`739`, :gh:`740`"
 msgstr ""
 
-#: ../../../credits.rst:316
+#: ../../../credits.rst:317
 msgid ":user:`Ilya Georgievsky <xBeAsTx>` - :gh:`870`"
 msgstr ""
 
-#: ../../../credits.rst:317
+#: ../../../credits.rst:318
 msgid ":user:`Jake Omann <jomann09>` - :gh:`816`, :gh:`775`, :gh:`1874`"
 msgstr ""
 
-#: ../../../credits.rst:318
+#: ../../../credits.rst:319
 msgid ":user:`Jeremy Humble <jhumble>` - :gh:`863`"
 msgstr ""
 
-#: ../../../credits.rst:319
+#: ../../../credits.rst:320
 msgid ":user:`Landry Breuil <landryb>` - :gh:`741`"
 msgstr ""
 
-#: ../../../credits.rst:320
+#: ../../../credits.rst:321
 msgid ":user:`Mark Derbecker <mpderbec>` - :gh:`660`"
 msgstr ""
 
-#: ../../../credits.rst:321
+#: ../../../credits.rst:322
 msgid ":user:`Max Bélanger <maxbelanger>` - :gh:`936`, :gh:`1133`"
 msgstr ""
 
-#: ../../../credits.rst:322
+#: ../../../credits.rst:323
 msgid ":user:`Patrick Welche <prlw1>` - :gh:`812`"
 msgstr ""
 
-#: ../../../credits.rst:323
+#: ../../../credits.rst:324
 msgid ":user:`Syohei YOSHIDA <syohex>` - :gh:`730`"
 msgstr ""
 
-#: ../../../credits.rst:324
+#: ../../../credits.rst:325
 msgid ":user:`Timmy Konick <tijko>` - :gh:`751`"
 msgstr ""
 
-#: ../../../credits.rst:325
+#: ../../../credits.rst:326
 msgid ":user:`Yago Jesus <YJesus>` - :gh:`798`"
 msgstr ""
 
-#: ../../../credits.rst:328
+#: ../../../credits.rst:329
 msgid "2015"
 msgstr ""
 
-#: ../../../credits.rst:330
+#: ../../../credits.rst:331
 msgid ":user:`Arnon Yaari <wiggin15>` - :gh:`680`, :gh:`679`, :gh:`610`"
 msgstr ""
 
-#: ../../../credits.rst:331
+#: ../../../credits.rst:332
 msgid ":user:`Bruno Binet <bbinet>` - :gh:`572`"
 msgstr ""
 
-#: ../../../credits.rst:332
+#: ../../../credits.rst:333
 msgid ":user:`Denis <denis-sumin>` - :gh:`541`"
 msgstr ""
 
-#: ../../../credits.rst:333
+#: ../../../credits.rst:334
 msgid ":user:`Fabian Groffen <fabian>` - :gh:`611`, :gh:`618`"
 msgstr ""
 
-#: ../../../credits.rst:334
+#: ../../../credits.rst:335
 msgid ":user:`Gabi Davar <mindw>` - :gh:`578`, :gh:`581`, :gh:`587`"
 msgstr ""
 
-#: ../../../credits.rst:335
+#: ../../../credits.rst:336
 msgid ""
 ":user:`Jeff Tang <mrjefftang>` - :gh:`616`, :gh:`648`, :gh:`653`, :gh:`654`"
 msgstr ""
 
-#: ../../../credits.rst:336
+#: ../../../credits.rst:337
 msgid ":user:`John Burnett <johnburnett>` - :gh:`614`"
 msgstr ""
 
-#: ../../../credits.rst:337
+#: ../../../credits.rst:338
 msgid ":user:`karthik <karthikrev>` - :gh:`568`"
 msgstr ""
 
-#: ../../../credits.rst:338
+#: ../../../credits.rst:339
 msgid ""
 ":user:`Landry Breuil <landryb>` - :gh:`713`, :gh:`709` (OpenBSD "
 "implementation)"
 msgstr ""
 
-#: ../../../credits.rst:340
+#: ../../../credits.rst:341
 msgid ":user:`Mike Sarahan <msarahan>` - :gh:`690`"
 msgstr ""
 
-#: ../../../credits.rst:341
+#: ../../../credits.rst:342
 msgid ":user:`Sebastian-Gabriel Brestin <bsebi>` - :gh:`704`"
 msgstr ""
 
-#: ../../../credits.rst:342
+#: ../../../credits.rst:343
 msgid ":user:`sk6249 <sk6249>` - :gh:`670`"
 msgstr ""
 
-#: ../../../credits.rst:343
+#: ../../../credits.rst:344
 msgid ":user:`spacewander <spacewander>` - :gh:`561`, :gh:`603`, :gh:`555`"
 msgstr ""
 
-#: ../../../credits.rst:344
+#: ../../../credits.rst:345
 msgid ":user:`Steven Winfield <stevenwinfield>` - :gh:`672`"
 msgstr ""
 
-#: ../../../credits.rst:345
+#: ../../../credits.rst:346
 msgid ":user:`Sylvain Mouquet <sylvainmouquet>` - :gh:`565`"
 msgstr ""
 
-#: ../../../credits.rst:346
+#: ../../../credits.rst:347
 msgid ":user:`Árni Már Jónsson <arnimarj>` - :gh:`634`"
 msgstr ""
 
-#: ../../../credits.rst:347
+#: ../../../credits.rst:348
 msgid ""
 ":user:`Ryo Onodera <ryoon>`: `e124acba <https://github.com/giampaolo/psutil/"
 "commit/e124acba>`_ (NetBSD implementation)"
 msgstr ""
 
-#: ../../../credits.rst:352
+#: ../../../credits.rst:353
 msgid "2014"
 msgstr ""
 
-#: ../../../credits.rst:354
+#: ../../../credits.rst:355
 msgid ":user:`Alexander Grothe <agrethe>` - :gh:`497`"
 msgstr ""
 
-#: ../../../credits.rst:355
+#: ../../../credits.rst:356
 msgid ":user:`Anders Chrigström <anders-chrigstrom>` - :gh:`548`"
 msgstr ""
 
-#: ../../../credits.rst:356
+#: ../../../credits.rst:357
 msgid "Francois Charron - :gh:`474`"
 msgstr ""
 
-#: ../../../credits.rst:357
+#: ../../../credits.rst:358
 msgid ":user:`Guido Imperiale <crusaderky>` - :gh:`470`, :gh:`477`"
 msgstr ""
 
-#: ../../../credits.rst:358
+#: ../../../credits.rst:359
 msgid ""
 ":user:`Jeff Tang <mrjefftang>` - :gh:`340`, :gh:`519`, :gh:`529`, :gh:`654`"
 msgstr ""
 
-#: ../../../credits.rst:359
+#: ../../../credits.rst:360
 msgid ":user:`Marc Abramowitz <msabramo>` - :gh:`492`"
 msgstr ""
 
-#: ../../../credits.rst:360
+#: ../../../credits.rst:361
 msgid "Naveed Roudsari - :gh:`421`"
 msgstr ""
 
-#: ../../../credits.rst:361
+#: ../../../credits.rst:362
 msgid ":user:`Yaolong Huang <airekans>` - :gh:`530`"
 msgstr ""
 
-#: ../../../credits.rst:364
+#: ../../../credits.rst:365
 msgid "2013"
 msgstr ""
 
-#: ../../../credits.rst:366
+#: ../../../credits.rst:367
 msgid ":user:`Arfrever.FTA <Arfrever>` - :gh:`404`"
 msgstr ""
 
-#: ../../../credits.rst:367
+#: ../../../credits.rst:368
 msgid ":user:`Daniel Fox <danudey>` - :gh:`386`"
 msgstr ""
 
-#: ../../../credits.rst:368
+#: ../../../credits.rst:369
 msgid ""
 "Jason Kirtland - backward compatible implementation of collections."
 "defaultdict"
 msgstr ""
 
-#: ../../../credits.rst:370
+#: ../../../credits.rst:371
 msgid ":user:`John Baldwin <bsdjhb>` - :gh:`370`"
 msgstr ""
 
-#: ../../../credits.rst:371
+#: ../../../credits.rst:372
 msgid "John Pankov - :gh:`435`"
 msgstr ""
 
-#: ../../../credits.rst:372
+#: ../../../credits.rst:373
 msgid ":user:`Josiah Carlson <josiahcarlson>` - :gh:`451`, :gh:`452`"
 msgstr ""
 
-#: ../../../credits.rst:373
+#: ../../../credits.rst:374
 msgid "m.malycha - :gh:`351`"
 msgstr ""
 
-#: ../../../credits.rst:374
+#: ../../../credits.rst:375
 msgid ":user:`Matt Good <mgood>` - :gh:`438`"
 msgstr ""
 
-#: ../../../credits.rst:375
+#: ../../../credits.rst:376
 msgid ":user:`Thomas Klausner <0-wiz-0>` - :gh:`557` (NetBSD implementation)"
 msgstr ""
 
-#: ../../../credits.rst:376
+#: ../../../credits.rst:377
 msgid "Ulrich Klank - :gh:`448`"
 msgstr ""
 
-#: ../../../credits.rst:379
+#: ../../../credits.rst:380
 msgid "2012"
 msgstr ""
 
-#: ../../../credits.rst:381
+#: ../../../credits.rst:382
 msgid ":user:`Amoser` - :gh:`266`, :gh:`267`, :gh:`340`"
 msgstr ""
 
-#: ../../../credits.rst:382
+#: ../../../credits.rst:383
 msgid ":user:`Florent Xicluna <florentx>` - :gh:`319`"
 msgstr ""
 
-#: ../../../credits.rst:383
+#: ../../../credits.rst:384
 msgid ":user:`Gregory Szorc <indygreg>` - :gh:`323`"
 msgstr ""
 
-#: ../../../credits.rst:384
+#: ../../../credits.rst:385
 msgid ":user:`Jan Beich <jbeich>` - :gh:`344`"
 msgstr ""
 
-#: ../../../credits.rst:385
+#: ../../../credits.rst:386
 msgid "Youngsik Kim - :gh:`317`"
 msgstr ""
 
-#: ../../../credits.rst:388
+#: ../../../credits.rst:389
 msgid "2011"
 msgstr ""
 
-#: ../../../credits.rst:390
+#: ../../../credits.rst:391
 msgid ""
 ":user:`Jeremy Whitlock <whitlockjc>` - :gh:`125`, :gh:`150`, :gh:`206`, :gh:"
 "`217`, :gh:`260` (:func:`net_io_counters` and :func:`disk_io_counters` on "
 "macOS)"
 msgstr ""
 
-#: ../../../credits.rst:395
+#: ../../../credits.rst:396
 msgid "2010"
 msgstr ""
 
-#: ../../../credits.rst:397
+#: ../../../credits.rst:398
 msgid ":user:`Christoph Gohlke <cgohlke>` - :gh:`107`"
 msgstr ""
 
-#: ../../../credits.rst:398
+#: ../../../credits.rst:399
 msgid ":user:`Wen Jia Liu (wj32) <wj32>` - :gh:`114`, :gh:`115`"
 msgstr ""
 
-#: ../../../credits.rst:401
+#: ../../../credits.rst:402
 msgid "2009"
 msgstr ""
 
-#: ../../../credits.rst:403
+#: ../../../credits.rst:404
 msgid ""
 "Yan Raber: `c861c08b <https://github.com/giampaolo/psutil/commit/c861c08b>`_ "
 "(Windows :func:`cpu_times`), `15159111 <https://github.com/giampaolo/psutil/"
 "commit/15159111>`_ (Windows :meth:`Process.username`)"
 msgstr ""
 
-#: ../../../credits.rst:407
+#: ../../../credits.rst:408
 msgid ""
 ":user:`Jay Loden <jloden>` - `79128baa <https://github.com/giampaolo/psutil/"
 "commit/79128baa>`_ (first commit of FreeBSD implementation)"
 msgstr ""
 
-#: ../../../credits.rst:412
+#: ../../../credits.rst:413
 msgid "2008"
 msgstr ""
 
-#: ../../../credits.rst:414
+#: ../../../credits.rst:415
 msgid ""
 ":user:`Jay Loden <jloden>` - `efe9236a <https://github.com/giampaolo/psutil/"
 "commit/efe9236a>`_ (first commit of macOS implementation)"
 msgstr ""
 
-#: ../../../credits.rst:417
+#: ../../../credits.rst:418
 msgid ""
 "Dave Daeschler - `71875761 <https://github.com/giampaolo/psutil/"
 "commit/71875761>`_ (first commit of Windows implementation)"
 msgstr ""
 
-#: ../../../credits.rst:420
+#: ../../../credits.rst:421
 msgid ""
 ":user:`Giampaolo Rodola <giampaolo>` - `6296c2ab <https://github.com/"
 "giampaolo/psutil/commit/6296c2ab>`_ (first commit of Linux implementation)"
 msgstr ""
 
-#: ../../../credits.rst:423
+#: ../../../credits.rst:424
 msgid ""
 ":user:`Giampaolo Rodola <giampaolo>` - `8472a17f <https://github.com/"
 "giampaolo/psutil/commit/8472a17f>`_ (inception / initial directory structure)"
 msgstr ""
+
+#~ msgid ":user:`Alex Chen <l46983284-cpu>` - :gh:`2859`"
+#~ msgstr ":user:`Alex Chen <l46983284-cpu>` - :gh:`2859`"

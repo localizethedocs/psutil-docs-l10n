@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-27 11:50+0000\n"
+"POT-Creation-Date: 2026-08-17 09:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -460,39 +460,19 @@ msgstr ""
 #: ../../../recipes.rst:387
 msgid ""
 "All APIs returning amounts (memory, disk, network I/O) express them in "
-"bytes. This ``bytes2human()`` utility function used in the examples below "
-"converts them to a human-readable string:"
+"bytes. The examples below use :func:`psutil.bytes2human` to convert them to "
+"a human-readable string."
 msgstr ""
 
-#: ../../../recipes.rst:391
-msgid ""
-"def bytes2human(n):\n"
-"    \"\"\"\n"
-"    >>> bytes2human(10000)\n"
-"    '9.8K'\n"
-"    >>> bytes2human(100001221)\n"
-"    '95.4M'\n"
-"    \"\"\"\n"
-"    symbols = (\"K\", \"M\", \"G\", \"T\", \"P\", \"E\", \"Z\", \"Y\")\n"
-"    prefix = {}\n"
-"    for i, s in enumerate(symbols):\n"
-"        prefix[s] = 1 << (i + 1) * 10\n"
-"    for s in reversed(symbols):\n"
-"        if abs(n) >= prefix[s]:\n"
-"            value = float(n) / prefix[s]\n"
-"            return \"{:.1f}{}\".format(value, s)\n"
-"    return \"{}B\".format(n)"
-msgstr ""
-
-#: ../../../recipes.rst:411
+#: ../../../recipes.rst:392
 msgid "CPU"
 msgstr ""
 
-#: ../../../recipes.rst:413
+#: ../../../recipes.rst:394
 msgid "Print real-time CPU usage percentage:"
 msgstr ""
 
-#: ../../../recipes.rst:415
+#: ../../../recipes.rst:396
 msgid ""
 "import psutil\n"
 "\n"
@@ -500,18 +480,18 @@ msgid ""
 "    print(\"CPU: {}%\".format(psutil.cpu_percent(interval=1)))"
 msgstr ""
 
-#: ../../../recipes.rst:422
+#: ../../../recipes.rst:403
 msgid ""
 "CPU: 2.1%\n"
 "CPU: 1.4%\n"
 "CPU: 0.9%"
 msgstr ""
 
-#: ../../../recipes.rst:429
+#: ../../../recipes.rst:410
 msgid "Memory"
 msgstr ""
 
-#: ../../../recipes.rst:433
+#: ../../../recipes.rst:414
 msgid ""
 "Show real-time swap activity *(Linux, BSD)*. ``sout`` (:term:`swap-out`) is "
 "the key metric: a non-zero and growing rate means the OS is moving memory "
@@ -521,7 +501,7 @@ msgid ""
 "term:`thrashing`)."
 msgstr ""
 
-#: ../../../recipes.rst:439
+#: ../../../recipes.rst:420
 msgid ""
 "import psutil, time\n"
 "\n"
@@ -533,25 +513,26 @@ msgid ""
 "        sin  = after.sin  - before.sin\n"
 "        sout = after.sout - before.sout\n"
 "        print(\"swap-in={}/s  swap-out={}/s  used={}%\".format(\n"
-"            bytes2human(sin), bytes2human(sout), after.percent))\n"
+"            psutil.bytes2human(sin), psutil.bytes2human(sout), after."
+"percent))\n"
 "        before = after"
 msgstr ""
 
-#: ../../../recipes.rst:454
+#: ../../../recipes.rst:435
 msgid ""
 "swap-in=0.0B/s  swap-out=0.0B/s  used=23%\n"
 "swap-in=0.0B/s  swap-out=1.2M/s  used=24%"
 msgstr ""
 
-#: ../../../recipes.rst:460
+#: ../../../recipes.rst:441
 msgid "Disks"
 msgstr "磁盘"
 
-#: ../../../recipes.rst:464
+#: ../../../recipes.rst:445
 msgid "Show real-time disk I/O:"
 msgstr ""
 
-#: ../../../recipes.rst:466
+#: ../../../recipes.rst:447
 msgid ""
 "import psutil, time\n"
 "\n"
@@ -562,21 +543,23 @@ msgid ""
 "        after = psutil.disk_io_counters()\n"
 "        r = after.read_bytes - before.read_bytes\n"
 "        w = after.write_bytes - before.write_bytes\n"
-"        print(\"Read: {}/s, Write: {}/s\".format(bytes2human(r), "
-"bytes2human(w)))"
+"        print(\"Read: {}/s, Write: {}/s\".format(\n"
+"            psutil.bytes2human(r),\n"
+"            psutil.bytes2human(w))\n"
+"        )"
 msgstr ""
 
-#: ../../../recipes.rst:479
+#: ../../../recipes.rst:463
 msgid ""
 "Read: 1.2M/s, Write: 256.0K/s\n"
 "Read: 0.0B/s, Write: 128.0K/s"
 msgstr ""
 
-#: ../../../recipes.rst:488
+#: ../../../recipes.rst:472
 msgid "Show real-time disk utilization percentage *(Linux, FreeBSD)*:"
 msgstr ""
 
-#: ../../../recipes.rst:490
+#: ../../../recipes.rst:474
 msgid ""
 "import psutil, time\n"
 "\n"
@@ -590,21 +573,21 @@ msgid ""
 "        print(\"Disk: {:.1f}%\".format(util))"
 msgstr ""
 
-#: ../../../recipes.rst:503
+#: ../../../recipes.rst:487
 msgid ""
 "Disk: 3.2%\n"
 "Disk: 78.5%"
 msgstr ""
 
-#: ../../../recipes.rst:509
+#: ../../../recipes.rst:493
 msgid "Network"
 msgstr ""
 
-#: ../../../recipes.rst:511
+#: ../../../recipes.rst:495
 msgid "Show real-time network I/O per interface:"
 msgstr ""
 
-#: ../../../recipes.rst:513
+#: ../../../recipes.rst:497
 msgid ""
 "import psutil, time\n"
 "\n"
@@ -618,23 +601,25 @@ msgid ""
 "            r = after[iface].bytes_recv - before[iface].bytes_recv\n"
 "            print(\n"
 "                \"{:<10} sent={:<10} recv={}\".format(\n"
-"                    iface, bytes2human(s) + \"/s\", bytes2human(r) + \"/s\"\n"
+"                    iface,\n"
+"                    psutil.bytes2human(s) + \"/s\",\n"
+"                    psutil.bytes2human(r) + \"/s\"\n"
 "                )\n"
 "            )\n"
 "        print()"
 msgstr ""
 
-#: ../../../recipes.rst:532
+#: ../../../recipes.rst:518
 msgid ""
 "lo         sent=0.0B/s    recv=0.0B/s\n"
 "eth0       sent=12.3K/s   recv=45.6K/s"
 msgstr ""
 
-#: ../../../recipes.rst:539
+#: ../../../recipes.rst:525
 msgid "List all active TCP connections with their status:"
 msgstr ""
 
-#: ../../../recipes.rst:541
+#: ../../../recipes.rst:527
 msgid ""
 "import psutil\n"
 "\n"
@@ -651,7 +636,7 @@ msgid ""
 "        print(templ.format(laddr, raddr, conn.status, conn.pid or \"\"))"
 msgstr ""
 
-#: ../../../recipes.rst:557
+#: ../../../recipes.rst:543
 msgid ""
 "Local             Remote              Status        PID\n"
 ":::1716           -                   LISTEN        223441\n"
