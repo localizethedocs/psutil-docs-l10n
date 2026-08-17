@@ -486,7 +486,7 @@ msgstr ""
 #: ../../../shell-equivalents.rst:442 ../../../shell-equivalents.rst:485
 #: ../../../shell-equivalents.rst:508 ../../../shell-equivalents.rst:546
 msgid "psutil method"
-msgstr ""
+msgstr "psutil 方法"
 
 #: ../../../shell-equivalents.rst:250
 msgid ":meth:`p.name() <Process.name>`"
@@ -570,7 +570,7 @@ msgstr ""
 
 #: ../../../shell-equivalents.rst:292
 msgid "Process tree"
-msgstr ""
+msgstr "進程樹"
 
 #: ../../../shell-equivalents.rst:303
 msgid ":meth:`p.ppid() <Process.ppid>`"
@@ -630,7 +630,7 @@ msgstr ""
 
 #: ../../../shell-equivalents.rst:346
 msgid ":meth:`p.gids() <Process.gids>`"
-msgstr ""
+msgstr ":meth:`p.gids() <Process.gids>`"
 
 #: ../../../shell-equivalents.rst:347
 msgid "``ps -o gid,rgid,sgid -p PID``"
@@ -638,7 +638,7 @@ msgstr ""
 
 #: ../../../shell-equivalents.rst:351
 msgid ":meth:`p.username() <Process.username>`"
-msgstr ""
+msgstr ":meth:`p.username() <Process.username>`"
 
 #: ../../../shell-equivalents.rst:352
 msgid "``ps -o user -p PID``"
@@ -666,7 +666,7 @@ msgstr ""
 
 #: ../../../shell-equivalents.rst:379
 msgid ":meth:`p.cpu_times() <Process.cpu_times>`"
-msgstr ""
+msgstr ":meth:`p.cpu_times() <Process.cpu_times>`"
 
 #: ../../../shell-equivalents.rst:380
 msgid "``ps -o cputime -p PID``"
@@ -687,7 +687,7 @@ msgstr ""
 
 #: ../../../shell-equivalents.rst:389
 msgid ":meth:`p.num_ctx_switches() <Process.num_ctx_switches>`"
-msgstr ""
+msgstr ":meth:`p.num_ctx_switches() <Process.num_ctx_switches>`"
 
 #: ../../../shell-equivalents.rst:390
 msgid "``pidstat -w -p PID``"
@@ -695,7 +695,7 @@ msgstr ""
 
 #: ../../../shell-equivalents.rst:394
 msgid ":meth:`p.cpu_affinity() <Process.cpu_affinity>`"
-msgstr ""
+msgstr ":meth:`p.cpu_affinity() <Process.cpu_affinity>`"
 
 #: ../../../shell-equivalents.rst:395
 msgid "``taskset -p PID``"
@@ -735,7 +735,7 @@ msgstr ""
 
 #: ../../../shell-equivalents.rst:414
 msgid ":meth:`p.nice() <Process.nice>`"
-msgstr ""
+msgstr ":meth:`p.nice() <Process.nice>`"
 
 #: ../../../shell-equivalents.rst:415
 msgid "``ps -o nice -p PID``"
@@ -835,7 +835,7 @@ msgstr ""
 
 #: ../../../shell-equivalents.rst:490
 msgid ":meth:`p.num_threads() <Process.num_threads>`"
-msgstr ""
+msgstr ":meth:`p.num_threads() <Process.num_threads>`"
 
 #: ../../../shell-equivalents.rst:491
 msgid "``ps -o nlwp -p PID``"
@@ -843,7 +843,7 @@ msgstr ""
 
 #: ../../../shell-equivalents.rst:495
 msgid ":meth:`p.threads() <Process.threads>`"
-msgstr ""
+msgstr ":meth:`p.threads() <Process.threads>`"
 
 #: ../../../shell-equivalents.rst:496
 msgid "``ps -T -p PID``"
@@ -903,11 +903,11 @@ msgstr ""
 
 #: ../../../shell-equivalents.rst:540
 msgid "Signals"
-msgstr ""
+msgstr "訊號"
 
 #: ../../../shell-equivalents.rst:551
 msgid ":meth:`p.send_signal() <Process.send_signal>`"
-msgstr ""
+msgstr ":meth:`p.send_signal() <Process.send_signal>`"
 
 #: ../../../shell-equivalents.rst:552
 msgid "``kill -SIG PID``"
@@ -915,7 +915,7 @@ msgstr ""
 
 #: ../../../shell-equivalents.rst:556
 msgid ":meth:`p.suspend() <Process.suspend>`"
-msgstr ""
+msgstr ":meth:`p.suspend() <Process.suspend>`"
 
 #: ../../../shell-equivalents.rst:557
 msgid "``kill -STOP PID``"
@@ -923,7 +923,7 @@ msgstr ""
 
 #: ../../../shell-equivalents.rst:561
 msgid ":meth:`p.resume() <Process.resume>`"
-msgstr ""
+msgstr ":meth:`p.resume() <Process.resume>`"
 
 #: ../../../shell-equivalents.rst:562
 msgid "``kill -CONT PID``"
@@ -931,7 +931,7 @@ msgstr ""
 
 #: ../../../shell-equivalents.rst:566
 msgid ":meth:`p.terminate() <Process.terminate>`"
-msgstr ""
+msgstr ":meth:`p.terminate() <Process.terminate>`"
 
 #: ../../../shell-equivalents.rst:567
 msgid "``kill -TERM PID``"
@@ -955,7 +955,7 @@ msgstr ""
 
 #: ../../../shell-equivalents.rst:576
 msgid ":meth:`p.wait() <Process.wait>`"
-msgstr ""
+msgstr ":meth:`p.wait() <Process.wait>`"
 
 #: ../../../shell-equivalents.rst:577
 msgid "``tail --pid=PID -f /dev/null``"

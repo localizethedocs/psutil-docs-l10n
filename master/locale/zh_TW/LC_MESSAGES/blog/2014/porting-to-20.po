@@ -64,28 +64,28 @@ msgstr ""
 
 #: ../../../blog/2014/porting-to-20.rst:30
 msgid "``psutil.BOOT_TIME``"
-msgstr ""
+msgstr "``psutil.BOOT_TIME``"
 
 #: ../../../blog/2014/porting-to-20.rst:30
 #: ../../../blog/2014/porting-to-20.rst:56
 msgid "``psutil.boot_time()``"
-msgstr ""
+msgstr "``psutil.boot_time()``"
 
 #: ../../../blog/2014/porting-to-20.rst:32
 msgid "``psutil.NUM_CPUS``"
-msgstr ""
+msgstr "``psutil.NUM_CPUS``"
 
 #: ../../../blog/2014/porting-to-20.rst:32
 msgid "``psutil.cpu_count()``"
-msgstr ""
+msgstr "``psutil.cpu_count()``"
 
 #: ../../../blog/2014/porting-to-20.rst:34
 msgid "``psutil.TOTAL_PHYMEM``"
-msgstr ""
+msgstr "``psutil.TOTAL_PHYMEM``"
 
 #: ../../../blog/2014/porting-to-20.rst:34
 msgid "``psutil.virtual_memory().total``"
-msgstr ""
+msgstr "``psutil.virtual_memory().total``"
 
 #: ../../../blog/2014/porting-to-20.rst:37
 #: ../../../blog/2014/porting-to-20.rst:63
@@ -114,23 +114,23 @@ msgstr ""
 
 #: ../../../blog/2014/porting-to-20.rst:56
 msgid "``psutil.get_boot_time()``"
-msgstr ""
+msgstr "``psutil.get_boot_time()``"
 
 #: ../../../blog/2014/porting-to-20.rst:58
 msgid "``psutil.get_pid_list()``"
-msgstr ""
+msgstr "``psutil.get_pid_list()``"
 
 #: ../../../blog/2014/porting-to-20.rst:58
 msgid "``psutil.pids()``"
-msgstr ""
+msgstr "``psutil.pids()``"
 
 #: ../../../blog/2014/porting-to-20.rst:60
 msgid "``psutil.get_users()``"
-msgstr ""
+msgstr "``psutil.get_users()``"
 
 #: ../../../blog/2014/porting-to-20.rst:60
 msgid "``psutil.users()``"
-msgstr ""
+msgstr "``psutil.users()``"
 
 #: ../../../blog/2014/porting-to-20.rst:65
 msgid ""
@@ -151,15 +151,15 @@ msgstr ""
 
 #: ../../../blog/2014/porting-to-20.rst:78
 msgid "``p.get_children()``"
-msgstr ""
+msgstr "``p.get_children()``"
 
 #: ../../../blog/2014/porting-to-20.rst:78
 msgid "``p.children()``"
-msgstr ""
+msgstr "``p.children()``"
 
 #: ../../../blog/2014/porting-to-20.rst:80
 msgid "``p.get_connections()``"
-msgstr ""
+msgstr "``p.get_connections()``"
 
 #: ../../../blog/2014/porting-to-20.rst:80
 msgid "``p.connections()``"
@@ -167,55 +167,55 @@ msgstr ""
 
 #: ../../../blog/2014/porting-to-20.rst:82
 msgid "``p.get_cpu_affinity()``"
-msgstr ""
+msgstr "``p.get_cpu_affinity()``"
 
 #: ../../../blog/2014/porting-to-20.rst:82
 msgid "``p.cpu_affinity()``"
-msgstr ""
+msgstr "``p.cpu_affinity()``"
 
 #: ../../../blog/2014/porting-to-20.rst:84
 msgid "``p.get_cpu_percent()``"
-msgstr ""
+msgstr "``p.get_cpu_percent()``"
 
 #: ../../../blog/2014/porting-to-20.rst:84
 msgid "``p.cpu_percent()``"
-msgstr ""
+msgstr "``p.cpu_percent()``"
 
 #: ../../../blog/2014/porting-to-20.rst:86
 msgid "``p.get_cpu_times()``"
-msgstr ""
+msgstr "``p.get_cpu_times()``"
 
 #: ../../../blog/2014/porting-to-20.rst:86
 msgid "``p.cpu_times()``"
-msgstr ""
+msgstr "``p.cpu_times()``"
 
 #: ../../../blog/2014/porting-to-20.rst:88
 msgid "``p.get_io_counters()``"
-msgstr ""
+msgstr "``p.get_io_counters()``"
 
 #: ../../../blog/2014/porting-to-20.rst:88
 msgid "``p.io_counters()``"
-msgstr ""
+msgstr "``p.io_counters()``"
 
 #: ../../../blog/2014/porting-to-20.rst:90
 msgid "``p.get_ionice()``"
-msgstr ""
+msgstr "``p.get_ionice()``"
 
 #: ../../../blog/2014/porting-to-20.rst:90
 msgid "``p.ionice()``"
-msgstr ""
+msgstr "``p.ionice()``"
 
 #: ../../../blog/2014/porting-to-20.rst:92
 msgid "``p.get_memory_info()``"
-msgstr ""
+msgstr "``p.get_memory_info()``"
 
 #: ../../../blog/2014/porting-to-20.rst:92
 msgid "``p.memory_info()``"
-msgstr ""
+msgstr "``p.memory_info()``"
 
 #: ../../../blog/2014/porting-to-20.rst:94
 msgid "``p.get_ext_memory_info()``"
-msgstr ""
+msgstr "``p.get_ext_memory_info()``"
 
 #: ../../../blog/2014/porting-to-20.rst:94
 msgid "``p.memory_info_ex()``"
@@ -223,83 +223,83 @@ msgstr ""
 
 #: ../../../blog/2014/porting-to-20.rst:96
 msgid "``p.get_memory_maps()``"
-msgstr ""
+msgstr "``p.get_memory_maps()``"
 
 #: ../../../blog/2014/porting-to-20.rst:96
 msgid "``p.memory_maps()``"
-msgstr ""
+msgstr "``p.memory_maps()``"
 
 #: ../../../blog/2014/porting-to-20.rst:98
 msgid "``p.get_memory_percent()``"
-msgstr ""
+msgstr "``p.get_memory_percent()``"
 
 #: ../../../blog/2014/porting-to-20.rst:98
 msgid "``p.memory_percent()``"
-msgstr ""
+msgstr "``p.memory_percent()``"
 
 #: ../../../blog/2014/porting-to-20.rst:100
 msgid "``p.get_nice()``"
-msgstr ""
+msgstr "``p.get_nice()``"
 
 #: ../../../blog/2014/porting-to-20.rst:100
 msgid "``p.nice()``"
-msgstr ""
+msgstr "``p.nice()``"
 
 #: ../../../blog/2014/porting-to-20.rst:102
 msgid "``p.get_num_ctx_switches()``"
-msgstr ""
+msgstr "``p.get_num_ctx_switches()``"
 
 #: ../../../blog/2014/porting-to-20.rst:102
 msgid "``p.num_ctx_switches()``"
-msgstr ""
+msgstr "``p.num_ctx_switches()``"
 
 #: ../../../blog/2014/porting-to-20.rst:104
 msgid "``p.get_num_fds()``"
-msgstr ""
+msgstr "``p.get_num_fds()``"
 
 #: ../../../blog/2014/porting-to-20.rst:104
 msgid "``p.num_fds()``"
-msgstr ""
+msgstr "``p.num_fds()``"
 
 #: ../../../blog/2014/porting-to-20.rst:106
 msgid "``p.get_num_threads()``"
-msgstr ""
+msgstr "``p.get_num_threads()``"
 
 #: ../../../blog/2014/porting-to-20.rst:106
 msgid "``p.num_threads()``"
-msgstr ""
+msgstr "``p.num_threads()``"
 
 #: ../../../blog/2014/porting-to-20.rst:108
 msgid "``p.get_open_files()``"
-msgstr ""
+msgstr "``p.get_open_files()``"
 
 #: ../../../blog/2014/porting-to-20.rst:108
 msgid "``p.open_files()``"
-msgstr ""
+msgstr "``p.open_files()``"
 
 #: ../../../blog/2014/porting-to-20.rst:110
 msgid "``p.get_rlimit()``"
-msgstr ""
+msgstr "``p.get_rlimit()``"
 
 #: ../../../blog/2014/porting-to-20.rst:110
 msgid "``p.rlimit()``"
-msgstr ""
+msgstr "``p.rlimit()``"
 
 #: ../../../blog/2014/porting-to-20.rst:112
 msgid "``p.get_threads()``"
-msgstr ""
+msgstr "``p.get_threads()``"
 
 #: ../../../blog/2014/porting-to-20.rst:112
 msgid "``p.threads()``"
-msgstr ""
+msgstr "``p.threads()``"
 
 #: ../../../blog/2014/porting-to-20.rst:114
 msgid "``p.getcwd()``"
-msgstr ""
+msgstr "``p.getcwd()``"
 
 #: ../../../blog/2014/porting-to-20.rst:114
 msgid "``p.cwd()``"
-msgstr ""
+msgstr "``p.cwd()``"
 
 #: ../../../blog/2014/porting-to-20.rst:117
 msgid "...as for ``set_*`` methods:"
@@ -311,7 +311,7 @@ msgstr ""
 
 #: ../../../blog/2014/porting-to-20.rst:122
 msgid "``p.cpu_affinity(cpus)``"
-msgstr ""
+msgstr "``p.cpu_affinity(cpus)``"
 
 #: ../../../blog/2014/porting-to-20.rst:124
 msgid "``p.set_ionice()``"

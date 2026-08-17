@@ -367,7 +367,7 @@ msgstr ""
 
 #: ../../../api-overview.rst:327
 msgid "Process tree"
-msgstr ""
+msgstr "進程樹"
 
 #: ../../../api-overview.rst:329
 msgid ""
@@ -554,7 +554,7 @@ msgstr ""
 
 #: ../../../api-overview.rst:498
 msgid "Signals"
-msgstr ""
+msgstr "訊號"
 
 #: ../../../api-overview.rst:500
 msgid ""
@@ -570,7 +570,7 @@ msgstr ""
 
 #: ../../../api-overview.rst:512
 msgid "Other process functions"
-msgstr ""
+msgstr "其他進程函數"
 
 #: ../../../api-overview.rst:514
 msgid ""

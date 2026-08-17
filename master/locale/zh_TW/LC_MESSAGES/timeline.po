@@ -23,7 +23,7 @@ msgstr "時間線"
 
 #: ../../../timeline.rst:5
 msgid "2026"
-msgstr ""
+msgstr "2026"
 
 #: ../../../timeline.rst:11 ../../../timeline.rst:27 ../../../timeline.rst:67
 #: ../../../timeline.rst:95 ../../../timeline.rst:119 ../../../timeline.rst:147
@@ -219,7 +219,7 @@ msgstr ""
 
 #: ../../../timeline.rst:61
 msgid "2024"
-msgstr ""
+msgstr "2024"
 
 #: ../../../timeline.rst:71
 msgid ":pypi:`6.1.1`"

@@ -68,7 +68,7 @@ msgstr ""
 
 #: ../../../credits.rst:25
 msgid "Donations"
-msgstr ""
+msgstr "捐贈"
 
 #: ../../../credits.rst:27
 msgid ""
@@ -86,31 +86,31 @@ msgstr ""
 
 #: ../../../credits.rst:33
 msgid "`Canonical Juju`_"
-msgstr ""
+msgstr "`Canonical Juju`_"
 
 #: ../../../credits.rst:34
 msgid "`Canonical Launchpad`_"
-msgstr ""
+msgstr "`Canonical Launchpad`_"
 
 #: ../../../credits.rst:35
 msgid "`Canonical`_"
-msgstr ""
+msgstr "`Canonical`_"
 
 #: ../../../credits.rst:36
 msgid "`Codecov`_"
-msgstr ""
+msgstr "`Codecov`_"
 
 #: ../../../credits.rst:37
 msgid "`Indeed Engineering`_"
-msgstr ""
+msgstr "`Indeed Engineering`_"
 
 #: ../../../credits.rst:38
 msgid "`Kubernetes`_"
-msgstr ""
+msgstr "`Kubernetes`_"
 
 #: ../../../credits.rst:39
 msgid "`Robusta`_"
-msgstr ""
+msgstr "`Robusta`_"
 
 #: ../../../credits.rst:40
 msgid "`sansec.io`_ *(sponsor)*"
@@ -118,11 +118,11 @@ msgstr ""
 
 #: ../../../credits.rst:41
 msgid "`Sentry`_"
-msgstr ""
+msgstr "`Sentry`_"
 
 #: ../../../credits.rst:42
 msgid "`Sourcegraph`_"
-msgstr ""
+msgstr "`Sourcegraph`_"
 
 #: ../../../credits.rst:43
 msgid "`Tidelift`_ *(sponsor)*"
@@ -134,75 +134,75 @@ msgstr ""
 
 #: ../../../credits.rst:47
 msgid ":user:`Alex Laird <alexdlaird>`"
-msgstr ""
+msgstr ":user:`Alex Laird <alexdlaird>`"
 
 #: ../../../credits.rst:48
 msgid "Alexander Kaftan"
-msgstr ""
+msgstr "Alexander Kaftan"
 
 #: ../../../credits.rst:49
 msgid "`Alexey Vazhnov`_"
-msgstr ""
+msgstr "`Alexey Vazhnov`_"
 
 #: ../../../credits.rst:50
 msgid "Amit Kulkarni"
-msgstr ""
+msgstr "Amit Kulkarni"
 
 #: ../../../credits.rst:51
 msgid "Andrew Bays"
-msgstr ""
+msgstr "Andrew Bays"
 
 #: ../../../credits.rst:52
 msgid ":user:`Artyom Vancyan <ArtyomVancyan>`"
-msgstr ""
+msgstr ":user:`Artyom Vancyan <ArtyomVancyan>`"
 
 #: ../../../credits.rst:53
 msgid "Brett Harris"
-msgstr ""
+msgstr "Brett Harris"
 
 #: ../../../credits.rst:54
 msgid ":user:`c0m4r`"
-msgstr ""
+msgstr ":user:`c0m4r`"
 
 #: ../../../credits.rst:55
 msgid "Carver Koella"
-msgstr ""
+msgstr "Carver Koella"
 
 #: ../../../credits.rst:56
 msgid "`Chenyoo Hao`_"
-msgstr ""
+msgstr "`Chenyoo Hao`_"
 
 #: ../../../credits.rst:57
 msgid ":user:`Coşkun Deniz <coskundeniz>`"
-msgstr ""
+msgstr ":user:`Coşkun Deniz <coskundeniz>`"
 
 #: ../../../credits.rst:58
 msgid ":user:`cybersecgeek`"
-msgstr ""
+msgstr ":user:`cybersecgeek`"
 
 #: ../../../credits.rst:59
 msgid ":user:`Daniel Widdis <dbwiddis>`"
-msgstr ""
+msgstr ":user:`Daniel Widdis <dbwiddis>`"
 
 #: ../../../credits.rst:60
 msgid ":user:`Eugenio E Breijo <u93>`"
-msgstr ""
+msgstr ":user:`Eugenio E Breijo <u93>`"
 
 #: ../../../credits.rst:61
 msgid ":user:`Evan Allrich <eallrich>`"
-msgstr ""
+msgstr ":user:`Evan Allrich <eallrich>`"
 
 #: ../../../credits.rst:62
 msgid "Florian Bruhin"
-msgstr ""
+msgstr "Florian Bruhin"
 
 #: ../../../credits.rst:63
 msgid ":user:`great-work-told-is`"
-msgstr ""
+msgstr ":user:`great-work-told-is`"
 
 #: ../../../credits.rst:64
 msgid "Gyula Áfra"
-msgstr ""
+msgstr "Gyula Áfra"
 
 #: ../../../credits.rst:65
 msgid "HTB Industries"
@@ -210,23 +210,23 @@ msgstr ""
 
 #: ../../../credits.rst:66
 msgid ":user:`inarikami`"
-msgstr ""
+msgstr ":user:`inarikami`"
 
 #: ../../../credits.rst:67
 msgid ":user:`JeremyGrosser`"
-msgstr ""
+msgstr ":user:`JeremyGrosser`"
 
 #: ../../../credits.rst:68
 msgid ":user:`Johannes Maron <codingjoe>`"
-msgstr ""
+msgstr ":user:`Johannes Maron <codingjoe>`"
 
 #: ../../../credits.rst:69
 msgid ":user:`Jakob P. Liljenberg <aristocratos>`"
-msgstr ""
+msgstr ":user:`Jakob P. Liljenberg <aristocratos>`"
 
 #: ../../../credits.rst:70
 msgid ":user:`Karthik Kumar <guilt>`"
-msgstr ""
+msgstr ":user:`Karthik Kumar <guilt>`"
 
 #: ../../../credits.rst:71
 msgid "Kahntent"
@@ -254,11 +254,11 @@ msgstr "Mindview LLC"
 
 #: ../../../credits.rst:77
 msgid ":user:`Maximilian Wu <maxesisn>`"
-msgstr ""
+msgstr ":user:`Maximilian Wu <maxesisn>`"
 
 #: ../../../credits.rst:78
 msgid "Mehver"
-msgstr ""
+msgstr "Mehver"
 
 #: ../../../credits.rst:79
 msgid "mirko"
@@ -266,87 +266,87 @@ msgstr ""
 
 #: ../../../credits.rst:80
 msgid "Morgan Heijdemann"
-msgstr ""
+msgstr "Morgan Heijdemann"
 
 #: ../../../credits.rst:81
 msgid "Oche Ejembi"
-msgstr ""
+msgstr "Oche Ejembi"
 
 #: ../../../credits.rst:82
 msgid ":user:`Ofek Lev <ofek>`"
-msgstr ""
+msgstr ":user:`Ofek Lev <ofek>`"
 
 #: ../../../credits.rst:83
 msgid "Olivier Grisel"
-msgstr ""
+msgstr "Olivier Grisel"
 
 #: ../../../credits.rst:84
 msgid "Pavan Maddamsetti"
-msgstr ""
+msgstr "Pavan Maddamsetti"
 
 #: ../../../credits.rst:85
 msgid "`PySimpleGUI`_"
-msgstr ""
+msgstr "`PySimpleGUI`_"
 
 #: ../../../credits.rst:86
 msgid "Peter Friedland"
-msgstr ""
+msgstr "Peter Friedland"
 
 #: ../../../credits.rst:87
 msgid "Praveen Bhamidipati"
-msgstr ""
+msgstr "Praveen Bhamidipati"
 
 #: ../../../credits.rst:88
 msgid "Remi Chateauneu"
-msgstr ""
+msgstr "Remi Chateauneu"
 
 #: ../../../credits.rst:89
 msgid "`roboflow.com`_"
-msgstr ""
+msgstr "`roboflow.com`_"
 
 #: ../../../credits.rst:90
 msgid "Rodion Stratov"
-msgstr ""
+msgstr "Rodion Stratov"
 
 #: ../../../credits.rst:91
 msgid "Russell Robinson"
-msgstr ""
+msgstr "Russell Robinson"
 
 #: ../../../credits.rst:92
 msgid ":user:`Sašo Živanović <sasozivanovic>`"
-msgstr ""
+msgstr ":user:`Sašo Živanović <sasozivanovic>`"
 
 #: ../../../credits.rst:93
 msgid "`scoutapm-sponsorships`_"
-msgstr ""
+msgstr "`scoutapm-sponsorships`_"
 
 #: ../../../credits.rst:94
 msgid "Sigmund Vik"
-msgstr ""
+msgstr "Sigmund Vik"
 
 #: ../../../credits.rst:95
 msgid "`trashnothing.com`_"
-msgstr ""
+msgstr "`trashnothing.com`_"
 
 #: ../../../credits.rst:96
 msgid "Thomas Guettler"
-msgstr ""
+msgstr "Thomas Guettler"
 
 #: ../../../credits.rst:97
 msgid "Willem de Groot"
-msgstr ""
+msgstr "Willem de Groot"
 
 #: ../../../credits.rst:98
 msgid "Wompasoft"
-msgstr ""
+msgstr "Wompasoft"
 
 #: ../../../credits.rst:99
 msgid ":user:`Valeriy Abramov <abramov-v>`"
-msgstr ""
+msgstr ":user:`Valeriy Abramov <abramov-v>`"
 
 #: ../../../credits.rst:100
 msgid "Григорьев Андрей"
-msgstr ""
+msgstr "Григорьев Андрей"
 
 #: ../../../credits.rst:103
 msgid "Code contributors by year"
@@ -358,11 +358,11 @@ msgstr ""
 
 #: ../../../credits.rst:110
 msgid "2026"
-msgstr ""
+msgstr "2026"
 
 #: ../../../credits.rst:112
 msgid ":user:`Alex Chen <l46983284-cpu>` - :gh:`2859`"
-msgstr ""
+msgstr ":user:`Alex Chen <l46983284-cpu>` - :gh:`2859`"
 
 #: ../../../credits.rst:113
 msgid ":user:`Amaan Qureshi <amaanq>` - :gh:`2770`"
@@ -462,19 +462,19 @@ msgstr ""
 
 #: ../../../credits.rst:140
 msgid ":user:`Fabien Bousquet <fafanoulele>` - :gh:`2529`"
-msgstr ""
+msgstr ":user:`Fabien Bousquet <fafanoulele>` - :gh:`2529`"
 
 #: ../../../credits.rst:141
 msgid ":user:`Irene Sheen <ceda-ei>` - :gh:`2606`"
-msgstr ""
+msgstr ":user:`Irene Sheen <ceda-ei>` - :gh:`2606`"
 
 #: ../../../credits.rst:142
 msgid ":user:`Isaac K. Ko <1saac-k>` - :gh:`2612`"
-msgstr ""
+msgstr ":user:`Isaac K. Ko <1saac-k>` - :gh:`2612`"
 
 #: ../../../credits.rst:143
 msgid ":user:`Jonathan Kohler <kohlerjl>` - :gh:`2527`"
-msgstr ""
+msgstr ":user:`Jonathan Kohler <kohlerjl>` - :gh:`2527`"
 
 #: ../../../credits.rst:144
 msgid ""
@@ -501,23 +501,23 @@ msgstr ""
 
 #: ../../../credits.rst:152
 msgid ":user:`Will Hawes <wdh>` - :gh:`2496`"
-msgstr ""
+msgstr ":user:`Will Hawes <wdh>` - :gh:`2496`"
 
 #: ../../../credits.rst:153
 msgid ":user:`Xianpeng Shen <shenxianpeng>` - :gh:`2640`"
-msgstr ""
+msgstr ":user:`Xianpeng Shen <shenxianpeng>` - :gh:`2640`"
 
 #: ../../../credits.rst:156
 msgid "2024"
-msgstr ""
+msgstr "2024"
 
 #: ../../../credits.rst:158
 msgid ":user:`Aleksey Lobanov <AlekseyLobanov>` - :gh:`2457`"
-msgstr ""
+msgstr ":user:`Aleksey Lobanov <AlekseyLobanov>` - :gh:`2457`"
 
 #: ../../../credits.rst:159
 msgid ":user:`Cristian Vîjdea <cvijdea-bd>` - :gh:`2442`"
-msgstr ""
+msgstr ":user:`Cristian Vîjdea <cvijdea-bd>` - :gh:`2442`"
 
 #: ../../../credits.rst:160
 msgid ""

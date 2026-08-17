@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../install.rst:2
 msgid "Install psutil"
-msgstr ""
+msgstr "安裝 psutil"
 
 #: ../../../install.rst:5
 msgid "Linux, Windows, macOS (wheels)"
@@ -33,7 +33,7 @@ msgstr ""
 
 #: ../../../install.rst:10
 msgid "pip install psutil"
-msgstr ""
+msgstr "pip install psutil"
 
 #: ../../../install.rst:14
 msgid ""
@@ -43,7 +43,7 @@ msgstr ""
 
 #: ../../../install.rst:17
 msgid "uv pip install psutil"
-msgstr ""
+msgstr "uv pip install psutil"
 
 #: ../../../install.rst:21
 msgid ""
@@ -53,7 +53,7 @@ msgstr ""
 
 #: ../../../install.rst:27
 msgid "Build psutil from source"
-msgstr ""
+msgstr "從來源碼建置 psutil"
 
 #: ../../../install.rst:29
 msgid ""
@@ -67,6 +67,8 @@ msgid ""
 "curl -fsSL https://raw.githubusercontent.com/giampaolo/psutil/master/scripts/"
 "internal/install-sysdeps.sh | sh"
 msgstr ""
+"curl -fsSL https://raw.githubusercontent.com/giampaolo/psutil/master/scripts/"
+"internal/install-sysdeps.sh | sh"
 
 #: ../../../install.rst:37
 msgid "Alternatively, install them manually as described below."
@@ -78,11 +80,11 @@ msgstr "Linux"
 
 #: ../../../install.rst:42
 msgid "Debian / Ubuntu:"
-msgstr ""
+msgstr "Debian / Ubuntu："
 
 #: ../../../install.rst:44
 msgid "sudo apt-get install gcc python3-dev"
-msgstr ""
+msgstr "sudo apt-get install gcc python3-dev"
 
 #: ../../../install.rst:48
 msgid "Red Hat / CentOS:"
@@ -90,31 +92,31 @@ msgstr ""
 
 #: ../../../install.rst:50
 msgid "sudo yum install gcc python3-devel"
-msgstr ""
+msgstr "sudo yum install gcc python3-devel"
 
 #: ../../../install.rst:54
 msgid "Fedora:"
-msgstr ""
+msgstr "Fedora："
 
 #: ../../../install.rst:56
 msgid "sudo dnf install gcc python3-devel"
-msgstr ""
+msgstr "sudo dnf install gcc python3-devel"
 
 #: ../../../install.rst:60
 msgid "Arch:"
-msgstr ""
+msgstr "Arch："
 
 #: ../../../install.rst:62
 msgid "sudo pacman -S gcc python"
-msgstr ""
+msgstr "sudo pacman -S gcc python"
 
 #: ../../../install.rst:66
 msgid "Alpine:"
-msgstr ""
+msgstr "Alpine："
 
 #: ../../../install.rst:68
 msgid "sudo apk add gcc python3-dev musl-dev linux-headers"
-msgstr ""
+msgstr "sudo apk add gcc python3-dev musl-dev linux-headers"
 
 #: ../../../install.rst:75
 msgid "Windows"
@@ -140,7 +142,7 @@ msgstr ""
 
 #: ../../../install.rst:85
 msgid "winget install --exact --id ezwinports.make"
-msgstr ""
+msgstr "winget install --exact --id ezwinports.make"
 
 #: ../../../install.rst:89
 msgid "Close and reopen Git Bash, then follow :ref:`build_and_install`."
@@ -152,23 +154,23 @@ msgstr "macOS"
 
 #: ../../../install.rst:94
 msgid "Install the Xcode command line tools:"
-msgstr ""
+msgstr "安裝 Xcode 命令行工具："
 
 #: ../../../install.rst:96
 msgid "xcode-select --install"
-msgstr ""
+msgstr "xcode-select --install"
 
 #: ../../../install.rst:101
 msgid "FreeBSD"
-msgstr ""
+msgstr "FreeBSD"
 
 #: ../../../install.rst:103
 msgid "pkg install python3"
-msgstr ""
+msgstr "pkg install python3"
 
 #: ../../../install.rst:108
 msgid "OpenBSD"
-msgstr ""
+msgstr "OpenBSD"
 
 #: ../../../install.rst:110
 msgid ""
@@ -176,10 +178,13 @@ msgid ""
 "`uname -m`/\n"
 "pkg_add -v python%3"
 msgstr ""
+"export PKG_PATH=https://cdn.openbsd.org/pub/OpenBSD/`uname -r`/packages/"
+"`uname -m`/\n"
+"pkg_add -v python%3"
 
 #: ../../../install.rst:116
 msgid "NetBSD"
-msgstr ""
+msgstr "NetBSD"
 
 #: ../../../install.rst:118
 msgid ""
@@ -195,14 +200,19 @@ msgid ""
 "pkgin update\n"
 "pkgin install python314"
 msgstr ""
+"export PKG_PATH=\"https://cdn.netbsd.org/pub/pkgsrc/packages/NetBSD/`uname -"
+"m`/`uname -r`/All\"\n"
+"pkg_add -v pkgin\n"
+"pkgin update\n"
+"pkgin install python314"
 
 #: ../../../install.rst:129
 msgid "Solaris"
-msgstr ""
+msgstr "Solaris"
 
 #: ../../../install.rst:131
 msgid "pkg install developer/gcc"
-msgstr ""
+msgstr "pkg install developer/gcc"
 
 #: ../../../install.rst:135
 msgid ""
@@ -212,7 +222,7 @@ msgstr ""
 
 #: ../../../install.rst:139
 msgid "AIX"
-msgstr ""
+msgstr "AIX"
 
 #: ../../../install.rst:141
 msgid ""
@@ -222,7 +232,7 @@ msgstr ""
 
 #: ../../../install.rst:147
 msgid "Build and install"
-msgstr ""
+msgstr "建置與安裝"
 
 #: ../../../install.rst:149
 msgid "To build and install psutil from a Git checkout:"
@@ -236,6 +246,11 @@ msgid ""
 "make build\n"
 "make install"
 msgstr ""
+"git clone https://github.com/giampaolo/psutil.git\n"
+"cd psutil\n"
+"make install-sysdeps\n"
+"make build\n"
+"make install"
 
 #: ../../../install.rst:161
 msgid ""
@@ -250,7 +265,7 @@ msgstr ""
 
 #: ../../../install.rst:169
 msgid "Install pip"
-msgstr ""
+msgstr "安裝 pip"
 
 #: ../../../install.rst:171
 msgid "Python installations normally include pip. If it is missing, first try:"
@@ -258,7 +273,7 @@ msgstr ""
 
 #: ../../../install.rst:173
 msgid "python3 -m ensurepip --upgrade"
-msgstr ""
+msgstr "python3 -m ensurepip --upgrade"
 
 #: ../../../install.rst:177
 msgid ""
@@ -268,11 +283,11 @@ msgstr ""
 
 #: ../../../install.rst:180
 msgid "python3 get-pip.py"
-msgstr ""
+msgstr "python3 get-pip.py"
 
 #: ../../../install.rst:185
 msgid "Permission errors"
-msgstr ""
+msgstr "權限錯誤"
 
 #: ../../../install.rst:187
 msgid ""
@@ -286,3 +301,6 @@ msgid ""
 "source .venv/bin/activate\n"
 "python -m pip install psutil"
 msgstr ""
+"python3 -m venv .venv\n"
+"source .venv/bin/activate\n"
+"python -m pip install psutil"

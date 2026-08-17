@@ -25,7 +25,7 @@ msgstr ""
 
 #: ../../../api.rst:6
 msgid "API reference"
-msgstr ""
+msgstr "API 參考"
 
 #: ../../../api.rst:8
 msgid ""
@@ -39,7 +39,7 @@ msgstr ""
 
 #: ../../../api.rst:18
 msgid "System related functions"
-msgstr ""
+msgstr "系統相關函數"
 
 #: ../../../api.rst:21
 msgid "CPU"
@@ -270,10 +270,12 @@ msgid ""
 ">>> len(psutil.Process().cpu_affinity())\n"
 "1"
 msgstr ""
+">>> len(psutil.Process().cpu_affinity())\n"
+"1"
 
 #: ../../../api.rst:181
 msgid ":ref:`faq_cpu_count`"
-msgstr ""
+msgstr ":ref:`faq_cpu_count`"
 
 #: ../../../api.rst:185
 msgid ""
@@ -311,6 +313,10 @@ msgid ""
 "scpustats(ctx_switches=20455687, interrupts=6598984, "
 "soft_interrupts=2134212, syscalls=0)"
 msgstr ""
+">>> import psutil\n"
+">>> psutil.cpu_stats()\n"
+"scpustats(ctx_switches=20455687, interrupts=6598984, "
+"soft_interrupts=2134212, syscalls=0)"
 
 #: ../../../api.rst:207
 msgid ""
@@ -526,7 +532,7 @@ msgstr "Windows"
 
 #: ../../../api.rst:332 ../../../api.rst:1941
 msgid "FreeBSD"
-msgstr ""
+msgstr "FreeBSD"
 
 #: ../../../api.rst:333
 msgid "total"
@@ -534,19 +540,19 @@ msgstr ""
 
 #: ../../../api.rst:334
 msgid "``MemTotal``"
-msgstr ""
+msgstr "``MemTotal``"
 
 #: ../../../api.rst:335
 msgid "``sysctl() hw.memsize``"
-msgstr ""
+msgstr "``sysctl() hw.memsize``"
 
 #: ../../../api.rst:336
 msgid "``PhysicalTotal``"
-msgstr ""
+msgstr "``PhysicalTotal``"
 
 #: ../../../api.rst:337
 msgid "``sysctl() hw.physmem``"
-msgstr ""
+msgstr "``sysctl() hw.physmem``"
 
 #: ../../../api.rst:338
 msgid "available"
@@ -554,19 +560,19 @@ msgstr ""
 
 #: ../../../api.rst:339
 msgid "``MemAvailable``"
-msgstr ""
+msgstr "``MemAvailable``"
 
 #: ../../../api.rst:340
 msgid "``inactive + free``"
-msgstr ""
+msgstr "``inactive + free``"
 
 #: ../../../api.rst:341
 msgid "``PhysicalAvailable``"
-msgstr ""
+msgstr "``PhysicalAvailable``"
 
 #: ../../../api.rst:342
 msgid "``inactive + cached + free``"
-msgstr ""
+msgstr "``inactive + cached + free``"
 
 #: ../../../api.rst:343
 msgid "used"
@@ -574,15 +580,15 @@ msgstr ""
 
 #: ../../../api.rst:344 ../../../api.rst:346
 msgid "``total - available``"
-msgstr ""
+msgstr "``total - available``"
 
 #: ../../../api.rst:345
 msgid "``active + wired``"
-msgstr ""
+msgstr "``active + wired``"
 
 #: ../../../api.rst:347
 msgid "``active + wired + cached``"
-msgstr ""
+msgstr "``active + wired + cached``"
 
 #: ../../../api.rst:348
 msgid "free"
@@ -590,11 +596,11 @@ msgstr ""
 
 #: ../../../api.rst:349
 msgid "``MemFree``"
-msgstr ""
+msgstr "``MemFree``"
 
 #: ../../../api.rst:350
 msgid "``free - speculative``"
-msgstr ""
+msgstr "``free - speculative``"
 
 #: ../../../api.rst:351
 msgid "same as ``available``"
@@ -610,15 +616,15 @@ msgstr ""
 
 #: ../../../api.rst:354
 msgid "``Active``"
-msgstr ""
+msgstr "``Active``"
 
 #: ../../../api.rst:355
 msgid "``active``"
-msgstr ""
+msgstr "``active``"
 
 #: ../../../api.rst:357
 msgid "``sysctl() vm.stats.vm.v_active_count``"
-msgstr ""
+msgstr "``sysctl() vm.stats.vm.v_active_count``"
 
 #: ../../../api.rst:358
 msgid "inactive"
@@ -626,11 +632,11 @@ msgstr ""
 
 #: ../../../api.rst:359
 msgid "``Inactive``"
-msgstr ""
+msgstr "``Inactive``"
 
 #: ../../../api.rst:360
 msgid "``inactive``"
-msgstr ""
+msgstr "``inactive``"
 
 #: ../../../api.rst:362
 msgid "``sysctl() vm.stats.vm.v_inactive_count``"
@@ -642,11 +648,11 @@ msgstr ""
 
 #: ../../../api.rst:364
 msgid "``Buffers``"
-msgstr ""
+msgstr "``Buffers``"
 
 #: ../../../api.rst:367
 msgid "``sysctl() vfs.bufspace``"
-msgstr ""
+msgstr "``sysctl() vfs.bufspace``"
 
 #: ../../../api.rst:368
 msgid "cached"
@@ -654,11 +660,11 @@ msgstr ""
 
 #: ../../../api.rst:369
 msgid "``Cached + SReclaimable``"
-msgstr ""
+msgstr "``Cached + SReclaimable``"
 
 #: ../../../api.rst:371
 msgid "``SystemCache``"
-msgstr ""
+msgstr "``SystemCache``"
 
 #: ../../../api.rst:372
 msgid "``sysctl() vm.stats.vm.v_cache_count``"

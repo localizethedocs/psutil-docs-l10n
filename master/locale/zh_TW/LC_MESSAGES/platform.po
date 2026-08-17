@@ -192,7 +192,7 @@ msgstr ""
 
 #: ../../../platform.rst:69
 msgid "FreeBSD"
-msgstr ""
+msgstr "FreeBSD"
 
 #: ../../../platform.rst:70
 msgid "12.0"
@@ -208,7 +208,7 @@ msgstr ""
 
 #: ../../../platform.rst:74
 msgid "NetBSD"
-msgstr ""
+msgstr "NetBSD"
 
 #: ../../../platform.rst:75
 msgid "5.0"
@@ -224,7 +224,7 @@ msgstr ""
 
 #: ../../../platform.rst:79
 msgid "OpenBSD"
-msgstr ""
+msgstr "OpenBSD"
 
 #: ../../../platform.rst:80 ../../../platform.rst:90
 msgid "unknown"

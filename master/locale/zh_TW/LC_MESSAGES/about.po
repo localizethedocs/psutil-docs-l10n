@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../about.rst:6
 msgid "About this site"
-msgstr ""
+msgstr "關於此網站"
 
 #: ../../../about.rst:8
 msgid ""
@@ -43,23 +43,23 @@ msgstr ""
 
 #: ../../../about.rst:22
 msgid ":kbd:`Shift+D`"
-msgstr ""
+msgstr ":kbd:`Shift+D`"
 
 #: ../../../about.rst:23
 msgid "Toggle dark / light mode"
-msgstr ""
+msgstr "切換深色/淺色模式"
 
 #: ../../../about.rst:24
 msgid ":kbd:`Ctrl+K`"
-msgstr ""
+msgstr ":kbd:`Ctrl+K`"
 
 #: ../../../about.rst:25
 msgid "Open search"
-msgstr ""
+msgstr "開啟搜尋"
 
 #: ../../../about.rst:26
 msgid ":kbd:`↑` / :kbd:`↓`"
-msgstr ""
+msgstr ":kbd:`↑` / :kbd:`↓`"
 
 #: ../../../about.rst:27
 msgid "Navigate search results"
@@ -67,7 +67,7 @@ msgstr ""
 
 #: ../../../about.rst:28
 msgid ":kbd:`Enter`"
-msgstr ""
+msgstr ":kbd:`Enter`"
 
 #: ../../../about.rst:29
 msgid "Open highlighted search result"
@@ -75,7 +75,7 @@ msgstr ""
 
 #: ../../../about.rst:30
 msgid ":kbd:`Escape`"
-msgstr ""
+msgstr ":kbd:`Escape`"
 
 #: ../../../about.rst:31
 msgid "Close search / dialog"
@@ -83,7 +83,7 @@ msgstr ""
 
 #: ../../../about.rst:32
 msgid ":kbd:`?`"
-msgstr ""
+msgstr ":kbd:`?`"
 
 #: ../../../about.rst:33
 msgid "Show this help"
@@ -91,7 +91,7 @@ msgstr ""
 
 #: ../../../about.rst:36 ../../../about.rst:52
 msgid "Dark mode"
-msgstr ""
+msgstr "深色模式"
 
 #: ../../../about.rst:42
 msgid ""
@@ -107,11 +107,11 @@ msgstr ""
 
 #: ../../../about.rst:48
 msgid "Light mode"
-msgstr ""
+msgstr "淺色模式"
 
 #: ../../../about.rst:57
 msgid "Clickable API references"
-msgstr ""
+msgstr "可點選的 API 參考"
 
 #: ../../../about.rst:59
 msgid ""
@@ -124,11 +124,11 @@ msgstr ""
 
 #: ../../../about.rst:64
 msgid "Clickable API reference"
-msgstr ""
+msgstr "可點選的 API 參考"
 
 #: ../../../about.rst:69
 msgid "Copy buttons"
-msgstr ""
+msgstr "複製按鈕"
 
 #: ../../../about.rst:71
 msgid ""
@@ -139,11 +139,11 @@ msgstr ""
 
 #: ../../../about.rst:75
 msgid "Copy button"
-msgstr ""
+msgstr "複製按鈕"
 
 #: ../../../about.rst:80
 msgid "Search"
-msgstr ""
+msgstr "搜尋"
 
 #: ../../../about.rst:82
 msgid ""
@@ -154,7 +154,7 @@ msgstr ""
 
 #: ../../../about.rst:86
 msgid "Search results"
-msgstr ""
+msgstr "搜尋結果"
 
 #: ../../../about.rst:91
 msgid "TOC / On this page"
@@ -173,7 +173,7 @@ msgstr ""
 
 #: ../../../about.rst:102
 msgid "Back to top"
-msgstr ""
+msgstr "返回頂部"
 
 #: ../../../about.rst:104
 msgid ""
@@ -202,7 +202,7 @@ msgstr ""
 
 #: ../../../about.rst:123
 msgid "Blog"
-msgstr ""
+msgstr "網誌"
 
 #: ../../../about.rst:125
 msgid ""
@@ -214,7 +214,7 @@ msgstr ""
 
 #: ../../../about.rst:131
 msgid "Other internal optimizations"
-msgstr ""
+msgstr "其他內部最佳化"
 
 #: ../../../about.rst:133
 msgid ""
@@ -258,6 +258,9 @@ msgid ""
 "    \"psutil\": (\"https://psutil.io/\", None),\n"
 "}"
 msgstr ""
+"intersphinx_mapping = {\n"
+"    \"psutil\": (\"https://psutil.io/\", None),\n"
+"}"
 
 #: ../../../about.rst:159
 msgid ""
