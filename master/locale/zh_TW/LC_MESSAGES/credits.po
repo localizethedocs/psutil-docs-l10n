@@ -1304,6 +1304,3 @@ msgid ""
 ":user:`Giampaolo Rodola <giampaolo>` - `8472a17f <https://github.com/"
 "giampaolo/psutil/commit/8472a17f>`_ (inception / initial directory structure)"
 msgstr ""
-
-#~ msgid ":user:`Alex Chen <l46983284-cpu>` - :gh:`2859`"
-#~ msgstr ":user:`Alex Chen <l46983284-cpu>` - :gh:`2859`"
