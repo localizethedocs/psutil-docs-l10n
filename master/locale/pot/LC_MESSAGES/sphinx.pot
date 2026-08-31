@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-27 11:50+0000\n"
+"POT-Creation-Date: 2026-08-31 16:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,7 +43,15 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: ../../../_templates/breadcrumbs.html:19 ../../../_templates/topbar.html:25
+#: ../../../_templates/banner.html:11
+msgid "Dismiss"
+msgstr ""
+
+#: ../../../_templates/banner.html:12
+msgid "Dismiss this notice"
+msgstr ""
+
+#: ../../../_templates/breadcrumbs.html:19 ../../../_templates/topbar.html:27
 msgid "Blog"
 msgstr ""
 
@@ -60,7 +68,7 @@ msgid "Comments"
 msgstr ""
 
 #: ../../../_templates/footer.html:8
-msgid "Updated: "
+msgid "Updated "
 msgstr ""
 
 #: ../../../_templates/footer.html:11
@@ -99,7 +107,7 @@ msgstr ""
 msgid "Subscribe to blog"
 msgstr ""
 
-#: ../../../_templates/layout.html:13
+#: ../../../_templates/layout.html:17
 msgid "psutil: Process and System Utilities for Python"
 msgstr ""
 
@@ -132,6 +140,7 @@ msgid "Browse blog"
 msgstr ""
 
 #: ../../../_templates/toc.html:20 ../../../_templates/toc.html:21
+#: ../../../_templates/topbar.html:67 ../../../_templates/topbar.html:68
 msgid "On this page"
 msgstr ""
 
@@ -139,36 +148,32 @@ msgstr ""
 msgid "Tags"
 msgstr ""
 
-#: ../../../_templates/topbar.html:9
+#: ../../../_templates/topbar.html:11
 msgid "Toggle navigation"
 msgstr ""
 
-#: ../../../_templates/topbar.html:24
+#: ../../../_templates/topbar.html:26
 msgid "Site actions"
 msgstr ""
 
-#: ../../../_templates/topbar.html:27
+#: ../../../_templates/topbar.html:29
 msgid "Toggle dark mode (shift+D)"
 msgstr ""
 
-#: ../../../_templates/topbar.html:27
+#: ../../../_templates/topbar.html:29
 msgid "Toggle theme"
 msgstr ""
 
-#: ../../../_templates/topbar.html:32
+#: ../../../_templates/topbar.html:34
 msgid "GitHub"
 msgstr ""
 
-#: ../../../_templates/topbar.html:32
+#: ../../../_templates/topbar.html:34
 msgid "GitHub repository"
 msgstr ""
 
-#: ../../../_templates/topbar.html:38
-msgid "PyPI"
-msgstr ""
-
-#: ../../../_templates/topbar.html:38
-msgid "PyPI release"
+#: ../../../_templates/topbar.html:41 ../../../_templates/topbar.html:42
+msgid "Switch documentation version"
 msgstr ""
 
 #: roles.py:205

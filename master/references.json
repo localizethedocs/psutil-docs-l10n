@@ -37,9 +37,9 @@
     "branch" : "master",
     "commit" : 
     {
-      "date" : "2026-08-17 11:04:42 +0200",
-      "hash" : "22baeb2efcea583995e75c2b9bb7a57b3156fab9",
-      "title" : "Move docs scripts in a separate dir"
+      "date" : "2026-08-27 14:19:11 +0200",
+      "hash" : "655c27638638b4c10c10b5386052b3ade5f397bc",
+      "title" : "Rename memory_info_ex() to memory_extras(), return only the extra fields (#2988)"
     }
   },
   "type" : "branch",

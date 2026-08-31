@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-27 11:50+0000\n"
+"POT-Creation-Date: 2026-08-31 16:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -449,19 +449,14 @@ msgid ""
 ">>> p.memory_info()\n"
 "pmem(rss=3164160, vms=4410163, shared=897433, text=302694, data=2422374)\n"
 ">>>\n"
-">>> p.memory_info_ex()\n"
-"pmem_ex(rss=3164160,\n"
-"        vms=4410163,\n"
-"        shared=897433,\n"
-"        text=302694,\n"
-"        data=2422374,\n"
-"        peak_rss=4172190,\n"
-"        peak_vms=6399001,\n"
-"        rss_anon=2266726,\n"
-"        rss_file=897433,\n"
-"        rss_shmem=0,\n"
-"        swap=0,\n"
-"        hugetlb=0)\n"
+">>> p.memory_extras()\n"
+"pmem_extras(peak_rss=4172190,\n"
+"            peak_vms=6399001,\n"
+"            rss_anon=2266726,\n"
+"            rss_file=897433,\n"
+"            rss_shmem=0,\n"
+"            swap_anon=0,\n"
+"            hugetlb=0)\n"
 ">>>\n"
 ">>> p.memory_percent()\n"
 "0.7823\n"
@@ -499,11 +494,11 @@ msgid ""
 ">>>"
 msgstr ""
 
-#: ../../../api-overview.rst:451
+#: ../../../api-overview.rst:446
 msgid "Threads"
 msgstr ""
 
-#: ../../../api-overview.rst:453
+#: ../../../api-overview.rst:448
 msgid ""
 ">>> p.threads()\n"
 "[pthread(id=5234, user_time=22.5, system_time=9.2891),\n"
@@ -513,11 +508,11 @@ msgid ""
 ">>>"
 msgstr ""
 
-#: ../../../api-overview.rst:463
+#: ../../../api-overview.rst:458
 msgid "Files and connections"
 msgstr ""
 
-#: ../../../api-overview.rst:465
+#: ../../../api-overview.rst:460
 msgid ""
 ">>> p.io_counters()\n"
 "pio(read_count=478001,\n"
@@ -552,11 +547,11 @@ msgid ""
 ">>>"
 msgstr ""
 
-#: ../../../api-overview.rst:498
+#: ../../../api-overview.rst:493
 msgid "Signals"
 msgstr ""
 
-#: ../../../api-overview.rst:500
+#: ../../../api-overview.rst:495
 msgid ""
 ">>> p.send_signal(signal.SIGTERM)\n"
 ">>> p.suspend()\n"
@@ -568,11 +563,11 @@ msgid ""
 ">>>"
 msgstr ""
 
-#: ../../../api-overview.rst:512
+#: ../../../api-overview.rst:507
 msgid "Other process functions"
 msgstr ""
 
-#: ../../../api-overview.rst:514
+#: ../../../api-overview.rst:509
 msgid ""
 ">>> import psutil\n"
 ">>>\n"
@@ -599,11 +594,11 @@ msgid ""
 ">>>"
 msgstr ""
 
-#: ../../../api-overview.rst:540
+#: ../../../api-overview.rst:535
 msgid "C heap introspection"
 msgstr ""
 
-#: ../../../api-overview.rst:542
+#: ../../../api-overview.rst:537
 msgid ""
 ">>> import psutil\n"
 ">>>\n"
@@ -614,15 +609,15 @@ msgid ""
 ">>>"
 msgstr ""
 
-#: ../../../api-overview.rst:552
+#: ../../../api-overview.rst:547
 msgid "See also `psleak <https://github.com/giampaolo/psleak>`_."
 msgstr ""
 
-#: ../../../api-overview.rst:555
+#: ../../../api-overview.rst:550
 msgid "Windows services"
 msgstr ""
 
-#: ../../../api-overview.rst:557
+#: ../../../api-overview.rst:552
 msgid ""
 ">>> import psutil\n"
 ">>>\n"
