@@ -1,0 +1,970 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2026 Giampaolo Rodola
+# This file is distributed under the same license as the psutil package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: psutil 8.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-27 11:50+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../shell-equivalents.rst:2
+msgid "Shell equivalents"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:4
+msgid ""
+"This page maps psutil's Python API to the equivalent native terminal "
+"commands on each platform. This is useful for understanding what psutil "
+"replaces and for cross-checking results."
+msgstr ""
+
+#: ../../../shell-equivalents.rst:9
+msgid ":doc:`stdlib-equivalents`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:10
+msgid ":doc:`alternatives`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:13
+msgid "System-wide functions"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:16
+msgid "CPU"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:22 ../../../shell-equivalents.rst:85
+#: ../../../shell-equivalents.rst:118 ../../../shell-equivalents.rst:146
+#: ../../../shell-equivalents.rst:179 ../../../shell-equivalents.rst:207
+msgid "psutil function"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:23 ../../../shell-equivalents.rst:86
+#: ../../../shell-equivalents.rst:119 ../../../shell-equivalents.rst:147
+#: ../../../shell-equivalents.rst:180 ../../../shell-equivalents.rst:208
+#: ../../../shell-equivalents.rst:246 ../../../shell-equivalents.rst:299
+#: ../../../shell-equivalents.rst:337 ../../../shell-equivalents.rst:370
+#: ../../../shell-equivalents.rst:443 ../../../shell-equivalents.rst:486
+#: ../../../shell-equivalents.rst:509 ../../../shell-equivalents.rst:547
+msgid "Linux"
+msgstr "Linux"
+
+#: ../../../shell-equivalents.rst:24 ../../../shell-equivalents.rst:87
+#: ../../../shell-equivalents.rst:120 ../../../shell-equivalents.rst:148
+#: ../../../shell-equivalents.rst:181 ../../../shell-equivalents.rst:209
+#: ../../../shell-equivalents.rst:247 ../../../shell-equivalents.rst:300
+#: ../../../shell-equivalents.rst:338 ../../../shell-equivalents.rst:371
+#: ../../../shell-equivalents.rst:444 ../../../shell-equivalents.rst:487
+#: ../../../shell-equivalents.rst:510 ../../../shell-equivalents.rst:548
+msgid "macOS"
+msgstr "macOS"
+
+#: ../../../shell-equivalents.rst:25 ../../../shell-equivalents.rst:88
+#: ../../../shell-equivalents.rst:121 ../../../shell-equivalents.rst:149
+#: ../../../shell-equivalents.rst:182 ../../../shell-equivalents.rst:210
+#: ../../../shell-equivalents.rst:248 ../../../shell-equivalents.rst:301
+#: ../../../shell-equivalents.rst:339 ../../../shell-equivalents.rst:372
+#: ../../../shell-equivalents.rst:445 ../../../shell-equivalents.rst:488
+#: ../../../shell-equivalents.rst:511 ../../../shell-equivalents.rst:549
+msgid "BSD"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:26 ../../../shell-equivalents.rst:89
+#: ../../../shell-equivalents.rst:122 ../../../shell-equivalents.rst:150
+#: ../../../shell-equivalents.rst:183 ../../../shell-equivalents.rst:211
+#: ../../../shell-equivalents.rst:249 ../../../shell-equivalents.rst:302
+#: ../../../shell-equivalents.rst:340 ../../../shell-equivalents.rst:373
+#: ../../../shell-equivalents.rst:446 ../../../shell-equivalents.rst:489
+#: ../../../shell-equivalents.rst:512 ../../../shell-equivalents.rst:550
+msgid "Windows"
+msgstr "Windows"
+
+#: ../../../shell-equivalents.rst:27
+msgid ":func:`cpu_percent`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:28
+msgid "``top``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:29 ../../../shell-equivalents.rst:30
+#: ../../../shell-equivalents.rst:74 ../../../shell-equivalents.rst:75
+#: ../../../shell-equivalents.rst:125 ../../../shell-equivalents.rst:126
+#: ../../../shell-equivalents.rst:219 ../../../shell-equivalents.rst:220
+#: ../../../shell-equivalents.rst:224 ../../../shell-equivalents.rst:225
+#: ../../../shell-equivalents.rst:229 ../../../shell-equivalents.rst:230
+#: ../../../shell-equivalents.rst:252 ../../../shell-equivalents.rst:262
+#: ../../../shell-equivalents.rst:267 ../../../shell-equivalents.rst:268
+#: ../../../shell-equivalents.rst:272 ../../../shell-equivalents.rst:273
+#: ../../../shell-equivalents.rst:277 ../../../shell-equivalents.rst:278
+#: ../../../shell-equivalents.rst:305 ../../../shell-equivalents.rst:306
+#: ../../../shell-equivalents.rst:310 ../../../shell-equivalents.rst:311
+#: ../../../shell-equivalents.rst:315 ../../../shell-equivalents.rst:316
+#: ../../../shell-equivalents.rst:320 ../../../shell-equivalents.rst:321
+#: ../../../shell-equivalents.rst:325 ../../../shell-equivalents.rst:326
+#: ../../../shell-equivalents.rst:343 ../../../shell-equivalents.rst:348
+#: ../../../shell-equivalents.rst:353 ../../../shell-equivalents.rst:354
+#: ../../../shell-equivalents.rst:358 ../../../shell-equivalents.rst:359
+#: ../../../shell-equivalents.rst:376 ../../../shell-equivalents.rst:377
+#: ../../../shell-equivalents.rst:381 ../../../shell-equivalents.rst:416
+#: ../../../shell-equivalents.rst:417 ../../../shell-equivalents.rst:421
+#: ../../../shell-equivalents.rst:422 ../../../shell-equivalents.rst:449
+#: ../../../shell-equivalents.rst:450 ../../../shell-equivalents.rst:459
+#: ../../../shell-equivalents.rst:460 ../../../shell-equivalents.rst:492
+#: ../../../shell-equivalents.rst:493 ../../../shell-equivalents.rst:520
+#: ../../../shell-equivalents.rst:553 ../../../shell-equivalents.rst:554
+#: ../../../shell-equivalents.rst:558 ../../../shell-equivalents.rst:559
+#: ../../../shell-equivalents.rst:563 ../../../shell-equivalents.rst:564
+#: ../../../shell-equivalents.rst:568 ../../../shell-equivalents.rst:569
+#: ../../../shell-equivalents.rst:573 ../../../shell-equivalents.rst:574
+msgid "same"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:32
+msgid ":func:`cpu_count(logical=True) <cpu_count>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:33
+msgid "``nproc``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:34
+msgid "``sysctl hw.logicalcpu``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:35
+msgid "``sysctl hw.ncpu``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:37
+msgid ":func:`cpu_count(logical=False) <cpu_count>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:38
+msgid "``lscpu | grep '^Core(s)'``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:39
+msgid "``sysctl hw.physicalcpu``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:42
+msgid ":func:`cpu_times(percpu=False) <cpu_times>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:43
+msgid "``cat /proc/stat | grep '^cpu\\s'``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:45 ../../../shell-equivalents.rst:50
+msgid "``systat -vmstat``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:47
+msgid ":func:`cpu_times(percpu=True) <cpu_times>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:48
+msgid "``cat /proc/stat | grep '^cpu'``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:52
+msgid ":func:`cpu_times_percent(percpu=False) <cpu_times_percent>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:53
+msgid "``mpstat``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:57
+msgid ":func:`cpu_times_percent(percpu=True) <cpu_times_percent>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:58
+msgid "``mpstat -P ALL``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:62
+msgid ":func:`cpu_freq`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:63
+msgid "``cpufreq-info``, ``lscpu | grep \"MHz\"``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:64
+msgid "``sysctl hw.cpufrequency``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:65
+msgid "``sysctl dev.cpu.0.freq``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:66 ../../../shell-equivalents.rst:94
+#: ../../../shell-equivalents.rst:216
+msgid "``systeminfo``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:67
+msgid ":func:`cpu_stats`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:70
+msgid "``vmstat -s``, ``sysctl vm.stats.sys``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:72
+msgid ":func:`getloadavg`"
+msgstr ":func:`getloadavg`"
+
+#: ../../../shell-equivalents.rst:73
+msgid "``uptime``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:79 ../../../shell-equivalents.rst:436
+msgid "Memory"
+msgstr "記憶體"
+
+#: ../../../shell-equivalents.rst:90
+msgid ":func:`virtual_memory`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:91
+msgid "``free``, ``vmstat``, ``cat /proc/meminfo``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:92
+msgid "``vm_stat``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:93
+msgid "``vmstat -s``, ``sysctl vm.stats``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:95
+msgid ":func:`swap_memory`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:96
+msgid "``free``, ``vmstat``, ``swapon``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:97
+msgid "``sysctl vm.swapusage``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:98
+msgid "``vmstat -s``, ``swapinfo``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:100
+msgid ":func:`heap_info`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:105
+msgid ":func:`heap_trim`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:112
+msgid "Disks"
+msgstr "磁碟"
+
+#: ../../../shell-equivalents.rst:123
+msgid ":func:`disk_usage`"
+msgstr ":func:`disk_usage`"
+
+#: ../../../shell-equivalents.rst:124
+msgid "``df``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:127
+msgid "``fsutil volume diskfree C:\\``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:128
+msgid ":func:`disk_partitions`"
+msgstr ":func:`disk_partitions`"
+
+#: ../../../shell-equivalents.rst:129
+msgid "``mount``, ``findmnt``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:130 ../../../shell-equivalents.rst:131
+msgid "``mount``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:133
+msgid ":func:`disk_io_counters`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:134
+msgid "``iostat -dx``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:135
+msgid "``iostat``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:136
+msgid "``iostat -x``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:140
+msgid "Network"
+msgstr "網路"
+
+#: ../../../shell-equivalents.rst:151
+msgid ":func:`net_connections`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:152
+msgid "``netstat -anp``, ``ss``, ``lsof -nP -i -U``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:153
+msgid "``netstat -anp``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:154 ../../../shell-equivalents.rst:155
+msgid "``netstat -an``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:156
+msgid ":func:`net_if_addrs`"
+msgstr ":func:`net_if_addrs`"
+
+#: ../../../shell-equivalents.rst:157
+msgid "``ifconfig``, ``ip addr``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:158 ../../../shell-equivalents.rst:159
+#: ../../../shell-equivalents.rst:168 ../../../shell-equivalents.rst:169
+msgid "``ifconfig``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:160
+msgid "``ipconfig``, ``systeminfo``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:161
+msgid ":func:`net_io_counters`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:162
+msgid "``netstat -i``, ``ifconfig``, ``ip -s link``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:163 ../../../shell-equivalents.rst:164
+msgid "``netstat -i``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:165
+msgid "``netstat -e``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:166
+msgid ":func:`net_if_stats`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:167
+msgid "``ifconfig``, ``ip -br link``, ``ip link``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:170
+msgid "``netsh interface show interface``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:173
+msgid "Sensors"
+msgstr "感測器"
+
+#: ../../../shell-equivalents.rst:184
+msgid ":func:`sensors_temperatures`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:185 ../../../shell-equivalents.rst:190
+msgid "``sensors``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:187
+msgid "``sysctl dev.cpu.*.temperature``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:189
+msgid ":func:`sensors_fans`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:192
+msgid "``sysctl dev.cpu.*.fan``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:194
+msgid ":func:`sensors_battery`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:195
+msgid "``acpi -b``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:196
+msgid "``pmset -g batt``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:197
+msgid "``apm -b``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:201
+msgid "Other"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:212
+msgid ":func:`boot_time`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:213
+msgid "``uptime``, ``who -b``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:214 ../../../shell-equivalents.rst:215
+msgid "``sysctl kern.boottime``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:217
+msgid ":func:`users`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:218
+msgid "``who -a``, ``w``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:222
+msgid ":func:`pids`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:223
+msgid "``ps -A -eo pid``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:226
+msgid "``tasklist``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:227
+msgid ":func:`pid_exists`"
+msgstr ":func:`pid_exists`"
+
+#: ../../../shell-equivalents.rst:228 ../../../shell-equivalents.rst:276
+msgid "``kill -0 PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:234
+msgid "Process methods"
+msgstr "進程方法"
+
+#: ../../../shell-equivalents.rst:236
+msgid "Assuming ``p = psutil.Process()``."
+msgstr ""
+
+#: ../../../shell-equivalents.rst:239
+msgid "Identity"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:245 ../../../shell-equivalents.rst:298
+#: ../../../shell-equivalents.rst:336 ../../../shell-equivalents.rst:369
+#: ../../../shell-equivalents.rst:442 ../../../shell-equivalents.rst:485
+#: ../../../shell-equivalents.rst:508 ../../../shell-equivalents.rst:546
+msgid "psutil method"
+msgstr "psutil 方法"
+
+#: ../../../shell-equivalents.rst:250
+msgid ":meth:`p.name() <Process.name>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:251
+msgid "``ps -o comm -p PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:253 ../../../shell-equivalents.rst:258
+msgid "``procstat -b PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:255
+msgid ":meth:`p.exe() <Process.exe>`"
+msgstr ":meth:`p.exe() <Process.exe>`"
+
+#: ../../../shell-equivalents.rst:256
+msgid "``readlink /proc/pid/exe``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:257 ../../../shell-equivalents.rst:519
+msgid "``lsof -p PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:260
+msgid ":meth:`p.cmdline() <Process.cmdline>`"
+msgstr ":meth:`p.cmdline() <Process.cmdline>`"
+
+#: ../../../shell-equivalents.rst:261
+msgid "``ps -o args -p PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:263
+msgid "``procstat -c PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:265
+msgid ":meth:`p.status() <Process.status>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:266
+msgid "``ps -o stat -p PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:270
+msgid ":meth:`p.create_time() <Process.create_time>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:271
+msgid "``ps -o lstart -p PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:275
+msgid ":meth:`p.is_running() <Process.is_running>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:280
+msgid ":meth:`p.environ() <Process.environ>`"
+msgstr ":meth:`p.environ() <Process.environ>`"
+
+#: ../../../shell-equivalents.rst:281
+msgid "``xargs -0 -a /proc/pid/environ``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:283
+msgid "``procstat -e PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:285
+msgid ":meth:`p.cwd() <Process.cwd>`"
+msgstr ":meth:`p.cwd() <Process.cwd>`"
+
+#: ../../../shell-equivalents.rst:286
+msgid "``pwdx PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:287
+msgid "``lsof -p PID -a -d cwd``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:292
+msgid "Process tree"
+msgstr "進程樹"
+
+#: ../../../shell-equivalents.rst:303
+msgid ":meth:`p.ppid() <Process.ppid>`"
+msgstr ":meth:`p.ppid() <Process.ppid>`"
+
+#: ../../../shell-equivalents.rst:304
+msgid "``ps -o ppid= -p PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:308
+msgid ":meth:`p.parent() <Process.parent>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:309
+msgid "``ps -p $(ps -o ppid= -p PID)``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:313
+msgid ":meth:`p.parents() <Process.parents>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:314
+msgid "``pstree -s PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:318
+msgid ":meth:`p.children(recursive=False) <Process.children>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:319
+msgid "``pgrep -P PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:323
+msgid ":meth:`p.children(recursive=True) <Process.children>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:324
+msgid "``pstree -p PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:330
+msgid "Credentials"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:341
+msgid ":meth:`p.uids() <Process.uids>`"
+msgstr ":meth:`p.uids() <Process.uids>`"
+
+#: ../../../shell-equivalents.rst:342
+msgid "``ps -o uid,ruid,suid -p PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:344 ../../../shell-equivalents.rst:349
+msgid "``procstat -s PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:346
+msgid ":meth:`p.gids() <Process.gids>`"
+msgstr ":meth:`p.gids() <Process.gids>`"
+
+#: ../../../shell-equivalents.rst:347
+msgid "``ps -o gid,rgid,sgid -p PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:351
+msgid ":meth:`p.username() <Process.username>`"
+msgstr ":meth:`p.username() <Process.username>`"
+
+#: ../../../shell-equivalents.rst:352
+msgid "``ps -o user -p PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:356
+msgid ":meth:`p.terminal() <Process.terminal>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:357
+msgid "``ps -o tty -p PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:363
+msgid "CPU / scheduling"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:374
+msgid ":meth:`p.cpu_percent() <Process.cpu_percent>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:375
+msgid "``ps -o %cpu -p PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:379
+msgid ":meth:`p.cpu_times() <Process.cpu_times>`"
+msgstr ":meth:`p.cpu_times() <Process.cpu_times>`"
+
+#: ../../../shell-equivalents.rst:380
+msgid "``ps -o cputime -p PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:382 ../../../shell-equivalents.rst:392
+#: ../../../shell-equivalents.rst:475
+msgid "``procstat -r PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:384
+msgid ":meth:`p.cpu_num() <Process.cpu_num>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:385
+msgid "``ps -o psr -p PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:389
+msgid ":meth:`p.num_ctx_switches() <Process.num_ctx_switches>`"
+msgstr ":meth:`p.num_ctx_switches() <Process.num_ctx_switches>`"
+
+#: ../../../shell-equivalents.rst:390
+msgid "``pidstat -w -p PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:394
+msgid ":meth:`p.cpu_affinity() <Process.cpu_affinity>`"
+msgstr ":meth:`p.cpu_affinity() <Process.cpu_affinity>`"
+
+#: ../../../shell-equivalents.rst:395
+msgid "``taskset -p PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:397
+msgid "``cpuset -g -p PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:399
+msgid ":meth:`p.cpu_affinity(CPUS) <Process.cpu_affinity>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:400
+msgid "``taskset -p MASK PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:402
+msgid "``cpuset -s -p PID -l CPUS``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:404
+msgid ":meth:`p.ionice() <Process.ionice>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:405
+msgid "``ionice -p PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:409
+msgid ":meth:`p.ionice(CLASS) <Process.ionice>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:410
+msgid "``ionice -c CLASS -p PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:414
+msgid ":meth:`p.nice() <Process.nice>`"
+msgstr ":meth:`p.nice() <Process.nice>`"
+
+#: ../../../shell-equivalents.rst:415
+msgid "``ps -o nice -p PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:419
+msgid ":meth:`p.nice(VALUE) <Process.nice>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:420
+msgid "``renice -n VALUE -p PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:424
+msgid ":meth:`p.rlimit(RES) <Process.rlimit>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:425
+msgid "``prlimit --pid PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:427
+msgid "``procstat rlimit PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:429
+msgid ":meth:`p.rlimit(RES, LIMITS) <Process.rlimit>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:430
+msgid "``prlimit --pid PID --RES=SOFT:HARD``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:447
+msgid ":meth:`p.memory_info() <Process.memory_info>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:448
+msgid "``ps -o rss,vsz -p PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:452
+msgid ":meth:`p.memory_info_ex() <Process.memory_info_ex>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:453
+msgid "``cat /proc/pid/status``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:457
+msgid ":meth:`p.memory_percent() <Process.memory_percent>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:458
+msgid "``ps -o %mem -p PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:462
+msgid ":meth:`p.memory_maps() <Process.memory_maps>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:463
+msgid "``pmap PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:464
+msgid "``vmmap PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:465
+msgid "``procstat -v PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:467
+msgid ":meth:`p.memory_footprint() <Process.memory_footprint>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:468
+msgid "``smem``, ``smemstat``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:472
+msgid ":meth:`p.page_faults() <Process.page_faults>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:473
+msgid "``ps -o maj_flt,min_flt -p PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:474
+msgid "``ps -o faults -p PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:479
+msgid "Threads"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:490
+msgid ":meth:`p.num_threads() <Process.num_threads>`"
+msgstr ":meth:`p.num_threads() <Process.num_threads>`"
+
+#: ../../../shell-equivalents.rst:491
+msgid "``ps -o nlwp -p PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:495
+msgid ":meth:`p.threads() <Process.threads>`"
+msgstr ":meth:`p.threads() <Process.threads>`"
+
+#: ../../../shell-equivalents.rst:496
+msgid "``ps -T -p PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:502
+msgid "Files and connections"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:513
+msgid ":meth:`p.net_connections() <Process.net_connections>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:514
+msgid "``ss -p``, ``lsof -p PID -i``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:515
+msgid "``lsof -p PID -i``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:517
+msgid "``netstat -ano | findstr PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:518
+msgid ":meth:`p.open_files() <Process.open_files>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:521
+msgid "``procstat -f PID``, ``fstat``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:522
+msgid "``handle.exe -p PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:523
+msgid ":meth:`p.io_counters() <Process.io_counters>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:524
+msgid "``cat /proc/pid/io``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:528
+msgid ":meth:`p.num_fds() <Process.num_fds>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:529
+msgid "``ls /proc/pid/fd | wc -l``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:533
+msgid ":meth:`p.num_handles() <Process.num_handles>`"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:540
+msgid "Signals"
+msgstr "訊號"
+
+#: ../../../shell-equivalents.rst:551
+msgid ":meth:`p.send_signal() <Process.send_signal>`"
+msgstr ":meth:`p.send_signal() <Process.send_signal>`"
+
+#: ../../../shell-equivalents.rst:552
+msgid "``kill -SIG PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:556
+msgid ":meth:`p.suspend() <Process.suspend>`"
+msgstr ":meth:`p.suspend() <Process.suspend>`"
+
+#: ../../../shell-equivalents.rst:557
+msgid "``kill -STOP PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:561
+msgid ":meth:`p.resume() <Process.resume>`"
+msgstr ":meth:`p.resume() <Process.resume>`"
+
+#: ../../../shell-equivalents.rst:562
+msgid "``kill -CONT PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:566
+msgid ":meth:`p.terminate() <Process.terminate>`"
+msgstr ":meth:`p.terminate() <Process.terminate>`"
+
+#: ../../../shell-equivalents.rst:567
+msgid "``kill -TERM PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:570
+msgid "``taskkill /PID PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:571
+msgid ":meth:`p.kill() <Process.kill>`"
+msgstr ":meth:`p.kill() <Process.kill>`"
+
+#: ../../../shell-equivalents.rst:572
+msgid "``kill -KILL PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:575
+msgid "``taskkill /F /PID PID``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:576
+msgid ":meth:`p.wait() <Process.wait>`"
+msgstr ":meth:`p.wait() <Process.wait>`"
+
+#: ../../../shell-equivalents.rst:577
+msgid "``tail --pid=PID -f /dev/null``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:578
+msgid "``lsof -p PID +r 1``"
+msgstr ""
+
+#: ../../../shell-equivalents.rst:579
+msgid "``pwait PID``"
+msgstr ""

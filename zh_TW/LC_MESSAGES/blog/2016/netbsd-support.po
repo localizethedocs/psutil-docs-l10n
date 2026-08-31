@@ -1,0 +1,106 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2026 Giampaolo Rodola
+# This file is distributed under the same license as the psutil package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: psutil 8.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-27 11:50+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../blog/2016/netbsd-support.rst:9
+msgid "NetBSD support"
+msgstr ""
+
+#: ../../../blog/2016/netbsd-support.rst:11
+msgid ""
+"Roughly two months have passed since I last :doc:`announced </blog/2015/"
+"openbsd-support>` that psutil added support for OpenBSD. Today I'm happy to "
+"announce that it's the turn of NetBSD! This was contributed by `Thomas "
+"Klausner <https://github.com/0-wiz-0>`_, `Ryo Onodera <https://github.com/"
+"ryoon>`_ and myself in :pr:`557`."
+msgstr ""
+
+#: ../../../blog/2016/netbsd-support.rst:18
+msgid "Differences with FreeBSD (and OpenBSD)"
+msgstr ""
+
+#: ../../../blog/2016/netbsd-support.rst:20
+msgid ""
+"The NetBSD implementation has limitations similar to the ones I encountered "
+"with OpenBSD. Again, FreeBSD remains the BSD variant with the best support "
+"in terms of kernel functionality."
+msgstr ""
+
+#: ../../../blog/2016/netbsd-support.rst:24
+msgid ""
+":meth:`Process.memory_maps` is not implemented. The kernel provides the "
+"necessary pieces, but I haven't done this yet (hopefully later)."
+msgstr ""
+
+#: ../../../blog/2016/netbsd-support.rst:26
+msgid ""
+":meth:`Process.num_ctx_switches`'s :field:`involuntary` field is always 0. "
+"The ``kinfo_proc()`` syscall provides this info, but it's always set to 0."
+msgstr ""
+
+#: ../../../blog/2016/netbsd-support.rst:28
+msgid ":meth:`Process.cpu_affinity` (get and set) is not supported."
+msgstr ""
+
+#: ../../../blog/2016/netbsd-support.rst:29
+msgid ":func:`psutil.cpu_count` ``(logical=False)`` always returns ``None``."
+msgstr ""
+
+#: ../../../blog/2016/netbsd-support.rst:31
+msgid ""
+"As for the rest: it is all there. All memory, disk, network and process APIs "
+"are fully supported and functioning."
+msgstr ""
+
+#: ../../../blog/2016/netbsd-support.rst:35
+msgid "Other enhancements available in this psutil release"
+msgstr ""
+
+#: ../../../blog/2016/netbsd-support.rst:37
+msgid ""
+"Besides NetBSD support, this release has a couple of interesting "
+"enhancements:"
+msgstr ""
+
+#: ../../../blog/2016/netbsd-support.rst:39
+msgid ""
+":gh:`708`: [Linux] :func:`psutil.net_connections` and :meth:`Process."
+"connections` can be up to 3x faster when there are many connections."
+msgstr ""
+
+#: ../../../blog/2016/netbsd-support.rst:42
+msgid ":gh:`718`: :func:`psutil.process_iter` is now thread safe."
+msgstr ""
+
+#: ../../../blog/2016/netbsd-support.rst:44
+msgid "You can read the rest in the :ref:`changelog <341>`, as usual."
+msgstr ""
+
+#: ../../../blog/2016/netbsd-support.rst:47
+msgid "Discussion"
+msgstr ""
+
+#: ../../../blog/2016/netbsd-support.rst:49
+msgid ""
+"`Reddit <https://www.reddit.com/r/Python/comments/4131q2/"
+"netbsd_support_for_psutil/>`_"
+msgstr ""
+
+#: ../../../blog/2016/netbsd-support.rst:50
+msgid "`Hacker News <https://news.ycombinator.com/item?id=10909101>`_"
+msgstr ""

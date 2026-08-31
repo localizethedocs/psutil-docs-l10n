@@ -1,0 +1,278 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2026 Giampaolo Rodola
+# This file is distributed under the same license as the psutil package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: psutil 8.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-27 11:50+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../about.rst:6
+msgid "About this site"
+msgstr "關於此網站"
+
+#: ../../../about.rst:8
+msgid ""
+"This site is built with `Sphinx <https://www.sphinx-doc.org/>`__, on top of "
+"its built-in ``basic`` theme. From there it has been heavily customized: the "
+"layout, navigation, search, dark mode, code blocks, mobile behavior, and "
+"many small details were rebuilt or extended specifically for these docs."
+msgstr ""
+
+#: ../../../about.rst:14
+msgid "Keyboard shortcuts"
+msgstr ""
+
+#: ../../../about.rst:20
+msgid "Key"
+msgstr ""
+
+#: ../../../about.rst:21
+msgid "Action"
+msgstr ""
+
+#: ../../../about.rst:22
+msgid ":kbd:`Shift+D`"
+msgstr ":kbd:`Shift+D`"
+
+#: ../../../about.rst:23
+msgid "Toggle dark / light mode"
+msgstr "切換深色/淺色模式"
+
+#: ../../../about.rst:24
+msgid ":kbd:`Ctrl+K`"
+msgstr ":kbd:`Ctrl+K`"
+
+#: ../../../about.rst:25
+msgid "Open search"
+msgstr "開啟搜尋"
+
+#: ../../../about.rst:26
+msgid ":kbd:`↑` / :kbd:`↓`"
+msgstr ":kbd:`↑` / :kbd:`↓`"
+
+#: ../../../about.rst:27
+msgid "Navigate search results"
+msgstr ""
+
+#: ../../../about.rst:28
+msgid ":kbd:`Enter`"
+msgstr ":kbd:`Enter`"
+
+#: ../../../about.rst:29
+msgid "Open highlighted search result"
+msgstr ""
+
+#: ../../../about.rst:30
+msgid ":kbd:`Escape`"
+msgstr ":kbd:`Escape`"
+
+#: ../../../about.rst:31
+msgid "Close search / dialog"
+msgstr ""
+
+#: ../../../about.rst:32
+msgid ":kbd:`?`"
+msgstr ":kbd:`?`"
+
+#: ../../../about.rst:33
+msgid "Show this help"
+msgstr ""
+
+#: ../../../about.rst:36 ../../../about.rst:52
+msgid "Dark mode"
+msgstr "深色模式"
+
+#: ../../../about.rst:42
+msgid ""
+"By default the site matches your operating system's light or dark setting. "
+"Click the |moon| icon in the top-right corner, or press :kbd:`Shift+D` "
+"anywhere, to override it. Your choice is saved and restored on your next "
+"visit."
+msgstr ""
+
+#: ../../../about.rst:38
+msgid "<i class=\"fa-regular fa-moon\" aria-hidden=\"true\"></i>"
+msgstr ""
+
+#: ../../../about.rst:48
+msgid "Light mode"
+msgstr "淺色模式"
+
+#: ../../../about.rst:57
+msgid "Clickable API references"
+msgstr "可點選的 API 參考"
+
+#: ../../../about.rst:59
+msgid ""
+"Identifiers in code blocks (e.g. ``p = psutil.Process()``, ``p."
+"cpu_percent()``) are clickable. Hover over one of those to see the "
+"highlight, then click to jump to the corresponding API reference doc. This "
+"is powered by `sphinx-codeautolink <https://sphinx-codeautolink.readthedocs."
+"io/>`__."
+msgstr ""
+
+#: ../../../about.rst:64
+msgid "Clickable API reference"
+msgstr "可點選的 API 參考"
+
+#: ../../../about.rst:69
+msgid "Copy buttons"
+msgstr "複製按鈕"
+
+#: ../../../about.rst:71
+msgid ""
+"Every code block has a copy button in its top-right corner which appears on "
+"hover. For interactive (``>>>``) examples it copies just the code, leaving "
+"out the prompts and the output, so you can paste it straight into a shell."
+msgstr ""
+
+#: ../../../about.rst:75
+msgid "Copy button"
+msgstr "複製按鈕"
+
+#: ../../../about.rst:80
+msgid "Search"
+msgstr "搜尋"
+
+#: ../../../about.rst:82
+msgid ""
+"Press :kbd:`Ctrl+K` to jump straight to the search box. Once results appear, "
+"use the :kbd:`↑` and :kbd:`↓` arrow keys to move through them and :kbd:"
+"`Enter` to open one."
+msgstr ""
+
+#: ../../../about.rst:86
+msgid "Search results"
+msgstr "搜尋結果"
+
+#: ../../../about.rst:91
+msgid "TOC / On this page"
+msgstr ""
+
+#: ../../../about.rst:93
+msgid ""
+"Wide screens show an \"On this page\" sidebar on the right, listing the "
+"current page's sections. As you scroll it highlights the section you're in, "
+"and clicking an entry jumps straight to it."
+msgstr ""
+
+#: ../../../about.rst:97
+msgid "On this page outline"
+msgstr ""
+
+#: ../../../about.rst:102
+msgid "Back to top"
+msgstr "返回頂部"
+
+#: ../../../about.rst:104
+msgid ""
+"On a long page, start scrolling back up and a small button will appear in "
+"the bottom-right corner. Click it to go back to the top of the page."
+msgstr ""
+
+#: ../../../about.rst:107
+msgid "Back-to-top button"
+msgstr ""
+
+#: ../../../about.rst:112
+msgid "Reading on mobile"
+msgstr ""
+
+#: ../../../about.rst:114
+msgid ""
+"On a phone the navigation collapses behind the **☰** button in the top bar. "
+"Tap it to open the menu, then swipe left anywhere on the page (or tap "
+"outside it) to close it again."
+msgstr ""
+
+#: ../../../about.rst:118
+msgid "Mobile sidebar"
+msgstr ""
+
+#: ../../../about.rst:123
+msgid "Blog"
+msgstr "網誌"
+
+#: ../../../about.rst:125
+msgid ""
+"New releases and deep-dives are written up on the :doc:`blog <blog>`. Blog "
+"provides a RSS feed (the icon at the top of the blog page) so you can "
+"receive notifications of new blog posts from your reader + a commenting "
+"system provided by `giscus <https://giscus.app/>`_."
+msgstr ""
+
+#: ../../../about.rst:131
+msgid "Other internal optimizations"
+msgstr "其他內部最佳化"
+
+#: ../../../about.rst:133
+msgid ""
+"Fonts and icons are served directly from this site, not from third-party "
+"CDNs such as Google Fonts. This means the docs renders the same from all "
+"countries (e.g. mainland China). Each font includes only the glyphs used by "
+"the site, keeping page weight small."
+msgstr ""
+
+#: ../../../about.rst:138
+msgid "Links to this site shared on social medias show rich preview cards."
+msgstr ""
+
+#: ../../../about.rst:140
+msgid ""
+"Every page declares a canonical URL and is listed in a generated ``sitemap."
+"xml``, so search engines can discover and index the whole site."
+msgstr ""
+
+#: ../../../about.rst:143
+msgid ""
+"The docs build is strict: Python code snippets are syntax-checked, and "
+"broken links or unresolved API cross-references make the build fail."
+msgstr ""
+
+#: ../../../about.rst:147
+msgid "Linking from your own docs"
+msgstr ""
+
+#: ../../../about.rst:149
+msgid ""
+"Other Sphinx projects can cross-reference psutil's API directly through the "
+"`intersphinx <https://www.sphinx-doc.org/en/master/usage/extensions/"
+"intersphinx.html>`_ extension. Add psutil to ``intersphinx_mapping`` in your "
+"``conf.py``:"
+msgstr ""
+
+#: ../../../about.rst:153
+msgid ""
+"intersphinx_mapping = {\n"
+"    \"psutil\": (\"https://psutil.io/\", None),\n"
+"}"
+msgstr ""
+"intersphinx_mapping = {\n"
+"    \"psutil\": (\"https://psutil.io/\", None),\n"
+"}"
+
+#: ../../../about.rst:159
+msgid ""
+"You can then reference any psutil object and it links straight here, e.g.:"
+msgstr ""
+
+#: ../../../about.rst:161
+msgid "See :func:`psutil.cpu_times` function."
+msgstr ""
+
+#: ../../../about.rst:165
+msgid ""
+"This will automatically turn ``psutil.cpu_times`` into a link pointing to "
+"this site."
+msgstr ""
