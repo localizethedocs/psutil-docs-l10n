@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-17 09:32+0000\n"
+"POT-Creation-Date: 2026-08-31 16:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -146,113 +146,118 @@ msgid ""
 "bench_oneshot.py`."
 msgstr ""
 
-#: ../../../performance.rst:104
-msgid "Linux"
-msgstr ""
-
-#: ../../../performance.rst:106
+#: ../../../performance.rst:103
 msgid ""
-":meth:`~Process.cpu_num`, :meth:`~Process.cpu_percent`, :meth:`~Process."
-"cpu_times`, :meth:`~Process.create_time`, :meth:`~Process.name`, :meth:"
-"`~Process.page_faults`, :meth:`~Process.ppid`, :meth:`~Process.status`, :"
-"meth:`~Process.terminal`"
+"Additionally, some methods are computed from other methods, so on every "
+"platform :meth:`Process.oneshot` also speeds up :meth:`~Process.cpu_percent` "
+"(from :meth:`~Process.cpu_times`), :meth:`~Process.memory_percent` (from :"
+"meth:`~Process.memory_info`), :meth:`~Process.parent` and :meth:`~Process."
+"parents` (from :meth:`~Process.ppid`) and, on POSIX, :meth:`~Process."
+"username` (from :meth:`~Process.uids`)."
 msgstr ""
 
 #: ../../../performance.rst:111
+msgid "Linux"
+msgstr ""
+
+#: ../../../performance.rst:113
 msgid ""
-":meth:`~Process.gids`, :meth:`~Process.memory_info_ex`, :meth:`~Process."
-"num_ctx_switches`, :meth:`~Process.num_threads`, :meth:`~Process.uids`, :"
-"meth:`~Process.username`"
+":meth:`~Process.cpu_num`, :meth:`~Process.cpu_times`, :meth:`~Process."
+"create_time`, :meth:`~Process.name`, :meth:`~Process.page_faults`, :meth:"
+"`~Process.ppid`, :meth:`~Process.status`, :meth:`~Process.terminal`"
 msgstr ""
 
-#: ../../../performance.rst:115
-msgid ":meth:`~Process.memory_footprint`, :meth:`~Process.memory_maps`"
-msgstr ""
-
-#: ../../../performance.rst:117
-msgid "*Speedup: +2.6×*"
-msgstr ""
-
-#: ../../../performance.rst:120
-msgid "Windows"
+#: ../../../performance.rst:118
+msgid ""
+":meth:`~Process.gids`, :meth:`~Process.memory_extras`, :meth:`~Process."
+"num_ctx_switches`, :meth:`~Process.num_threads`, :meth:`~Process.uids`"
 msgstr ""
 
 #: ../../../performance.rst:122
+msgid ":meth:`~Process.memory_footprint`, :meth:`~Process.memory_maps`"
+msgstr ""
+
+#: ../../../performance.rst:124
+msgid "*Speedup: +1.7×*"
+msgstr ""
+
+#: ../../../performance.rst:127
+msgid "Windows"
+msgstr ""
+
+#: ../../../performance.rst:129
 msgid ""
-":meth:`~Process.cpu_percent`, :meth:`~Process.cpu_times`, :meth:`~Process."
-"io_counters`, :meth:`~Process.memory_info`, :meth:`~Process."
-"memory_info_ex`, :meth:`~Process.memory_percent`, :meth:`~Process."
+":meth:`~Process.cpu_times`, :meth:`~Process.io_counters`, :meth:`~Process."
+"memory_info`, :meth:`~Process.memory_extras`, :meth:`~Process."
 "num_ctx_switches`, :meth:`~Process.num_handles`, :meth:`~Process."
 "num_threads`, :meth:`~Process.page_faults`, :meth:`~Process.status`"
 msgstr ""
 
-#: ../../../performance.rst:129
+#: ../../../performance.rst:135
 msgid ":meth:`~Process.exe`, :meth:`~Process.name`"
 msgstr ""
 
-#: ../../../performance.rst:131
+#: ../../../performance.rst:137
 msgid ""
 "Some of these first try a faster dedicated call, and only use the shared one "
 "if it raises :exc:`AccessDenied`. The second figure is for such processes."
 msgstr ""
 
-#: ../../../performance.rst:134
+#: ../../../performance.rst:140
 msgid "*Speedup: +1.8× / +6.5×*"
 msgstr ""
 
-#: ../../../performance.rst:137
+#: ../../../performance.rst:143
 msgid "macOS"
 msgstr ""
 
-#: ../../../performance.rst:139
+#: ../../../performance.rst:145
 msgid ""
-":meth:`~Process.cpu_percent`, :meth:`~Process.cpu_times`, :meth:`~Process."
-"memory_info`, :meth:`~Process.memory_percent`, :meth:`~Process."
+":meth:`~Process.cpu_times`, :meth:`~Process.memory_info`, :meth:`~Process."
 "num_ctx_switches`, :meth:`~Process.num_threads`, :meth:`~Process.page_faults`"
 msgstr ""
 
-#: ../../../performance.rst:144
+#: ../../../performance.rst:149
 msgid ""
 ":meth:`~Process.create_time`, :meth:`~Process.gids`, :meth:`~Process.name`, :"
 "meth:`~Process.ppid`, :meth:`~Process.status`, :meth:`~Process.terminal`, :"
-"meth:`~Process.uids`, :meth:`~Process.username`"
-msgstr ""
-
-#: ../../../performance.rst:148
-msgid "*Speedup: +1.9×*"
-msgstr ""
-
-#: ../../../performance.rst:151
-msgid "BSD"
+"meth:`~Process.uids`"
 msgstr ""
 
 #: ../../../performance.rst:153
+msgid "*Speedup: +1.6×*"
+msgstr ""
+
+#: ../../../performance.rst:156
+msgid "BSD"
+msgstr ""
+
+#: ../../../performance.rst:158
 msgid ""
-":meth:`~Process.cpu_num` , :meth:`~Process.cpu_percent`, :meth:`~Process."
-"cpu_times`, :meth:`~Process.create_time`, :meth:`~Process.gids`, :meth:"
-"`~Process.io_counters`, :meth:`~Process.memory_info`, :meth:`~Process."
-"memory_percent`, :meth:`~Process.name`, :meth:`~Process.nice`, :meth:"
+":meth:`~Process.cpu_num`, :meth:`~Process.cpu_times`, :meth:`~Process."
+"create_time`, :meth:`~Process.gids`, :meth:`~Process.io_counters`, :meth:"
+"`~Process.memory_info`, :meth:`~Process.name`, :meth:`~Process.nice`, :meth:"
 "`~Process.num_ctx_switches`, :meth:`~Process.page_faults`, :meth:`~Process."
 "ppid`, :meth:`~Process.status`, :meth:`~Process.terminal`, :meth:`~Process."
-"uids`, :meth:`~Process.username`"
+"uids`"
 msgstr ""
 
-#: ../../../performance.rst:162
-msgid "*Speedup: +2.0×*"
+#: ../../../performance.rst:166
+msgid "*Speedup: +2.7×*"
 msgstr ""
 
-#: ../../../performance.rst:167
+#: ../../../performance.rst:171
 msgid "Measuring oneshot() speedup"
 msgstr ""
 
-#: ../../../performance.rst:169
+#: ../../../performance.rst:173
 msgid ""
 ":src:`scripts/internal/bench_oneshot.py` measures :meth:`Process.oneshot` "
 "speedup. It also shows which APIs share the same internal kernel routines. E."
 "g. on Linux:"
 msgstr ""
 
-#: ../../../performance.rst:173
+#: ../../../performance.rst:177
 msgid ""
 "$ python3 scripts/internal/bench_oneshot.py --times 10000\n"
 "17 methods pre-fetched by oneshot() on platform 'linux' (10,000 times, "
@@ -262,8 +267,8 @@ msgid ""
 "  cpu_percent\n"
 "  cpu_times\n"
 "  gids\n"
+"  memory_extras\n"
 "  memory_info\n"
-"  memory_info_ex\n"
 "  memory_percent\n"
 "  name\n"
 "  num_ctx_switches\n"
@@ -276,86 +281,86 @@ msgid ""
 "  uids\n"
 "  username\n"
 "\n"
-"regular:  2.766 secs\n"
-"oneshot:  1.537 secs\n"
-"speedup:  +1.80x"
+"regular:  2.600 secs\n"
+"oneshot:  1.499 secs\n"
+"speedup:  +1.73x"
 msgstr ""
 
-#: ../../../performance.rst:203
+#: ../../../performance.rst:207
 msgid "Measuring APIs speed"
 msgstr ""
 
-#: ../../../performance.rst:205
+#: ../../../performance.rst:209
 msgid ""
 ":src:`scripts/internal/print_api_speed.py` shows the relative cost of each "
 "API call. This helps you understand which operations are more expensive. E."
 "g. on Linux:"
 msgstr ""
 
-#: ../../../performance.rst:209
+#: ../../../performance.rst:213
 msgid ""
 "$ python3 scripts/internal/print_api_speed.py\n"
 "SYSTEM APIS                NUM CALLS      SECONDS\n"
 "-------------------------------------------------\n"
 "getloadavg                       300      0.00013\n"
-"heap_trim                        300      0.00027\n"
 "heap_info                        300      0.00028\n"
-"cpu_count                        300      0.00066\n"
-"disk_usage                       300      0.00071\n"
-"pid_exists                       300      0.00249\n"
-"users                            300      0.00394\n"
-"cpu_times                        300      0.00647\n"
-"virtual_memory                   300      0.00648\n"
-"boot_time                        300      0.00727\n"
-"cpu_percent                      300      0.00745\n"
-"net_io_counters                  300      0.00754\n"
-"cpu_times_percent                300      0.00870\n"
-"net_if_addrs                     300      0.01156\n"
-"cpu_stats                        300      0.01195\n"
-"swap_memory                      300      0.01292\n"
-"net_if_stats                     300      0.01360\n"
-"disk_partitions                  300      0.01696\n"
-"disk_io_counters                 300      0.02583\n"
-"sensors_battery                  300      0.03103\n"
-"pids                             300      0.04896\n"
-"cpu_count (cores)                300      0.07208\n"
-"process_iter (all)               300      0.07900\n"
-"cpu_freq                         300      0.15635\n"
-"sensors_fans                     300      0.75810\n"
-"net_connections                  224      2.00111\n"
-"sensors_temperatures              81      2.00266\n"
+"heap_trim                        300      0.00039\n"
+"cpu_count                        300      0.00061\n"
+"disk_usage                       300      0.00066\n"
+"pid_exists                       300      0.00235\n"
+"users                            300      0.00455\n"
+"net_io_counters                  300      0.00550\n"
+"cpu_times                        300      0.00667\n"
+"boot_time                        300      0.00700\n"
+"cpu_percent                      300      0.00766\n"
+"net_if_stats                     300      0.00783\n"
+"virtual_memory                   300      0.00834\n"
+"cpu_times_percent                300      0.00885\n"
+"net_if_addrs                     300      0.01157\n"
+"cpu_stats                        300      0.01208\n"
+"swap_memory                      300      0.01558\n"
+"disk_partitions                  300      0.01664\n"
+"disk_io_counters                 300      0.02204\n"
+"sensors_battery                  300      0.02995\n"
+"pids                             300      0.05295\n"
+"cpu_count (cores)                300      0.06943\n"
+"process_iter (all)               300      0.08486\n"
+"cpu_freq                         300      0.18987\n"
+"sensors_fans                     300      0.74027\n"
+"net_connections                  161      2.00690\n"
+"sensors_temperatures             100      2.00742\n"
 "\n"
 "PROCESS APIS               NUM CALLS      SECONDS\n"
 "-------------------------------------------------\n"
-"create_time                      300      0.00013\n"
-"exe                              300      0.00016\n"
-"nice                             300      0.00024\n"
-"ionice                           300      0.00039\n"
+"exe                              300      0.00017\n"
+"create_time                      300      0.00020\n"
+"nice                             300      0.00025\n"
+"ionice                           300      0.00041\n"
 "cwd                              300      0.00052\n"
-"cpu_affinity                     300      0.00057\n"
-"num_fds                          300      0.00100\n"
-"memory_info                      300      0.00208\n"
-"io_counters                      300      0.00229\n"
-"cmdline                          300      0.00232\n"
-"cpu_num                          300      0.00254\n"
-"terminal                         300      0.00255\n"
-"status                           300      0.00258\n"
-"page_faults                      300      0.00259\n"
-"name                             300      0.00261\n"
-"memory_percent                   300      0.00265\n"
-"cpu_times                        300      0.00278\n"
-"threads                          300      0.00300\n"
-"gids                             300      0.00304\n"
-"num_threads                      300      0.00305\n"
-"num_ctx_switches                 300      0.00308\n"
-"uids                             300      0.00321\n"
-"cpu_percent                      300      0.00372\n"
-"net_connections                  300      0.00376\n"
-"open_files                       300      0.00453\n"
-"username                         300      0.00505\n"
-"ppid                             300      0.00554\n"
-"memory_info_ex                   300      0.00651\n"
-"environ                          300      0.01013\n"
-"memory_footprint                 300      0.02241\n"
-"memory_maps                      300      0.30282"
+"cpu_affinity                     300      0.00059\n"
+"num_fds                          300      0.00097\n"
+"memory_info                      300      0.00201\n"
+"cmdline                          300      0.00222\n"
+"io_counters                      300      0.00226\n"
+"cpu_num                          300      0.00242\n"
+"status                           300      0.00242\n"
+"terminal                         300      0.00243\n"
+"name                             300      0.00249\n"
+"page_faults                      300      0.00258\n"
+"memory_percent                   300      0.00259\n"
+"cpu_times                        300      0.00272\n"
+"threads                          300      0.00278\n"
+"num_threads                      300      0.00278\n"
+"gids                             300      0.00296\n"
+"num_ctx_switches                 300      0.00299\n"
+"uids                             300      0.00311\n"
+"cpu_percent                      300      0.00346\n"
+"net_connections                  300      0.00373\n"
+"open_files                       300      0.00378\n"
+"memory_extras                    300      0.00398\n"
+"username                         300      0.00500\n"
+"ppid                             300      0.00556\n"
+"environ                          300      0.01176\n"
+"memory_footprint                 300      0.02218\n"
+"memory_maps                      300      0.27158"
 msgstr ""
