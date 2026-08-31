@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+
+<html lang="en-US" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta property="og:title" content="Platform support" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://psutil.io/platform/" />
+<meta property="og:site_name" content="psutil" />
+<meta property="og:description" content="Python:,,, Feature, Support, Notes,,, Minimum Python version, 3.8, last version supporting 3.6 / 3.7 is psutil 7.2.2(Jan 2026),, PyPy, yes, not tested on CI,..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://psutil.io/_images/social_previews/summary_platform_8040b607.png" />
+<meta property="og:image:alt" content="Python:,,, Feature, Support, Notes,,, Minimum Python version, 3.8, last version supporting 3.6 / 3.7 is psutil 7.2.2(Jan 2026),, PyPy, yes, not tested on CI,..." />
+<meta name="description" content="Python:,,, Feature, Support, Notes,,, Minimum Python version, 3.8, last version supporting 3.6 / 3.7 is psutil 7.2.2(Jan 2026),, PyPy, yes, not tested on CI,..." />
+<meta name="twitter:card" content="summary_large_image" />
+
+    <title>Platform support &#8212; psutil</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=29da98fa" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-codeautolink.css?v=b2176991" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/base.css?v=fa4013d4" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/fonts.css?v=e753a5f7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/fontawesome.css?v=51ff6dc7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/typography.css?v=e7b40542" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/admonitions.css?v=163ddbc1" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/api-signatures.css?v=f032e3fc" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blog.css?v=5f195cc9" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/changelog.css?v=9bdb527a" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/code.css?v=0681a11b" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/comments.css?v=f39a9342" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/dev-banner.css?v=6210bb1f" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/doc-icons.css?v=78c7cf07" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/footer.css?v=5d6b8d43" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/layout.css?v=cf2ca8d4" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/left-sidebar.css?v=dd06a93c" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/prev-next.css?v=ca7d359d" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/print.css?v=ece16c97" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/right-sidebar.css?v=81efec8f" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/search.css?v=82d539d2" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/tables.css?v=c600f876" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/topbar.css?v=1a2cb74e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/home.css?v=50cb9b55" />
+    <script src="../_static/documentation_options.js?v=fe56712e"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=35a8b989"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script defer="defer" src="../_static/js/back-to-top.js?v=7b97b66a"></script>
+    <script defer="defer" src="../_static/js/external-urls.js?v=ea4e66fd"></script>
+    <script defer="defer" src="../_static/js/giscus.js?v=7fd73528"></script>
+    <script defer="defer" src="../_static/js/github-meta.js?v=efa66c56"></script>
+    <script defer="defer" src="../_static/js/highlight-repl.js?v=8e31535c"></script>
+    <script defer="defer" src="../_static/js/home-install-copy.js?v=be638b0c"></script>
+    <script defer="defer" src="../_static/js/right-toc.js?v=160f6df3"></script>
+    <script defer="defer" src="../_static/js/search-dim.js?v=b004caf9"></script>
+    <script defer="defer" src="../_static/js/search-shortcuts.js?v=26c0729f"></script>
+    <script defer="defer" src="../_static/js/shortcuts-help.js?v=f76503f8"></script>
+    <script defer="defer" src="../_static/js/sidebar-mobile.js?v=8d0c24bd"></script>
+    <script defer="defer" src="../_static/js/theme-toggle.js?v=6f028c03"></script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/psutil-docs-l10n/platform/" />
+    <link rel="icon" href="../_static/favicon.svg"/>
+    <link rel="author" title="About these documents" href="../about/" />
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="Migration guide" href="../migration/" />
+    <link rel="prev" title="Glossary" href="../glossary/" />
+ 
+ 
+
+
+
+
+<link rel="apple-touch-icon" href="../_static/images/logo-psutil.png">
+
+<script>
+(function() {
+    const html = document.documentElement;
+    html.classList.add('no-transition');
+    const saved = localStorage.getItem('psutil-sphinx-theme');
+    const theme = saved || (
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+    );
+    html.setAttribute('data-theme', theme);
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            html.classList.remove('no-transition');
+        });
+    });
+})();
+</script>
+
+
+<script data-goatcounter="https://psutil.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G7374TFB11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G7374TFB11');
+</script>
+ 
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  href="../blog/atom.xml"
+  title="Blog"
+/>
+  
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+  </head><body data-page="platform">
+<header class="topbar no-visited" role="banner">
+  <div class="topbar-inner">
+    <button class="topbar-hamburger" id="sidebar-toggle"
+            type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button><a class="topbar-logo" href="../"><img src="../_static/images/logo-psutil.svg" alt="">
+      <span>psutil</span>
+    </a>
+    <nav class="topbar-actions" aria-label="Site actions">
+      <a class="topbar-text" href="../blog/">Blog</a>
+      <button class="topbar-btn" id="theme-toggle"
+              type="button" title="Toggle dark mode (shift+D)" aria-label="Toggle theme">
+        <i class="fa-regular fa-moon" aria-hidden="true"></i>
+      </button>
+      <a class="topbar-link topbar-github"
+         href="https://github.com/giampaolo/psutil"
+         target="_blank" rel="noopener" title="GitHub" aria-label="GitHub repository">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+        <span class="topbar-stars" data-repo="giampaolo/psutil"></span>
+      </a>
+      <a class="topbar-version" data-repo="giampaolo/psutil"
+         href="https://pypi.org/project/psutil"
+         target="_blank" rel="noopener" title="PyPI" aria-label="PyPI release"></a>
+    </nav>
+  </div>
+</header>
+
+<div class="page">
+  <nav class="left-sidebar no-visited" aria-label="Main navigation">
+  <div class="search-box">
+    <form action="../search/" method="get" role="search">
+      <input id="search-input" type="text" name="q"
+             placeholder="Search" aria-label="Search docs"
+             autocomplete="off" autocorrect="off"
+             autocapitalize="off" spellcheck="false">
+      <span class="search-kbd" aria-hidden="true"><kbd>Ctrl</kbd>+<kbd>K</kbd></span>
+    </form>
+  </div>
+  
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install/">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api-overview/">API overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/">Recipes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../shell-equivalents/">Shell equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stdlib-equivalents/">Stdlib equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary/">Glossary</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Platform support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/">Migration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../adoption/">Who uses psutil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../alternatives/">Alternatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funding/">Funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../credits/">Credits</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../blog/">Blog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog/">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timeline/">Timeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devguide/">Development guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex/">General Index</a></li>
+</ul>
+
+</nav>
+  <main class="main" id="main-content" role="main">
+    
+    <div class="dev-banner" role="note">
+  You're reading the <strong>development</strong> version of the psutil
+  docs, which may describe unreleased changes. For the current release
+  see <a href="https://psutil.readthedocs.io/stable/">psutil.readthedocs.io/stable</a>.
+</div>
+    
+    <div class="article-with-toc">
+      <div class="article-column">
+        <article class="article">
+           <section id="platform-support">
+<h1>Platform support<a class="headerlink" href="#platform-support" title="Link to this heading">¶</a></h1>
+<section id="python">
+<h2>Python<a class="headerlink" href="#python" title="Link to this heading">¶</a></h2>
+<table class="wide-table docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>Support</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Minimum Python version</p></td>
+<td><p>3.8</p></td>
+<td><p>last version supporting 3.6 / 3.7 is
+<a class="reference external" href="https://pypi.org/project/psutil/7.2.2/">psutil 7.2.2</a> (Jan 2026)</p></td>
+</tr>
+<tr class="row-odd"><td><p>PyPy</p></td>
+<td><p>yes</p></td>
+<td><p>not tested on CI</p></td>
+</tr>
+<tr class="row-even"><td><p>Free-threaded Python</p></td>
+<td><p>yes</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cp314t</span></code> wheels are published</p></td>
+</tr>
+<tr class="row-odd"><td><p>Stable ABI (abi3)</p></td>
+<td><p>yes</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cp38-abi3</span></code> wheels support CPython 3.8+</p></td>
+</tr>
+<tr class="row-even"><td><p>Inline type hints</p></td>
+<td><p>yes</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Sub-interpreters</p></td>
+<td><p>partial</p></td>
+<td><p>legacy shared-GIL sub-interpreters work; <code class="docutils literal notranslate"><span class="pre">concurrent.interpreters</span></code>
+does not (<a class="extlink-gh reference external" href="https://github.com/giampaolo/psutil/issues/2576">#2576</a>)</p></td>
+</tr>
+<tr class="row-even"><td><p>PEP 561 (<code class="docutils literal notranslate"><span class="pre">py.typed</span></code>)</p></td>
+<td><p>no</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Python 2.7</p></td>
+<td><p>no</p></td>
+<td><p>last version supporting it is
+<a class="reference external" href="https://pypi.org/project/psutil/6.1.1/">psutil 6.1.1</a> (Dec 2024)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="operating-systems">
+<h2>Operating systems<a class="headerlink" href="#operating-systems" title="Link to this heading">¶</a></h2>
+<table class="wide-table docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Platform</p></th>
+<th class="head"><p>Minimum version</p></th>
+<th class="head"><p>Released</p></th>
+<th class="head"><p>Enforcement</p></th>
+<th class="head"><p>CI coverage</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Linux</p></td>
+<td><p>2.6.13 (soft)</p></td>
+<td><p>2005</p></td>
+<td><p>graceful fallbacks; no hard check</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>Windows</p></td>
+<td><p>10</p></td>
+<td><p>2015</p></td>
+<td><p>hard check at import and build time</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-even"><td><p>macOS</p></td>
+<td><p>10.7 (Lion)</p></td>
+<td><p>2011</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">MAC_OS_X_VERSION_MIN_REQUIRED</span></code> in C</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>FreeBSD</p></td>
+<td><p>12.0</p></td>
+<td><p>2018</p></td>
+<td><p>graceful fallbacks via <code class="docutils literal notranslate"><span class="pre">#if</span> <span class="pre">__FreeBSD_version</span></code></p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-even"><td><p>NetBSD</p></td>
+<td><p>5.0</p></td>
+<td><p>2009</p></td>
+<td><p>graceful fallbacks via <code class="docutils literal notranslate"><span class="pre">#if</span> <span class="pre">__NetBSD_Version__</span></code></p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>OpenBSD</p></td>
+<td><p>unknown</p></td>
+<td></td>
+<td></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-even"><td><p>SunOS / Solaris</p></td>
+<td><p>11</p></td>
+<td><p>2011</p></td>
+<td></td>
+<td><p>memleak tests only</p></td>
+</tr>
+<tr class="row-odd"><td><p>AIX</p></td>
+<td><p>unknown</p></td>
+<td></td>
+<td></td>
+<td><p>no</p></td>
+</tr>
+</tbody>
+</table>
+<p>Except where a hard minimum is enforced, older releases may also work but are
+not guaranteed to be supported.</p>
+</section>
+<section id="architectures">
+<h2>Architectures<a class="headerlink" href="#architectures" title="Link to this heading">¶</a></h2>
+<table class="wide-table docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Architecture</p></th>
+<th class="head"><p>CI coverage</p></th>
+<th class="head"><p>Prebuilt wheels</p></th>
+<th class="head"><p>Manual testing</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x86_64</p></td>
+<td><p>Linux, Windows, macOS</p></td>
+<td><p>Linux, Windows, macOS</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>aarch64 / ARM64</p></td>
+<td><p>Linux, Windows, macOS</p></td>
+<td><p>Linux, Windows, macOS</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ppc64le</p></td>
+<td></td>
+<td><p>Linux</p></td>
+<td><p>Debian 13</p></td>
+</tr>
+<tr class="row-odd"><td><p>s390x</p></td>
+<td></td>
+<td><p>Linux</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>i686</p></td>
+<td></td>
+<td></td>
+<td><p>Debian 13</p></td>
+</tr>
+<tr class="row-odd"><td><p>ppc64 (big endian)</p></td>
+<td></td>
+<td></td>
+<td><p>Debian 14</p></td>
+</tr>
+<tr class="row-even"><td><p>riscv64</p></td>
+<td></td>
+<td></td>
+<td><p>Debian 13</p></td>
+</tr>
+<tr class="row-odd"><td><p>sparc64</p></td>
+<td></td>
+<td></td>
+<td><p>Debian 14</p></td>
+</tr>
+</tbody>
+</table>
+<p>Occasional manual testing is done on the
+<a class="reference external" href="https://portal.cfarm.net/">GCC compile farm</a>, which provides free shell
+access to uncommon hardware.</p>
+<p>On architectures without prebuilt wheels, psutil can be installed from source
+(see <a class="reference internal" href="../install/#install-from-source"><span class="std std-ref">Build psutil from source</span></a>):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>psutil<span class="w"> </span>--no-binary<span class="w"> </span>psutil
+</pre></div>
+</div>
+<p>Linux wheels are published for both glibc (manylinux) and musl. The musl ones
+cover x86_64 and aarch64 only.</p>
+</section>
+<section id="support-history">
+<h2>Support history<a class="headerlink" href="#support-history" title="Link to this heading">¶</a></h2>
+<table class="wide-table docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Date</p></th>
+<th class="head"><p>Change</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="extlink-pypi reference external" href="https://pypi.org/project/psutil/8.0.0/">8.0.0</a></p></td>
+<td></td>
+<td><p>add wheels for Linux ppc64le and s390x architectures</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="extlink-pypi reference external" href="https://pypi.org/project/psutil/8.0.0/">8.0.0</a></p></td>
+<td></td>
+<td><p>drop Python 3.6 and 3.7</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="extlink-pypi reference external" href="https://pypi.org/project/psutil/8.0.0/">8.0.0</a></p></td>
+<td></td>
+<td><p>drop PyPy older than 7.3.14 on Windows</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="extlink-pypi reference external" href="https://pypi.org/project/psutil/8.0.0/">8.0.0</a></p></td>
+<td></td>
+<td><p>drop Windows Vista, 7, 8 and 8.1 (+ Server 2008 to 2012 R2)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="extlink-pypi reference external" href="https://pypi.org/project/psutil/8.0.0/">8.0.0</a></p></td>
+<td></td>
+<td><p>drop Intel wheel support for macOS &lt; 10.15</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="extlink-pypi reference external" href="https://pypi.org/project/psutil/8.0.0/">8.0.0</a></p></td>
+<td></td>
+<td><p>drop wheels for free-threaded Python 3.13</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="extlink-pypi reference external" href="https://pypi.org/project/psutil/7.2.0/">7.2.0</a></p></td>
+<td><p>2025-12</p></td>
+<td><p>drop wheels for Linux musl</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="extlink-pypi reference external" href="https://pypi.org/project/psutil/7.1.2/">7.1.2</a></p></td>
+<td><p>2025-10</p></td>
+<td><p>drop wheels for free-threaded Python</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="extlink-pypi reference external" href="https://pypi.org/project/psutil/7.1.2/">7.1.2</a></p></td>
+<td><p>2025-10</p></td>
+<td><p>drop wheels for 32-bit Python (Linux and Windows)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="extlink-pypi reference external" href="https://pypi.org/project/psutil/7.1.1/">7.1.1</a></p></td>
+<td><p>2025-10</p></td>
+<td><p>drop SunOS 10</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="extlink-pypi reference external" href="https://pypi.org/project/psutil/7.1.0/">7.1.0</a></p></td>
+<td><p>2025-09</p></td>
+<td><p>drop FreeBSD 8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="extlink-pypi reference external" href="https://pypi.org/project/psutil/7.0.0/">7.0.0</a></p></td>
+<td><p>2025-02</p></td>
+<td><p>drop Python 2.7</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="extlink-pypi reference external" href="https://pypi.org/project/psutil/5.9.6/">5.9.6</a></p></td>
+<td><p>2023-10</p></td>
+<td><p>drop Python 3.4 and 3.5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="extlink-pypi reference external" href="https://pypi.org/project/psutil/5.9.1/">5.9.1</a></p></td>
+<td><p>2022-05</p></td>
+<td><p>drop Python 2.6</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="extlink-pypi reference external" href="https://pypi.org/project/psutil/5.9.0/">5.9.0</a></p></td>
+<td><p>2021-12</p></td>
+<td><p>add MidnightBSD</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="extlink-pypi reference external" href="https://pypi.org/project/psutil/5.8.0/">5.8.0</a></p></td>
+<td><p>2020-12</p></td>
+<td><p>add PyPy2 on Windows</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="extlink-pypi reference external" href="https://pypi.org/project/psutil/5.7.1/">5.7.1</a></p></td>
+<td><p>2020-07</p></td>
+<td><p>add Windows Nano</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="extlink-pypi reference external" href="https://pypi.org/project/psutil/5.7.0/">5.7.0</a></p></td>
+<td><p>2020-02</p></td>
+<td><p>drop Windows XP &amp; Windows Server 2003</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="extlink-pypi reference external" href="https://pypi.org/project/psutil/5.7.0/">5.7.0</a></p></td>
+<td><p>2020-02</p></td>
+<td><p>add PyPy3 on Windows</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="extlink-pypi reference external" href="https://pypi.org/project/psutil/5.4.0/">5.4.0</a></p></td>
+<td><p>2017-11</p></td>
+<td><p>add AIX</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="extlink-pypi reference external" href="https://pypi.org/project/psutil/3.4.1/">3.4.1</a></p></td>
+<td><p>2016-01</p></td>
+<td><p>add NetBSD</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="extlink-pypi reference external" href="https://pypi.org/project/psutil/3.3.0/">3.3.0</a></p></td>
+<td><p>2015-11</p></td>
+<td><p>add OpenBSD</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="extlink-pypi reference external" href="https://pypi.org/project/psutil/1.0.0/">1.0.0</a></p></td>
+<td><p>2013-07</p></td>
+<td><p>add Solaris</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="extlink-pypi reference external" href="https://pypi.org/project/psutil/0.1.1/">0.1.1</a></p></td>
+<td><p>2009-03</p></td>
+<td><p>add FreeBSD</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="extlink-pypi reference external" href="https://pypi.org/project/psutil/0.1.0/">0.1.0</a></p></td>
+<td><p>2009-01</p></td>
+<td><p>add Linux, Windows, macOS</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+<div class="section ablog__blog_comments">
+   
+</div>
+
+        </article>
+        
+<nav class="prev-next no-visited" aria-label="Previous and next pages">
+  
+  <a class="prev-next-prev" href="../glossary/" rel="prev">
+    <span class="prev-next-arrow" aria-hidden="true">&lsaquo;</span>
+    <span class="prev-next-block">
+      <span class="prev-next-label">Previous</span>
+      <span class="prev-next-title">Glossary</span>
+    </span>
+  </a>
+  
+  
+  <a class="prev-next-next" href="../migration/" rel="next">
+    <span class="prev-next-block">
+      <span class="prev-next-label">Next</span>
+      <span class="prev-next-title">Migration guide</span>
+    </span>
+    <span class="prev-next-arrow" aria-hidden="true">&rsaquo;</span>
+  </a>
+  
+</nav>
+
+        
+      </div>
+
+      <aside class="right-sidebar"
+       
+       aria-label="On this page">
+  <div class="right-sidebar-title">On this page</div>
+  <ul>
+<li><a class="reference internal" href="#">Platform support</a><ul>
+<li><a class="reference internal" href="#python">Python</a></li>
+<li><a class="reference internal" href="#operating-systems">Operating systems</a></li>
+<li><a class="reference internal" href="#architectures">Architectures</a></li>
+<li><a class="reference internal" href="#support-history">Support history</a></li>
+</ul>
+</li>
+</ul>
+
+</aside>
+    </div>
+  </main>
+
+  
+  <footer class="footer" role="contentinfo">
+  <div class="footer-content">
+    <div class="footer-text">
+      <span><a class="footer-egg" href="../404/" title="🥚">&copy;</a> 2009-2026 Giampaolo Rodola</span>
+      <span><a href="../about/"
+               title="About this documentation site">About</a></span>
+      <span><a href="https://github.com/giampaolo/psutil/edit/master/docs/platform.rst"
+               rel="noopener noreferrer" target="_blank"
+               title="Edit this page on GitHub">Edit on GitHub</a></span>
+    </div>
+    <div class="footer-icons">
+      <a class="footer-github" href="https://github.com/giampaolo/psutil"
+         title="psutil on GitHub" aria-label="psutil on GitHub"
+         rel="noopener noreferrer" target="_blank">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+      </a>
+      <a class="footer-pypi" href="https://pypi.org/project/psutil/"
+         title="psutil on PyPI" aria-label="psutil on PyPI"
+         rel="noopener noreferrer" target="_blank">
+        <i class="fa-brands fa-python" aria-hidden="true"></i>
+      </a>
+      <a class="footer-rss" href="../blog/atom.xml"
+         title="Subscribe to blog (Atom feed)" aria-label="Subscribe to blog">
+        <span class="rss-icon"></span>
+      </a>
+    </div>
+  </div>
+</footer>
+</div>
+
+  </body>
+</html>

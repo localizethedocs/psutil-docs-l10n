@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+
+<html data-content_root="../" lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="常見問題" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="https://psutil.io/faq/" property="og:url"/>
+<meta content="psutil" property="og:site_name"/>
+<meta content="This section answers common questions and pitfalls when using psutil. General: Why should I avoid positional unpacking of named tuples?: Most psutil function..." property="og:description"/>
+<meta content="1146" property="og:image:width"/>
+<meta content="600" property="og:image:height"/>
+<meta content="https://psutil.io/_images/social_previews/summary_faq_163acc6e.png" property="og:image"/>
+<meta content="This section answers common questions and pitfalls when using psutil. General: Why should I avoid positional unpacking of named tuples?: Most psutil function..." property="og:image:alt"/>
+<meta content="This section answers common questions and pitfalls when using psutil. General: Why should I avoid positional unpacking of named tuples?: Most psutil function..." name="description"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<title>常見問題 — psutil</title>
+<link href="../_static/pygments.css?v=8f2a1f02" rel="stylesheet" type="text/css"/>
+<link href="../_static/basic.css?v=29da98fa" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-codeautolink.css?v=b2176991" rel="stylesheet" type="text/css"/>
+<link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/base.css?v=fa4013d4" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/fonts.css?v=e753a5f7" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/fontawesome.css?v=51ff6dc7" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/typography.css?v=e7b40542" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/admonitions.css?v=163ddbc1" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/api-signatures.css?v=f032e3fc" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/blog.css?v=5f195cc9" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/changelog.css?v=9bdb527a" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/code.css?v=0681a11b" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/comments.css?v=f39a9342" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/dev-banner.css?v=6210bb1f" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/doc-icons.css?v=78c7cf07" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/footer.css?v=5d6b8d43" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/layout.css?v=cf2ca8d4" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/left-sidebar.css?v=dd06a93c" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/prev-next.css?v=ca7d359d" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/print.css?v=ece16c97" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/right-sidebar.css?v=81efec8f" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/search.css?v=82d539d2" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/tables.css?v=c600f876" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/topbar.css?v=1a2cb74e" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/home.css?v=50cb9b55" rel="stylesheet" type="text/css"/>
+<script src="../_static/documentation_options.js?v=63576a64"></script>
+<script src="../_static/doctools.js?v=fd6eb6e6"></script>
+<script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+<script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="../_static/copybutton.js?v=35a8b989"></script>
+<script src="../_static/translations.js?v=cbf116e0"></script>
+<script src="../_static/design-tabs.js?v=f930bc37"></script>
+<script defer="defer" src="../_static/js/back-to-top.js?v=7b97b66a"></script>
+<script defer="defer" src="../_static/js/external-urls.js?v=ea4e66fd"></script>
+<script defer="defer" src="../_static/js/giscus.js?v=7fd73528"></script>
+<script defer="defer" src="../_static/js/github-meta.js?v=efa66c56"></script>
+<script defer="defer" src="../_static/js/highlight-repl.js?v=8e31535c"></script>
+<script defer="defer" src="../_static/js/home-install-copy.js?v=be638b0c"></script>
+<script defer="defer" src="../_static/js/right-toc.js?v=160f6df3"></script>
+<script defer="defer" src="../_static/js/search-dim.js?v=b004caf9"></script>
+<script defer="defer" src="../_static/js/search-shortcuts.js?v=26c0729f"></script>
+<script defer="defer" src="../_static/js/shortcuts-help.js?v=f76503f8"></script>
+<script defer="defer" src="../_static/js/sidebar-mobile.js?v=8d0c24bd"></script>
+<script defer="defer" src="../_static/js/theme-toggle.js?v=6f028c03"></script>
+<link href="https://projects.localizethedocs.org/psutil-docs-l10n/faq/" rel="canonical"/>
+<link href="../_static/favicon.svg" rel="icon"/>
+<link href="../about/" rel="author" title="關於這些文件"/>
+<link href="../genindex/" rel="index" title="索引"/>
+<link href="../search/" rel="search" title="搜尋"/>
+<link href="../performance/" rel="next" title="效能"/>
+<link href="../api/" rel="prev" title="API 參考"/>
+<link href="../_static/images/logo-psutil.png" rel="apple-touch-icon"/>
+<script>
+(function() {
+    const html = document.documentElement;
+    html.classList.add('no-transition');
+    const saved = localStorage.getItem('psutil-sphinx-theme');
+    const theme = saved || (
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+    );
+    html.setAttribute('data-theme', theme);
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            html.classList.remove('no-transition');
+        });
+    });
+})();
+</script>
+<script async="" data-goatcounter="https://psutil.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-G7374TFB11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G7374TFB11');
+</script>
+<link href="../blog/atom.xml" rel="alternate" title="Blog" type="application/atom+xml"/>
+<script src="../ltd-provenance.js" type="text/javascript"></script>
+<script src="../ltd-current.js" type="text/javascript"></script>
+<script src="../../../ltd-config.js" type="text/javascript"></script>
+<script src="../../../ltd-flyout.js" type="text/javascript"></script>
+</head><body data-page="faq">
+<header class="topbar no-visited" role="banner">
+<div class="topbar-inner">
+<button aria-expanded="false" aria-label="Toggle navigation" class="topbar-hamburger" id="sidebar-toggle" type="button">
+<i aria-hidden="true" class="fa-solid fa-bars"></i>
+</button><a class="topbar-logo" href="../"><img alt="" src="../_static/images/logo-psutil.svg"/>
+<span>psutil</span>
+</a>
+<nav aria-label="Site actions" class="topbar-actions">
+<a class="topbar-text" href="../blog/">Blog</a>
+<button aria-label="Toggle theme" class="topbar-btn" id="theme-toggle" title="Toggle dark mode (shift+D)" type="button">
+<i aria-hidden="true" class="fa-regular fa-moon"></i>
+</button>
+<a aria-label="GitHub repository" class="topbar-link topbar-github" href="https://github.com/giampaolo/psutil" rel="noopener" target="_blank" title="GitHub">
+<i aria-hidden="true" class="fa-brands fa-github"></i>
+<span class="topbar-stars" data-repo="giampaolo/psutil"></span>
+</a>
+<a aria-label="PyPI release" class="topbar-version" data-repo="giampaolo/psutil" href="https://pypi.org/project/psutil" rel="noopener" target="_blank" title="PyPI"></a>
+</nav>
+</div>
+</header>
+<div class="page">
+<nav aria-label="Main navigation" class="left-sidebar no-visited">
+<div class="search-box">
+<form action="../search/" method="get" role="search">
+<input aria-label="Search docs" autocapitalize="off" autocomplete="off" autocorrect="off" id="search-input" name="q" placeholder="搜尋" spellcheck="false" type="text"/>
+<span aria-hidden="true" class="search-kbd"><kbd>Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+</div>
+<p class="caption" role="heading"><span class="caption-text">文件</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../install/">安裝</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api-overview/">API 概覽</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/">API 參考</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">常見問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/">效能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/">Recipes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">參考</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../shell-equivalents/">Shell equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stdlib-equivalents/">Stdlib equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary/">詞彙表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/">平臺支援</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/">遷移</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">關於</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../adoption/">誰在使用 psutil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../alternatives/">Alternatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funding/">Funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../credits/">Credits</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">專案</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../blog/">網誌</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog/">變更日誌</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timeline/">時間線</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devguide/">開發指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex/">General Index</a></li>
+</ul>
+</nav>
+<main class="main" id="main-content" role="main">
+<div class="dev-banner" role="note">
+  You're reading the <strong>development</strong> version of the psutil
+  docs, which may describe unreleased changes. For the current release
+  see <a href="https://psutil.readthedocs.io/stable/">psutil.readthedocs.io/stable</a>.
+</div>
+<div class="article-with-toc">
+<div class="article-column">
+<article class="article">
+<section id="faq">
+<h1>常見問題<a class="headerlink" href="#faq" title="連結到這個標頭">¶</a></h1>
+<p>This section answers common questions and pitfalls when using psutil.</p>
+<section id="general">
+<h2>General<a class="headerlink" href="#general" title="連結到這個標頭">¶</a></h2>
+<section id="why-should-i-avoid-positional-unpacking-of-named-tuples">
+<span id="faq-named-tuple-unpacking"></span><h3>Why should I avoid positional unpacking of named tuples?<a class="headerlink" href="#why-should-i-avoid-positional-unpacking-of-named-tuples" title="連結到這個標頭">¶</a></h3>
+<p>Most psutil functions return named tuples. It is tempting to unpack them
+positionally, but <strong>field order may change across major releases</strong> (as happened
+in 8.0 with <a class="reference internal" href="../api/#psutil.cpu_times" title="psutil.cpu_times"><code class="xref py py-func docutils literal notranslate"><span class="pre">cpu_times()</span></code></a> and <a class="reference internal" href="../api/#psutil.Process.memory_info" title="psutil.Process.memory_info"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.memory_info()</span></code></a>). Always use
+attribute access instead:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># bad</span>
+<span class="n">rss</span><span class="p">,</span> <span class="n">vms</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">memory_info</span><span class="p">()</span>
+
+<span class="c1"># good</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">memory_info</span><span class="p">()</span>
+<a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">rss</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">vms</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>See the <a class="reference internal" href="../migration/#migration-8-0"><span class="std std-ref">migration guide</span></a> for the full list of field-order
+changes in 8.0.</p>
+</section>
+</section>
+<section id="exceptions">
+<h2>Exceptions<a class="headerlink" href="#exceptions" title="連結到這個標頭">¶</a></h2>
+<section id="why-do-i-get-accessdenied">
+<span id="faq-access-denied"></span><h3>Why do I get AccessDenied?<a class="headerlink" href="#why-do-i-get-accessdenied" title="連結到這個標頭">¶</a></h3>
+<p><a class="reference internal" href="../api/#psutil.AccessDenied" title="psutil.AccessDenied"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AccessDenied</span></code></a> is raised when the OS refuses to return information about a
+process because the calling user does not have sufficient privileges. This is
+expected behavior and is not a bug. It typically happens when:</p>
+<ul class="simple">
+<li><p>querying processes owned by other users (e.g. <em>root</em>)</p></li>
+<li><p>calling certain methods like <a class="reference internal" href="../api/#psutil.Process.memory_maps" title="psutil.Process.memory_maps"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.memory_maps()</span></code></a>,
+<a class="reference internal" href="../api/#psutil.Process.open_files" title="psutil.Process.open_files"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.open_files()</span></code></a> or <a class="reference internal" href="../api/#psutil.Process.net_connections" title="psutil.Process.net_connections"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.net_connections()</span></code></a> for privileged
+processes</p></li>
+</ul>
+<p>You have two options to deal with it.</p>
+<ul>
+<li><p>Option 1: call the method directly and catch the exception:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">p</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">psutil</span><span class="o">.</span><span class="n">Process</span></a><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/#psutil.Process.memory_maps" title="psutil.Process.memory_maps"><span class="n">p</span><span class="o">.</span><span class="n">memory_maps</span></a><span class="p">())</span>
+<span class="k">except</span> <span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/#psutil.AccessDenied" title="psutil.AccessDenied"><span class="n">psutil</span><span class="o">.</span><span class="n">AccessDenied</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.NoSuchProcess" title="psutil.NoSuchProcess"><span class="n">psutil</span><span class="o">.</span><span class="n">NoSuchProcess</span></a><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</li>
+<li><p>Option 2: use <a class="reference internal" href="../api/#psutil.process_iter" title="psutil.process_iter"><code class="xref py py-func docutils literal notranslate"><span class="pre">process_iter()</span></code></a> with a list of attribute names to
+pre-fetch. Both <a class="reference internal" href="../api/#psutil.AccessDenied" title="psutil.AccessDenied"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AccessDenied</span></code></a> and <a class="reference internal" href="../api/#psutil.NoSuchProcess" title="psutil.NoSuchProcess"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NoSuchProcess</span></code></a> are handled
+internally: the corresponding method returns <code class="docutils literal notranslate"><span class="pre">None</span></code> (or <code class="docutils literal notranslate"><span class="pre">ad_value</span></code>)
+instead of raising. This also avoids the race condition where a process
+disappears between iteration and method call:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.process_iter" title="psutil.process_iter"><span class="n">psutil</span><span class="o">.</span><span class="n">process_iter</span></a><span class="p">([</span><span class="s2">"name"</span><span class="p">,</span> <span class="s2">"username"</span><span class="p">],</span> <span class="n">ad_value</span><span class="o">=</span><span class="s2">"N/A"</span><span class="p">):</span>
+    <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/#psutil.Process.name" title="psutil.Process.name"><span class="n">p</span><span class="o">.</span><span class="n">name</span></a><span class="p">(),</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.username" title="psutil.Process.username"><span class="n">p</span><span class="o">.</span><span class="n">username</span></a><span class="p">())</span>  <span class="c1"># no try/except needed</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="why-do-i-get-nosuchprocess">
+<span id="faq-no-such-process"></span><h3>Why do I get NoSuchProcess?<a class="headerlink" href="#why-do-i-get-nosuchprocess" title="連結到這個標頭">¶</a></h3>
+<p><a class="reference internal" href="../api/#psutil.NoSuchProcess" title="psutil.NoSuchProcess"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NoSuchProcess</span></code></a> is raised when a process no longer exists. The most common
+cause is a race condition: a process can die between the moment its PID is
+obtained and the moment it is queried. The following two naive patterns are
+racy:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<span class="k">for</span> <span class="n">pid</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.pids" title="psutil.pids"><span class="n">psutil</span><span class="o">.</span><span class="n">pids</span></a><span class="p">():</span>
+    <a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">p</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">psutil</span><span class="o">.</span><span class="n">Process</span></a><span class="p">(</span><span class="n">pid</span><span class="p">)</span>  <span class="c1"># may raise NoSuchProcess</span>
+    <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/#psutil.Process.name" title="psutil.Process.name"><span class="n">p</span><span class="o">.</span><span class="n">name</span></a><span class="p">())</span>  <span class="c1"># may raise NoSuchProcess</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<span class="k">if</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.pid_exists" title="psutil.pid_exists"><span class="n">psutil</span><span class="o">.</span><span class="n">pid_exists</span></a><span class="p">(</span><span class="n">pid</span><span class="p">):</span>
+    <a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">p</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">psutil</span><span class="o">.</span><span class="n">Process</span></a><span class="p">(</span><span class="n">pid</span><span class="p">)</span>  <span class="c1"># may raise NoSuchProcess</span>
+    <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/#psutil.Process.name" title="psutil.Process.name"><span class="n">p</span><span class="o">.</span><span class="n">name</span></a><span class="p">())</span>  <span class="c1"># may raise NoSuchProcess</span>
+</pre></div>
+</div>
+<p>The correct approach is to use <a class="reference internal" href="../api/#psutil.process_iter" title="psutil.process_iter"><code class="xref py py-func docutils literal notranslate"><span class="pre">process_iter()</span></code></a>, which handles
+<a class="reference internal" href="../api/#psutil.NoSuchProcess" title="psutil.NoSuchProcess"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NoSuchProcess</span></code></a> internally and skips processes that disappear during
+iteration:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.process_iter" title="psutil.process_iter"><span class="n">psutil</span><span class="o">.</span><span class="n">process_iter</span></a><span class="p">([</span><span class="s2">"name"</span><span class="p">]):</span>
+    <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/#psutil.Process.name" title="psutil.Process.name"><span class="n">p</span><span class="o">.</span><span class="n">name</span></a><span class="p">())</span>
+</pre></div>
+</div>
+<p>If you have a specific PID (e.g. a known child process), wrap the call in a
+try/except:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<span class="k">try</span><span class="p">:</span>
+    <a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">p</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">psutil</span><span class="o">.</span><span class="n">Process</span></a><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
+    <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/#psutil.Process.name" title="psutil.Process.name"><span class="n">p</span><span class="o">.</span><span class="n">name</span></a><span class="p">(),</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.status" title="psutil.Process.status"><span class="n">p</span><span class="o">.</span><span class="n">status</span></a><span class="p">())</span>
+<span class="k">except</span> <span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/#psutil.NoSuchProcess" title="psutil.NoSuchProcess"><span class="n">psutil</span><span class="o">.</span><span class="n">NoSuchProcess</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.AccessDenied" title="psutil.AccessDenied"><span class="n">psutil</span><span class="o">.</span><span class="n">AccessDenied</span></a><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>You can also catch <a class="reference internal" href="../api/#psutil.Error" title="psutil.Error"><code class="xref py py-exc docutils literal notranslate"><span class="pre">Error</span></code></a>, which implies both <a class="reference internal" href="../api/#psutil.AccessDenied" title="psutil.AccessDenied"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AccessDenied</span></code></a> and
+<a class="reference internal" href="../api/#psutil.NoSuchProcess" title="psutil.NoSuchProcess"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NoSuchProcess</span></code></a>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<span class="k">try</span><span class="p">:</span>
+    <a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">p</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">psutil</span><span class="o">.</span><span class="n">Process</span></a><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
+    <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/#psutil.Process.name" title="psutil.Process.name"><span class="n">p</span><span class="o">.</span><span class="n">name</span></a><span class="p">(),</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.status" title="psutil.Process.status"><span class="n">p</span><span class="o">.</span><span class="n">status</span></a><span class="p">())</span>
+<span class="k">except</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Error" title="psutil.Error"><span class="n">psutil</span><span class="o">.</span><span class="n">Error</span></a><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="processes">
+<h2>進程<a class="headerlink" href="#processes" title="連結到這個標頭">¶</a></h2>
+<section id="pid-reuse">
+<span id="faq-pid-reuse"></span><h3>PID reuse<a class="headerlink" href="#pid-reuse" title="連結到這個標頭">¶</a></h3>
+<p>Operating systems recycle PIDs. A <a class="reference internal" href="../api/#psutil.Process" title="psutil.Process"><code class="xref py py-class docutils literal notranslate"><span class="pre">Process</span></code></a> object obtained now may
+later refer to a different process if the original one terminated and a new one
+was assigned the same PID.</p>
+<p><strong>How psutil handles this:</strong></p>
+<ul class="simple">
+<li><p><em>Most read-only methods</em> (e.g. <a class="reference internal" href="../api/#psutil.Process.name" title="psutil.Process.name"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.name()</span></code></a>,
+<a class="reference internal" href="../api/#psutil.Process.cpu_percent" title="psutil.Process.cpu_percent"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.cpu_percent()</span></code></a>) do <strong>not</strong> check for PID reuse and instead query
+whatever process currently holds that PID.</p></li>
+<li><p><em>Signal methods</em> (e.g. <a class="reference internal" href="../api/#psutil.Process.send_signal" title="psutil.Process.send_signal"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.send_signal()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.suspend" title="psutil.Process.suspend"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.suspend()</span></code></a>,
+<a class="reference internal" href="../api/#psutil.Process.resume" title="psutil.Process.resume"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.resume()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.terminate" title="psutil.Process.terminate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.terminate()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.kill" title="psutil.Process.kill"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.kill()</span></code></a>)
+<strong>do</strong> check for PID reuse (via PID + creation time) before acting, raising
+<a class="reference internal" href="../api/#psutil.NoSuchProcess" title="psutil.NoSuchProcess"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NoSuchProcess</span></code></a> if the PID was recycled. This prevents accidentally
+killing the wrong process (<a class="extlink-bpo reference external" href="https://bugs.python.org/issue6973">BPO-6973</a>).</p></li>
+<li><p><em>Set methods</em> <a class="reference internal" href="../api/#psutil.Process.nice" title="psutil.Process.nice"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.nice()</span></code></a> (set), <a class="reference internal" href="../api/#psutil.Process.ionice" title="psutil.Process.ionice"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.ionice()</span></code></a> (set),
+<a class="reference internal" href="../api/#psutil.Process.cpu_affinity" title="psutil.Process.cpu_affinity"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.cpu_affinity()</span></code></a> (set), and <a class="reference internal" href="../api/#psutil.Process.rlimit" title="psutil.Process.rlimit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.rlimit()</span></code></a> (set) also
+perform this check before applying changes.</p></li>
+</ul>
+<p><a class="reference internal" href="../api/#psutil.Process.is_running" title="psutil.Process.is_running"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.is_running()</span></code></a> is the recommended way to verify whether a
+<a class="reference internal" href="../api/#psutil.Process" title="psutil.Process"><code class="xref py py-class docutils literal notranslate"><span class="pre">Process</span></code></a> instance still refers to the same process. It compares PID and
+creation time, and returns <code class="docutils literal notranslate"><span class="pre">False</span></code> if the PID was reused. Prefer it over
+<a class="reference internal" href="../api/#psutil.pid_exists" title="psutil.pid_exists"><code class="xref py py-func docutils literal notranslate"><span class="pre">pid_exists()</span></code></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p>On FreeBSD, OpenBSD, SunOS and AIX the PID reuse check is disabled, and
+process identity is based on the PID alone. That's because on these platforms
+the process creation time is not stable across system clock updates (e.g.
+NTP), which previously caused false <a class="reference internal" href="../api/#psutil.NoSuchProcess" title="psutil.NoSuchProcess"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NoSuchProcess</span></code></a> exceptions for
+processes which were still alive (<a class="extlink-gh reference external" href="https://github.com/giampaolo/psutil/issues/2888">#2888</a>).</p>
+</div>
+</section>
+<section id="what-is-a-zombie-process">
+<span id="faq-zombie-process"></span><h3>What is a zombie process?<a class="headerlink" href="#what-is-a-zombie-process" title="連結到這個標頭">¶</a></h3>
+<p>A <a class="reference internal" href="../glossary/#term-zombie-process"><span class="xref std std-term">zombie process</span></a> is a process that has finished execution but whose
+entry remains in the process table until the parent calls <code class="docutils literal notranslate"><span class="pre">wait()</span></code>. When
+psutil encounters a <a class="reference internal" href="../glossary/#term-zombie-process"><span class="xref std std-term">zombie process</span></a> it raises <a class="reference internal" href="../api/#psutil.ZombieProcess" title="psutil.ZombieProcess"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ZombieProcess</span></code></a>, a
+subclass of <a class="reference internal" href="../api/#psutil.NoSuchProcess" title="psutil.NoSuchProcess"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NoSuchProcess</span></code></a>.</p>
+<p><strong>Behavior:</strong></p>
+<ul class="simple">
+<li><p>A zombie process can be instantiated via <a class="reference internal" href="../api/#psutil.Process" title="psutil.Process"><code class="xref py py-class docutils literal notranslate"><span class="pre">Process</span></code></a> (pid) without
+error.</p></li>
+<li><p><a class="reference internal" href="../api/#psutil.Process.status" title="psutil.Process.status"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.status()</span></code></a> always returns <a class="reference internal" href="../api/#psutil.STATUS_ZOMBIE" title="psutil.STATUS_ZOMBIE"><code class="xref py py-data docutils literal notranslate"><span class="pre">STATUS_ZOMBIE</span></code></a>.</p></li>
+<li><p><a class="reference internal" href="../api/#psutil.Process.is_running" title="psutil.Process.is_running"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.is_running()</span></code></a> and <a class="reference internal" href="../api/#psutil.pid_exists" title="psutil.pid_exists"><code class="xref py py-func docutils literal notranslate"><span class="pre">pid_exists()</span></code></a> return <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p>The zombie appears in <a class="reference internal" href="../api/#psutil.process_iter" title="psutil.process_iter"><code class="xref py py-func docutils literal notranslate"><span class="pre">process_iter()</span></code></a> and <a class="reference internal" href="../api/#psutil.pids" title="psutil.pids"><code class="xref py py-func docutils literal notranslate"><span class="pre">pids()</span></code></a>.</p></li>
+<li><p>Sending signals (<a class="reference internal" href="../api/#psutil.Process.terminate" title="psutil.Process.terminate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.terminate()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.kill" title="psutil.Process.kill"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.kill()</span></code></a>, etc.) has
+no effect.</p></li>
+<li><p>Most methods (<a class="reference internal" href="../api/#psutil.Process.cmdline" title="psutil.Process.cmdline"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.cmdline()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.exe" title="psutil.Process.exe"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.exe()</span></code></a>,
+<a class="reference internal" href="../api/#psutil.Process.memory_maps" title="psutil.Process.memory_maps"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.memory_maps()</span></code></a>, etc.) may raise <a class="reference internal" href="../api/#psutil.ZombieProcess" title="psutil.ZombieProcess"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ZombieProcess</span></code></a>, return a
+meaningful value, or return a null/empty value depending on the platform.</p></li>
+<li><p><a class="reference internal" href="../api/#psutil.Process.as_dict" title="psutil.Process.as_dict"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.as_dict()</span></code></a> will not crash.</p></li>
+</ul>
+<p><strong>How to create a zombie:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/os.html#module-os" title="os"><span class="nn">os</span></a><span class="o">,</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#module-time" title="time"><span class="nn">time</span></a>
+
+<span class="n">pid</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/os.html#os.fork" title="os.fork"><span class="n">os</span><span class="o">.</span><span class="n">fork</span></a><span class="p">()</span>  <span class="c1"># the zombie</span>
+<span class="k">if</span> <span class="n">pid</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/os.html#os._exit" title="os._exit"><span class="n">os</span><span class="o">.</span><span class="n">_exit</span></a><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># child exits immediately</span>
+<span class="k">else</span><span class="p">:</span>
+    <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.sleep" title="time.sleep"><span class="n">time</span><span class="o">.</span><span class="n">sleep</span></a><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>  <span class="c1"># parent does NOT call wait()</span>
+</pre></div>
+</div>
+<p><strong>How to detect zombies:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.process_iter" title="psutil.process_iter"><span class="n">psutil</span><span class="o">.</span><span class="n">process_iter</span></a><span class="p">([</span><span class="s2">"status"</span><span class="p">]):</span>
+    <span class="k">if</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.status" title="psutil.Process.status"><span class="n">p</span><span class="o">.</span><span class="n">status</span></a><span class="p">()</span> <span class="o">==</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.STATUS_ZOMBIE" title="psutil.STATUS_ZOMBIE"><span class="n">psutil</span><span class="o">.</span><span class="n">STATUS_ZOMBIE</span></a><span class="p">:</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><span class="sa">f</span><span class="s2">"zombie: pid=</span><span class="si">{</span><a class="sphinx-codeautolink-a" href="../api/#psutil.Process.pid" title="psutil.Process.pid"><span class="n">p</span><span class="o">.</span><span class="n">pid</span></a><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>How to get rid of a zombie:</strong></p>
+<p>The only way is to have its parent process call <code class="docutils literal notranslate"><span class="pre">wait()</span></code> (or <code class="docutils literal notranslate"><span class="pre">waitpid()</span></code>).
+If the parent never does this, killing the parent will cause the zombie to be
+re-parented to <code class="docutils literal notranslate"><span class="pre">init</span></code> / <code class="docutils literal notranslate"><span class="pre">systemd</span></code>, which will reap it automatically.</p>
+</section>
+<section id="why-does-open-files-not-return-all-files-on-windows">
+<span id="faq-open-files-windows"></span><h3>Why does open_files() not return all files on Windows?<a class="headerlink" href="#why-does-open-files-not-return-all-files-on-windows" title="連結到這個標頭">¶</a></h3>
+<p><a class="reference internal" href="../api/#psutil.Process.open_files" title="psutil.Process.open_files"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.open_files()</span></code></a> on Windows is not guaranteed to enumerate all
+regular file handles. The underlying Windows API may hang when retrieving
+certain <a class="reference internal" href="../glossary/#term-handle"><span class="xref std std-term">handle</span></a> names, so psutil spawns a thread to query each handle
+and kills it if it doesn't respond within 100 ms. This means some entries can
+be missed. This is a known OS-level limitation shared by tools like Process
+Hacker (see <a class="reference external" href="https://github.com/giampaolo/psutil/pull/597">issue 597</a>).</p>
+</section>
+<section id="what-is-the-difference-between-pid-exists-and-process-is-running">
+<span id="faq-pid-exists-vs-isrunning"></span><h3>What is the difference between pid_exists() and Process.is_running()?<a class="headerlink" href="#what-is-the-difference-between-pid-exists-and-process-is-running" title="連結到這個標頭">¶</a></h3>
+<p><a class="reference internal" href="../api/#psutil.pid_exists" title="psutil.pid_exists"><code class="xref py py-func docutils literal notranslate"><span class="pre">pid_exists()</span></code></a> checks whether a PID is present in the process list.
+<a class="reference internal" href="../api/#psutil.Process.is_running" title="psutil.Process.is_running"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.is_running()</span></code></a> does the same, but also detects
+<a class="reference internal" href="#faq-pid-reuse"><span class="std std-ref">PID reuse</span></a> by comparing the process creation time. Use
+<a class="reference internal" href="../api/#psutil.pid_exists" title="psutil.pid_exists"><code class="xref py py-func docutils literal notranslate"><span class="pre">pid_exists()</span></code></a> when you have a bare PID and don't need to guard against
+reuse (it's faster). Use <a class="reference internal" href="../api/#psutil.Process.is_running" title="psutil.Process.is_running"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.is_running()</span></code></a> when you hold a
+<a class="reference internal" href="../api/#psutil.Process" title="psutil.Process"><code class="xref py py-class docutils literal notranslate"><span class="pre">Process</span></code></a> object and want to confirm it still refers to the same
+process.</p>
+</section>
+</section>
+<section id="cpu">
+<h2>CPU<a class="headerlink" href="#cpu" title="連結到這個標頭">¶</a></h2>
+<section id="why-does-cpu-percent-return-0-0-on-first-call">
+<span id="faq-cpu-percent"></span><h3>Why does cpu_percent() return 0.0 on first call?<a class="headerlink" href="#why-does-cpu-percent-return-0-0-on-first-call" title="連結到這個標頭">¶</a></h3>
+<p><a class="reference internal" href="../api/#psutil.cpu_percent" title="psutil.cpu_percent"><code class="xref py py-func docutils literal notranslate"><span class="pre">cpu_percent()</span></code></a> (and <a class="reference internal" href="../api/#psutil.Process.cpu_percent" title="psutil.Process.cpu_percent"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.cpu_percent()</span></code></a>) measures CPU usage
+<em>between two calls</em>. The very first call has no prior sample to compare
+against, so it always returns <code class="docutils literal notranslate"><span class="pre">0.0</span></code>. The fix is to call it once to initialize
+the baseline, discard the result, then call it again after a short sleep:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#module-time" title="time"><span class="nn">time</span></a>
+<span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<a class="sphinx-codeautolink-a" href="../api/#psutil.cpu_percent" title="psutil.cpu_percent"><span class="n">psutil</span><span class="o">.</span><span class="n">cpu_percent</span></a><span class="p">()</span>          <span class="c1"># discard first call</span>
+<a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.sleep" title="time.sleep"><span class="n">time</span><span class="o">.</span><span class="n">sleep</span></a><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/#psutil.cpu_percent" title="psutil.cpu_percent"><span class="n">psutil</span><span class="o">.</span><span class="n">cpu_percent</span></a><span class="p">())</span>   <span class="c1"># meaningful value</span>
+</pre></div>
+</div>
+<p>Alternatively, pass <code class="docutils literal notranslate"><span class="pre">interval</span></code> to make it block internally:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/#psutil.cpu_percent" title="psutil.cpu_percent"><span class="n">psutil</span><span class="o">.</span><span class="n">cpu_percent</span></a><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="mf">0.5</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The same applies to <a class="reference internal" href="../api/#psutil.Process.cpu_percent" title="psutil.Process.cpu_percent"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.cpu_percent()</span></code></a>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">p</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">psutil</span><span class="o">.</span><span class="n">Process</span></a><span class="p">()</span>
+<a class="sphinx-codeautolink-a" href="../api/#psutil.Process.cpu_percent" title="psutil.Process.cpu_percent"><span class="n">p</span><span class="o">.</span><span class="n">cpu_percent</span></a><span class="p">()</span>               <span class="c1"># discard</span>
+<a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.sleep" title="time.sleep"><span class="n">time</span><span class="o">.</span><span class="n">sleep</span></a><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/#psutil.Process.cpu_percent" title="psutil.Process.cpu_percent"><span class="n">p</span><span class="o">.</span><span class="n">cpu_percent</span></a><span class="p">())</span>        <span class="c1"># meaningful value</span>
+</pre></div>
+</div>
+</section>
+<section id="can-process-cpu-percent-return-a-value-higher-than-100">
+<span id="faq-cpu-percent-gt-100"></span><h3>Can Process.cpu_percent() return a value higher than 100%?<a class="headerlink" href="#can-process-cpu-percent-return-a-value-higher-than-100" title="連結到這個標頭">¶</a></h3>
+<p>Yes. On a multi-core system a process can run threads on several CPUs at the
+same time. The maximum value is <code class="docutils literal notranslate"><span class="pre">psutil.cpu_count()</span> <span class="pre">*</span> <span class="pre">100</span></code>. For example, on a
+4-core machine a fully-loaded process can reach 400%. The system-wide
+<a class="reference internal" href="../api/#psutil.cpu_percent" title="psutil.cpu_percent"><code class="xref py py-func docutils literal notranslate"><span class="pre">cpu_percent()</span></code></a> (without a <a class="reference internal" href="../api/#psutil.Process" title="psutil.Process"><code class="xref py py-class docutils literal notranslate"><span class="pre">Process</span></code></a>) always stays in the 0–100%
+range because it averages across all cores.</p>
+<p>The returned value is explicitly <em>not</em> split evenly between all available CPUs.
+This is consistent with the <code class="docutils literal notranslate"><span class="pre">top</span></code> UNIX utility: a busy loop on a system with
+2 <a class="reference internal" href="../glossary/#term-logical-CPU"><span class="xref std std-term">logical CPUs</span></a> is reported as 100%, not 50%. Note that
+Windows <code class="docutils literal notranslate"><span class="pre">taskmgr.exe</span></code> behaves differently (it would report 50%). To emulate
+that: <code class="docutils literal notranslate"><span class="pre">p.cpu_percent()</span> <span class="pre">/</span> <span class="pre">psutil.cpu_count()</span></code>.</p>
+</section>
+<section id="what-is-the-difference-between-psutil-os-and-multiprocessing-cpu-count">
+<span id="faq-cpu-count"></span><h3>What is the difference between psutil, os, and multiprocessing cpu_count()?<a class="headerlink" href="#what-is-the-difference-between-psutil-os-and-multiprocessing-cpu-count" title="連結到這個標頭">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.cpu_count" title="(in Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.cpu_count()</span></code></a> returns the number of <a class="reference internal" href="../glossary/#term-logical-CPU"><span class="xref std std-term">logical CPUs</span></a>
+(including hyperthreads). It is the same as
+<code class="docutils literal notranslate"><span class="pre">psutil.cpu_count(logical=True)</span></code>, but psutil does not honour
+<span class="target" id="index-0"></span><a class="reference external" href="https://docs.python.org/3/using/cmdline.html#envvar-PYTHON_CPU_COUNT" title="(in Python v3.14)"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHON_CPU_COUNT</span></code></a> environment variable introduced in Python 3.13.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.process_cpu_count" title="(in Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.process_cpu_count()</span></code></a> (Python 3.13+) returns the number of CPUs the
+calling process is <strong>allowed to use</strong> (respects <a class="reference internal" href="../glossary/#term-CPU-affinity"><span class="xref std std-term">CPU affinity</span></a> and
+cgroups). The psutil equivalent is <code class="docutils literal notranslate"><span class="pre">len(psutil.Process().cpu_affinity())</span></code>.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/multiprocessing.html#multiprocessing.cpu_count" title="(in Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">multiprocessing.cpu_count()</span></code></a> returns the same value as
+<a class="reference external" href="https://docs.python.org/3/library/os.html#os.process_cpu_count" title="(in Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.process_cpu_count()</span></code></a> (Python 3.13+).</p></li>
+<li><p><a class="reference internal" href="../api/#psutil.cpu_count" title="psutil.cpu_count"><code class="xref py py-func docutils literal notranslate"><span class="pre">psutil.cpu_count()</span></code></a> with <code class="docutils literal notranslate"><span class="pre">logical=False</span></code> returns the number of
+<a class="reference internal" href="../glossary/#term-physical-CPU"><span class="xref std std-term">physical cores</span></a>, which has no stdlib equivalent.</p></li>
+</ul>
+</section>
+</section>
+<section id="memory">
+<h2>記憶體<a class="headerlink" href="#memory" title="連結到這個標頭">¶</a></h2>
+<section id="what-is-the-difference-between-virtual-memory-available-and-free">
+<span id="faq-virtual-memory-available"></span><h3>What is the difference between virtual_memory() available and free?<a class="headerlink" href="#what-is-the-difference-between-virtual-memory-available-and-free" title="連結到這個標頭">¶</a></h3>
+<p><a class="reference internal" href="../api/#psutil.virtual_memory" title="psutil.virtual_memory"><code class="xref py py-func docutils literal notranslate"><span class="pre">virtual_memory()</span></code></a> returns both <code class="ntuple-field docutils literal notranslate"><span class="pre">free</span></code> and <code class="ntuple-field docutils literal notranslate"><span class="pre">available</span></code>, but
+they measure different things:</p>
+<ul class="simple">
+<li><p><code class="ntuple-field docutils literal notranslate"><span class="pre">free</span></code>: memory that is not being used at all.</p></li>
+<li><p><code class="ntuple-field docutils literal notranslate"><span class="pre">available</span></code>: how much memory can be given to processes without
+<a class="reference internal" href="../glossary/#term-swap-memory"><span class="xref std std-term">swapping</span></a>. This includes reclaimable
+<a class="reference internal" href="../glossary/#term-page-cache"><span class="xref std std-term">caches</span></a> and <a class="reference internal" href="../glossary/#term-buffers"><span class="xref std std-term">buffers</span></a> that the OS can reclaim under
+pressure.</p></li>
+</ul>
+<p>In practice, <code class="ntuple-field docutils literal notranslate"><span class="pre">available</span></code> is almost always the metric you want when
+monitoring memory. <code class="ntuple-field docutils literal notranslate"><span class="pre">free</span></code> can be misleadingly low on systems where the
+OS aggressively uses RAM for caches (which is normal and healthy). On Windows,
+<code class="ntuple-field docutils literal notranslate"><span class="pre">free</span></code> and <code class="ntuple-field docutils literal notranslate"><span class="pre">available</span></code> are the same value.</p>
+</section>
+<section id="what-is-the-difference-between-rss-and-vms">
+<span id="faq-memory-rss-vs-vms"></span><h3>What is the difference between RSS and VMS?<a class="headerlink" href="#what-is-the-difference-between-rss-and-vms" title="連結到這個標頭">¶</a></h3>
+<ul class="simple">
+<li><p><code class="ntuple-field docutils literal notranslate"><span class="pre">rss</span></code> (<a class="reference internal" href="../glossary/#term-RSS"><span class="xref std std-term">Resident Set Size</span></a>) is the amount of physical
+memory (RAM) currently mapped into the process.</p></li>
+<li><p><code class="ntuple-field docutils literal notranslate"><span class="pre">vms</span></code> (<a class="reference internal" href="../glossary/#term-VMS"><span class="xref std std-term">Virtual Memory Size</span></a>) is the total virtual address
+space of the process, including memory that has been
+<a class="reference internal" href="../glossary/#term-swap-out"><span class="xref std std-term">swapped out</span></a>, shared libraries, and
+<a class="reference internal" href="../glossary/#term-mapped-memory"><span class="xref std std-term">memory-mapped files</span></a>.</p></li>
+</ul>
+<p><code class="ntuple-field docutils literal notranslate"><span class="pre">rss</span></code> is generally the most useful metric for answering "how much RAM is
+this process using?". Note that it includes <a class="reference internal" href="../glossary/#term-shared-memory"><span class="xref std std-term">shared memory</span></a>, so it may
+overestimate actual usage when compared across processes. <code class="ntuple-field docutils literal notranslate"><span class="pre">vms</span></code> is
+generally larger and can be misleadingly high, as it includes memory that is
+not resident in physical RAM. Both values are portable across platforms and are
+returned by <a class="reference internal" href="../api/#psutil.Process.memory_info" title="psutil.Process.memory_info"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.memory_info()</span></code></a>.</p>
+</section>
+<section id="when-should-i-use-memory-footprint-vs-memory-info">
+<span id="faq-memory-footprint"></span><h3>When should I use memory_footprint() vs memory_info()?<a class="headerlink" href="#when-should-i-use-memory-footprint-vs-memory-info" title="連結到這個標頭">¶</a></h3>
+<p><a class="reference internal" href="../api/#psutil.Process.memory_info" title="psutil.Process.memory_info"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.memory_info()</span></code></a> returns <code class="ntuple-field docutils literal notranslate"><span class="pre">rss</span></code>
+(<a class="reference internal" href="../glossary/#term-RSS"><span class="xref std std-term">Resident Set Size</span></a>), which includes
+<a class="reference internal" href="../glossary/#term-shared-memory"><span class="xref std std-term">shared libraries</span></a> counted in every process that uses
+them. For example, if <code class="docutils literal notranslate"><span class="pre">libc</span></code> uses 2 MB and 100 processes map it, each process
+includes those 2 MB in its <code class="ntuple-field docutils literal notranslate"><span class="pre">rss</span></code>.</p>
+<p><a class="reference internal" href="../api/#psutil.Process.memory_footprint" title="psutil.Process.memory_footprint"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.memory_footprint()</span></code></a> returns <code class="ntuple-field docutils literal notranslate"><span class="pre">uss</span></code>
+(<a class="reference internal" href="../glossary/#term-USS"><span class="xref std std-term">Unique Set Size</span></a>), i.e. <a class="reference internal" href="../glossary/#term-private-memory"><span class="xref std std-term">private memory</span></a> of the process. It
+represents the amount of memory that would be freed if the process were
+terminated right now. It is more accurate than <a class="reference internal" href="../glossary/#term-RSS"><span class="xref std std-term">RSS</span></a>, but substantially
+slower and requires higher privileges. On Linux it also returns <code class="ntuple-field docutils literal notranslate"><span class="pre">pss</span></code>
+(<a class="reference internal" href="../glossary/#term-PSS"><span class="xref std std-term">Proportional Set Size</span></a>) and <a class="reference internal" href="../glossary/#term-swap-memory"><span class="xref std std-term">swap</span></a>.</p>
+</section>
+<section id="why-does-virtual-memory-used-free-total">
+<span id="faq-used-plus-free"></span><h3>Why does virtual_memory() used + free != total?<a class="headerlink" href="#why-does-virtual-memory-used-free-total" title="連結到這個標頭">¶</a></h3>
+<p>Because some memory (like <a class="reference internal" href="../glossary/#term-page-cache"><span class="xref std std-term">page cache</span></a> and <a class="reference internal" href="../glossary/#term-buffers"><span class="xref std std-term">buffers</span></a>) is
+reclaimable and accounted separately:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.virtual_memory" title="psutil.virtual_memory"><span class="n">psutil</span><span class="o">.</span><span class="n">virtual_memory</span></a><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">used</span> <span class="o">+</span> <span class="n">m</span><span class="o">.</span><span class="n">free</span> <span class="o">==</span> <span class="n">m</span><span class="o">.</span><span class="n">total</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>The <code class="ntuple-field docutils literal notranslate"><span class="pre">available</span></code> field already includes this reclaimable memory and is
+the best indicator of memory pressure. See <a class="reference internal" href="#faq-virtual-memory-available"><span class="std std-ref">What is the difference between virtual_memory() available and free?</span></a>.</p>
+</section>
+</section>
+</section>
+<div class="section ablog__blog_comments">
+</div>
+</article>
+<nav aria-label="Previous and next pages" class="prev-next no-visited">
+<a class="prev-next-prev" href="../api/" rel="prev">
+<span aria-hidden="true" class="prev-next-arrow">‹</span>
+<span class="prev-next-block">
+<span class="prev-next-label">Previous</span>
+<span class="prev-next-title">API 參考</span>
+</span>
+</a>
+<a class="prev-next-next" href="../performance/" rel="next">
+<span class="prev-next-block">
+<span class="prev-next-label">Next</span>
+<span class="prev-next-title">效能</span>
+</span>
+<span aria-hidden="true" class="prev-next-arrow">›</span>
+</a>
+</nav>
+</div>
+<aside aria-label="On this page" class="right-sidebar">
+<div class="right-sidebar-title">On this page</div>
+<ul>
+<li><a class="reference internal" href="#">常見問題</a><ul>
+<li><a class="reference internal" href="#general">General</a><ul>
+<li><a class="reference internal" href="#why-should-i-avoid-positional-unpacking-of-named-tuples">Why should I avoid positional unpacking of named tuples?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#exceptions">Exceptions</a><ul>
+<li><a class="reference internal" href="#why-do-i-get-accessdenied">Why do I get AccessDenied?</a></li>
+<li><a class="reference internal" href="#why-do-i-get-nosuchprocess">Why do I get NoSuchProcess?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#processes">進程</a><ul>
+<li><a class="reference internal" href="#pid-reuse">PID reuse</a></li>
+<li><a class="reference internal" href="#what-is-a-zombie-process">What is a zombie process?</a></li>
+<li><a class="reference internal" href="#why-does-open-files-not-return-all-files-on-windows">Why does open_files() not return all files on Windows?</a></li>
+<li><a class="reference internal" href="#what-is-the-difference-between-pid-exists-and-process-is-running">What is the difference between pid_exists() and Process.is_running()?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cpu">CPU</a><ul>
+<li><a class="reference internal" href="#why-does-cpu-percent-return-0-0-on-first-call">Why does cpu_percent() return 0.0 on first call?</a></li>
+<li><a class="reference internal" href="#can-process-cpu-percent-return-a-value-higher-than-100">Can Process.cpu_percent() return a value higher than 100%?</a></li>
+<li><a class="reference internal" href="#what-is-the-difference-between-psutil-os-and-multiprocessing-cpu-count">What is the difference between psutil, os, and multiprocessing cpu_count()?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#memory">記憶體</a><ul>
+<li><a class="reference internal" href="#what-is-the-difference-between-virtual-memory-available-and-free">What is the difference between virtual_memory() available and free?</a></li>
+<li><a class="reference internal" href="#what-is-the-difference-between-rss-and-vms">What is the difference between RSS and VMS?</a></li>
+<li><a class="reference internal" href="#when-should-i-use-memory-footprint-vs-memory-info">When should I use memory_footprint() vs memory_info()?</a></li>
+<li><a class="reference internal" href="#why-does-virtual-memory-used-free-total">Why does virtual_memory() used + free != total?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</aside>
+</div>
+</main>
+<footer class="footer" role="contentinfo">
+<div class="footer-content">
+<div class="footer-text">
+<span><a class="footer-egg" href="../404/" title="🥚">©</a> 2009-2026 Giampaolo Rodola</span>
+<span><a href="../about/" title="About this documentation site">About</a></span>
+<span><a href="https://github.com/giampaolo/psutil/edit/master/docs/faq.rst" rel="noopener noreferrer" target="_blank" title="Edit this page on GitHub">Edit on GitHub</a></span>
+</div>
+<div class="footer-icons">
+<a aria-label="psutil on GitHub" class="footer-github" href="https://github.com/giampaolo/psutil" rel="noopener noreferrer" target="_blank" title="psutil on GitHub">
+<i aria-hidden="true" class="fa-brands fa-github"></i>
+</a>
+<a aria-label="psutil on PyPI" class="footer-pypi" href="https://pypi.org/project/psutil/" rel="noopener noreferrer" target="_blank" title="psutil on PyPI">
+<i aria-hidden="true" class="fa-brands fa-python"></i>
+</a>
+<a aria-label="Subscribe to blog" class="footer-rss" href="../blog/atom.xml" title="Subscribe to blog (Atom feed)">
+<span class="rss-icon"></span>
+</a>
+</div>
+</div>
+</footer>
+</div>
+</body>
+</html>

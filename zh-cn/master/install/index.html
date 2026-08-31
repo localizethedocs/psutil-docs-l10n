@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta property="og:title" content="安装 psutil" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://psutil.io/install/" />
+<meta property="og:site_name" content="psutil" />
+<meta property="og:description" content="How to install psutil." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://psutil.io/_images/social_previews/summary_install_bddee648.png" />
+<meta property="og:image:alt" content="How to install psutil." />
+<meta name="description" content="How to install psutil." />
+<meta name="twitter:card" content="summary_large_image" />
+
+    <title>安装 psutil &#8212; psutil</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=29da98fa" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-codeautolink.css?v=b2176991" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/base.css?v=fa4013d4" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/fonts.css?v=e753a5f7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/fontawesome.css?v=51ff6dc7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/typography.css?v=e7b40542" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/admonitions.css?v=163ddbc1" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/api-signatures.css?v=f032e3fc" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blog.css?v=5f195cc9" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/changelog.css?v=9bdb527a" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/code.css?v=0681a11b" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/comments.css?v=f39a9342" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/dev-banner.css?v=6210bb1f" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/doc-icons.css?v=78c7cf07" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/footer.css?v=5d6b8d43" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/layout.css?v=cf2ca8d4" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/left-sidebar.css?v=dd06a93c" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/prev-next.css?v=ca7d359d" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/print.css?v=ece16c97" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/right-sidebar.css?v=81efec8f" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/search.css?v=82d539d2" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/tables.css?v=c600f876" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/topbar.css?v=1a2cb74e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/home.css?v=50cb9b55" />
+    <script src="../_static/documentation_options.js?v=cb502616"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=35a8b989"></script>
+    <script src="../_static/translations.js?v=540d3cec"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script defer="defer" src="../_static/js/back-to-top.js?v=7b97b66a"></script>
+    <script defer="defer" src="../_static/js/external-urls.js?v=ea4e66fd"></script>
+    <script defer="defer" src="../_static/js/giscus.js?v=7fd73528"></script>
+    <script defer="defer" src="../_static/js/github-meta.js?v=efa66c56"></script>
+    <script defer="defer" src="../_static/js/highlight-repl.js?v=8e31535c"></script>
+    <script defer="defer" src="../_static/js/home-install-copy.js?v=be638b0c"></script>
+    <script defer="defer" src="../_static/js/right-toc.js?v=160f6df3"></script>
+    <script defer="defer" src="../_static/js/search-dim.js?v=b004caf9"></script>
+    <script defer="defer" src="../_static/js/search-shortcuts.js?v=26c0729f"></script>
+    <script defer="defer" src="../_static/js/shortcuts-help.js?v=f76503f8"></script>
+    <script defer="defer" src="../_static/js/sidebar-mobile.js?v=8d0c24bd"></script>
+    <script defer="defer" src="../_static/js/theme-toggle.js?v=6f028c03"></script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/psutil-docs-l10n/install/" />
+    <link rel="icon" href="../_static/favicon.svg"/>
+    <link rel="author" title="关于此文档" href="../about/" />
+    <link rel="index" title="索引" href="../genindex/" />
+    <link rel="search" title="搜索" href="../search/" />
+    <link rel="next" title="API概述" href="../api-overview/" />
+    <link rel="prev" title="Home" href="../" />
+ 
+ 
+
+
+
+
+<link rel="apple-touch-icon" href="../_static/images/logo-psutil.png">
+
+<script>
+(function() {
+    const html = document.documentElement;
+    html.classList.add('no-transition');
+    const saved = localStorage.getItem('psutil-sphinx-theme');
+    const theme = saved || (
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+    );
+    html.setAttribute('data-theme', theme);
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            html.classList.remove('no-transition');
+        });
+    });
+})();
+</script>
+
+
+<script data-goatcounter="https://psutil.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G7374TFB11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G7374TFB11');
+</script>
+ 
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  href="../blog/atom.xml"
+  title="Blog"
+/>
+  
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+  </head><body data-page="install">
+<header class="topbar no-visited" role="banner">
+  <div class="topbar-inner">
+    <button class="topbar-hamburger" id="sidebar-toggle"
+            type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button><a class="topbar-logo" href="../"><img src="../_static/images/logo-psutil.svg" alt="">
+      <span>psutil</span>
+    </a>
+    <nav class="topbar-actions" aria-label="Site actions">
+      <a class="topbar-text" href="../blog/">Blog</a>
+      <button class="topbar-btn" id="theme-toggle"
+              type="button" title="Toggle dark mode (shift+D)" aria-label="Toggle theme">
+        <i class="fa-regular fa-moon" aria-hidden="true"></i>
+      </button>
+      <a class="topbar-link topbar-github"
+         href="https://github.com/giampaolo/psutil"
+         target="_blank" rel="noopener" title="GitHub" aria-label="GitHub repository">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+        <span class="topbar-stars" data-repo="giampaolo/psutil"></span>
+      </a>
+      <a class="topbar-version" data-repo="giampaolo/psutil"
+         href="https://pypi.org/project/psutil"
+         target="_blank" rel="noopener" title="PyPI" aria-label="PyPI release"></a>
+    </nav>
+  </div>
+</header>
+
+<div class="page">
+  <nav class="left-sidebar no-visited" aria-label="Main navigation">
+  <div class="search-box">
+    <form action="../search/" method="get" role="search">
+      <input id="search-input" type="text" name="q"
+             placeholder="搜索" aria-label="Search docs"
+             autocomplete="off" autocorrect="off"
+             autocapitalize="off" spellcheck="false">
+      <span class="search-kbd" aria-hidden="true"><kbd>Ctrl</kbd>+<kbd>K</kbd></span>
+    </form>
+  </div>
+  
+<p class="caption" role="heading"><span class="caption-text">文档</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api-overview/">API概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/">API 参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/">性能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/">食谱</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">参考</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../shell-equivalents/">Shell 等效命令</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stdlib-equivalents/">标准库等价实现</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary/">术语表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/">平台支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/">移植</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">关于</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../adoption/">谁在用 psutil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../alternatives/">备选方案</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funding/">赞助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../credits/">致谢</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">项目</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../blog/">博客</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog/">变更历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timeline/">时间线</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devguide/">开发指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex/">基本索引</a></li>
+</ul>
+
+</nav>
+  <main class="main" id="main-content" role="main">
+    
+    <div class="dev-banner" role="note">
+  You're reading the <strong>development</strong> version of the psutil
+  docs, which may describe unreleased changes. For the current release
+  see <a href="https://psutil.readthedocs.io/stable/">psutil.readthedocs.io/stable</a>.
+</div>
+    
+    <div class="article-with-toc">
+      <div class="article-column">
+        <article class="article">
+           <section id="install-psutil">
+<h1>安装 psutil<a class="headerlink" href="#install-psutil" title="链接到此标题。">¶</a></h1>
+<section id="linux-windows-macos-wheels">
+<h2>Linux, Windows, macOS (wheels)<a class="headerlink" href="#linux-windows-macos-wheels" title="链接到此标题。">¶</a></h2>
+<p>Prebuilt wheels are distributed for these platforms, so a C compiler is not
+required. Install psutil with:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install psutil
+</pre></div>
+</div>
+<p>Inside a virtual environment you can also use
+<a class="reference external" href="https://docs.astral.sh/uv/">uv</a>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>uv pip install psutil
+</pre></div>
+</div>
+<p>If no wheel is available for your platform or architecture, pip will build
+psutil from source (see below).</p>
+</section>
+<section id="build-psutil-from-source">
+<span id="install-from-source"></span><h2>Build psutil from source<a class="headerlink" href="#build-psutil-from-source" title="链接到此标题。">¶</a></h2>
+<p>Building psutil from source requires a C compiler and the Python development
+headers. On Linux, FreeBSD, NetBSD, OpenBSD and Solaris, the
+<a class="reference external" href="https://github.com/giampaolo/psutil/blob/master/scripts/internal/install-sysdeps.sh">install-sysdeps.sh</a> script can install them for you:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>curl -fsSL https://raw.githubusercontent.com/giampaolo/psutil/master/scripts/internal/install-sysdeps.sh | sh
+</pre></div>
+</div>
+<p>Alternatively, install them manually as described below.</p>
+<section id="linux">
+<h3>Linux<a class="headerlink" href="#linux" title="链接到此标题。">¶</a></h3>
+<p>Debian / Ubuntu</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo apt-get install gcc python3-dev
+</pre></div>
+</div>
+<p>Red Hat / CentOS:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo yum install gcc python3-devel
+</pre></div>
+</div>
+<p>Fedora:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo dnf install gcc python3-devel
+</pre></div>
+</div>
+<p>Arch:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo pacman -S gcc python
+</pre></div>
+</div>
+<p>Alpine:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo apk add gcc python3-dev musl-dev linux-headers
+</pre></div>
+</div>
+</section>
+<section id="windows">
+<span id="install-windows"></span><h3>Windows<a class="headerlink" href="#windows" title="链接到此标题。">¶</a></h3>
+<ul>
+<li><p>To build psutil from source, install
+<a class="reference external" href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">Microsoft C++ Build Tools</a>
+with the <strong>Desktop development with C++</strong> option selected.</p></li>
+<li><p>MinGW is not supported.</p></li>
+<li><p>To clone psutil's Git repository and build or develop it locally, first
+install <a class="reference external" href="https://git-scm.com/install/windows">Git for Windows</a> and GNU Make. To install GNU Make, open PowerShell
+and run:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>winget install --exact --id ezwinports.make
+</pre></div>
+</div>
+</li>
+<li><p>Close and reopen Git Bash, then follow <a class="reference internal" href="#build-and-install"><span class="std std-ref">Build and install</span></a>.</p></li>
+</ul>
+</section>
+<section id="macos">
+<h3>macOS<a class="headerlink" href="#macos" title="链接到此标题。">¶</a></h3>
+<p>Install the Xcode command line tools:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>xcode-select --install
+</pre></div>
+</div>
+</section>
+<section id="freebsd">
+<h3>FreeBSD<a class="headerlink" href="#freebsd" title="链接到此标题。">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pkg install python3
+</pre></div>
+</div>
+</section>
+<section id="openbsd">
+<h3>OpenBSD<a class="headerlink" href="#openbsd" title="链接到此标题。">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>export PKG_PATH=https://cdn.openbsd.org/pub/OpenBSD/`uname -r`/packages/`uname -m`/
+pkg_add -v python%3
+</pre></div>
+</div>
+</section>
+<section id="netbsd">
+<h3>NetBSD<a class="headerlink" href="#netbsd" title="链接到此标题。">¶</a></h3>
+<p>pkgsrc has no version-agnostic python3 package, so choose one of the available
+Python 3 versions. For example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>export PKG_PATH="https://cdn.netbsd.org/pub/pkgsrc/packages/NetBSD/`uname -m`/`uname -r`/All"
+pkg_add -v pkgin
+pkgin update
+pkgin install python314
+</pre></div>
+</div>
+</section>
+<section id="solaris">
+<h3>Solaris<a class="headerlink" href="#solaris" title="链接到此标题。">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pkg install developer/gcc
+</pre></div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">cc</span></code> is unavailable, set <code class="docutils literal notranslate"><span class="pre">CC=gcc</span></code> when running the commands in
+<a class="reference internal" href="#build-and-install"><span class="std std-ref">Build and install</span></a>.</p>
+</section>
+<section id="aix">
+<h3>AIX<a class="headerlink" href="#aix" title="链接到此标题。">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">install-sysdeps.sh</span></code> has no AIX branch. Install a C compiler and the Python
+development headers from the <a class="reference external" href="https://www.ibm.com/support/pages/aix-toolbox-open-source-software-downloads-alpha">AIX Toolbox</a>.</p>
+</section>
+</section>
+<section id="build-and-install">
+<span id="id1"></span><h2>Build and install<a class="headerlink" href="#build-and-install" title="链接到此标题。">¶</a></h2>
+<p>To build and install psutil from a Git checkout:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/giampaolo/psutil.git
+cd psutil
+make install-sysdeps
+make build
+make install
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>By default C source files are compiled in parallel, one job per CPU, which
+makes building from source 2x to 3.6x faster. Use
+<span class="target" id="index-0"></span><a class="reference internal" href="../api/#envvar-PSUTIL_BUILD_JOBS"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PSUTIL_BUILD_JOBS</span></code></a> to change the number of jobs.</p>
+</div>
+</section>
+<section id="troubleshooting">
+<h2>疑难解答<a class="headerlink" href="#troubleshooting" title="链接到此标题。">¶</a></h2>
+<section id="install-pip">
+<h3>安装 pip<a class="headerlink" href="#install-pip" title="链接到此标题。">¶</a></h3>
+<p>Python installations normally include pip. If it is missing, first try:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python3 -m ensurepip --upgrade
+</pre></div>
+</div>
+<p>Some OS-packaged Python installations do not include <code class="docutils literal notranslate"><span class="pre">ensurepip</span></code>. There,
+either install the pip package or download <a class="reference external" href="https://bootstrap.pypa.io/get-pip.py">get-pip.py</a> and run:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python3 get-pip.py
+</pre></div>
+</div>
+</section>
+<section id="permission-errors">
+<h3>Permission errors<a class="headerlink" href="#permission-errors" title="链接到此标题。">¶</a></h3>
+<p>If you encounter permission errors, install psutil inside a virtual environment
+instead of modifying the system Python installation:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install psutil
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+<div class="section ablog__blog_comments">
+   
+</div>
+
+        </article>
+        
+<nav class="prev-next no-visited" aria-label="Previous and next pages">
+  
+  <a class="prev-next-prev" href="../" rel="prev">
+    <span class="prev-next-arrow" aria-hidden="true">&lsaquo;</span>
+    <span class="prev-next-block">
+      <span class="prev-next-label">Previous</span>
+      <span class="prev-next-title">Home</span>
+    </span>
+  </a>
+  
+  
+  <a class="prev-next-next" href="../api-overview/" rel="next">
+    <span class="prev-next-block">
+      <span class="prev-next-label">Next</span>
+      <span class="prev-next-title">API概述</span>
+    </span>
+    <span class="prev-next-arrow" aria-hidden="true">&rsaquo;</span>
+  </a>
+  
+</nav>
+
+        
+      </div>
+
+      <aside class="right-sidebar"
+       
+       aria-label="On this page">
+  <div class="right-sidebar-title">On this page</div>
+  <ul>
+<li><a class="reference internal" href="#">安装 psutil</a><ul>
+<li><a class="reference internal" href="#linux-windows-macos-wheels">Linux, Windows, macOS (wheels)</a></li>
+<li><a class="reference internal" href="#build-psutil-from-source">Build psutil from source</a><ul>
+<li><a class="reference internal" href="#linux">Linux</a></li>
+<li><a class="reference internal" href="#windows">Windows</a></li>
+<li><a class="reference internal" href="#macos">macOS</a></li>
+<li><a class="reference internal" href="#freebsd">FreeBSD</a></li>
+<li><a class="reference internal" href="#openbsd">OpenBSD</a></li>
+<li><a class="reference internal" href="#netbsd">NetBSD</a></li>
+<li><a class="reference internal" href="#solaris">Solaris</a></li>
+<li><a class="reference internal" href="#aix">AIX</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#build-and-install">Build and install</a></li>
+<li><a class="reference internal" href="#troubleshooting">疑难解答</a><ul>
+<li><a class="reference internal" href="#install-pip">安装 pip</a></li>
+<li><a class="reference internal" href="#permission-errors">Permission errors</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</aside>
+    </div>
+  </main>
+
+  
+  <footer class="footer" role="contentinfo">
+  <div class="footer-content">
+    <div class="footer-text">
+      <span><a class="footer-egg" href="../404/" title="🥚">&copy;</a> 2009-2026 Giampaolo Rodola</span>
+      <span><a href="../about/"
+               title="About this documentation site">About</a></span>
+      <span><a href="https://github.com/giampaolo/psutil/edit/master/docs/install.rst"
+               rel="noopener noreferrer" target="_blank"
+               title="Edit this page on GitHub">Edit on GitHub</a></span>
+    </div>
+    <div class="footer-icons">
+      <a class="footer-github" href="https://github.com/giampaolo/psutil"
+         title="psutil on GitHub" aria-label="psutil on GitHub"
+         rel="noopener noreferrer" target="_blank">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+      </a>
+      <a class="footer-pypi" href="https://pypi.org/project/psutil/"
+         title="psutil on PyPI" aria-label="psutil on PyPI"
+         rel="noopener noreferrer" target="_blank">
+        <i class="fa-brands fa-python" aria-hidden="true"></i>
+      </a>
+      <a class="footer-rss" href="../blog/atom.xml"
+         title="Subscribe to blog (Atom feed)" aria-label="Subscribe to blog">
+        <span class="rss-icon"></span>
+      </a>
+    </div>
+  </div>
+</footer>
+</div>
+
+  </body>
+</html>

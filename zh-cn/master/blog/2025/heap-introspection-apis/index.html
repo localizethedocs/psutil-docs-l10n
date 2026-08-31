@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<html data-content_root="../../../" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Detecting memory leaks in C extensions with psutil and psleak" property="og:title"/>
+<meta content="article" property="og:type"/>
+<meta content="https://psutil.io/blog/2025/heap-introspection-apis/" property="og:url"/>
+<meta content="psutil" property="og:site_name"/>
+<meta content="psutil 7.2.0 peeks into the native allocator, spotting leaks RSS can't see" property="og:description"/>
+<meta content="1146" property="og:image:width"/>
+<meta content="600" property="og:image:height"/>
+<meta content="https://psutil.io/_images/social_previews/summary_blog_2025_heap-introspection-apis_5cf07d37.png" property="og:image"/>
+<meta content="psutil 7.2.0 peeks into the native allocator, spotting leaks RSS can't see" property="og:image:alt"/>
+<meta content="psutil 7.2.0 peeks into the native allocator, spotting leaks RSS can't see" name="description"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<title>Detecting memory leaks in C extensions with psutil and psleak — psutil</title>
+<link href="../../../_static/pygments.css?v=8f2a1f02" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/basic.css?v=29da98fa" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/sphinx-codeautolink.css?v=b2176991" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/base.css?v=fa4013d4" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/fonts.css?v=e753a5f7" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/fontawesome.css?v=51ff6dc7" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/typography.css?v=e7b40542" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/admonitions.css?v=163ddbc1" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/api-signatures.css?v=f032e3fc" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/blog.css?v=5f195cc9" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/changelog.css?v=9bdb527a" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/code.css?v=0681a11b" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/comments.css?v=f39a9342" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/dev-banner.css?v=6210bb1f" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/doc-icons.css?v=78c7cf07" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/footer.css?v=5d6b8d43" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/layout.css?v=cf2ca8d4" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/left-sidebar.css?v=dd06a93c" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/prev-next.css?v=ca7d359d" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/print.css?v=ece16c97" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/right-sidebar.css?v=81efec8f" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/search.css?v=82d539d2" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/tables.css?v=c600f876" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/topbar.css?v=1a2cb74e" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/home.css?v=50cb9b55" rel="stylesheet" type="text/css"/>
+<script src="../../../_static/documentation_options.js?v=cb502616"></script>
+<script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+<script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+<script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="../../../_static/copybutton.js?v=35a8b989"></script>
+<script src="../../../_static/translations.js?v=540d3cec"></script>
+<script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+<script defer="defer" src="../../../_static/js/back-to-top.js?v=7b97b66a"></script>
+<script defer="defer" src="../../../_static/js/external-urls.js?v=ea4e66fd"></script>
+<script defer="defer" src="../../../_static/js/giscus.js?v=7fd73528"></script>
+<script defer="defer" src="../../../_static/js/github-meta.js?v=efa66c56"></script>
+<script defer="defer" src="../../../_static/js/highlight-repl.js?v=8e31535c"></script>
+<script defer="defer" src="../../../_static/js/home-install-copy.js?v=be638b0c"></script>
+<script defer="defer" src="../../../_static/js/right-toc.js?v=160f6df3"></script>
+<script defer="defer" src="../../../_static/js/search-dim.js?v=b004caf9"></script>
+<script defer="defer" src="../../../_static/js/search-shortcuts.js?v=26c0729f"></script>
+<script defer="defer" src="../../../_static/js/shortcuts-help.js?v=f76503f8"></script>
+<script defer="defer" src="../../../_static/js/sidebar-mobile.js?v=8d0c24bd"></script>
+<script defer="defer" src="../../../_static/js/theme-toggle.js?v=6f028c03"></script>
+<link href="https://projects.localizethedocs.org/psutil-docs-l10n/blog/2025/heap-introspection-apis/" rel="canonical"/>
+<link href="../../../_static/favicon.svg" rel="icon"/>
+<link href="../../../about/" rel="author" title="关于此文档"/>
+<link href="../../../genindex/" rel="index" title="索引"/>
+<link href="../../../search/" rel="search" title="搜索"/>
+<link href="../../../_static/images/logo-psutil.png" rel="apple-touch-icon"/>
+<script>
+(function() {
+    const html = document.documentElement;
+    html.classList.add('no-transition');
+    const saved = localStorage.getItem('psutil-sphinx-theme');
+    const theme = saved || (
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+    );
+    html.setAttribute('data-theme', theme);
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            html.classList.remove('no-transition');
+        });
+    });
+})();
+</script>
+<script async="" data-goatcounter="https://psutil.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-G7374TFB11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G7374TFB11');
+</script>
+<link href="../../../blog/atom.xml" rel="alternate" title="Blog" type="application/atom+xml"/>
+<script src="../../../ltd-provenance.js" type="text/javascript"></script>
+<script src="../../../ltd-current.js" type="text/javascript"></script>
+<script src="../../../../../ltd-config.js" type="text/javascript"></script>
+<script src="../../../../../ltd-flyout.js" type="text/javascript"></script>
+</head><body data-page="blog/2025/heap-introspection-apis">
+<header class="topbar no-visited" role="banner">
+<div class="topbar-inner">
+<button aria-expanded="false" aria-label="Toggle navigation" class="topbar-hamburger" id="sidebar-toggle" type="button">
+<i aria-hidden="true" class="fa-solid fa-bars"></i>
+</button><a class="topbar-logo" href="../../../"><img alt="" src="../../../_static/images/logo-psutil.svg"/>
+<span>psutil</span>
+</a>
+<nav aria-label="Site actions" class="topbar-actions">
+<a class="topbar-text" href="../../">Blog</a>
+<button aria-label="Toggle theme" class="topbar-btn" id="theme-toggle" title="Toggle dark mode (shift+D)" type="button">
+<i aria-hidden="true" class="fa-regular fa-moon"></i>
+</button>
+<a aria-label="GitHub repository" class="topbar-link topbar-github" href="https://github.com/giampaolo/psutil" rel="noopener" target="_blank" title="GitHub">
+<i aria-hidden="true" class="fa-brands fa-github"></i>
+<span class="topbar-stars" data-repo="giampaolo/psutil"></span>
+</a>
+<a aria-label="PyPI release" class="topbar-version" data-repo="giampaolo/psutil" href="https://pypi.org/project/psutil" rel="noopener" target="_blank" title="PyPI"></a>
+</nav>
+</div>
+</header>
+<div class="page">
+<nav aria-label="Main navigation" class="left-sidebar no-visited">
+<div class="search-box">
+<form action="../../../search/" method="get" role="search">
+<input aria-label="Search docs" autocapitalize="off" autocomplete="off" autocorrect="off" id="search-input" name="q" placeholder="搜索" spellcheck="false" type="text"/>
+<span aria-hidden="true" class="search-kbd"><kbd>Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+</div>
+<p class="caption" role="heading"><span class="caption-text">文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api-overview/">API概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/">API 参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq/">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../performance/">性能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../recipes/">食谱</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">参考</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../shell-equivalents/">Shell 等效命令</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stdlib-equivalents/">标准库等价实现</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/">术语表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../platform/">平台支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../migration/">移植</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">关于</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../adoption/">谁在用 psutil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../alternatives/">备选方案</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../funding/">赞助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../credits/">致谢</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">项目</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../">博客</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog/">变更历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../timeline/">时间线</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devguide/">开发指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex/">基本索引</a></li>
+</ul>
+</nav>
+<main class="main" id="main-content" role="main">
+<div class="dev-banner" role="note">
+  You're reading the <strong>development</strong> version of the psutil
+  docs, which may describe unreleased changes. For the current release
+  see <a href="https://psutil.readthedocs.io/stable/">psutil.readthedocs.io/stable</a>.
+</div>
+<div class="blog-section-banner">
+<div class="blog-section-label">
+<svg aria-hidden="true" class="blog-section-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+<path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+</svg>
+<a class="blog-section-title" href="../../">Blog</a>
+<div class="blog-section-subtitle">Releases, deep dives, war stories</div>
+</div>
+<a class="blog-rss" href="../../atom.xml" title="Subscribe (Atom feed)">
+<span class="rss-icon blog-rss-icon"></span>
+<span>RSS</span>
+</a>
+</div>
+<div class="article-with-toc">
+<div class="article-column">
+<article class="article">
+<section id="detecting-memory-leaks-in-c-extensions-with-psutil-and-psleak">
+<h1>Detecting memory leaks in C extensions with psutil and psleak<a class="headerlink" href="#detecting-memory-leaks-in-c-extensions-with-psutil-and-psleak" title="链接到此标题。">¶</a></h1>
+<div class="post-meta-banner docutils container">
+<span><a class="post-meta-featured reference internal" href="../../tag/featured/">Featured</a></span><span class="post-meta-author">Giampaolo Rodola</span><span class="post-meta-date">Dec 23, 2025</span><span class="post-meta-readtime">4 min read</span><span class="post-meta-tags"><a class="reference internal" href="../../tag/c/">c</a><a class="reference internal" href="../../tag/memory/">memory</a><a class="reference internal" href="../../tag/new-api/">new-api</a></span></div>
+<p>Memory leaks in Python are usually straightforward to diagnose. Just look at
+<a class="reference internal" href="../../../glossary/#term-RSS"><span class="xref std std-term">RSS</span></a>, track Python object counts, follow reference graphs, etc. But
+leaks inside C extension modules are another story. Traditional memory metrics
+such as <a class="reference internal" href="../../../glossary/#term-RSS"><span class="xref std std-term">RSS</span></a> and <a class="reference internal" href="../../../glossary/#term-VMS"><span class="xref std std-term">VMS</span></a> fail to reveal them because Python's memory
+allocator
+(<a class="reference external" href="https://docs.python.org/3/c-api/memory.html#the-pymalloc-allocator">pymalloc</a>)
+sits above the platform's native <a class="reference internal" href="../../../glossary/#term-heap"><span class="xref std std-term">heap</span></a>. If something in an extension
+calls <em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/malloc(3)">malloc(3)</a></em> without a corresponding <em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/free(3)">free(3)</a></em>, that
+memory often won't show up in <a class="reference internal" href="../../../glossary/#term-RSS"><span class="xref std std-term">RSS</span></a> / <a class="reference internal" href="../../../glossary/#term-VMS"><span class="xref std std-term">VMS</span></a>. You have a leak, and
+you don't know.</p>
+<p>psutil 7.2.0 introduces two new APIs for <strong>C :term:`heap` introspection</strong>,
+designed specifically to catch these kinds of native leaks. They give you a
+window directly into the underlying platform allocator (e.g. glibc's malloc),
+letting you track how much memory the C layer actually allocates. If your
+<a class="reference internal" href="../../../glossary/#term-RSS"><span class="xref std std-term">RSS</span></a> is flat but your C <a class="reference internal" href="../../../glossary/#term-heap"><span class="xref std std-term">heap</span></a> usage climbs, you now have a way to
+see it.</p>
+<section id="why-native-heap-introspection-matters">
+<h2>Why native heap introspection matters<a class="headerlink" href="#why-native-heap-introspection-matters" title="链接到此标题。">¶</a></h2>
+<p>Many Python projects rely on C extensions: psutil, NumPy, pandas, PIL, lxml,
+psycopg, PyTorch, custom in-house modules, etc. And even CPython itself, which
+implements many of its standard library modules in C. If any of these
+components mishandle memory at the C level, you get a leak that doesn't show up
+in:</p>
+<ul class="simple">
+<li><p>Python reference counts (<a class="reference external" href="https://docs.python.org/3/library/sys.html#sys.getrefcount" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">sys.getrefcount()</span></code></a>).</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/tracemalloc.html#module-tracemalloc" title="(位于 Python v3.14)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tracemalloc</span></code></a> module.</p></li>
+<li><p>Python's <a class="reference external" href="https://docs.python.org/3/library/gc.html#module-gc" title="(位于 Python v3.14)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gc</span></code></a> stats.</p></li>
+<li><p><a class="reference internal" href="../../../glossary/#term-RSS"><span class="xref std std-term">RSS</span></a>, <a class="reference internal" href="../../../glossary/#term-VMS"><span class="xref std std-term">VMS</span></a> or <a class="reference internal" href="../../../glossary/#term-USS"><span class="xref std std-term">USS</span></a> due to allocator caching, especially
+for small objects. This can happen, for example, when you forget to
+<code class="docutils literal notranslate"><span class="pre">Py_DECREF</span></code> a Python object.</p></li>
+</ul>
+<p>psutil's new functions let you query the allocator (e.g. glibc) directly,
+returning low-level metrics from the platform's native heap.</p>
+</section>
+<section id="heap-info-direct-allocator-statistics">
+<h2>heap_info(): direct allocator statistics<a class="headerlink" href="#heap-info-direct-allocator-statistics" title="链接到此标题。">¶</a></h2>
+<p><a class="reference internal" href="../../../api/#psutil.heap_info" title="psutil.heap_info"><code class="xref py py-func docutils literal notranslate"><span class="pre">psutil.heap_info()</span></code></a> exposes the following metrics:</p>
+<ul class="simple">
+<li><p><code class="ntuple-field docutils literal notranslate"><span class="pre">heap_used</span></code>: total number of bytes currently allocated via
+<code class="docutils literal notranslate"><span class="pre">malloc()</span></code> (small allocations).</p></li>
+<li><p><code class="ntuple-field docutils literal notranslate"><span class="pre">mmap_used</span></code>: total number of bytes currently allocated via
+<em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/mmap(2)">mmap(2)</a></em> or via large <code class="docutils literal notranslate"><span class="pre">malloc()</span></code> allocations.</p></li>
+<li><p><code class="ntuple-field docutils literal notranslate"><span class="pre">heap_count</span></code>: (Windows only) number of private heaps created via
+<code class="docutils literal notranslate"><span class="pre">HeapCreate()</span></code>.</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../../../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="../../../api/#psutil.heap_info" title="psutil.heap_info"><span class="n">psutil</span><span class="o">.</span><span class="n">heap_info</span></a><span class="p">()</span>
+<span class="go">pheap(heap_used=5177792, mmap_used=819200)</span>
+</pre></div>
+</div>
+<p>Reference for what contributes to each field:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Platform</p></th>
+<th class="head"><p>Allocation type</p></th>
+<th class="head"><p>Field affected</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>UNIX / Windows</p></td>
+<td><p>small <code class="docutils literal notranslate"><span class="pre">malloc()</span></code> ≤128 KB without <code class="docutils literal notranslate"><span class="pre">free()</span></code></p></td>
+<td><p><code class="ntuple-field docutils literal notranslate"><span class="pre">heap_used</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>UNIX / Windows</p></td>
+<td><p>large <code class="docutils literal notranslate"><span class="pre">malloc()</span></code> &gt;128 KB without <code class="docutils literal notranslate"><span class="pre">free()</span></code>, or <code class="docutils literal notranslate"><span class="pre">mmap()</span></code>
+without <em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/munmap(2)">munmap(2)</a></em> (UNIX)</p></td>
+<td><p><code class="ntuple-field docutils literal notranslate"><span class="pre">mmap_used</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Windows</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">HeapAlloc()</span></code> without <code class="docutils literal notranslate"><span class="pre">HeapFree()</span></code></p></td>
+<td><p><code class="ntuple-field docutils literal notranslate"><span class="pre">heap_used</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Windows</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">VirtualAlloc()</span></code> without <code class="docutils literal notranslate"><span class="pre">VirtualFree()</span></code></p></td>
+<td><p><code class="ntuple-field docutils literal notranslate"><span class="pre">mmap_used</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Windows</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">HeapCreate()</span></code> without <code class="docutils literal notranslate"><span class="pre">HeapDestroy()</span></code></p></td>
+<td><p><code class="ntuple-field docutils literal notranslate"><span class="pre">heap_count</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="heap-trim-returning-unused-heap-memory">
+<h2>heap_trim(): returning unused heap memory<a class="headerlink" href="#heap-trim-returning-unused-heap-memory" title="链接到此标题。">¶</a></h2>
+<p><a class="reference internal" href="../../../api/#psutil.heap_trim" title="psutil.heap_trim"><code class="xref py py-func docutils literal notranslate"><span class="pre">psutil.heap_trim()</span></code></a> provides a cross-platform way to request that the
+underlying allocator free any unused memory it's holding in the heap (typically
+small <code class="docutils literal notranslate"><span class="pre">malloc()</span></code> allocations).</p>
+<p>In practice, modern allocators rarely comply, so this is not a general-purpose
+memory-reduction tool and won't meaningfully shrink <a class="reference internal" href="../../../glossary/#term-RSS"><span class="xref std std-term">RSS</span></a> in real
+programs. Its primary value is in leak detection tools. Calling
+<a class="reference internal" href="../../../api/#psutil.heap_trim" title="psutil.heap_trim"><code class="xref py py-func docutils literal notranslate"><span class="pre">psutil.heap_trim()</span></code></a> before taking measurements helps reduce allocator
+noise, giving you a cleaner baseline so that changes in <code class="ntuple-field docutils literal notranslate"><span class="pre">heap_used</span></code> come
+from the code you're testing, not from internal allocator caching or
+fragmentation.</p>
+</section>
+<section id="real-world-use-finding-a-c-extension-leak">
+<h2>Real-world use: finding a C extension leak<a class="headerlink" href="#real-world-use-finding-a-c-extension-leak" title="链接到此标题。">¶</a></h2>
+<p>The workflow is simple:</p>
+<ol class="arabic simple">
+<li><p>Take a baseline snapshot of the heap.</p></li>
+<li><p>Call the C extension hundreds of times.</p></li>
+<li><p>Take another snapshot.</p></li>
+<li><p>Compare.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../../../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<a class="sphinx-codeautolink-a" href="../../../api/#psutil.heap_trim" title="psutil.heap_trim"><span class="n">psutil</span><span class="o">.</span><span class="n">heap_trim</span></a><span class="p">()</span>  <span class="c1"># reduce noise</span>
+
+<span class="n">before</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../../../api/#psutil.heap_info" title="psutil.heap_info"><span class="n">psutil</span><span class="o">.</span><span class="n">heap_info</span></a><span class="p">()</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#range" title="range"><span class="nb">range</span></a><span class="p">(</span><span class="mi">200</span><span class="p">):</span>
+    <span class="n">my_cext_function</span><span class="p">()</span>
+<span class="n">after</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../../../api/#psutil.heap_info" title="psutil.heap_info"><span class="n">psutil</span><span class="o">.</span><span class="n">heap_info</span></a><span class="p">()</span>
+
+<a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><span class="s2">"delta heap_used ="</span><span class="p">,</span> <span class="n">after</span><span class="o">.</span><span class="n">heap_used</span> <span class="o">-</span> <span class="n">before</span><span class="o">.</span><span class="n">heap_used</span><span class="p">)</span>
+<a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><span class="s2">"delta mmap_used ="</span><span class="p">,</span> <span class="n">after</span><span class="o">.</span><span class="n">mmap_used</span> <span class="o">-</span> <span class="n">before</span><span class="o">.</span><span class="n">mmap_used</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If <code class="ntuple-field docutils literal notranslate"><span class="pre">heap_used</span></code> or <code class="ntuple-field docutils literal notranslate"><span class="pre">mmap_used</span></code> values increase consistently,
+you've found a native leak.</p>
+<p>To reduce false positives, repeat the test multiple times, increasing the
+number of calls on each retry. This approach helps distinguish real leaks from
+random noise or transient allocations.</p>
+</section>
+<section id="a-new-tool-psleak">
+<h2>A new tool: psleak<a class="headerlink" href="#a-new-tool-psleak" title="链接到此标题。">¶</a></h2>
+<p>The strategy described above is exactly what I implemented in a new PyPI
+package, which I called <a class="reference external" href="https://github.com/giampaolo/psleak">psleak</a>. It
+runs the target function repeatedly, trims the allocator before each run, and
+tracks differences across retries. Memory that grows consistently after several
+runs is flagged as a leak.</p>
+<p>A minimal test suite looks like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">psleak</span><span class="w"> </span><span class="kn">import</span> <span class="n">MemoryLeakTestCase</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestLeaks</span><span class="p">(</span><span class="n">MemoryLeakTestCase</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_fun</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">some_c_function</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If the function leaks memory, the test will fail with a descriptive exception:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>psleak.MemoryLeakError: memory kept increasing after 10 runs
+Run # 1: heap=+388160  | uss=+356352  | rss=+327680  | (calls= 200, avg/call=+1940)
+Run # 2: heap=+584848  | uss=+614400  | rss=+491520  | (calls= 300, avg/call=+1949)
+Run # 3: heap=+778320  | uss=+782336  | rss=+819200  | (calls= 400, avg/call=+1945)
+Run # 4: heap=+970512  | uss=+1032192 | rss=+1146880 | (calls= 500, avg/call=+1941)
+Run # 5: heap=+1169024 | uss=+1171456 | rss=+1146880 | (calls= 600, avg/call=+1948)
+Run # 6: heap=+1357360 | uss=+1413120 | rss=+1310720 | (calls= 700, avg/call=+1939)
+Run # 7: heap=+1552336 | uss=+1634304 | rss=+1638400 | (calls= 800, avg/call=+1940)
+Run # 8: heap=+1752032 | uss=+1781760 | rss=+1802240 | (calls= 900, avg/call=+1946)
+Run # 9: heap=+1945056 | uss=+2031616 | rss=+2129920 | (calls=1000, avg/call=+1945)
+Run #10: heap=+2140624 | uss=+2179072 | rss=+2293760 | (calls=1100, avg/call=+1946)
+</pre></div>
+</div>
+<p>Psleak is now part of the psutil test suite. All psutil APIs are tested (see
+<a class="reference external" href="https://github.com/giampaolo/psutil/blob/1a946cfe738045cecf031222cd5078da21946af4/tests/test_memleaks.py">test_memleaks.py</a>),
+making it a de facto <strong>regression-testing tool</strong>.</p>
+<p>It's worth noting that without inspecting heap metrics, missing calls in the C
+code such as <code class="docutils literal notranslate"><span class="pre">Py_CLEAR</span></code> and <code class="docutils literal notranslate"><span class="pre">Py_DECREF</span></code> often go unnoticed, because they
+don't affect <a class="reference internal" href="../../../glossary/#term-RSS"><span class="xref std std-term">RSS</span></a>, <a class="reference internal" href="../../../glossary/#term-VMS"><span class="xref std std-term">VMS</span></a>, and <a class="reference internal" href="../../../glossary/#term-USS"><span class="xref std std-term">USS</span></a>. I confirmed this by
+commenting them out. Monitoring the <a class="reference internal" href="../../../glossary/#term-heap"><span class="xref std std-term">heap</span></a> is therefore essential to
+reliably detect memory leaks in Python C extensions.</p>
+</section>
+<section id="under-the-hood">
+<h2>Under the hood<a class="headerlink" href="#under-the-hood" title="链接到此标题。">¶</a></h2>
+<p>For those interested in seeing how I did this in terms of code:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/giampaolo/psutil/blob/d40164f1/psutil/arch/linux/heap.c">Linux</a>:
+uses glibc's <em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/mallinfo2(3)">mallinfo2(3)</a></em> to report <code class="docutils literal notranslate"><span class="pre">uordblks</span></code> (heap
+allocations) and <code class="docutils literal notranslate"><span class="pre">hblkhd</span></code> (mmap-backed blocks).</p></li>
+<li><p><a class="reference external" href="https://github.com/giampaolo/psutil/blob/d40164f1/psutil/arch/windows/heap.c">Windows</a>:
+enumerates heaps and aggregates <code class="docutils literal notranslate"><span class="pre">HeapAlloc</span></code> / <code class="docutils literal notranslate"><span class="pre">VirtualAlloc</span></code> usage.</p></li>
+<li><p><a class="reference external" href="https://github.com/giampaolo/psutil/blob/d40164f1/psutil/arch/osx/heap.c">macOS</a>:
+uses malloc zone statistics.</p></li>
+<li><p><a class="reference external" href="https://github.com/giampaolo/psutil/blob/d40164f1/psutil/arch/bsd/heap.c">BSD</a>:
+uses jemalloc's arena and stats interfaces.</p></li>
+</ul>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="链接到此标题。">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/giampaolo/psleak">psleak</a>, the new memory leak
+testing framework.</p></li>
+<li><p><a class="extlink-pr reference external" href="https://github.com/giampaolo/psutil/pull/2692">PR-2692</a>, the implementation.</p></li>
+<li><p><a class="extlink-gh reference external" href="https://github.com/giampaolo/psutil/issues/1275">#1275</a>, the original proposal from 8 years earlier.</p></li>
+</ul>
+</section>
+<section id="discussion">
+<h2>Discussion<a class="headerlink" href="#discussion" title="链接到此标题。">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.reddit.com/r/Python/comments/1puqgfg/detect_memory_leaks_of_c_extensions_with_psutil/">Reddit</a></p></li>
+<li><p><a class="reference external" href="https://news.ycombinator.com/item?id=46376608">Hacker News</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/@g.rodola/detect-memory-leaks-of-c-extensions-with-psutil-and-psleak-a0521ba6315f">Medium</a></p></li>
+</ul>
+</section>
+</section>
+<div class="section ablog__blog_comments">
+<nav aria-label="Previous and next posts" class="prev-next no-visited">
+<a class="prev-next-prev" href="../wheels-for-free-threaded-python/" rel="prev">
+<span aria-hidden="true" class="prev-next-arrow">‹</span>
+<span class="prev-next-block">
+<span class="prev-next-label">Previous</span>
+<span class="prev-next-title">Wheels for free-threaded Python now available</span>
+</span>
+</a>
+<a class="prev-next-next" href="../../2026/event-driven-process-waiting/" rel="next">
+<span class="prev-next-block">
+<span class="prev-next-label">Next</span>
+<span class="prev-next-title">From Python 3.3 to today: ending 15 years of subprocess polling</span>
+</span>
+<span aria-hidden="true" class="prev-next-arrow">›</span>
+</a>
+</nav>
+</div>
+</article>
+<section aria-labelledby="comments-heading" class="comments" hidden="">
+<h2 id="comments-heading">Comments</h2>
+<div class="giscus" data-category="User Comments" data-category-id="DIC_kwDOTfVGLM4DBrKC" data-repo="giampaolo/psutil-blog-comments" data-repo-id="R_kgDOTfVGLA" data-term="blog/2025/heap-introspection-apis" data-theme-url="../../../_static/css/giscus.css"></div>
+</section>
+</div>
+<aside aria-label="On this page" class="right-sidebar">
+<div class="right-sidebar-title">On this page</div>
+<ul>
+<li><a class="reference internal" href="#">Detecting memory leaks in C extensions with psutil and psleak</a><ul>
+<li><a class="reference internal" href="#why-native-heap-introspection-matters">Why native heap introspection matters</a></li>
+<li><a class="reference internal" href="#heap-info-direct-allocator-statistics">heap_info(): direct allocator statistics</a></li>
+<li><a class="reference internal" href="#heap-trim-returning-unused-heap-memory">heap_trim(): returning unused heap memory</a></li>
+<li><a class="reference internal" href="#real-world-use-finding-a-c-extension-leak">Real-world use: finding a C extension leak</a></li>
+<li><a class="reference internal" href="#a-new-tool-psleak">A new tool: psleak</a></li>
+<li><a class="reference internal" href="#under-the-hood">Under the hood</a></li>
+<li><a class="reference internal" href="#references">References</a></li>
+<li><a class="reference internal" href="#discussion">Discussion</a></li>
+</ul>
+</li>
+</ul>
+</aside>
+</div>
+</main>
+<footer class="footer" role="contentinfo">
+<div class="footer-content">
+<div class="footer-text">
+<span><a class="footer-egg" href="../../../404/" title="🥚">©</a> 2009-2026 Giampaolo Rodola</span>
+<span><a href="../../../about/" title="About this documentation site">About</a></span>
+<span><a href="https://github.com/giampaolo/psutil/edit/master/docs/blog/2025/heap-introspection-apis.rst" rel="noopener noreferrer" target="_blank" title="Edit this page on GitHub">Edit on GitHub</a></span>
+</div>
+<div class="footer-icons">
+<a aria-label="psutil on GitHub" class="footer-github" href="https://github.com/giampaolo/psutil" rel="noopener noreferrer" target="_blank" title="psutil on GitHub">
+<i aria-hidden="true" class="fa-brands fa-github"></i>
+</a>
+<a aria-label="psutil on PyPI" class="footer-pypi" href="https://pypi.org/project/psutil/" rel="noopener noreferrer" target="_blank" title="psutil on PyPI">
+<i aria-hidden="true" class="fa-brands fa-python"></i>
+</a>
+<a aria-label="Subscribe to blog" class="footer-rss" href="../../atom.xml" title="Subscribe to blog (Atom feed)">
+<span class="rss-icon"></span>
+</a>
+</div>
+</div>
+</footer>
+</div>
+</body>
+</html>

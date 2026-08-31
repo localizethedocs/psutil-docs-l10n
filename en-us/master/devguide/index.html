@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+
+<html lang="en-US" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta property="og:title" content="Development guide" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://psutil.io/devguide/" />
+<meta property="og:site_name" content="psutil" />
+<meta property="og:description" content="Build, setup and test: psutil makes extensive use of C code, so a C compiler and the Python development headers are required. First clone the repository: On ..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://psutil.io/_images/social_previews/summary_devguide_d4b768cd.png" />
+<meta property="og:image:alt" content="Build, setup and test: psutil makes extensive use of C code, so a C compiler and the Python development headers are required. First clone the repository: On ..." />
+<meta name="description" content="Build, setup and test: psutil makes extensive use of C code, so a C compiler and the Python development headers are required. First clone the repository: On ..." />
+<meta name="twitter:card" content="summary_large_image" />
+
+    <title>Development guide &#8212; psutil</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=29da98fa" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-codeautolink.css?v=b2176991" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/base.css?v=fa4013d4" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/fonts.css?v=e753a5f7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/fontawesome.css?v=51ff6dc7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/typography.css?v=e7b40542" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/admonitions.css?v=163ddbc1" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/api-signatures.css?v=f032e3fc" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blog.css?v=5f195cc9" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/changelog.css?v=9bdb527a" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/code.css?v=0681a11b" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/comments.css?v=f39a9342" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/dev-banner.css?v=6210bb1f" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/doc-icons.css?v=78c7cf07" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/footer.css?v=5d6b8d43" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/layout.css?v=cf2ca8d4" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/left-sidebar.css?v=dd06a93c" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/prev-next.css?v=ca7d359d" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/print.css?v=ece16c97" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/right-sidebar.css?v=81efec8f" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/search.css?v=82d539d2" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/tables.css?v=c600f876" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/topbar.css?v=1a2cb74e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/home.css?v=50cb9b55" />
+    <script src="../_static/documentation_options.js?v=fe56712e"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=35a8b989"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script defer="defer" src="../_static/js/back-to-top.js?v=7b97b66a"></script>
+    <script defer="defer" src="../_static/js/external-urls.js?v=ea4e66fd"></script>
+    <script defer="defer" src="../_static/js/giscus.js?v=7fd73528"></script>
+    <script defer="defer" src="../_static/js/github-meta.js?v=efa66c56"></script>
+    <script defer="defer" src="../_static/js/highlight-repl.js?v=8e31535c"></script>
+    <script defer="defer" src="../_static/js/home-install-copy.js?v=be638b0c"></script>
+    <script defer="defer" src="../_static/js/right-toc.js?v=160f6df3"></script>
+    <script defer="defer" src="../_static/js/search-dim.js?v=b004caf9"></script>
+    <script defer="defer" src="../_static/js/search-shortcuts.js?v=26c0729f"></script>
+    <script defer="defer" src="../_static/js/shortcuts-help.js?v=f76503f8"></script>
+    <script defer="defer" src="../_static/js/sidebar-mobile.js?v=8d0c24bd"></script>
+    <script defer="defer" src="../_static/js/theme-toggle.js?v=6f028c03"></script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/psutil-docs-l10n/devguide/" />
+    <link rel="icon" href="../_static/favicon.svg"/>
+    <link rel="author" title="About these documents" href="../about/" />
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="prev" title="Timeline" href="../timeline/" />
+ 
+ 
+
+
+
+
+<link rel="apple-touch-icon" href="../_static/images/logo-psutil.png">
+
+<script>
+(function() {
+    const html = document.documentElement;
+    html.classList.add('no-transition');
+    const saved = localStorage.getItem('psutil-sphinx-theme');
+    const theme = saved || (
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+    );
+    html.setAttribute('data-theme', theme);
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            html.classList.remove('no-transition');
+        });
+    });
+})();
+</script>
+
+
+<script data-goatcounter="https://psutil.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G7374TFB11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G7374TFB11');
+</script>
+ 
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  href="../blog/atom.xml"
+  title="Blog"
+/>
+  
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+  </head><body data-page="devguide">
+<header class="topbar no-visited" role="banner">
+  <div class="topbar-inner">
+    <button class="topbar-hamburger" id="sidebar-toggle"
+            type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button><a class="topbar-logo" href="../"><img src="../_static/images/logo-psutil.svg" alt="">
+      <span>psutil</span>
+    </a>
+    <nav class="topbar-actions" aria-label="Site actions">
+      <a class="topbar-text" href="../blog/">Blog</a>
+      <button class="topbar-btn" id="theme-toggle"
+              type="button" title="Toggle dark mode (shift+D)" aria-label="Toggle theme">
+        <i class="fa-regular fa-moon" aria-hidden="true"></i>
+      </button>
+      <a class="topbar-link topbar-github"
+         href="https://github.com/giampaolo/psutil"
+         target="_blank" rel="noopener" title="GitHub" aria-label="GitHub repository">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+        <span class="topbar-stars" data-repo="giampaolo/psutil"></span>
+      </a>
+      <a class="topbar-version" data-repo="giampaolo/psutil"
+         href="https://pypi.org/project/psutil"
+         target="_blank" rel="noopener" title="PyPI" aria-label="PyPI release"></a>
+    </nav>
+  </div>
+</header>
+
+<div class="page">
+  <nav class="left-sidebar no-visited" aria-label="Main navigation">
+  <div class="search-box">
+    <form action="../search/" method="get" role="search">
+      <input id="search-input" type="text" name="q"
+             placeholder="Search" aria-label="Search docs"
+             autocomplete="off" autocorrect="off"
+             autocapitalize="off" spellcheck="false">
+      <span class="search-kbd" aria-hidden="true"><kbd>Ctrl</kbd>+<kbd>K</kbd></span>
+    </form>
+  </div>
+  
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install/">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api-overview/">API overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/">Recipes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../shell-equivalents/">Shell equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stdlib-equivalents/">Stdlib equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary/">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/">Platform support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/">Migration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../adoption/">Who uses psutil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../alternatives/">Alternatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funding/">Funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../credits/">Credits</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../blog/">Blog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog/">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timeline/">Timeline</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Development guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex/">General Index</a></li>
+</ul>
+
+</nav>
+  <main class="main" id="main-content" role="main">
+    
+    <div class="dev-banner" role="note">
+  You're reading the <strong>development</strong> version of the psutil
+  docs, which may describe unreleased changes. For the current release
+  see <a href="https://psutil.readthedocs.io/stable/">psutil.readthedocs.io/stable</a>.
+</div>
+    
+    <div class="article-with-toc">
+      <div class="article-column">
+        <article class="article">
+           <section id="development-guide">
+<h1>Development guide<a class="headerlink" href="#development-guide" title="Link to this heading">¶</a></h1>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/giampaolo/psutil/blob/master/CONTRIBUTING.md">Contributing to psutil project</a></p>
+</div>
+<section id="build-setup-and-test">
+<h2>Build, setup and test<a class="headerlink" href="#build-setup-and-test" title="Link to this heading">¶</a></h2>
+<ul>
+<li><p>psutil makes extensive use of C code, so a C compiler and the Python
+development headers are required. First clone the repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/giampaolo/psutil.git
+<span class="nb">cd</span><span class="w"> </span>psutil
+</pre></div>
+</div>
+<p>On Linux, FreeBSD, OpenBSD, NetBSD and Solaris, install the system deps:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>install-sysdeps<span class="w">       </span><span class="c1"># compiler + python headers</span>
+make<span class="w"> </span>install-sysdeps-test<span class="w">  </span><span class="c1"># CLI tools used by tests</span>
+</pre></div>
+</div>
+<p>On macOS, AIX and Windows there’s no such target, see
+<a class="reference internal" href="../install/#install-from-source"><span class="std std-ref">Build psutil from source</span></a>. Then, everywhere:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>install-pydeps-dev<span class="w">    </span><span class="c1"># python development deps (linters, etc)</span>
+make<span class="w"> </span>build<span class="w">                 </span><span class="c1"># compile the C extension in place</span>
+make<span class="w"> </span><span class="nb">test</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">make</span></code> (via the <a class="extlink-src reference external" href="https://github.com/giampaolo/psutil/blob/master/Makefile">Makefile</a>) is used for building, testing and general
+development tasks, including on Windows (see below):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>clean
+make<span class="w"> </span><span class="nb">test</span>
+make<span class="w"> </span>test-parallel
+make<span class="w"> </span>test-memleaks
+make<span class="w"> </span>coverage
+make<span class="w"> </span>lint-all
+make<span class="w"> </span>fix-all
+make<span class="w"> </span>uninstall
+make<span class="w"> </span><span class="nb">help</span>
+</pre></div>
+</div>
+</li>
+<li><p>To run a specific test:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>make test ARGS=tests/test_system.py
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">build</span></code> compiles the extension in place, so you can import psutil
+straight from the repo. No need to install it.</p></li>
+<li><p>Don’t use <code class="docutils literal notranslate"><span class="pre">sudo</span></code>, except for the <code class="docutils literal notranslate"><span class="pre">install-sysdeps-*</span></code> targets, which
+invoke it themselves when needed.</p></li>
+<li><p>To target a specific Python version, pass <code class="docutils literal notranslate"><span class="pre">PYTHON</span></code> to every step, so that
+the extension is built by the same interpreter that runs the tests:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>make install-pydeps-dev PYTHON=python3.13
+make build PYTHON=python3.13
+make test PYTHON=python3.13
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="windows">
+<h2>Windows<a class="headerlink" href="#windows" title="Link to this heading">¶</a></h2>
+<ul>
+<li><p>The recommended way to develop on Windows is to use <code class="docutils literal notranslate"><span class="pre">make</span></code>.</p></li>
+<li><p>For the build tools, Git Bash and GNU Make setup see <a class="reference internal" href="../install/#install-windows"><span class="std std-ref">Windows</span></a>.</p></li>
+<li><p>Once inside a Git Bash shell, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>install-pydeps-dev
+make<span class="w"> </span>build
+make<span class="w"> </span>test-parallel
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="debug-mode">
+<span id="devguide-debug-mode"></span><h2>Debug mode<a class="headerlink" href="#debug-mode" title="Link to this heading">¶</a></h2>
+<p>If you need to debug unusual situations or report a bug, you can enable debug
+mode via the <span class="target" id="index-0"></span><a class="reference internal" href="../api/#envvar-PSUTIL_DEBUG"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PSUTIL_DEBUG</span></code></a> environment variable. In this mode, psutil
+may print additional information to stderr. Usually these are non-severe error
+conditions that are ignored instead of causing a crash. Unit tests
+automatically run with debug mode enabled. To enable debug mode in UNIX (or on
+Windows + Bash):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ PSUTIL_DEBUG=1 python3 test_script.py
+psutil-debug [psutil/_psutil_linux.c:150]&gt; setmntent() failed (ignored)
+</pre></div>
+</div>
+<p>On Windows using cmd.exe:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>set PSUTIL_DEBUG=1 &amp;&amp; python.exe test_script.py
+psutil-debug [psutil/arch/windows/proc.c:56]&gt; ReadProcessMemory -&gt; ERROR_NOACCESS (ignored)
+</pre></div>
+</div>
+</section>
+<section id="coding-style">
+<h2>Coding style<a class="headerlink" href="#coding-style" title="Link to this heading">¶</a></h2>
+<p>All style and formatting checks are enforced locally on each <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> and
+via a GitHub Actions pipeline.</p>
+<ul class="simple">
+<li><p>Python: follows <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP-8</a>, formatted and linted with <code class="docutils literal notranslate"><span class="pre">black</span></code> and <code class="docutils literal notranslate"><span class="pre">ruff</span></code>.</p></li>
+<li><p>C: generally follows <a class="reference external" href="https://www.python.org/dev/peps/pep-0007/">PEP-7</a>, formatted with <code class="docutils literal notranslate"><span class="pre">clang-format</span></code>.</p></li>
+<li><p>Other files (<code class="docutils literal notranslate"><span class="pre">.rst</span></code>, <code class="docutils literal notranslate"><span class="pre">.toml</span></code>, <code class="docutils literal notranslate"><span class="pre">.md</span></code>, <code class="docutils literal notranslate"><span class="pre">.yml</span></code>): validated by linters.</p></li>
+</ul>
+<p>The pipeline re-runs all checks for consistency (<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">lint-all</span></code>).</p>
+<p>Run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">fix-all</span></code> before committing; it usually fixes Python issues (via
+<code class="docutils literal notranslate"><span class="pre">black</span></code> and <code class="docutils literal notranslate"><span class="pre">ruff</span></code>) and C issues (via <code class="docutils literal notranslate"><span class="pre">clang-format</span></code>).</p>
+</section>
+<section id="code-organization">
+<h2>Code organization<a class="headerlink" href="#code-organization" title="Link to this heading">¶</a></h2>
+<p>Not every API reaches C: many are implemented in python alone (on Linux, by
+parsing <code class="docutils literal notranslate"><span class="pre">/proc</span></code>). For those that do, a call travels down through the
+platform-specific layers. Linux is used here as an example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import psutil
+     │
+     ▼
+psutil/__init__.py          public API, Process class
+     │
+     ▼
+psutil/_pslinux.py          python layer: parses /proc, calls into C
+     │
+     ▼
+psutil/_psutil_linux.c      C extension entry point (arg parsing)
+     │
+     ▼
+psutil/arch/linux/*.c       platform-specific C implementation
+                            + arch/posix/*.c   shared by POSIX
+                            + arch/all/*.c     shared by everything
+</pre></div>
+</div>
+<p>Where things live:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>psutil/__init__.py<span class="w">                   </span><span class="c1"># Public API ("import psutil")</span>
+psutil/_common.py<span class="w">                    </span><span class="c1"># Generic utilities</span>
+psutil/_ntuples.py<span class="w">                   </span><span class="c1"># Named tuples returned by psutil APIs</span>
+psutil/_enums.py<span class="w">                     </span><span class="c1"># Enum containers</span>
+psutil/_ps<span class="o">{</span>platform<span class="o">}</span>.py<span class="w">              </span><span class="c1"># OS-specific python wrapper</span>
+psutil/_psutil_<span class="o">{</span>platform<span class="o">}</span>.c<span class="w">          </span><span class="c1"># OS-specific C extension (entry point)</span>
+psutil/arch/all/*.c<span class="w">                  </span><span class="c1"># C code common to all OSes</span>
+psutil/arch/posix/*.c<span class="w">                </span><span class="c1"># C code common to POSIX OSes</span>
+psutil/arch/bsd/*.c<span class="w">                  </span><span class="c1"># C code common to the BSDs</span>
+psutil/arch/<span class="o">{</span>platform<span class="o">}</span>/*.c<span class="w">           </span><span class="c1"># OS-specific C implementation</span>
+tests/test_process.py<span class="w">                </span><span class="c1"># Main process API tests</span>
+tests/test_system.py<span class="w">                 </span><span class="c1"># Main system API tests</span>
+tests/test_<span class="o">{</span>platform<span class="o">}</span>.py<span class="w">             </span><span class="c1"># OS-specific tests</span>
+</pre></div>
+</div>
+</section>
+<section id="adding-a-new-api">
+<h2>Adding a new API<a class="headerlink" href="#adding-a-new-api" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Define the public API in <a class="extlink-src reference external" href="https://github.com/giampaolo/psutil/blob/master/psutil/__init__.py">psutil/__init__.py</a>.</p></li>
+<li><p>Implement it for each applicable platform in <code class="docutils literal notranslate"><span class="pre">psutil/_ps{platform}.py</span></code>
+(e.g. <a class="extlink-src reference external" href="https://github.com/giampaolo/psutil/blob/master/psutil/_pslinux.py">psutil/_pslinux.py</a>).</p></li>
+<li><p>If needed, add C code in <code class="docutils literal notranslate"><span class="pre">psutil/arch/{platform}/file.c</span></code>.</p></li>
+<li><p>Add a generic test in <a class="extlink-src reference external" href="https://github.com/giampaolo/psutil/blob/master/tests/test_system.py">tests/test_system.py</a> or
+<a class="extlink-src reference external" href="https://github.com/giampaolo/psutil/blob/master/tests/test_process.py">tests/test_process.py</a>.</p></li>
+<li><p>Add a platform-specific test in <code class="docutils literal notranslate"><span class="pre">tests/test_{platform}.py</span></code>.</p></li>
+<li><p>Update <a class="extlink-src reference external" href="https://github.com/giampaolo/psutil/blob/master/docs/api.rst">docs/api.rst</a>.</p></li>
+<li><p>Open a pull request.</p></li>
+</ul>
+</section>
+<section id="make-a-pull-request">
+<h2>Make a pull request<a class="headerlink" href="#make-a-pull-request" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Fork psutil on GitHub.</p></li>
+<li><p>Clone your fork: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">git&#64;github.com:YOUR-USERNAME/psutil.git</span></code></p></li>
+<li><p>Create a branch: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">new-feature</span></code></p></li>
+<li><p>Stage and commit: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">&lt;files&gt;</span></code> then
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">'Add</span> <span class="pre">some</span> <span class="pre">feature'</span></code></p></li>
+<li><p>Push: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">new-feature</span></code></p></li>
+<li><p>Open a pull request (see <a class="extlink-src reference external" href="https://github.com/giampaolo/psutil/blob/master/CONTRIBUTING.md">CONTRIBUTING.md</a>).</p></li>
+</ul>
+</section>
+<section id="continuous-integration">
+<h2>Continuous integration<a class="headerlink" href="#continuous-integration" title="Link to this heading">¶</a></h2>
+<p>Tests run automatically on pull requests and on relevant pushes, covering all
+regularly tested platforms except AIX. See
+<a class="reference external" href="https://github.com/giampaolo/psutil/tree/master/.github/workflows">.github/workflows</a>.</p>
+</section>
+<section id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">¶</a></h2>
+<ul>
+<li><p>Source is in the <a class="extlink-src reference external" href="https://github.com/giampaolo/psutil/blob/master/docs/">docs/</a> directory.</p></li>
+<li><p>To build HTML:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>install-pydeps-docs
+<span class="nb">cd</span><span class="w"> </span>docs/
+make<span class="w"> </span>html
+</pre></div>
+</div>
+</li>
+<li><p>The documentation is hosted at <a class="reference external" href="https://psutil.io">https://psutil.io</a>. It’s a single version,
+rebuilt and deployed automatically on every push to <code class="docutils literal notranslate"><span class="pre">master</span></code>.</p></li>
+</ul>
+</section>
+<section id="releases">
+<h2>Releases<a class="headerlink" href="#releases" title="Link to this heading">¶</a></h2>
+<p>For project maintainers:</p>
+<ul class="simple">
+<li><p>Releases are uploaded to <a class="reference external" href="https://pypi.org/project/psutil/">PyPI</a> via <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">release</span></code>.</p></li>
+<li><p>Git tags use the <code class="docutils literal notranslate"><span class="pre">vX.Y.Z</span></code> format (e.g. <code class="docutils literal notranslate"><span class="pre">v7.2.2</span></code>).</p></li>
+<li><p>The version string is defined in <a class="extlink-src reference external" href="https://github.com/giampaolo/psutil/blob/master/psutil/__init__.py">psutil/__init__.py</a> (<code class="docutils literal notranslate"><span class="pre">__version__</span></code>).</p></li>
+</ul>
+</section>
+</section>
+
+<div class="section ablog__blog_comments">
+   
+</div>
+
+        </article>
+        
+<nav class="prev-next no-visited" aria-label="Previous and next pages">
+  
+  <a class="prev-next-prev" href="../timeline/" rel="prev">
+    <span class="prev-next-arrow" aria-hidden="true">&lsaquo;</span>
+    <span class="prev-next-block">
+      <span class="prev-next-label">Previous</span>
+      <span class="prev-next-title">Timeline</span>
+    </span>
+  </a>
+  
+  
+</nav>
+
+        
+      </div>
+
+      <aside class="right-sidebar"
+       
+       aria-label="On this page">
+  <div class="right-sidebar-title">On this page</div>
+  <ul>
+<li><a class="reference internal" href="#">Development guide</a><ul>
+<li><a class="reference internal" href="#build-setup-and-test">Build, setup and test</a></li>
+<li><a class="reference internal" href="#windows">Windows</a></li>
+<li><a class="reference internal" href="#debug-mode">Debug mode</a></li>
+<li><a class="reference internal" href="#coding-style">Coding style</a></li>
+<li><a class="reference internal" href="#code-organization">Code organization</a></li>
+<li><a class="reference internal" href="#adding-a-new-api">Adding a new API</a></li>
+<li><a class="reference internal" href="#make-a-pull-request">Make a pull request</a></li>
+<li><a class="reference internal" href="#continuous-integration">Continuous integration</a></li>
+<li><a class="reference internal" href="#documentation">Documentation</a></li>
+<li><a class="reference internal" href="#releases">Releases</a></li>
+</ul>
+</li>
+</ul>
+
+</aside>
+    </div>
+  </main>
+
+  
+  <footer class="footer" role="contentinfo">
+  <div class="footer-content">
+    <div class="footer-text">
+      <span><a class="footer-egg" href="../404/" title="🥚">&copy;</a> 2009-2026 Giampaolo Rodola</span>
+      <span><a href="../about/"
+               title="About this documentation site">About</a></span>
+      <span><a href="https://github.com/giampaolo/psutil/edit/master/docs/devguide.rst"
+               rel="noopener noreferrer" target="_blank"
+               title="Edit this page on GitHub">Edit on GitHub</a></span>
+    </div>
+    <div class="footer-icons">
+      <a class="footer-github" href="https://github.com/giampaolo/psutil"
+         title="psutil on GitHub" aria-label="psutil on GitHub"
+         rel="noopener noreferrer" target="_blank">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+      </a>
+      <a class="footer-pypi" href="https://pypi.org/project/psutil/"
+         title="psutil on PyPI" aria-label="psutil on PyPI"
+         rel="noopener noreferrer" target="_blank">
+        <i class="fa-brands fa-python" aria-hidden="true"></i>
+      </a>
+      <a class="footer-rss" href="../blog/atom.xml"
+         title="Subscribe to blog (Atom feed)" aria-label="Subscribe to blog">
+        <span class="rss-icon"></span>
+      </a>
+    </div>
+  </div>
+</footer>
+</div>
+
+  </body>
+</html>

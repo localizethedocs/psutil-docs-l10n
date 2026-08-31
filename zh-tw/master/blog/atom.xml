@@ -1,0 +1,370 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh_TW">
+  <id>https://psutil.io/</id>
+  <title>Blog</title>
+  <updated>2026-08-31T16:26:47.197199+00:00</updated>
+  <link href="https://psutil.io/"/>
+  <link href="https://psutil.io/blog/atom.xml" rel="self"/>
+  <generator uri="https://ablog.readthedocs.io/" version="0.11.13">ABlog</generator>
+  <entry>
+    <id>https://psutil.io/blog/2026/event-driven-process-waiting/</id>
+    <title>From Python 3.3 to today: ending 15 years of subprocess polling</title>
+    <updated>2026-01-28T00:00:00+00:00</updated>
+    <author>
+      <name>Giampaolo Rodola</name>
+    </author>
+    <content type="html">&lt;p class="ablog-post-excerpt"&gt;&lt;p&gt;Replacing &lt;a class="reference external" href="https://docs.python.org/3/library/subprocess.html#subprocess.Popen.wait" title="(in Python v3.14)"&gt;&lt;code class="xref py py-meth docutils literal notranslate"&gt;&lt;span class="pre"&gt;subprocess.Popen.wait()&lt;/span&gt;&lt;/code&gt;&lt;/a&gt;'s busy-loop with an event-driven model, in psutil then upstream CPython&lt;/p&gt;
+&lt;/p&gt;
+</content>
+    <link href="https://psutil.io/blog/2026/event-driven-process-waiting/"/>
+    <summary>Replacing subprocess.Popen.wait()'s busy-loop with an event-driven model, in psutil then upstream CPython</summary>
+    <category term="featured" label="featured"/>
+    <category term="performance" label="performance"/>
+    <category term="python-core" label="python-core"/>
+    <published>2026-01-28T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://psutil.io/blog/2025/heap-introspection-apis/</id>
+    <title>Detecting memory leaks in C extensions with psutil and psleak</title>
+    <updated>2025-12-23T00:00:00+00:00</updated>
+    <author>
+      <name>Giampaolo Rodola</name>
+    </author>
+    <content type="html">&lt;p class="ablog-post-excerpt"&gt;&lt;p&gt;psutil 7.2.0 peeks into the native allocator, spotting leaks &lt;a class="reference internal" href="../glossary/#term-RSS"&gt;&lt;span class="xref std std-term"&gt;RSS&lt;/span&gt;&lt;/a&gt; can't see&lt;/p&gt;
+&lt;/p&gt;
+</content>
+    <link href="https://psutil.io/blog/2025/heap-introspection-apis/"/>
+    <summary>psutil 7.2.0 peeks into the native allocator, spotting leaks RSS can't see</summary>
+    <category term="c" label="c"/>
+    <category term="featured" label="featured"/>
+    <category term="memory" label="memory"/>
+    <category term="new-api" label="new-api"/>
+    <published>2025-12-23T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://psutil.io/blog/2025/wheels-for-free-threaded-python/</id>
+    <title>Wheels for free-threaded Python now available</title>
+    <updated>2025-10-25T00:00:00+00:00</updated>
+    <author>
+      <name>Giampaolo Rodola</name>
+    </author>
+    <content type="html">&lt;p class="ablog-post-excerpt"&gt;&lt;p&gt;Unlocking &lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;pip&lt;/span&gt; &lt;span class="pre"&gt;install&lt;/span&gt; &lt;span class="pre"&gt;psutil&lt;/span&gt;&lt;/code&gt; for no-GIL Python&lt;/p&gt;
+&lt;/p&gt;
+</content>
+    <link href="https://psutil.io/blog/2025/wheels-for-free-threaded-python/"/>
+    <summary>Unlocking pip install psutil for no-GIL Python</summary>
+    <category term="community" label="community"/>
+    <category term="python-core" label="python-core"/>
+    <category term="wheels" label="wheels"/>
+    <published>2025-10-25T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://psutil.io/blog/2025/speedup-pytest-startup/</id>
+    <title>Speeding up pytest startup</title>
+    <updated>2025-04-04T00:00:00+00:00</updated>
+    <author>
+      <name>Giampaolo Rodola</name>
+    </author>
+    <content type="html">&lt;p class="ablog-post-excerpt"&gt;&lt;p&gt;Trimming heavy imports and plugins: 0.42s → 0.30s (~28%)&lt;/p&gt;
+&lt;/p&gt;
+</content>
+    <link href="https://psutil.io/blog/2025/speedup-pytest-startup/"/>
+    <summary>Trimming heavy imports and plugins: 0.42s → 0.30s (~28%)</summary>
+    <category term="performance" label="performance"/>
+    <category term="tests" label="tests"/>
+    <published>2025-04-04T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://psutil.io/blog/2025/drop-py27/</id>
+    <title>Letting go of Python 2.7</title>
+    <updated>2025-02-13T00:00:00+00:00</updated>
+    <author>
+      <name>Giampaolo Rodola</name>
+    </author>
+    <content type="html">&lt;p class="ablog-post-excerpt"&gt;&lt;p&gt;Downloads fell from ~8% to 0.36% in three years; psutil
+7.0.0 ends support&lt;/p&gt;
+&lt;/p&gt;
+</content>
+    <link href="https://psutil.io/blog/2025/drop-py27/"/>
+    <summary>Downloads fell from ~8% to 0.36% in three years; psutil
+7.0.0 ends support</summary>
+    <category term="compatibility" label="compatibility"/>
+    <category term="featured" label="featured"/>
+    <category term="release" label="release"/>
+    <published>2025-02-13T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://psutil.io/blog/2019/macos-memory-maps/</id>
+    <title>Removing Process.memory_maps() on macOS</title>
+    <updated>2019-03-05T00:00:00+00:00</updated>
+    <author>
+      <name>Giampaolo Rodola</name>
+    </author>
+    <content type="html">&lt;p class="ablog-post-excerpt"&gt;&lt;p&gt;A segfault I couldn't fix, and the API removal that followed&lt;/p&gt;
+&lt;/p&gt;
+</content>
+    <link href="https://psutil.io/blog/2019/macos-memory-maps/"/>
+    <summary>A segfault I couldn't fix, and the API removal that followed</summary>
+    <category term="api-design" label="api-design"/>
+    <category term="compatibility" label="compatibility"/>
+    <category term="macos" label="macos"/>
+    <category term="release" label="release"/>
+    <published>2019-03-05T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://psutil.io/blog/2019/announcing-560/</id>
+    <title>Announcing psutil 5.6.0</title>
+    <updated>2019-03-05T00:00:00+00:00</updated>
+    <author>
+      <name>Giampaolo Rodola</name>
+    </author>
+    <content type="html">&lt;p class="ablog-post-excerpt"&gt;&lt;p&gt;5.6.0 adds &lt;a class="reference internal" href="../api/#psutil.Process.parents" title="psutil.Process.parents"&gt;&lt;code class="xref py py-meth docutils literal notranslate"&gt;&lt;span class="pre"&gt;parents()&lt;/span&gt;&lt;/code&gt;&lt;/a&gt;, brings several Windows improvements, and removes &lt;a class="reference internal" href="../api/#psutil.Process.memory_maps" title="psutil.Process.memory_maps"&gt;&lt;code class="xref py py-meth docutils literal notranslate"&gt;&lt;span class="pre"&gt;memory_maps()&lt;/span&gt;&lt;/code&gt;&lt;/a&gt; on macOS&lt;/p&gt;
+&lt;/p&gt;
+</content>
+    <link href="https://psutil.io/blog/2019/announcing-560/"/>
+    <summary>5.6.0 adds parents(), brings several Windows improvements, and removes memory_maps() on macOS</summary>
+    <category term="compatibility" label="compatibility"/>
+    <category term="macos" label="macos"/>
+    <category term="new-api" label="new-api"/>
+    <category term="release" label="release"/>
+    <category term="windows" label="windows"/>
+    <published>2019-03-05T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://psutil.io/blog/2017/aix-support/</id>
+    <title>AIX support</title>
+    <updated>2017-10-12T00:00:00+00:00</updated>
+    <author>
+      <name>Giampaolo Rodola</name>
+    </author>
+    <content type="html">&lt;p class="ablog-post-excerpt"&gt;&lt;p&gt;psutil 5.4.0 gets an IBM port, contributed by Arnon Yaari&lt;/p&gt;
+&lt;/p&gt;
+</content>
+    <link href="https://psutil.io/blog/2017/aix-support/"/>
+    <summary>psutil 5.4.0 gets an IBM port, contributed by Arnon Yaari</summary>
+    <category term="community" label="community"/>
+    <category term="new-platform" label="new-platform"/>
+    <category term="personal" label="personal"/>
+    <category term="release" label="release"/>
+    <published>2017-10-12T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://psutil.io/blog/2017/process-iter-attrs/</id>
+    <title>Improved process_iter()</title>
+    <updated>2017-09-03T00:00:00+00:00</updated>
+    <author>
+      <name>Giampaolo Rodola</name>
+    </author>
+    <content type="html">&lt;p class="ablog-post-excerpt"&gt;&lt;p&gt;5.3.0 adds &lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;attrs&lt;/span&gt;&lt;/code&gt; and &lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;ad_value&lt;/span&gt;&lt;/code&gt; parameters to
+&lt;a class="reference internal" href="../api/#psutil.process_iter" title="psutil.process_iter"&gt;&lt;code class="xref py py-func docutils literal notranslate"&gt;&lt;span class="pre"&gt;process_iter()&lt;/span&gt;&lt;/code&gt;&lt;/a&gt;, letting you pre-fetch attributes in one shot&lt;/p&gt;
+&lt;/p&gt;
+</content>
+    <link href="https://psutil.io/blog/2017/process-iter-attrs/"/>
+    <summary>5.3.0 adds attrs and ad_value parameters to
+process_iter(), letting you pre-fetch attributes in one shot</summary>
+    <category term="api-design" label="api-design"/>
+    <category term="new-api" label="new-api"/>
+    <category term="performance" label="performance"/>
+    <category term="release" label="release"/>
+    <published>2017-09-03T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://psutil.io/blog/2017/unicode-internals/</id>
+    <title>Fixing Unicode across Python 2 and 3</title>
+    <updated>2017-09-03T00:00:00+00:00</updated>
+    <author>
+      <name>Giampaolo Rodola</name>
+    </author>
+    <content type="html">&lt;p class="ablog-post-excerpt"&gt;&lt;p&gt;How psutil 5.3.0 got non-ASCII strings right on both Python 2 and
+Python 3.&lt;/p&gt;
+&lt;/p&gt;
+</content>
+    <link href="https://psutil.io/blog/2017/unicode-internals/"/>
+    <summary>How psutil 5.3.0 got non-ASCII strings right on both Python 2 and
+Python 3.</summary>
+    <category term="api-design" label="api-design"/>
+    <category term="compatibility" label="compatibility"/>
+    <category term="python-core" label="python-core"/>
+    <published>2017-09-03T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://psutil.io/blog/2017/sensors-support/</id>
+    <title>Sensors: temperatures, battery, CPU frequency</title>
+    <updated>2017-02-01T00:00:00+00:00</updated>
+    <author>
+      <name>Giampaolo Rodola</name>
+    </author>
+    <content type="html">&lt;p class="ablog-post-excerpt"&gt;&lt;p&gt;psutil 5.1.0 introduces &lt;a class="reference internal" href="../api/#psutil.sensors_temperatures" title="psutil.sensors_temperatures"&gt;&lt;code class="xref py py-func docutils literal notranslate"&gt;&lt;span class="pre"&gt;sensors_temperatures()&lt;/span&gt;&lt;/code&gt;&lt;/a&gt;,
+&lt;a class="reference internal" href="../api/#psutil.sensors_battery" title="psutil.sensors_battery"&gt;&lt;code class="xref py py-func docutils literal notranslate"&gt;&lt;span class="pre"&gt;sensors_battery()&lt;/span&gt;&lt;/code&gt;&lt;/a&gt; and &lt;a class="reference internal" href="../api/#psutil.cpu_freq" title="psutil.cpu_freq"&gt;&lt;code class="xref py py-func docutils literal notranslate"&gt;&lt;span class="pre"&gt;cpu_freq()&lt;/span&gt;&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;
+</content>
+    <link href="https://psutil.io/blog/2017/sensors-support/"/>
+    <summary>psutil 5.1.0 introduces sensors_temperatures(),
+sensors_battery() and cpu_freq()</summary>
+    <category term="linux" label="linux"/>
+    <category term="new-api" label="new-api"/>
+    <category term="release" label="release"/>
+    <published>2017-02-01T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://psutil.io/blog/2016/500-is-twice-as-fast/</id>
+    <title>Making psutil twice as fast</title>
+    <updated>2016-11-06T00:00:00+00:00</updated>
+    <author>
+      <name>Giampaolo Rodola</name>
+    </author>
+    <content type="html">&lt;p class="ablog-post-excerpt"&gt;&lt;p&gt;New &lt;a class="reference internal" href="../api/#psutil.Process.oneshot" title="psutil.Process.oneshot"&gt;&lt;code class="xref py py-meth docutils literal notranslate"&gt;&lt;span class="pre"&gt;Process.oneshot()&lt;/span&gt;&lt;/code&gt;&lt;/a&gt;, caching shared syscalls and halving the cost of multi-field queries&lt;/p&gt;
+&lt;/p&gt;
+</content>
+    <link href="https://psutil.io/blog/2016/500-is-twice-as-fast/"/>
+    <summary>New Process.oneshot(), caching shared syscalls and halving the cost of multi-field queries</summary>
+    <category term="featured" label="featured"/>
+    <category term="new-api" label="new-api"/>
+    <category term="performance" label="performance"/>
+    <category term="release" label="release"/>
+    <published>2016-11-06T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://psutil.io/blog/2016/windows-services/</id>
+    <title>Windows services support</title>
+    <updated>2016-05-15T00:00:00+00:00</updated>
+    <author>
+      <name>Giampaolo Rodola</name>
+    </author>
+    <content type="html">&lt;p class="ablog-post-excerpt"&gt;&lt;p&gt;psutil 4.2.0 introduces &lt;a class="reference internal" href="../api/#psutil.win_service_iter" title="psutil.win_service_iter"&gt;&lt;code class="xref py py-func docutils literal notranslate"&gt;&lt;span class="pre"&gt;win_service_iter()&lt;/span&gt;&lt;/code&gt;&lt;/a&gt; and &lt;a class="reference internal" href="../api/#psutil.win_service_get" title="psutil.win_service_get"&gt;&lt;code class="xref py py-func docutils literal notranslate"&gt;&lt;span class="pre"&gt;win_service_get()&lt;/span&gt;&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;
+</content>
+    <link href="https://psutil.io/blog/2016/windows-services/"/>
+    <summary>psutil 4.2.0 introduces win_service_iter() and win_service_get()</summary>
+    <category term="new-api" label="new-api"/>
+    <category term="release" label="release"/>
+    <category term="windows" label="windows"/>
+    <published>2016-05-15T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://psutil.io/blog/2016/netbsd-support/</id>
+    <title>NetBSD support</title>
+    <updated>2016-02-25T00:00:00+00:00</updated>
+    <author>
+      <name>Giampaolo Rodola</name>
+    </author>
+    <content type="html">&lt;p class="ablog-post-excerpt"&gt;&lt;p&gt;Completing the BSD trio alongside FreeBSD and OpenBSD&lt;/p&gt;
+&lt;/p&gt;
+</content>
+    <link href="https://psutil.io/blog/2016/netbsd-support/"/>
+    <summary>Completing the BSD trio alongside FreeBSD and OpenBSD</summary>
+    <category term="bsd" label="bsd"/>
+    <category term="community" label="community"/>
+    <category term="new-platform" label="new-platform"/>
+    <category term="release" label="release"/>
+    <published>2016-02-25T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://psutil.io/blog/2016/real-process-memory-in-python/</id>
+    <title>Real process memory and environ in Python</title>
+    <updated>2016-02-17T00:00:00+00:00</updated>
+    <author>
+      <name>Giampaolo Rodola</name>
+    </author>
+    <content type="html">&lt;p class="ablog-post-excerpt"&gt;&lt;p&gt;psutil 4.0.0 exposes &lt;a class="reference internal" href="../glossary/#term-USS"&gt;&lt;span class="xref std std-term"&gt;USS&lt;/span&gt;&lt;/a&gt;, the memory that would
+actually be freed on process exit + &lt;a class="reference internal" href="../api/#psutil.Process.environ" title="psutil.Process.environ"&gt;&lt;code class="xref py py-meth docutils literal notranslate"&gt;&lt;span class="pre"&gt;Process.environ()&lt;/span&gt;&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;
+</content>
+    <link href="https://psutil.io/blog/2016/real-process-memory-in-python/"/>
+    <summary>psutil 4.0.0 exposes USS, the memory that would
+actually be freed on process exit + Process.environ()</summary>
+    <category term="community" label="community"/>
+    <category term="compatibility" label="compatibility"/>
+    <category term="linux" label="linux"/>
+    <category term="memory" label="memory"/>
+    <category term="new-api" label="new-api"/>
+    <category term="release" label="release"/>
+    <published>2016-02-17T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://psutil.io/blog/2015/openbsd-support/</id>
+    <title>OpenBSD support</title>
+    <updated>2015-11-25T00:00:00+00:00</updated>
+    <author>
+      <name>Giampaolo Rodola</name>
+    </author>
+    <content type="html">&lt;p class="ablog-post-excerpt"&gt;&lt;p&gt;psutil 3.3.0 now runs on OpenBSD, sharing most of the implementation with FreeBSD&lt;/p&gt;
+&lt;/p&gt;
+</content>
+    <link href="https://psutil.io/blog/2015/openbsd-support/"/>
+    <summary>psutil 3.3.0 now runs on OpenBSD, sharing most of the implementation with FreeBSD</summary>
+    <category term="bsd" label="bsd"/>
+    <category term="community" label="community"/>
+    <category term="new-platform" label="new-platform"/>
+    <category term="release" label="release"/>
+    <published>2015-11-25T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://psutil.io/blog/2015/reimplementing-ifconfig-in-python/</id>
+    <title>Reimplementing ifconfig in Python</title>
+    <updated>2015-06-13T00:00:00+00:00</updated>
+    <author>
+      <name>Giampaolo Rodola</name>
+    </author>
+    <content type="html">&lt;p class="ablog-post-excerpt"&gt;&lt;p&gt;psutil 3.0 introduces &lt;a class="reference internal" href="../api/#psutil.net_if_addrs" title="psutil.net_if_addrs"&gt;&lt;code class="xref py py-func docutils literal notranslate"&gt;&lt;span class="pre"&gt;net_if_addrs()&lt;/span&gt;&lt;/code&gt;&lt;/a&gt; and &lt;a class="reference internal" href="../api/#psutil.net_if_stats" title="psutil.net_if_stats"&gt;&lt;code class="xref py py-func docutils literal notranslate"&gt;&lt;span class="pre"&gt;net_if_stats()&lt;/span&gt;&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/p&gt;
+</content>
+    <link href="https://psutil.io/blog/2015/reimplementing-ifconfig-in-python/"/>
+    <summary>psutil 3.0 introduces net_if_addrs() and net_if_stats()</summary>
+    <category term="compatibility" label="compatibility"/>
+    <category term="featured" label="featured"/>
+    <category term="new-api" label="new-api"/>
+    <category term="personal" label="personal"/>
+    <category term="release" label="release"/>
+    <published>2015-06-13T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://psutil.io/blog/2015/zombie-processes/</id>
+    <title>Proper zombie process handling</title>
+    <updated>2015-06-13T00:00:00+00:00</updated>
+    <author>
+      <name>Giampaolo Rodola</name>
+    </author>
+    <content type="html">&lt;p class="ablog-post-excerpt"&gt;&lt;p&gt;Proper handling of zombies via new &lt;a class="reference internal" href="../api/#psutil.ZombieProcess" title="psutil.ZombieProcess"&gt;&lt;code class="xref py py-exc docutils literal notranslate"&gt;&lt;span class="pre"&gt;ZombieProcess&lt;/span&gt;&lt;/code&gt;&lt;/a&gt; exception&lt;/p&gt;
+&lt;/p&gt;
+</content>
+    <link href="https://psutil.io/blog/2015/zombie-processes/"/>
+    <summary>Proper handling of zombies via new ZombieProcess exception</summary>
+    <category term="api-design" label="api-design"/>
+    <category term="compatibility" label="compatibility"/>
+    <published>2015-06-13T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://psutil.io/blog/2014/announcing-20/</id>
+    <title>Announcing psutil 2.0</title>
+    <updated>2014-03-10T00:00:00+00:00</updated>
+    <author>
+      <name>Giampaolo Rodola</name>
+    </author>
+    <content type="html">&lt;p class="ablog-post-excerpt"&gt;&lt;p&gt;A major rewrite with breaking API changes&lt;/p&gt;
+&lt;/p&gt;
+</content>
+    <link href="https://psutil.io/blog/2014/announcing-20/"/>
+    <summary>A major rewrite with breaking API changes</summary>
+    <category term="api-design" label="api-design"/>
+    <category term="compatibility" label="compatibility"/>
+    <category term="release" label="release"/>
+    <published>2014-03-10T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://psutil.io/blog/2014/porting-to-20/</id>
+    <title>Porting your code to psutil 2.0</title>
+    <updated>2014-01-11T00:00:00+00:00</updated>
+    <author>
+      <name>Giampaolo Rodola</name>
+    </author>
+    <content type="html">&lt;p class="ablog-post-excerpt"&gt;&lt;p&gt;A migration guide for the breaking API changes in psutil 2.0&lt;/p&gt;
+&lt;/p&gt;
+</content>
+    <link href="https://psutil.io/blog/2014/porting-to-20/"/>
+    <summary>A migration guide for the breaking API changes in psutil 2.0</summary>
+    <category term="api-design" label="api-design"/>
+    <category term="compatibility" label="compatibility"/>
+    <published>2014-01-11T00:00:00+00:00</published>
+  </entry>
+</feed>

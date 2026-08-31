@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+
+<html data-content_root="../" lang="en-US">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Performance" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="https://psutil.io/performance/" property="og:url"/>
+<meta content="psutil" property="og:site_name"/>
+<meta content="This page describes how to use psutil efficiently. Use oneshot() when reading multiple process attributes: If you’re dealing with a single Process instance a..." property="og:description"/>
+<meta content="1146" property="og:image:width"/>
+<meta content="600" property="og:image:height"/>
+<meta content="https://psutil.io/_images/social_previews/summary_performance_43417a3f.png" property="og:image"/>
+<meta content="This page describes how to use psutil efficiently. Use oneshot() when reading multiple process attributes: If you’re dealing with a single Process instance a..." property="og:image:alt"/>
+<meta content="This page describes how to use psutil efficiently. Use oneshot() when reading multiple process attributes: If you’re dealing with a single Process instance a..." name="description"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<title>Performance — psutil</title>
+<link href="../_static/pygments.css?v=8f2a1f02" rel="stylesheet" type="text/css"/>
+<link href="../_static/basic.css?v=29da98fa" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-codeautolink.css?v=b2176991" rel="stylesheet" type="text/css"/>
+<link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/base.css?v=fa4013d4" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/fonts.css?v=e753a5f7" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/fontawesome.css?v=51ff6dc7" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/typography.css?v=e7b40542" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/admonitions.css?v=163ddbc1" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/api-signatures.css?v=f032e3fc" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/blog.css?v=5f195cc9" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/changelog.css?v=9bdb527a" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/code.css?v=0681a11b" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/comments.css?v=f39a9342" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/dev-banner.css?v=6210bb1f" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/doc-icons.css?v=78c7cf07" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/footer.css?v=5d6b8d43" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/layout.css?v=cf2ca8d4" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/left-sidebar.css?v=dd06a93c" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/prev-next.css?v=ca7d359d" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/print.css?v=ece16c97" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/right-sidebar.css?v=81efec8f" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/search.css?v=82d539d2" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/tables.css?v=c600f876" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/topbar.css?v=1a2cb74e" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/home.css?v=50cb9b55" rel="stylesheet" type="text/css"/>
+<script src="../_static/documentation_options.js?v=fe56712e"></script>
+<script src="../_static/doctools.js?v=fd6eb6e6"></script>
+<script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+<script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="../_static/copybutton.js?v=35a8b989"></script>
+<script src="../_static/design-tabs.js?v=f930bc37"></script>
+<script defer="defer" src="../_static/js/back-to-top.js?v=7b97b66a"></script>
+<script defer="defer" src="../_static/js/external-urls.js?v=ea4e66fd"></script>
+<script defer="defer" src="../_static/js/giscus.js?v=7fd73528"></script>
+<script defer="defer" src="../_static/js/github-meta.js?v=efa66c56"></script>
+<script defer="defer" src="../_static/js/highlight-repl.js?v=8e31535c"></script>
+<script defer="defer" src="../_static/js/home-install-copy.js?v=be638b0c"></script>
+<script defer="defer" src="../_static/js/right-toc.js?v=160f6df3"></script>
+<script defer="defer" src="../_static/js/search-dim.js?v=b004caf9"></script>
+<script defer="defer" src="../_static/js/search-shortcuts.js?v=26c0729f"></script>
+<script defer="defer" src="../_static/js/shortcuts-help.js?v=f76503f8"></script>
+<script defer="defer" src="../_static/js/sidebar-mobile.js?v=8d0c24bd"></script>
+<script defer="defer" src="../_static/js/theme-toggle.js?v=6f028c03"></script>
+<link href="https://projects.localizethedocs.org/psutil-docs-l10n/performance/" rel="canonical"/>
+<link href="../_static/favicon.svg" rel="icon"/>
+<link href="../about/" rel="author" title="About these documents"/>
+<link href="../genindex/" rel="index" title="Index"/>
+<link href="../search/" rel="search" title="Search"/>
+<link href="../recipes/" rel="next" title="Recipes"/>
+<link href="../faq/" rel="prev" title="FAQ"/>
+<link href="../_static/images/logo-psutil.png" rel="apple-touch-icon"/>
+<script>
+(function() {
+    const html = document.documentElement;
+    html.classList.add('no-transition');
+    const saved = localStorage.getItem('psutil-sphinx-theme');
+    const theme = saved || (
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+    );
+    html.setAttribute('data-theme', theme);
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            html.classList.remove('no-transition');
+        });
+    });
+})();
+</script>
+<script async="" data-goatcounter="https://psutil.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-G7374TFB11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G7374TFB11');
+</script>
+<link href="../blog/atom.xml" rel="alternate" title="Blog" type="application/atom+xml"/>
+<script src="../ltd-provenance.js" type="text/javascript"></script>
+<script src="../ltd-current.js" type="text/javascript"></script>
+<script src="../../../ltd-config.js" type="text/javascript"></script>
+<script src="../../../ltd-flyout.js" type="text/javascript"></script>
+</head><body data-page="performance">
+<header class="topbar no-visited" role="banner">
+<div class="topbar-inner">
+<button aria-expanded="false" aria-label="Toggle navigation" class="topbar-hamburger" id="sidebar-toggle" type="button">
+<i aria-hidden="true" class="fa-solid fa-bars"></i>
+</button><a class="topbar-logo" href="../"><img alt="" src="../_static/images/logo-psutil.svg"/>
+<span>psutil</span>
+</a>
+<nav aria-label="Site actions" class="topbar-actions">
+<a class="topbar-text" href="../blog/">Blog</a>
+<button aria-label="Toggle theme" class="topbar-btn" id="theme-toggle" title="Toggle dark mode (shift+D)" type="button">
+<i aria-hidden="true" class="fa-regular fa-moon"></i>
+</button>
+<a aria-label="GitHub repository" class="topbar-link topbar-github" href="https://github.com/giampaolo/psutil" rel="noopener" target="_blank" title="GitHub">
+<i aria-hidden="true" class="fa-brands fa-github"></i>
+<span class="topbar-stars" data-repo="giampaolo/psutil"></span>
+</a>
+<a aria-label="PyPI release" class="topbar-version" data-repo="giampaolo/psutil" href="https://pypi.org/project/psutil" rel="noopener" target="_blank" title="PyPI"></a>
+</nav>
+</div>
+</header>
+<div class="page">
+<nav aria-label="Main navigation" class="left-sidebar no-visited">
+<div class="search-box">
+<form action="../search/" method="get" role="search">
+<input aria-label="Search docs" autocapitalize="off" autocomplete="off" autocorrect="off" id="search-input" name="q" placeholder="Search" spellcheck="false" type="text"/>
+<span aria-hidden="true" class="search-kbd"><kbd>Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+</div>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../install/">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api-overview/">API overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/">FAQ</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/">Recipes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../shell-equivalents/">Shell equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stdlib-equivalents/">Stdlib equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary/">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/">Platform support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/">Migration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../adoption/">Who uses psutil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../alternatives/">Alternatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funding/">Funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../credits/">Credits</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../blog/">Blog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog/">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timeline/">Timeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devguide/">Development guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex/">General Index</a></li>
+</ul>
+</nav>
+<main class="main" id="main-content" role="main">
+<div class="dev-banner" role="note">
+  You're reading the <strong>development</strong> version of the psutil
+  docs, which may describe unreleased changes. For the current release
+  see <a href="https://psutil.readthedocs.io/stable/">psutil.readthedocs.io/stable</a>.
+</div>
+<div class="article-with-toc">
+<div class="article-column">
+<article class="article">
+<section id="performance">
+<h1>Performance<a class="headerlink" href="#performance" title="Link to this heading">¶</a></h1>
+<p>This page describes how to use psutil efficiently.</p>
+<section id="use-oneshot-when-reading-multiple-process-attributes">
+<span id="perf-oneshot"></span><h2>Use oneshot() when reading multiple process attributes<a class="headerlink" href="#use-oneshot-when-reading-multiple-process-attributes" title="Link to this heading">¶</a></h2>
+<p>If you’re dealing with a single <a class="reference internal" href="../api/#psutil.Process" title="psutil.Process"><code class="xref py py-class docutils literal notranslate"><span class="pre">Process</span></code></a> instance and need to retrieve
+multiple process attributes, use <a class="reference internal" href="../api/#psutil.Process.oneshot" title="psutil.Process.oneshot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.oneshot()</span></code></a>. Each method call
+issues a separate system call, but the OS often returns multiple attributes at
+once, which <a class="reference internal" href="../api/#psutil.Process.oneshot" title="psutil.Process.oneshot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.oneshot()</span></code></a> caches for subsequent calls.</p>
+<p>Slow:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">p</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">psutil</span><span class="o">.</span><span class="n">Process</span></a><span class="p">()</span>
+<a class="sphinx-codeautolink-a" href="../api/#psutil.Process.name" title="psutil.Process.name"><span class="n">p</span><span class="o">.</span><span class="n">name</span></a><span class="p">()</span>           <span class="c1"># syscall</span>
+<a class="sphinx-codeautolink-a" href="../api/#psutil.Process.cpu_times" title="psutil.Process.cpu_times"><span class="n">p</span><span class="o">.</span><span class="n">cpu_times</span></a><span class="p">()</span>      <span class="c1"># syscall</span>
+<a class="sphinx-codeautolink-a" href="../api/#psutil.Process.memory_info" title="psutil.Process.memory_info"><span class="n">p</span><span class="o">.</span><span class="n">memory_info</span></a><span class="p">()</span>    <span class="c1"># syscall</span>
+<a class="sphinx-codeautolink-a" href="../api/#psutil.Process.status" title="psutil.Process.status"><span class="n">p</span><span class="o">.</span><span class="n">status</span></a><span class="p">()</span>         <span class="c1"># syscall</span>
+</pre></div>
+</div>
+<p>Fast:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">p</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">psutil</span><span class="o">.</span><span class="n">Process</span></a><span class="p">()</span>
+<span class="k">with</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.oneshot" title="psutil.Process.oneshot"><span class="n">p</span><span class="o">.</span><span class="n">oneshot</span></a><span class="p">():</span>
+    <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.name" title="psutil.Process.name"><span class="n">p</span><span class="o">.</span><span class="n">name</span></a><span class="p">()</span>         <span class="c1"># one syscall, result cached</span>
+    <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.cpu_times" title="psutil.Process.cpu_times"><span class="n">p</span><span class="o">.</span><span class="n">cpu_times</span></a><span class="p">()</span>    <span class="c1"># from cache</span>
+    <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.memory_info" title="psutil.Process.memory_info"><span class="n">p</span><span class="o">.</span><span class="n">memory_info</span></a><span class="p">()</span>  <span class="c1"># from cache</span>
+    <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.status" title="psutil.Process.status"><span class="n">p</span><span class="o">.</span><span class="n">status</span></a><span class="p">()</span>       <span class="c1"># from cache</span>
+</pre></div>
+</div>
+<p>The speed improvement depends on the platform and on how many attributes you
+read. On Linux the gain is typically around 1.5x–2x; on Windows it can be much
+higher. As a rule of thumb: if you read more than one attribute from the same
+process, use <a class="reference internal" href="../api/#psutil.Process.oneshot" title="psutil.Process.oneshot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.oneshot()</span></code></a>.</p>
+</section>
+<section id="use-process-iter-with-an-attrs-list">
+<span id="perf-process-iter"></span><h2>Use process_iter() with an attrs list<a class="headerlink" href="#use-process-iter-with-an-attrs-list" title="Link to this heading">¶</a></h2>
+<p>If you iterate over multiple PIDs, always use <a class="reference internal" href="../api/#psutil.process_iter" title="psutil.process_iter"><code class="xref py py-func docutils literal notranslate"><span class="pre">process_iter()</span></code></a>. It accepts
+an <code class="docutils literal notranslate"><span class="pre">attrs</span></code> argument that pre-fetches only the requested attributes in a
+single pass, minimizing system calls by fetching multiple attributes at once.
+This is faster than calling individual methods in a loop.</p>
+<p>Slow:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.process_iter" title="psutil.process_iter"><span class="n">psutil</span><span class="o">.</span><span class="n">process_iter</span></a><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/#psutil.Process.pid" title="psutil.Process.pid"><span class="n">p</span><span class="o">.</span><span class="n">pid</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.name" title="psutil.Process.name"><span class="n">p</span><span class="o">.</span><span class="n">name</span></a><span class="p">(),</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.status" title="psutil.Process.status"><span class="n">p</span><span class="o">.</span><span class="n">status</span></a><span class="p">())</span>
+    <span class="k">except</span> <span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/#psutil.NoSuchProcess" title="psutil.NoSuchProcess"><span class="n">psutil</span><span class="o">.</span><span class="n">NoSuchProcess</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.AccessDenied" title="psutil.AccessDenied"><span class="n">psutil</span><span class="o">.</span><span class="n">AccessDenied</span></a><span class="p">):</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+<p>Fast:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.process_iter" title="psutil.process_iter"><span class="n">psutil</span><span class="o">.</span><span class="n">process_iter</span></a><span class="p">([</span><span class="s2">"name"</span><span class="p">,</span> <span class="s2">"status"</span><span class="p">]):</span>
+    <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/#psutil.Process.pid" title="psutil.Process.pid"><span class="n">p</span><span class="o">.</span><span class="n">pid</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.name" title="psutil.Process.name"><span class="n">p</span><span class="o">.</span><span class="n">name</span></a><span class="p">(),</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.status" title="psutil.Process.status"><span class="n">p</span><span class="o">.</span><span class="n">status</span></a><span class="p">())</span>  <span class="c1"># return cached values, never raise</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="../api/#psutil.process_iter" title="psutil.process_iter"><code class="xref py py-func docutils literal notranslate"><span class="pre">process_iter(attrs=...)</span></code></a> is effectively equivalent
+to using <a class="reference internal" href="../api/#psutil.Process.oneshot" title="psutil.Process.oneshot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.oneshot()</span></code></a> on each process. Using <a class="reference internal" href="../api/#psutil.process_iter" title="psutil.process_iter"><code class="xref py py-func docutils literal notranslate"><span class="pre">process_iter()</span></code></a>
+also saves you from <strong>race conditions</strong> (e.g. if a process disappears while
+iterating), since <a class="reference internal" href="../api/#psutil.NoSuchProcess" title="psutil.NoSuchProcess"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NoSuchProcess</span></code></a> and <a class="reference internal" href="../api/#psutil.AccessDenied" title="psutil.AccessDenied"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AccessDenied</span></code></a> exceptions are
+handled internally. A typical use case is to fetch all process attrs except the
+slow ones (see <a class="reference internal" href="#perf-api-speed"><span class="std std-ref">Measuring APIs speed</span></a> table below):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.process_iter" title="psutil.process_iter"><span class="n">psutil</span><span class="o">.</span><span class="n">process_iter</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/#psutil.Process.attrs" title="psutil.Process.attrs"><span class="n">psutil</span><span class="o">.</span><span class="n">Process</span><span class="o">.</span><span class="n">attrs</span></a> <span class="o">-</span> <span class="p">{</span><span class="s2">"memory_footprint"</span><span class="p">,</span> <span class="s2">"memory_maps"</span><span class="p">}):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</section>
+<section id="methods-sped-up-by-oneshot">
+<span id="perf-oneshot-methods"></span><h2>Methods sped up by oneshot()<a class="headerlink" href="#methods-sped-up-by-oneshot" title="Link to this heading">¶</a></h2>
+<p>Here’s a list of method groups for each platform which can benefit from
+<a class="reference internal" href="../api/#psutil.Process.oneshot" title="psutil.Process.oneshot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.oneshot()</span></code></a>. Methods in each group (in the same comma-separated
+list) share the same underlying system call.</p>
+<p>The <em>speedup</em> represents the estimated gain when all listed methods are called
+together (best case), as measured by <a class="extlink-src reference external" href="https://github.com/giampaolo/psutil/blob/master/scripts/internal/bench_oneshot.py">scripts/internal/bench_oneshot.py</a>.</p>
+<section id="linux">
+<h3>Linux<a class="headerlink" href="#linux" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="../api/#psutil.Process.cpu_num" title="psutil.Process.cpu_num"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cpu_num()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.cpu_percent" title="psutil.Process.cpu_percent"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cpu_percent()</span></code></a>,
+<a class="reference internal" href="../api/#psutil.Process.cpu_times" title="psutil.Process.cpu_times"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cpu_times()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.create_time" title="psutil.Process.create_time"><code class="xref py py-meth docutils literal notranslate"><span class="pre">create_time()</span></code></a>,
+<a class="reference internal" href="../api/#psutil.Process.name" title="psutil.Process.name"><code class="xref py py-meth docutils literal notranslate"><span class="pre">name()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.page_faults" title="psutil.Process.page_faults"><code class="xref py py-meth docutils literal notranslate"><span class="pre">page_faults()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.ppid" title="psutil.Process.ppid"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ppid()</span></code></a>,
+<a class="reference internal" href="../api/#psutil.Process.status" title="psutil.Process.status"><code class="xref py py-meth docutils literal notranslate"><span class="pre">status()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.terminal" title="psutil.Process.terminal"><code class="xref py py-meth docutils literal notranslate"><span class="pre">terminal()</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/#psutil.Process.gids" title="psutil.Process.gids"><code class="xref py py-meth docutils literal notranslate"><span class="pre">gids()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.memory_info_ex" title="psutil.Process.memory_info_ex"><code class="xref py py-meth docutils literal notranslate"><span class="pre">memory_info_ex()</span></code></a>,
+<a class="reference internal" href="../api/#psutil.Process.num_ctx_switches" title="psutil.Process.num_ctx_switches"><code class="xref py py-meth docutils literal notranslate"><span class="pre">num_ctx_switches()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.num_threads" title="psutil.Process.num_threads"><code class="xref py py-meth docutils literal notranslate"><span class="pre">num_threads()</span></code></a>,
+<a class="reference internal" href="../api/#psutil.Process.uids" title="psutil.Process.uids"><code class="xref py py-meth docutils literal notranslate"><span class="pre">uids()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.username" title="psutil.Process.username"><code class="xref py py-meth docutils literal notranslate"><span class="pre">username()</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/#psutil.Process.memory_footprint" title="psutil.Process.memory_footprint"><code class="xref py py-meth docutils literal notranslate"><span class="pre">memory_footprint()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.memory_maps" title="psutil.Process.memory_maps"><code class="xref py py-meth docutils literal notranslate"><span class="pre">memory_maps()</span></code></a></p></li>
+</ul>
+<p><em>Speedup: +2.6×</em></p>
+</section>
+<section id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="../api/#psutil.Process.cpu_percent" title="psutil.Process.cpu_percent"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cpu_percent()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.cpu_times" title="psutil.Process.cpu_times"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cpu_times()</span></code></a>,
+<a class="reference internal" href="../api/#psutil.Process.io_counters" title="psutil.Process.io_counters"><code class="xref py py-meth docutils literal notranslate"><span class="pre">io_counters()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.memory_info" title="psutil.Process.memory_info"><code class="xref py py-meth docutils literal notranslate"><span class="pre">memory_info()</span></code></a>,
+<a class="reference internal" href="../api/#psutil.Process.memory_info_ex" title="psutil.Process.memory_info_ex"><code class="xref py py-meth docutils literal notranslate"><span class="pre">memory_info_ex()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.memory_percent" title="psutil.Process.memory_percent"><code class="xref py py-meth docutils literal notranslate"><span class="pre">memory_percent()</span></code></a>,
+<a class="reference internal" href="../api/#psutil.Process.num_ctx_switches" title="psutil.Process.num_ctx_switches"><code class="xref py py-meth docutils literal notranslate"><span class="pre">num_ctx_switches()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.num_handles" title="psutil.Process.num_handles"><code class="xref py py-meth docutils literal notranslate"><span class="pre">num_handles()</span></code></a>,
+<a class="reference internal" href="../api/#psutil.Process.num_threads" title="psutil.Process.num_threads"><code class="xref py py-meth docutils literal notranslate"><span class="pre">num_threads()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.page_faults" title="psutil.Process.page_faults"><code class="xref py py-meth docutils literal notranslate"><span class="pre">page_faults()</span></code></a>,
+<a class="reference internal" href="../api/#psutil.Process.status" title="psutil.Process.status"><code class="xref py py-meth docutils literal notranslate"><span class="pre">status()</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/#psutil.Process.exe" title="psutil.Process.exe"><code class="xref py py-meth docutils literal notranslate"><span class="pre">exe()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.name" title="psutil.Process.name"><code class="xref py py-meth docutils literal notranslate"><span class="pre">name()</span></code></a></p></li>
+</ul>
+<p>Some of these first try a faster dedicated call, and only use the shared one if
+it raises <a class="reference internal" href="../api/#psutil.AccessDenied" title="psutil.AccessDenied"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AccessDenied</span></code></a>. The second figure is for such processes.</p>
+<p><em>Speedup: +1.8× / +6.5×</em></p>
+</section>
+<section id="macos">
+<h3>macOS<a class="headerlink" href="#macos" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="../api/#psutil.Process.cpu_percent" title="psutil.Process.cpu_percent"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cpu_percent()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.cpu_times" title="psutil.Process.cpu_times"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cpu_times()</span></code></a>,
+<a class="reference internal" href="../api/#psutil.Process.memory_info" title="psutil.Process.memory_info"><code class="xref py py-meth docutils literal notranslate"><span class="pre">memory_info()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.memory_percent" title="psutil.Process.memory_percent"><code class="xref py py-meth docutils literal notranslate"><span class="pre">memory_percent()</span></code></a>,
+<a class="reference internal" href="../api/#psutil.Process.num_ctx_switches" title="psutil.Process.num_ctx_switches"><code class="xref py py-meth docutils literal notranslate"><span class="pre">num_ctx_switches()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.num_threads" title="psutil.Process.num_threads"><code class="xref py py-meth docutils literal notranslate"><span class="pre">num_threads()</span></code></a>,
+<a class="reference internal" href="../api/#psutil.Process.page_faults" title="psutil.Process.page_faults"><code class="xref py py-meth docutils literal notranslate"><span class="pre">page_faults()</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/#psutil.Process.create_time" title="psutil.Process.create_time"><code class="xref py py-meth docutils literal notranslate"><span class="pre">create_time()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.gids" title="psutil.Process.gids"><code class="xref py py-meth docutils literal notranslate"><span class="pre">gids()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.name" title="psutil.Process.name"><code class="xref py py-meth docutils literal notranslate"><span class="pre">name()</span></code></a>,
+<a class="reference internal" href="../api/#psutil.Process.ppid" title="psutil.Process.ppid"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ppid()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.status" title="psutil.Process.status"><code class="xref py py-meth docutils literal notranslate"><span class="pre">status()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.terminal" title="psutil.Process.terminal"><code class="xref py py-meth docutils literal notranslate"><span class="pre">terminal()</span></code></a>,
+<a class="reference internal" href="../api/#psutil.Process.uids" title="psutil.Process.uids"><code class="xref py py-meth docutils literal notranslate"><span class="pre">uids()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.username" title="psutil.Process.username"><code class="xref py py-meth docutils literal notranslate"><span class="pre">username()</span></code></a></p></li>
+</ul>
+<p><em>Speedup: +1.9×</em></p>
+</section>
+<section id="bsd">
+<h3>BSD<a class="headerlink" href="#bsd" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="../api/#psutil.Process.cpu_num" title="psutil.Process.cpu_num"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cpu_num()</span></code></a> , <a class="reference internal" href="../api/#psutil.Process.cpu_percent" title="psutil.Process.cpu_percent"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cpu_percent()</span></code></a>,
+<a class="reference internal" href="../api/#psutil.Process.cpu_times" title="psutil.Process.cpu_times"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cpu_times()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.create_time" title="psutil.Process.create_time"><code class="xref py py-meth docutils literal notranslate"><span class="pre">create_time()</span></code></a>,
+<a class="reference internal" href="../api/#psutil.Process.gids" title="psutil.Process.gids"><code class="xref py py-meth docutils literal notranslate"><span class="pre">gids()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.io_counters" title="psutil.Process.io_counters"><code class="xref py py-meth docutils literal notranslate"><span class="pre">io_counters()</span></code></a>,
+<a class="reference internal" href="../api/#psutil.Process.memory_info" title="psutil.Process.memory_info"><code class="xref py py-meth docutils literal notranslate"><span class="pre">memory_info()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.memory_percent" title="psutil.Process.memory_percent"><code class="xref py py-meth docutils literal notranslate"><span class="pre">memory_percent()</span></code></a>,
+<a class="reference internal" href="../api/#psutil.Process.name" title="psutil.Process.name"><code class="xref py py-meth docutils literal notranslate"><span class="pre">name()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.nice" title="psutil.Process.nice"><code class="xref py py-meth docutils literal notranslate"><span class="pre">nice()</span></code></a>,
+<a class="reference internal" href="../api/#psutil.Process.num_ctx_switches" title="psutil.Process.num_ctx_switches"><code class="xref py py-meth docutils literal notranslate"><span class="pre">num_ctx_switches()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.page_faults" title="psutil.Process.page_faults"><code class="xref py py-meth docutils literal notranslate"><span class="pre">page_faults()</span></code></a>,
+<a class="reference internal" href="../api/#psutil.Process.ppid" title="psutil.Process.ppid"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ppid()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.status" title="psutil.Process.status"><code class="xref py py-meth docutils literal notranslate"><span class="pre">status()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.terminal" title="psutil.Process.terminal"><code class="xref py py-meth docutils literal notranslate"><span class="pre">terminal()</span></code></a>,
+<a class="reference internal" href="../api/#psutil.Process.uids" title="psutil.Process.uids"><code class="xref py py-meth docutils literal notranslate"><span class="pre">uids()</span></code></a>, <a class="reference internal" href="../api/#psutil.Process.username" title="psutil.Process.username"><code class="xref py py-meth docutils literal notranslate"><span class="pre">username()</span></code></a></p></li>
+</ul>
+<p><em>Speedup: +2.0×</em></p>
+</section>
+</section>
+<section id="measuring-oneshot-speedup">
+<span id="perf-oneshot-bench"></span><h2>Measuring oneshot() speedup<a class="headerlink" href="#measuring-oneshot-speedup" title="Link to this heading">¶</a></h2>
+<p><a class="extlink-src reference external" href="https://github.com/giampaolo/psutil/blob/master/scripts/internal/bench_oneshot.py">scripts/internal/bench_oneshot.py</a> measures <a class="reference internal" href="../api/#psutil.Process.oneshot" title="psutil.Process.oneshot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.oneshot()</span></code></a>
+speedup. It also shows which APIs share the same internal kernel routines. E.g.
+on Linux:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python3 scripts/internal/bench_oneshot.py --times 10000
+17 methods pre-fetched by oneshot() on platform 'linux' (10,000 times, psutil 8.0.0):
+
+  cpu_num
+  cpu_percent
+  cpu_times
+  gids
+  memory_info
+  memory_info_ex
+  memory_percent
+  name
+  num_ctx_switches
+  num_threads
+  page_faults
+  parent
+  ppid
+  status
+  terminal
+  uids
+  username
+
+regular:  2.766 secs
+oneshot:  1.537 secs
+speedup:  +1.80x
+</pre></div>
+</div>
+</section>
+<section id="measuring-apis-speed">
+<span id="perf-api-speed"></span><h2>Measuring APIs speed<a class="headerlink" href="#measuring-apis-speed" title="Link to this heading">¶</a></h2>
+<p><a class="extlink-src reference external" href="https://github.com/giampaolo/psutil/blob/master/scripts/internal/print_api_speed.py">scripts/internal/print_api_speed.py</a> shows the relative cost of each API
+call. This helps you understand which operations are more expensive. E.g. on
+Linux:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python3 scripts/internal/print_api_speed.py
+SYSTEM APIS                NUM CALLS      SECONDS
+-------------------------------------------------
+getloadavg                       300      0.00013
+heap_trim                        300      0.00027
+heap_info                        300      0.00028
+cpu_count                        300      0.00066
+disk_usage                       300      0.00071
+pid_exists                       300      0.00249
+users                            300      0.00394
+cpu_times                        300      0.00647
+virtual_memory                   300      0.00648
+boot_time                        300      0.00727
+cpu_percent                      300      0.00745
+net_io_counters                  300      0.00754
+cpu_times_percent                300      0.00870
+net_if_addrs                     300      0.01156
+cpu_stats                        300      0.01195
+swap_memory                      300      0.01292
+net_if_stats                     300      0.01360
+disk_partitions                  300      0.01696
+disk_io_counters                 300      0.02583
+sensors_battery                  300      0.03103
+pids                             300      0.04896
+cpu_count (cores)                300      0.07208
+process_iter (all)               300      0.07900
+cpu_freq                         300      0.15635
+sensors_fans                     300      0.75810
+net_connections                  224      2.00111
+sensors_temperatures              81      2.00266
+
+PROCESS APIS               NUM CALLS      SECONDS
+-------------------------------------------------
+create_time                      300      0.00013
+exe                              300      0.00016
+nice                             300      0.00024
+ionice                           300      0.00039
+cwd                              300      0.00052
+cpu_affinity                     300      0.00057
+num_fds                          300      0.00100
+memory_info                      300      0.00208
+io_counters                      300      0.00229
+cmdline                          300      0.00232
+cpu_num                          300      0.00254
+terminal                         300      0.00255
+status                           300      0.00258
+page_faults                      300      0.00259
+name                             300      0.00261
+memory_percent                   300      0.00265
+cpu_times                        300      0.00278
+threads                          300      0.00300
+gids                             300      0.00304
+num_threads                      300      0.00305
+num_ctx_switches                 300      0.00308
+uids                             300      0.00321
+cpu_percent                      300      0.00372
+net_connections                  300      0.00376
+open_files                       300      0.00453
+username                         300      0.00505
+ppid                             300      0.00554
+memory_info_ex                   300      0.00651
+environ                          300      0.01013
+memory_footprint                 300      0.02241
+memory_maps                      300      0.30282
+</pre></div>
+</div>
+</section>
+</section>
+<div class="section ablog__blog_comments">
+</div>
+</article>
+<nav aria-label="Previous and next pages" class="prev-next no-visited">
+<a class="prev-next-prev" href="../faq/" rel="prev">
+<span aria-hidden="true" class="prev-next-arrow">‹</span>
+<span class="prev-next-block">
+<span class="prev-next-label">Previous</span>
+<span class="prev-next-title">FAQ</span>
+</span>
+</a>
+<a class="prev-next-next" href="../recipes/" rel="next">
+<span class="prev-next-block">
+<span class="prev-next-label">Next</span>
+<span class="prev-next-title">Recipes</span>
+</span>
+<span aria-hidden="true" class="prev-next-arrow">›</span>
+</a>
+</nav>
+</div>
+<aside aria-label="On this page" class="right-sidebar">
+<div class="right-sidebar-title">On this page</div>
+<ul>
+<li><a class="reference internal" href="#">Performance</a><ul>
+<li><a class="reference internal" href="#use-oneshot-when-reading-multiple-process-attributes">Use oneshot() when reading multiple process attributes</a></li>
+<li><a class="reference internal" href="#use-process-iter-with-an-attrs-list">Use process_iter() with an attrs list</a></li>
+<li><a class="reference internal" href="#methods-sped-up-by-oneshot">Methods sped up by oneshot()</a><ul>
+<li><a class="reference internal" href="#linux">Linux</a></li>
+<li><a class="reference internal" href="#windows">Windows</a></li>
+<li><a class="reference internal" href="#macos">macOS</a></li>
+<li><a class="reference internal" href="#bsd">BSD</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#measuring-oneshot-speedup">Measuring oneshot() speedup</a></li>
+<li><a class="reference internal" href="#measuring-apis-speed">Measuring APIs speed</a></li>
+</ul>
+</li>
+</ul>
+</aside>
+</div>
+</main>
+<footer class="footer" role="contentinfo">
+<div class="footer-content">
+<div class="footer-text">
+<span><a class="footer-egg" href="../404/" title="🥚">©</a> 2009-2026 Giampaolo Rodola</span>
+<span><a href="../about/" title="About this documentation site">About</a></span>
+<span><a href="https://github.com/giampaolo/psutil/edit/master/docs/performance.rst" rel="noopener noreferrer" target="_blank" title="Edit this page on GitHub">Edit on GitHub</a></span>
+</div>
+<div class="footer-icons">
+<a aria-label="psutil on GitHub" class="footer-github" href="https://github.com/giampaolo/psutil" rel="noopener noreferrer" target="_blank" title="psutil on GitHub">
+<i aria-hidden="true" class="fa-brands fa-github"></i>
+</a>
+<a aria-label="psutil on PyPI" class="footer-pypi" href="https://pypi.org/project/psutil/" rel="noopener noreferrer" target="_blank" title="psutil on PyPI">
+<i aria-hidden="true" class="fa-brands fa-python"></i>
+</a>
+<a aria-label="Subscribe to blog" class="footer-rss" href="../blog/atom.xml" title="Subscribe to blog (Atom feed)">
+<span class="rss-icon"></span>
+</a>
+</div>
+</div>
+</footer>
+</div>
+</body>
+</html>

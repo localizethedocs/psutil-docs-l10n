@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>psutil._common &#8212; psutil</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css?v=29da98fa" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-codeautolink.css?v=b2176991" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/base.css?v=fa4013d4" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/fonts.css?v=e753a5f7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/fontawesome.css?v=51ff6dc7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/typography.css?v=e7b40542" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/admonitions.css?v=163ddbc1" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/api-signatures.css?v=f032e3fc" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/blog.css?v=5f195cc9" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/changelog.css?v=9bdb527a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/code.css?v=0681a11b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/comments.css?v=f39a9342" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/dev-banner.css?v=6210bb1f" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/doc-icons.css?v=78c7cf07" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/footer.css?v=5d6b8d43" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/layout.css?v=cf2ca8d4" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/left-sidebar.css?v=dd06a93c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/prev-next.css?v=ca7d359d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/print.css?v=ece16c97" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/right-sidebar.css?v=81efec8f" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/search.css?v=82d539d2" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/tables.css?v=c600f876" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/topbar.css?v=1a2cb74e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/home.css?v=50cb9b55" />
+    <script src="../../../_static/documentation_options.js?v=63576a64"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=35a8b989"></script>
+    <script src="../../../_static/translations.js?v=cbf116e0"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script defer="defer" src="../../../_static/js/back-to-top.js?v=7b97b66a"></script>
+    <script defer="defer" src="../../../_static/js/external-urls.js?v=ea4e66fd"></script>
+    <script defer="defer" src="../../../_static/js/giscus.js?v=7fd73528"></script>
+    <script defer="defer" src="../../../_static/js/github-meta.js?v=efa66c56"></script>
+    <script defer="defer" src="../../../_static/js/highlight-repl.js?v=8e31535c"></script>
+    <script defer="defer" src="../../../_static/js/home-install-copy.js?v=be638b0c"></script>
+    <script defer="defer" src="../../../_static/js/right-toc.js?v=160f6df3"></script>
+    <script defer="defer" src="../../../_static/js/search-dim.js?v=b004caf9"></script>
+    <script defer="defer" src="../../../_static/js/search-shortcuts.js?v=26c0729f"></script>
+    <script defer="defer" src="../../../_static/js/shortcuts-help.js?v=f76503f8"></script>
+    <script defer="defer" src="../../../_static/js/sidebar-mobile.js?v=8d0c24bd"></script>
+    <script defer="defer" src="../../../_static/js/theme-toggle.js?v=6f028c03"></script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/psutil-docs-l10n/_modules/psutil/_common/" />
+    <link rel="icon" href="../../../_static/favicon.svg"/>
+    <link rel="author" title="關於這些文件" href="../../../about/" />
+    <link rel="index" title="索引" href="../../../genindex/" />
+    <link rel="search" title="搜尋" href="../../../search/" />
+ 
+ 
+
+
+
+
+<link rel="apple-touch-icon" href="../../../_static/images/logo-psutil.png">
+
+<script>
+(function() {
+    const html = document.documentElement;
+    html.classList.add('no-transition');
+    const saved = localStorage.getItem('psutil-sphinx-theme');
+    const theme = saved || (
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+    );
+    html.setAttribute('data-theme', theme);
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            html.classList.remove('no-transition');
+        });
+    });
+})();
+</script>
+
+
+<script data-goatcounter="https://psutil.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G7374TFB11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G7374TFB11');
+</script>
+ 
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  href="../../../blog/atom.xml"
+  title="Blog"
+/>
+  
+<script type="text/javascript" src="../../../ltd-provenance.js"></script>
+<script type="text/javascript" src="../../../ltd-current.js"></script>
+<script type="text/javascript" src="../../../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../../../ltd-flyout.js"></script>
+
+  </head><body data-page="_modules/psutil/_common">
+<header class="topbar no-visited" role="banner">
+  <div class="topbar-inner">
+    <button class="topbar-hamburger" id="sidebar-toggle"
+            type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button><a class="topbar-logo" href="../../../"><img src="../../../_static/images/logo-psutil.svg" alt="">
+      <span>psutil</span>
+    </a>
+    <nav class="topbar-actions" aria-label="Site actions">
+      <a class="topbar-text" href="../../../blog/">Blog</a>
+      <button class="topbar-btn" id="theme-toggle"
+              type="button" title="Toggle dark mode (shift+D)" aria-label="Toggle theme">
+        <i class="fa-regular fa-moon" aria-hidden="true"></i>
+      </button>
+      <a class="topbar-link topbar-github"
+         href="https://github.com/giampaolo/psutil"
+         target="_blank" rel="noopener" title="GitHub" aria-label="GitHub repository">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+        <span class="topbar-stars" data-repo="giampaolo/psutil"></span>
+      </a>
+      <a class="topbar-version" data-repo="giampaolo/psutil"
+         href="https://pypi.org/project/psutil"
+         target="_blank" rel="noopener" title="PyPI" aria-label="PyPI release"></a>
+    </nav>
+  </div>
+</header>
+
+<div class="page">
+  <nav class="left-sidebar no-visited" aria-label="Main navigation">
+  <div class="search-box">
+    <form action="../../../search/" method="get" role="search">
+      <input id="search-input" type="text" name="q"
+             placeholder="搜尋" aria-label="Search docs"
+             autocomplete="off" autocorrect="off"
+             autocapitalize="off" spellcheck="false">
+      <span class="search-kbd" aria-hidden="true"><kbd>Ctrl</kbd>+<kbd>K</kbd></span>
+    </form>
+  </div>
+  
+<p class="caption" role="heading"><span class="caption-text">文件</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../install/">安裝</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api-overview/">API 概覽</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/">API 參考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq/">常見問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../performance/">效能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../recipes/">Recipes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">參考</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../shell-equivalents/">Shell equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stdlib-equivalents/">Stdlib equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/">詞彙表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../platform/">平臺支援</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../migration/">遷移</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">關於</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../adoption/">誰在使用 psutil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../alternatives/">Alternatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../funding/">Funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../credits/">Credits</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">專案</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../blog/">網誌</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog/">變更日誌</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../timeline/">時間線</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devguide/">開發指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex/">General Index</a></li>
+</ul>
+
+</nav>
+  <main class="main" id="main-content" role="main">
+    
+    <div class="dev-banner" role="note">
+  You're reading the <strong>development</strong> version of the psutil
+  docs, which may describe unreleased changes. For the current release
+  see <a href="https://psutil.readthedocs.io/stable/">psutil.readthedocs.io/stable</a>.
+</div>
+    
+    <div class="article-with-toc">
+      <div class="article-column">
+        <article class="article">
+           <h1>psutil._common 的原始碼</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright (c) 2009, Giampaolo Rodola'. All rights reserved.</span>
+<span class="c1"># Use of this source code is governed by a BSD-style license that can be</span>
+<span class="c1"># found in the LICENSE file.</span>
+
+<span class="sd">"""Common objects shared by __init__.py and _ps*.py modules.</span>
+
+<span class="sd">Note: this module is imported by setup.py, so it should not import</span>
+<span class="sd">psutil or third-party modules.</span>
+<span class="sd">"""</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">collections</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">functools</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">socket</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">stat</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">socket</span><span class="w"> </span><span class="kn">import</span> <span class="n">AF_INET</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">socket</span><span class="w"> </span><span class="kn">import</span> <span class="n">SOCK_DGRAM</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">socket</span><span class="w"> </span><span class="kn">import</span> <span class="n">SOCK_STREAM</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">socket</span><span class="w"> </span><span class="kn">import</span> <span class="n">AF_INET6</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">AF_INET6</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">socket</span><span class="w"> </span><span class="kn">import</span> <span class="n">AF_UNIX</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">AF_UNIX</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+<span class="n">PSUTIL_DEBUG</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">'PSUTIL_DEBUG'</span><span class="p">))</span>
+<span class="n">PSUTIL_TESTING</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">'PSUTIL_TESTING'</span><span class="p">))</span>
+<span class="n">_DEFAULT</span> <span class="o">=</span> <span class="nb">object</span><span class="p">()</span>
+
+<span class="c1"># fmt: off</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># OS constants</span>
+    <span class="s1">'FREEBSD'</span><span class="p">,</span> <span class="s1">'BSD'</span><span class="p">,</span> <span class="s1">'LINUX'</span><span class="p">,</span> <span class="s1">'NETBSD'</span><span class="p">,</span> <span class="s1">'OPENBSD'</span><span class="p">,</span> <span class="s1">'MACOS'</span><span class="p">,</span> <span class="s1">'OSX'</span><span class="p">,</span> <span class="s1">'POSIX'</span><span class="p">,</span>
+    <span class="s1">'SUNOS'</span><span class="p">,</span> <span class="s1">'WINDOWS'</span><span class="p">,</span>
+    <span class="c1"># other constants</span>
+    <span class="s1">'ENCODING'</span><span class="p">,</span> <span class="s1">'ENCODING_ERRS'</span><span class="p">,</span> <span class="s1">'AF_INET6'</span><span class="p">,</span>
+    <span class="c1"># utility functions</span>
+    <span class="s1">'conn_tmap'</span><span class="p">,</span> <span class="s1">'deprecated_method'</span><span class="p">,</span> <span class="s1">'isfile_strict'</span><span class="p">,</span>
+    <span class="s1">'parse_environ_block'</span><span class="p">,</span> <span class="s1">'path_exists_strict'</span><span class="p">,</span> <span class="s1">'usage_percent'</span><span class="p">,</span>
+    <span class="s1">'supports_ipv6'</span><span class="p">,</span> <span class="s1">'sockfam_to_enum'</span><span class="p">,</span> <span class="s1">'socktype_to_enum'</span><span class="p">,</span> <span class="s2">"wrap_numbers"</span><span class="p">,</span>
+    <span class="s1">'open_text'</span><span class="p">,</span> <span class="s1">'open_binary'</span><span class="p">,</span> <span class="s1">'cat'</span><span class="p">,</span> <span class="s1">'bcat'</span><span class="p">,</span>
+    <span class="s1">'bytes2human'</span><span class="p">,</span> <span class="s1">'conn_to_ntuple'</span><span class="p">,</span> <span class="s1">'debug'</span><span class="p">,</span> <span class="s1">'warn'</span><span class="p">,</span>
+    <span class="c1"># shell utils</span>
+    <span class="s1">'hilite'</span><span class="p">,</span> <span class="s1">'term_supports_colors'</span><span class="p">,</span> <span class="s1">'print_color'</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="c1"># fmt: on</span>
+
+
+<span class="c1"># ===================================================================</span>
+<span class="c1"># --- OS constants</span>
+<span class="c1"># ===================================================================</span>
+
+
+<span class="n">POSIX</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">"posix"</span>
+<span class="n">WINDOWS</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">"nt"</span>
+<span class="n">LINUX</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">startswith</span><span class="p">((</span><span class="s2">"linux"</span><span class="p">,</span> <span class="s2">"android"</span><span class="p">))</span>
+<span class="n">MACOS</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"darwin"</span><span class="p">)</span>
+<span class="n">OSX</span> <span class="o">=</span> <span class="n">MACOS</span>  <span class="c1"># deprecated alias</span>
+<span class="n">FREEBSD</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">startswith</span><span class="p">((</span><span class="s2">"freebsd"</span><span class="p">,</span> <span class="s2">"midnightbsd"</span><span class="p">))</span>
+<span class="n">OPENBSD</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"openbsd"</span><span class="p">)</span>
+<span class="n">NETBSD</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"netbsd"</span><span class="p">)</span>
+<span class="n">BSD</span> <span class="o">=</span> <span class="n">FREEBSD</span> <span class="ow">or</span> <span class="n">OPENBSD</span> <span class="ow">or</span> <span class="n">NETBSD</span>
+<span class="n">SUNOS</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">startswith</span><span class="p">((</span><span class="s2">"sunos"</span><span class="p">,</span> <span class="s2">"solaris"</span><span class="p">))</span>
+<span class="n">AIX</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"aix"</span><span class="p">)</span>
+
+<span class="n">ENCODING</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">getfilesystemencoding</span><span class="p">()</span>
+<span class="n">ENCODING_ERRS</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">getfilesystemencodeerrors</span><span class="p">()</span>
+
+
+<span class="c1"># ===================================================================</span>
+<span class="c1"># --- Process.net_connections() 'kind' parameter mapping</span>
+<span class="c1"># ===================================================================</span>
+
+
+<span class="n">conn_tmap</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"all"</span><span class="p">:</span> <span class="p">([</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">AF_INET6</span><span class="p">,</span> <span class="n">AF_UNIX</span><span class="p">],</span> <span class="p">[</span><span class="n">SOCK_STREAM</span><span class="p">,</span> <span class="n">SOCK_DGRAM</span><span class="p">]),</span>
+    <span class="s2">"tcp"</span><span class="p">:</span> <span class="p">([</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">AF_INET6</span><span class="p">],</span> <span class="p">[</span><span class="n">SOCK_STREAM</span><span class="p">]),</span>
+    <span class="s2">"tcp4"</span><span class="p">:</span> <span class="p">([</span><span class="n">AF_INET</span><span class="p">],</span> <span class="p">[</span><span class="n">SOCK_STREAM</span><span class="p">]),</span>
+    <span class="s2">"udp"</span><span class="p">:</span> <span class="p">([</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">AF_INET6</span><span class="p">],</span> <span class="p">[</span><span class="n">SOCK_DGRAM</span><span class="p">]),</span>
+    <span class="s2">"udp4"</span><span class="p">:</span> <span class="p">([</span><span class="n">AF_INET</span><span class="p">],</span> <span class="p">[</span><span class="n">SOCK_DGRAM</span><span class="p">]),</span>
+    <span class="s2">"inet"</span><span class="p">:</span> <span class="p">([</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">AF_INET6</span><span class="p">],</span> <span class="p">[</span><span class="n">SOCK_STREAM</span><span class="p">,</span> <span class="n">SOCK_DGRAM</span><span class="p">]),</span>
+    <span class="s2">"inet4"</span><span class="p">:</span> <span class="p">([</span><span class="n">AF_INET</span><span class="p">],</span> <span class="p">[</span><span class="n">SOCK_STREAM</span><span class="p">,</span> <span class="n">SOCK_DGRAM</span><span class="p">]),</span>
+    <span class="s2">"inet6"</span><span class="p">:</span> <span class="p">([</span><span class="n">AF_INET6</span><span class="p">],</span> <span class="p">[</span><span class="n">SOCK_STREAM</span><span class="p">,</span> <span class="n">SOCK_DGRAM</span><span class="p">]),</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="n">AF_INET6</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">conn_tmap</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+        <span class="s2">"tcp6"</span><span class="p">:</span> <span class="p">([</span><span class="n">AF_INET6</span><span class="p">],</span> <span class="p">[</span><span class="n">SOCK_STREAM</span><span class="p">]),</span>
+        <span class="s2">"udp6"</span><span class="p">:</span> <span class="p">([</span><span class="n">AF_INET6</span><span class="p">],</span> <span class="p">[</span><span class="n">SOCK_DGRAM</span><span class="p">]),</span>
+    <span class="p">})</span>
+
+<span class="k">if</span> <span class="n">AF_UNIX</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">SUNOS</span><span class="p">:</span>
+    <span class="n">conn_tmap</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">"unix"</span><span class="p">:</span> <span class="p">([</span><span class="n">AF_UNIX</span><span class="p">],</span> <span class="p">[</span><span class="n">SOCK_STREAM</span><span class="p">,</span> <span class="n">SOCK_DGRAM</span><span class="p">])})</span>
+
+
+<span class="c1"># =====================================================================</span>
+<span class="c1"># --- Exceptions</span>
+<span class="c1"># =====================================================================</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Error</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Base exception class. All other psutil exceptions inherit</span>
+<span class="sd">    from this one.</span>
+<span class="sd">    """</span>
+
+    <span class="vm">__module__</span> <span class="o">=</span> <span class="s1">'psutil'</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_infodict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+        <span class="n">info</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">attrs</span><span class="p">:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">value</span> <span class="ow">or</span> <span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="s2">"pid"</span> <span class="ow">and</span> <span class="n">value</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+                <span class="n">info</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">return</span> <span class="n">info</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># invoked on `raise Error`</span>
+        <span class="k">if</span> <span class="n">info</span> <span class="o">:=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_infodict</span><span class="p">((</span><span class="s2">"pid"</span><span class="p">,</span> <span class="s2">"ppid"</span><span class="p">,</span> <span class="s2">"name"</span><span class="p">)):</span>
+            <span class="n">details</span> <span class="o">=</span> <span class="s2">"(</span><span class="si">{}</span><span class="s2">)"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">=</span><span class="si">{</span><span class="n">v</span><span class="si">!r}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">info</span><span class="o">.</span><span class="n">items</span><span class="p">()])</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">details</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">"msg"</span><span class="p">,</span> <span class="s2">""</span><span class="p">),</span> <span class="n">details</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># invoked on `repr(Error)`</span>
+        <span class="n">info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_infodict</span><span class="p">((</span><span class="s2">"pid"</span><span class="p">,</span> <span class="s2">"ppid"</span><span class="p">,</span> <span class="s2">"name"</span><span class="p">,</span> <span class="s2">"seconds"</span><span class="p">,</span> <span class="s2">"msg"</span><span class="p">))</span>
+        <span class="n">details</span> <span class="o">=</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">=</span><span class="si">{</span><span class="n">v</span><span class="si">!r}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">info</span><span class="o">.</span><span class="n">items</span><span class="p">()])</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"psutil.</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(</span><span class="si">{</span><span class="n">details</span><span class="si">}</span><span class="s2">)"</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">NoSuchProcess</span><span class="p">(</span><span class="n">Error</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Exception raised when a process with a certain PID doesn't</span>
+<span class="sd">    or no longer exists.</span>
+<span class="sd">    """</span>
+
+    <span class="vm">__module__</span> <span class="o">=</span> <span class="s1">'psutil'</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pid</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">Error</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pid</span> <span class="o">=</span> <span class="n">pid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span> <span class="ow">or</span> <span class="s2">"process no longer exists"</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">__reduce__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">msg</span><span class="p">))</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ZombieProcess</span><span class="p">(</span><span class="n">NoSuchProcess</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Exception raised when querying a zombie process. This is</span>
+<span class="sd">    raised on macOS, BSD and Solaris only, and not always: depending</span>
+<span class="sd">    on the query the OS may be able to succeed anyway.</span>
+<span class="sd">    On Linux all zombie processes are querable (hence this is never</span>
+<span class="sd">    raised). Windows doesn't have zombie processes.</span>
+<span class="sd">    """</span>
+
+    <span class="vm">__module__</span> <span class="o">=</span> <span class="s1">'psutil'</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pid</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ppid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">NoSuchProcess</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ppid</span> <span class="o">=</span> <span class="n">ppid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span> <span class="ow">or</span> <span class="s2">"PID still exists but it's a zombie"</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">__reduce__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ppid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">msg</span><span class="p">))</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">AccessDenied</span><span class="p">(</span><span class="n">Error</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Exception raised when permission to perform an action is denied."""</span>
+
+    <span class="vm">__module__</span> <span class="o">=</span> <span class="s1">'psutil'</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">Error</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pid</span> <span class="o">=</span> <span class="n">pid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span> <span class="ow">or</span> <span class="s2">""</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">__reduce__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">msg</span><span class="p">))</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TimeoutExpired</span><span class="p">(</span><span class="n">Error</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Raised on Process.wait(timeout) if timeout expires and process</span>
+<span class="sd">    is still alive.</span>
+<span class="sd">    """</span>
+
+    <span class="vm">__module__</span> <span class="o">=</span> <span class="s1">'psutil'</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">seconds</span><span class="p">,</span> <span class="n">pid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">Error</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">seconds</span> <span class="o">=</span> <span class="n">seconds</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pid</span> <span class="o">=</span> <span class="n">pid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"timeout after </span><span class="si">{</span><span class="n">seconds</span><span class="si">}</span><span class="s2"> seconds"</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">__reduce__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">seconds</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+
+
+<span class="c1"># ===================================================================</span>
+<span class="c1"># --- utils</span>
+<span class="c1"># ===================================================================</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">usage_percent</span><span class="p">(</span><span class="n">used</span><span class="p">,</span> <span class="n">total</span><span class="p">,</span> <span class="n">round_</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Calculate percentage usage of 'used' against 'total'."""</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">used</span><span class="p">)</span> <span class="o">/</span> <span class="n">total</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">round_</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">ret</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">ret</span><span class="p">,</span> <span class="n">round_</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">memoize_when_activated</span><span class="p">(</span><span class="n">fun</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""A memoize decorator which is disabled by default. It can be</span>
+<span class="sd">    activated and deactivated on request.</span>
+<span class="sd">    For efficiency reasons it can be used only against class methods</span>
+<span class="sd">    accepting no arguments.</span>
+
+<span class="sd">    &gt;&gt;&gt; class Foo:</span>
+<span class="sd">    ...     @memoize_when_activated</span>
+<span class="sd">    ...     def foo()</span>
+<span class="sd">    ...         print(1)</span>
+<span class="sd">    ...</span>
+<span class="sd">    &gt;&gt;&gt; f = Foo()</span>
+<span class="sd">    &gt;&gt;&gt; # deactivated (default)</span>
+<span class="sd">    &gt;&gt;&gt; foo()</span>
+<span class="sd">    1</span>
+<span class="sd">    &gt;&gt;&gt; foo()</span>
+<span class="sd">    1</span>
+<span class="sd">    &gt;&gt;&gt;</span>
+<span class="sd">    &gt;&gt;&gt; # activated</span>
+<span class="sd">    &gt;&gt;&gt; foo.cache_activate(self)</span>
+<span class="sd">    &gt;&gt;&gt; foo()</span>
+<span class="sd">    1</span>
+<span class="sd">    &gt;&gt;&gt; foo()</span>
+<span class="sd">    &gt;&gt;&gt; foo()</span>
+<span class="sd">    &gt;&gt;&gt;</span>
+<span class="sd">    """</span>
+
+    <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">fun</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wrapper</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># case 1: we previously entered oneshot() ctx</span>
+            <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="n">fun</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="c1"># case 2: we never entered oneshot() ctx</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">fun</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">err</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="c1"># case 3: we entered oneshot() ctx but there's no cache</span>
+            <span class="c1"># for this entry yet</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">ret</span> <span class="o">=</span> <span class="n">fun</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">err</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="n">fun</span><span class="p">]</span> <span class="o">=</span> <span class="n">ret</span>
+            <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+                <span class="c1"># multi-threading race condition, see:</span>
+                <span class="c1"># https://github.com/giampaolo/psutil/issues/1948</span>
+                <span class="k">pass</span>
+        <span class="k">return</span> <span class="n">ret</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">cache_activate</span><span class="p">(</span><span class="n">proc</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Activate cache. Expects a Process instance. Cache will be</span>
+<span class="sd">        stored as a "_cache" instance attribute.</span>
+<span class="sd">        """</span>
+        <span class="n">proc</span><span class="o">.</span><span class="n">_cache</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">cache_deactivate</span><span class="p">(</span><span class="n">proc</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Deactivate and clear cache."""</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">del</span> <span class="n">proc</span><span class="o">.</span><span class="n">_cache</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+    <span class="n">wrapper</span><span class="o">.</span><span class="n">cache_activate</span> <span class="o">=</span> <span class="n">cache_activate</span>
+    <span class="n">wrapper</span><span class="o">.</span><span class="n">cache_deactivate</span> <span class="o">=</span> <span class="n">cache_deactivate</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">isfile_strict</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Same as os.path.isfile() but does not swallow EACCES / EPERM</span>
+<span class="sd">    exceptions, see:</span>
+<span class="sd">    http://mail.python.org/pipermail/python-dev/2012-June/120787.html.</span>
+<span class="sd">    """</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">st</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">PermissionError</span><span class="p">:</span>
+        <span class="k">raise</span>
+    <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">stat</span><span class="o">.</span><span class="n">S_ISREG</span><span class="p">(</span><span class="n">st</span><span class="o">.</span><span class="n">st_mode</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">path_exists_strict</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Same as os.path.exists() but does not swallow EACCES / EPERM</span>
+<span class="sd">    exceptions. See:</span>
+<span class="sd">    http://mail.python.org/pipermail/python-dev/2012-June/120787.html.</span>
+<span class="sd">    """</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">PermissionError</span><span class="p">:</span>
+        <span class="k">raise</span>
+    <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">supports_ipv6</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""Return True if IPv6 is supported on this platform."""</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">socket</span><span class="o">.</span><span class="n">has_ipv6</span> <span class="ow">or</span> <span class="n">AF_INET6</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">AF_INET6</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span> <span class="k">as</span> <span class="n">sock</span><span class="p">:</span>
+            <span class="n">sock</span><span class="o">.</span><span class="n">bind</span><span class="p">((</span><span class="s2">"::1"</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">parse_environ_block</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Parse a C environ block of environment variables into a dictionary."""</span>
+    <span class="c1"># The block is usually raw data from the target process.  It might contain</span>
+    <span class="c1"># trailing garbage and lines that do not look like assignments.</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">pos</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># localize global variable to speed up access.</span>
+    <span class="n">WINDOWS_</span> <span class="o">=</span> <span class="n">WINDOWS</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">next_pos</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"</span><span class="se">\0</span><span class="s2">"</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
+        <span class="c1"># nul byte at the beginning or double nul byte means finish</span>
+        <span class="k">if</span> <span class="n">next_pos</span> <span class="o">&lt;=</span> <span class="n">pos</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="c1"># there might not be an equals sign</span>
+        <span class="n">equal_pos</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"="</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">next_pos</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">equal_pos</span> <span class="o">&gt;</span> <span class="n">pos</span><span class="p">:</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">pos</span><span class="p">:</span><span class="n">equal_pos</span><span class="p">]</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">equal_pos</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">:</span> <span class="n">next_pos</span><span class="p">]</span>
+            <span class="c1"># Windows expects environment variables to be uppercase only</span>
+            <span class="k">if</span> <span class="n">WINDOWS_</span><span class="p">:</span>
+                <span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+            <span class="n">ret</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="n">pos</span> <span class="o">=</span> <span class="n">next_pos</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">ret</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">sockfam_to_enum</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Convert a numeric socket family value to an IntEnum member.</span>
+<span class="sd">    If it's not a known member, return the numeric value itself.</span>
+<span class="sd">    """</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">socket</span><span class="o">.</span><span class="n">AddressFamily</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">num</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">socktype_to_enum</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Convert a numeric socket type value to an IntEnum member.</span>
+<span class="sd">    If it's not a known member, return the numeric value itself.</span>
+<span class="sd">    """</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">socket</span><span class="o">.</span><span class="n">SocketKind</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">num</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">conn_to_ntuple</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="n">fam</span><span class="p">,</span> <span class="n">type_</span><span class="p">,</span> <span class="n">laddr</span><span class="p">,</span> <span class="n">raddr</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="n">status_map</span><span class="p">,</span> <span class="n">pid</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Convert a raw connection tuple to a proper ntuple."""</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">_ntuples</span> <span class="k">as</span> <span class="n">ntp</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">._enums</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConnectionStatus</span>
+
+    <span class="k">if</span> <span class="n">fam</span> <span class="ow">in</span> <span class="p">{</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">AF_INET6</span><span class="p">}:</span>
+        <span class="k">if</span> <span class="n">laddr</span><span class="p">:</span>
+            <span class="n">laddr</span> <span class="o">=</span> <span class="n">ntp</span><span class="o">.</span><span class="n">addr</span><span class="p">(</span><span class="o">*</span><span class="n">laddr</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">raddr</span><span class="p">:</span>
+            <span class="n">raddr</span> <span class="o">=</span> <span class="n">ntp</span><span class="o">.</span><span class="n">addr</span><span class="p">(</span><span class="o">*</span><span class="n">raddr</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">type_</span> <span class="o">==</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span> <span class="ow">and</span> <span class="n">fam</span> <span class="ow">in</span> <span class="p">{</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">AF_INET6</span><span class="p">}:</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="n">status_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">ConnectionStatus</span><span class="o">.</span><span class="n">CONN_NONE</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="n">ConnectionStatus</span><span class="o">.</span><span class="n">CONN_NONE</span>  <span class="c1"># ignore whatever C returned to us</span>
+    <span class="n">fam</span> <span class="o">=</span> <span class="n">sockfam_to_enum</span><span class="p">(</span><span class="n">fam</span><span class="p">)</span>
+    <span class="n">type_</span> <span class="o">=</span> <span class="n">socktype_to_enum</span><span class="p">(</span><span class="n">type_</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pid</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">ntp</span><span class="o">.</span><span class="n">pconn</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="n">fam</span><span class="p">,</span> <span class="n">type_</span><span class="p">,</span> <span class="n">laddr</span><span class="p">,</span> <span class="n">raddr</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">ntp</span><span class="o">.</span><span class="n">sconn</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="n">fam</span><span class="p">,</span> <span class="n">type_</span><span class="p">,</span> <span class="n">laddr</span><span class="p">,</span> <span class="n">raddr</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="n">pid</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">broadcast_addr</span><span class="p">(</span><span class="n">addr</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Given the address ntuple returned by ``net_if_addrs()``</span>
+<span class="sd">    calculates the broadcast address. Returns None for a single-host</span>
+<span class="sd">    network (/32 or /128), which has no broadcast address.</span>
+<span class="sd">    """</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">ipaddress</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">addr</span><span class="o">.</span><span class="n">address</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">addr</span><span class="o">.</span><span class="n">netmask</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">addr</span><span class="o">.</span><span class="n">family</span> <span class="o">==</span> <span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">:</span>
+        <span class="n">net</span> <span class="o">=</span> <span class="n">ipaddress</span><span class="o">.</span><span class="n">IPv4Network</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">addr</span><span class="o">.</span><span class="n">address</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">addr</span><span class="o">.</span><span class="n">netmask</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">False</span>
+        <span class="p">)</span>
+    <span class="k">elif</span> <span class="n">addr</span><span class="o">.</span><span class="n">family</span> <span class="o">==</span> <span class="n">socket</span><span class="o">.</span><span class="n">AF_INET6</span><span class="p">:</span>
+        <span class="n">net</span> <span class="o">=</span> <span class="n">ipaddress</span><span class="o">.</span><span class="n">IPv6Network</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">addr</span><span class="o">.</span><span class="n">address</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">addr</span><span class="o">.</span><span class="n">netmask</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">False</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">net</span><span class="o">.</span><span class="n">prefixlen</span> <span class="o">==</span> <span class="n">net</span><span class="o">.</span><span class="n">max_prefixlen</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">broadcast_address</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">deprecated_method</span><span class="p">(</span><span class="n">replacement</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""A decorator which can be used to mark a method as deprecated</span>
+<span class="sd">    'replacement' is the method name which will be called instead.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">outer</span><span class="p">(</span><span class="n">fun</span><span class="p">):</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">fun</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">() is deprecated and will be removed; use"</span>
+            <span class="sa">f</span><span class="s2">" </span><span class="si">{</span><span class="n">replacement</span><span class="si">}</span><span class="s2">() instead"</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">fun</span><span class="o">.</span><span class="vm">__doc__</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">fun</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">msg</span>
+
+        <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">fun</span><span class="p">)</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">inner</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">replacement</span><span class="p">)(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">inner</span>
+
+    <span class="k">return</span> <span class="n">outer</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">_WrapNumbers</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Watches numbers so that they don't overflow and wrap</span>
+<span class="sd">    (reset to zero).</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cache</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reminders</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reminder_keys</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_add_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_dict</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span>
+        <span class="k">assert</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">reminders</span>
+        <span class="k">assert</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">reminder_keys</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">input_dict</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reminders</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reminder_keys</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">defaultdict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_remove_dead_reminders</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_dict</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""In case the number of keys changed between calls (e.g. a</span>
+<span class="sd">        disk disappears) this removes the entry from self.reminders.</span>
+<span class="sd">        """</span>
+        <span class="n">old_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+        <span class="n">gone_keys</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">old_dict</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">input_dict</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">gone_key</span> <span class="ow">in</span> <span class="n">gone_keys</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">remkey</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">reminder_keys</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="n">gone_key</span><span class="p">]:</span>
+                <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">reminders</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="n">remkey</span><span class="p">]</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">reminder_keys</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="n">gone_key</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_dict</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Cache dict and sum numbers which overflow and wrap.</span>
+<span class="sd">        Return an updated copy of `input_dict`.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">:</span>
+            <span class="c1"># This was the first call.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_add_dict</span><span class="p">(</span><span class="n">input_dict</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">input_dict</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_remove_dead_reminders</span><span class="p">(</span><span class="n">input_dict</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+        <span class="n">old_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+        <span class="n">new_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">input_dict</span><span class="p">:</span>
+            <span class="n">input_tuple</span> <span class="o">=</span> <span class="n">input_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">old_tuple</span> <span class="o">=</span> <span class="n">old_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                <span class="c1"># The input dict has a new key (e.g. a new disk or NIC)</span>
+                <span class="c1"># which didn't exist in the previous call.</span>
+                <span class="n">new_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">input_tuple</span>
+                <span class="k">continue</span>
+
+            <span class="n">bits</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">input_tuple</span><span class="p">)):</span>
+                <span class="n">input_value</span> <span class="o">=</span> <span class="n">input_tuple</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">old_value</span> <span class="o">=</span> <span class="n">old_tuple</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">remkey</span> <span class="o">=</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">input_value</span> <span class="o">&lt;</span> <span class="n">old_value</span><span class="p">:</span>
+                    <span class="c1"># it wrapped!</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">reminders</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="n">remkey</span><span class="p">]</span> <span class="o">+=</span> <span class="n">old_value</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">reminder_keys</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">remkey</span><span class="p">)</span>
+                <span class="n">bits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">input_value</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">reminders</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="n">remkey</span><span class="p">])</span>
+
+            <span class="n">new_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">bits</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">input_dict</span>
+        <span class="k">return</span> <span class="n">new_dict</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">cache_clear</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Clear the internal cache, optionally only for function 'name'."""</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">lock</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">reminders</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">reminder_keys</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">reminders</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">reminder_keys</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">cache_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Return internal cache dicts as a tuple of 3 elements."""</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">lock</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">reminders</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">reminder_keys</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">wrap_numbers</span><span class="p">(</span><span class="n">input_dict</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Given an `input_dict` and a function `name`, adjust the numbers</span>
+<span class="sd">    which "wrap" (restart from zero) across different calls by adding</span>
+<span class="sd">    "old value" to "new value" and return an updated dict.</span>
+<span class="sd">    """</span>
+    <span class="k">with</span> <span class="n">_wn</span><span class="o">.</span><span class="n">lock</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_wn</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">input_dict</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+
+<span class="n">_wn</span> <span class="o">=</span> <span class="n">_WrapNumbers</span><span class="p">()</span>
+<span class="n">wrap_numbers</span><span class="o">.</span><span class="n">cache_clear</span> <span class="o">=</span> <span class="n">_wn</span><span class="o">.</span><span class="n">cache_clear</span>
+<span class="n">wrap_numbers</span><span class="o">.</span><span class="n">cache_info</span> <span class="o">=</span> <span class="n">_wn</span><span class="o">.</span><span class="n">cache_info</span>
+
+
+<span class="c1"># The read buffer size for open() builtin. This (also) dictates how</span>
+<span class="c1"># much data we read(2) when iterating over file lines as in:</span>
+<span class="c1">#   &gt;&gt;&gt; with open(file) as f:</span>
+<span class="c1">#   ...    for line in f:</span>
+<span class="c1">#   ...        ...</span>
+<span class="c1"># Default per-line buffer size for binary files is 1K. For text files</span>
+<span class="c1"># is 8K. We use a bigger buffer (32K) in order to have more consistent</span>
+<span class="c1"># results when reading /proc pseudo files on Linux, see:</span>
+<span class="c1"># https://github.com/giampaolo/psutil/issues/2050</span>
+<span class="c1"># https://github.com/giampaolo/psutil/issues/708</span>
+<span class="n">FILE_READ_BUFFER_SIZE</span> <span class="o">=</span> <span class="mi">32</span> <span class="o">*</span> <span class="mi">1024</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">open_binary</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s2">"rb"</span><span class="p">,</span> <span class="n">buffering</span><span class="o">=</span><span class="n">FILE_READ_BUFFER_SIZE</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">open_text</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Open a file in text mode by using the proper FS encoding and</span>
+<span class="sd">    en/decoding error handlers.</span>
+<span class="sd">    """</span>
+    <span class="c1"># See:</span>
+    <span class="c1"># https://github.com/giampaolo/psutil/issues/675</span>
+    <span class="c1"># https://github.com/giampaolo/psutil/pull/733</span>
+    <span class="n">fobj</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>  <span class="c1"># noqa: SIM115</span>
+        <span class="n">fname</span><span class="p">,</span>
+        <span class="n">buffering</span><span class="o">=</span><span class="n">FILE_READ_BUFFER_SIZE</span><span class="p">,</span>
+        <span class="n">encoding</span><span class="o">=</span><span class="n">ENCODING</span><span class="p">,</span>
+        <span class="n">errors</span><span class="o">=</span><span class="n">ENCODING_ERRS</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Dictates per-line read(2) buffer size. Defaults is 8k. See:</span>
+        <span class="c1"># https://github.com/giampaolo/psutil/issues/2050#issuecomment-1013387546</span>
+        <span class="n">fobj</span><span class="o">.</span><span class="n">_CHUNK_SIZE</span> <span class="o">=</span> <span class="n">FILE_READ_BUFFER_SIZE</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="n">fobj</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="k">raise</span>
+
+    <span class="k">return</span> <span class="n">fobj</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">cat</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">fallback</span><span class="o">=</span><span class="n">_DEFAULT</span><span class="p">,</span> <span class="n">_open</span><span class="o">=</span><span class="n">open_text</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Read entire file content and return it as a string. File is</span>
+<span class="sd">    opened in text mode. If specified, `fallback` is the value</span>
+<span class="sd">    returned in case of error, either if the file does not exist or</span>
+<span class="sd">    it can't be read().</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">fallback</span> <span class="ow">is</span> <span class="n">_DEFAULT</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">_open</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">_open</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">fallback</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">bcat</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">fallback</span><span class="o">=</span><span class="n">_DEFAULT</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Same as above but opens file in binary mode."""</span>
+    <span class="k">return</span> <span class="n">cat</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">fallback</span><span class="o">=</span><span class="n">fallback</span><span class="p">,</span> <span class="n">_open</span><span class="o">=</span><span class="n">open_binary</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="bytes2human">
+<a class="viewcode-back" href="../../../api/#psutil.bytes2human">[文件]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">bytes2human</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Convert n bytes to a human-readable string.</span>
+
+<span class="sd">    &gt;&gt;&gt; bytes2human(10000)</span>
+<span class="sd">    '9.8K'</span>
+<span class="sd">    &gt;&gt;&gt; bytes2human(100001221)</span>
+<span class="sd">    '95.4M'</span>
+<span class="sd">    """</span>
+    <span class="n">symbols</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'B'</span><span class="p">,</span> <span class="s1">'K'</span><span class="p">,</span> <span class="s1">'M'</span><span class="p">,</span> <span class="s1">'G'</span><span class="p">,</span> <span class="s1">'T'</span><span class="p">,</span> <span class="s1">'P'</span><span class="p">,</span> <span class="s1">'E'</span><span class="p">,</span> <span class="s1">'Z'</span><span class="p">,</span> <span class="s1">'Y'</span><span class="p">)</span>
+    <span class="n">prefix</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">symbols</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+        <span class="n">prefix</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span>
+    <span class="k">for</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">symbols</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">prefix</span><span class="p">[</span><span class="n">symbol</span><span class="p">]:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="n">prefix</span><span class="p">[</span><span class="n">symbol</span><span class="p">]</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}{</span><span class="n">symbol</span><span class="si">}</span><span class="s2">"</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">float</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}{</span><span class="n">symbols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_procfs_path</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""Return updated psutil.PROCFS_PATH constant."""</span>
+    <span class="k">return</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="s1">'psutil'</span><span class="p">]</span><span class="o">.</span><span class="n">PROCFS_PATH</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">decode</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="n">ENCODING</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">ENCODING_ERRS</span><span class="p">)</span>
+
+
+<span class="c1"># =====================================================================</span>
+<span class="c1"># --- shell utils</span>
+<span class="c1"># =====================================================================</span>
+
+
+<span class="nd">@functools</span><span class="o">.</span><span class="n">lru_cache</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">term_supports_colors</span><span class="p">(</span><span class="n">force_color</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">WINDOWS</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">force_color</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="s2">"isatty"</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">isatty</span><span class="p">():</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">fileno</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>  <span class="c1"># noqa: BLE001</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">hilite</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bold</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">force_color</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Return an highlighted version of 'string'."""</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">term_supports_colors</span><span class="p">(</span><span class="n">force_color</span><span class="o">=</span><span class="n">force_color</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">s</span>
+    <span class="n">attr</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">colors</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">blue</span><span class="o">=</span><span class="s1">'34'</span><span class="p">,</span>
+        <span class="n">brown</span><span class="o">=</span><span class="s1">'33'</span><span class="p">,</span>
+        <span class="n">darkgrey</span><span class="o">=</span><span class="s1">'30'</span><span class="p">,</span>
+        <span class="n">green</span><span class="o">=</span><span class="s1">'32'</span><span class="p">,</span>
+        <span class="n">grey</span><span class="o">=</span><span class="s1">'37'</span><span class="p">,</span>
+        <span class="n">lightblue</span><span class="o">=</span><span class="s1">'36'</span><span class="p">,</span>
+        <span class="n">red</span><span class="o">=</span><span class="s1">'31'</span><span class="p">,</span>
+        <span class="n">violet</span><span class="o">=</span><span class="s1">'35'</span><span class="p">,</span>
+        <span class="n">yellow</span><span class="o">=</span><span class="s1">'93'</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">colors</span><span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'29'</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="n">colors</span><span class="p">[</span><span class="n">color</span><span class="p">]</span>
+    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"invalid color </span><span class="si">{</span><span class="n">color</span><span class="si">!r}</span><span class="s2">; choose amongst </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
+    <span class="n">attr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">bold</span><span class="p">:</span>
+        <span class="n">attr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'1'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="se">\x1b</span><span class="s2">[</span><span class="si">{</span><span class="s1">';'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span><span class="si">}</span><span class="s2">m</span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="se">\x1b</span><span class="s2">[0m"</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">print_color</span><span class="p">(</span>
+    <span class="n">s</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bold</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span>
+<span class="p">):</span>  <span class="c1"># pragma: no cover</span>
+<span class="w">    </span><span class="sd">"""Print a colorized version of string."""</span>
+    <span class="k">if</span> <span class="n">term_supports_colors</span><span class="p">():</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">hilite</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">bold</span><span class="o">=</span><span class="n">bold</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">file</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">debug</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""If PSUTIL_DEBUG env var is set, print a debug message to stderr."""</span>
+    <span class="k">if</span> <span class="n">PSUTIL_DEBUG</span><span class="p">:</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">inspect</span>
+
+        <span class="n">fname</span><span class="p">,</span> <span class="n">lineno</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_lines</span><span class="p">,</span> <span class="n">_index</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getframeinfo</span><span class="p">(</span>
+            <span class="n">inspect</span><span class="o">.</span><span class="n">currentframe</span><span class="p">()</span><span class="o">.</span><span class="n">f_back</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">Exception</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">OSError</span><span class="p">):</span>
+                <span class="c1"># ...because str(exc) may contain info about the file name</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"ignoring </span><span class="si">{</span><span class="n">msg</span><span class="si">}</span><span class="s2">"</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"ignoring </span><span class="si">{</span><span class="n">msg</span><span class="si">!r}</span><span class="s2">"</span>
+        <span class="nb">print</span><span class="p">(</span>  <span class="c1"># noqa: T201</span>
+            <span class="sa">f</span><span class="s2">"psutil-debug [</span><span class="si">{</span><span class="n">fname</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">lineno</span><span class="si">}</span><span class="s2">]&gt; </span><span class="si">{</span><span class="n">msg</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span>
+        <span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Emit a RuntimeWarning. Use it for events which are never</span>
+<span class="sd">    supposed to happen, and imply a psutil bug.</span>
+<span class="sd">    """</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">inspect</span>
+
+    <span class="n">fname</span><span class="p">,</span> <span class="n">lineno</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_lines</span><span class="p">,</span> <span class="n">_index</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getframeinfo</span><span class="p">(</span>
+        <span class="n">inspect</span><span class="o">.</span><span class="n">currentframe</span><span class="p">()</span><span class="o">.</span><span class="n">f_back</span>
+    <span class="p">)</span>
+    <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">msg</span><span class="si">}</span><span class="s2"> (originated from </span><span class="si">{</span><span class="n">fname</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">lineno</span><span class="si">}</span><span class="s2">)"</span>
+    <span class="k">if</span> <span class="n">PSUTIL_TESTING</span><span class="p">:</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"CRITICAL: </span><span class="si">{</span><span class="n">msg</span><span class="si">}</span><span class="s2">"</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">RuntimeWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">RuntimeWarning</span><span class="p">:</span>
+        <span class="k">pass</span>  <span class="c1"># -W error: we never want to fail because of a warning</span>
+</pre></div>
+<div class="section ablog__blog_comments">
+   
+</div>
+
+        </article>
+        
+        
+      </div>
+
+      
+    </div>
+  </main>
+
+  
+  <footer class="footer" role="contentinfo">
+  <div class="footer-content">
+    <div class="footer-text">
+      <span><a class="footer-egg" href="../../../404/" title="🥚">&copy;</a> 2009-2026 Giampaolo Rodola</span>
+      <span><a href="../../../about/"
+               title="About this documentation site">About</a></span>
+    </div>
+    <div class="footer-icons">
+      <a class="footer-github" href="https://github.com/giampaolo/psutil"
+         title="psutil on GitHub" aria-label="psutil on GitHub"
+         rel="noopener noreferrer" target="_blank">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+      </a>
+      <a class="footer-pypi" href="https://pypi.org/project/psutil/"
+         title="psutil on PyPI" aria-label="psutil on PyPI"
+         rel="noopener noreferrer" target="_blank">
+        <i class="fa-brands fa-python" aria-hidden="true"></i>
+      </a>
+      <a class="footer-rss" href="../../../blog/atom.xml"
+         title="Subscribe to blog (Atom feed)" aria-label="Subscribe to blog">
+        <span class="rss-icon"></span>
+      </a>
+    </div>
+  </div>
+</footer>
+</div>
+
+  </body>
+</html>

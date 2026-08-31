@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html lang="en-US" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta property="og:title" content="Letting go of Python 2.7" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://psutil.io/blog/2025/drop-py27/" />
+<meta property="og:site_name" content="psutil" />
+<meta property="og:description" content="Downloads fell from ~8% to 0.36% in three years; psutil 7.0.0 ends support" />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://psutil.io/_images/social_previews/summary_blog_2025_drop-py27_8a7ad9a0.png" />
+<meta property="og:image:alt" content="Downloads fell from ~8% to 0.36% in three years; psutil 7.0.0 ends support" />
+<meta name="description" content="Downloads fell from ~8% to 0.36% in three years; psutil 7.0.0 ends support" />
+<meta name="twitter:card" content="summary_large_image" />
+
+    <title>Letting go of Python 2.7 &#8212; psutil</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css?v=29da98fa" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-codeautolink.css?v=b2176991" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/base.css?v=fa4013d4" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/fonts.css?v=e753a5f7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/fontawesome.css?v=51ff6dc7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/typography.css?v=e7b40542" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/admonitions.css?v=163ddbc1" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/api-signatures.css?v=f032e3fc" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/blog.css?v=5f195cc9" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/changelog.css?v=9bdb527a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/code.css?v=0681a11b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/comments.css?v=f39a9342" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/dev-banner.css?v=6210bb1f" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/doc-icons.css?v=78c7cf07" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/footer.css?v=5d6b8d43" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/layout.css?v=cf2ca8d4" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/left-sidebar.css?v=dd06a93c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/prev-next.css?v=ca7d359d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/print.css?v=ece16c97" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/right-sidebar.css?v=81efec8f" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/search.css?v=82d539d2" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/tables.css?v=c600f876" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/topbar.css?v=1a2cb74e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/home.css?v=50cb9b55" />
+    <script src="../../../_static/documentation_options.js?v=fe56712e"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=35a8b989"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script defer="defer" src="../../../_static/js/back-to-top.js?v=7b97b66a"></script>
+    <script defer="defer" src="../../../_static/js/external-urls.js?v=ea4e66fd"></script>
+    <script defer="defer" src="../../../_static/js/giscus.js?v=7fd73528"></script>
+    <script defer="defer" src="../../../_static/js/github-meta.js?v=efa66c56"></script>
+    <script defer="defer" src="../../../_static/js/highlight-repl.js?v=8e31535c"></script>
+    <script defer="defer" src="../../../_static/js/home-install-copy.js?v=be638b0c"></script>
+    <script defer="defer" src="../../../_static/js/right-toc.js?v=160f6df3"></script>
+    <script defer="defer" src="../../../_static/js/search-dim.js?v=b004caf9"></script>
+    <script defer="defer" src="../../../_static/js/search-shortcuts.js?v=26c0729f"></script>
+    <script defer="defer" src="../../../_static/js/shortcuts-help.js?v=f76503f8"></script>
+    <script defer="defer" src="../../../_static/js/sidebar-mobile.js?v=8d0c24bd"></script>
+    <script defer="defer" src="../../../_static/js/theme-toggle.js?v=6f028c03"></script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/psutil-docs-l10n/blog/2025/drop-py27/" />
+    <link rel="icon" href="../../../_static/favicon.svg"/>
+    <link rel="author" title="About these documents" href="../../../about/" />
+    <link rel="index" title="Index" href="../../../genindex/" />
+    <link rel="search" title="Search" href="../../../search/" />
+ 
+ 
+
+
+
+
+<link rel="apple-touch-icon" href="../../../_static/images/logo-psutil.png">
+
+<script>
+(function() {
+    const html = document.documentElement;
+    html.classList.add('no-transition');
+    const saved = localStorage.getItem('psutil-sphinx-theme');
+    const theme = saved || (
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+    );
+    html.setAttribute('data-theme', theme);
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            html.classList.remove('no-transition');
+        });
+    });
+})();
+</script>
+
+
+<script data-goatcounter="https://psutil.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G7374TFB11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G7374TFB11');
+</script>
+ 
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  href="../../../blog/atom.xml"
+  title="Blog"
+/>
+  
+<script type="text/javascript" src="../../../ltd-provenance.js"></script>
+<script type="text/javascript" src="../../../ltd-current.js"></script>
+<script type="text/javascript" src="../../../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../../../ltd-flyout.js"></script>
+
+  </head><body data-page="blog/2025/drop-py27">
+<header class="topbar no-visited" role="banner">
+  <div class="topbar-inner">
+    <button class="topbar-hamburger" id="sidebar-toggle"
+            type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button><a class="topbar-logo" href="../../../"><img src="../../../_static/images/logo-psutil.svg" alt="">
+      <span>psutil</span>
+    </a>
+    <nav class="topbar-actions" aria-label="Site actions">
+      <a class="topbar-text" href="../../">Blog</a>
+      <button class="topbar-btn" id="theme-toggle"
+              type="button" title="Toggle dark mode (shift+D)" aria-label="Toggle theme">
+        <i class="fa-regular fa-moon" aria-hidden="true"></i>
+      </button>
+      <a class="topbar-link topbar-github"
+         href="https://github.com/giampaolo/psutil"
+         target="_blank" rel="noopener" title="GitHub" aria-label="GitHub repository">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+        <span class="topbar-stars" data-repo="giampaolo/psutil"></span>
+      </a>
+      <a class="topbar-version" data-repo="giampaolo/psutil"
+         href="https://pypi.org/project/psutil"
+         target="_blank" rel="noopener" title="PyPI" aria-label="PyPI release"></a>
+    </nav>
+  </div>
+</header>
+
+<div class="page">
+  <nav class="left-sidebar no-visited" aria-label="Main navigation">
+  <div class="search-box">
+    <form action="../../../search/" method="get" role="search">
+      <input id="search-input" type="text" name="q"
+             placeholder="Search" aria-label="Search docs"
+             autocomplete="off" autocorrect="off"
+             autocapitalize="off" spellcheck="false">
+      <span class="search-kbd" aria-hidden="true"><kbd>Ctrl</kbd>+<kbd>K</kbd></span>
+    </form>
+  </div>
+  
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../install/">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api-overview/">API overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq/">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../performance/">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../recipes/">Recipes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../shell-equivalents/">Shell equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stdlib-equivalents/">Stdlib equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../platform/">Platform support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../migration/">Migration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../adoption/">Who uses psutil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../alternatives/">Alternatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../funding/">Funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../credits/">Credits</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../">Blog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog/">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../timeline/">Timeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devguide/">Development guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex/">General Index</a></li>
+</ul>
+
+</nav>
+  <main class="main" id="main-content" role="main">
+    
+    <div class="dev-banner" role="note">
+  You're reading the <strong>development</strong> version of the psutil
+  docs, which may describe unreleased changes. For the current release
+  see <a href="https://psutil.readthedocs.io/stable/">psutil.readthedocs.io/stable</a>.
+</div>
+    
+<div class="blog-section-banner">
+  <div class="blog-section-label">
+    <svg class="blog-section-icon" viewBox="0 0 24 24" aria-hidden="true"
+         xmlns="http://www.w3.org/2000/svg" fill="none"
+         stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+    </svg>
+    <a class="blog-section-title" href="../../">Blog</a>
+    <div class="blog-section-subtitle">Releases, deep dives, war stories</div>
+  </div>
+  <a class="blog-rss"
+     href="../../atom.xml"
+     title="Subscribe (Atom feed)">
+    <span class="rss-icon blog-rss-icon"></span>
+    <span>RSS</span>
+  </a>
+</div>
+    <div class="article-with-toc">
+      <div class="article-column">
+        <article class="article">
+           <section id="letting-go-of-python-2-7">
+<h1>Letting go of Python 2.7<a class="headerlink" href="#letting-go-of-python-2-7" title="Link to this heading">¶</a></h1>
+<div class="post-meta-banner docutils container">
+<span><a class="post-meta-featured reference internal" href="../../tag/featured/">Featured</a></span><span class="post-meta-author">Giampaolo Rodola</span><span class="post-meta-date">Feb 13, 2025</span><span class="post-meta-readtime">2 min read</span><span class="post-meta-tags"><a class="reference internal" href="../../tag/compatibility/">compatibility</a><a class="reference internal" href="../../tag/release/">release</a></span></div>
+<p>About dropping Python 2.7 support in psutil, 3 years ago I stated (<a class="extlink-gh reference external" href="https://github.com/giampaolo/psutil/issues/2014">#2014</a>):</p>
+<blockquote>
+<div><p>Not a chance, for many years to come. [Python 2.7] currently
+represents 7-10% of total downloads, meaning around 70k / 100k
+downloads per day.</p>
+</div></blockquote>
+<p>Only 3 years later, and to my surprise,
+<strong>downloads for Python 2.7 dropped to 0.36%</strong>! As such, as of psutil 7.0.0, I
+finally decided to drop support for Python 2.7!</p>
+<section id="the-numbers">
+<h2>The numbers<a class="headerlink" href="#the-numbers" title="Link to this heading">¶</a></h2>
+<p>These are downloads per month:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ pypinfo --percent psutil pyversion
+Served from cache: False
+Data processed: 4.65 GiB
+Data billed: 4.65 GiB
+Estimated cost: $0.03
+
+| python_version | percent | download_count |
+| -------------- | ------- | -------------- |
+| 3.10           |  23.84% |     26,354,506 |
+| 3.8            |  18.87% |     20,862,015 |
+| 3.7            |  17.38% |     19,217,960 |
+| 3.9            |  17.00% |     18,798,843 |
+| 3.11           |  13.63% |     15,066,706 |
+| 3.12           |   7.01% |      7,754,751 |
+| 3.13           |   1.15% |      1,267,008 |
+| 3.6            |   0.73% |        803,189 |
+| 2.7            |   0.36% |        402,111 |
+| 3.5            |   0.03% |         28,656 |
+| Total          |         |    110,555,745 |
+</pre></div>
+</div>
+<p>According to <a class="reference external" href="https://archive.is/wip/knzql">pypistats.org</a> Python 2.7
+downloads represent 0.28% of the total, around 15,000 downloads per day.</p>
+</section>
+<section id="the-pain">
+<h2>The pain<a class="headerlink" href="#the-pain" title="Link to this heading">¶</a></h2>
+<p>Keeping 2.7 alive had become increasingly difficult, but still possible: tests
+ran via
+<a class="reference external" href="https://github.com/giampaolo/psutil/blob/fbb6d9ce98f930d3d101b7df5a4f4d0f1d2b35a3/setup.py#L76-L85">old PyPI backports</a>
+and a
+<a class="reference external" href="https://github.com/giampaolo/psutil/blob/fbb6d9ce98f930d3d101b7df5a4f4d0f1d2b35a3/.github/workflows/build.yml#L77-L112">tweaked GitHub Actions workflow</a>
+on Linux and macOS, plus a separate third-party service (Appveyor) for Windows.
+But the workarounds in the source kept piling up:</p>
+<ul class="simple">
+<li><p>A Python compatibility layer
+(<a class="reference external" href="https://github.com/giampaolo/psutil/blob/fbb6d9ce98f930d3d101b7df5a4f4d0f1d2b35a3/psutil/_compat.py">psutil/_compat.py</a>)
+plus <code class="docutils literal notranslate"><span class="pre">#if</span> <span class="pre">PY_MAJOR_VERSION</span> <span class="pre">&lt;=</span> <span class="pre">3</span></code> branches in C, with constant
+str-vs-unicode juggling on both sides.</p></li>
+<li><p>No f-strings, and no free use of <a class="reference external" href="https://docs.python.org/3/library/enum.html#module-enum" title="(in Python v3.14)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">enum</span></code></a> for constants (which ended up
+with a different API shape than on Python 3).</p></li>
+<li><p>An outdated <code class="docutils literal notranslate"><span class="pre">pip</span></code> and
+<a class="reference external" href="https://github.com/giampaolo/psutil/blob/fbb6d9ce98f930d3d101b7df5a4f4d0f1d2b35a3/setup.py#L76-L85">outdated deps</a>.</p></li>
+<li><p>4 extra CI jobs per commit (Linux, macOS, Windows 32-bit and 64-bit), making
+the pipeline slower and flakier.</p></li>
+<li><p>7 wheels specific to Python 2.7 to ship on every release:</p></li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>psutil-6.1.1-cp27-cp27m-macosx_10_9_x86_64.whl
+psutil-6.1.1-cp27-none-win32.whl
+psutil-6.1.1-cp27-none-win_amd64.whl
+psutil-6.1.1-cp27-cp27m-manylinux2010_i686.whl
+psutil-6.1.1-cp27-cp27m-manylinux2010_x86_64.whl
+psutil-6.1.1-cp27-cp27mu-manylinux2010_i686.whl
+psutil-6.1.1-cp27-cp27mu-manylinux2010_x86_64.whl
+</pre></div>
+</div>
+</section>
+<section id="the-removal">
+<h2>The removal<a class="headerlink" href="#the-removal" title="Link to this heading">¶</a></h2>
+<p>The removal was done in <a class="extlink-pr reference external" href="https://github.com/giampaolo/psutil/pull/2481">PR-2481</a>, which dropped around 1500 lines of code
+(nice!). <strong>It felt liberating</strong>. In doing so, in the doc I still made the
+promise that the 6.1.* series will keep supporting Python 2.7 and will receive
+<strong>critical bug-fixes only</strong> (no new features). It will be maintained in a
+specific
+<a class="reference external" href="https://github.com/giampaolo/psutil/tree/release-6.1.1">python2 branch</a>. I
+explicitly kept the
+<a class="reference external" href="https://github.com/giampaolo/psutil/blob/fbb6d9ce98f930d3d101b7df5a4f4d0f1d2b35a3/setup.py">setup.py</a>
+script compatible with Python 2.7 in terms of syntax, so that, when the tarball
+is fetched from PyPI, it will emit an informative error message on
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">psutil</span></code>. The user trying to install psutil on Python 2.7 will
+see:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ pip2 install psutil
+As of version 7.0.0 psutil no longer supports Python 2.7.
+Latest version supporting Python 2.7 is psutil 6.1.X.
+Install it with: "pip2 install psutil==6.1.*".
+</pre></div>
+</div>
+</section>
+<section id="related">
+<h2>Related<a class="headerlink" href="#related" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>2017-06: <a class="extlink-gh reference external" href="https://github.com/giampaolo/psutil/issues/1053">#1053</a> (2.7 ticket)</p></li>
+<li><p>2022-04: <a class="extlink-pr reference external" href="https://github.com/giampaolo/psutil/pull/2099">PR-2099</a> (Drop 2.6)</p></li>
+<li><p>2023-04: <a class="extlink-pr reference external" href="https://github.com/giampaolo/psutil/pull/2246">PR-2246</a> (Drop 3.4 &amp; 3.5)</p></li>
+<li><p>2024-12: <a class="extlink-pr reference external" href="https://github.com/giampaolo/psutil/pull/2481">PR-2481</a> (Drop 2.7)</p></li>
+</ul>
+</section>
+</section>
+
+<div class="section ablog__blog_comments">
+   
+
+<nav class="prev-next no-visited" aria-label="Previous and next posts">
+  
+  <a class="prev-next-prev" href="../../2019/macos-memory-maps/" rel="prev">
+    <span class="prev-next-arrow" aria-hidden="true">&lsaquo;</span>
+    <span class="prev-next-block">
+      <span class="prev-next-label">Previous</span>
+      <span class="prev-next-title">Removing Process.memory_maps() on macOS</span>
+    </span>
+  </a>
+  
+  
+  <a class="prev-next-next" href="../speedup-pytest-startup/" rel="next">
+    <span class="prev-next-block">
+      <span class="prev-next-label">Next</span>
+      <span class="prev-next-title">Speeding up pytest startup</span>
+    </span>
+    <span class="prev-next-arrow" aria-hidden="true">&rsaquo;</span>
+  </a>
+  
+</nav>
+  
+</div>
+
+        </article>
+        
+        
+<section class="comments" aria-labelledby="comments-heading" hidden>
+  <h2 id="comments-heading">Comments</h2>
+  <div class="giscus"
+       data-repo="giampaolo/psutil-blog-comments"
+       data-repo-id="R_kgDOTfVGLA"
+       data-category="User Comments"
+       data-category-id="DIC_kwDOTfVGLM4DBrKC"
+       data-term="blog/2025/drop-py27"
+       data-theme-url="../../../_static/css/giscus.css"></div>
+</section>
+
+      </div>
+
+      <aside class="right-sidebar"
+       
+       aria-label="On this page">
+  <div class="right-sidebar-title">On this page</div>
+  <ul>
+<li><a class="reference internal" href="#">Letting go of Python 2.7</a><ul>
+<li><a class="reference internal" href="#the-numbers">The numbers</a></li>
+<li><a class="reference internal" href="#the-pain">The pain</a></li>
+<li><a class="reference internal" href="#the-removal">The removal</a></li>
+<li><a class="reference internal" href="#related">Related</a></li>
+</ul>
+</li>
+</ul>
+
+</aside>
+    </div>
+  </main>
+
+  
+  <footer class="footer" role="contentinfo">
+  <div class="footer-content">
+    <div class="footer-text">
+      <span><a class="footer-egg" href="../../../404/" title="🥚">&copy;</a> 2009-2026 Giampaolo Rodola</span>
+      <span><a href="../../../about/"
+               title="About this documentation site">About</a></span>
+      <span><a href="https://github.com/giampaolo/psutil/edit/master/docs/blog/2025/drop-py27.rst"
+               rel="noopener noreferrer" target="_blank"
+               title="Edit this page on GitHub">Edit on GitHub</a></span>
+    </div>
+    <div class="footer-icons">
+      <a class="footer-github" href="https://github.com/giampaolo/psutil"
+         title="psutil on GitHub" aria-label="psutil on GitHub"
+         rel="noopener noreferrer" target="_blank">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+      </a>
+      <a class="footer-pypi" href="https://pypi.org/project/psutil/"
+         title="psutil on PyPI" aria-label="psutil on PyPI"
+         rel="noopener noreferrer" target="_blank">
+        <i class="fa-brands fa-python" aria-hidden="true"></i>
+      </a>
+      <a class="footer-rss" href="../../atom.xml"
+         title="Subscribe to blog (Atom feed)" aria-label="Subscribe to blog">
+        <span class="rss-icon"></span>
+      </a>
+    </div>
+  </div>
+</footer>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html lang="en-US" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta property="og:title" content="Removing Process.memory_maps() on macOS" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://psutil.io/blog/2019/macos-memory-maps/" />
+<meta property="og:site_name" content="psutil" />
+<meta property="og:description" content="A segfault I couldn’t fix, and the API removal that followed" />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://psutil.io/_images/social_previews/summary_blog_2019_macos-memory-maps_3707f5b8.png" />
+<meta property="og:image:alt" content="A segfault I couldn’t fix, and the API removal that followed" />
+<meta name="description" content="A segfault I couldn’t fix, and the API removal that followed" />
+<meta name="twitter:card" content="summary_large_image" />
+
+    <title>Removing Process.memory_maps() on macOS &#8212; psutil</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css?v=29da98fa" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-codeautolink.css?v=b2176991" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/base.css?v=fa4013d4" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/fonts.css?v=e753a5f7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/fontawesome.css?v=51ff6dc7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/typography.css?v=e7b40542" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/admonitions.css?v=163ddbc1" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/api-signatures.css?v=f032e3fc" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/blog.css?v=5f195cc9" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/changelog.css?v=9bdb527a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/code.css?v=0681a11b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/comments.css?v=f39a9342" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/dev-banner.css?v=6210bb1f" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/doc-icons.css?v=78c7cf07" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/footer.css?v=5d6b8d43" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/layout.css?v=cf2ca8d4" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/left-sidebar.css?v=dd06a93c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/prev-next.css?v=ca7d359d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/print.css?v=ece16c97" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/right-sidebar.css?v=81efec8f" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/search.css?v=82d539d2" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/tables.css?v=c600f876" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/topbar.css?v=1a2cb74e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/home.css?v=50cb9b55" />
+    <script src="../../../_static/documentation_options.js?v=fe56712e"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=35a8b989"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script defer="defer" src="../../../_static/js/back-to-top.js?v=7b97b66a"></script>
+    <script defer="defer" src="../../../_static/js/external-urls.js?v=ea4e66fd"></script>
+    <script defer="defer" src="../../../_static/js/giscus.js?v=7fd73528"></script>
+    <script defer="defer" src="../../../_static/js/github-meta.js?v=efa66c56"></script>
+    <script defer="defer" src="../../../_static/js/highlight-repl.js?v=8e31535c"></script>
+    <script defer="defer" src="../../../_static/js/home-install-copy.js?v=be638b0c"></script>
+    <script defer="defer" src="../../../_static/js/right-toc.js?v=160f6df3"></script>
+    <script defer="defer" src="../../../_static/js/search-dim.js?v=b004caf9"></script>
+    <script defer="defer" src="../../../_static/js/search-shortcuts.js?v=26c0729f"></script>
+    <script defer="defer" src="../../../_static/js/shortcuts-help.js?v=f76503f8"></script>
+    <script defer="defer" src="../../../_static/js/sidebar-mobile.js?v=8d0c24bd"></script>
+    <script defer="defer" src="../../../_static/js/theme-toggle.js?v=6f028c03"></script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/psutil-docs-l10n/blog/2019/macos-memory-maps/" />
+    <link rel="icon" href="../../../_static/favicon.svg"/>
+    <link rel="author" title="About these documents" href="../../../about/" />
+    <link rel="index" title="Index" href="../../../genindex/" />
+    <link rel="search" title="Search" href="../../../search/" />
+ 
+ 
+
+
+
+
+<link rel="apple-touch-icon" href="../../../_static/images/logo-psutil.png">
+
+<script>
+(function() {
+    const html = document.documentElement;
+    html.classList.add('no-transition');
+    const saved = localStorage.getItem('psutil-sphinx-theme');
+    const theme = saved || (
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+    );
+    html.setAttribute('data-theme', theme);
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            html.classList.remove('no-transition');
+        });
+    });
+})();
+</script>
+
+
+<script data-goatcounter="https://psutil.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G7374TFB11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G7374TFB11');
+</script>
+ 
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  href="../../../blog/atom.xml"
+  title="Blog"
+/>
+  
+<script type="text/javascript" src="../../../ltd-provenance.js"></script>
+<script type="text/javascript" src="../../../ltd-current.js"></script>
+<script type="text/javascript" src="../../../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../../../ltd-flyout.js"></script>
+
+  </head><body data-page="blog/2019/macos-memory-maps">
+<header class="topbar no-visited" role="banner">
+  <div class="topbar-inner">
+    <button class="topbar-hamburger" id="sidebar-toggle"
+            type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button><a class="topbar-logo" href="../../../"><img src="../../../_static/images/logo-psutil.svg" alt="">
+      <span>psutil</span>
+    </a>
+    <nav class="topbar-actions" aria-label="Site actions">
+      <a class="topbar-text" href="../../">Blog</a>
+      <button class="topbar-btn" id="theme-toggle"
+              type="button" title="Toggle dark mode (shift+D)" aria-label="Toggle theme">
+        <i class="fa-regular fa-moon" aria-hidden="true"></i>
+      </button>
+      <a class="topbar-link topbar-github"
+         href="https://github.com/giampaolo/psutil"
+         target="_blank" rel="noopener" title="GitHub" aria-label="GitHub repository">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+        <span class="topbar-stars" data-repo="giampaolo/psutil"></span>
+      </a>
+      <a class="topbar-version" data-repo="giampaolo/psutil"
+         href="https://pypi.org/project/psutil"
+         target="_blank" rel="noopener" title="PyPI" aria-label="PyPI release"></a>
+    </nav>
+  </div>
+</header>
+
+<div class="page">
+  <nav class="left-sidebar no-visited" aria-label="Main navigation">
+  <div class="search-box">
+    <form action="../../../search/" method="get" role="search">
+      <input id="search-input" type="text" name="q"
+             placeholder="Search" aria-label="Search docs"
+             autocomplete="off" autocorrect="off"
+             autocapitalize="off" spellcheck="false">
+      <span class="search-kbd" aria-hidden="true"><kbd>Ctrl</kbd>+<kbd>K</kbd></span>
+    </form>
+  </div>
+  
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../install/">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api-overview/">API overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq/">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../performance/">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../recipes/">Recipes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../shell-equivalents/">Shell equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stdlib-equivalents/">Stdlib equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../platform/">Platform support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../migration/">Migration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../adoption/">Who uses psutil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../alternatives/">Alternatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../funding/">Funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../credits/">Credits</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../">Blog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog/">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../timeline/">Timeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devguide/">Development guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex/">General Index</a></li>
+</ul>
+
+</nav>
+  <main class="main" id="main-content" role="main">
+    
+    <div class="dev-banner" role="note">
+  You're reading the <strong>development</strong> version of the psutil
+  docs, which may describe unreleased changes. For the current release
+  see <a href="https://psutil.readthedocs.io/stable/">psutil.readthedocs.io/stable</a>.
+</div>
+    
+<div class="blog-section-banner">
+  <div class="blog-section-label">
+    <svg class="blog-section-icon" viewBox="0 0 24 24" aria-hidden="true"
+         xmlns="http://www.w3.org/2000/svg" fill="none"
+         stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+    </svg>
+    <a class="blog-section-title" href="../../">Blog</a>
+    <div class="blog-section-subtitle">Releases, deep dives, war stories</div>
+  </div>
+  <a class="blog-rss"
+     href="../../atom.xml"
+     title="Subscribe (Atom feed)">
+    <span class="rss-icon blog-rss-icon"></span>
+    <span>RSS</span>
+  </a>
+</div>
+    <div class="article-with-toc">
+      <div class="article-column">
+        <article class="article">
+           <section id="removing-process-memory-maps-on-macos">
+<h1>Removing Process.memory_maps() on macOS<a class="headerlink" href="#removing-process-memory-maps-on-macos" title="Link to this heading">¶</a></h1>
+<div class="post-meta-banner docutils container">
+<span class="post-meta-author">Giampaolo Rodola</span><span class="post-meta-date">Mar 05, 2019</span><span class="post-meta-readtime">2 min read</span><span class="post-meta-tags"><a class="reference internal" href="../../tag/api-design/">api-design</a><a class="reference internal" href="../../tag/compatibility/">compatibility</a><a class="reference internal" href="../../tag/macos/">macos</a><a class="reference internal" href="../../tag/release/">release</a></span></div>
+<p>This is part of the psutil 5.6.0 release (see the full
+<a class="reference internal" href="../announcing-560/"><span class="doc">release notes</span></a>).</p>
+<p>As of 5.6.0, <a class="reference internal" href="../../../api/#psutil.Process.memory_maps" title="psutil.Process.memory_maps"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.memory_maps()</span></code></a> is no longer defined on macOS.</p>
+<section id="the-bug">
+<h2>The bug<a class="headerlink" href="#the-bug" title="Link to this heading">¶</a></h2>
+<p><a class="extlink-gh reference external" href="https://github.com/giampaolo/psutil/issues/1291">#1291</a>: on macOS, <a class="reference internal" href="../../../api/#psutil.Process.memory_maps" title="psutil.Process.memory_maps"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.memory_maps()</span></code></a> would either raise
+<code class="docutils literal notranslate"><span class="pre">OSError:</span> <span class="pre">[Errno</span> <span class="pre">22]</span> <span class="pre">Invalid</span> <span class="pre">argument</span></code> or segfault the whole Python process!
+Both triggered from code as simple as <code class="docutils literal notranslate"><span class="pre">psutil.Process().as_dict()</span></code>, since
+<a class="reference internal" href="../../../api/#psutil.Process.as_dict" title="psutil.Process.as_dict"><code class="xref py py-meth docutils literal notranslate"><span class="pre">as_dict()</span></code></a> iterates every attribute, and
+<a class="reference internal" href="../../../api/#psutil.Process.memory_maps" title="psutil.Process.memory_maps"><code class="xref py py-meth docutils literal notranslate"><span class="pre">memory_maps()</span></code></a> is one of them.</p>
+<p>The root cause was inside Apple’s undocumented <code class="docutils literal notranslate"><span class="pre">proc_regionfilename()</span></code>
+syscall. On some memory regions it returns <code class="docutils literal notranslate"><span class="pre">EINVAL</span></code>. On others it takes the
+process down. Which regions? Nobody figured out. Arnon Yaari
+(<a class="extlink-user reference external" href="https://github.com/wiggin15">&#64;wiggin15</a>) did most of the
+investigation: he wrote a <a class="reference external" href="https://gist.github.com/wiggin15/0a4c51b5bc6c52e6e31e2234f88558ab">standalone C reproducer</a>
+and walked me through what he’d tried.</p>
+<p>In <a class="extlink-pr reference external" href="https://github.com/giampaolo/psutil/pull/1436">PR-1436</a> I attempted a fix by reverse-engineering <code class="docutils literal notranslate"><span class="pre">vmmap(1)</span></code> but it
+didn’t work. The fundamental problem is that <code class="docutils literal notranslate"><span class="pre">vmmap</span></code> is closed source and
+<code class="docutils literal notranslate"><span class="pre">proc_regionfilename</span></code> is undocumented. Neither my virtualized macOS (10.11.6)
+nor Travis CI (10.12.1) could reproduce the bug, which reproduced reliably only
+on 10.14.3.</p>
+</section>
+<section id="why-remove-outright">
+<h2>Why remove outright<a class="headerlink" href="#why-remove-outright" title="Link to this heading">¶</a></h2>
+<p>While removing the C code I noticed that the macOS unit test had been disabled
+long ago, presumably by me after recurring flaky Travis runs. Meaning that the
+method had been broken on some macOS versions far longer than the 2018 bug
+report suggested.</p>
+<p>Deprecating for a cycle didn’t help either: raising <a class="reference internal" href="../../../api/#psutil.AccessDenied" title="psutil.AccessDenied"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AccessDenied</span></code></a> breaks
+code that relied on a successful return, returning an empty list does the same
+silently, and leaving the method in place doesn’t stop the segfault. Basically
+there was no sane solution, so since 5.6 is a major version I decided to just
+remove <a class="reference internal" href="../../../api/#psutil.Process.memory_maps" title="psutil.Process.memory_maps"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.memory_maps()</span></code></a> for good.</p>
+<p>On macOS it never supported other processes anyway. Calling it on any PID other
+than the current one (or its children) raised <a class="reference internal" href="../../../api/#psutil.AccessDenied" title="psutil.AccessDenied"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AccessDenied</span></code></a>, even as
+root.</p>
+<p>If someone finds a Mach API path that works, the method can return. Nobody has
+found one so far.</p>
+</section>
+</section>
+
+<div class="section ablog__blog_comments">
+   
+
+<nav class="prev-next no-visited" aria-label="Previous and next posts">
+  
+  <a class="prev-next-prev" href="../announcing-560/" rel="prev">
+    <span class="prev-next-arrow" aria-hidden="true">&lsaquo;</span>
+    <span class="prev-next-block">
+      <span class="prev-next-label">Previous</span>
+      <span class="prev-next-title">Announcing psutil 5.6.0</span>
+    </span>
+  </a>
+  
+  
+  <a class="prev-next-next" href="../../2025/drop-py27/" rel="next">
+    <span class="prev-next-block">
+      <span class="prev-next-label">Next</span>
+      <span class="prev-next-title">Letting go of Python 2.7</span>
+    </span>
+    <span class="prev-next-arrow" aria-hidden="true">&rsaquo;</span>
+  </a>
+  
+</nav>
+  
+</div>
+
+        </article>
+        
+        
+<section class="comments" aria-labelledby="comments-heading" hidden>
+  <h2 id="comments-heading">Comments</h2>
+  <div class="giscus"
+       data-repo="giampaolo/psutil-blog-comments"
+       data-repo-id="R_kgDOTfVGLA"
+       data-category="User Comments"
+       data-category-id="DIC_kwDOTfVGLM4DBrKC"
+       data-term="blog/2019/macos-memory-maps"
+       data-theme-url="../../../_static/css/giscus.css"></div>
+</section>
+
+      </div>
+
+      <aside class="right-sidebar"
+       
+       aria-label="On this page">
+  <div class="right-sidebar-title">On this page</div>
+  <ul>
+<li><a class="reference internal" href="#">Removing Process.memory_maps() on macOS</a><ul>
+<li><a class="reference internal" href="#the-bug">The bug</a></li>
+<li><a class="reference internal" href="#why-remove-outright">Why remove outright</a></li>
+</ul>
+</li>
+</ul>
+
+</aside>
+    </div>
+  </main>
+
+  
+  <footer class="footer" role="contentinfo">
+  <div class="footer-content">
+    <div class="footer-text">
+      <span><a class="footer-egg" href="../../../404/" title="🥚">&copy;</a> 2009-2026 Giampaolo Rodola</span>
+      <span><a href="../../../about/"
+               title="About this documentation site">About</a></span>
+      <span><a href="https://github.com/giampaolo/psutil/edit/master/docs/blog/2019/macos-memory-maps.rst"
+               rel="noopener noreferrer" target="_blank"
+               title="Edit this page on GitHub">Edit on GitHub</a></span>
+    </div>
+    <div class="footer-icons">
+      <a class="footer-github" href="https://github.com/giampaolo/psutil"
+         title="psutil on GitHub" aria-label="psutil on GitHub"
+         rel="noopener noreferrer" target="_blank">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+      </a>
+      <a class="footer-pypi" href="https://pypi.org/project/psutil/"
+         title="psutil on PyPI" aria-label="psutil on PyPI"
+         rel="noopener noreferrer" target="_blank">
+        <i class="fa-brands fa-python" aria-hidden="true"></i>
+      </a>
+      <a class="footer-rss" href="../../atom.xml"
+         title="Subscribe to blog (Atom feed)" aria-label="Subscribe to blog">
+        <span class="rss-icon"></span>
+      </a>
+    </div>
+  </div>
+</footer>
+</div>
+
+  </body>
+</html>

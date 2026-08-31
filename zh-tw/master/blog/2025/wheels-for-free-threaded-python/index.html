@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta property="og:title" content="Wheels for free-threaded Python now available" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://psutil.io/blog/2025/wheels-for-free-threaded-python/" />
+<meta property="og:site_name" content="psutil" />
+<meta property="og:description" content="Unlocking pip install psutil for no-GIL Python" />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://psutil.io/_images/social_previews/summary_blog_2025_wheels-for-free-threaded-python_d103d33d.png" />
+<meta property="og:image:alt" content="Unlocking pip install psutil for no-GIL Python" />
+<meta name="description" content="Unlocking pip install psutil for no-GIL Python" />
+<meta name="twitter:card" content="summary_large_image" />
+
+    <title>Wheels for free-threaded Python now available &#8212; psutil</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css?v=29da98fa" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-codeautolink.css?v=b2176991" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/base.css?v=fa4013d4" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/fonts.css?v=e753a5f7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/fontawesome.css?v=51ff6dc7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/typography.css?v=e7b40542" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/admonitions.css?v=163ddbc1" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/api-signatures.css?v=f032e3fc" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/blog.css?v=5f195cc9" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/changelog.css?v=9bdb527a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/code.css?v=0681a11b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/comments.css?v=f39a9342" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/dev-banner.css?v=6210bb1f" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/doc-icons.css?v=78c7cf07" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/footer.css?v=5d6b8d43" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/layout.css?v=cf2ca8d4" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/left-sidebar.css?v=dd06a93c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/prev-next.css?v=ca7d359d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/print.css?v=ece16c97" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/right-sidebar.css?v=81efec8f" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/search.css?v=82d539d2" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/tables.css?v=c600f876" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/topbar.css?v=1a2cb74e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/home.css?v=50cb9b55" />
+    <script src="../../../_static/documentation_options.js?v=63576a64"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=35a8b989"></script>
+    <script src="../../../_static/translations.js?v=cbf116e0"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script defer="defer" src="../../../_static/js/back-to-top.js?v=7b97b66a"></script>
+    <script defer="defer" src="../../../_static/js/external-urls.js?v=ea4e66fd"></script>
+    <script defer="defer" src="../../../_static/js/giscus.js?v=7fd73528"></script>
+    <script defer="defer" src="../../../_static/js/github-meta.js?v=efa66c56"></script>
+    <script defer="defer" src="../../../_static/js/highlight-repl.js?v=8e31535c"></script>
+    <script defer="defer" src="../../../_static/js/home-install-copy.js?v=be638b0c"></script>
+    <script defer="defer" src="../../../_static/js/right-toc.js?v=160f6df3"></script>
+    <script defer="defer" src="../../../_static/js/search-dim.js?v=b004caf9"></script>
+    <script defer="defer" src="../../../_static/js/search-shortcuts.js?v=26c0729f"></script>
+    <script defer="defer" src="../../../_static/js/shortcuts-help.js?v=f76503f8"></script>
+    <script defer="defer" src="../../../_static/js/sidebar-mobile.js?v=8d0c24bd"></script>
+    <script defer="defer" src="../../../_static/js/theme-toggle.js?v=6f028c03"></script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/psutil-docs-l10n/blog/2025/wheels-for-free-threaded-python/" />
+    <link rel="icon" href="../../../_static/favicon.svg"/>
+    <link rel="author" title="關於這些文件" href="../../../about/" />
+    <link rel="index" title="索引" href="../../../genindex/" />
+    <link rel="search" title="搜尋" href="../../../search/" />
+ 
+ 
+
+
+
+
+<link rel="apple-touch-icon" href="../../../_static/images/logo-psutil.png">
+
+<script>
+(function() {
+    const html = document.documentElement;
+    html.classList.add('no-transition');
+    const saved = localStorage.getItem('psutil-sphinx-theme');
+    const theme = saved || (
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+    );
+    html.setAttribute('data-theme', theme);
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            html.classList.remove('no-transition');
+        });
+    });
+})();
+</script>
+
+
+<script data-goatcounter="https://psutil.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G7374TFB11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G7374TFB11');
+</script>
+ 
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  href="../../../blog/atom.xml"
+  title="Blog"
+/>
+  
+<script type="text/javascript" src="../../../ltd-provenance.js"></script>
+<script type="text/javascript" src="../../../ltd-current.js"></script>
+<script type="text/javascript" src="../../../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../../../ltd-flyout.js"></script>
+
+  </head><body data-page="blog/2025/wheels-for-free-threaded-python">
+<header class="topbar no-visited" role="banner">
+  <div class="topbar-inner">
+    <button class="topbar-hamburger" id="sidebar-toggle"
+            type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button><a class="topbar-logo" href="../../../"><img src="../../../_static/images/logo-psutil.svg" alt="">
+      <span>psutil</span>
+    </a>
+    <nav class="topbar-actions" aria-label="Site actions">
+      <a class="topbar-text" href="../../">Blog</a>
+      <button class="topbar-btn" id="theme-toggle"
+              type="button" title="Toggle dark mode (shift+D)" aria-label="Toggle theme">
+        <i class="fa-regular fa-moon" aria-hidden="true"></i>
+      </button>
+      <a class="topbar-link topbar-github"
+         href="https://github.com/giampaolo/psutil"
+         target="_blank" rel="noopener" title="GitHub" aria-label="GitHub repository">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+        <span class="topbar-stars" data-repo="giampaolo/psutil"></span>
+      </a>
+      <a class="topbar-version" data-repo="giampaolo/psutil"
+         href="https://pypi.org/project/psutil"
+         target="_blank" rel="noopener" title="PyPI" aria-label="PyPI release"></a>
+    </nav>
+  </div>
+</header>
+
+<div class="page">
+  <nav class="left-sidebar no-visited" aria-label="Main navigation">
+  <div class="search-box">
+    <form action="../../../search/" method="get" role="search">
+      <input id="search-input" type="text" name="q"
+             placeholder="搜尋" aria-label="Search docs"
+             autocomplete="off" autocorrect="off"
+             autocapitalize="off" spellcheck="false">
+      <span class="search-kbd" aria-hidden="true"><kbd>Ctrl</kbd>+<kbd>K</kbd></span>
+    </form>
+  </div>
+  
+<p class="caption" role="heading"><span class="caption-text">文件</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../install/">安裝</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api-overview/">API 概覽</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/">API 參考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq/">常見問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../performance/">效能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../recipes/">Recipes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">參考</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../shell-equivalents/">Shell equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stdlib-equivalents/">Stdlib equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/">詞彙表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../platform/">平臺支援</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../migration/">遷移</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">關於</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../adoption/">誰在使用 psutil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../alternatives/">Alternatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../funding/">Funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../credits/">Credits</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">專案</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../">網誌</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog/">變更日誌</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../timeline/">時間線</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devguide/">開發指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex/">General Index</a></li>
+</ul>
+
+</nav>
+  <main class="main" id="main-content" role="main">
+    
+    <div class="dev-banner" role="note">
+  You're reading the <strong>development</strong> version of the psutil
+  docs, which may describe unreleased changes. For the current release
+  see <a href="https://psutil.readthedocs.io/stable/">psutil.readthedocs.io/stable</a>.
+</div>
+    
+<div class="blog-section-banner">
+  <div class="blog-section-label">
+    <svg class="blog-section-icon" viewBox="0 0 24 24" aria-hidden="true"
+         xmlns="http://www.w3.org/2000/svg" fill="none"
+         stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+    </svg>
+    <a class="blog-section-title" href="../../">Blog</a>
+    <div class="blog-section-subtitle">Releases, deep dives, war stories</div>
+  </div>
+  <a class="blog-rss"
+     href="../../atom.xml"
+     title="Subscribe (Atom feed)">
+    <span class="rss-icon blog-rss-icon"></span>
+    <span>RSS</span>
+  </a>
+</div>
+    <div class="article-with-toc">
+      <div class="article-column">
+        <article class="article">
+           <section id="wheels-for-free-threaded-python-now-available">
+<h1>Wheels for free-threaded Python now available<a class="headerlink" href="#wheels-for-free-threaded-python-now-available" title="連結到這個標頭">¶</a></h1>
+<div class="post-meta-banner docutils container">
+<span class="post-meta-author">Giampaolo Rodola</span><span class="post-meta-date">Oct 25, 2025</span><span class="post-meta-readtime">3 min read</span><span class="post-meta-tags"><a class="reference internal" href="../../tag/community/">community</a><a class="reference internal" href="../../tag/python-core/">python-core</a><a class="reference internal" href="../../tag/wheels/">wheels</a></span></div>
+<p>With the release of psutil 7.1.2, wheels for free-threaded Python are now
+available. This milestone was achieved largely through a community effort, as
+several internal refactorings to the C code were required to make it possible
+(see <a class="extlink-gh reference external" href="https://github.com/giampaolo/psutil/issues/2565">#2565</a>). Many of these changes were contributed by
+<a class="reference external" href="https://github.com/lysnikolaou">Lysandros Nikolaou</a>. Thanks to him for the
+effort and for bearing with me in code reviews! ;-)</p>
+<section id="what-is-free-threaded-python">
+<h2>What is free-threaded Python?<a class="headerlink" href="#what-is-free-threaded-python" title="連結到這個標頭">¶</a></h2>
+<p>Free-threaded Python (available since Python 3.13) refers to Python builds that
+are compiled with the <strong>GIL (Global Interpreter Lock) disabled</strong>, allowing true
+parallel execution of Python bytecodes across multiple threads. This is
+particularly beneficial for CPU-bound applications, as it enables better
+utilization of multi-core processors.</p>
+</section>
+<section id="the-state-of-free-threaded-wheels">
+<h2>The state of free-threaded wheels<a class="headerlink" href="#the-state-of-free-threaded-wheels" title="連結到這個標頭">¶</a></h2>
+<p>According to Hugo van Kemenade's <a class="reference external" href="https://hugovk.github.io/free-threaded-wheels/">free-threaded wheels
+tracker</a>, the
+adoption of free-threaded wheels among the top 360 most-downloaded
+PyPI packages with C extensions is still limited. Only 128 out of
+these 360 packages provide wheels compiled for free-threaded Python,
+meaning they can run on Python builds with the GIL disabled. This shows
+that, while progress has been made, most popular packages with C
+extensions still do not offer ready-made wheels for free-threaded
+Python.</p>
+</section>
+<section id="what-it-means-for-users">
+<h2>What it means for users<a class="headerlink" href="#what-it-means-for-users" title="連結到這個標頭">¶</a></h2>
+<p>When a library author provides a wheel, users can install a pre-compiled binary
+package without having to build it from source. This is especially important
+for packages with C extensions, like psutil, which is largely written in C.
+Such packages often have complex build requirements and require installing a C
+compiler. On Windows, that means installing Visual Studio or the Build Tools,
+which can take several gigabytes and a <em>significant</em> setup effort. Providing
+wheels spares users from this hassle, makes installation far simpler, and is
+effectively essential for the users of that package. You basically
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">psutil</span></code> and you're done.</p>
+</section>
+<section id="what-it-means-for-library-authors">
+<h2>What it means for library authors<a class="headerlink" href="#what-it-means-for-library-authors" title="連結到這個標頭">¶</a></h2>
+<p>Currently, <strong>universal wheels for free-threaded Python do not exist</strong>. Each
+wheel must be built specifically for a Python version. Right now authors must
+create separate wheels for Python 3.13 and 3.14. Which means distributing
+<em>a lot</em> of files already:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>psutil-7.1.2-cp313-cp313t-macosx_10_13_x86_64.whl
+psutil-7.1.2-cp313-cp313t-macosx_11_0_arm64.whl
+psutil-7.1.2-cp313-cp313t-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl
+psutil-7.1.2-cp313-cp313t-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl
+psutil-7.1.2-cp313-cp313t-win_amd64.whl
+psutil-7.1.2-cp313-cp313t-win_arm64.whl
+psutil-7.1.2-cp314-cp314t-macosx_10_15_x86_64.whl
+psutil-7.1.2-cp314-cp314t-macosx_11_0_arm64.whl
+psutil-7.1.2-cp314-cp314t-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl
+psutil-7.1.2-cp314-cp314t-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl
+psutil-7.1.2-cp314-cp314t-win_amd64.whl
+psutil-7.1.2-cp314-cp314t-win_arm64.whl
+</pre></div>
+</div>
+<p>This also multiplies CI jobs and slows down the test matrix (see
+<a class="reference external" href="https://github.com/giampaolo/psutil/blob/7dfd0ed34fe70ffd879ae62d21aabd4a8ed06d6f/.github/workflows/build.yml">build.yml</a>).
+A true universal wheel would greatly reduce this overhead, allowing a single
+wheel to support multiple Python versions and platforms. Hopefully, Python 3.15
+will simplify this process. Two competing proposals,
+<a class="reference external" href="https://www.python.org/dev/peps/pep-0803/">PEP 803</a> and
+<a class="reference external" href="https://www.python.org/dev/peps/pep-0809/">PEP 809</a>, aim to standardize
+wheel naming and metadata to allow producing a single wheel that covers
+multiple Python versions. That would drastically reduce distribution complexity
+for library authors, and it's fair to say it's essential for free-threaded
+CPython to truly succeed.</p>
+</section>
+<section id="how-to-install-free-threaded-psutil">
+<h2>How to install free-threaded psutil<a class="headerlink" href="#how-to-install-free-threaded-psutil" title="連結到這個標頭">¶</a></h2>
+<p>You can now install psutil for free-threaded Python directly via <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>psutil<span class="w"> </span>--only-binary<span class="o">=</span>:all:
+</pre></div>
+</div>
+<p>This ensures you get the pre-compiled wheels without triggering a source build.</p>
+</section>
+<section id="discussion">
+<h2>Discussion<a class="headerlink" href="#discussion" title="連結到這個標頭">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.reddit.com/r/Python/comments/1ofrx8v/comment/nllztz6/">Reddit</a></p></li>
+</ul>
+</section>
+</section>
+
+<div class="section ablog__blog_comments">
+   
+
+<nav class="prev-next no-visited" aria-label="Previous and next posts">
+  
+  <a class="prev-next-prev" href="../speedup-pytest-startup/" rel="prev">
+    <span class="prev-next-arrow" aria-hidden="true">&lsaquo;</span>
+    <span class="prev-next-block">
+      <span class="prev-next-label">Previous</span>
+      <span class="prev-next-title">Speeding up pytest startup</span>
+    </span>
+  </a>
+  
+  
+  <a class="prev-next-next" href="../heap-introspection-apis/" rel="next">
+    <span class="prev-next-block">
+      <span class="prev-next-label">Next</span>
+      <span class="prev-next-title">Detecting memory leaks in C extensions with psutil and psleak</span>
+    </span>
+    <span class="prev-next-arrow" aria-hidden="true">&rsaquo;</span>
+  </a>
+  
+</nav>
+  
+</div>
+
+        </article>
+        
+        
+<section class="comments" aria-labelledby="comments-heading" hidden>
+  <h2 id="comments-heading">Comments</h2>
+  <div class="giscus"
+       data-repo="giampaolo/psutil-blog-comments"
+       data-repo-id="R_kgDOTfVGLA"
+       data-category="User Comments"
+       data-category-id="DIC_kwDOTfVGLM4DBrKC"
+       data-term="blog/2025/wheels-for-free-threaded-python"
+       data-theme-url="../../../_static/css/giscus.css"></div>
+</section>
+
+      </div>
+
+      <aside class="right-sidebar"
+       
+       aria-label="On this page">
+  <div class="right-sidebar-title">On this page</div>
+  <ul>
+<li><a class="reference internal" href="#">Wheels for free-threaded Python now available</a><ul>
+<li><a class="reference internal" href="#what-is-free-threaded-python">What is free-threaded Python?</a></li>
+<li><a class="reference internal" href="#the-state-of-free-threaded-wheels">The state of free-threaded wheels</a></li>
+<li><a class="reference internal" href="#what-it-means-for-users">What it means for users</a></li>
+<li><a class="reference internal" href="#what-it-means-for-library-authors">What it means for library authors</a></li>
+<li><a class="reference internal" href="#how-to-install-free-threaded-psutil">How to install free-threaded psutil</a></li>
+<li><a class="reference internal" href="#discussion">Discussion</a></li>
+</ul>
+</li>
+</ul>
+
+</aside>
+    </div>
+  </main>
+
+  
+  <footer class="footer" role="contentinfo">
+  <div class="footer-content">
+    <div class="footer-text">
+      <span><a class="footer-egg" href="../../../404/" title="🥚">&copy;</a> 2009-2026 Giampaolo Rodola</span>
+      <span><a href="../../../about/"
+               title="About this documentation site">About</a></span>
+      <span><a href="https://github.com/giampaolo/psutil/edit/master/docs/blog/2025/wheels-for-free-threaded-python.rst"
+               rel="noopener noreferrer" target="_blank"
+               title="Edit this page on GitHub">Edit on GitHub</a></span>
+    </div>
+    <div class="footer-icons">
+      <a class="footer-github" href="https://github.com/giampaolo/psutil"
+         title="psutil on GitHub" aria-label="psutil on GitHub"
+         rel="noopener noreferrer" target="_blank">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+      </a>
+      <a class="footer-pypi" href="https://pypi.org/project/psutil/"
+         title="psutil on PyPI" aria-label="psutil on PyPI"
+         rel="noopener noreferrer" target="_blank">
+        <i class="fa-brands fa-python" aria-hidden="true"></i>
+      </a>
+      <a class="footer-rss" href="../../atom.xml"
+         title="Subscribe to blog (Atom feed)" aria-label="Subscribe to blog">
+        <span class="rss-icon"></span>
+      </a>
+    </div>
+  </div>
+</footer>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta property="og:title" content="Stdlib equivalents" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://psutil.io/stdlib-equivalents/" />
+<meta property="og:site_name" content="psutil" />
+<meta property="og:description" content="This page maps psutil&#x27;s Python API to the closest equivalent in the Python standard library. This is useful for understanding what psutil replaces and h..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://psutil.io/_images/social_previews/summary_stdlib-equivalents_2a9bb0cc.png" />
+<meta property="og:image:alt" content="This page maps psutil&#x27;s Python API to the closest equivalent in the Python standard library. This is useful for understanding what psutil replaces and h..." />
+<meta name="description" content="This page maps psutil&#x27;s Python API to the closest equivalent in the Python standard library. This is useful for understanding what psutil replaces and h..." />
+<meta name="twitter:card" content="summary_large_image" />
+
+    <title>Stdlib equivalents &#8212; psutil</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=29da98fa" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-codeautolink.css?v=b2176991" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/base.css?v=fa4013d4" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/fonts.css?v=e753a5f7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/fontawesome.css?v=51ff6dc7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/typography.css?v=e7b40542" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/admonitions.css?v=163ddbc1" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/api-signatures.css?v=f032e3fc" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blog.css?v=5f195cc9" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/changelog.css?v=9bdb527a" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/code.css?v=0681a11b" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/comments.css?v=f39a9342" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/dev-banner.css?v=6210bb1f" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/doc-icons.css?v=78c7cf07" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/footer.css?v=5d6b8d43" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/layout.css?v=cf2ca8d4" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/left-sidebar.css?v=dd06a93c" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/prev-next.css?v=ca7d359d" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/print.css?v=ece16c97" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/right-sidebar.css?v=81efec8f" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/search.css?v=82d539d2" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/tables.css?v=c600f876" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/topbar.css?v=1a2cb74e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/home.css?v=50cb9b55" />
+    <script src="../_static/documentation_options.js?v=cb502616"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=35a8b989"></script>
+    <script src="../_static/translations.js?v=540d3cec"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script defer="defer" src="../_static/js/back-to-top.js?v=7b97b66a"></script>
+    <script defer="defer" src="../_static/js/external-urls.js?v=ea4e66fd"></script>
+    <script defer="defer" src="../_static/js/giscus.js?v=7fd73528"></script>
+    <script defer="defer" src="../_static/js/github-meta.js?v=efa66c56"></script>
+    <script defer="defer" src="../_static/js/highlight-repl.js?v=8e31535c"></script>
+    <script defer="defer" src="../_static/js/home-install-copy.js?v=be638b0c"></script>
+    <script defer="defer" src="../_static/js/right-toc.js?v=160f6df3"></script>
+    <script defer="defer" src="../_static/js/search-dim.js?v=b004caf9"></script>
+    <script defer="defer" src="../_static/js/search-shortcuts.js?v=26c0729f"></script>
+    <script defer="defer" src="../_static/js/shortcuts-help.js?v=f76503f8"></script>
+    <script defer="defer" src="../_static/js/sidebar-mobile.js?v=8d0c24bd"></script>
+    <script defer="defer" src="../_static/js/theme-toggle.js?v=6f028c03"></script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/psutil-docs-l10n/stdlib-equivalents/" />
+    <link rel="icon" href="../_static/favicon.svg"/>
+    <link rel="author" title="关于此文档" href="../about/" />
+    <link rel="index" title="索引" href="../genindex/" />
+    <link rel="search" title="搜索" href="../search/" />
+    <link rel="next" title="Glossary" href="../glossary/" />
+    <link rel="prev" title="Shell 等效命令" href="../shell-equivalents/" />
+ 
+ 
+
+
+
+
+<link rel="apple-touch-icon" href="../_static/images/logo-psutil.png">
+
+<script>
+(function() {
+    const html = document.documentElement;
+    html.classList.add('no-transition');
+    const saved = localStorage.getItem('psutil-sphinx-theme');
+    const theme = saved || (
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+    );
+    html.setAttribute('data-theme', theme);
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            html.classList.remove('no-transition');
+        });
+    });
+})();
+</script>
+
+
+<script data-goatcounter="https://psutil.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G7374TFB11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G7374TFB11');
+</script>
+ 
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  href="../blog/atom.xml"
+  title="Blog"
+/>
+  
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+  </head><body data-page="stdlib-equivalents">
+<header class="topbar no-visited" role="banner">
+  <div class="topbar-inner">
+    <button class="topbar-hamburger" id="sidebar-toggle"
+            type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button><a class="topbar-logo" href="../"><img src="../_static/images/logo-psutil.svg" alt="">
+      <span>psutil</span>
+    </a>
+    <nav class="topbar-actions" aria-label="Site actions">
+      <a class="topbar-text" href="../blog/">Blog</a>
+      <button class="topbar-btn" id="theme-toggle"
+              type="button" title="Toggle dark mode (shift+D)" aria-label="Toggle theme">
+        <i class="fa-regular fa-moon" aria-hidden="true"></i>
+      </button>
+      <a class="topbar-link topbar-github"
+         href="https://github.com/giampaolo/psutil"
+         target="_blank" rel="noopener" title="GitHub" aria-label="GitHub repository">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+        <span class="topbar-stars" data-repo="giampaolo/psutil"></span>
+      </a>
+      <a class="topbar-version" data-repo="giampaolo/psutil"
+         href="https://pypi.org/project/psutil"
+         target="_blank" rel="noopener" title="PyPI" aria-label="PyPI release"></a>
+    </nav>
+  </div>
+</header>
+
+<div class="page">
+  <nav class="left-sidebar no-visited" aria-label="Main navigation">
+  <div class="search-box">
+    <form action="../search/" method="get" role="search">
+      <input id="search-input" type="text" name="q"
+             placeholder="搜索" aria-label="Search docs"
+             autocomplete="off" autocorrect="off"
+             autocapitalize="off" spellcheck="false">
+      <span class="search-kbd" aria-hidden="true"><kbd>Ctrl</kbd>+<kbd>K</kbd></span>
+    </form>
+  </div>
+  
+<p class="caption" role="heading"><span class="caption-text">文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api-overview/">API概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/">API 参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/">性能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/">食谱</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">参考</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../shell-equivalents/">Shell 等效命令</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">标准库等价实现</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary/">术语表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/">平台支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/">移植</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">关于</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../adoption/">谁在用 psutil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../alternatives/">备选方案</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funding/">赞助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../credits/">致谢</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">项目</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../blog/">博客</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog/">变更历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timeline/">时间线</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devguide/">开发指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex/">基本索引</a></li>
+</ul>
+
+</nav>
+  <main class="main" id="main-content" role="main">
+    
+    <div class="dev-banner" role="note">
+  You're reading the <strong>development</strong> version of the psutil
+  docs, which may describe unreleased changes. For the current release
+  see <a href="https://psutil.readthedocs.io/stable/">psutil.readthedocs.io/stable</a>.
+</div>
+    
+    <div class="article-with-toc">
+      <div class="article-column">
+        <article class="article">
+           <section id="stdlib-equivalents">
+<h1>Stdlib equivalents<a class="headerlink" href="#stdlib-equivalents" title="链接到此标题。">¶</a></h1>
+<p>This page maps psutil's Python API to the closest equivalent in the Python
+standard library. This is useful for understanding what psutil replaces and how
+the two APIs differ. The most common difference is that stdlib functions only
+operate on the <strong>current process</strong>, while psutil works on <strong>any process</strong>
+(PID).</p>
+<div class="admonition seealso">
+<p class="admonition-title">参见</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../shell-equivalents/"><span class="doc">Shell 等效命令</span></a></p></li>
+<li><p><a class="reference internal" href="../alternatives/"><span class="doc">备选方案</span></a></p></li>
+</ul>
+</div>
+<section id="system-wide-functions">
+<h2>System-wide functions<a class="headerlink" href="#system-wide-functions" title="链接到此标题。">¶</a></h2>
+<section id="cpu">
+<h3>CPU<a class="headerlink" href="#cpu" title="链接到此标题。">¶</a></h3>
+<table class="longtable wide-table docutils align-default">
+<colgroup>
+<col style="width: 15.8%" />
+<col style="width: 31.6%" />
+<col style="width: 52.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>psutil</p></th>
+<th class="head"><p>stdlib</p></th>
+<th class="head"><p>notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/#psutil.cpu_count" title="psutil.cpu_count"><code class="xref py py-func docutils literal notranslate"><span class="pre">cpu_count()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.cpu_count" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.cpu_count()</span></code></a>,
+<a class="reference external" href="https://docs.python.org/3/library/multiprocessing.html#multiprocessing.cpu_count" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">multiprocessing.cpu_count()</span></code></a></p></td>
+<td><p>Same as <code class="docutils literal notranslate"><span class="pre">cpu_count(logical=True)</span></code>; no support for
+physical cores (<code class="docutils literal notranslate"><span class="pre">logical=False</span></code>). See <a class="reference internal" href="../faq/#faq-cpu-count"><span class="std std-ref">FAQ</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/#psutil.cpu_count" title="psutil.cpu_count"><code class="xref py py-func docutils literal notranslate"><span class="pre">cpu_count()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.process_cpu_count" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.process_cpu_count()</span></code></a></p></td>
+<td><p>CPUs the process is allowed to use (Python 3.13+).
+Equivalent to <code class="docutils literal notranslate"><span class="pre">len(psutil.Process().cpu_affinity())</span></code>.
+See <a class="reference internal" href="../faq/#faq-cpu-count"><span class="std std-ref">FAQ</span></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/#psutil.getloadavg" title="psutil.getloadavg"><code class="xref py py-func docutils literal notranslate"><span class="pre">getloadavg()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.getloadavg" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.getloadavg()</span></code></a></p></td>
+<td><p>Same on POSIX; psutil also supports Windows.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="disk">
+<h3>Disk<a class="headerlink" href="#disk" title="链接到此标题。">¶</a></h3>
+<table class="longtable wide-table docutils align-default">
+<colgroup>
+<col style="width: 23.7%" />
+<col style="width: 23.7%" />
+<col style="width: 52.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>psutil</p></th>
+<th class="head"><p>stdlib</p></th>
+<th class="head"><p>notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/#psutil.disk_usage" title="psutil.disk_usage"><code class="xref py py-func docutils literal notranslate"><span class="pre">disk_usage()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/shutil.html#shutil.disk_usage" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">shutil.disk_usage()</span></code></a></p></td>
+<td><p>Same as <a class="reference external" href="https://docs.python.org/3/library/shutil.html#shutil.disk_usage" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">shutil.disk_usage()</span></code></a>; psutil also adds
+<code class="ntuple-field docutils literal notranslate"><span class="pre">percent</span></code>. Added to CPython 3.3 (<a class="extlink-bpo reference external" href="https://bugs.python.org/issue12442">BPO-12442</a>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/#psutil.disk_partitions" title="psutil.disk_partitions"><code class="xref py py-func docutils literal notranslate"><span class="pre">disk_partitions()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.listdrives" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.listdrives()</span></code></a>,
+<a class="reference external" href="https://docs.python.org/3/library/os.html#os.listmounts" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.listmounts()</span></code></a>,
+<a class="reference external" href="https://docs.python.org/3/library/os.html#os.listvolumes" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.listvolumes()</span></code></a></p></td>
+<td><p>Windows only (Python 3.12+). Low-level APIs:
+drive letters, volume GUIDs, mount points. psutil
+combines them in one cross-platform call.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="network">
+<h3>Network<a class="headerlink" href="#network" title="链接到此标题。">¶</a></h3>
+<table class="longtable wide-table docutils align-default">
+<colgroup>
+<col style="width: 23.7%" />
+<col style="width: 23.7%" />
+<col style="width: 52.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>psutil</p></th>
+<th class="head"><p>stdlib</p></th>
+<th class="head"><p>notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/#psutil.net_if_addrs" title="psutil.net_if_addrs"><code class="xref py py-func docutils literal notranslate"><span class="pre">net_if_addrs()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/socket.html#socket.if_nameindex" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">socket.if_nameindex()</span></code></a></p></td>
+<td><p>Stdlib returns <a class="reference internal" href="../glossary/#term-NIC"><span class="xref std std-term">NIC</span></a> names only; psutil also returns
+addresses, netmasks, broadcast, and PTP.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="process">
+<h3>Process<a class="headerlink" href="#process" title="链接到此标题。">¶</a></h3>
+<table class="longtable wide-table docutils align-default">
+<colgroup>
+<col style="width: 23.7%" />
+<col style="width: 23.7%" />
+<col style="width: 52.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>psutil</p></th>
+<th class="head"><p>stdlib</p></th>
+<th class="head"><p>notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/#psutil.pid_exists" title="psutil.pid_exists"><code class="xref py py-func docutils literal notranslate"><span class="pre">pid_exists()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">os.kill(pid,</span> <span class="pre">0)</span></code></p></td>
+<td><p>Common POSIX idiom; psutil also supports Windows.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="process-methods">
+<h2>Process methods<a class="headerlink" href="#process-methods" title="链接到此标题。">¶</a></h2>
+<p>Assuming <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">psutil.Process()</span></code>.</p>
+<section id="identity">
+<h3>Identity<a class="headerlink" href="#identity" title="链接到此标题。">¶</a></h3>
+<table class="longtable wide-table docutils align-default">
+<colgroup>
+<col style="width: 23.7%" />
+<col style="width: 23.7%" />
+<col style="width: 52.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>psutil</p></th>
+<th class="head"><p>stdlib</p></th>
+<th class="head"><p>notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/#psutil.Process.pid" title="psutil.Process.pid"><code class="xref py py-meth docutils literal notranslate"><span class="pre">p.pid</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.getpid" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.getpid()</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/#psutil.Process.ppid" title="psutil.Process.ppid"><code class="xref py py-meth docutils literal notranslate"><span class="pre">p.ppid()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.getppid" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.getppid()</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/#psutil.Process.cwd" title="psutil.Process.cwd"><code class="xref py py-meth docutils literal notranslate"><span class="pre">p.cwd()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.getcwd" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.getcwd()</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/#psutil.Process.environ" title="psutil.Process.environ"><code class="xref py py-meth docutils literal notranslate"><span class="pre">p.environ()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.environ" title="(位于 Python v3.14)"><code class="xref py py-data docutils literal notranslate"><span class="pre">os.environ</span></code></a></p></td>
+<td><p>Will differ from launch environment if modified at runtime.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/#psutil.Process.exe" title="psutil.Process.exe"><code class="xref py py-meth docutils literal notranslate"><span class="pre">p.exe()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/sys.html#sys.executable" title="(位于 Python v3.14)"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.executable</span></code></a></p></td>
+<td><p>Python interpreter path only.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/#psutil.Process.cmdline" title="psutil.Process.cmdline"><code class="xref py py-meth docutils literal notranslate"><span class="pre">p.cmdline()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/sys.html#sys.argv" title="(位于 Python v3.14)"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.argv</span></code></a></p></td>
+<td><p>Python process only.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="credentials">
+<h3>Credentials<a class="headerlink" href="#credentials" title="链接到此标题。">¶</a></h3>
+<table class="longtable wide-table docutils align-default">
+<colgroup>
+<col style="width: 20.7%" />
+<col style="width: 44.8%" />
+<col style="width: 34.5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>psutil</p></th>
+<th class="head"><p>stdlib</p></th>
+<th class="head"><p>notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/#psutil.Process.uids" title="psutil.Process.uids"><code class="xref py py-meth docutils literal notranslate"><span class="pre">p.uids()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.getuid" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.getuid()</span></code></a>,
+<a class="reference external" href="https://docs.python.org/3/library/os.html#os.geteuid" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.geteuid()</span></code></a>,
+<a class="reference external" href="https://docs.python.org/3/library/os.html#os.getresuid" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.getresuid()</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/#psutil.Process.gids" title="psutil.Process.gids"><code class="xref py py-meth docutils literal notranslate"><span class="pre">p.gids()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.getgid" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.getgid()</span></code></a>,
+<a class="reference external" href="https://docs.python.org/3/library/os.html#os.getegid" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.getegid()</span></code></a>,
+<a class="reference external" href="https://docs.python.org/3/library/os.html#os.getresgid" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.getresgid()</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/#psutil.Process.username" title="psutil.Process.username"><code class="xref py py-meth docutils literal notranslate"><span class="pre">p.username()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.getlogin" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.getlogin()</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/getpass.html#getpass.getuser" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">getpass.getuser()</span></code></a></p></td>
+<td><p>Rough equivalent; not per-process.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="cpu-scheduling">
+<h3>CPU / scheduling<a class="headerlink" href="#cpu-scheduling" title="链接到此标题。">¶</a></h3>
+<table class="longtable wide-table docutils align-default">
+<colgroup>
+<col style="width: 27.3%" />
+<col style="width: 27.3%" />
+<col style="width: 45.5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>psutil</p></th>
+<th class="head"><p>stdlib</p></th>
+<th class="head"><p>notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/#psutil.Process.cpu_times" title="psutil.Process.cpu_times"><code class="xref py py-meth docutils literal notranslate"><span class="pre">p.cpu_times()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.times" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.times()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.times" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.times()</span></code></a> also has <code class="docutils literal notranslate"><span class="pre">elapsed</span></code>; psutil adds
+<code class="ntuple-field docutils literal notranslate"><span class="pre">iowait</span></code> (Linux).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/#psutil.Process.cpu_times" title="psutil.Process.cpu_times"><code class="xref py py-meth docutils literal notranslate"><span class="pre">p.cpu_times()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/resource.html#resource.getrusage" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">resource.getrusage()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ru_utime</span></code> / <code class="docutils literal notranslate"><span class="pre">ru_stime</span></code> match; have higher precision.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/#psutil.Process.num_ctx_switches" title="psutil.Process.num_ctx_switches"><code class="xref py py-meth docutils literal notranslate"><span class="pre">p.num_ctx_switches()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/resource.html#resource.getrusage" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">resource.getrusage()</span></code></a></p></td>
+<td><p>Current process only; psutil works for any PID.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/#psutil.Process.nice" title="psutil.Process.nice"><code class="xref py py-meth docutils literal notranslate"><span class="pre">p.nice()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.getpriority" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.getpriority()</span></code></a>,
+<a class="reference external" href="https://docs.python.org/3/library/os.html#os.setpriority" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.setpriority()</span></code></a></p></td>
+<td><p>POSIX only; psutil also supports Windows.
+Added to CPython 3.3 (<a class="extlink-bpo reference external" href="https://bugs.python.org/issue10784">BPO-10784</a>).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/#psutil.Process.nice" title="psutil.Process.nice"><code class="xref py py-meth docutils literal notranslate"><span class="pre">p.nice()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.nice" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.nice()</span></code></a></p></td>
+<td><p>POSIX only; psutil also supports Windows.</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>no equivalent</em></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.sched_getscheduler" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.sched_getscheduler()</span></code></a>,
+<a class="reference external" href="https://docs.python.org/3/library/os.html#os.sched_setscheduler" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.sched_setscheduler()</span></code></a></p></td>
+<td><p>Sets scheduling <em>policy</em> (<code class="docutils literal notranslate"><span class="pre">SCHED_*</span></code>). Unlike nice,
+which sets priority within <code class="docutils literal notranslate"><span class="pre">SCHED_OTHER</span></code>. Real-time
+policies preempt normal processes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/#psutil.Process.cpu_affinity" title="psutil.Process.cpu_affinity"><code class="xref py py-meth docutils literal notranslate"><span class="pre">p.cpu_affinity()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.sched_getaffinity" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.sched_getaffinity()</span></code></a>,
+<a class="reference external" href="https://docs.python.org/3/library/os.html#os.sched_setaffinity" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.sched_setaffinity()</span></code></a></p></td>
+<td><p>Nearly equivalent; both accept a PID. Stdlib is
+Linux/BSD; psutil also supports Windows.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/#psutil.Process.rlimit" title="psutil.Process.rlimit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">p.rlimit()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/resource.html#resource.getrlimit" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">resource.getrlimit()</span></code></a>,
+<a class="reference external" href="https://docs.python.org/3/library/resource.html#resource.setrlimit" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">resource.setrlimit()</span></code></a></p></td>
+<td><p>Same interface; psutil works for any PID (Linux only).</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="memory">
+<h3>Memory<a class="headerlink" href="#memory" title="链接到此标题。">¶</a></h3>
+<table class="longtable wide-table docutils align-default">
+<colgroup>
+<col style="width: 23.7%" />
+<col style="width: 23.7%" />
+<col style="width: 52.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>psutil</p></th>
+<th class="head"><p>stdlib</p></th>
+<th class="head"><p>notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/#psutil.Process.memory_info" title="psutil.Process.memory_info"><code class="xref py py-meth docutils literal notranslate"><span class="pre">p.memory_info()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/resource.html#resource.getrusage" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">resource.getrusage()</span></code></a></p></td>
+<td><p>Only <a class="reference internal" href="../glossary/#term-peak_rss"><span class="xref std std-term">peak_rss</span></a> (<code class="docutils literal notranslate"><span class="pre">ru_maxrss</span></code>); psutil returns <a class="reference internal" href="../glossary/#term-RSS"><span class="xref std std-term">RSS</span></a>, <a class="reference internal" href="../glossary/#term-VMS"><span class="xref std std-term">VMS</span></a>, and more.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/#psutil.Process.page_faults" title="psutil.Process.page_faults"><code class="xref py py-meth docutils literal notranslate"><span class="pre">p.page_faults()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/resource.html#resource.getrusage" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">resource.getrusage()</span></code></a></p></td>
+<td><p>Current process only.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="i-o">
+<h3>I/O<a class="headerlink" href="#i-o" title="链接到此标题。">¶</a></h3>
+<table class="longtable wide-table docutils align-default">
+<colgroup>
+<col style="width: 23.7%" />
+<col style="width: 23.7%" />
+<col style="width: 52.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>psutil</p></th>
+<th class="head"><p>stdlib</p></th>
+<th class="head"><p>notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/#psutil.Process.io_counters" title="psutil.Process.io_counters"><code class="xref py py-meth docutils literal notranslate"><span class="pre">p.io_counters()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/resource.html#resource.getrusage" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">resource.getrusage()</span></code></a></p></td>
+<td><p>Block I/O only (<code class="docutils literal notranslate"><span class="pre">ru_inblock</span></code> / <code class="docutils literal notranslate"><span class="pre">ru_oublock</span></code>),
+current process. psutil returns bytes and counts for any PID.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="threads">
+<h3>Threads<a class="headerlink" href="#threads" title="链接到此标题。">¶</a></h3>
+<table class="longtable wide-table docutils align-default">
+<colgroup>
+<col style="width: 24.4%" />
+<col style="width: 26.8%" />
+<col style="width: 48.8%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>psutil</p></th>
+<th class="head"><p>stdlib</p></th>
+<th class="head"><p>notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/#psutil.Process.num_threads" title="psutil.Process.num_threads"><code class="xref py py-meth docutils literal notranslate"><span class="pre">p.num_threads()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/threading.html#threading.active_count" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">threading.active_count()</span></code></a></p></td>
+<td><p>Stdlib counts Python threads only; psutil counts all OS threads.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/#psutil.Process.threads" title="psutil.Process.threads"><code class="xref py py-meth docutils literal notranslate"><span class="pre">p.threads()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/threading.html#threading.enumerate" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">threading.enumerate()</span></code></a></p></td>
+<td><p>Stdlib returns <a class="reference external" href="https://docs.python.org/3/library/threading.html#threading.Thread" title="(位于 Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">threading.Thread</span></code></a> objects; psutil
+returns OS thread IDs with CPU times.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h3>Signals<a class="headerlink" href="#signals" title="链接到此标题。">¶</a></h3>
+<table class="longtable wide-table docutils align-default">
+<colgroup>
+<col style="width: 22.5%" />
+<col style="width: 27.5%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>psutil</p></th>
+<th class="head"><p>stdlib</p></th>
+<th class="head"><p>notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/#psutil.Process.send_signal" title="psutil.Process.send_signal"><code class="xref py py-meth docutils literal notranslate"><span class="pre">p.send_signal()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.kill" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.kill()</span></code></a></p></td>
+<td><p>Same on POSIX; limited on Windows. psutil adds
+<a class="reference internal" href="../api/#psutil.NoSuchProcess" title="psutil.NoSuchProcess"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NoSuchProcess</span></code></a> / <a class="reference internal" href="../api/#psutil.AccessDenied" title="psutil.AccessDenied"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AccessDenied</span></code></a> and avoids
+killing reused PIDs.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/#psutil.Process.suspend" title="psutil.Process.suspend"><code class="xref py py-meth docutils literal notranslate"><span class="pre">p.suspend()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.kill" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.kill()</span></code></a> + <a class="reference external" href="https://docs.python.org/3/library/signal.html#signal.SIGSTOP" title="(位于 Python v3.14)"><code class="xref py py-data docutils literal notranslate"><span class="pre">signal.SIGSTOP</span></code></a></p></td>
+<td><p>Same as above.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/#psutil.Process.resume" title="psutil.Process.resume"><code class="xref py py-meth docutils literal notranslate"><span class="pre">p.resume()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.kill" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.kill()</span></code></a> + <a class="reference external" href="https://docs.python.org/3/library/signal.html#signal.SIGCONT" title="(位于 Python v3.14)"><code class="xref py py-data docutils literal notranslate"><span class="pre">signal.SIGCONT</span></code></a></p></td>
+<td><p>Same as above.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/#psutil.Process.terminate" title="psutil.Process.terminate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">p.terminate()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.kill" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.kill()</span></code></a> + <a class="reference external" href="https://docs.python.org/3/library/signal.html#signal.SIGTERM" title="(位于 Python v3.14)"><code class="xref py py-data docutils literal notranslate"><span class="pre">signal.SIGTERM</span></code></a></p></td>
+<td><p>Same as above. On Windows uses <code class="docutils literal notranslate"><span class="pre">TerminateProcess()</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/#psutil.Process.kill" title="psutil.Process.kill"><code class="xref py py-meth docutils literal notranslate"><span class="pre">p.kill()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.kill" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.kill()</span></code></a> + <a class="reference external" href="https://docs.python.org/3/library/signal.html#signal.SIGKILL" title="(位于 Python v3.14)"><code class="xref py py-data docutils literal notranslate"><span class="pre">signal.SIGKILL</span></code></a></p></td>
+<td><p>Same as above. On Windows uses <code class="docutils literal notranslate"><span class="pre">TerminateProcess()</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/#psutil.Process.wait" title="psutil.Process.wait"><code class="xref py py-meth docutils literal notranslate"><span class="pre">p.wait()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.waitpid" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.waitpid()</span></code></a></p></td>
+<td><p>Child processes only; psutil works for any PID.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/#psutil.Process.wait" title="psutil.Process.wait"><code class="xref py py-meth docutils literal notranslate"><span class="pre">p.wait()</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/subprocess.html#subprocess.Popen.wait" title="(位于 Python v3.14)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">subprocess.Popen.wait()</span></code></a></p></td>
+<td><p>Equivalent; psutil uses efficient OS-level waiting on
+Linux/BSD. Added to CPython 3.15 (<a class="extlink-cpy-pr reference external" href="https://github.com/python/cpython/pull/144047">cpython/PR-144047</a>).</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+
+<div class="section ablog__blog_comments">
+   
+</div>
+
+        </article>
+        
+<nav class="prev-next no-visited" aria-label="Previous and next pages">
+  
+  <a class="prev-next-prev" href="../shell-equivalents/" rel="prev">
+    <span class="prev-next-arrow" aria-hidden="true">&lsaquo;</span>
+    <span class="prev-next-block">
+      <span class="prev-next-label">Previous</span>
+      <span class="prev-next-title">Shell 等效命令</span>
+    </span>
+  </a>
+  
+  
+  <a class="prev-next-next" href="../glossary/" rel="next">
+    <span class="prev-next-block">
+      <span class="prev-next-label">Next</span>
+      <span class="prev-next-title">Glossary</span>
+    </span>
+    <span class="prev-next-arrow" aria-hidden="true">&rsaquo;</span>
+  </a>
+  
+</nav>
+
+        
+      </div>
+
+      <aside class="right-sidebar"
+       
+       aria-label="On this page">
+  <div class="right-sidebar-title">On this page</div>
+  <ul>
+<li><a class="reference internal" href="#">Stdlib equivalents</a><ul>
+<li><a class="reference internal" href="#system-wide-functions">System-wide functions</a><ul>
+<li><a class="reference internal" href="#cpu">CPU</a></li>
+<li><a class="reference internal" href="#disk">Disk</a></li>
+<li><a class="reference internal" href="#network">Network</a></li>
+<li><a class="reference internal" href="#process">Process</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#process-methods">Process methods</a><ul>
+<li><a class="reference internal" href="#identity">Identity</a></li>
+<li><a class="reference internal" href="#credentials">Credentials</a></li>
+<li><a class="reference internal" href="#cpu-scheduling">CPU / scheduling</a></li>
+<li><a class="reference internal" href="#memory">Memory</a></li>
+<li><a class="reference internal" href="#i-o">I/O</a></li>
+<li><a class="reference internal" href="#threads">Threads</a></li>
+<li><a class="reference internal" href="#signals">Signals</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</aside>
+    </div>
+  </main>
+
+  
+  <footer class="footer" role="contentinfo">
+  <div class="footer-content">
+    <div class="footer-text">
+      <span><a class="footer-egg" href="../404/" title="🥚">&copy;</a> 2009-2026 Giampaolo Rodola</span>
+      <span><a href="../about/"
+               title="About this documentation site">About</a></span>
+      <span><a href="https://github.com/giampaolo/psutil/edit/master/docs/stdlib-equivalents.rst"
+               rel="noopener noreferrer" target="_blank"
+               title="Edit this page on GitHub">Edit on GitHub</a></span>
+    </div>
+    <div class="footer-icons">
+      <a class="footer-github" href="https://github.com/giampaolo/psutil"
+         title="psutil on GitHub" aria-label="psutil on GitHub"
+         rel="noopener noreferrer" target="_blank">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+      </a>
+      <a class="footer-pypi" href="https://pypi.org/project/psutil/"
+         title="psutil on PyPI" aria-label="psutil on PyPI"
+         rel="noopener noreferrer" target="_blank">
+        <i class="fa-brands fa-python" aria-hidden="true"></i>
+      </a>
+      <a class="footer-rss" href="../blog/atom.xml"
+         title="Subscribe to blog (Atom feed)" aria-label="Subscribe to blog">
+        <span class="rss-icon"></span>
+      </a>
+    </div>
+  </div>
+</footer>
+</div>
+
+  </body>
+</html>

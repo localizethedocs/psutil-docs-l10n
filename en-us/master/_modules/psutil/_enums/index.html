@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html lang="en-US" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>psutil._enums &#8212; psutil</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css?v=29da98fa" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-codeautolink.css?v=b2176991" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/base.css?v=fa4013d4" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/fonts.css?v=e753a5f7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/fontawesome.css?v=51ff6dc7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/typography.css?v=e7b40542" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/admonitions.css?v=163ddbc1" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/api-signatures.css?v=f032e3fc" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/blog.css?v=5f195cc9" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/changelog.css?v=9bdb527a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/code.css?v=0681a11b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/comments.css?v=f39a9342" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/dev-banner.css?v=6210bb1f" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/doc-icons.css?v=78c7cf07" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/footer.css?v=5d6b8d43" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/layout.css?v=cf2ca8d4" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/left-sidebar.css?v=dd06a93c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/prev-next.css?v=ca7d359d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/print.css?v=ece16c97" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/right-sidebar.css?v=81efec8f" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/search.css?v=82d539d2" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/tables.css?v=c600f876" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/topbar.css?v=1a2cb74e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/home.css?v=50cb9b55" />
+    <script src="../../../_static/documentation_options.js?v=fe56712e"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=35a8b989"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script defer="defer" src="../../../_static/js/back-to-top.js?v=7b97b66a"></script>
+    <script defer="defer" src="../../../_static/js/external-urls.js?v=ea4e66fd"></script>
+    <script defer="defer" src="../../../_static/js/giscus.js?v=7fd73528"></script>
+    <script defer="defer" src="../../../_static/js/github-meta.js?v=efa66c56"></script>
+    <script defer="defer" src="../../../_static/js/highlight-repl.js?v=8e31535c"></script>
+    <script defer="defer" src="../../../_static/js/home-install-copy.js?v=be638b0c"></script>
+    <script defer="defer" src="../../../_static/js/right-toc.js?v=160f6df3"></script>
+    <script defer="defer" src="../../../_static/js/search-dim.js?v=b004caf9"></script>
+    <script defer="defer" src="../../../_static/js/search-shortcuts.js?v=26c0729f"></script>
+    <script defer="defer" src="../../../_static/js/shortcuts-help.js?v=f76503f8"></script>
+    <script defer="defer" src="../../../_static/js/sidebar-mobile.js?v=8d0c24bd"></script>
+    <script defer="defer" src="../../../_static/js/theme-toggle.js?v=6f028c03"></script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/psutil-docs-l10n/_modules/psutil/_enums/" />
+    <link rel="icon" href="../../../_static/favicon.svg"/>
+    <link rel="author" title="About these documents" href="../../../about/" />
+    <link rel="index" title="Index" href="../../../genindex/" />
+    <link rel="search" title="Search" href="../../../search/" />
+ 
+ 
+
+
+
+
+<link rel="apple-touch-icon" href="../../../_static/images/logo-psutil.png">
+
+<script>
+(function() {
+    const html = document.documentElement;
+    html.classList.add('no-transition');
+    const saved = localStorage.getItem('psutil-sphinx-theme');
+    const theme = saved || (
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+    );
+    html.setAttribute('data-theme', theme);
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            html.classList.remove('no-transition');
+        });
+    });
+})();
+</script>
+
+
+<script data-goatcounter="https://psutil.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G7374TFB11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G7374TFB11');
+</script>
+ 
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  href="../../../blog/atom.xml"
+  title="Blog"
+/>
+  
+<script type="text/javascript" src="../../../ltd-provenance.js"></script>
+<script type="text/javascript" src="../../../ltd-current.js"></script>
+<script type="text/javascript" src="../../../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../../../ltd-flyout.js"></script>
+
+  </head><body data-page="_modules/psutil/_enums">
+<header class="topbar no-visited" role="banner">
+  <div class="topbar-inner">
+    <button class="topbar-hamburger" id="sidebar-toggle"
+            type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button><a class="topbar-logo" href="../../../"><img src="../../../_static/images/logo-psutil.svg" alt="">
+      <span>psutil</span>
+    </a>
+    <nav class="topbar-actions" aria-label="Site actions">
+      <a class="topbar-text" href="../../../blog/">Blog</a>
+      <button class="topbar-btn" id="theme-toggle"
+              type="button" title="Toggle dark mode (shift+D)" aria-label="Toggle theme">
+        <i class="fa-regular fa-moon" aria-hidden="true"></i>
+      </button>
+      <a class="topbar-link topbar-github"
+         href="https://github.com/giampaolo/psutil"
+         target="_blank" rel="noopener" title="GitHub" aria-label="GitHub repository">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+        <span class="topbar-stars" data-repo="giampaolo/psutil"></span>
+      </a>
+      <a class="topbar-version" data-repo="giampaolo/psutil"
+         href="https://pypi.org/project/psutil"
+         target="_blank" rel="noopener" title="PyPI" aria-label="PyPI release"></a>
+    </nav>
+  </div>
+</header>
+
+<div class="page">
+  <nav class="left-sidebar no-visited" aria-label="Main navigation">
+  <div class="search-box">
+    <form action="../../../search/" method="get" role="search">
+      <input id="search-input" type="text" name="q"
+             placeholder="Search" aria-label="Search docs"
+             autocomplete="off" autocorrect="off"
+             autocapitalize="off" spellcheck="false">
+      <span class="search-kbd" aria-hidden="true"><kbd>Ctrl</kbd>+<kbd>K</kbd></span>
+    </form>
+  </div>
+  
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../install/">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api-overview/">API overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq/">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../performance/">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../recipes/">Recipes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../shell-equivalents/">Shell equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stdlib-equivalents/">Stdlib equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../platform/">Platform support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../migration/">Migration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../adoption/">Who uses psutil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../alternatives/">Alternatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../funding/">Funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../credits/">Credits</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../blog/">Blog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog/">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../timeline/">Timeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devguide/">Development guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex/">General Index</a></li>
+</ul>
+
+</nav>
+  <main class="main" id="main-content" role="main">
+    
+    <div class="dev-banner" role="note">
+  You're reading the <strong>development</strong> version of the psutil
+  docs, which may describe unreleased changes. For the current release
+  see <a href="https://psutil.readthedocs.io/stable/">psutil.readthedocs.io/stable</a>.
+</div>
+    
+    <div class="article-with-toc">
+      <div class="article-column">
+        <article class="article">
+           <h1>Source code for psutil._enums</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright (c) 2009, Giampaolo Rodola'. All rights reserved.</span>
+<span class="c1"># Use of this source code is governed by a BSD-style license that can be</span>
+<span class="c1"># found in the LICENSE file.</span>
+
+<span class="sd">"""Enum containers backing psutil constants.</span>
+
+<span class="sd">This module groups constants used by psutil APIs into Enum classes.</span>
+<span class="sd">These enums mainly act as containers for related values and are useful</span>
+<span class="sd">for type annotations and introspection.</span>
+
+<span class="sd">In normal usage constants should be accessed directly from the psutil</span>
+<span class="sd">namespace instead of importing these enums, e.g.:</span>
+
+<span class="sd">    import psutil</span>
+<span class="sd">    if proc.status() == psutil.STATUS_RUNNING:</span>
+<span class="sd">        ...</span>
+
+<span class="sd">The top-level constants (e.g. ``psutil.STATUS_RUNNING``) are aliases of</span>
+<span class="sd">the enum members defined here and represent the primary public API.</span>
+<span class="sd">"""</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">enum</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">._common</span><span class="w"> </span><span class="kn">import</span> <span class="n">FREEBSD</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._common</span><span class="w"> </span><span class="kn">import</span> <span class="n">LINUX</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._common</span><span class="w"> </span><span class="kn">import</span> <span class="n">SUNOS</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._common</span><span class="w"> </span><span class="kn">import</span> <span class="n">WINDOWS</span>
+
+<span class="k">if</span> <span class="n">WINDOWS</span> <span class="ow">or</span> <span class="n">LINUX</span> <span class="ow">or</span> <span class="n">FREEBSD</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">_psutil</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">_psutil</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">enum</span><span class="p">,</span> <span class="s2">"StrEnum"</span><span class="p">):</span>  <span class="c1"># Python &gt;= 3.11</span>
+    <span class="n">StrEnum</span> <span class="o">=</span> <span class="n">enum</span><span class="o">.</span><span class="n">StrEnum</span>
+<span class="k">else</span><span class="p">:</span>
+
+    <span class="c1"># A backport of Python 3.11 StrEnum class for &gt;= Python 3.8</span>
+    <span class="k">class</span><span class="w"> </span><span class="nc">StrEnum</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">enum</span><span class="o">.</span><span class="n">Enum</span><span class="p">):</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">values</span><span class="p">):</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="o">*</span><span class="n">values</span><span class="p">)</span>
+            <span class="n">member</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+            <span class="n">member</span><span class="o">.</span><span class="n">_value_</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="k">return</span> <span class="n">member</span>
+
+        <span class="fm">__str__</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="fm">__str__</span>
+
+        <span class="nd">@staticmethod</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">_generate_next_value_</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">_start</span><span class="p">,</span> <span class="n">_count</span><span class="p">,</span> <span class="n">_last_values</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+
+<span class="c1"># psutil.Process.status()</span>
+<div class="viewcode-block" id="ProcessStatus">
+<a class="viewcode-back" href="../../../api/#psutil.ProcessStatus">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ProcessStatus</span><span class="p">(</span><span class="n">StrEnum</span><span class="p">):</span>
+    <span class="n">STATUS_DEAD</span> <span class="o">=</span> <span class="s2">"dead"</span>
+    <span class="n">STATUS_DISK_SLEEP</span> <span class="o">=</span> <span class="s2">"disk-sleep"</span>
+    <span class="n">STATUS_IDLE</span> <span class="o">=</span> <span class="s2">"idle"</span>  <span class="c1"># Linux, macOS, FreeBSD</span>
+    <span class="n">STATUS_LOCKED</span> <span class="o">=</span> <span class="s2">"locked"</span>  <span class="c1"># FreeBSD</span>
+    <span class="n">STATUS_PARKED</span> <span class="o">=</span> <span class="s2">"parked"</span>  <span class="c1"># Linux</span>
+    <span class="n">STATUS_RUNNING</span> <span class="o">=</span> <span class="s2">"running"</span>
+    <span class="n">STATUS_SLEEPING</span> <span class="o">=</span> <span class="s2">"sleeping"</span>
+    <span class="n">STATUS_STOPPED</span> <span class="o">=</span> <span class="s2">"stopped"</span>
+    <span class="n">STATUS_SUSPENDED</span> <span class="o">=</span> <span class="s2">"suspended"</span>  <span class="c1"># NetBSD</span>
+    <span class="n">STATUS_TRACING_STOP</span> <span class="o">=</span> <span class="s2">"tracing-stop"</span>
+    <span class="n">STATUS_WAITING</span> <span class="o">=</span> <span class="s2">"waiting"</span>  <span class="c1"># FreeBSD</span>
+    <span class="n">STATUS_WAKE_KILL</span> <span class="o">=</span> <span class="s2">"wake-kill"</span>
+    <span class="n">STATUS_WAKING</span> <span class="o">=</span> <span class="s2">"waking"</span>
+    <span class="n">STATUS_ZOMBIE</span> <span class="o">=</span> <span class="s2">"zombie"</span></div>
+
+
+
+<span class="c1"># psutil.Process.net_connections() and psutil.net_connections()</span>
+<div class="viewcode-block" id="ConnectionStatus">
+<a class="viewcode-back" href="../../../api/#psutil.ConnectionStatus">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ConnectionStatus</span><span class="p">(</span><span class="n">StrEnum</span><span class="p">):</span>
+    <span class="n">CONN_CLOSE</span> <span class="o">=</span> <span class="s2">"CLOSE"</span>
+    <span class="n">CONN_CLOSE_WAIT</span> <span class="o">=</span> <span class="s2">"CLOSE_WAIT"</span>
+    <span class="n">CONN_CLOSING</span> <span class="o">=</span> <span class="s2">"CLOSING"</span>
+    <span class="n">CONN_ESTABLISHED</span> <span class="o">=</span> <span class="s2">"ESTABLISHED"</span>
+    <span class="n">CONN_FIN_WAIT1</span> <span class="o">=</span> <span class="s2">"FIN_WAIT1"</span>
+    <span class="n">CONN_FIN_WAIT2</span> <span class="o">=</span> <span class="s2">"FIN_WAIT2"</span>
+    <span class="n">CONN_LAST_ACK</span> <span class="o">=</span> <span class="s2">"LAST_ACK"</span>
+    <span class="n">CONN_LISTEN</span> <span class="o">=</span> <span class="s2">"LISTEN"</span>
+    <span class="n">CONN_NONE</span> <span class="o">=</span> <span class="s2">"NONE"</span>
+    <span class="n">CONN_SYN_RECV</span> <span class="o">=</span> <span class="s2">"SYN_RECV"</span>
+    <span class="n">CONN_SYN_SENT</span> <span class="o">=</span> <span class="s2">"SYN_SENT"</span>
+    <span class="n">CONN_TIME_WAIT</span> <span class="o">=</span> <span class="s2">"TIME_WAIT"</span>
+    <span class="k">if</span> <span class="n">WINDOWS</span><span class="p">:</span>
+        <span class="n">CONN_DELETE_TCB</span> <span class="o">=</span> <span class="s2">"DELETE_TCB"</span>
+    <span class="k">if</span> <span class="n">SUNOS</span><span class="p">:</span>
+        <span class="n">CONN_BOUND</span> <span class="o">=</span> <span class="s2">"CONN_BOUND"</span>
+        <span class="n">CONN_IDLE</span> <span class="o">=</span> <span class="s2">"CONN_IDLE"</span></div>
+
+
+
+<span class="c1"># psutil.net_if_stats()</span>
+<div class="viewcode-block" id="NicDuplex">
+<a class="viewcode-back" href="../../../api/#psutil.NicDuplex">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">NicDuplex</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+    <span class="n">NIC_DUPLEX_FULL</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">NIC_DUPLEX_HALF</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">NIC_DUPLEX_UNKNOWN</span> <span class="o">=</span> <span class="mi">0</span></div>
+
+
+
+<span class="c1"># psutil.sensors_battery()</span>
+<div class="viewcode-block" id="BatteryTime">
+<a class="viewcode-back" href="../../../api/#psutil.BatteryTime">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BatteryTime</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+    <span class="n">POWER_TIME_UNKNOWN</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">POWER_TIME_UNLIMITED</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span></div>
+
+
+
+<span class="k">if</span> <span class="n">LINUX</span><span class="p">:</span>
+
+    <span class="c1"># psutil.Process.ionice(ioclass=…)</span>
+    <span class="k">class</span><span class="w"> </span><span class="nc">ProcessIOPriority</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+        <span class="c1"># ioprio_* constants http://linux.die.net/man/2/ioprio_get</span>
+        <span class="n">IOPRIO_CLASS_NONE</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">IOPRIO_CLASS_RT</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">IOPRIO_CLASS_BE</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="n">IOPRIO_CLASS_IDLE</span> <span class="o">=</span> <span class="mi">3</span>
+
+
+<span class="k">if</span> <span class="n">WINDOWS</span><span class="p">:</span>
+
+    <span class="c1"># psutil.Process.ionice(ioclass=…)</span>
+<div class="viewcode-block" id="ProcessIOPriority">
+<a class="viewcode-back" href="../../../api/#psutil.ProcessIOPriority">[docs]</a>
+    <span class="k">class</span><span class="w"> </span><span class="nc">ProcessIOPriority</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+        <span class="n">IOPRIO_VERYLOW</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">IOPRIO_LOW</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">IOPRIO_NORMAL</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="n">IOPRIO_HIGH</span> <span class="o">=</span> <span class="mi">3</span></div>
+
+
+    <span class="c1"># psutil.Process.nice()</span>
+    <span class="k">class</span><span class="w"> </span><span class="nc">ProcessPriority</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+        <span class="n">ABOVE_NORMAL_PRIORITY_CLASS</span> <span class="o">=</span> <span class="n">_psutil</span><span class="o">.</span><span class="n">ABOVE_NORMAL_PRIORITY_CLASS</span>
+        <span class="n">BELOW_NORMAL_PRIORITY_CLASS</span> <span class="o">=</span> <span class="n">_psutil</span><span class="o">.</span><span class="n">BELOW_NORMAL_PRIORITY_CLASS</span>
+        <span class="n">HIGH_PRIORITY_CLASS</span> <span class="o">=</span> <span class="n">_psutil</span><span class="o">.</span><span class="n">HIGH_PRIORITY_CLASS</span>
+        <span class="n">IDLE_PRIORITY_CLASS</span> <span class="o">=</span> <span class="n">_psutil</span><span class="o">.</span><span class="n">IDLE_PRIORITY_CLASS</span>
+        <span class="n">NORMAL_PRIORITY_CLASS</span> <span class="o">=</span> <span class="n">_psutil</span><span class="o">.</span><span class="n">NORMAL_PRIORITY_CLASS</span>
+        <span class="n">REALTIME_PRIORITY_CLASS</span> <span class="o">=</span> <span class="n">_psutil</span><span class="o">.</span><span class="n">REALTIME_PRIORITY_CLASS</span>
+
+
+<span class="k">if</span> <span class="n">LINUX</span> <span class="ow">or</span> <span class="n">FREEBSD</span><span class="p">:</span>
+
+    <span class="c1"># psutil.Process.rlimit()</span>
+    <span class="n">ProcessRlimit</span> <span class="o">=</span> <span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">(</span>
+        <span class="s2">"ProcessRlimit"</span><span class="p">,</span>
+        <span class="p">(</span>
+            <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">_psutil</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">_psutil</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"RLIM"</span><span class="p">)</span> <span class="ow">and</span> <span class="n">name</span><span class="o">.</span><span class="n">isupper</span><span class="p">()</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+</pre></div>
+<div class="section ablog__blog_comments">
+   
+</div>
+
+        </article>
+        
+        
+      </div>
+
+      
+    </div>
+  </main>
+
+  
+  <footer class="footer" role="contentinfo">
+  <div class="footer-content">
+    <div class="footer-text">
+      <span><a class="footer-egg" href="../../../404/" title="🥚">&copy;</a> 2009-2026 Giampaolo Rodola</span>
+      <span><a href="../../../about/"
+               title="About this documentation site">About</a></span>
+    </div>
+    <div class="footer-icons">
+      <a class="footer-github" href="https://github.com/giampaolo/psutil"
+         title="psutil on GitHub" aria-label="psutil on GitHub"
+         rel="noopener noreferrer" target="_blank">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+      </a>
+      <a class="footer-pypi" href="https://pypi.org/project/psutil/"
+         title="psutil on PyPI" aria-label="psutil on PyPI"
+         rel="noopener noreferrer" target="_blank">
+        <i class="fa-brands fa-python" aria-hidden="true"></i>
+      </a>
+      <a class="footer-rss" href="../../../blog/atom.xml"
+         title="Subscribe to blog (Atom feed)" aria-label="Subscribe to blog">
+        <span class="rss-icon"></span>
+      </a>
+    </div>
+  </div>
+</footer>
+</div>
+
+  </body>
+</html>

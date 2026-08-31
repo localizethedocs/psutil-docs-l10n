@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+
+<html data-content_root="../" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="食谱" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="https://psutil.io/recipes/" property="og:url"/>
+<meta content="psutil" property="og:site_name"/>
+<meta content="A collection of standalone, copy-paste solutions to specific problems. Each recipe focuses on a single problem and provides a minimal solution which can be a..." property="og:description"/>
+<meta content="1146" property="og:image:width"/>
+<meta content="600" property="og:image:height"/>
+<meta content="https://psutil.io/_images/social_previews/summary_recipes_9d55f123.png" property="og:image"/>
+<meta content="A collection of standalone, copy-paste solutions to specific problems. Each recipe focuses on a single problem and provides a minimal solution which can be a..." property="og:image:alt"/>
+<meta content="A collection of standalone, copy-paste solutions to specific problems. Each recipe focuses on a single problem and provides a minimal solution which can be a..." name="description"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<title>食谱 — psutil</title>
+<link href="../_static/pygments.css?v=8f2a1f02" rel="stylesheet" type="text/css"/>
+<link href="../_static/basic.css?v=29da98fa" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-codeautolink.css?v=b2176991" rel="stylesheet" type="text/css"/>
+<link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/base.css?v=fa4013d4" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/fonts.css?v=e753a5f7" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/fontawesome.css?v=51ff6dc7" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/typography.css?v=e7b40542" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/admonitions.css?v=163ddbc1" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/api-signatures.css?v=f032e3fc" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/blog.css?v=5f195cc9" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/changelog.css?v=9bdb527a" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/code.css?v=0681a11b" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/comments.css?v=f39a9342" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/dev-banner.css?v=6210bb1f" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/doc-icons.css?v=78c7cf07" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/footer.css?v=5d6b8d43" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/layout.css?v=cf2ca8d4" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/left-sidebar.css?v=dd06a93c" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/prev-next.css?v=ca7d359d" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/print.css?v=ece16c97" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/right-sidebar.css?v=81efec8f" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/search.css?v=82d539d2" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/tables.css?v=c600f876" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/topbar.css?v=1a2cb74e" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/home.css?v=50cb9b55" rel="stylesheet" type="text/css"/>
+<script src="../_static/documentation_options.js?v=cb502616"></script>
+<script src="../_static/doctools.js?v=fd6eb6e6"></script>
+<script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+<script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="../_static/copybutton.js?v=35a8b989"></script>
+<script src="../_static/translations.js?v=540d3cec"></script>
+<script src="../_static/design-tabs.js?v=f930bc37"></script>
+<script defer="defer" src="../_static/js/back-to-top.js?v=7b97b66a"></script>
+<script defer="defer" src="../_static/js/external-urls.js?v=ea4e66fd"></script>
+<script defer="defer" src="../_static/js/giscus.js?v=7fd73528"></script>
+<script defer="defer" src="../_static/js/github-meta.js?v=efa66c56"></script>
+<script defer="defer" src="../_static/js/highlight-repl.js?v=8e31535c"></script>
+<script defer="defer" src="../_static/js/home-install-copy.js?v=be638b0c"></script>
+<script defer="defer" src="../_static/js/right-toc.js?v=160f6df3"></script>
+<script defer="defer" src="../_static/js/search-dim.js?v=b004caf9"></script>
+<script defer="defer" src="../_static/js/search-shortcuts.js?v=26c0729f"></script>
+<script defer="defer" src="../_static/js/shortcuts-help.js?v=f76503f8"></script>
+<script defer="defer" src="../_static/js/sidebar-mobile.js?v=8d0c24bd"></script>
+<script defer="defer" src="../_static/js/theme-toggle.js?v=6f028c03"></script>
+<link href="https://projects.localizethedocs.org/psutil-docs-l10n/recipes/" rel="canonical"/>
+<link href="../_static/favicon.svg" rel="icon"/>
+<link href="../about/" rel="author" title="关于此文档"/>
+<link href="../genindex/" rel="index" title="索引"/>
+<link href="../search/" rel="search" title="搜索"/>
+<link href="../shell-equivalents/" rel="next" title="Shell 等效命令"/>
+<link href="../performance/" rel="prev" title="性能"/>
+<link href="../_static/images/logo-psutil.png" rel="apple-touch-icon"/>
+<script>
+(function() {
+    const html = document.documentElement;
+    html.classList.add('no-transition');
+    const saved = localStorage.getItem('psutil-sphinx-theme');
+    const theme = saved || (
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+    );
+    html.setAttribute('data-theme', theme);
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            html.classList.remove('no-transition');
+        });
+    });
+})();
+</script>
+<script async="" data-goatcounter="https://psutil.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-G7374TFB11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G7374TFB11');
+</script>
+<link href="../blog/atom.xml" rel="alternate" title="Blog" type="application/atom+xml"/>
+<script src="../ltd-provenance.js" type="text/javascript"></script>
+<script src="../ltd-current.js" type="text/javascript"></script>
+<script src="../../../ltd-config.js" type="text/javascript"></script>
+<script src="../../../ltd-flyout.js" type="text/javascript"></script>
+</head><body data-page="recipes">
+<header class="topbar no-visited" role="banner">
+<div class="topbar-inner">
+<button aria-expanded="false" aria-label="Toggle navigation" class="topbar-hamburger" id="sidebar-toggle" type="button">
+<i aria-hidden="true" class="fa-solid fa-bars"></i>
+</button><a class="topbar-logo" href="../"><img alt="" src="../_static/images/logo-psutil.svg"/>
+<span>psutil</span>
+</a>
+<nav aria-label="Site actions" class="topbar-actions">
+<a class="topbar-text" href="../blog/">Blog</a>
+<button aria-label="Toggle theme" class="topbar-btn" id="theme-toggle" title="Toggle dark mode (shift+D)" type="button">
+<i aria-hidden="true" class="fa-regular fa-moon"></i>
+</button>
+<a aria-label="GitHub repository" class="topbar-link topbar-github" href="https://github.com/giampaolo/psutil" rel="noopener" target="_blank" title="GitHub">
+<i aria-hidden="true" class="fa-brands fa-github"></i>
+<span class="topbar-stars" data-repo="giampaolo/psutil"></span>
+</a>
+<a aria-label="PyPI release" class="topbar-version" data-repo="giampaolo/psutil" href="https://pypi.org/project/psutil" rel="noopener" target="_blank" title="PyPI"></a>
+</nav>
+</div>
+</header>
+<div class="page">
+<nav aria-label="Main navigation" class="left-sidebar no-visited">
+<div class="search-box">
+<form action="../search/" method="get" role="search">
+<input aria-label="Search docs" autocapitalize="off" autocomplete="off" autocorrect="off" id="search-input" name="q" placeholder="搜索" spellcheck="false" type="text"/>
+<span aria-hidden="true" class="search-kbd"><kbd>Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+</div>
+<p class="caption" role="heading"><span class="caption-text">文档</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api-overview/">API概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/">API 参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/">性能</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">食谱</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">参考</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../shell-equivalents/">Shell 等效命令</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stdlib-equivalents/">标准库等价实现</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary/">术语表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/">平台支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/">移植</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">关于</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../adoption/">谁在用 psutil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../alternatives/">备选方案</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funding/">赞助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../credits/">致谢</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">项目</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../blog/">博客</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog/">变更历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timeline/">时间线</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devguide/">开发指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex/">基本索引</a></li>
+</ul>
+</nav>
+<main class="main" id="main-content" role="main">
+<div class="dev-banner" role="note">
+  You're reading the <strong>development</strong> version of the psutil
+  docs, which may describe unreleased changes. For the current release
+  see <a href="https://psutil.readthedocs.io/stable/">psutil.readthedocs.io/stable</a>.
+</div>
+<div class="article-with-toc">
+<div class="article-column">
+<article class="article">
+<section id="recipes">
+<h1>食谱<a class="headerlink" href="#recipes" title="链接到此标题。">¶</a></h1>
+<p>A collection of standalone, copy-paste solutions to specific problems. Each
+recipe focuses on a single problem and provides a minimal solution which can be
+adapted to real-world code. The examples are intentionally short and avoid
+unnecessary abstractions so that the underlying psutil APIs are easy to
+understand. Most of them are not meant to be used in production.</p>
+<section id="processes">
+<h2>进程<a class="headerlink" href="#processes" title="链接到此标题。">¶</a></h2>
+<section id="finding-processes">
+<h3>Finding processes<a class="headerlink" href="#finding-processes" title="链接到此标题。">¶</a></h3>
+<p id="recipe-find-process-by-name">Find process by name:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">find_procs_by_name</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="n">ls</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.process_iter" title="psutil.process_iter"><span class="n">psutil</span><span class="o">.</span><span class="n">process_iter</span></a><span class="p">([</span><span class="s2">"name"</span><span class="p">]):</span>
+        <span class="k">if</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.name" title="psutil.Process.name"><span class="n">p</span><span class="o">.</span><span class="n">name</span></a><span class="p">()</span> <span class="o">==</span> <span class="n">name</span><span class="p">:</span>
+            <span class="n">ls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">p</span></a><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ls</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<p>A bit more advanced, check string against <a class="reference internal" href="../api/#psutil.Process.name" title="psutil.Process.name"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.name()</span></code></a>,
+<a class="reference internal" href="../api/#psutil.Process.exe" title="psutil.Process.exe"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.exe()</span></code></a> and <a class="reference internal" href="../api/#psutil.Process.cmdline" title="psutil.Process.cmdline"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.cmdline()</span></code></a>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/os.html#module-os" title="os"><span class="nn">os</span></a><span class="o">,</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">find_procs_by_name_ex</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="n">ls</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.process_iter" title="psutil.process_iter"><span class="n">psutil</span><span class="o">.</span><span class="n">process_iter</span></a><span class="p">([</span><span class="s2">"name"</span><span class="p">,</span> <span class="s2">"exe"</span><span class="p">,</span> <span class="s2">"cmdline"</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="n">name</span> <span class="o">==</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.name" title="psutil.Process.name"><span class="n">p</span><span class="o">.</span><span class="n">name</span></a><span class="p">()</span>
+            <span class="ow">or</span> <span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/#psutil.Process.exe" title="psutil.Process.exe"><span class="n">p</span><span class="o">.</span><span class="n">exe</span></a><span class="p">()</span> <span class="ow">and</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/os.path.html#os.path.basename" title="os.path.basename"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/#psutil.Process.exe" title="psutil.Process.exe"><span class="n">p</span><span class="o">.</span><span class="n">exe</span></a><span class="p">())</span> <span class="o">==</span> <span class="n">name</span><span class="p">)</span>
+            <span class="ow">or</span> <span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/#psutil.Process.cmdline" title="psutil.Process.cmdline"><span class="n">p</span><span class="o">.</span><span class="n">cmdline</span></a><span class="p">()</span> <span class="ow">and</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.cmdline" title="psutil.Process.cmdline"><span class="n">p</span><span class="o">.</span><span class="n">cmdline</span></a><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">name</span><span class="p">)</span>
+        <span class="p">):</span>
+            <span class="n">ls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">p</span></a><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ls</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<p>Find the process listening on a given TCP port:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">find_proc_by_port</span><span class="p">(</span><span class="n">port</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">proc</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.process_iter" title="psutil.process_iter"><span class="n">psutil</span><span class="o">.</span><span class="n">process_iter</span></a><span class="p">():</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">cons</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.net_connections" title="psutil.Process.net_connections"><span class="n">proc</span><span class="o">.</span><span class="n">net_connections</span></a><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">"tcp"</span><span class="p">)</span>
+        <span class="k">except</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Error" title="psutil.Error"><span class="n">psutil</span><span class="o">.</span><span class="n">Error</span></a><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">conn</span> <span class="ow">in</span> <span class="n">cons</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">conn</span><span class="o">.</span><span class="n">laddr</span><span class="o">.</span><span class="n">port</span> <span class="o">==</span> <span class="n">port</span> <span class="ow">and</span> <span class="n">conn</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.CONN_LISTEN" title="psutil.CONN_LISTEN"><span class="n">psutil</span><span class="o">.</span><span class="n">CONN_LISTEN</span></a><span class="p">:</span>
+                    <span class="k">return</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">proc</span></a>
+    <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<p>Find all processes that have an active connection to a given remote IP:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">find_procs_by_remote_host</span><span class="p">(</span><span class="n">host</span><span class="p">):</span>
+    <span class="n">ls</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">proc</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.process_iter" title="psutil.process_iter"><span class="n">psutil</span><span class="o">.</span><span class="n">process_iter</span></a><span class="p">():</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">cons</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.net_connections" title="psutil.Process.net_connections"><span class="n">proc</span><span class="o">.</span><span class="n">net_connections</span></a><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">"inet"</span><span class="p">)</span>
+        <span class="k">except</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Error" title="psutil.Error"><span class="n">psutil</span><span class="o">.</span><span class="n">Error</span></a><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">conn</span> <span class="ow">in</span> <span class="n">cons</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">conn</span><span class="o">.</span><span class="n">raddr</span> <span class="ow">and</span> <span class="n">conn</span><span class="o">.</span><span class="n">raddr</span><span class="o">.</span><span class="n">ip</span> <span class="o">==</span> <span class="n">host</span><span class="p">:</span>
+                    <span class="n">ls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">proc</span></a><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ls</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<p>Find all processes that have a given file open (useful on Windows):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">find_procs_using_file</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="n">ls</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.process_iter" title="psutil.process_iter"><span class="n">psutil</span><span class="o">.</span><span class="n">process_iter</span></a><span class="p">([</span><span class="s2">"open_files"</span><span class="p">]):</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.open_files" title="psutil.Process.open_files"><span class="n">p</span><span class="o">.</span><span class="n">open_files</span></a><span class="p">()</span> <span class="ow">or</span> <span class="p">[]:</span>
+            <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">path</span> <span class="o">==</span> <span class="n">path</span><span class="p">:</span>
+                <span class="n">ls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">p</span></a><span class="p">)</span>
+                <span class="k">break</span>
+    <span class="k">return</span> <span class="n">ls</span>
+</pre></div>
+</div>
+</section>
+<section id="filtering-and-sorting-processes">
+<h3>Filtering and sorting processes<a class="headerlink" href="#filtering-and-sorting-processes" title="链接到此标题。">¶</a></h3>
+<p>Processes owned by user:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/getpass.html#module-getpass" title="getpass"><span class="nn">getpass</span></a><span class="o">,</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">procs_by_user</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">user</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">user</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/getpass.html#getpass.getuser" title="getpass.getuser"><span class="n">getpass</span><span class="o">.</span><span class="n">getuser</span></a><span class="p">()</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">pid</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">())</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.process_iter" title="psutil.process_iter"><span class="n">psutil</span><span class="o">.</span><span class="n">process_iter</span></a><span class="p">([</span><span class="s2">"name"</span><span class="p">,</span> <span class="s2">"username"</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">username</span><span class="p">()</span> <span class="o">==</span> <span class="n">user</span>
+    <span class="p">]</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<p>Processes using log files:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.process_iter" title="psutil.process_iter"><span class="n">psutil</span><span class="o">.</span><span class="n">process_iter</span></a><span class="p">([</span><span class="s2">"name"</span><span class="p">,</span> <span class="s2">"open_files"</span><span class="p">]):</span>
+<span class="gp">... </span>     <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.open_files" title="psutil.Process.open_files"><span class="n">p</span><span class="o">.</span><span class="n">open_files</span></a><span class="p">()</span> <span class="ow">or</span> <span class="p">[]:</span>
+<span class="gp">... </span>         <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">".log"</span><span class="p">):</span>
+<span class="gp">... </span>              <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><span class="s2">"</span><span class="si">{:&lt;5}</span><span class="s2"> </span><span class="si">{:&lt;10}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/#psutil.Process.pid" title="psutil.Process.pid"><span class="n">p</span><span class="o">.</span><span class="n">pid</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.name" title="psutil.Process.name"><span class="n">p</span><span class="o">.</span><span class="n">name</span></a><span class="p">()[:</span><span class="mi">10</span><span class="p">],</span> <span class="n">file</span><span class="o">.</span><span class="n">path</span><span class="p">))</span>
+<span class="gp">...</span>
+<span class="go">1510  upstart    /home/giampaolo/.cache/upstart/unity-settings-daemon.log</span>
+<span class="go">2174  nautilus   /home/giampaolo/.local/share/gvfs-metadata/home-ce08efac.log</span>
+<span class="go">2650  chrome     /home/giampaolo/.config/google-chrome/Default/data_reduction_proxy_leveldb/000003.log</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<p>Processes consuming more than 500M of memory:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">procs_by_memory</span><span class="p">(</span><span class="n">min_bytes</span><span class="o">=</span><span class="mi">500</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">pid</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">(),</span> <span class="n">p</span><span class="o">.</span><span class="n">memory_info</span><span class="p">()</span><span class="o">.</span><span class="n">rss</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.process_iter" title="psutil.process_iter"><span class="n">psutil</span><span class="o">.</span><span class="n">process_iter</span></a><span class="p">([</span><span class="s2">"name"</span><span class="p">,</span> <span class="s2">"memory_info"</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">memory_info</span><span class="p">()</span><span class="o">.</span><span class="n">rss</span> <span class="o">&gt;</span> <span class="n">min_bytes</span>
+    <span class="p">]</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<p>Top N processes by <a class="reference internal" href="../glossary/#term-cumulative-counter"><span class="xref std std-term">cumulative</span></a> CPU time:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">top_cpu_procs</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">procs</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#sorted" title="sorted"><span class="nb">sorted</span></a><span class="p">(</span>
+        <a class="sphinx-codeautolink-a" href="../api/#psutil.process_iter" title="psutil.process_iter"><span class="n">psutil</span><span class="o">.</span><span class="n">process_iter</span></a><span class="p">([</span><span class="s2">"name"</span><span class="p">,</span> <span class="s2">"cpu_times"</span><span class="p">]),</span>
+        <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#sum" title="sum"><span class="nb">sum</span></a><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">cpu_times</span><span class="p">()[:</span><span class="mi">2</span><span class="p">]),</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="p">[(</span><span class="n">p</span><span class="o">.</span><span class="n">pid</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">(),</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#sum" title="sum"><span class="nb">sum</span></a><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">cpu_times</span><span class="p">()))</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">procs</span><span class="p">[</span><span class="o">-</span><span class="n">n</span><span class="p">:]]</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<p>Top N processes by <a class="reference internal" href="../glossary/#term-cumulative-counter"><span class="xref std std-term">cumulative</span></a> disk read + write
+bytes (similar to <code class="docutils literal notranslate"><span class="pre">iotop</span></code>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">top_io_procs</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">procs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.process_iter" title="psutil.process_iter"><span class="n">psutil</span><span class="o">.</span><span class="n">process_iter</span></a><span class="p">([</span><span class="s2">"io_counters"</span><span class="p">]):</span>
+        <span class="n">io</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.io_counters" title="psutil.Process.io_counters"><span class="n">p</span><span class="o">.</span><span class="n">io_counters</span></a><span class="p">()</span>
+        <span class="n">procs</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">io</span><span class="o">.</span><span class="n">read_bytes</span> <span class="o">+</span> <span class="n">io</span><span class="o">.</span><span class="n">write_bytes</span><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">p</span></a><span class="p">))</span>
+    <span class="n">procs</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">procs</span><span class="p">[:</span><span class="n">n</span><span class="p">]</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<p>Top N processes by open file descriptors (useful for diagnosing fd leaks):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">top_open_files</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">procs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.process_iter" title="psutil.process_iter"><span class="n">psutil</span><span class="o">.</span><span class="n">process_iter</span></a><span class="p">([</span><span class="s2">"num_fds"</span><span class="p">]):</span>
+        <span class="n">procs</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><a class="sphinx-codeautolink-a" href="../api/#psutil.Process.num_fds" title="psutil.Process.num_fds"><span class="n">p</span><span class="o">.</span><span class="n">num_fds</span></a><span class="p">(),</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">p</span></a><span class="p">))</span>
+    <span class="n">procs</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">procs</span><span class="p">[:</span><span class="n">n</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="monitoring-processes">
+<h3>Monitoring processes<a class="headerlink" href="#monitoring-processes" title="链接到此标题。">¶</a></h3>
+<p>Periodically monitor CPU and memory usage of a process using
+<a class="reference internal" href="../api/#psutil.Process.oneshot" title="psutil.Process.oneshot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.oneshot()</span></code></a> for efficiency:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#module-time" title="time"><span class="nn">time</span></a><span class="o">,</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">monitor</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">p</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">psutil</span><span class="o">.</span><span class="n">Process</span></a><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
+    <span class="k">while</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.is_running" title="psutil.Process.is_running"><span class="n">p</span><span class="o">.</span><span class="n">is_running</span></a><span class="p">():</span>
+        <span class="k">with</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.oneshot" title="psutil.Process.oneshot"><span class="n">p</span><span class="o">.</span><span class="n">oneshot</span></a><span class="p">():</span>
+            <span class="n">cpu</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.cpu_percent" title="psutil.Process.cpu_percent"><span class="n">p</span><span class="o">.</span><span class="n">cpu_percent</span></a><span class="p">()</span>
+            <span class="n">mem</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.memory_info" title="psutil.Process.memory_info"><span class="n">p</span><span class="o">.</span><span class="n">memory_info</span></a><span class="p">()</span><span class="o">.</span><span class="n">rss</span>
+            <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><span class="s2">"cpu=</span><span class="si">{:&lt;6}</span><span class="s2"> mem=</span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#str" title="str"><span class="nb">str</span></a><span class="p">(</span><span class="n">cpu</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"%"</span><span class="p">,</span> <span class="n">mem</span> <span class="o">/</span> <span class="mi">1024</span> <span class="o">/</span> <span class="mi">1024</span><span class="p">))</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.sleep" title="time.sleep"><span class="n">time</span><span class="o">.</span><span class="n">sleep</span></a><span class="p">(</span><span class="n">interval</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cpu=4.2%   mem=23.4M
+cpu=3.1%   mem=23.5M
+</pre></div>
+</div>
+</section>
+<section id="controlling-processes">
+<h3>Controlling processes<a class="headerlink" href="#controlling-processes" title="链接到此标题。">¶</a></h3>
+<p id="recipe-kill-proc-tree">Kill a process tree (including grandchildren):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/os.html#module-os" title="os"><span class="nn">os</span></a><span class="o">,</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/signal.html#module-signal" title="signal"><span class="nn">signal</span></a><span class="o">,</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">kill_proc_tree</span><span class="p">(</span>
+    <span class="n">pid</span><span class="p">,</span>
+    <span class="n">sig</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/signal.html#signal.SIGTERM" title="signal.SIGTERM"><span class="n">signal</span><span class="o">.</span><span class="n">SIGTERM</span></a><span class="p">,</span>
+    <span class="n">include_parent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">on_terminate</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Kill a process tree (including grandchildren) with signal</span>
+<span class="sd">    "sig" and return a (gone, still_alive) tuple.</span>
+<span class="sd">    "on_terminate", if specified, is a callback function which is</span>
+<span class="sd">    called as soon as a child terminates.</span>
+<span class="sd">    """</span>
+    <span class="k">assert</span> <span class="n">pid</span> <span class="o">!=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/os.html#os.getpid" title="os.getpid"><span class="n">os</span><span class="o">.</span><span class="n">getpid</span></a><span class="p">(),</span> <span class="s2">"I won't kill myself!"</span>
+    <a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">parent</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">psutil</span><span class="o">.</span><span class="n">Process</span></a><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
+    <span class="n">children</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.children" title="psutil.Process.children"><span class="n">parent</span><span class="o">.</span><span class="n">children</span></a><span class="p">(</span><span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># Reverse the list so that descendants are killed before</span>
+    <span class="c1"># their ancestors (bottom-up order). ``children()`` returns</span>
+    <span class="c1"># processes in top-down order; reversing ensures a grandchild</span>
+    <span class="c1"># is terminated before its parent.</span>
+    <span class="n">children</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">include_parent</span><span class="p">:</span>
+        <span class="n">children</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">parent</span></a><span class="p">)</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">children</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.send_signal" title="psutil.Process.send_signal"><span class="n">p</span><span class="o">.</span><span class="n">send_signal</span></a><span class="p">(</span><span class="n">sig</span><span class="p">)</span>
+        <span class="k">except</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.NoSuchProcess" title="psutil.NoSuchProcess"><span class="n">psutil</span><span class="o">.</span><span class="n">NoSuchProcess</span></a><span class="p">:</span>
+            <span class="k">pass</span>
+    <span class="n">gone</span><span class="p">,</span> <span class="n">alive</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.wait_procs" title="psutil.wait_procs"><span class="n">psutil</span><span class="o">.</span><span class="n">wait_procs</span></a><span class="p">(</span>
+        <span class="n">children</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">on_terminate</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">gone</span><span class="p">,</span> <span class="n">alive</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>On Unix, if you started the subprocess with <code class="docutils literal notranslate"><span class="pre">subprocess.Popen</span></code> you can often
+use the stdlib <code class="docutils literal notranslate"><span class="pre">os.killpg()</span></code> instead of this recipe. Create the process with
+<code class="docutils literal notranslate"><span class="pre">process_group=0</span></code> so that it gets its own process group, then call
+<code class="docutils literal notranslate"><span class="pre">os.killpg(pgid,</span> <span class="pre">sig)</span></code>. This is simpler, does not require psutil, and still
+cleans up all descendants even when an intermediate process has exited:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/os.html#module-os" title="os"><span class="nn">os</span></a>
+<span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/signal.html#module-signal" title="signal"><span class="nn">signal</span></a>
+<span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/subprocess.html#module-subprocess" title="subprocess"><span class="nn">subprocess</span></a>
+
+<a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/subprocess.html#subprocess.Popen" title="subprocess.Popen"><span class="n">proc</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/subprocess.html#subprocess.Popen" title="subprocess.Popen"><span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span></a><span class="p">([</span><span class="s2">"cmd"</span><span class="p">,</span> <span class="s2">"arg1"</span><span class="p">],</span> <span class="n">process_group</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># ... later:</span>
+<a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/os.html#os.killpg" title="os.killpg"><span class="n">os</span><span class="o">.</span><span class="n">killpg</span></a><span class="p">(</span><span class="n">proc</span><span class="o">.</span><span class="n">pid</span><span class="p">,</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/signal.html#signal.SIGTERM" title="signal.SIGTERM"><span class="n">signal</span><span class="o">.</span><span class="n">SIGTERM</span></a><span class="p">)</span>
+</pre></div>
+</div>
+<p>This approach does not work on Windows (<code class="docutils literal notranslate"><span class="pre">os.killpg</span></code> is not available) and it
+only works for PIDs that you started yourself as a new process group. For
+arbitrary PIDs, use the psutil recipe above.</p>
+<hr class="docutils"/>
+<p>Terminate a process gracefully, falling back to <code class="docutils literal notranslate"><span class="pre">SIGKILL</span></code> if it does not exit
+within the timeout:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">graceful_kill</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+    <a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">p</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">psutil</span><span class="o">.</span><span class="n">Process</span></a><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
+    <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.terminate" title="psutil.Process.terminate"><span class="n">p</span><span class="o">.</span><span class="n">terminate</span></a><span class="p">()</span>
+    <span class="k">try</span><span class="p">:</span>
+        <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.wait" title="psutil.Process.wait"><span class="n">p</span><span class="o">.</span><span class="n">wait</span></a><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+    <span class="k">except</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.TimeoutExpired" title="psutil.TimeoutExpired"><span class="n">psutil</span><span class="o">.</span><span class="n">TimeoutExpired</span></a><span class="p">:</span>
+        <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.kill" title="psutil.Process.kill"><span class="n">p</span><span class="o">.</span><span class="n">kill</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<p>Temporarily pause and resume a process using a context manager:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/contextlib.html#module-contextlib" title="contextlib"><span class="nn">contextlib</span></a><span class="o">,</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/contextlib.html#contextlib.contextmanager" title="contextlib.contextmanager"><span class="nd">@contextlib</span><span class="o">.</span><span class="n">contextmanager</span></a>
+<span class="k">def</span><span class="w"> </span><span class="nf">suspended</span><span class="p">(</span><span class="n">pid</span><span class="p">):</span>
+    <a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">p</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">psutil</span><span class="o">.</span><span class="n">Process</span></a><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
+    <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.suspend" title="psutil.Process.suspend"><span class="n">p</span><span class="o">.</span><span class="n">suspend</span></a><span class="p">()</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">yield</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">p</span></a>
+    <span class="k">finally</span><span class="p">:</span>
+        <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.resume" title="psutil.Process.resume"><span class="n">p</span><span class="o">.</span><span class="n">resume</span></a><span class="p">()</span>
+
+<span class="c1"># usage</span>
+<span class="k">with</span> <span class="n">suspended</span><span class="p">(</span><span class="n">pid</span><span class="p">):</span>
+    <span class="k">pass</span>  <span class="c1"># process is paused here</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<p>CPU throttle: limit a process's CPU usage to a target percentage by alternating
+<a class="reference internal" href="../api/#psutil.Process.suspend" title="psutil.Process.suspend"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.suspend()</span></code></a> and <a class="reference internal" href="../api/#psutil.Process.resume" title="psutil.Process.resume"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.resume()</span></code></a>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#module-time" title="time"><span class="nn">time</span></a><span class="o">,</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">throttle</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span> <span class="n">max_cpu_percent</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Slow down a process so it uses at most max_cpu_percent% CPU."""</span>
+    <a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">p</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">psutil</span><span class="o">.</span><span class="n">Process</span></a><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
+    <span class="k">while</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.is_running" title="psutil.Process.is_running"><span class="n">p</span><span class="o">.</span><span class="n">is_running</span></a><span class="p">():</span>
+        <span class="n">cpu</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.cpu_percent" title="psutil.Process.cpu_percent"><span class="n">p</span><span class="o">.</span><span class="n">cpu_percent</span></a><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="n">interval</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">cpu</span> <span class="o">&gt;</span> <span class="n">max_cpu_percent</span><span class="p">:</span>
+            <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.suspend" title="psutil.Process.suspend"><span class="n">p</span><span class="o">.</span><span class="n">suspend</span></a><span class="p">()</span>
+            <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.sleep" title="time.sleep"><span class="n">time</span><span class="o">.</span><span class="n">sleep</span></a><span class="p">(</span><span class="n">interval</span> <span class="o">*</span> <span class="n">cpu</span> <span class="o">/</span> <span class="n">max_cpu_percent</span><span class="p">)</span>
+            <a class="sphinx-codeautolink-a" href="../api/#psutil.Process.resume" title="psutil.Process.resume"><span class="n">p</span><span class="o">.</span><span class="n">resume</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<p>Restart a process automatically if it dies:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/subprocess.html#module-subprocess" title="subprocess"><span class="nn">subprocess</span></a><span class="o">,</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#module-time" title="time"><span class="nn">time</span></a><span class="o">,</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">watchdog</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">max_restarts</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Run cmd as a persistent process. Restart on failure, optionally</span>
+<span class="sd">    with a max restarts. Logs start, exit, and restart events.</span>
+<span class="sd">    """</span>
+    <span class="n">restarts</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/subprocess.html#subprocess.Popen" title="subprocess.Popen"><span class="n">proc</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/subprocess.html#subprocess.Popen" title="subprocess.Popen"><span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span></a><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+        <a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">p</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.Process" title="psutil.Process"><span class="n">psutil</span><span class="o">.</span><span class="n">Process</span></a><span class="p">(</span><span class="n">proc</span><span class="o">.</span><span class="n">pid</span><span class="p">)</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><span class="sa">f</span><span class="s2">"started PID </span><span class="si">{</span><a class="sphinx-codeautolink-a" href="../api/#psutil.Process.pid" title="psutil.Process.pid"><span class="n">p</span><span class="o">.</span><span class="n">pid</span></a><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/subprocess.html#subprocess.Popen.wait" title="subprocess.Popen.wait"><span class="n">proc</span><span class="o">.</span><span class="n">wait</span></a><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">proc</span><span class="o">.</span><span class="n">returncode</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># success</span>
+            <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><span class="sa">f</span><span class="s2">"PID </span><span class="si">{</span><a class="sphinx-codeautolink-a" href="../api/#psutil.Process.pid" title="psutil.Process.pid"><span class="n">p</span><span class="o">.</span><span class="n">pid</span></a><span class="si">}</span><span class="s2"> exited cleanly"</span><span class="p">)</span>
+            <span class="k">break</span>
+
+        <span class="c1"># failure</span>
+        <span class="n">restarts</span> <span class="o">+=</span> <span class="mi">1</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><span class="sa">f</span><span class="s2">"PID </span><span class="si">{</span><a class="sphinx-codeautolink-a" href="../api/#psutil.Process.pid" title="psutil.Process.pid"><span class="n">p</span><span class="o">.</span><span class="n">pid</span></a><span class="si">}</span><span class="s2"> died, restarting (</span><span class="si">{</span><span class="n">restarts</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">max_restarts</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">restarts</span> <span class="o">&gt;</span> <span class="n">max_restarts</span><span class="p">:</span>
+            <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><span class="s2">"max restarts reached, giving up"</span><span class="p">)</span>
+            <span class="k">break</span>
+
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.sleep" title="time.sleep"><span class="n">time</span><span class="o">.</span><span class="n">sleep</span></a><span class="p">(</span><span class="n">interval</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">watchdog</span><span class="p">([</span><span class="s2">"python3"</span><span class="p">,</span> <span class="s2">"script.py"</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="system">
+<h2>System<a class="headerlink" href="#system" title="链接到此标题。">¶</a></h2>
+<p>All APIs returning amounts (memory, disk, network I/O) express them in bytes.
+The examples below use <a class="reference internal" href="../api/#psutil.bytes2human" title="psutil.bytes2human"><code class="xref py py-func docutils literal notranslate"><span class="pre">psutil.bytes2human()</span></code></a> to convert them to a
+human-readable string.</p>
+<section id="cpu">
+<h3>CPU<a class="headerlink" href="#cpu" title="链接到此标题。">¶</a></h3>
+<p>Print real-time CPU usage percentage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><span class="s2">"CPU: </span><span class="si">{}</span><span class="s2">%"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/#psutil.cpu_percent" title="psutil.cpu_percent"><span class="n">psutil</span><span class="o">.</span><span class="n">cpu_percent</span></a><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">)))</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>CPU: 2.1%
+CPU: 1.4%
+CPU: 0.9%
+</pre></div>
+</div>
+</section>
+<section id="memory">
+<h3>Memory<a class="headerlink" href="#memory" title="链接到此标题。">¶</a></h3>
+<p id="recipe-swap-activity">Show real-time swap activity <em>(Linux, BSD)</em>. <code class="docutils literal notranslate"><span class="pre">sout</span></code> (<a class="reference internal" href="../glossary/#term-swap-out"><span class="xref std std-term">swap-out</span></a>) is the
+key metric: a non-zero and growing rate means the OS is moving memory from RAM
+to disk because RAM is full. <code class="docutils literal notranslate"><span class="pre">sin</span></code> (<a class="reference internal" href="../glossary/#term-swap-in"><span class="xref std std-term">swap-in</span></a>) alone is not alarming;
+it just means the system is moving previously evicted pages back into RAM. High
+<code class="docutils literal notranslate"><span class="pre">sin</span></code> and <code class="docutils literal notranslate"><span class="pre">sout</span></code> together may indicate heavy swapping (<a class="reference internal" href="../glossary/#term-thrashing"><span class="xref std std-term">thrashing</span></a>).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a><span class="o">,</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#module-time" title="time"><span class="nn">time</span></a>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">swap_activity</span><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">before</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.swap_memory" title="psutil.swap_memory"><span class="n">psutil</span><span class="o">.</span><span class="n">swap_memory</span></a><span class="p">()</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.sleep" title="time.sleep"><span class="n">time</span><span class="o">.</span><span class="n">sleep</span></a><span class="p">(</span><span class="n">interval</span><span class="p">)</span>
+        <span class="n">after</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.swap_memory" title="psutil.swap_memory"><span class="n">psutil</span><span class="o">.</span><span class="n">swap_memory</span></a><span class="p">()</span>
+        <span class="n">sin</span>  <span class="o">=</span> <span class="n">after</span><span class="o">.</span><span class="n">sin</span>  <span class="o">-</span> <span class="n">before</span><span class="o">.</span><span class="n">sin</span>
+        <span class="n">sout</span> <span class="o">=</span> <span class="n">after</span><span class="o">.</span><span class="n">sout</span> <span class="o">-</span> <span class="n">before</span><span class="o">.</span><span class="n">sout</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><span class="s2">"swap-in=</span><span class="si">{}</span><span class="s2">/s  swap-out=</span><span class="si">{}</span><span class="s2">/s  used=</span><span class="si">{}</span><span class="s2">%"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <a class="sphinx-codeautolink-a" href="../api/#psutil.bytes2human" title="psutil.bytes2human"><span class="n">psutil</span><span class="o">.</span><span class="n">bytes2human</span></a><span class="p">(</span><span class="n">sin</span><span class="p">),</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.bytes2human" title="psutil.bytes2human"><span class="n">psutil</span><span class="o">.</span><span class="n">bytes2human</span></a><span class="p">(</span><span class="n">sout</span><span class="p">),</span> <span class="n">after</span><span class="o">.</span><span class="n">percent</span><span class="p">))</span>
+        <span class="n">before</span> <span class="o">=</span> <span class="n">after</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>swap-in=0.0B/s  swap-out=0.0B/s  used=23%
+swap-in=0.0B/s  swap-out=1.2M/s  used=24%
+</pre></div>
+</div>
+</section>
+<section id="disks">
+<h3>磁盘<a class="headerlink" href="#disks" title="链接到此标题。">¶</a></h3>
+<p id="recipe-disk-io">Show real-time disk I/O:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a><span class="o">,</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#module-time" title="time"><span class="nn">time</span></a>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">disk_io</span><span class="p">():</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">before</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.disk_io_counters" title="psutil.disk_io_counters"><span class="n">psutil</span><span class="o">.</span><span class="n">disk_io_counters</span></a><span class="p">()</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.sleep" title="time.sleep"><span class="n">time</span><span class="o">.</span><span class="n">sleep</span></a><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">after</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.disk_io_counters" title="psutil.disk_io_counters"><span class="n">psutil</span><span class="o">.</span><span class="n">disk_io_counters</span></a><span class="p">()</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">after</span><span class="o">.</span><span class="n">read_bytes</span> <span class="o">-</span> <span class="n">before</span><span class="o">.</span><span class="n">read_bytes</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="n">after</span><span class="o">.</span><span class="n">write_bytes</span> <span class="o">-</span> <span class="n">before</span><span class="o">.</span><span class="n">write_bytes</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><span class="s2">"Read: </span><span class="si">{}</span><span class="s2">/s, Write: </span><span class="si">{}</span><span class="s2">/s"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <a class="sphinx-codeautolink-a" href="../api/#psutil.bytes2human" title="psutil.bytes2human"><span class="n">psutil</span><span class="o">.</span><span class="n">bytes2human</span></a><span class="p">(</span><span class="n">r</span><span class="p">),</span>
+            <a class="sphinx-codeautolink-a" href="../api/#psutil.bytes2human" title="psutil.bytes2human"><span class="n">psutil</span><span class="o">.</span><span class="n">bytes2human</span></a><span class="p">(</span><span class="n">w</span><span class="p">))</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Read: 1.2M/s, Write: 256.0K/s
+Read: 0.0B/s, Write: 128.0K/s
+</pre></div>
+</div>
+<hr class="docutils"/>
+<p id="recipe-disk-io-percent">Show real-time disk utilization percentage <em>(Linux, FreeBSD)</em>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a><span class="o">,</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#module-time" title="time"><span class="nn">time</span></a>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">disk_io_percent</span><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">before</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.disk_io_counters" title="psutil.disk_io_counters"><span class="n">psutil</span><span class="o">.</span><span class="n">disk_io_counters</span></a><span class="p">()</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.sleep" title="time.sleep"><span class="n">time</span><span class="o">.</span><span class="n">sleep</span></a><span class="p">(</span><span class="n">interval</span><span class="p">)</span>
+        <span class="n">after</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.disk_io_counters" title="psutil.disk_io_counters"><span class="n">psutil</span><span class="o">.</span><span class="n">disk_io_counters</span></a><span class="p">()</span>
+        <span class="n">busy_ms</span> <span class="o">=</span> <span class="n">after</span><span class="o">.</span><span class="n">busy_time</span> <span class="o">-</span> <span class="n">before</span><span class="o">.</span><span class="n">busy_time</span>
+        <span class="n">util</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#min" title="min"><span class="nb">min</span></a><span class="p">(</span><span class="n">busy_ms</span> <span class="o">/</span> <span class="p">(</span><span class="n">interval</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><span class="s2">"Disk: </span><span class="si">{:.1f}</span><span class="s2">%"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">util</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Disk: 3.2%
+Disk: 78.5%
+</pre></div>
+</div>
+</section>
+<section id="network">
+<h3>Network<a class="headerlink" href="#network" title="链接到此标题。">¶</a></h3>
+<p>Show real-time network I/O per interface:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a><span class="o">,</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#module-time" title="time"><span class="nn">time</span></a>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">net_io</span><span class="p">():</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">before</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.net_io_counters" title="psutil.net_io_counters"><span class="n">psutil</span><span class="o">.</span><span class="n">net_io_counters</span></a><span class="p">(</span><span class="n">pernic</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.sleep" title="time.sleep"><span class="n">time</span><span class="o">.</span><span class="n">sleep</span></a><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">after</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.net_io_counters" title="psutil.net_io_counters"><span class="n">psutil</span><span class="o">.</span><span class="n">net_io_counters</span></a><span class="p">(</span><span class="n">pernic</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">iface</span> <span class="ow">in</span> <span class="n">after</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">after</span><span class="p">[</span><span class="n">iface</span><span class="p">]</span><span class="o">.</span><span class="n">bytes_sent</span> <span class="o">-</span> <span class="n">before</span><span class="p">[</span><span class="n">iface</span><span class="p">]</span><span class="o">.</span><span class="n">bytes_sent</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">after</span><span class="p">[</span><span class="n">iface</span><span class="p">]</span><span class="o">.</span><span class="n">bytes_recv</span> <span class="o">-</span> <span class="n">before</span><span class="p">[</span><span class="n">iface</span><span class="p">]</span><span class="o">.</span><span class="n">bytes_recv</span>
+            <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span>
+                <span class="s2">"</span><span class="si">{:&lt;10}</span><span class="s2"> sent=</span><span class="si">{:&lt;10}</span><span class="s2"> recv=</span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">iface</span><span class="p">,</span>
+                    <a class="sphinx-codeautolink-a" href="../api/#psutil.bytes2human" title="psutil.bytes2human"><span class="n">psutil</span><span class="o">.</span><span class="n">bytes2human</span></a><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"/s"</span><span class="p">,</span>
+                    <a class="sphinx-codeautolink-a" href="../api/#psutil.bytes2human" title="psutil.bytes2human"><span class="n">psutil</span><span class="o">.</span><span class="n">bytes2human</span></a><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"/s"</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>lo         sent=0.0B/s    recv=0.0B/s
+eth0       sent=12.3K/s   recv=45.6K/s
+</pre></div>
+</div>
+<hr class="docutils"/>
+<p>List all active TCP connections with their status:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">netstat</span><span class="p">():</span>
+    <span class="n">templ</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:&lt;20}</span><span class="s2"> </span><span class="si">{:&lt;20}</span><span class="s2"> </span><span class="si">{:&lt;13}</span><span class="s2"> </span><span class="si">{:&lt;6}</span><span class="s2">"</span>
+    <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><span class="n">templ</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">"Local"</span><span class="p">,</span> <span class="s2">"Remote"</span><span class="p">,</span> <span class="s2">"Status"</span><span class="p">,</span> <span class="s2">"PID"</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">conn</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../api/#psutil.net_connections" title="psutil.net_connections"><span class="n">psutil</span><span class="o">.</span><span class="n">net_connections</span></a><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">"tcp"</span><span class="p">):</span>
+        <span class="n">laddr</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{}</span><span class="s2">:</span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">conn</span><span class="o">.</span><span class="n">laddr</span><span class="o">.</span><span class="n">ip</span><span class="p">,</span> <span class="n">conn</span><span class="o">.</span><span class="n">laddr</span><span class="o">.</span><span class="n">port</span><span class="p">)</span>
+        <span class="n">raddr</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">"</span><span class="si">{}</span><span class="s2">:</span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">conn</span><span class="o">.</span><span class="n">raddr</span><span class="o">.</span><span class="n">ip</span><span class="p">,</span> <span class="n">conn</span><span class="o">.</span><span class="n">raddr</span><span class="o">.</span><span class="n">port</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">conn</span><span class="o">.</span><span class="n">raddr</span>
+            <span class="k">else</span> <span class="s2">"-"</span>
+        <span class="p">)</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><span class="n">templ</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">laddr</span><span class="p">,</span> <span class="n">raddr</span><span class="p">,</span> <span class="n">conn</span><span class="o">.</span><span class="n">status</span><span class="p">,</span> <span class="n">conn</span><span class="o">.</span><span class="n">pid</span> <span class="ow">or</span> <span class="s2">""</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Local             Remote              Status        PID
+:::1716           -                   LISTEN        223441
+127.0.0.1:631     -                   LISTEN
+10.0.0.4:45278    20.222.111.74:443   ESTABLISHED   437213
+10.0.0.4:40130    172.14.148.135:443  ESTABLISHED
+0.0.0.0:22        -                   LISTEN        723345
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<div class="section ablog__blog_comments">
+</div>
+</article>
+<nav aria-label="Previous and next pages" class="prev-next no-visited">
+<a class="prev-next-prev" href="../performance/" rel="prev">
+<span aria-hidden="true" class="prev-next-arrow">‹</span>
+<span class="prev-next-block">
+<span class="prev-next-label">Previous</span>
+<span class="prev-next-title">性能</span>
+</span>
+</a>
+<a class="prev-next-next" href="../shell-equivalents/" rel="next">
+<span class="prev-next-block">
+<span class="prev-next-label">Next</span>
+<span class="prev-next-title">Shell 等效命令</span>
+</span>
+<span aria-hidden="true" class="prev-next-arrow">›</span>
+</a>
+</nav>
+</div>
+<aside aria-label="On this page" class="right-sidebar">
+<div class="right-sidebar-title">On this page</div>
+<ul>
+<li><a class="reference internal" href="#">食谱</a><ul>
+<li><a class="reference internal" href="#processes">进程</a><ul>
+<li><a class="reference internal" href="#finding-processes">Finding processes</a></li>
+<li><a class="reference internal" href="#filtering-and-sorting-processes">Filtering and sorting processes</a></li>
+<li><a class="reference internal" href="#monitoring-processes">Monitoring processes</a></li>
+<li><a class="reference internal" href="#controlling-processes">Controlling processes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#system">System</a><ul>
+<li><a class="reference internal" href="#cpu">CPU</a></li>
+<li><a class="reference internal" href="#memory">Memory</a></li>
+<li><a class="reference internal" href="#disks">磁盘</a></li>
+<li><a class="reference internal" href="#network">Network</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</aside>
+</div>
+</main>
+<footer class="footer" role="contentinfo">
+<div class="footer-content">
+<div class="footer-text">
+<span><a class="footer-egg" href="../404/" title="🥚">©</a> 2009-2026 Giampaolo Rodola</span>
+<span><a href="../about/" title="About this documentation site">About</a></span>
+<span><a href="https://github.com/giampaolo/psutil/edit/master/docs/recipes.rst" rel="noopener noreferrer" target="_blank" title="Edit this page on GitHub">Edit on GitHub</a></span>
+</div>
+<div class="footer-icons">
+<a aria-label="psutil on GitHub" class="footer-github" href="https://github.com/giampaolo/psutil" rel="noopener noreferrer" target="_blank" title="psutil on GitHub">
+<i aria-hidden="true" class="fa-brands fa-github"></i>
+</a>
+<a aria-label="psutil on PyPI" class="footer-pypi" href="https://pypi.org/project/psutil/" rel="noopener noreferrer" target="_blank" title="psutil on PyPI">
+<i aria-hidden="true" class="fa-brands fa-python"></i>
+</a>
+<a aria-label="Subscribe to blog" class="footer-rss" href="../blog/atom.xml" title="Subscribe to blog (Atom feed)">
+<span class="rss-icon"></span>
+</a>
+</div>
+</div>
+</footer>
+</div>
+</body>
+</html>

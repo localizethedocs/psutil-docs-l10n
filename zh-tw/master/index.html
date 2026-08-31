@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+
+<html data-content_root="./" lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="psutil: Process and System Utilities for Python" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="https://psutil.io/" property="og:url"/>
+<meta content="psutil" property="og:site_name"/>
+<meta content="psutil is a cross-platform Python library for retrieving information on running processes and system utilization: CPU, memory, disks, network and sensors." property="og:description"/>
+<meta content="1146" property="og:image:width"/>
+<meta content="600" property="og:image:height"/>
+<meta content="https://psutil.io/_images/social_previews/summary_index_75c9df65.png" property="og:image"/>
+<meta content="psutil is a cross-platform Python library for retrieving information on running processes and system utilization: CPU, memory, disks, network and sensors." property="og:image:alt"/>
+<meta content="psutil is a cross-platform Python library for retrieving information on running processes and system utilization: CPU, memory, disks, network and sensors." name="description"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<title>psutil: Process and System Utilities for Python</title>
+<link href="_static/pygments.css?v=8f2a1f02" rel="stylesheet" type="text/css"/>
+<link href="_static/basic.css?v=29da98fa" rel="stylesheet" type="text/css"/>
+<link href="_static/sphinx-codeautolink.css?v=b2176991" rel="stylesheet" type="text/css"/>
+<link href="_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
+<link href="_static/css/base.css?v=fa4013d4" rel="stylesheet" type="text/css"/>
+<link href="_static/css/fonts.css?v=e753a5f7" rel="stylesheet" type="text/css"/>
+<link href="_static/css/fontawesome.css?v=51ff6dc7" rel="stylesheet" type="text/css"/>
+<link href="_static/css/typography.css?v=e7b40542" rel="stylesheet" type="text/css"/>
+<link href="_static/css/admonitions.css?v=163ddbc1" rel="stylesheet" type="text/css"/>
+<link href="_static/css/api-signatures.css?v=f032e3fc" rel="stylesheet" type="text/css"/>
+<link href="_static/css/blog.css?v=5f195cc9" rel="stylesheet" type="text/css"/>
+<link href="_static/css/changelog.css?v=9bdb527a" rel="stylesheet" type="text/css"/>
+<link href="_static/css/code.css?v=0681a11b" rel="stylesheet" type="text/css"/>
+<link href="_static/css/comments.css?v=f39a9342" rel="stylesheet" type="text/css"/>
+<link href="_static/css/dev-banner.css?v=6210bb1f" rel="stylesheet" type="text/css"/>
+<link href="_static/css/doc-icons.css?v=78c7cf07" rel="stylesheet" type="text/css"/>
+<link href="_static/css/footer.css?v=5d6b8d43" rel="stylesheet" type="text/css"/>
+<link href="_static/css/layout.css?v=cf2ca8d4" rel="stylesheet" type="text/css"/>
+<link href="_static/css/left-sidebar.css?v=dd06a93c" rel="stylesheet" type="text/css"/>
+<link href="_static/css/prev-next.css?v=ca7d359d" rel="stylesheet" type="text/css"/>
+<link href="_static/css/print.css?v=ece16c97" rel="stylesheet" type="text/css"/>
+<link href="_static/css/right-sidebar.css?v=81efec8f" rel="stylesheet" type="text/css"/>
+<link href="_static/css/search.css?v=82d539d2" rel="stylesheet" type="text/css"/>
+<link href="_static/css/tables.css?v=c600f876" rel="stylesheet" type="text/css"/>
+<link href="_static/css/topbar.css?v=1a2cb74e" rel="stylesheet" type="text/css"/>
+<link href="_static/css/home.css?v=50cb9b55" rel="stylesheet" type="text/css"/>
+<script src="_static/documentation_options.js?v=63576a64"></script>
+<script src="_static/doctools.js?v=fd6eb6e6"></script>
+<script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+<script src="_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="_static/copybutton.js?v=35a8b989"></script>
+<script src="_static/translations.js?v=cbf116e0"></script>
+<script src="_static/design-tabs.js?v=f930bc37"></script>
+<script defer="defer" src="_static/js/back-to-top.js?v=7b97b66a"></script>
+<script defer="defer" src="_static/js/external-urls.js?v=ea4e66fd"></script>
+<script defer="defer" src="_static/js/giscus.js?v=7fd73528"></script>
+<script defer="defer" src="_static/js/github-meta.js?v=efa66c56"></script>
+<script defer="defer" src="_static/js/highlight-repl.js?v=8e31535c"></script>
+<script defer="defer" src="_static/js/home-install-copy.js?v=be638b0c"></script>
+<script defer="defer" src="_static/js/right-toc.js?v=160f6df3"></script>
+<script defer="defer" src="_static/js/search-dim.js?v=b004caf9"></script>
+<script defer="defer" src="_static/js/search-shortcuts.js?v=26c0729f"></script>
+<script defer="defer" src="_static/js/shortcuts-help.js?v=f76503f8"></script>
+<script defer="defer" src="_static/js/sidebar-mobile.js?v=8d0c24bd"></script>
+<script defer="defer" src="_static/js/theme-toggle.js?v=6f028c03"></script>
+<link href="https://projects.localizethedocs.org/psutil-docs-l10n/" rel="canonical"/>
+<link href="_static/favicon.svg" rel="icon"/>
+<link href="about/" rel="author" title="關於這些文件"/>
+<link href="genindex/" rel="index" title="索引"/>
+<link href="search/" rel="search" title="搜尋"/>
+<link href="install/" rel="next" title="安裝 psutil"/>
+<link href="_static/images/logo-psutil.png" rel="apple-touch-icon"/>
+<script>
+(function() {
+    const html = document.documentElement;
+    html.classList.add('no-transition');
+    const saved = localStorage.getItem('psutil-sphinx-theme');
+    const theme = saved || (
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+    );
+    html.setAttribute('data-theme', theme);
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            html.classList.remove('no-transition');
+        });
+    });
+})();
+</script>
+<script async="" data-goatcounter="https://psutil.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-G7374TFB11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G7374TFB11');
+</script>
+<link href="blog/atom.xml" rel="alternate" title="Blog" type="application/atom+xml"/>
+<script src="ltd-provenance.js" type="text/javascript"></script>
+<script src="ltd-current.js" type="text/javascript"></script>
+<script src="../../ltd-config.js" type="text/javascript"></script>
+<script src="../../ltd-flyout.js" type="text/javascript"></script>
+</head><body data-page="index">
+<header class="topbar no-visited" role="banner">
+<div class="topbar-inner">
+<button aria-expanded="false" aria-label="Toggle navigation" class="topbar-hamburger" id="sidebar-toggle" type="button">
+<i aria-hidden="true" class="fa-solid fa-bars"></i>
+</button><a class="topbar-logo" href="./"><img alt="" src="_static/images/logo-psutil.svg"/>
+<span>psutil</span>
+</a>
+<nav aria-label="Site actions" class="topbar-actions">
+<a class="topbar-text" href="blog/">Blog</a>
+<button aria-label="Toggle theme" class="topbar-btn" id="theme-toggle" title="Toggle dark mode (shift+D)" type="button">
+<i aria-hidden="true" class="fa-regular fa-moon"></i>
+</button>
+<a aria-label="GitHub repository" class="topbar-link topbar-github" href="https://github.com/giampaolo/psutil" rel="noopener" target="_blank" title="GitHub">
+<i aria-hidden="true" class="fa-brands fa-github"></i>
+<span class="topbar-stars" data-repo="giampaolo/psutil"></span>
+</a>
+<a aria-label="PyPI release" class="topbar-version" data-repo="giampaolo/psutil" href="https://pypi.org/project/psutil" rel="noopener" target="_blank" title="PyPI"></a>
+</nav>
+</div>
+</header>
+<div class="page">
+<nav aria-label="Main navigation" class="left-sidebar no-visited">
+<div class="search-box">
+<form action="search/" method="get" role="search">
+<input aria-label="Search docs" autocapitalize="off" autocomplete="off" autocorrect="off" id="search-input" name="q" placeholder="搜尋" spellcheck="false" type="text"/>
+<span aria-hidden="true" class="search-kbd"><kbd>Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+</div>
+<p class="caption" role="heading"><span class="caption-text">文件</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install/">安裝</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-overview/">API 概覽</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/">API 參考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq/">常見問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance/">效能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recipes/">Recipes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">參考</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="shell-equivalents/">Shell equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stdlib-equivalents/">Stdlib equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary/">詞彙表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platform/">平臺支援</a></li>
+<li class="toctree-l1"><a class="reference internal" href="migration/">遷移</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">關於</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adoption/">誰在使用 psutil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alternatives/">Alternatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funding/">Funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits/">Credits</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">專案</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="blog/">網誌</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog/">變更日誌</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timeline/">時間線</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devguide/">開發指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="genindex/">General Index</a></li>
+</ul>
+</nav>
+<main class="main" id="main-content" role="main">
+<div class="dev-banner" role="note">
+  You're reading the <strong>development</strong> version of the psutil
+  docs, which may describe unreleased changes. For the current release
+  see <a href="https://psutil.readthedocs.io/stable/">psutil.readthedocs.io/stable</a>.
+</div>
+<div class="article-with-toc no-toc">
+<div class="article-column">
+<article class="article">
+<span class="target" id="module-psutil"></span><script>document.body.classList.add('home-page');</script>
+<div class="hero">
+<h1 class="hero-title"><img alt="psutil logo" class="hero-logo" src="_static/images/logo-psutil.svg"/><span>psutil</span></h1>
+<div class="hero-subtitle">Python 的進程與系統實用工具</div>
+</div><div class="home-intro docutils container">
+<p>Psutil 是一個跨平臺的程式庫，用於在 Python 中擷取正在執行的進程與系統資源使用情況的資訊。它主要用於系統監控、性能分析、限制進程資源以及管理正在執行的進程。Psutil 實作了許多類似 UNIX 命令行工具所提供的功能，例如 ps、top、free、iotop、netstat、ifconfig、lsof 等等。</p>
+</div>
+<div aria-label="Install command" class="home-install" role="group">
+<span aria-hidden="true" class="home-install-prompt">$</span>
+<code class="home-install-cmd">pip install psutil</code>
+<button aria-label="Copy install command" class="home-install-copy" type="button">
+<svg aria-hidden="true" class="home-install-icon-copy" fill="none" height="14" stroke="currentColor" stroke-width="1.6" viewbox="0 0 16 16" width="14">
+<rect height="9" rx="1.2" width="9" x="4" y="4"></rect>
+<path d="M3 11V3a1 1 0 0 1 1-1h8"></path>
+</svg>
+<svg aria-hidden="true" class="home-install-icon-check" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16" width="14">
+<path d="M3 8.5l3.5 3.5L13 5"></path>
+</svg>
+</button>
+<span aria-hidden="true" class="home-install-toast">Copied</span>
+</div><div class="home-platforms">
+<a class="home-platforms-label" href="platform/">Runs on</a>
+<div class="home-platforms-pills">
+<a class="home-platform-pill" href="platform/">Linux</a>
+<a class="home-platform-pill" href="platform/">Windows</a>
+<a class="home-platform-pill" href="platform/">macOS</a>
+<a class="home-platform-pill" href="platform/">FreeBSD</a>
+<a class="home-platform-pill" href="platform/">OpenBSD</a>
+<a class="home-platform-pill" href="platform/">NetBSD</a>
+<a class="home-platform-pill" href="platform/">Solaris</a>
+<a class="home-platform-pill" href="platform/">AIX</a>
+</div>
+</div><div class="home-section-label">探索 API</div>
+<div class="home-feature-cards">
+<a class="home-feature-card" href="api/#cpu">
+<img alt="" class="home-icon-svg" src="_static/images/icon-cpu.svg"/>
+<div class="home-feature-title">CPU</div>
+</a>
+<a class="home-feature-card" href="api/#memory">
+<img alt="" class="home-icon-svg" src="_static/images/icon-memory.svg"/>
+<div class="home-feature-title">記憶體</div>
+</a>
+<a class="home-feature-card" href="api/#disks">
+<img alt="" class="home-icon-svg" src="_static/images/icon-disks.svg"/>
+<div class="home-feature-title">磁碟</div>
+</a>
+<a class="home-feature-card" href="api/#network">
+<img alt="" class="home-icon-svg" src="_static/images/icon-network.svg"/>
+<div class="home-feature-title">網路</div>
+</a>
+<a class="home-feature-card" href="api/#sensors">
+<img alt="" class="home-icon-svg" src="_static/images/icon-sensors.svg"/>
+<div class="home-feature-title">感測器</div>
+</a>
+<a class="home-feature-card" href="api/#processes">
+<img alt="" class="home-icon-svg" src="_static/images/icon-processes.svg"/>
+<div class="home-feature-title">進程</div>
+</a>
+</div><div class="home-section-label">試試看</div><div class="home-quickstart docutils container">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio"/>
+<label class="sd-tab-label" for="sd-tab-item-0">
+CPU</label><div class="sd-tab-content docutils">
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api/#psutil.cpu_times" title="psutil.cpu_times"><span class="n">psutil</span><span class="o">.</span><span class="n">cpu_times</span></a><span class="p">()</span>
+<span class="go">scputimes(user=3961.46, nice=169.72, system=2150.65, idle=16900.54, iowait=629.59, ...)</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api/#psutil.cpu_percent" title="psutil.cpu_percent"><span class="n">psutil</span><span class="o">.</span><span class="n">cpu_percent</span></a><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">4.0</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api/#psutil.cpu_count" title="psutil.cpu_count"><span class="n">psutil</span><span class="o">.</span><span class="n">cpu_count</span></a><span class="p">(</span><span class="n">logical</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api/#psutil.cpu_freq" title="psutil.cpu_freq"><span class="n">psutil</span><span class="o">.</span><span class="n">cpu_freq</span></a><span class="p">()</span>
+<span class="go">scpufreq(current=931.42, min=800.0, max=3500.0)</span>
+</pre></div>
+</div>
+<div class="home-tab-more docutils container">
+<p><a class="reference internal" href="api-overview/#api-overview-cpu"><span class="std std-ref">查看更多 →</span></a></p>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio"/>
+<label class="sd-tab-label" for="sd-tab-item-1">
+記憶體</label><div class="sd-tab-content docutils">
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api/#psutil.virtual_memory" title="psutil.virtual_memory"><span class="n">psutil</span><span class="o">.</span><span class="n">virtual_memory</span></a><span class="p">()</span>
+<span class="go">svmem(total=10367352832, available=6472179712, percent=37.6, used=8186245120, free=2181107712, ...)</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api/#psutil.swap_memory" title="psutil.swap_memory"><span class="n">psutil</span><span class="o">.</span><span class="n">swap_memory</span></a><span class="p">()</span>
+<span class="go">sswap(total=2097147904, used=296128512, free=1801019392, percent=14.1, sin=304193536, sout=677842944)</span>
+</pre></div>
+</div>
+<div class="home-tab-more docutils container">
+<p><a class="reference internal" href="api-overview/#api-overview-memory"><span class="std std-ref">查看更多 →</span></a></p>
+</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio"/>
+<label class="sd-tab-label" for="sd-tab-item-2">
+磁碟</label><div class="sd-tab-content docutils">
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api/#psutil.disk_partitions" title="psutil.disk_partitions"><span class="n">psutil</span><span class="o">.</span><span class="n">disk_partitions</span></a><span class="p">()</span>
+<span class="go">[sdiskpart(device='/dev/sda1', mountpoint='/',     fstype='ext4', opts='rw,nosuid'),</span>
+<span class="go"> sdiskpart(device='/dev/sda2', mountpoint='/home', fstype='ext4', opts='rw')]</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api/#psutil.disk_usage" title="psutil.disk_usage"><span class="n">psutil</span><span class="o">.</span><span class="n">disk_usage</span></a><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
+<span class="go">sdiskusage(total=21378641920, used=4809781248, free=15482871808, percent=22.5)</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api/#psutil.disk_io_counters" title="psutil.disk_io_counters"><span class="n">psutil</span><span class="o">.</span><span class="n">disk_io_counters</span></a><span class="p">()</span>
+<span class="go">sdiskio(read_count=719566, write_count=1082197, read_bytes=18626220, write_bytes=24081764, ...)</span>
+</pre></div>
+</div>
+<div class="home-tab-more docutils container">
+<p><a class="reference internal" href="api-overview/#api-overview-disks"><span class="std std-ref">查看更多 →</span></a></p>
+</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio"/>
+<label class="sd-tab-label" for="sd-tab-item-3">
+網路</label><div class="sd-tab-content docutils">
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api/#psutil.net_io_counters" title="psutil.net_io_counters"><span class="n">psutil</span><span class="o">.</span><span class="n">net_io_counters</span></a><span class="p">(</span><span class="n">pernic</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">{'eth0': netio(bytes_sent=485291293, bytes_recv=6004858642, ...),</span>
+<span class="go"> 'lo':   netio(bytes_sent=2838627,   bytes_recv=2838627,   ...)}</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api/#psutil.net_connections" title="psutil.net_connections"><span class="n">psutil</span><span class="o">.</span><span class="n">net_connections</span></a><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'tcp'</span><span class="p">)</span>
+<span class="go">[sconn(family=2, type=1, laddr=addr('10.0.0.1', 48776), raddr=addr('93.186.135.91', 80), status='ESTABLISHED', pid=1254), ...]</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api/#psutil.net_if_addrs" title="psutil.net_if_addrs"><span class="n">psutil</span><span class="o">.</span><span class="n">net_if_addrs</span></a><span class="p">()[</span><span class="s1">'wlan0'</span><span class="p">]</span>
+<span class="go">[snicaddr(family=2,  address='192.168.1.3', netmask='255.255.255.0', ...), ...]</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api/#psutil.net_if_stats" title="psutil.net_if_stats"><span class="n">psutil</span><span class="o">.</span><span class="n">net_if_stats</span></a><span class="p">()[</span><span class="s1">'wlan0'</span><span class="p">]</span>
+<span class="go">snicstats(isup=True, duplex=2, speed=100, mtu=1500, flags='up,broadcast,running')</span>
+</pre></div>
+</div>
+<div class="home-tab-more docutils container">
+<p><a class="reference internal" href="api-overview/#api-overview-network"><span class="std std-ref">查看更多 →</span></a></p>
+</div>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-0" type="radio"/>
+<label class="sd-tab-label" for="sd-tab-item-4">
+感測器</label><div class="sd-tab-content docutils">
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api/#psutil.sensors_temperatures" title="psutil.sensors_temperatures"><span class="n">psutil</span><span class="o">.</span><span class="n">sensors_temperatures</span></a><span class="p">()</span>
+<span class="go">{'coretemp': [shwtemp(label='Physical id 0', current=52.0, high=100.0, critical=100.0),</span>
+<span class="go">              shwtemp(label='Core 0',        current=45.0, high=100.0, critical=100.0)],</span>
+<span class="go"> 'acpitz':   [shwtemp(label='',              current=47.0, high=103.0, critical=103.0)]}</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api/#psutil.sensors_fans" title="psutil.sensors_fans"><span class="n">psutil</span><span class="o">.</span><span class="n">sensors_fans</span></a><span class="p">()</span>
+<span class="go">{'asus': [sfan(label='cpu_fan', current=3200)]}</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api/#psutil.sensors_battery" title="psutil.sensors_battery"><span class="n">psutil</span><span class="o">.</span><span class="n">sensors_battery</span></a><span class="p">()</span>
+<span class="go">sbattery(percent=93, secsleft=16628, power_plugged=False)</span>
+</pre></div>
+</div>
+<div class="home-tab-more docutils container">
+<p><a class="reference internal" href="api-overview/#api-overview-sensors"><span class="std std-ref">查看更多 →</span></a></p>
+</div>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-0" type="radio"/>
+<label class="sd-tab-label" for="sd-tab-item-5">
+進程</label><div class="sd-tab-content docutils">
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api/#psutil.Process" title="psutil.Process"><span class="n">p</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="api/#psutil.Process" title="psutil.Process"><span class="n">psutil</span><span class="o">.</span><span class="n">Process</span></a><span class="p">(</span><span class="mi">7055</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api/#psutil.Process.name" title="psutil.Process.name"><span class="n">p</span><span class="o">.</span><span class="n">name</span></a><span class="p">(),</span> <a class="sphinx-codeautolink-a" href="api/#psutil.Process.exe" title="psutil.Process.exe"><span class="n">p</span><span class="o">.</span><span class="n">exe</span></a><span class="p">(),</span> <a class="sphinx-codeautolink-a" href="api/#psutil.Process.cmdline" title="psutil.Process.cmdline"><span class="n">p</span><span class="o">.</span><span class="n">cmdline</span></a><span class="p">()</span>
+<span class="go">('python3', '/usr/bin/python3', ['/usr/bin/python3', 'main.py'])</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api/#psutil.Process.status" title="psutil.Process.status"><span class="n">p</span><span class="o">.</span><span class="n">status</span></a><span class="p">()</span>
+<span class="go">&lt;ProcessStatus.STATUS_RUNNING: 'running'&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api/#psutil.Process.cpu_percent" title="psutil.Process.cpu_percent"><span class="n">p</span><span class="o">.</span><span class="n">cpu_percent</span></a><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="go">12.1</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api/#psutil.Process.memory_info" title="psutil.Process.memory_info"><span class="n">p</span><span class="o">.</span><span class="n">memory_info</span></a><span class="p">()</span>
+<span class="go">pmem(rss=3164160, vms=4410163, shared=897433, text=302694, data=2422374)</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api/#psutil.Process.parent" title="psutil.Process.parent"><span class="n">p</span><span class="o">.</span><span class="n">parent</span></a><span class="p">(),</span> <a class="sphinx-codeautolink-a" href="api/#psutil.Process.children" title="psutil.Process.children"><span class="n">p</span><span class="o">.</span><span class="n">children</span></a><span class="p">(</span><span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">(psutil.Process(pid=4699, name='bash'), [psutil.Process(pid=29835, name='python3'), ...])</span>
+</pre></div>
+</div>
+<div class="home-tab-more docutils container">
+<p><a class="reference internal" href="api-overview/#api-overview-processes"><span class="std std-ref">查看更多 →</span></a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="home-section-label">Stats</div>
+<div class="home-stats">
+<a class="home-stat" href="https://clickpy.clickhouse.com/dashboard/psutil">
+<span class="home-stat-num">390+ million</span>
+<span class="home-stat-label">downloads per month</span>
+</a>
+<a class="home-stat" href="https://github.com/giampaolo/psutil/network/dependents">
+<span class="home-stat-num">780,000+</span>
+<span class="home-stat-label">GitHub repositories</span>
+</a>
+<a class="home-stat" href="timeline/">
+<span class="home-stat-num">18 years</span>
+<span class="home-stat-label">in active development</span>
+</a>
+</div><div id="sponsors">
+<div class="home-section-label">贊助者</div><table border="0" cellpadding="10" cellspacing="0" class="sponsor-table">
+<tr>
+<td align="center" style="vertical-align: middle;">
+<a aria-label="Tidelift" href="https://tidelift.com/subscription/pkg/pypi-psutil?utm_source=pypi-psutil&amp;utm_medium=referral&amp;utm_campaign=readme">
+<?xml version="1.0" encoding="utf-8"?>
+<svg id="Artwork" version="1.1" viewbox="2 2 187 29" width="160" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+<style type="text/css">
+            .st0{fill:#4B5168;}
+            .st1{fill:#F6914D;}
+            :root[data-theme="dark"] .st0{fill:#c8cad0;}
+          </style>
+<g>
+<path class="st0" d="M33.4,27.7V5.3c0-2.3,0-2.3,2.4-2.3c2.4,0,2.4,0,2.4,2.3v22.4c0,2.3,0,2.3-2.4,2.3C33.4,29.9,33.4,29.9,33.4,27.7z"></path>
+<path class="st0" d="M45,26.4V6.6c0-3.6,0-3.6,3.6-3.6h5.8c7.8,0,12.5,3.9,13,10.2c0.2,2.2,0.2,3.4,0,5.5c-0.5,6.3-5.3,11.2-13,11.2h-5.8C45,29.9,45,29.9,45,26.4z M54.3,25.4c5.3,0,8-3,8.3-7.1c0.1-1.8,0.1-2.8,0-4.6c-0.3-4.2-3-6.1-8.3-6.1h-4.5v17.8H54.3z"></path>
+<path class="st0" d="M73.8,26.4V6.6c0-3.6,0-3.6,3.6-3.6h13.5c2.3,0,2.3,0,2.3,2.2c0,2.2,0,2.2-2.3,2.2H78.6v6.9h11c2.2,0,2.2,0,2.2,2.1c0,2.1,0,2.1-2.2,2.1h-11v6.9h12.3c2.3,0,2.3,0,2.3,2.2c0,2.3,0,2.3-2.3,2.3H77.4C73.8,29.9,73.8,29.9,73.8,26.4z"></path>
+<path class="st0" d="M100,26.4v-21c0-2.3,0-2.3,2.4-2.3c2.4,0,2.4,0,2.4,2.3v20.2h11.9c2.4,0,2.4,0,2.4,2.2c0,2.2,0,2.2-2.4,2.2h-13.1C100,29.9,100,29.9,100,26.4z"></path>
+<path class="st0" d="M125.8,27.7V5.3c0-2.3,0-2.3,2.4-2.3c2.4,0,2.4,0,2.4,2.3v22.4c0,2.3,0,2.3-2.4,2.3C125.8,29.9,125.8,29.9,125.8,27.7z"></path>
+<path class="st0" d="M137.4,27.7V6.6c0-3.6,0-3.6,3.6-3.6h13.5c2.3,0,2.3,0,2.3,2.2c0,2.2,0,2.2-2.3,2.2h-12.2v7.2h11.3c2.3,0,2.3,0,2.3,2.2c0,2.2,0,2.2-2.3,2.2h-11.3v8.6c0,2.3,0,2.3-2.4,2.3S137.4,29.9,137.4,27.7z"></path>
+<path class="st0" d="M24.2,3.1H5.5c-2.4,0-2.4,0-2.4,2.2c0,2.2,0,2.2,2.4,2.2h7v4.7v3.2l4.8-3.7v-1.1V7.5h7c2.4,0,2.4,0,2.4-2.2C26.6,3.1,26.6,3.1,24.2,3.1z"></path>
+<path class="st1" d="M12.5,20v7.6c0,2.3,0,2.3,2.4,2.3c2.4,0,2.4,0,2.4-2.3V16.3L12.5,20z"></path>
+<g>
+<path class="st0" d="M165.9,3.1h18.7c2.4,0,2.4,0,2.4,2.2c0,2.2,0,2.2-2.4,2.2h-7v4.7v3.2l-4.8-3.7v-1.1V7.5h-7c-2.4,0-2.4,0-2.4-2.2C163.5,3.1,163.5,3.1,165.9,3.1z"></path>
+<path class="st1" d="M177.6,20v7.6c0,2.3,0,2.3-2.4,2.3c-2.4,0-2.4,0-2.4-2.3V16.3L177.6,20z"></path>
+</g>
+</g>
+</svg>
+</a>
+</td>
+<td align="center" style="vertical-align: middle;">
+<a aria-label="Sansec" href="https://sansec.io/">
+<svg viewbox="0 0 186 34.854" width="145" xmlns="http://www.w3.org/2000/svg">
+<style>.s-dark{fill:#1d2227;}:root[data-theme="dark"] .s-dark{fill:#c8cad0;}</style>
+<g class="s-dark"><path d="m0 26.351 6.117-2.823c.941 2.319 2.756 4.5 5.983 4.5 2.252 0 4.3-1.109 4.3-3.731 0-2.017-1.109-2.958-4.336-4.235l-2.117-.807c-4.537-1.815-8.705-4.3-8.705-9.814.002-5.841 4.909-9.441 10.791-9.441a11.935 11.935 0 0 1 11.192 7.226l-5.579 3.159c-1.479-2.588-3.193-3.664-5.31-3.664-2.05 0-3.63.941-3.63 2.857 0 1.479.874 2.622 4.4 4.067l2.286.907c6.117 2.386 8.84 5.176 8.84 9.848 0 7.058-6.319 10.453-12.033 10.453-5.981.001-10.922-3.528-12.199-8.502z"></path><path d="m80.7 39.906c0-8.671 6.218-12.906 11.864-12.906 4.4 0 6.991 2.386 7.361 3.294h.134v-2.823h7.394v24.838h-7.393v-2.824h-.134c-.37.907-2.958 3.294-7.361 3.294-5.647 0-11.865-4.235-11.865-12.873zm19.528 0a6.1 6.1 0 1 0 -12.2 0 6.1 6.1 0 1 0 12.2 0z" transform="translate(-53.576 -17.925)"></path><path d="m199.7 37.688v14.621h-7.4v-13.309c0-3.092-1.58-5.411-4.638-5.411-2.991 0-4.571 2.286-4.571 5.411v13.31h-7.391v-24.839h7.394v3.159a8.293 8.293 0 0 1 7.327-3.63c5.008 0 9.279 3.092 9.279 10.688z" transform="translate(-116.647 -17.925)"></path><path d="m257.6 45.655 5.882-1.58a3.591 3.591 0 0 0 3.6 2.857c1.344 0 2.588-.672 2.588-2.05 0-.807-.471-1.58-2.117-2.117l-3.327-1.244c-4.1-1.479-5.882-4.168-5.882-7.26 0-4.638 4.168-7.361 9.041-7.361 4.672 0 8.066 2.622 8.94 6.655l-5.819 1.445a2.888 2.888 0 0 0 -2.857-2.353c-1.445 0-2.151.874-2.151 1.714 0 .807.471 1.58 2.151 2.117l3.092 1.143c2.689.907 6.218 2.756 6.218 7.26 0 5.008-4.235 7.831-9.781 7.831-5.041.001-8.805-2.318-9.578-7.057z" transform="translate(-171.02 -17.859)"></path><path d="m347.171 42.763h-17.679c1.008 2.689 3.5 4 6.789 4a9.5 9.5 0 0 0 5.983-1.916l3.327 3.5a12.629 12.629 0 0 1 -10.117 4.437c-6.89 0-13.074-4.672-13.074-12.839 0-8.4 6.252-12.94 12.671-12.94 6.285-.005 13.68 4.395 12.1 15.758zm-17.814-5.31h11.327a5.345 5.345 0 0 0 -5.546-4.235 5.693 5.693 0 0 0 -5.781 4.235z" transform="translate(-214.04 -17.925)"></path></g>
+<path d="m505.48 31.2a12.836 12.836 0 0 0 -9.68-4.4v25.813a12.836 12.836 0 0 0 9.68-4.4 12.818 12.818 0 0 1 0-17.007z" fill="#00a19a" transform="translate(-329.16 -17.792)"></path>
+<path d="m524.6 31.2a12.818 12.818 0 0 1 0 17.007 12.836 12.836 0 0 0 9.68 4.4v-25.807a12.89 12.89 0 0 0 -9.68 4.4z" fill="#fc0" transform="translate(-348.28 -17.792)"></path>
+<path d="m518.227 39.9a12.819 12.819 0 0 0 0 17.007 12.818 12.818 0 0 0 0-17.007z" fill="#3f1f71" transform="translate(-341.906 -26.489)"></path>
+<path class="s-dark" d="m425.175 48.376a13.086 13.086 0 0 1 -2.722-4.974 6.412 6.412 0 0 1 -5.21 2.722 5.886 5.886 0 0 1 -5.915-6.252 5.857 5.857 0 0 1 5.915-6.151 6.458 6.458 0 0 1 5.176 2.689 12.879 12.879 0 0 1 2.756-5.075c.235-.269.5-.538.773-.807a11.972 11.972 0 0 0 -8.705-3.528c-6.655 0-13.243 4.437-13.243 12.839 0 8.5 6.588 12.94 13.242 12.94a12.11 12.11 0 0 0 8.739-3.6z" transform="translate(-268.214 -17.925)"></path>
+</svg>
+</a>
+</td>
+<td align="center" style="vertical-align: middle;">
+<a aria-label="APIVoid" href="https://www.apivoid.com/">
+<svg viewbox="0 0 400 120" width="130" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<style>.a-dark{fill:#130f40;}:root[data-theme="dark"] .a-dark{fill:#c8cad0;}</style>
+<lineargradient id="apivoid-a">
+<stop offset="0" stop-color="#ee5b24"></stop>
+<stop offset=".5" stop-color="#f38321"></stop>
+<stop offset="1" stop-color="#f79e1f"></stop>
+</lineargradient>
+<lineargradient gradienttransform="matrix(.79919 0 0 .79919 -253.764 -207.28)" gradientunits="userSpaceOnUse" id="apivoid-b" x1="416.183" x2="416.183" xlink:href="#apivoid-a" y1="409.143" y2="267.974"></lineargradient>
+</defs>
+<path d="M149.65 6.916c-2.023 0-3.802.769-5.339 2.306-1.456 1.456-2.183 3.235-2.183 5.338s.727 3.884 2.183 5.34c1.537 1.456 3.316 2.184 5.339 2.184 2.103 0 3.883-.728 5.34-2.184 1.536-1.456 2.305-3.237 2.305-5.34 0-2.103-.769-3.882-2.306-5.338-1.456-1.537-3.236-2.306-5.34-2.306zm0 22.568c-2.023 0-3.802.769-5.339 2.306-1.456 1.456-2.183 3.196-2.183 5.218v45.864c0 2.022.727 3.802 2.183 5.338 1.537 1.456 3.316 2.186 5.339 2.186 2.103 0 3.883-.73 5.34-2.186 1.536-1.536 2.305-3.316 2.305-5.338V37.008c0-2.022-.769-3.762-2.306-5.218-1.456-1.537-3.236-2.306-5.34-2.306zm-70.234.122c-2.022 0-3.801.768-5.338 2.305-1.456 1.456-2.185 3.236-2.185 5.339v75.106c0 2.103.729 3.884 2.185 5.34 1.537 1.537 3.316 2.304 5.338 2.304 2.103 0 3.883-.767 5.339-2.304 1.536-1.456 2.305-3.237 2.305-5.34V86.148c4.692 2.75 9.748 4.126 15.167 4.126 8.413 0 15.572-2.953 21.477-8.858 5.905-5.905 8.857-13.064 8.857-21.477 0-8.332-2.952-15.45-8.857-21.355-5.905-5.986-13.064-8.978-21.477-8.978zm-49.081.122c-8.413 0-15.572 2.951-21.477 8.856C2.953 44.49 0 51.648 0 60.061c0 8.331 2.953 15.45 8.858 21.355 5.905 5.905 13.023 8.899 21.355 8.98h22.931c2.023 0 3.763-.73 5.219-2.186 1.537-1.537 2.305-3.316 2.305-5.338V60.061c0-8.413-2.953-15.572-8.858-21.477-5.905-5.905-13.063-8.856-21.475-8.856zm71.892 15.045c4.207 0 7.765 1.496 10.677 4.49 2.993 2.911 4.49 6.47 4.49 10.676s-1.497 7.807-4.49 10.8c-2.912 2.912-6.47 4.367-10.677 4.367-4.206 0-7.805-1.455-10.798-4.367-2.912-2.993-4.369-6.594-4.369-10.8s1.457-7.765 4.369-10.677c2.993-2.993 6.592-4.489 10.798-4.489zm-71.892.122c4.206 0 7.764 1.496 10.676 4.49 2.993 2.911 4.49 6.47 4.49 10.676s-1.497 7.805-4.49 10.798c-2.912 2.912-6.47 4.37-10.676 4.37s-7.807-1.458-10.8-4.37c-2.912-2.993-4.368-6.592-4.368-10.798 0-4.207 1.456-7.765 4.368-10.677 2.993-2.993 6.594-4.49 10.8-4.49z" fill="url(#apivoid-b)"></path>
+<path class="a-dark" d="M392.354 0c-2.022 0-3.801.769-5.338 2.306-1.456 1.456-2.184 3.235-2.184 5.338v26.21c-4.691-2.751-9.748-4.126-15.167-4.126-8.413 0-15.57 2.951-21.475 8.856-5.905 5.905-8.858 13.064-8.858 21.477 0 8.332 2.953 15.49 8.858 21.477 5.905 5.905 13.062 8.858 21.475 8.858h22.69c2.102 0 3.883-.73 5.34-2.186 1.536-1.536 2.305-3.357 2.305-5.46V7.644c0-2.103-.769-3.882-2.306-5.338C396.238.769 394.457 0 392.354 0Zm-72.462 6.916c-2.022 0-3.801.769-5.338 2.306-1.456 1.456-2.186 3.235-2.186 5.338s.73 3.884 2.186 5.34c1.537 1.456 3.316 2.184 5.338 2.184 2.103 0 3.882-.728 5.338-2.184 1.537-1.456 2.306-3.237 2.306-5.34 0-2.103-.769-3.882-2.306-5.338-1.456-1.537-3.235-2.306-5.338-2.306zm0 22.568c-2.022 0-3.801.769-5.338 2.306-1.456 1.456-2.186 3.196-2.186 5.218v45.864c0 2.022.73 3.802 2.186 5.338 1.537 1.456 3.316 2.186 5.338 2.186 2.103 0 3.882-.73 5.338-2.186 1.537-1.536 2.306-3.316 2.306-5.338V37.008c0-2.022-.769-3.762-2.306-5.218-1.456-1.537-3.235-2.306-5.338-2.306zm-142.418.244c-2.103 0-3.923.768-5.46 2.305-1.456 1.456-2.183 3.194-2.183 5.217 0 1.132.242 2.184.727 3.154l22.448 45.5c1.456 2.994 3.761 4.492 6.916 4.492 3.236 0 5.58-1.498 7.037-4.491l22.447-45.5c.485-.971.729-2.023.729-3.155 0-2.023-.769-3.76-2.306-5.217-1.456-1.537-3.236-2.305-5.34-2.305-3.154 0-5.458 1.496-6.914 4.489l-15.653 31.547-15.531-31.547c-1.456-2.993-3.762-4.49-6.917-4.49zm93.003 0c-8.413 0-15.572 2.951-21.477 8.856-5.905 5.905-8.856 13.064-8.856 21.477 0 8.412 2.951 15.571 8.856 21.476 5.905 5.905 13.064 8.859 21.477 8.859 8.412 0 15.571-2.954 21.476-8.859 5.905-5.905 8.857-13.064 8.857-21.476 0-8.413-2.952-15.572-8.857-21.477-5.905-5.905-13.064-8.856-21.476-8.856zm0 15.167c4.206 0 7.766 1.496 10.678 4.49 2.993 2.911 4.49 6.47 4.49 10.676s-1.497 7.805-4.49 10.798c-2.912 2.912-6.472 4.37-10.678 4.37-4.207 0-7.806-1.458-10.799-4.37-2.912-2.993-4.369-6.592-4.369-10.798s1.457-7.765 4.37-10.677c2.992-2.993 6.591-4.489 10.798-4.489zm99.188 0c4.206 0 7.766 1.496 10.678 4.49 2.993 2.911 4.49 6.47 4.49 10.676s-1.497 7.805-4.49 10.798c-2.912 2.912-6.472 4.37-10.678 4.37s-7.806-1.458-10.799-4.37c-2.912-2.993-4.367-6.592-4.367-10.798s1.455-7.765 4.367-10.677c2.993-2.993 6.593-4.489 10.799-4.489z"></path>
+</svg>
+</a>
+</td>
+</tr>
+</table>
+<div class="sponsor-cta-wrap">
+<!-- Absolute: this file is included from both / and /funding/, which
+       sit at different depths, so a relative href can't serve both. -->
+<a class="sponsor-cta" href="/funding/">Add your logo</a>
+</div>
+</div><div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">文件</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install/">安裝</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install/#linux-windows-macos-wheels">Linux, Windows, macOS (wheels)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install/#build-psutil-from-source">從來源碼建置 psutil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install/#build-and-install">建置與安裝</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install/#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api-overview/">API 概覽</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api-overview/#system-related-functions">System related functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-overview/#processes">進程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-overview/#c-heap-introspection">C heap introspection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-overview/#windows-services">Windows services</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/">API 參考</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/#system-related-functions">系統相關函數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/#processes">進程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/#c-heap-introspection">C heap introspection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/#windows-services">Windows services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/#constants">Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/#utilities">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/#environment-variables">Environment variables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq/">常見問題</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faq/#general">General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq/#exceptions">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq/#processes">進程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq/#cpu">CPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq/#memory">記憶體</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="performance/">效能</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="performance/#use-oneshot-when-reading-multiple-process-attributes">在讀取多個進程特性時使用 oneshot()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance/#use-process-iter-with-an-attrs-list">Use process_iter() with an attrs list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance/#methods-sped-up-by-oneshot">Methods sped up by oneshot()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance/#measuring-oneshot-speedup">Measuring oneshot() speedup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance/#measuring-apis-speed">Measuring APIs speed</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="recipes/">Recipes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="recipes/#processes">進程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recipes/#system">System</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">參考</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="shell-equivalents/">Shell equivalents</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="shell-equivalents/#system-wide-functions">System-wide functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell-equivalents/#process-methods">進程方法</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="stdlib-equivalents/">Stdlib equivalents</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="stdlib-equivalents/#system-wide-functions">System-wide functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stdlib-equivalents/#process-methods">進程方法</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glossary/">詞彙表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platform/">平臺支援</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="platform/#python">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="platform/#operating-systems">作業系統</a></li>
+<li class="toctree-l2"><a class="reference internal" href="platform/#architectures">Architectures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="platform/#support-history">Support history</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="migration/">遷移</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="migration/#migrating-to-8-0">遷移至 8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migration/#migrating-to-7-0">遷移至 7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migration/#migrating-to-6-0">遷移至 6.0</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">關於</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adoption/">誰在使用 psutil</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="adoption/#infrastructure-automation">基礎設施/自動化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adoption/#ai-machine-learning">AI/機器學習</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adoption/#developer-tools">開發者工具</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adoption/#system-monitoring">系統監控</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adoption/#how-this-list-was-compiled">How this list was compiled</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="alternatives/">Alternatives</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="alternatives/#python-standard-library">Python standard library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="alternatives/#third-party-libraries">Third-party libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="alternatives/#other-languages">Other languages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="funding/">Funding</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="funding/#how-to-fund">How to fund</a></li>
+<li class="toctree-l2"><a class="reference internal" href="funding/#for-companies">企業專區</a></li>
+<li class="toctree-l2"><a class="reference internal" href="funding/#current-sponsors">Current sponsors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="credits/">Credits</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="credits/#top-contributors">Top contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="credits/#donations">捐贈</a></li>
+<li class="toctree-l2"><a class="reference internal" href="credits/#code-contributors-by-year">Code contributors by year</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">專案</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="blog/">網誌</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog/">變更日誌</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timeline/">時間線</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devguide/">開發指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="genindex/">General Index</a></li>
+</ul>
+</div>
+<div class="section ablog__blog_comments">
+</div>
+</article>
+<nav aria-label="Previous and next pages" class="prev-next no-visited">
+<a class="prev-next-next" href="install/" rel="next">
+<span class="prev-next-block">
+<span class="prev-next-label">Next</span>
+<span class="prev-next-title">安裝 psutil</span>
+</span>
+<span aria-hidden="true" class="prev-next-arrow">›</span>
+</a>
+</nav>
+</div>
+</div>
+</main>
+<footer class="footer" role="contentinfo">
+<div class="footer-content">
+<div class="footer-text">
+<span><a class="footer-egg" href="404/" title="🥚">©</a> 2009-2026 Giampaolo Rodola</span>
+<span><a href="about/" title="About this documentation site">About</a></span>
+<span><a href="https://github.com/giampaolo/psutil/edit/master/docs/index.rst" rel="noopener noreferrer" target="_blank" title="Edit this page on GitHub">Edit on GitHub</a></span>
+</div>
+<div class="footer-icons">
+<a aria-label="psutil on GitHub" class="footer-github" href="https://github.com/giampaolo/psutil" rel="noopener noreferrer" target="_blank" title="psutil on GitHub">
+<i aria-hidden="true" class="fa-brands fa-github"></i>
+</a>
+<a aria-label="psutil on PyPI" class="footer-pypi" href="https://pypi.org/project/psutil/" rel="noopener noreferrer" target="_blank" title="psutil on PyPI">
+<i aria-hidden="true" class="fa-brands fa-python"></i>
+</a>
+<a aria-label="Subscribe to blog" class="footer-rss" href="blog/atom.xml" title="Subscribe to blog (Atom feed)">
+<span class="rss-icon"></span>
+</a>
+</div>
+</div>
+</footer>
+</div>
+</body>
+</html>

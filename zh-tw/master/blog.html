@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="Psutil blog: releases, deep dives, war stories" />
+<meta property="og:title" content="psutil blog" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://projects.localizethedocs.org/psutil-docs-l10n/blog.html" />
+<meta property="og:site_name" content="psutil" />
+<meta property="og:description" content="Psutil blog: releases, deep dives, war stories" />
+<meta property="og:image" content="https://projects.localizethedocs.org/psutil-docs-l10n/_static/images/logo-psutil.png" />
+<meta property="og:image:alt" content="psutil blog: articles on processes, system monitoring and psutil development" />
+<meta name="twitter:card" content="summary" />
+
+    <title>All Posts &#8212; psutil</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=29da98fa" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-codeautolink.css?v=b2176991" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/css/base.css?v=f08856fc" />
+    <link rel="stylesheet" type="text/css" href="_static/css/fonts.css?v=e753a5f7" />
+    <link rel="stylesheet" type="text/css" href="_static/css/fontawesome.css?v=b66fcbdb" />
+    <link rel="stylesheet" type="text/css" href="_static/css/typography.css?v=66ac06b9" />
+    <link rel="stylesheet" type="text/css" href="_static/css/admonitions.css?v=163ddbc1" />
+    <link rel="stylesheet" type="text/css" href="_static/css/api-signatures.css?v=f032e3fc" />
+    <link rel="stylesheet" type="text/css" href="_static/css/blog.css?v=2a308a50" />
+    <link rel="stylesheet" type="text/css" href="_static/css/code.css?v=0681a11b" />
+    <link rel="stylesheet" type="text/css" href="_static/css/dev-banner.css?v=6210bb1f" />
+    <link rel="stylesheet" type="text/css" href="_static/css/doc-icons.css?v=c22d5c40" />
+    <link rel="stylesheet" type="text/css" href="_static/css/footer.css?v=5d6b8d43" />
+    <link rel="stylesheet" type="text/css" href="_static/css/layout.css?v=dca717ce" />
+    <link rel="stylesheet" type="text/css" href="_static/css/left-sidebar.css?v=dd06a93c" />
+    <link rel="stylesheet" type="text/css" href="_static/css/prev-next.css?v=ca7d359d" />
+    <link rel="stylesheet" type="text/css" href="_static/css/print.css?v=f9febfdf" />
+    <link rel="stylesheet" type="text/css" href="_static/css/right-sidebar.css?v=bc13b617" />
+    <link rel="stylesheet" type="text/css" href="_static/css/search.css?v=bc2ce7bc" />
+    <link rel="stylesheet" type="text/css" href="_static/css/tables.css?v=c600f876" />
+    <link rel="stylesheet" type="text/css" href="_static/css/topbar.css?v=d6787661" />
+    <link rel="stylesheet" type="text/css" href="_static/css/home.css?v=3247c119" />
+    <script src="_static/documentation_options.js?v=685c57cb"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=35a8b989"></script>
+    <script src="_static/translations.js?v=cbf116e0"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script defer="defer" src="_static/js/back-to-top.js?v=01752a9c"></script>
+    <script defer="defer" src="_static/js/external-urls.js?v=ea4e66fd"></script>
+    <script defer="defer" src="_static/js/github-meta.js?v=3335eb90"></script>
+    <script defer="defer" src="_static/js/highlight-repl.js?v=5a308837"></script>
+    <script defer="defer" src="_static/js/home-install-copy.js?v=be638b0c"></script>
+    <script defer="defer" src="_static/js/right-toc.js?v=a13c1536"></script>
+    <script defer="defer" src="_static/js/search-dim.js?v=b004caf9"></script>
+    <script defer="defer" src="_static/js/search-shortcuts.js?v=6247adac"></script>
+    <script defer="defer" src="_static/js/shortcuts-help.js?v=61707f15"></script>
+    <script defer="defer" src="_static/js/sidebar-mobile.js?v=eb71acbb"></script>
+    <script defer="defer" src="_static/js/theme-toggle.js?v=f51f1c9b"></script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/psutil-docs-l10n/blog.html" />
+    <link rel="icon" href="_static/favicon.svg"/>
+    <link rel="author" title="關於這些文件" href="about.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜尋" href="search.html" />
+ 
+ 
+
+
+
+
+<link rel="apple-touch-icon" href="_static/images/logo-psutil.png">
+
+<script>
+(function() {
+    const html = document.documentElement;
+    html.classList.add('no-transition');
+    const saved = localStorage.getItem('psutil-sphinx-theme');
+    const theme = saved || (
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+    );
+    html.setAttribute('data-theme', theme);
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            html.classList.remove('no-transition');
+        });
+    });
+})();
+</script>
+
+
+<script data-goatcounter="https://psutil.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G7374TFB11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G7374TFB11');
+</script>
+ 
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  href="blog/atom.xml"
+  title="Blog"
+/>
+  
+<script type="text/javascript" src="ltd-provenance.js"></script>
+<script type="text/javascript" src="ltd-current.js"></script>
+<script type="text/javascript" src="../../ltd-config.js"></script>
+<script type="text/javascript" src="../../ltd-flyout.js"></script>
+
+  </head><body data-page="blog">
+<header class="topbar no-visited" role="banner">
+  <div class="topbar-inner">
+    <button class="topbar-hamburger" id="sidebar-toggle"
+            type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button><a class="topbar-logo" href="index.html"><img src="_static/images/logo-psutil.svg" alt="">
+      <span>psutil</span>
+    </a>
+    <nav class="topbar-actions" aria-label="Site actions">
+      <a class="topbar-text" href="#">Blog</a>
+      <button class="topbar-btn" id="theme-toggle"
+              type="button" title="Toggle dark mode (shift+D)" aria-label="Toggle theme">
+        <i class="fa-regular fa-moon" aria-hidden="true"></i>
+      </button>
+      <a class="topbar-link topbar-github"
+         href="https://github.com/giampaolo/psutil"
+         target="_blank" rel="noopener" title="GitHub" aria-label="GitHub repository">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+        <span class="topbar-stars" data-repo="giampaolo/psutil"></span>
+      </a>
+      <a class="topbar-version" data-repo="giampaolo/psutil"
+         href="https://pypi.org/project/psutil"
+         target="_blank" rel="noopener" title="PyPI" aria-label="PyPI release"></a>
+    </nav>
+  </div>
+</header>
+
+<div class="page">
+  <nav class="left-sidebar no-visited" aria-label="Main navigation">
+  <div class="search-box">
+    <form action="search.html" method="get" role="search">
+      <input id="search-input" type="text" name="q"
+             placeholder="搜尋" aria-label="Search docs"
+             autocomplete="off" autocorrect="off"
+             autocapitalize="off" spellcheck="false">
+      <span class="search-kbd" aria-hidden="true"><kbd>Ctrl</kbd>+<kbd>K</kbd></span>
+    </form>
+  </div>
+  
+<p class="caption" role="heading"><span class="caption-text">文件</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">安裝</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-overview.html">API 概覽</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API 參考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">常見問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">效能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recipes.html">Recipes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">參考</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="shell-equivalents.html">Shell equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stdlib-equivalents.html">Stdlib equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">詞彙表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platform.html">平臺支援</a></li>
+<li class="toctree-l1"><a class="reference internal" href="migration.html">遷移</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">關於</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adoption.html">誰在使用 psutil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alternatives.html">Alternatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funding.html">Funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">專案</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">網誌</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">變更日誌</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timeline.html">時間線</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devguide.html">開發指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="genindex.html">General Index</a></li>
+</ul>
+
+</nav>
+  <main class="main" id="main-content" role="main">
+    
+    <div class="dev-banner" role="note">
+  You're reading the <strong>development</strong> version of the psutil
+  docs, which may describe unreleased changes. For the current release
+  see <a href="https://psutil.readthedocs.io/stable/">psutil.readthedocs.io/stable</a>.
+</div>
+    
+<div class="blog-section-banner">
+  <div class="blog-section-label">
+    <svg class="blog-section-icon" viewBox="0 0 24 24" aria-hidden="true"
+         xmlns="http://www.w3.org/2000/svg" fill="none"
+         stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+    </svg>
+    <a class="blog-section-title" href="#">Blog</a>
+    <div class="blog-section-subtitle">Releases, deep dives, war stories</div>
+  </div>
+  <a class="blog-rss"
+     href="blog/atom.xml"
+     title="Subscribe (Atom feed)">
+    <span class="rss-icon blog-rss-icon"></span>
+    <span>RSS</span>
+  </a>
+</div>
+    <div class="article-with-toc">
+      <div class="article-column">
+        <article class="article">
+          
+<div class="blog-listing">
+  <div class="blog-listing-header">
+    <h1 class="blog-listing-title"><span class="blog-listing-title-value">All posts</span></h1>
+  </div>
+
+  <ol class="blog-cards">
+  
+    
+    
+    
+    <li class="blog-card">
+      <div class="blog-card-head">
+        <span class="blog-card-meta">
+          
+            <time datetime="2026-01-28">Jan 28, 2026</time>
+          
+        </span>
+        <div class="blog-card-titlerow">
+          <h2 class="blog-card-title">
+            <a href="blog/2026/event-driven-process-waiting.html">From Python 3.3 to today: ending 15 years of subprocess polling</a>
+          </h2>
+          <span class="post-meta-featured-wrap"><a class="post-meta-featured" href="blog/tag/featured.html">Featured</a></span>
+        </div>
+      </div>
+      
+      <div class="blog-card-summary"><p class="ablog-post-excerpt"><p>Replacing <a class="reference external" href="https://docs.python.org/3/library/subprocess.html#subprocess.Popen.wait" title="(in Python v3.14)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">subprocess.Popen.wait()</span></code></a>'s busy-loop with an event-driven model, in psutil then upstream CPython</p>
+</p>
+</div>
+      
+      
+      <ul class="blog-card-tags">
+        
+          
+        
+          
+          <li><a href="blog/tag/performance.html">performance</a></li>
+          
+        
+          
+          <li><a href="blog/tag/python-core.html">python-core</a></li>
+          
+        
+      </ul>
+      
+    </li>
+  
+    
+    
+    
+    <li class="blog-card">
+      <div class="blog-card-head">
+        <span class="blog-card-meta">
+          
+            <time datetime="2025-12-23">Dec 23, 2025</time>
+          
+        </span>
+        <div class="blog-card-titlerow">
+          <h2 class="blog-card-title">
+            <a href="blog/2025/heap-introspection-apis.html">Detecting memory leaks in C extensions with psutil and psleak</a>
+          </h2>
+          <span class="post-meta-featured-wrap"><a class="post-meta-featured" href="blog/tag/featured.html">Featured</a></span>
+        </div>
+      </div>
+      
+      <div class="blog-card-summary"><p class="ablog-post-excerpt"><p>psutil 7.2.0 peeks into the native allocator, spotting leaks <a class="reference internal" href="glossary.html#term-RSS"><span class="xref std std-term">RSS</span></a> can't see</p>
+</p>
+</div>
+      
+      
+      <ul class="blog-card-tags">
+        
+          
+          <li><a href="blog/tag/c.html">c</a></li>
+          
+        
+          
+        
+          
+          <li><a href="blog/tag/memory.html">memory</a></li>
+          
+        
+          
+          <li><a href="blog/tag/new-api.html">new-api</a></li>
+          
+        
+      </ul>
+      
+    </li>
+  
+    
+    
+    
+    <li class="blog-card">
+      <div class="blog-card-head">
+        <span class="blog-card-meta">
+          
+            <time datetime="2025-10-25">Oct 25, 2025</time>
+          
+        </span>
+        <div class="blog-card-titlerow">
+          <h2 class="blog-card-title">
+            <a href="blog/2025/wheels-for-free-threaded-python.html">Wheels for free-threaded Python now available</a>
+          </h2>
+          
+        </div>
+      </div>
+      
+      <div class="blog-card-summary"><p class="ablog-post-excerpt"><p>Unlocking <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">psutil</span></code> for no-GIL Python</p>
+</p>
+</div>
+      
+      
+      <ul class="blog-card-tags">
+        
+          
+          <li><a href="blog/tag/community.html">community</a></li>
+          
+        
+          
+          <li><a href="blog/tag/python-core.html">python-core</a></li>
+          
+        
+          
+          <li><a href="blog/tag/wheels.html">wheels</a></li>
+          
+        
+      </ul>
+      
+    </li>
+  
+    
+    
+    
+    <li class="blog-card">
+      <div class="blog-card-head">
+        <span class="blog-card-meta">
+          
+            <time datetime="2025-04-04">Apr 4, 2025</time>
+          
+        </span>
+        <div class="blog-card-titlerow">
+          <h2 class="blog-card-title">
+            <a href="blog/2025/speedup-pytest-startup.html">Speeding up pytest startup</a>
+          </h2>
+          
+        </div>
+      </div>
+      
+      <div class="blog-card-summary"><p class="ablog-post-excerpt"><p>Trimming heavy imports and plugins: 0.42s → 0.30s (~28%)</p>
+</p>
+</div>
+      
+      
+      <ul class="blog-card-tags">
+        
+          
+          <li><a href="blog/tag/performance.html">performance</a></li>
+          
+        
+          
+          <li><a href="blog/tag/tests.html">tests</a></li>
+          
+        
+      </ul>
+      
+    </li>
+  
+    
+    
+    
+    <li class="blog-card">
+      <div class="blog-card-head">
+        <span class="blog-card-meta">
+          
+            <time datetime="2025-02-13">Feb 13, 2025</time>
+          
+        </span>
+        <div class="blog-card-titlerow">
+          <h2 class="blog-card-title">
+            <a href="blog/2025/drop-py27.html">Letting go of Python 2.7</a>
+          </h2>
+          <span class="post-meta-featured-wrap"><a class="post-meta-featured" href="blog/tag/featured.html">Featured</a></span>
+        </div>
+      </div>
+      
+      <div class="blog-card-summary"><p class="ablog-post-excerpt"><p>Downloads fell from ~8% to 0.36% in three years; psutil
+7.0.0 ends support</p>
+</p>
+</div>
+      
+      
+      <ul class="blog-card-tags">
+        
+          
+          <li><a href="blog/tag/compatibility.html">compatibility</a></li>
+          
+        
+          
+        
+          
+          <li><a href="blog/tag/release.html">release</a></li>
+          
+        
+      </ul>
+      
+    </li>
+  
+    
+    
+    
+    <li class="blog-card">
+      <div class="blog-card-head">
+        <span class="blog-card-meta">
+          
+            <time datetime="2019-03-05">Mar 5, 2019</time>
+          
+        </span>
+        <div class="blog-card-titlerow">
+          <h2 class="blog-card-title">
+            <a href="blog/2019/macos-memory-maps.html">Removing Process.memory_maps() on macOS</a>
+          </h2>
+          
+        </div>
+      </div>
+      
+      <div class="blog-card-summary"><p class="ablog-post-excerpt"><p>A segfault I couldn't fix, and the API removal that followed</p>
+</p>
+</div>
+      
+      
+      <ul class="blog-card-tags">
+        
+          
+          <li><a href="blog/tag/api-design.html">api-design</a></li>
+          
+        
+          
+          <li><a href="blog/tag/compatibility.html">compatibility</a></li>
+          
+        
+          
+          <li><a href="blog/tag/macos.html">macos</a></li>
+          
+        
+          
+          <li><a href="blog/tag/release.html">release</a></li>
+          
+        
+      </ul>
+      
+    </li>
+  
+    
+    
+    
+    <li class="blog-card">
+      <div class="blog-card-head">
+        <span class="blog-card-meta">
+          
+            <time datetime="2019-03-05">Mar 5, 2019</time>
+          
+        </span>
+        <div class="blog-card-titlerow">
+          <h2 class="blog-card-title">
+            <a href="blog/2019/announcing-560.html">Announcing psutil 5.6.0</a>
+          </h2>
+          
+        </div>
+      </div>
+      
+      <div class="blog-card-summary"><p class="ablog-post-excerpt"><p>5.6.0 adds <a class="reference internal" href="api.html#psutil.Process.parents" title="psutil.Process.parents"><code class="xref py py-meth docutils literal notranslate"><span class="pre">parents()</span></code></a>, brings several Windows improvements, and removes <a class="reference internal" href="api.html#psutil.Process.memory_maps" title="psutil.Process.memory_maps"><code class="xref py py-meth docutils literal notranslate"><span class="pre">memory_maps()</span></code></a> on macOS</p>
+</p>
+</div>
+      
+      
+      <ul class="blog-card-tags">
+        
+          
+          <li><a href="blog/tag/compatibility.html">compatibility</a></li>
+          
+        
+          
+          <li><a href="blog/tag/macos.html">macos</a></li>
+          
+        
+          
+          <li><a href="blog/tag/new-api.html">new-api</a></li>
+          
+        
+          
+          <li><a href="blog/tag/release.html">release</a></li>
+          
+        
+          
+          <li><a href="blog/tag/windows.html">windows</a></li>
+          
+        
+      </ul>
+      
+    </li>
+  
+    
+    
+    
+    <li class="blog-card">
+      <div class="blog-card-head">
+        <span class="blog-card-meta">
+          
+            <time datetime="2017-10-12">Oct 12, 2017</time>
+          
+        </span>
+        <div class="blog-card-titlerow">
+          <h2 class="blog-card-title">
+            <a href="blog/2017/aix-support.html">AIX support</a>
+          </h2>
+          
+        </div>
+      </div>
+      
+      <div class="blog-card-summary"><p class="ablog-post-excerpt"><p>psutil 5.4.0 gets an IBM port, contributed by Arnon Yaari</p>
+</p>
+</div>
+      
+      
+      <ul class="blog-card-tags">
+        
+          
+          <li><a href="blog/tag/community.html">community</a></li>
+          
+        
+          
+          <li><a href="blog/tag/new-platform.html">new-platform</a></li>
+          
+        
+          
+          <li><a href="blog/tag/personal.html">personal</a></li>
+          
+        
+          
+          <li><a href="blog/tag/release.html">release</a></li>
+          
+        
+      </ul>
+      
+    </li>
+  
+    
+    
+    
+    <li class="blog-card">
+      <div class="blog-card-head">
+        <span class="blog-card-meta">
+          
+            <time datetime="2017-09-03">Sep 3, 2017</time>
+          
+        </span>
+        <div class="blog-card-titlerow">
+          <h2 class="blog-card-title">
+            <a href="blog/2017/process-iter-attrs.html">Improved process_iter()</a>
+          </h2>
+          
+        </div>
+      </div>
+      
+      <div class="blog-card-summary"><p class="ablog-post-excerpt"><p>5.3.0 adds <code class="docutils literal notranslate"><span class="pre">attrs</span></code> and <code class="docutils literal notranslate"><span class="pre">ad_value</span></code> parameters to
+<a class="reference internal" href="api.html#psutil.process_iter" title="psutil.process_iter"><code class="xref py py-func docutils literal notranslate"><span class="pre">process_iter()</span></code></a>, letting you pre-fetch attributes in one shot</p>
+</p>
+</div>
+      
+      
+      <ul class="blog-card-tags">
+        
+          
+          <li><a href="blog/tag/api-design.html">api-design</a></li>
+          
+        
+          
+          <li><a href="blog/tag/new-api.html">new-api</a></li>
+          
+        
+          
+          <li><a href="blog/tag/performance.html">performance</a></li>
+          
+        
+          
+          <li><a href="blog/tag/release.html">release</a></li>
+          
+        
+      </ul>
+      
+    </li>
+  
+    
+    
+    
+    <li class="blog-card">
+      <div class="blog-card-head">
+        <span class="blog-card-meta">
+          
+            <time datetime="2017-09-03">Sep 3, 2017</time>
+          
+        </span>
+        <div class="blog-card-titlerow">
+          <h2 class="blog-card-title">
+            <a href="blog/2017/unicode-internals.html">Fixing Unicode across Python 2 and 3</a>
+          </h2>
+          
+        </div>
+      </div>
+      
+      <div class="blog-card-summary"><p class="ablog-post-excerpt"><p>How psutil 5.3.0 got non-ASCII strings right on both Python 2 and
+Python 3.</p>
+</p>
+</div>
+      
+      
+      <ul class="blog-card-tags">
+        
+          
+          <li><a href="blog/tag/api-design.html">api-design</a></li>
+          
+        
+          
+          <li><a href="blog/tag/compatibility.html">compatibility</a></li>
+          
+        
+          
+          <li><a href="blog/tag/python-core.html">python-core</a></li>
+          
+        
+      </ul>
+      
+    </li>
+  
+    
+    
+    
+    <li class="blog-card">
+      <div class="blog-card-head">
+        <span class="blog-card-meta">
+          
+            <time datetime="2017-02-01">Feb 1, 2017</time>
+          
+        </span>
+        <div class="blog-card-titlerow">
+          <h2 class="blog-card-title">
+            <a href="blog/2017/sensors-support.html">Sensors: temperatures, battery, CPU frequency</a>
+          </h2>
+          
+        </div>
+      </div>
+      
+      <div class="blog-card-summary"><p class="ablog-post-excerpt"><p>psutil 5.1.0 introduces <a class="reference internal" href="api.html#psutil.sensors_temperatures" title="psutil.sensors_temperatures"><code class="xref py py-func docutils literal notranslate"><span class="pre">sensors_temperatures()</span></code></a>,
+<a class="reference internal" href="api.html#psutil.sensors_battery" title="psutil.sensors_battery"><code class="xref py py-func docutils literal notranslate"><span class="pre">sensors_battery()</span></code></a> and <a class="reference internal" href="api.html#psutil.cpu_freq" title="psutil.cpu_freq"><code class="xref py py-func docutils literal notranslate"><span class="pre">cpu_freq()</span></code></a></p>
+</p>
+</div>
+      
+      
+      <ul class="blog-card-tags">
+        
+          
+          <li><a href="blog/tag/linux.html">linux</a></li>
+          
+        
+          
+          <li><a href="blog/tag/new-api.html">new-api</a></li>
+          
+        
+          
+          <li><a href="blog/tag/release.html">release</a></li>
+          
+        
+      </ul>
+      
+    </li>
+  
+    
+    
+    
+    <li class="blog-card">
+      <div class="blog-card-head">
+        <span class="blog-card-meta">
+          
+            <time datetime="2016-11-06">Nov 6, 2016</time>
+          
+        </span>
+        <div class="blog-card-titlerow">
+          <h2 class="blog-card-title">
+            <a href="blog/2016/500-is-twice-as-fast.html">Making psutil twice as fast</a>
+          </h2>
+          <span class="post-meta-featured-wrap"><a class="post-meta-featured" href="blog/tag/featured.html">Featured</a></span>
+        </div>
+      </div>
+      
+      <div class="blog-card-summary"><p class="ablog-post-excerpt"><p>New <a class="reference internal" href="api.html#psutil.Process.oneshot" title="psutil.Process.oneshot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.oneshot()</span></code></a>, caching shared syscalls and halving the cost of multi-field queries</p>
+</p>
+</div>
+      
+      
+      <ul class="blog-card-tags">
+        
+          
+        
+          
+          <li><a href="blog/tag/new-api.html">new-api</a></li>
+          
+        
+          
+          <li><a href="blog/tag/performance.html">performance</a></li>
+          
+        
+          
+          <li><a href="blog/tag/release.html">release</a></li>
+          
+        
+      </ul>
+      
+    </li>
+  
+    
+    
+    
+    <li class="blog-card">
+      <div class="blog-card-head">
+        <span class="blog-card-meta">
+          
+            <time datetime="2016-05-15">May 15, 2016</time>
+          
+        </span>
+        <div class="blog-card-titlerow">
+          <h2 class="blog-card-title">
+            <a href="blog/2016/windows-services.html">Windows services support</a>
+          </h2>
+          
+        </div>
+      </div>
+      
+      <div class="blog-card-summary"><p class="ablog-post-excerpt"><p>psutil 4.2.0 introduces <a class="reference internal" href="api.html#psutil.win_service_iter" title="psutil.win_service_iter"><code class="xref py py-func docutils literal notranslate"><span class="pre">win_service_iter()</span></code></a> and <a class="reference internal" href="api.html#psutil.win_service_get" title="psutil.win_service_get"><code class="xref py py-func docutils literal notranslate"><span class="pre">win_service_get()</span></code></a></p>
+</p>
+</div>
+      
+      
+      <ul class="blog-card-tags">
+        
+          
+          <li><a href="blog/tag/new-api.html">new-api</a></li>
+          
+        
+          
+          <li><a href="blog/tag/release.html">release</a></li>
+          
+        
+          
+          <li><a href="blog/tag/windows.html">windows</a></li>
+          
+        
+      </ul>
+      
+    </li>
+  
+    
+    
+    
+    <li class="blog-card">
+      <div class="blog-card-head">
+        <span class="blog-card-meta">
+          
+            <time datetime="2016-02-25">Feb 25, 2016</time>
+          
+        </span>
+        <div class="blog-card-titlerow">
+          <h2 class="blog-card-title">
+            <a href="blog/2016/netbsd-support.html">NetBSD support</a>
+          </h2>
+          
+        </div>
+      </div>
+      
+      <div class="blog-card-summary"><p class="ablog-post-excerpt"><p>Completing the BSD trio alongside FreeBSD and OpenBSD</p>
+</p>
+</div>
+      
+      
+      <ul class="blog-card-tags">
+        
+          
+          <li><a href="blog/tag/bsd.html">bsd</a></li>
+          
+        
+          
+          <li><a href="blog/tag/community.html">community</a></li>
+          
+        
+          
+          <li><a href="blog/tag/new-platform.html">new-platform</a></li>
+          
+        
+          
+          <li><a href="blog/tag/release.html">release</a></li>
+          
+        
+      </ul>
+      
+    </li>
+  
+    
+    
+    
+    <li class="blog-card">
+      <div class="blog-card-head">
+        <span class="blog-card-meta">
+          
+            <time datetime="2016-02-17">Feb 17, 2016</time>
+          
+        </span>
+        <div class="blog-card-titlerow">
+          <h2 class="blog-card-title">
+            <a href="blog/2016/real-process-memory-in-python.html">Real process memory and environ in Python</a>
+          </h2>
+          
+        </div>
+      </div>
+      
+      <div class="blog-card-summary"><p class="ablog-post-excerpt"><p>psutil 4.0.0 exposes <a class="reference internal" href="glossary.html#term-USS"><span class="xref std std-term">USS</span></a>, the memory that would
+actually be freed on process exit + <a class="reference internal" href="api.html#psutil.Process.environ" title="psutil.Process.environ"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.environ()</span></code></a></p>
+</p>
+</div>
+      
+      
+      <ul class="blog-card-tags">
+        
+          
+          <li><a href="blog/tag/community.html">community</a></li>
+          
+        
+          
+          <li><a href="blog/tag/compatibility.html">compatibility</a></li>
+          
+        
+          
+          <li><a href="blog/tag/linux.html">linux</a></li>
+          
+        
+          
+          <li><a href="blog/tag/memory.html">memory</a></li>
+          
+        
+          
+          <li><a href="blog/tag/new-api.html">new-api</a></li>
+          
+        
+          
+          <li><a href="blog/tag/release.html">release</a></li>
+          
+        
+      </ul>
+      
+    </li>
+  
+    
+    
+    
+    <li class="blog-card">
+      <div class="blog-card-head">
+        <span class="blog-card-meta">
+          
+            <time datetime="2015-11-25">Nov 25, 2015</time>
+          
+        </span>
+        <div class="blog-card-titlerow">
+          <h2 class="blog-card-title">
+            <a href="blog/2015/openbsd-support.html">OpenBSD support</a>
+          </h2>
+          
+        </div>
+      </div>
+      
+      <div class="blog-card-summary"><p class="ablog-post-excerpt"><p>psutil 3.3.0 now runs on OpenBSD, sharing most of the implementation with FreeBSD</p>
+</p>
+</div>
+      
+      
+      <ul class="blog-card-tags">
+        
+          
+          <li><a href="blog/tag/bsd.html">bsd</a></li>
+          
+        
+          
+          <li><a href="blog/tag/community.html">community</a></li>
+          
+        
+          
+          <li><a href="blog/tag/new-platform.html">new-platform</a></li>
+          
+        
+          
+          <li><a href="blog/tag/release.html">release</a></li>
+          
+        
+      </ul>
+      
+    </li>
+  
+    
+    
+    
+    <li class="blog-card">
+      <div class="blog-card-head">
+        <span class="blog-card-meta">
+          
+            <time datetime="2015-06-13">Jun 13, 2015</time>
+          
+        </span>
+        <div class="blog-card-titlerow">
+          <h2 class="blog-card-title">
+            <a href="blog/2015/reimplementing-ifconfig-in-python.html">Reimplementing ifconfig in Python</a>
+          </h2>
+          <span class="post-meta-featured-wrap"><a class="post-meta-featured" href="blog/tag/featured.html">Featured</a></span>
+        </div>
+      </div>
+      
+      <div class="blog-card-summary"><p class="ablog-post-excerpt"><p>psutil 3.0 introduces <a class="reference internal" href="api.html#psutil.net_if_addrs" title="psutil.net_if_addrs"><code class="xref py py-func docutils literal notranslate"><span class="pre">net_if_addrs()</span></code></a> and <a class="reference internal" href="api.html#psutil.net_if_stats" title="psutil.net_if_stats"><code class="xref py py-func docutils literal notranslate"><span class="pre">net_if_stats()</span></code></a></p>
+</p>
+</div>
+      
+      
+      <ul class="blog-card-tags">
+        
+          
+          <li><a href="blog/tag/compatibility.html">compatibility</a></li>
+          
+        
+          
+        
+          
+          <li><a href="blog/tag/new-api.html">new-api</a></li>
+          
+        
+          
+          <li><a href="blog/tag/personal.html">personal</a></li>
+          
+        
+          
+          <li><a href="blog/tag/release.html">release</a></li>
+          
+        
+      </ul>
+      
+    </li>
+  
+    
+    
+    
+    <li class="blog-card">
+      <div class="blog-card-head">
+        <span class="blog-card-meta">
+          
+            <time datetime="2015-06-13">Jun 13, 2015</time>
+          
+        </span>
+        <div class="blog-card-titlerow">
+          <h2 class="blog-card-title">
+            <a href="blog/2015/zombie-processes.html">Proper zombie process handling</a>
+          </h2>
+          
+        </div>
+      </div>
+      
+      <div class="blog-card-summary"><p class="ablog-post-excerpt"><p>Proper handling of zombies via new <a class="reference internal" href="api.html#psutil.ZombieProcess" title="psutil.ZombieProcess"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ZombieProcess</span></code></a> exception</p>
+</p>
+</div>
+      
+      
+      <ul class="blog-card-tags">
+        
+          
+          <li><a href="blog/tag/api-design.html">api-design</a></li>
+          
+        
+          
+          <li><a href="blog/tag/compatibility.html">compatibility</a></li>
+          
+        
+      </ul>
+      
+    </li>
+  
+    
+    
+    
+    <li class="blog-card">
+      <div class="blog-card-head">
+        <span class="blog-card-meta">
+          
+            <time datetime="2014-03-10">Mar 10, 2014</time>
+          
+        </span>
+        <div class="blog-card-titlerow">
+          <h2 class="blog-card-title">
+            <a href="blog/2014/announcing-20.html">Announcing psutil 2.0</a>
+          </h2>
+          
+        </div>
+      </div>
+      
+      <div class="blog-card-summary"><p class="ablog-post-excerpt"><p>A major rewrite with breaking API changes</p>
+</p>
+</div>
+      
+      
+      <ul class="blog-card-tags">
+        
+          
+          <li><a href="blog/tag/api-design.html">api-design</a></li>
+          
+        
+          
+          <li><a href="blog/tag/compatibility.html">compatibility</a></li>
+          
+        
+          
+          <li><a href="blog/tag/release.html">release</a></li>
+          
+        
+      </ul>
+      
+    </li>
+  
+    
+    
+    
+    <li class="blog-card">
+      <div class="blog-card-head">
+        <span class="blog-card-meta">
+          
+            <time datetime="2014-01-11">Jan 11, 2014</time>
+          
+        </span>
+        <div class="blog-card-titlerow">
+          <h2 class="blog-card-title">
+            <a href="blog/2014/porting-to-20.html">Porting your code to psutil 2.0</a>
+          </h2>
+          
+        </div>
+      </div>
+      
+      <div class="blog-card-summary"><p class="ablog-post-excerpt"><p>A migration guide for the breaking API changes in psutil 2.0</p>
+</p>
+</div>
+      
+      
+      <ul class="blog-card-tags">
+        
+          
+          <li><a href="blog/tag/api-design.html">api-design</a></li>
+          
+        
+          
+          <li><a href="blog/tag/compatibility.html">compatibility</a></li>
+          
+        
+      </ul>
+      
+    </li>
+  
+  </ol>
+</div>
+
+        </article>
+        
+      </div>
+
+      <aside class="right-sidebar"
+       
+       aria-label="Browse blog">
+  <div class="right-sidebar-title">Tags</div>
+  <ul class="blog-tags">
+    <li>
+      <a href="blog/tag/release.html">release<span class="blog-tag-count">13</span></a>
+    </li>
+    <li>
+      <a href="blog/tag/compatibility.html">compatibility<span class="blog-tag-count">9</span></a>
+    </li>
+    <li>
+      <a href="blog/tag/new-api.html">new-api<span class="blog-tag-count">8</span></a>
+    </li>
+    <li>
+      <a href="blog/tag/api-design.html">api-design<span class="blog-tag-count">6</span></a>
+    </li>
+    <li>
+      <a href="blog/tag/community.html">community<span class="blog-tag-count">5</span></a>
+    </li>
+    <li>
+      <a href="blog/tag/performance.html">performance<span class="blog-tag-count">4</span></a>
+    </li>
+    <li>
+      <a href="blog/tag/python-core.html">python-core<span class="blog-tag-count">3</span></a>
+    </li>
+    <li>
+      <a href="blog/tag/new-platform.html">new-platform<span class="blog-tag-count">3</span></a>
+    </li>
+    <li>
+      <a href="blog/tag/windows.html">windows<span class="blog-tag-count">2</span></a>
+    </li>
+    <li>
+      <a href="blog/tag/personal.html">personal<span class="blog-tag-count">2</span></a>
+    </li>
+    <li>
+      <a href="blog/tag/memory.html">memory<span class="blog-tag-count">2</span></a>
+    </li>
+    <li>
+      <a href="blog/tag/macos.html">macos<span class="blog-tag-count">2</span></a>
+    </li>
+    <li>
+      <a href="blog/tag/linux.html">linux<span class="blog-tag-count">2</span></a>
+    </li>
+    <li>
+      <a href="blog/tag/bsd.html">bsd<span class="blog-tag-count">2</span></a>
+    </li>
+    <li>
+      <a href="blog/tag/wheels.html">wheels<span class="blog-tag-count">1</span></a>
+    </li>
+    <li>
+      <a href="blog/tag/tests.html">tests<span class="blog-tag-count">1</span></a>
+    </li>
+    <li>
+      <a href="blog/tag/c.html">c<span class="blog-tag-count">1</span></a>
+    </li>
+  </ul>
+</aside>
+    </div>
+  </main>
+
+  
+  <footer class="footer" role="contentinfo">
+  <div class="footer-content">
+    <div class="footer-text">
+      <span><a class="footer-egg" href="404.html" title="🥚">&copy;</a> 2009-2026 Giampaolo Rodola</span>
+      <span><a href="about.html"
+               title="About this documentation site">About</a></span>
+      <span><a href="https://github.com/giampaolo/psutil/edit/master/docs/blog.rst"
+               rel="noopener noreferrer" target="_blank"
+               title="Edit this page on GitHub">Edit on GitHub</a></span>
+    </div>
+    <div class="footer-icons">
+      <a class="footer-github" href="https://github.com/giampaolo/psutil"
+         title="psutil on GitHub" aria-label="psutil on GitHub"
+         rel="noopener noreferrer" target="_blank">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+      </a>
+      <a class="footer-pypi" href="https://pypi.org/project/psutil/"
+         title="psutil on PyPI" aria-label="psutil on PyPI"
+         rel="noopener noreferrer" target="_blank">
+        <i class="fa-brands fa-python" aria-hidden="true"></i>
+      </a>
+      <a class="footer-rss" href="blog/atom.xml"
+         title="Subscribe to blog (Atom feed)" aria-label="Subscribe to blog">
+        <span class="rss-icon"></span>
+      </a>
+    </div>
+  </div>
+</footer>
+</div>
+
+  </body>
+</html>
