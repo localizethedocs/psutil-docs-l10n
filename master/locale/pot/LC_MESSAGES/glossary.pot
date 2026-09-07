@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-27 11:50+0000\n"
+"POT-Creation-Date: 2026-09-07 14:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,7 +32,7 @@ msgid ""
 "allocated directly by the program (e.g. via ``malloc()``). Anonymous pages "
 "have no on-disk counterpart and must be written to :term:`swap memory` if "
 "evicted. Exposed by psutil via the :field:`rss_anon` field of :meth:`Process."
-"memory_info_ex` (total resident anonymous pages) and the :field:`anonymous` "
+"memory_extras` (total resident anonymous pages) and the :field:`anonymous` "
 "field of :meth:`Process.memory_maps` (per mapping). Anonymous regions are "
 "also visible in the :field:`path` column of :meth:`Process.memory_maps` as "
 "``\"[heap]\"``, ``\"[stack]\"``, or an empty string."
@@ -191,7 +191,7 @@ msgstr ""
 msgid "involuntary context switch"
 msgstr ""
 
-#: ../../../glossary.rst:125 ../../../glossary.rst:338
+#: ../../../glossary.rst:125 ../../../glossary.rst:346
 msgid "See :term:`context switch`."
 msgstr ""
 
@@ -310,10 +310,10 @@ msgstr ""
 msgid ""
 "The highest :term:`RSS` value a process has ever reached since it started "
 "(memory high-water mark). Available via :meth:`Process.memory_info` (BSD, "
-"Windows) and :meth:`Process.memory_info_ex` (Linux, macOS). Useful for "
-"capacity planning and leak detection: if :field:`peak_rss` keeps growing "
-"across successive runs or over time, the process is likely leaking memory. "
-"See also :term:`peak_vms`."
+"Windows) and :meth:`Process.memory_extras` (Linux). Useful for capacity "
+"planning and leak detection: if :field:`peak_rss` keeps growing across "
+"successive runs or over time, the process is likely leaking memory. See "
+"also :term:`peak_vms`."
 msgstr ""
 
 #: ../../../glossary.rst:208
@@ -323,7 +323,7 @@ msgstr ""
 #: ../../../glossary.rst:211
 msgid ""
 "The highest :term:`VMS` value a process has ever reached since it started. "
-"Available via :meth:`Process.memory_info_ex` (Linux) and :meth:`Process."
+"Available via :meth:`Process.memory_extras` (Linux) and :meth:`Process."
 "memory_info` (Windows). On Windows this maps to ``PeakPagefileUsage`` (peak :"
 "term:`private <private memory>` committed memory), which is not the same as "
 "UNIX VMS. See also :term:`peak_rss`."
@@ -416,9 +416,12 @@ msgstr ""
 #: ../../../glossary.rst:284
 msgid ""
 "Exposed by psutil as the :field:`shared` field of :func:`virtual_memory` "
-"and :meth:`Process.memory_info` (Linux), the :field:`rss_shmem` field of :"
-"meth:`Process.memory_info_ex` (Linux), and the :field:`shared_clean` / :"
-"field:`shared_dirty` fields of :meth:`Process.memory_maps` (Linux)."
+"and :meth:`Process.memory_info` (Linux; shareable resident memory, mapped by "
+"others or not), the :field:`shared` field of :meth:`Process."
+"memory_footprint` (pages mapped more than once, usually by other processes), "
+"the :field:`rss_shmem` field of :meth:`Process.memory_extras` (Linux), and "
+"the :field:`shared_clean` / :field:`shared_dirty` fields of :meth:`Process."
+"memory_maps` (Linux). See :ref:`faq_memory_shared`."
 msgstr ""
 
 #: ../../../glossary.rst:263
@@ -436,11 +439,11 @@ msgid ""
 "problem."
 msgstr ""
 
-#: ../../../glossary.rst:308
+#: ../../../glossary.rst:312
 msgid "swap memory"
 msgstr ""
 
-#: ../../../glossary.rst:311
+#: ../../../glossary.rst:315
 msgid ""
 "Disk space used as an extension of physical RAM. When the OS runs out of "
 "RAM, it moves memory to disk to free space (:term:`swap-out`), and moves it "
@@ -448,14 +451,17 @@ msgid ""
 "OS may first swap out other pages to make room. Swap prevents out-of-memory "
 "crashes, but is much slower than RAM, so heavy swapping can significantly "
 "degrade performance. See :func:`swap_memory` and :ref:`swap activity recipe "
-"<recipe_swap_activity>`."
+"<recipe_swap_activity>`. Per-process swap usage is exposed by :meth:`Process."
+"memory_footprint` (:field:`swap`, includes swapped shmem) and :meth:`Process."
+"memory_extras` (:field:`swap_anon`, :term:`anonymous memory` only). See :ref:"
+"`faq_memory_swap`."
 msgstr ""
 
-#: ../../../glossary.rst:288
+#: ../../../glossary.rst:292
 msgid "swap-in"
 msgstr ""
 
-#: ../../../glossary.rst:291
+#: ../../../glossary.rst:295
 msgid ""
 "Memory moved from disk (:term:`swap <swap memory>`) back into RAM. Reported "
 "as the :field:`sin` :term:`cumulative counter` of :func:`swap_memory`. A non-"
@@ -463,11 +469,11 @@ msgid ""
 "RAM for processes to use. See also :term:`swap-out`."
 msgstr ""
 
-#: ../../../glossary.rst:296
+#: ../../../glossary.rst:300
 msgid "swap-out"
 msgstr ""
 
-#: ../../../glossary.rst:299
+#: ../../../glossary.rst:303
 msgid ""
 "Memory moved from RAM to disk (:term:`swap <swap memory>`). Reported as the :"
 "field:`sout` :term:`cumulative counter` of :func:`swap_memory`.  A non-zero :"
@@ -476,19 +482,19 @@ msgid ""
 "`swap-in`."
 msgstr ""
 
-#: ../../../glossary.rst:306
+#: ../../../glossary.rst:310
 msgid ":ref:`swap activity recipe <recipe_swap_activity>`"
 msgstr ""
 
-#: ../../../glossary.rst:307
+#: ../../../glossary.rst:311
 msgid ":term:`thrashing`"
 msgstr ""
 
-#: ../../../glossary.rst:318
+#: ../../../glossary.rst:326
 msgid "thrashing"
 msgstr ""
 
-#: ../../../glossary.rst:321
+#: ../../../glossary.rst:329
 msgid ""
 "A condition where the system spends more time moving memory between RAM and "
 "disk (:term:`swap <swap memory>`) than doing actual work, because memory "
@@ -498,11 +504,11 @@ msgid ""
 "while everything is waiting on disk I/O."
 msgstr ""
 
-#: ../../../glossary.rst:327
+#: ../../../glossary.rst:335
 msgid "USS"
 msgstr ""
 
-#: ../../../glossary.rst:330
+#: ../../../glossary.rst:338
 msgid ""
 "*Unique Set Size*, the :term:`private memory` of a process, that belongs "
 "exclusively to it, and which would be freed if it exited. It excludes :term:"
@@ -511,11 +517,11 @@ msgid ""
 "memory_footprint`."
 msgstr ""
 
-#: ../../../glossary.rst:339
+#: ../../../glossary.rst:347
 msgid "VMS"
 msgstr ""
 
-#: ../../../glossary.rst:342
+#: ../../../glossary.rst:350
 msgid ""
 "*Virtual Memory Size*, the total virtual address space reserved by a "
 "process, including mapped files, :term:`shared memory`, stack, and :term:"
@@ -525,20 +531,20 @@ msgid ""
 "memory_info`."
 msgstr ""
 
-#: ../../../glossary.rst:335
+#: ../../../glossary.rst:343
 msgid "voluntary context switch"
 msgstr ""
 
-#: ../../../glossary.rst:348
+#: ../../../glossary.rst:356
 msgid "zombie process"
 msgstr ""
 
-#: ../../../glossary.rst:351
+#: ../../../glossary.rst:359
 msgid ""
 "A process that has exited but whose entry remains in the process table until "
 "its parent calls ``wait()``. Zombies hold a PID but consume no CPU or memory."
 msgstr ""
 
-#: ../../../glossary.rst:355
+#: ../../../glossary.rst:363
 msgid ":ref:`faq_zombie_process`"
 msgstr ""

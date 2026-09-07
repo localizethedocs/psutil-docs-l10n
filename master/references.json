@@ -37,9 +37,9 @@
     "branch" : "master",
     "commit" : 
     {
-      "date" : "2026-08-17 11:04:42 +0200",
-      "hash" : "22baeb2efcea583995e75c2b9bb7a57b3156fab9",
-      "title" : "Move docs scripts in a separate dir"
+      "date" : "2026-09-06 10:51:29 +0200",
+      "hash" : "dcccef25416cecdb319d1db2af86d7490757c5ed",
+      "title" : "Doc: better prose / clarifications re. cpu_percent()"
     }
   },
   "type" : "branch",
