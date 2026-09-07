@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+
+<html data-content_root="./" lang="en-US">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="API overview" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="https://psutil.io/api-overview.html" property="og:url"/>
+<meta content="psutil" property="og:site_name"/>
+<meta content="Overview of the entire psutil API (on Linux). This serves as a quick reference to all available functions. For detailed documentation of each function see th..." property="og:description"/>
+<meta content="1146" property="og:image:width"/>
+<meta content="600" property="og:image:height"/>
+<meta content="https://psutil.io/_images/social_previews/summary_api-overview_1fd89c46.png" property="og:image"/>
+<meta content="Overview of the entire psutil API (on Linux). This serves as a quick reference to all available functions. For detailed documentation of each function see th..." property="og:image:alt"/>
+<meta content="Overview of the entire psutil API (on Linux). This serves as a quick reference to all available functions. For detailed documentation of each function see th..." name="description"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<title>API overview — psutil</title>
+<link href="_static/pygments.css?v=8f2a1f02" rel="stylesheet" type="text/css"/>
+<link href="_static/basic.css?v=29da98fa" rel="stylesheet" type="text/css"/>
+<link href="_static/sphinx-codeautolink.css?v=b2176991" rel="stylesheet" type="text/css"/>
+<link href="_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
+<link href="_static/css/base.css?v=f08856fc" rel="stylesheet" type="text/css"/>
+<link href="_static/css/fonts.css?v=e753a5f7" rel="stylesheet" type="text/css"/>
+<link href="_static/css/fontawesome.css?v=b66fcbdb" rel="stylesheet" type="text/css"/>
+<link href="_static/css/typography.css?v=66ac06b9" rel="stylesheet" type="text/css"/>
+<link href="_static/css/admonitions.css?v=163ddbc1" rel="stylesheet" type="text/css"/>
+<link href="_static/css/api-signatures.css?v=f032e3fc" rel="stylesheet" type="text/css"/>
+<link href="_static/css/blog.css?v=2a308a50" rel="stylesheet" type="text/css"/>
+<link href="_static/css/code.css?v=0681a11b" rel="stylesheet" type="text/css"/>
+<link href="_static/css/dev-banner.css?v=6210bb1f" rel="stylesheet" type="text/css"/>
+<link href="_static/css/doc-icons.css?v=c22d5c40" rel="stylesheet" type="text/css"/>
+<link href="_static/css/footer.css?v=5d6b8d43" rel="stylesheet" type="text/css"/>
+<link href="_static/css/layout.css?v=dca717ce" rel="stylesheet" type="text/css"/>
+<link href="_static/css/left-sidebar.css?v=dd06a93c" rel="stylesheet" type="text/css"/>
+<link href="_static/css/prev-next.css?v=ca7d359d" rel="stylesheet" type="text/css"/>
+<link href="_static/css/print.css?v=f9febfdf" rel="stylesheet" type="text/css"/>
+<link href="_static/css/right-sidebar.css?v=bc13b617" rel="stylesheet" type="text/css"/>
+<link href="_static/css/search.css?v=bc2ce7bc" rel="stylesheet" type="text/css"/>
+<link href="_static/css/tables.css?v=c600f876" rel="stylesheet" type="text/css"/>
+<link href="_static/css/topbar.css?v=d6787661" rel="stylesheet" type="text/css"/>
+<link href="_static/css/home.css?v=3247c119" rel="stylesheet" type="text/css"/>
+<script src="_static/documentation_options.js?v=a914353f"></script>
+<script src="_static/doctools.js?v=fd6eb6e6"></script>
+<script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+<script src="_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="_static/copybutton.js?v=35a8b989"></script>
+<script src="_static/design-tabs.js?v=f930bc37"></script>
+<script defer="defer" src="_static/js/back-to-top.js?v=01752a9c"></script>
+<script defer="defer" src="_static/js/external-urls.js?v=ea4e66fd"></script>
+<script defer="defer" src="_static/js/github-meta.js?v=3335eb90"></script>
+<script defer="defer" src="_static/js/highlight-repl.js?v=5a308837"></script>
+<script defer="defer" src="_static/js/home-install-copy.js?v=be638b0c"></script>
+<script defer="defer" src="_static/js/right-toc.js?v=a13c1536"></script>
+<script defer="defer" src="_static/js/search-dim.js?v=b004caf9"></script>
+<script defer="defer" src="_static/js/search-shortcuts.js?v=6247adac"></script>
+<script defer="defer" src="_static/js/shortcuts-help.js?v=61707f15"></script>
+<script defer="defer" src="_static/js/sidebar-mobile.js?v=eb71acbb"></script>
+<script defer="defer" src="_static/js/theme-toggle.js?v=f51f1c9b"></script>
+<link href="https://projects.localizethedocs.org/psutil-docs-l10n/api-overview.html" rel="canonical"/>
+<link href="_static/favicon.svg" rel="icon"/>
+<link href="about.html" rel="author" title="About these documents"/>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="search.html" rel="search" title="Search"/>
+<link href="api.html" rel="next" title="API reference"/>
+<link href="install.html" rel="prev" title="Install psutil"/>
+<link href="_static/images/logo-psutil.png" rel="apple-touch-icon"/>
+<script>
+(function() {
+    const html = document.documentElement;
+    html.classList.add('no-transition');
+    const saved = localStorage.getItem('psutil-sphinx-theme');
+    const theme = saved || (
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+    );
+    html.setAttribute('data-theme', theme);
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            html.classList.remove('no-transition');
+        });
+    });
+})();
+</script>
+<script async="" data-goatcounter="https://psutil.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-G7374TFB11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G7374TFB11');
+</script>
+<link href="blog/atom.xml" rel="alternate" title="Blog" type="application/atom+xml"/>
+<script src="ltd-provenance.js" type="text/javascript"></script>
+<script src="ltd-current.js" type="text/javascript"></script>
+<script src="../../ltd-config.js" type="text/javascript"></script>
+<script src="../../ltd-flyout.js" type="text/javascript"></script>
+</head><body data-page="api-overview">
+<header class="topbar no-visited" role="banner">
+<div class="topbar-inner">
+<button aria-expanded="false" aria-label="Toggle navigation" class="topbar-hamburger" id="sidebar-toggle" type="button">
+<i aria-hidden="true" class="fa-solid fa-bars"></i>
+</button><a class="topbar-logo" href="index.html"><img alt="" src="_static/images/logo-psutil.svg"/>
+<span>psutil</span>
+</a>
+<nav aria-label="Site actions" class="topbar-actions">
+<a class="topbar-text" href="blog.html">Blog</a>
+<button aria-label="Toggle theme" class="topbar-btn" id="theme-toggle" title="Toggle dark mode (shift+D)" type="button">
+<i aria-hidden="true" class="fa-regular fa-moon"></i>
+</button>
+<a aria-label="GitHub repository" class="topbar-link topbar-github" href="https://github.com/giampaolo/psutil" rel="noopener" target="_blank" title="GitHub">
+<i aria-hidden="true" class="fa-brands fa-github"></i>
+<span class="topbar-stars" data-repo="giampaolo/psutil"></span>
+</a>
+<a aria-label="PyPI release" class="topbar-version" data-repo="giampaolo/psutil" href="https://pypi.org/project/psutil" rel="noopener" target="_blank" title="PyPI"></a>
+</nav>
+</div>
+</header>
+<div class="page">
+<nav aria-label="Main navigation" class="left-sidebar no-visited">
+<div class="search-box">
+<form action="search.html" method="get" role="search">
+<input aria-label="Search docs" autocapitalize="off" autocomplete="off" autocorrect="off" id="search-input" name="q" placeholder="Search" spellcheck="false" type="text"/>
+<span aria-hidden="true" class="search-kbd"><kbd>Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+</div>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recipes.html">Recipes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="shell-equivalents.html">Shell equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stdlib-equivalents.html">Stdlib equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platform.html">Platform support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="migration.html">Migration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adoption.html">Who uses psutil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alternatives.html">Alternatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funding.html">Funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="blog.html">Blog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timeline.html">Timeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devguide.html">Development guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="genindex.html">General Index</a></li>
+</ul>
+</nav>
+<main class="main" id="main-content" role="main">
+<div class="dev-banner" role="note">
+  You're reading the <strong>development</strong> version of the psutil
+  docs, which may describe unreleased changes. For the current release
+  see <a href="https://psutil.readthedocs.io/stable/">psutil.readthedocs.io/stable</a>.
+</div>
+<div class="article-with-toc">
+<div class="article-column">
+<article class="article">
+<section id="api-overview">
+<h1>API overview<a class="headerlink" href="#api-overview" title="Link to this heading">¶</a></h1>
+<p>Overview of the entire psutil API (on Linux). This serves as a quick reference
+to all available functions. For detailed documentation of each function see the
+full <a class="reference internal" href="api.html"><span class="doc">API reference</span></a>.</p>
+<section id="system-related-functions">
+<h2>System related functions<a class="headerlink" href="#system-related-functions" title="Link to this heading">¶</a></h2>
+<section id="cpu">
+<span id="api-overview-cpu"></span><h3>CPU<a class="headerlink" href="#cpu" title="Link to this heading">¶</a></h3>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="index.html#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.cpu_times" title="psutil.cpu_times"><span class="n">psutil</span><span class="o">.</span><span class="n">cpu_times</span></a><span class="p">()</span>
+<span class="go">scputimes(user=3961.46,</span>
+<span class="go">          nice=169.729,</span>
+<span class="go">          system=2150.659,</span>
+<span class="go">          idle=16900.540,</span>
+<span class="go">          iowait=629.59,</span>
+<span class="go">          irq=0.0,</span>
+<span class="go">          softirq=19.42,</span>
+<span class="go">          steal=0.0,</span>
+<span class="go">          guest=0,</span>
+<span class="go">          guest_nice=0.0)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#range" title="range"><span class="nb">range</span></a><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<span class="gp">... </span>    <a class="sphinx-codeautolink-a" href="api.html#psutil.cpu_percent" title="psutil.cpu_percent"><span class="n">psutil</span><span class="o">.</span><span class="n">cpu_percent</span></a><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">4.0</span>
+<span class="go">5.9</span>
+<span class="go">3.8</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#range" title="range"><span class="nb">range</span></a><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<span class="gp">... </span>    <a class="sphinx-codeautolink-a" href="api.html#psutil.cpu_percent" title="psutil.cpu_percent"><span class="n">psutil</span><span class="o">.</span><span class="n">cpu_percent</span></a><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">percpu</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">[4.0, 6.9, 3.7, 9.2]</span>
+<span class="go">[7.0, 8.5, 2.4, 2.1]</span>
+<span class="go">[1.2, 9.0, 9.9, 7.2]</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#range" title="range"><span class="nb">range</span></a><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<span class="gp">... </span>    <a class="sphinx-codeautolink-a" href="api.html#psutil.cpu_times_percent" title="psutil.cpu_times_percent"><span class="n">psutil</span><span class="o">.</span><span class="n">cpu_times_percent</span></a><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">percpu</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">scputimes(user=1.5, nice=0.0, system=0.5, idle=96.5, iowait=1.5, irq=0.0, softirq=0.0, steal=0.0, guest=0.0, guest_nice=0.0)</span>
+<span class="go">scputimes(user=1.0, nice=0.0, system=0.0, idle=99.0, iowait=0.0, irq=0.0, softirq=0.0, steal=0.0, guest=0.0, guest_nice=0.0)</span>
+<span class="go">scputimes(user=2.0, nice=0.0, system=0.0, idle=98.0, iowait=0.0, irq=0.0, softirq=0.0, steal=0.0, guest=0.0, guest_nice=0.0)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.cpu_count" title="psutil.cpu_count"><span class="n">psutil</span><span class="o">.</span><span class="n">cpu_count</span></a><span class="p">()</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.cpu_count" title="psutil.cpu_count"><span class="n">psutil</span><span class="o">.</span><span class="n">cpu_count</span></a><span class="p">(</span><span class="n">logical</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.cpu_stats" title="psutil.cpu_stats"><span class="n">psutil</span><span class="o">.</span><span class="n">cpu_stats</span></a><span class="p">()</span>
+<span class="go">scpustats(ctx_switches=20455687, interrupts=6598984, soft_interrupts=2134212, syscalls=0)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.cpu_freq" title="psutil.cpu_freq"><span class="n">psutil</span><span class="o">.</span><span class="n">cpu_freq</span></a><span class="p">()</span>
+<span class="go">scpufreq(current=931.42925, min=800.0, max=3500.0)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.getloadavg" title="psutil.getloadavg"><span class="n">psutil</span><span class="o">.</span><span class="n">getloadavg</span></a><span class="p">()</span>  <span class="c1"># also on Windows (emulated)</span>
+<span class="go">(3.14, 3.89, 4.67)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="memory">
+<span id="api-overview-memory"></span><h3>Memory<a class="headerlink" href="#memory" title="Link to this heading">¶</a></h3>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="index.html#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.virtual_memory" title="psutil.virtual_memory"><span class="n">psutil</span><span class="o">.</span><span class="n">virtual_memory</span></a><span class="p">()</span>
+<span class="go">svmem(total=10367352832,</span>
+<span class="go">      available=6472179712,</span>
+<span class="go">      percent=37.6,</span>
+<span class="go">      used=8186245120,</span>
+<span class="go">      free=2181107712,</span>
+<span class="go">      active=4748992512,</span>
+<span class="go">      inactive=2758115328,</span>
+<span class="go">      buffers=790724608,</span>
+<span class="go">      cached=3500347392,</span>
+<span class="go">      shared=787554304)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.swap_memory" title="psutil.swap_memory"><span class="n">psutil</span><span class="o">.</span><span class="n">swap_memory</span></a><span class="p">()</span>
+<span class="go">sswap(total=2097147904,</span>
+<span class="go">      used=296128512,</span>
+<span class="go">      free=1801019392,</span>
+<span class="go">      percent=14.1,</span>
+<span class="go">      sin=304193536,</span>
+<span class="go">      sout=677842944)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="disks">
+<span id="api-overview-disks"></span><h3>Disks<a class="headerlink" href="#disks" title="Link to this heading">¶</a></h3>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="index.html#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.disk_partitions" title="psutil.disk_partitions"><span class="n">psutil</span><span class="o">.</span><span class="n">disk_partitions</span></a><span class="p">()</span>
+<span class="go">[sdiskpart(device='/dev/sda1', mountpoint='/', fstype='ext4', opts='rw,nosuid'),</span>
+<span class="go"> sdiskpart(device='/dev/sda2', mountpoint='/home', fstype='ext', opts='rw')]</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.disk_usage" title="psutil.disk_usage"><span class="n">psutil</span><span class="o">.</span><span class="n">disk_usage</span></a><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
+<span class="go">sdiskusage(total=21378641920, used=4809781248, free=15482871808, percent=22.5)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.disk_io_counters" title="psutil.disk_io_counters"><span class="n">psutil</span><span class="o">.</span><span class="n">disk_io_counters</span></a><span class="p">(</span><span class="n">perdisk</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="go">sdiskio(read_count=719566,</span>
+<span class="go">        write_count=1082197,</span>
+<span class="go">        read_bytes=18626220032,</span>
+<span class="go">        write_bytes=24081764352,</span>
+<span class="go">        read_time=5023392,</span>
+<span class="go">        write_time=63199568,</span>
+<span class="go">        read_merged_count=619166,</span>
+<span class="go">        write_merged_count=812396,</span>
+<span class="go">        busy_time=4523412)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="network">
+<span id="api-overview-network"></span><h3>Network<a class="headerlink" href="#network" title="Link to this heading">¶</a></h3>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="index.html#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.net_io_counters" title="psutil.net_io_counters"><span class="n">psutil</span><span class="o">.</span><span class="n">net_io_counters</span></a><span class="p">(</span><span class="n">pernic</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">{'eth0': netio(bytes_sent=485291293,</span>
+<span class="go">               bytes_recv=6004858642,</span>
+<span class="go">               packets_sent=3251564,</span>
+<span class="go">               packets_recv=4787798,</span>
+<span class="go">               errin=0,</span>
+<span class="go">               errout=0,</span>
+<span class="go">               dropin=0,</span>
+<span class="go">               dropout=0),</span>
+<span class="go"> 'lo': netio(bytes_sent=2838627,</span>
+<span class="go">             bytes_recv=2838627,</span>
+<span class="go">             packets_sent=30567,</span>
+<span class="go">             packets_recv=30567,</span>
+<span class="go">             errin=0,</span>
+<span class="go">             errout=0,</span>
+<span class="go">             dropin=0,</span>
+<span class="go">             dropout=0)}</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.net_connections" title="psutil.net_connections"><span class="n">psutil</span><span class="o">.</span><span class="n">net_connections</span></a><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'tcp'</span><span class="p">)</span>
+<span class="go">[sconn(fd=115,</span>
+<span class="go">       family=&lt;AddressFamily.AF_INET: 2&gt;,</span>
+<span class="go">       type=&lt;SocketType.SOCK_STREAM: 1&gt;,</span>
+<span class="go">       laddr=addr(ip='10.0.0.1', port=48776),</span>
+<span class="go">       raddr=addr(ip='93.186.135.91', port=80),</span>
+<span class="go">       status='ESTABLISHED',</span>
+<span class="go">       pid=1254),</span>
+<span class="go"> sconn(fd=117,</span>
+<span class="go">       family=&lt;AddressFamily.AF_INET: 2&gt;,</span>
+<span class="go">       type=&lt;SocketType.SOCK_STREAM: 1&gt;,</span>
+<span class="go">       laddr=addr(ip='10.0.0.1', port=43761),</span>
+<span class="go">       raddr=addr(ip='72.14.234.100', port=80),</span>
+<span class="go">       status='CLOSING',</span>
+<span class="go">       pid=2987),</span>
+<span class="go"> ...]</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.net_if_addrs" title="psutil.net_if_addrs"><span class="n">psutil</span><span class="o">.</span><span class="n">net_if_addrs</span></a><span class="p">()</span>
+<span class="go">{'lo': [snicaddr(family=&lt;AddressFamily.AF_INET: 2&gt;,</span>
+<span class="go">                 address='127.0.0.1',</span>
+<span class="go">                 netmask='255.0.0.0',</span>
+<span class="go">                 broadcast='127.0.0.1',</span>
+<span class="go">                 ptp=None),</span>
+<span class="go">        snicaddr(family=&lt;AddressFamily.AF_INET6: 10&gt;,</span>
+<span class="go">                 address='::1',</span>
+<span class="go">                 netmask='ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff',</span>
+<span class="go">                 broadcast=None,</span>
+<span class="go">                 ptp=None),</span>
+<span class="go">        snicaddr(family=&lt;AddressFamily.AF_LINK: 17&gt;,</span>
+<span class="go">                 address='00:00:00:00:00:00',</span>
+<span class="go">                 netmask=None,</span>
+<span class="go">                 broadcast='00:00:00:00:00:00',</span>
+<span class="go">                 ptp=None)],</span>
+<span class="go"> 'wlan0': [snicaddr(family=&lt;AddressFamily.AF_INET: 2&gt;,</span>
+<span class="go">                    address='192.168.1.3',</span>
+<span class="go">                    netmask='255.255.255.0',</span>
+<span class="go">                    broadcast='192.168.1.255',</span>
+<span class="go">                    ptp=None),</span>
+<span class="go">           snicaddr(family=&lt;AddressFamily.AF_INET6: 10&gt;,</span>
+<span class="go">                    address='fe80::c685:8ff:fe45:641%wlan0',</span>
+<span class="go">                    netmask='ffff:ffff:ffff:ffff::',</span>
+<span class="go">                    broadcast=None,</span>
+<span class="go">                    ptp=None),</span>
+<span class="go">           snicaddr(family=&lt;AddressFamily.AF_LINK: 17&gt;,</span>
+<span class="go">                    address='c4:85:08:45:06:41',</span>
+<span class="go">                    netmask=None,</span>
+<span class="go">                    broadcast='ff:ff:ff:ff:ff:ff',</span>
+<span class="go">                    ptp=None)]}</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.net_if_stats" title="psutil.net_if_stats"><span class="n">psutil</span><span class="o">.</span><span class="n">net_if_stats</span></a><span class="p">()</span>
+<span class="go">{'lo': snicstats(isup=True,</span>
+<span class="go">                 duplex=&lt;NicDuplex.NIC_DUPLEX_UNKNOWN: 0&gt;,</span>
+<span class="go">                 speed=0,</span>
+<span class="go">                 mtu=65536,</span>
+<span class="go">                 flags='up,loopback,running'),</span>
+<span class="go"> 'wlan0': snicstats(isup=True,</span>
+<span class="go">                    duplex=&lt;NicDuplex.NIC_DUPLEX_FULL: 2&gt;,</span>
+<span class="go">                    speed=100,</span>
+<span class="go">                    mtu=1500,</span>
+<span class="go">                    flags='up,broadcast,running,multicast')}</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="sensors">
+<span id="api-overview-sensors"></span><h3>Sensors<a class="headerlink" href="#sensors" title="Link to this heading">¶</a></h3>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="index.html#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.sensors_temperatures" title="psutil.sensors_temperatures"><span class="n">psutil</span><span class="o">.</span><span class="n">sensors_temperatures</span></a><span class="p">()</span>
+<span class="go">{'acpitz': [shwtemp(label='', current=47.0, high=103.0, critical=103.0)],</span>
+<span class="go"> 'asus': [shwtemp(label='', current=47.0, high=None, critical=None)],</span>
+<span class="go"> 'coretemp': [shwtemp(label='Physical id 0', current=52.0, high=100.0, critical=100.0),</span>
+<span class="go">              shwtemp(label='Core 0', current=45.0, high=100.0, critical=100.0)]}</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.sensors_fans" title="psutil.sensors_fans"><span class="n">psutil</span><span class="o">.</span><span class="n">sensors_fans</span></a><span class="p">()</span>
+<span class="go">{'asus': [sfan(label='cpu_fan', current=3200)]}</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.sensors_battery" title="psutil.sensors_battery"><span class="n">psutil</span><span class="o">.</span><span class="n">sensors_battery</span></a><span class="p">()</span>
+<span class="go">sbattery(percent=93, secsleft=16628, power_plugged=False)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="other-system-info">
+<h3>Other system info<a class="headerlink" href="#other-system-info" title="Link to this heading">¶</a></h3>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="index.html#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.users" title="psutil.users"><span class="n">psutil</span><span class="o">.</span><span class="n">users</span></a><span class="p">()</span>
+<span class="go">[suser(name='giampaolo', terminal='pts/2', host='localhost', started=1340737536.0, pid=1352),</span>
+<span class="go"> suser(name='giampaolo', terminal='pts/3', host='localhost', started=1340737792.0, pid=1788)]</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.boot_time" title="psutil.boot_time"><span class="n">psutil</span><span class="o">.</span><span class="n">boot_time</span></a><span class="p">()</span>
+<span class="go">1365519115.0</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="processes">
+<span id="api-overview-processes"></span><h2>Processes<a class="headerlink" href="#processes" title="Link to this heading">¶</a></h2>
+<section id="oneshot">
+<h3>Oneshot<a class="headerlink" href="#oneshot" title="Link to this heading">¶</a></h3>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="index.html#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process" title="psutil.Process"><span class="n">p</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="api.html#psutil.Process" title="psutil.Process"><span class="n">psutil</span><span class="o">.</span><span class="n">Process</span></a><span class="p">(</span><span class="mi">7055</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <a class="sphinx-codeautolink-a" href="api.html#psutil.Process.oneshot" title="psutil.Process.oneshot"><span class="n">p</span><span class="o">.</span><span class="n">oneshot</span></a><span class="p">():</span>
+<span class="gp">... </span>    <a class="sphinx-codeautolink-a" href="api.html#psutil.Process.name" title="psutil.Process.name"><span class="n">p</span><span class="o">.</span><span class="n">name</span></a><span class="p">()</span>
+<span class="gp">... </span>    <a class="sphinx-codeautolink-a" href="api.html#psutil.Process.cpu_times" title="psutil.Process.cpu_times"><span class="n">p</span><span class="o">.</span><span class="n">cpu_times</span></a><span class="p">()</span>
+<span class="gp">... </span>    <a class="sphinx-codeautolink-a" href="api.html#psutil.Process.memory_info" title="psutil.Process.memory_info"><span class="n">p</span><span class="o">.</span><span class="n">memory_info</span></a><span class="p">()</span>
+<span class="gp">...</span>
+<span class="go">'python3'</span>
+<span class="go">pcputimes(user=1.02, system=0.31, children_user=0.32, children_system=0.1, iowait=0.0)</span>
+<span class="go">pmem(rss=3164160, vms=4410163, shared=897433, text=302694, data=2422374)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="identity">
+<h3>Identity<a class="headerlink" href="#identity" title="Link to this heading">¶</a></h3>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="index.html#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process" title="psutil.Process"><span class="n">p</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="api.html#psutil.Process" title="psutil.Process"><span class="n">psutil</span><span class="o">.</span><span class="n">Process</span></a><span class="p">(</span><span class="mi">7055</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process" title="psutil.Process"><span class="n">p</span></a>
+<span class="go">psutil.Process(pid=7055, name='python3', status=&lt;ProcessStatus.STATUS_RUNNING: 'running'&gt;, started='09:04:44')</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.pid" title="psutil.Process.pid"><span class="n">p</span><span class="o">.</span><span class="n">pid</span></a>
+<span class="go">7055</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.name" title="psutil.Process.name"><span class="n">p</span><span class="o">.</span><span class="n">name</span></a><span class="p">()</span>
+<span class="go">'python3'</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.exe" title="psutil.Process.exe"><span class="n">p</span><span class="o">.</span><span class="n">exe</span></a><span class="p">()</span>
+<span class="go">'/usr/bin/python3'</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.cwd" title="psutil.Process.cwd"><span class="n">p</span><span class="o">.</span><span class="n">cwd</span></a><span class="p">()</span>
+<span class="go">'/home/giampaolo'</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.cmdline" title="psutil.Process.cmdline"><span class="n">p</span><span class="o">.</span><span class="n">cmdline</span></a><span class="p">()</span>
+<span class="go">['/usr/bin/python3', 'main.py']</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.status" title="psutil.Process.status"><span class="n">p</span><span class="o">.</span><span class="n">status</span></a><span class="p">()</span>
+<span class="go">&lt;ProcessStatus.STATUS_RUNNING: 'running'&gt;</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.create_time" title="psutil.Process.create_time"><span class="n">p</span><span class="o">.</span><span class="n">create_time</span></a><span class="p">()</span>
+<span class="go">1267551141.5019531</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.terminal" title="psutil.Process.terminal"><span class="n">p</span><span class="o">.</span><span class="n">terminal</span></a><span class="p">()</span>
+<span class="go">'/dev/pts/0'</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.environ" title="psutil.Process.environ"><span class="n">p</span><span class="o">.</span><span class="n">environ</span></a><span class="p">()</span>
+<span class="go">{'GREP_OPTIONS': '--color=auto',</span>
+<span class="go"> 'LC_PAPER': 'it_IT.UTF-8',</span>
+<span class="go"> 'SHELL': '/bin/bash',</span>
+<span class="go"> 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg',</span>
+<span class="go"> ...}</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.is_running" title="psutil.Process.is_running"><span class="n">p</span><span class="o">.</span><span class="n">is_running</span></a><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.as_dict" title="psutil.Process.as_dict"><span class="n">p</span><span class="o">.</span><span class="n">as_dict</span></a><span class="p">()</span>
+<span class="go">{'num_ctx_switches': pctxsw(voluntary=63, involuntary=1),</span>
+<span class="go"> 'pid': 5457,</span>
+<span class="go"> 'status': &lt;ProcessStatus.STATUS_RUNNING: 'running'&gt;,</span>
+<span class="go"> ...}</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="process-tree">
+<h3>Process tree<a class="headerlink" href="#process-tree" title="Link to this heading">¶</a></h3>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.ppid" title="psutil.Process.ppid"><span class="n">p</span><span class="o">.</span><span class="n">ppid</span></a><span class="p">()</span>
+<span class="go">7054</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.parent" title="psutil.Process.parent"><span class="n">p</span><span class="o">.</span><span class="n">parent</span></a><span class="p">()</span>
+<span class="go">psutil.Process(pid=4699, name='bash', status=&lt;ProcessStatus.STATUS_SLEEPING: 'sleeping'&gt;, started='09:06:44')</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.parents" title="psutil.Process.parents"><span class="n">p</span><span class="o">.</span><span class="n">parents</span></a><span class="p">()</span>
+<span class="go">[psutil.Process(pid=4699, name='bash', started='09:06:44'),</span>
+<span class="go"> psutil.Process(pid=4689, name='gnome-terminal-server', status=&lt;ProcessStatus.STATUS_SLEEPING: 'sleeping'&gt;, started='0:06:44'),</span>
+<span class="go"> psutil.Process(pid=1, name='systemd', status=&lt;ProcessStatus.STATUS_SLEEPING: 'sleeping'&gt;, started='05:56:55')]</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.children" title="psutil.Process.children"><span class="n">p</span><span class="o">.</span><span class="n">children</span></a><span class="p">(</span><span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">[psutil.Process(pid=29835, name='python3', status=&lt;ProcessStatus.STATUS_SLEEPING: 'sleeping'&gt;, started='11:45:38'),</span>
+<span class="go"> psutil.Process(pid=29836, name='python3', status=&lt;ProcessStatus.STATUS_WAKING: 'waking'&gt;, started='11:43:39')]</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="credentials">
+<h3>Credentials<a class="headerlink" href="#credentials" title="Link to this heading">¶</a></h3>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.username" title="psutil.Process.username"><span class="n">p</span><span class="o">.</span><span class="n">username</span></a><span class="p">()</span>
+<span class="go">'giampaolo'</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.uids" title="psutil.Process.uids"><span class="n">p</span><span class="o">.</span><span class="n">uids</span></a><span class="p">()</span>
+<span class="go">puids(real=1000, effective=1000, saved=1000)</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.gids" title="psutil.Process.gids"><span class="n">p</span><span class="o">.</span><span class="n">gids</span></a><span class="p">()</span>
+<span class="go">pgids(real=1000, effective=1000, saved=1000)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="cpu-scheduling">
+<h3>CPU / scheduling<a class="headerlink" href="#cpu-scheduling" title="Link to this heading">¶</a></h3>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.cpu_times" title="psutil.Process.cpu_times"><span class="n">p</span><span class="o">.</span><span class="n">cpu_times</span></a><span class="p">()</span>
+<span class="go">pcputimes(user=1.02, system=0.31, children_user=0.32, children_system=0.1, iowait=0.0)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.cpu_percent" title="psutil.Process.cpu_percent"><span class="n">p</span><span class="o">.</span><span class="n">cpu_percent</span></a><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="go">12.1</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.cpu_affinity" title="psutil.Process.cpu_affinity"><span class="n">p</span><span class="o">.</span><span class="n">cpu_affinity</span></a><span class="p">()</span>
+<span class="go">[0, 1, 2, 3]</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.cpu_affinity" title="psutil.Process.cpu_affinity"><span class="n">p</span><span class="o">.</span><span class="n">cpu_affinity</span></a><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>  <span class="c1"># set</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.cpu_num" title="psutil.Process.cpu_num"><span class="n">p</span><span class="o">.</span><span class="n">cpu_num</span></a><span class="p">()</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.num_ctx_switches" title="psutil.Process.num_ctx_switches"><span class="n">p</span><span class="o">.</span><span class="n">num_ctx_switches</span></a><span class="p">()</span>
+<span class="go">pctxsw(voluntary=78, involuntary=19)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.nice" title="psutil.Process.nice"><span class="n">p</span><span class="o">.</span><span class="n">nice</span></a><span class="p">()</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.nice" title="psutil.Process.nice"><span class="n">p</span><span class="o">.</span><span class="n">nice</span></a><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># set</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.ionice" title="psutil.Process.ionice"><span class="n">p</span><span class="o">.</span><span class="n">ionice</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="api.html#psutil.IOPRIO_CLASS_IDLE" title="psutil.IOPRIO_CLASS_IDLE"><span class="n">psutil</span><span class="o">.</span><span class="n">IOPRIO_CLASS_IDLE</span></a><span class="p">)</span>  <span class="c1"># set IO priority</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.ionice" title="psutil.Process.ionice"><span class="n">p</span><span class="o">.</span><span class="n">ionice</span></a><span class="p">()</span>
+<span class="go">pionice(ioclass=&lt;ProcessIOPriority.IOPRIO_CLASS_IDLE: 3&gt;, value=0)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.rlimit" title="psutil.Process.rlimit"><span class="n">p</span><span class="o">.</span><span class="n">rlimit</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="api.html#psutil.RLIMIT_NOFILE" title="psutil.RLIMIT_NOFILE"><span class="n">psutil</span><span class="o">.</span><span class="n">RLIMIT_NOFILE</span></a><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>  <span class="c1"># set resource limits</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.rlimit" title="psutil.Process.rlimit"><span class="n">p</span><span class="o">.</span><span class="n">rlimit</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="api.html#psutil.RLIMIT_NOFILE" title="psutil.RLIMIT_NOFILE"><span class="n">psutil</span><span class="o">.</span><span class="n">RLIMIT_NOFILE</span></a><span class="p">)</span>
+<span class="go">(5, 5)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h3>Memory<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.memory_info" title="psutil.Process.memory_info"><span class="n">p</span><span class="o">.</span><span class="n">memory_info</span></a><span class="p">()</span>
+<span class="go">pmem(rss=3164160, vms=4410163, shared=897433, text=302694, data=2422374)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.memory_info_ex" title="psutil.Process.memory_info_ex"><span class="n">p</span><span class="o">.</span><span class="n">memory_info_ex</span></a><span class="p">()</span>
+<span class="go">pmem_ex(rss=3164160,</span>
+<span class="go">        vms=4410163,</span>
+<span class="go">        shared=897433,</span>
+<span class="go">        text=302694,</span>
+<span class="go">        data=2422374,</span>
+<span class="go">        peak_rss=4172190,</span>
+<span class="go">        peak_vms=6399001,</span>
+<span class="go">        rss_anon=2266726,</span>
+<span class="go">        rss_file=897433,</span>
+<span class="go">        rss_shmem=0,</span>
+<span class="go">        swap=0,</span>
+<span class="go">        hugetlb=0)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.memory_percent" title="psutil.Process.memory_percent"><span class="n">p</span><span class="o">.</span><span class="n">memory_percent</span></a><span class="p">()</span>
+<span class="go">0.7823</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.memory_footprint" title="psutil.Process.memory_footprint"><span class="n">p</span><span class="o">.</span><span class="n">memory_footprint</span></a><span class="p">()</span>  <span class="c1"># "real" USS memory usage</span>
+<span class="go">pfootprint(uss=2355200, pss=2483712, swap=0)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.memory_maps" title="psutil.Process.memory_maps"><span class="n">p</span><span class="o">.</span><span class="n">memory_maps</span></a><span class="p">()</span>
+<span class="go">pmmap_grouped(path='/lib/x8664-linux-gnu/libc-2.15.so',</span>
+<span class="go">              rss=3821568,</span>
+<span class="go">              size=3842048,</span>
+<span class="go">              pss=3821568,</span>
+<span class="go">              shared_clean=0,</span>
+<span class="go">              shared_dirty=0,</span>
+<span class="go">              private_clean=0,</span>
+<span class="go">              private_dirty=3821568,</span>
+<span class="go">              referenced=3575808,</span>
+<span class="go">              anonymous=3821568,</span>
+<span class="go">              swap=0),</span>
+<span class="go">pmmap_grouped(path='[heap]',</span>
+<span class="go">              rss=32768,</span>
+<span class="go">              size=139264,</span>
+<span class="go">              pss=32768,</span>
+<span class="go">              shared_clean=0,</span>
+<span class="go">              shared_dirty=0,</span>
+<span class="go">              private_clean=0,</span>
+<span class="go">              private_dirty=32768,</span>
+<span class="go">              referenced=32768,</span>
+<span class="go">              anonymous=32768,</span>
+<span class="go">              swap=0),</span>
+<span class="go">...]</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.page_faults" title="psutil.Process.page_faults"><span class="n">p</span><span class="o">.</span><span class="n">page_faults</span></a><span class="p">()</span>
+<span class="go">ppagefaults(minor=5905, major=3)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="threads">
+<h3>Threads<a class="headerlink" href="#threads" title="Link to this heading">¶</a></h3>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.threads" title="psutil.Process.threads"><span class="n">p</span><span class="o">.</span><span class="n">threads</span></a><span class="p">()</span>
+<span class="go">[pthread(id=5234, user_time=22.5, system_time=9.2891),</span>
+<span class="go"> pthread(id=5237, user_time=0.0707, system_time=1.1)]</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.num_threads" title="psutil.Process.num_threads"><span class="n">p</span><span class="o">.</span><span class="n">num_threads</span></a><span class="p">()</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="files-and-connections">
+<h3>Files and connections<a class="headerlink" href="#files-and-connections" title="Link to this heading">¶</a></h3>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.io_counters" title="psutil.Process.io_counters"><span class="n">p</span><span class="o">.</span><span class="n">io_counters</span></a><span class="p">()</span>
+<span class="go">pio(read_count=478001,</span>
+<span class="go">    write_count=59371,</span>
+<span class="go">    read_bytes=700416,</span>
+<span class="go">    write_bytes=69632,</span>
+<span class="go">    read_chars=456232,</span>
+<span class="go">    write_chars=517543)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.open_files" title="psutil.Process.open_files"><span class="n">p</span><span class="o">.</span><span class="n">open_files</span></a><span class="p">()</span>
+<span class="go">[popenfile(path='/home/giampaolo/monit.py', fd=3, position=0, mode='r', flags=32768),</span>
+<span class="go"> popenfile(path='/var/log/monit.log', fd=4, position=235542, mode='a', flags=33793)]</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.net_connections" title="psutil.Process.net_connections"><span class="n">p</span><span class="o">.</span><span class="n">net_connections</span></a><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'tcp'</span><span class="p">)</span>
+<span class="go">[pconn(fd=115,</span>
+<span class="go">       family=&lt;AddressFamily.AF_INET: 2&gt;,</span>
+<span class="go">       type=&lt;SocketType.SOCK_STREAM: 1&gt;,</span>
+<span class="go">       laddr=addr(ip='10.0.0.1', port=48776),</span>
+<span class="go">       raddr=addr(ip='93.186.135.91', port=80),</span>
+<span class="go">       status=&lt;ConnectionStatus.CONN_ESTABLISHED: 'ESTABLISHED'&gt;),</span>
+<span class="go"> pconn(fd=117,</span>
+<span class="go">       family=&lt;AddressFamily.AF_INET: 2&gt;,</span>
+<span class="go">       type=&lt;SocketType.SOCK_STREAM: 1&gt;,</span>
+<span class="go">       laddr=addr(ip='10.0.0.1', port=43761),</span>
+<span class="go">       raddr=addr(ip='72.14.234.100', port=80),</span>
+<span class="go">       status=&lt;ConnectionStatus.CONN_CLOSING: 'CLOSING'&gt;)]</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.num_fds" title="psutil.Process.num_fds"><span class="n">p</span><span class="o">.</span><span class="n">num_fds</span></a><span class="p">()</span>
+<span class="go">8</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="signals">
+<h3>Signals<a class="headerlink" href="#signals" title="Link to this heading">¶</a></h3>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.send_signal" title="psutil.Process.send_signal"><span class="n">p</span><span class="o">.</span><span class="n">send_signal</span></a><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">SIGTERM</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.suspend" title="psutil.Process.suspend"><span class="n">p</span><span class="o">.</span><span class="n">suspend</span></a><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.resume" title="psutil.Process.resume"><span class="n">p</span><span class="o">.</span><span class="n">resume</span></a><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.terminate" title="psutil.Process.terminate"><span class="n">p</span><span class="o">.</span><span class="n">terminate</span></a><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.kill" title="psutil.Process.kill"><span class="n">p</span><span class="o">.</span><span class="n">kill</span></a><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.wait" title="psutil.Process.wait"><span class="n">p</span><span class="o">.</span><span class="n">wait</span></a><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">&lt;NegSignal.SIGTERM: -15&gt;</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="other-process-functions">
+<h3>Other process functions<a class="headerlink" href="#other-process-functions" title="Link to this heading">¶</a></h3>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="index.html#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.pids" title="psutil.pids"><span class="n">psutil</span><span class="o">.</span><span class="n">pids</span></a><span class="p">()</span>
+<span class="go">[1, 2, 3, 4, 5, 6, 7, 46, 48, 50, 51, 178, 182, ...]</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.pid_exists" title="psutil.pid_exists"><span class="n">psutil</span><span class="o">.</span><span class="n">pid_exists</span></a><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="api.html#psutil.process_iter" title="psutil.process_iter"><span class="n">psutil</span><span class="o">.</span><span class="n">process_iter</span></a><span class="p">([</span><span class="s1">'pid'</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">]):</span>
+<span class="gp">... </span>    <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="api.html#psutil.Process.pid" title="psutil.Process.pid"><span class="n">p</span><span class="o">.</span><span class="n">pid</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="api.html#psutil.Process.name" title="psutil.Process.name"><span class="n">p</span><span class="o">.</span><span class="n">name</span></a><span class="p">())</span>
+<span class="gp">...</span>
+<span class="go">1 systemd</span>
+<span class="go">2 kthreadd</span>
+<span class="go">3 ksoftirqd/0</span>
+<span class="go">...</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">on_terminate</span><span class="p">(</span><span class="n">proc</span><span class="p">):</span>
+<span class="gp">... </span>    <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><span class="s2">"process </span><span class="si">{}</span><span class="s2"> terminated"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">proc</span><span class="p">))</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># waits for multiple processes to terminate</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gone</span><span class="p">,</span> <span class="n">alive</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="api.html#psutil.wait_procs" title="psutil.wait_procs"><span class="n">psutil</span><span class="o">.</span><span class="n">wait_procs</span></a><span class="p">(</span><span class="n">procs_list</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">on_terminate</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="c-heap-introspection">
+<h2>C heap introspection<a class="headerlink" href="#c-heap-introspection" title="Link to this heading">¶</a></h2>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="index.html#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.heap_info" title="psutil.heap_info"><span class="n">psutil</span><span class="o">.</span><span class="n">heap_info</span></a><span class="p">()</span>
+<span class="go">pheap(heap_used=5177792, mmap_used=819200)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="api.html#psutil.heap_trim" title="psutil.heap_trim"><span class="n">psutil</span><span class="o">.</span><span class="n">heap_trim</span></a><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>See also <a class="reference external" href="https://github.com/giampaolo/psleak">psleak</a>.</p>
+</section>
+<section id="windows-services">
+<h2>Windows services<a class="headerlink" href="#windows-services" title="Link to this heading">¶</a></h2>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="index.html#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#list" title="list"><span class="nb">list</span></a><span class="p">(</span><span class="n">psutil</span><span class="o">.</span><span class="n">win_service_iter</span><span class="p">())</span>
+<span class="go">[&lt;WindowsService(name='AeLookupSvc', display_name='Application Experience') at 38850096&gt;,</span>
+<span class="go"> &lt;WindowsService(name='ALG', display_name='Application Layer Gateway Service') at 38850128&gt;,</span>
+<span class="go"> &lt;WindowsService(name='APNMCP', display_name='Ask Update Service') at 38850160&gt;,</span>
+<span class="go"> &lt;WindowsService(name='AppIDSvc', display_name='Application Identity') at 38850192&gt;,</span>
+<span class="go"> ...]</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">psutil</span><span class="o">.</span><span class="n">win_service_get</span><span class="p">(</span><span class="s1">'alg'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">as_dict</span><span class="p">()</span>
+<span class="go">{'binpath': 'C:\\Windows\\System32\\alg.exe',</span>
+<span class="go"> 'description': 'Provides support for 3rd party protocol plug-ins for Internet Connection Sharing',</span>
+<span class="go"> 'display_name': 'Application Layer Gateway Service',</span>
+<span class="go"> 'name': 'alg',</span>
+<span class="go"> 'pid': None,</span>
+<span class="go"> 'start_type': 'manual',</span>
+<span class="go"> 'status': 'stopped',</span>
+<span class="go"> 'username': 'NT AUTHORITY\\LocalService'}</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<div class="section ablog__blog_comments">
+</div>
+</article>
+<nav aria-label="Previous and next pages" class="prev-next no-visited">
+<a class="prev-next-prev" href="install.html" rel="prev">
+<span aria-hidden="true" class="prev-next-arrow">‹</span>
+<span class="prev-next-block">
+<span class="prev-next-label">Previous</span>
+<span class="prev-next-title">Install psutil</span>
+</span>
+</a>
+<a class="prev-next-next" href="api.html" rel="next">
+<span class="prev-next-block">
+<span class="prev-next-label">Next</span>
+<span class="prev-next-title">API reference</span>
+</span>
+<span aria-hidden="true" class="prev-next-arrow">›</span>
+</a>
+</nav>
+</div>
+<aside aria-label="On this page" class="right-sidebar">
+<div class="right-sidebar-title">On this page</div>
+<ul>
+<li><a class="reference internal" href="#">API overview</a><ul>
+<li><a class="reference internal" href="#system-related-functions">System related functions</a><ul>
+<li><a class="reference internal" href="#cpu">CPU</a></li>
+<li><a class="reference internal" href="#memory">Memory</a></li>
+<li><a class="reference internal" href="#disks">Disks</a></li>
+<li><a class="reference internal" href="#network">Network</a></li>
+<li><a class="reference internal" href="#sensors">Sensors</a></li>
+<li><a class="reference internal" href="#other-system-info">Other system info</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#processes">Processes</a><ul>
+<li><a class="reference internal" href="#oneshot">Oneshot</a></li>
+<li><a class="reference internal" href="#identity">Identity</a></li>
+<li><a class="reference internal" href="#process-tree">Process tree</a></li>
+<li><a class="reference internal" href="#credentials">Credentials</a></li>
+<li><a class="reference internal" href="#cpu-scheduling">CPU / scheduling</a></li>
+<li><a class="reference internal" href="#id1">Memory</a></li>
+<li><a class="reference internal" href="#threads">Threads</a></li>
+<li><a class="reference internal" href="#files-and-connections">Files and connections</a></li>
+<li><a class="reference internal" href="#signals">Signals</a></li>
+<li><a class="reference internal" href="#other-process-functions">Other process functions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#c-heap-introspection">C heap introspection</a></li>
+<li><a class="reference internal" href="#windows-services">Windows services</a></li>
+</ul>
+</li>
+</ul>
+</aside>
+</div>
+</main>
+<footer class="footer" role="contentinfo">
+<div class="footer-content">
+<div class="footer-text">
+<span><a class="footer-egg" href="404.html" title="🥚">©</a> 2009-2026 Giampaolo Rodola</span>
+<span><a href="about.html" title="About this documentation site">About</a></span>
+<span><a href="https://github.com/giampaolo/psutil/edit/master/docs/api-overview.rst" rel="noopener noreferrer" target="_blank" title="Edit this page on GitHub">Edit on GitHub</a></span>
+</div>
+<div class="footer-icons">
+<a aria-label="psutil on GitHub" class="footer-github" href="https://github.com/giampaolo/psutil" rel="noopener noreferrer" target="_blank" title="psutil on GitHub">
+<i aria-hidden="true" class="fa-brands fa-github"></i>
+</a>
+<a aria-label="psutil on PyPI" class="footer-pypi" href="https://pypi.org/project/psutil/" rel="noopener noreferrer" target="_blank" title="psutil on PyPI">
+<i aria-hidden="true" class="fa-brands fa-python"></i>
+</a>
+<a aria-label="Subscribe to blog" class="footer-rss" href="blog/atom.xml" title="Subscribe to blog (Atom feed)">
+<span class="rss-icon"></span>
+</a>
+</div>
+</div>
+</footer>
+</div>
+</body>
+</html>

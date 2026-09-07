@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+
+<html data-content_root="../../" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="From Python 3.3 to today: ending 15 years of subprocess polling" property="og:title"/>
+<meta content="article" property="og:type"/>
+<meta content="https://psutil.io/blog/2026/event-driven-process-waiting.html" property="og:url"/>
+<meta content="psutil" property="og:site_name"/>
+<meta content="Replacing subprocess.Popen.wait()'s busy-loop with an event-driven model, in psutil then upstream CPython" property="og:description"/>
+<meta content="1146" property="og:image:width"/>
+<meta content="600" property="og:image:height"/>
+<meta content="https://psutil.io/_images/social_previews/summary_blog_2026_event-driven-process-waiting_9a362e60.png" property="og:image"/>
+<meta content="Replacing subprocess.Popen.wait()'s busy-loop with an event-driven model, in psutil then upstream CPython" property="og:image:alt"/>
+<meta content="Replacing subprocess.Popen.wait()'s busy-loop with an event-driven model, in psutil then upstream CPython" name="description"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<title>From Python 3.3 to today: ending 15 years of subprocess polling — psutil</title>
+<link href="../../_static/pygments.css?v=8f2a1f02" rel="stylesheet" type="text/css"/>
+<link href="../../_static/basic.css?v=29da98fa" rel="stylesheet" type="text/css"/>
+<link href="../../_static/sphinx-codeautolink.css?v=b2176991" rel="stylesheet" type="text/css"/>
+<link href="../../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="../../_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/base.css?v=f08856fc" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/fonts.css?v=e753a5f7" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/fontawesome.css?v=b66fcbdb" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/typography.css?v=66ac06b9" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/admonitions.css?v=163ddbc1" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/api-signatures.css?v=f032e3fc" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/blog.css?v=2a308a50" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/code.css?v=0681a11b" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/dev-banner.css?v=6210bb1f" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/doc-icons.css?v=c22d5c40" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/footer.css?v=5d6b8d43" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/layout.css?v=dca717ce" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/left-sidebar.css?v=dd06a93c" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/prev-next.css?v=ca7d359d" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/print.css?v=f9febfdf" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/right-sidebar.css?v=bc13b617" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/search.css?v=bc2ce7bc" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/tables.css?v=c600f876" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/topbar.css?v=d6787661" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/home.css?v=3247c119" rel="stylesheet" type="text/css"/>
+<script src="../../_static/documentation_options.js?v=1843773c"></script>
+<script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+<script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+<script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="../../_static/copybutton.js?v=35a8b989"></script>
+<script src="../../_static/translations.js?v=540d3cec"></script>
+<script src="../../_static/design-tabs.js?v=f930bc37"></script>
+<script defer="defer" src="../../_static/js/back-to-top.js?v=01752a9c"></script>
+<script defer="defer" src="../../_static/js/external-urls.js?v=ea4e66fd"></script>
+<script defer="defer" src="../../_static/js/github-meta.js?v=3335eb90"></script>
+<script defer="defer" src="../../_static/js/highlight-repl.js?v=5a308837"></script>
+<script defer="defer" src="../../_static/js/home-install-copy.js?v=be638b0c"></script>
+<script defer="defer" src="../../_static/js/right-toc.js?v=a13c1536"></script>
+<script defer="defer" src="../../_static/js/search-dim.js?v=b004caf9"></script>
+<script defer="defer" src="../../_static/js/search-shortcuts.js?v=6247adac"></script>
+<script defer="defer" src="../../_static/js/shortcuts-help.js?v=61707f15"></script>
+<script defer="defer" src="../../_static/js/sidebar-mobile.js?v=eb71acbb"></script>
+<script defer="defer" src="../../_static/js/theme-toggle.js?v=f51f1c9b"></script>
+<link href="https://projects.localizethedocs.org/psutil-docs-l10n/blog/2026/event-driven-process-waiting.html" rel="canonical"/>
+<link href="../../_static/favicon.svg" rel="icon"/>
+<link href="../../about.html" rel="author" title="关于此文档"/>
+<link href="../../genindex.html" rel="index" title="索引"/>
+<link href="../../search.html" rel="search" title="搜索"/>
+<link href="../../_static/images/logo-psutil.png" rel="apple-touch-icon"/>
+<script>
+(function() {
+    const html = document.documentElement;
+    html.classList.add('no-transition');
+    const saved = localStorage.getItem('psutil-sphinx-theme');
+    const theme = saved || (
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+    );
+    html.setAttribute('data-theme', theme);
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            html.classList.remove('no-transition');
+        });
+    });
+})();
+</script>
+<script async="" data-goatcounter="https://psutil.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-G7374TFB11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G7374TFB11');
+</script>
+<link href="../../blog/atom.xml" rel="alternate" title="Blog" type="application/atom+xml"/>
+<script src="../../ltd-provenance.js" type="text/javascript"></script>
+<script src="../../ltd-current.js" type="text/javascript"></script>
+<script src="../../../../ltd-config.js" type="text/javascript"></script>
+<script src="../../../../ltd-flyout.js" type="text/javascript"></script>
+</head><body data-page="blog/2026/event-driven-process-waiting">
+<header class="topbar no-visited" role="banner">
+<div class="topbar-inner">
+<button aria-expanded="false" aria-label="Toggle navigation" class="topbar-hamburger" id="sidebar-toggle" type="button">
+<i aria-hidden="true" class="fa-solid fa-bars"></i>
+</button><a class="topbar-logo" href="../../index.html"><img alt="" src="../../_static/images/logo-psutil.svg"/>
+<span>psutil</span>
+</a>
+<nav aria-label="Site actions" class="topbar-actions">
+<a class="topbar-text" href="../../blog.html">Blog</a>
+<button aria-label="Toggle theme" class="topbar-btn" id="theme-toggle" title="Toggle dark mode (shift+D)" type="button">
+<i aria-hidden="true" class="fa-regular fa-moon"></i>
+</button>
+<a aria-label="GitHub repository" class="topbar-link topbar-github" href="https://github.com/giampaolo/psutil" rel="noopener" target="_blank" title="GitHub">
+<i aria-hidden="true" class="fa-brands fa-github"></i>
+<span class="topbar-stars" data-repo="giampaolo/psutil"></span>
+</a>
+<a aria-label="PyPI release" class="topbar-version" data-repo="giampaolo/psutil" href="https://pypi.org/project/psutil" rel="noopener" target="_blank" title="PyPI"></a>
+</nav>
+</div>
+</header>
+<div class="page">
+<nav aria-label="Main navigation" class="left-sidebar no-visited">
+<div class="search-box">
+<form action="../../search.html" method="get" role="search">
+<input aria-label="Search docs" autocapitalize="off" autocomplete="off" autocorrect="off" id="search-input" name="q" placeholder="搜索" spellcheck="false" type="text"/>
+<span aria-hidden="true" class="search-kbd"><kbd>Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+</div>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api-overview.html">API overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../performance.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../recipes.html">Recipes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../shell-equivalents.html">Shell equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stdlib-equivalents.html">Stdlib equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../platform.html">Platform support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migration.html">Migration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../adoption.html">Who uses psutil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../alternatives.html">Alternatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../funding.html">Funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../credits.html">Credits</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../blog.html">Blog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timeline.html">Timeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devguide.html">Development guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">General Index</a></li>
+</ul>
+</nav>
+<main class="main" id="main-content" role="main">
+<div class="dev-banner" role="note">
+  You're reading the <strong>development</strong> version of the psutil
+  docs, which may describe unreleased changes. For the current release
+  see <a href="https://psutil.readthedocs.io/stable/">psutil.readthedocs.io/stable</a>.
+</div>
+<div class="blog-section-banner">
+<div class="blog-section-label">
+<svg aria-hidden="true" class="blog-section-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+<path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+</svg>
+<a class="blog-section-title" href="../../blog.html">Blog</a>
+<div class="blog-section-subtitle">Releases, deep dives, war stories</div>
+</div>
+<a class="blog-rss" href="../atom.xml" title="Subscribe (Atom feed)">
+<span class="rss-icon blog-rss-icon"></span>
+<span>RSS</span>
+</a>
+</div>
+<div class="article-with-toc">
+<div class="article-column">
+<article class="article">
+<section id="from-python-3-3-to-today-ending-15-years-of-subprocess-polling">
+<h1>From Python 3.3 to today: ending 15 years of subprocess polling<a class="headerlink" href="#from-python-3-3-to-today-ending-15-years-of-subprocess-polling" title="链接到此标题。">¶</a></h1>
+<div class="post-meta-banner docutils container">
+<span><a class="post-meta-featured reference internal" href="../tag/featured.html">Featured</a></span><span class="post-meta-author">Giampaolo Rodola</span><span class="post-meta-date">Jan 28, 2026</span><span class="post-meta-readtime">5 min read</span><span class="post-meta-tags"><a class="reference internal" href="../tag/performance.html">performance</a><a class="reference internal" href="../tag/python-core.html">python-core</a></span></div>
+<p>One of the less fun aspects of process management on POSIX systems is waiting
+for a process to terminate. The standard library's <a class="reference external" href="https://docs.python.org/3/library/subprocess.html#module-subprocess" title="(位于 Python v3.14)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">subprocess</span></code></a> module has
+relied on a busy-loop polling approach since the <em>timeout</em> parameter was added
+to <a class="reference external" href="https://docs.python.org/3/library/subprocess.html#subprocess.Popen.wait" title="(位于 Python v3.14)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">subprocess.Popen.wait()</span></code></a> in Python 3.3, around 15 years ago (see
+<a class="reference external" href="https://github.com/python/cpython/blob/8def603d853c7f5e4ff57f95de289f99e1943669/Lib/subprocess.py#L2056-L2077">source</a>).
+And psutil's <a class="reference internal" href="../../api.html#psutil.Process.wait" title="psutil.Process.wait"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.wait()</span></code></a> method uses exactly the same technique (see
+<a class="reference external" href="https://github.com/giampaolo/psutil/blob/700b7e6a/psutil/_psposix.py#L95-L160">source</a>).</p>
+<p>The logic is straightforward: check whether the process has exited using
+non-blocking <code class="docutils literal notranslate"><span class="pre">waitpid(WNOHANG)</span></code>, sleep briefly, check again, sleep a bit
+longer, and so on.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/os.html#module-os" title="os"><span class="nn">os</span></a><span class="o">,</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#module-time" title="time"><span class="nn">time</span></a>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">wait_busy</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span> <span class="n">timeout</span><span class="p">):</span>
+    <span class="n">end</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.monotonic" title="time.monotonic"><span class="n">time</span><span class="o">.</span><span class="n">monotonic</span></a><span class="p">()</span> <span class="o">+</span> <span class="n">timeout</span>
+    <span class="n">interval</span> <span class="o">=</span> <span class="mf">0.0001</span>
+    <span class="k">while</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.monotonic" title="time.monotonic"><span class="n">time</span><span class="o">.</span><span class="n">monotonic</span></a><span class="p">()</span> <span class="o">&lt;</span> <span class="n">end</span><span class="p">:</span>
+        <span class="n">pid_done</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/os.html#os.waitpid" title="os.waitpid"><span class="n">os</span><span class="o">.</span><span class="n">waitpid</span></a><span class="p">(</span><span class="n">pid</span><span class="p">,</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/os.html#os.WNOHANG" title="os.WNOHANG"><span class="n">os</span><span class="o">.</span><span class="n">WNOHANG</span></a><span class="p">)</span>
+        <span class="k">if</span> <span class="n">pid_done</span><span class="p">:</span>
+            <span class="k">return</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.sleep" title="time.sleep"><span class="n">time</span><span class="o">.</span><span class="n">sleep</span></a><span class="p">(</span><span class="n">interval</span><span class="p">)</span>
+        <span class="n">interval</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#min" title="min"><span class="nb">min</span></a><span class="p">(</span><span class="n">interval</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="n">TimeoutExpired</span>
+</pre></div>
+</div>
+<p>In this blog post I'll show how I finally addressed this long-standing
+inefficiency, first in psutil, and most excitingly, directly in CPython's
+standard library <a class="reference external" href="https://docs.python.org/3/library/subprocess.html#module-subprocess" title="(位于 Python v3.14)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">subprocess</span></code></a> module.</p>
+<section id="the-problem-with-busy-polling">
+<h2>The problem with busy-polling<a class="headerlink" href="#the-problem-with-busy-polling" title="链接到此标题。">¶</a></h2>
+<ul class="simple">
+<li><p>CPU wake-ups: even with exponential backoff (starting at 0.1ms, capping at
+40ms), the system constantly wakes up to check process status, wasting CPU
+cycles and draining batteries.</p></li>
+<li><p>Latency: there's always a gap between when a process actually terminates and
+when you detect it.</p></li>
+<li><p>Scalability: monitoring many processes simultaneously magnifies all of the
+above.</p></li>
+</ul>
+</section>
+<section id="event-driven-waiting">
+<h2>Event-driven waiting<a class="headerlink" href="#event-driven-waiting" title="链接到此标题。">¶</a></h2>
+<p>All POSIX systems provide at least one mechanism to be notified when a file
+descriptor becomes ready. These are <em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/select(2)">select(2)</a></em>, <em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/poll(2)">poll(2)</a></em>,
+<em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/epoll(7)">epoll(7)</a></em> (Linux) and
+<a class="reference external" href="https://man.freebsd.org/cgi/man.cgi?query=kqueue">kqueue()</a> (BSD / macOS)
+system calls. Until recently, I believed they could only be used with file
+descriptors referencing sockets, pipes, etc., but it turns out they can also be
+used to wait for events on process PIDs!</p>
+</section>
+<section id="linux">
+<h2>Linux<a class="headerlink" href="#linux" title="链接到此标题。">¶</a></h2>
+<p>In 2019, Linux 5.3 introduced a new syscall, <a class="reference external" href="https://docs.python.org/3/library/os.html#os.pidfd_open" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.pidfd_open()</span></code></a>, which was
+added in Python 3.9. It returns a <a class="reference internal" href="../../glossary.html#term-file-descriptor"><span class="xref std std-term">file descriptor</span></a> referencing a process
+PID. The interesting thing is that <em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/pidfd_open(2)">pidfd_open(2)</a></em> can be used in
+conjunction with <em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/select(2)">select(2)</a></em>, <em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/poll(2)">poll(2)</a></em> or
+<em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/epoll(7)">epoll(7)</a></em> to effectively wait until the process exits. E.g. by using
+<code class="docutils literal notranslate"><span class="pre">poll()</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/os.html#module-os" title="os"><span class="nn">os</span></a><span class="o">,</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/select.html#module-select" title="select"><span class="nn">select</span></a>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">wait_pidfd</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span> <span class="n">timeout</span><span class="p">):</span>
+    <span class="n">pidfd</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">pidfd_open</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
+    <span class="n">poller</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/select.html#select.poll" title="select.poll"><span class="n">select</span><span class="o">.</span><span class="n">poll</span></a><span class="p">()</span>
+    <span class="n">poller</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">pidfd</span><span class="p">,</span> <span class="n">select</span><span class="o">.</span><span class="n">POLLIN</span><span class="p">)</span>
+    <span class="c1"># block until process exits or timeout occurs</span>
+    <span class="n">events</span> <span class="o">=</span> <span class="n">poller</span><span class="o">.</span><span class="n">poll</span><span class="p">(</span><span class="n">timeout</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">events</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="k">raise</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/exceptions.html#TimeoutError" title="TimeoutError"><span class="ne">TimeoutError</span></a>
+</pre></div>
+</div>
+<p>This approach has zero busy-looping. The kernel wakes us up exactly when the
+process terminates or when the timeout expires if the PID is still alive.</p>
+<p>I chose <code class="docutils literal notranslate"><span class="pre">poll()</span></code> over <code class="docutils literal notranslate"><span class="pre">select()</span></code> because <code class="docutils literal notranslate"><span class="pre">select()</span></code> has a historical file
+descriptor limit (<code class="docutils literal notranslate"><span class="pre">FD_SETSIZE</span></code>), which typically caps it at 1024
+<a class="reference internal" href="../../glossary.html#term-file-descriptor"><span class="xref std std-term">file descriptors</span></a> per-process (reminded me of
+<a class="extlink-bpo reference external" href="https://bugs.python.org/issue1685000">BPO-1685000</a>).</p>
+<p>I chose <code class="docutils literal notranslate"><span class="pre">poll()</span></code> over <code class="docutils literal notranslate"><span class="pre">epoll()</span></code> because it does not require creating an
+additional <a class="reference internal" href="../../glossary.html#term-file-descriptor"><span class="xref std std-term">file descriptor</span></a>. It also needs only a single syscall, which
+should make it a bit more efficient when monitoring a single FD rather than
+many.</p>
+</section>
+<section id="macos-and-bsd">
+<h2>macOS and BSD<a class="headerlink" href="#macos-and-bsd" title="链接到此标题。">¶</a></h2>
+<p>BSD-derived systems (including macOS) provide the <code class="docutils literal notranslate"><span class="pre">kqueue()</span></code> syscall. It's
+conceptually similar to <code class="docutils literal notranslate"><span class="pre">select()</span></code>, <code class="docutils literal notranslate"><span class="pre">poll()</span></code> and <code class="docutils literal notranslate"><span class="pre">epoll()</span></code>, but more
+powerful (e.g. it can also handle regular files). <code class="docutils literal notranslate"><span class="pre">kqueue()</span></code> can be passed a
+PID directly, and it will return once the PID disappears or the timeout
+expires:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/select.html#module-select" title="select"><span class="nn">select</span></a>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">wait_kqueue</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span> <span class="n">timeout</span><span class="p">):</span>
+    <span class="n">kq</span> <span class="o">=</span> <span class="n">select</span><span class="o">.</span><span class="n">kqueue</span><span class="p">()</span>
+    <span class="n">kev</span> <span class="o">=</span> <span class="n">select</span><span class="o">.</span><span class="n">kevent</span><span class="p">(</span>
+        <span class="n">pid</span><span class="p">,</span>
+        <span class="nb">filter</span><span class="o">=</span><span class="n">select</span><span class="o">.</span><span class="n">KQ_FILTER_PROC</span><span class="p">,</span>
+        <span class="n">flags</span><span class="o">=</span><span class="n">select</span><span class="o">.</span><span class="n">KQ_EV_ADD</span> <span class="o">|</span> <span class="n">select</span><span class="o">.</span><span class="n">KQ_EV_ONESHOT</span><span class="p">,</span>
+        <span class="n">fflags</span><span class="o">=</span><span class="n">select</span><span class="o">.</span><span class="n">KQ_NOTE_EXIT</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="c1"># block until process exits or timeout occurs</span>
+    <span class="n">events</span> <span class="o">=</span> <span class="n">kq</span><span class="o">.</span><span class="n">control</span><span class="p">([</span><span class="n">kev</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">events</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="k">raise</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/exceptions.html#TimeoutError" title="TimeoutError"><span class="ne">TimeoutError</span></a>
+</pre></div>
+</div>
+</section>
+<section id="windows">
+<h2>Windows<a class="headerlink" href="#windows" title="链接到此标题。">¶</a></h2>
+<p>Windows does not busy-loop, both in psutil and <a class="reference external" href="https://docs.python.org/3/library/subprocess.html#module-subprocess" title="(位于 Python v3.14)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">subprocess</span></code></a> module, thanks
+to <code class="docutils literal notranslate"><span class="pre">WaitForSingleObject</span></code>. This means Windows has effectively had event-driven
+process waiting from the start. So nothing to do on that front.</p>
+</section>
+<section id="graceful-fallbacks">
+<h2>Graceful fallbacks<a class="headerlink" href="#graceful-fallbacks" title="链接到此标题。">¶</a></h2>
+<p>Both <code class="docutils literal notranslate"><span class="pre">pidfd_open()</span></code> and <code class="docutils literal notranslate"><span class="pre">kqueue()</span></code> can fail for different reasons. For
+example, with <code class="docutils literal notranslate"><span class="pre">EMFILE</span></code> if the process runs out of
+<a class="reference internal" href="../../glossary.html#term-file-descriptor"><span class="xref std std-term">file descriptors</span></a> (usually 1024), or with <code class="docutils literal notranslate"><span class="pre">EACCES</span></code> /
+<code class="docutils literal notranslate"><span class="pre">EPERM</span></code> if the syscall was explicitly blocked at the system level by the
+sysadmin (e.g. via SECCOMP). In all cases, psutil silently falls back to the
+traditional busy-loop polling approach rather than raising an exception.</p>
+<p>This fast-path-with-fallback approach is similar in spirit to <a class="extlink-bpo reference external" href="https://bugs.python.org/issue33671">BPO-33671</a>,
+where I sped up <a class="reference external" href="https://docs.python.org/3/library/shutil.html#shutil.copyfile" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">shutil.copyfile()</span></code></a> by using zero-copy system calls back in
+2018. In there, more efficient <a class="reference external" href="https://docs.python.org/3/library/os.html#os.sendfile" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.sendfile()</span></code></a> is attempted first, and if
+it fails (e.g. on network filesystems) we fall back to the traditional
+<em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/read(2)">read(2)</a></em> / <em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/write(2)">write(2)</a></em> approach to copy regular files.</p>
+</section>
+<section id="measurement">
+<h2>Measurement<a class="headerlink" href="#measurement" title="链接到此标题。">¶</a></h2>
+<p>As a simple experiment, here's a simple program which waits on itself for 10
+seconds without terminating:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># test.py</span>
+<span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../../index.html#module-psutil" title="psutil"><span class="nn">psutil</span></a><span class="o">,</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/os.html#module-os" title="os"><span class="nn">os</span></a>
+<span class="k">try</span><span class="p">:</span>
+    <a class="sphinx-codeautolink-a" href="../../api.html#psutil.Process" title="psutil.Process"><span class="n">psutil</span><span class="o">.</span><span class="n">Process</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/os.html#os.getpid" title="os.getpid"><span class="n">os</span><span class="o">.</span><span class="n">getpid</span></a><span class="p">())</span><span class="o">.</span><a class="sphinx-codeautolink-a" href="../../api.html#psutil.Process.wait" title="psutil.Process.wait"><span class="n">wait</span></a><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">except</span> <a class="sphinx-codeautolink-a" href="../../api.html#psutil.TimeoutExpired" title="psutil.TimeoutExpired"><span class="n">psutil</span><span class="o">.</span><span class="n">TimeoutExpired</span></a><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>We can measure the CPU context switching using <code class="docutils literal notranslate"><span class="pre">/usr/bin/time</span> <span class="pre">-v</span></code>. Before the
+patch (the busy-loop):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ /usr/bin/time -v python3 test.py 2&gt;&amp;1 | grep context
+    Voluntary context switches: 258
+    Involuntary context switches: 4
+</pre></div>
+</div>
+<p>After the patch (the event-driven approach):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ /usr/bin/time -v python3 test.py 2&gt;&amp;1 | grep context
+    Voluntary context switches: 2
+    Involuntary context switches: 1
+</pre></div>
+</div>
+<p>This shows that instead of spinning in userspace, the process blocks in
+<code class="docutils literal notranslate"><span class="pre">poll()</span></code> / <code class="docutils literal notranslate"><span class="pre">kqueue()</span></code>, and is woken up only when the kernel notifies it,
+resulting in just a few CPU <a class="reference internal" href="../../glossary.html#term-context-switch"><span class="xref std std-term">context switches</span></a>.</p>
+</section>
+<section id="sleeping-state">
+<h2>Sleeping state<a class="headerlink" href="#sleeping-state" title="链接到此标题。">¶</a></h2>
+<p>It's also interesting to note that waiting via <code class="docutils literal notranslate"><span class="pre">poll()</span></code> (or <code class="docutils literal notranslate"><span class="pre">kqueue()</span></code>)
+puts the process into the exact same sleeping state as a plain
+<a class="reference external" href="https://docs.python.org/3/library/time.html#time.sleep" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">time.sleep()</span></code></a> call. From the kernel's perspective, both are interruptible
+sleeps: the process is de-scheduled, consumes zero CPU, and sits quietly in
+kernel space.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">"S+"</span></code> state shown below by <code class="docutils literal notranslate"><span class="pre">ps</span></code> means that the process “sleeps in
+foreground”.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/time.html#time.sleep" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">time.sleep()</span></code></a>:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ (python3 -c 'import time; time.sleep(10)' &amp; pid=$!; sleep 0.3; ps -o pid,stat,comm -p $pid) &amp;&amp; fg &amp;&gt;/dev/null
+    PID STAT COMMAND
+ 491573 S+   python3
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/select.html#select.poll" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">select.poll()</span></code></a>:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ (python3 -c 'import os,select; fd = os.pidfd_open(os.getpid(),0); p = select.poll(); p.register(fd,select.POLLIN); p.poll(10_000)' &amp; pid=$!; sleep 0.3; ps -o pid,stat,comm -p $pid) &amp;&amp; fg &amp;&gt;/dev/null
+    PID STAT COMMAND
+ 491748 S+   python3
+</pre></div>
+</div>
+</section>
+<section id="cpython-contribution">
+<h2>CPython contribution<a class="headerlink" href="#cpython-contribution" title="链接到此标题。">¶</a></h2>
+<p>After landing the psutil implementation (<a class="extlink-pr reference external" href="https://github.com/giampaolo/psutil/pull/2706">PR-2706</a>), I took the extra step and
+submitted a matching pull request for CPython <a class="reference external" href="https://docs.python.org/3/library/subprocess.html#module-subprocess" title="(位于 Python v3.14)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">subprocess</span></code></a> module:
+<a class="extlink-cpy-pr reference external" href="https://github.com/python/cpython/pull/144047">cpython/PR-144047</a>.</p>
+<p>I'm especially proud of this one: this is the <strong>third time</strong> in psutil's 17+
+year history that a feature developed in psutil made its way upstream into the
+Python standard library.</p>
+<ul class="simple">
+<li><p>The first was back in 2010, when <a class="reference internal" href="../../api.html#psutil.Process.nice" title="psutil.Process.nice"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.nice()</span></code></a> inspired
+<a class="reference external" href="https://docs.python.org/3/library/os.html#os.getpriority" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.getpriority()</span></code></a> and <a class="reference external" href="https://docs.python.org/3/library/os.html#os.setpriority" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.setpriority()</span></code></a>, see <a class="extlink-bpo reference external" href="https://bugs.python.org/issue10784">BPO-10784</a>. Landed
+in Python 3.3.</p></li>
+<li><p>The second was back in 2011, when <a class="reference internal" href="../../api.html#psutil.disk_usage" title="psutil.disk_usage"><code class="xref py py-func docutils literal notranslate"><span class="pre">psutil.disk_usage()</span></code></a> inspired
+<a class="reference external" href="https://docs.python.org/3/library/shutil.html#shutil.disk_usage" title="(位于 Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">shutil.disk_usage()</span></code></a>, see <a class="reference external" href="https://mail.python.org/archives/list/python-ideas@python.org/thread/67A7ML2TJ7MBS3WOL6IZKLD2C3B3VCQG">python-ideas ML
+proposal</a>.
+Landed in Python 3.3.</p></li>
+</ul>
+<p><em>Funny thing:</em> 15 years ago, Python 3.3 added the <em>timeout</em> parameter to
+<a class="reference external" href="https://docs.python.org/3/library/subprocess.html#subprocess.Popen.wait" title="(位于 Python v3.14)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">subprocess.Popen.wait()</span></code></a> (see
+<a class="reference external" href="https://github.com/python/cpython/commit/31aa7dd1419">commit</a>). That's
+probably where I took inspiration when I first added the <em>timeout</em> parameter to
+psutil's <a class="reference internal" href="../../api.html#psutil.Process.wait" title="psutil.Process.wait"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.wait()</span></code></a> around the same time (see <a class="extlink-commit reference external" href="https://github.com/giampaolo/psutil/commit/886710daf">886710daf</a>).
+Now, 15 years later, I'm contributing back a similar improvement for that very
+same <em>timeout</em> parameter. <strong>The circle is complete</strong>.</p>
+</section>
+<section id="links">
+<h2>Links<a class="headerlink" href="#links" title="链接到此标题。">¶</a></h2>
+<p>Topics related to this:</p>
+<ul class="simple">
+<li><p><a class="extlink-gh reference external" href="https://github.com/giampaolo/psutil/issues/2712">#2712</a>: proposal to extend this to multiple PIDs
+(<a class="reference internal" href="../../api.html#psutil.wait_procs" title="psutil.wait_procs"><code class="xref py py-func docutils literal notranslate"><span class="pre">psutil.wait_procs()</span></code></a>).</p></li>
+<li><p><a class="extlink-gh reference external" href="https://github.com/giampaolo/psutil/issues/2703">#2703</a>: proposal for asynchronous <a class="reference internal" href="../../api.html#psutil.Process.wait" title="psutil.Process.wait"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.wait()</span></code></a> integration with
+<a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(位于 Python v3.14)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">asyncio</span></code></a>.</p></li>
+<li><p><a class="extlink-cpy reference external" href="https://github.com/python/cpython/issues/144211">cpython/#144211</a>: proposal to extend the <a class="reference external" href="https://docs.python.org/3/library/selectors.html#module-selectors" title="(位于 Python v3.14)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">selectors</span></code></a> module to enable
+<a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(位于 Python v3.14)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">asyncio</span></code></a> optimization on BSD / macOS via <code class="docutils literal notranslate"><span class="pre">kqueue()</span></code>.</p></li>
+</ul>
+</section>
+<section id="discussion">
+<h2>Discussion<a class="headerlink" href="#discussion" title="链接到此标题。">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.reddit.com/r/Python/comments/1qpp42k/from_python_33_to_today_ending_15_years_of/">Reddit</a></p></li>
+<li><p><a class="reference external" href="https://news.ycombinator.com/item?id=46802061">Hacker News</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/@g.rodola/from-python-3-3-to-today-ending-15-years-of-subprocess-polling-e8a83ba17c86">Medium</a></p></li>
+<li><p><a class="reference external" href="https://www.linkedin.com/feed/update/urn:li:share:7422396026449391616/">Linkedin</a></p></li>
+</ul>
+</section>
+</section>
+<div class="section ablog__blog_comments">
+<nav aria-label="Previous and next posts" class="prev-next no-visited">
+<a class="prev-next-prev" href="../2025/heap-introspection-apis.html" rel="prev">
+<span aria-hidden="true" class="prev-next-arrow">‹</span>
+<span class="prev-next-block">
+<span class="prev-next-label">Previous</span>
+<span class="prev-next-title">Detecting memory leaks in C extensions with psutil and psleak</span>
+</span>
+</a>
+</nav>
+</div>
+</article>
+</div>
+<aside aria-label="On this page" class="right-sidebar">
+<div class="right-sidebar-title">On this page</div>
+<ul>
+<li><a class="reference internal" href="#">From Python 3.3 to today: ending 15 years of subprocess polling</a><ul>
+<li><a class="reference internal" href="#the-problem-with-busy-polling">The problem with busy-polling</a></li>
+<li><a class="reference internal" href="#event-driven-waiting">Event-driven waiting</a></li>
+<li><a class="reference internal" href="#linux">Linux</a></li>
+<li><a class="reference internal" href="#macos-and-bsd">macOS and BSD</a></li>
+<li><a class="reference internal" href="#windows">Windows</a></li>
+<li><a class="reference internal" href="#graceful-fallbacks">Graceful fallbacks</a></li>
+<li><a class="reference internal" href="#measurement">Measurement</a></li>
+<li><a class="reference internal" href="#sleeping-state">Sleeping state</a></li>
+<li><a class="reference internal" href="#cpython-contribution">CPython contribution</a></li>
+<li><a class="reference internal" href="#links">Links</a></li>
+<li><a class="reference internal" href="#discussion">Discussion</a></li>
+</ul>
+</li>
+</ul>
+</aside>
+</div>
+</main>
+<footer class="footer" role="contentinfo">
+<div class="footer-content">
+<div class="footer-text">
+<span><a class="footer-egg" href="../../404.html" title="🥚">©</a> 2009-2026 Giampaolo Rodola</span>
+<span><a href="../../about.html" title="About this documentation site">About</a></span>
+<span><a href="https://github.com/giampaolo/psutil/edit/master/docs/blog/2026/event-driven-process-waiting.rst" rel="noopener noreferrer" target="_blank" title="Edit this page on GitHub">Edit on GitHub</a></span>
+</div>
+<div class="footer-icons">
+<a aria-label="psutil on GitHub" class="footer-github" href="https://github.com/giampaolo/psutil" rel="noopener noreferrer" target="_blank" title="psutil on GitHub">
+<i aria-hidden="true" class="fa-brands fa-github"></i>
+</a>
+<a aria-label="psutil on PyPI" class="footer-pypi" href="https://pypi.org/project/psutil/" rel="noopener noreferrer" target="_blank" title="psutil on PyPI">
+<i aria-hidden="true" class="fa-brands fa-python"></i>
+</a>
+<a aria-label="Subscribe to blog" class="footer-rss" href="../atom.xml" title="Subscribe to blog (Atom feed)">
+<span class="rss-icon"></span>
+</a>
+</div>
+</div>
+</footer>
+</div>
+</body>
+</html>
