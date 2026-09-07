@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-12 07:48+0000\n"
+"POT-Creation-Date: 2026-09-07 14:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -389,12 +389,12 @@ msgstr ""
 msgid ""
 ":func:`cpu_percent` (and :meth:`Process.cpu_percent`) measures CPU usage "
 "*between two calls*. The very first call has no prior sample to compare "
-"against, so it always returns ``0.0``. The fix is to call it once to "
+"against, so it returns a meaningless ``0.0``. The fix is to call it once to "
 "initialize the baseline, discard the result, then call it again after a "
 "short sleep:"
 msgstr ""
 
-#: ../../../faq.rst:269
+#: ../../../faq.rst:270
 msgid ""
 "import time\n"
 "import psutil\n"
@@ -404,19 +404,19 @@ msgid ""
 "print(psutil.cpu_percent())   # meaningful value"
 msgstr ""
 
-#: ../../../faq.rst:278
+#: ../../../faq.rst:279
 msgid "Alternatively, pass ``interval`` to make it block internally:"
 msgstr ""
 
-#: ../../../faq.rst:280
+#: ../../../faq.rst:281
 msgid "print(psutil.cpu_percent(interval=0.5))"
 msgstr ""
 
-#: ../../../faq.rst:284
+#: ../../../faq.rst:285
 msgid "The same applies to :meth:`Process.cpu_percent`:"
 msgstr ""
 
-#: ../../../faq.rst:286
+#: ../../../faq.rst:287
 msgid ""
 "p = psutil.Process()\n"
 "p.cpu_percent()               # discard\n"
@@ -424,20 +424,21 @@ msgid ""
 "print(p.cpu_percent())        # meaningful value"
 msgstr ""
 
-#: ../../../faq.rst:296
+#: ../../../faq.rst:297
 msgid "Can Process.cpu_percent() return a value higher than 100%?"
 msgstr ""
 
-#: ../../../faq.rst:298
+#: ../../../faq.rst:299
 msgid ""
 "Yes. On a multi-core system a process can run threads on several CPUs at the "
 "same time. The maximum value is ``psutil.cpu_count() * 100``. For example, "
-"on a 4-core machine a fully-loaded process can reach 400%. The system-wide :"
-"func:`cpu_percent` (without a :class:`Process`) always stays in the 0–100% "
-"range because it averages across all cores."
+"on a machine with 4 :term:`logical CPUs <logical CPU>`, a fully-loaded "
+"process can reach 400%. The system-wide :func:`cpu_percent` (without a :"
+"class:`Process`) always stays in the 0-100% range because it averages across "
+"all cores."
 msgstr ""
 
-#: ../../../faq.rst:304
+#: ../../../faq.rst:305
 msgid ""
 "The returned value is explicitly *not* split evenly between all available "
 "CPUs. This is consistent with the ``top`` UNIX utility: a busy loop on a "
@@ -446,12 +447,12 @@ msgid ""
 "50%). To emulate that: ``p.cpu_percent() / psutil.cpu_count()``."
 msgstr ""
 
-#: ../../../faq.rst:313
+#: ../../../faq.rst:314
 msgid ""
 "What is the difference between psutil, os, and multiprocessing cpu_count()?"
 msgstr ""
 
-#: ../../../faq.rst:315
+#: ../../../faq.rst:316
 msgid ""
 ":func:`os.cpu_count` returns the number of :term:`logical CPUs <logical "
 "CPU>` (including hyperthreads). It is the same as ``psutil."
@@ -459,51 +460,51 @@ msgid ""
 "`PYTHON_CPU_COUNT` environment variable introduced in Python 3.13."
 msgstr ""
 
-#: ../../../faq.rst:319
+#: ../../../faq.rst:320
 msgid ""
 ":func:`os.process_cpu_count` (Python 3.13+) returns the number of CPUs the "
 "calling process is **allowed to use** (respects :term:`CPU affinity` and "
 "cgroups). The psutil equivalent is ``len(psutil.Process().cpu_affinity())``."
 msgstr ""
 
-#: ../../../faq.rst:322
+#: ../../../faq.rst:323
 msgid ""
 ":func:`multiprocessing.cpu_count` returns the same value as :func:`os."
 "process_cpu_count` (Python 3.13+)."
 msgstr ""
 
-#: ../../../faq.rst:324
+#: ../../../faq.rst:325
 msgid ""
 ":func:`psutil.cpu_count` with ``logical=False`` returns the number of :term:"
 "`physical cores <physical CPU>`, which has no stdlib equivalent."
 msgstr ""
 
-#: ../../../faq.rst:328
-msgid "Memory"
-msgstr "記憶體"
+#: ../../../faq.rst:329
+msgid "Process memory"
+msgstr ""
 
-#: ../../../faq.rst:333
+#: ../../../faq.rst:334
 msgid "What is the difference between virtual_memory() available and free?"
 msgstr ""
 
-#: ../../../faq.rst:335
+#: ../../../faq.rst:336
 msgid ""
 ":func:`virtual_memory` returns both :field:`free` and :field:`available`, "
 "but they measure different things:"
 msgstr ""
 
-#: ../../../faq.rst:338
+#: ../../../faq.rst:339
 msgid ":field:`free`: memory that is not being used at all."
 msgstr ""
 
-#: ../../../faq.rst:339
+#: ../../../faq.rst:340
 msgid ""
 ":field:`available`: how much memory can be given to processes without :term:"
 "`swapping <swap memory>`. This includes reclaimable :term:`caches <page "
 "cache>` and :term:`buffers` that the OS can reclaim under pressure."
 msgstr ""
 
-#: ../../../faq.rst:344
+#: ../../../faq.rst:345
 msgid ""
 "In practice, :field:`available` is almost always the metric you want when "
 "monitoring memory. :field:`free` can be misleadingly low on systems where "
@@ -511,17 +512,17 @@ msgid ""
 "Windows, :field:`free` and :field:`available` are the same value."
 msgstr ""
 
-#: ../../../faq.rst:352
+#: ../../../faq.rst:353
 msgid "What is the difference between RSS and VMS?"
 msgstr ""
 
-#: ../../../faq.rst:354
+#: ../../../faq.rst:355
 msgid ""
 ":field:`rss` (:term:`Resident Set Size <RSS>`) is the amount of physical "
 "memory (RAM) currently mapped into the process."
 msgstr ""
 
-#: ../../../faq.rst:356
+#: ../../../faq.rst:357
 msgid ""
 ":field:`vms` (:term:`Virtual Memory Size <VMS>`) is the total virtual "
 "address space of the process, including memory that has been :term:`swapped "
@@ -529,7 +530,7 @@ msgid ""
 "memory>`."
 msgstr ""
 
-#: ../../../faq.rst:361
+#: ../../../faq.rst:362
 msgid ""
 ":field:`rss` is generally the most useful metric for answering \"how much "
 "RAM is this process using?\". Note that it includes :term:`shared memory`, "
@@ -539,11 +540,11 @@ msgid ""
 "platforms and are returned by :meth:`Process.memory_info`."
 msgstr ""
 
-#: ../../../faq.rst:371
+#: ../../../faq.rst:372
 msgid "When should I use memory_footprint() vs memory_info()?"
 msgstr ""
 
-#: ../../../faq.rst:373
+#: ../../../faq.rst:374
 msgid ""
 ":meth:`Process.memory_info` returns :field:`rss` (:term:`Resident Set Size "
 "<RSS>`), which includes :term:`shared libraries <shared memory>` counted in "
@@ -551,27 +552,62 @@ msgid ""
 "processes map it, each process includes those 2 MB in its :field:`rss`."
 msgstr ""
 
-#: ../../../faq.rst:379
+#: ../../../faq.rst:380
 msgid ""
 ":meth:`Process.memory_footprint` returns :field:`uss` (:term:`Unique Set "
 "Size <USS>`), i.e. :term:`private memory` of the process. It represents the "
 "amount of memory that would be freed if the process were terminated right "
-"now. It is more accurate than :term:`RSS`, but substantially slower and "
-"requires higher privileges. On Linux it also returns :field:`pss` (:term:"
-"`Proportional Set Size <PSS>`) and :term:`swap <swap memory>`."
-msgstr ""
-
-#: ../../../faq.rst:389
-msgid "Why does virtual_memory() used + free != total?"
+"now. It is more accurate than :term:`RSS`, but substantially slower and may "
+"require higher privileges. It also returns :field:`shared`, and on Linux :"
+"field:`pss` (:term:`Proportional Set Size <PSS>`) and :term:`swap <swap "
+"memory>`."
 msgstr ""
 
 #: ../../../faq.rst:391
+msgid ""
+"Why do memory_info() and memory_footprint() report different shared values?"
+msgstr ""
+
+#: ../../../faq.rst:393
+msgid ""
+"Because they measure different things. :meth:`Process.memory_info`'s :field:"
+"`shared` counts resident memory that *could* be shared, meaning file-backed "
+"pages and shmem, no matter if other processes map it or not. This is what "
+"``top`` shows in the SHR column. :meth:`Process.memory_footprint`'s :field:"
+"`shared` only counts pages that are mapped more than once. That usually "
+"means \"mapped by another process\", but multiple mappings by the same "
+"process also count. It reads the page tables instead of a counter, so it's "
+"exact in that regard, but slower."
+msgstr ""
+
+#: ../../../faq.rst:405
+msgid "Why do swap_anon and memory_footprint()'s swap differ?"
+msgstr ""
+
+#: ../../../faq.rst:407
+msgid ""
+":meth:`Process.memory_extras`'s :field:`swap_anon` counts swapped-out :term:"
+"`anonymous memory` only, so it misses swapped shmem / tmpfs memory. :meth:"
+"`Process.memory_footprint`'s :field:`swap` includes that too, but it has to "
+"walk the whole process address space, which is a lot slower and may require "
+"root. If you don't care about shmem, prefer :field:`swap_anon`."
+msgstr ""
+
+#: ../../../faq.rst:414
+msgid "System memory"
+msgstr ""
+
+#: ../../../faq.rst:419
+msgid "Why does virtual_memory() used + free != total?"
+msgstr ""
+
+#: ../../../faq.rst:421
 msgid ""
 "Because some memory (like :term:`page cache` and :term:`buffers`) is "
 "reclaimable and accounted separately:"
 msgstr ""
 
-#: ../../../faq.rst:394
+#: ../../../faq.rst:424
 msgid ""
 ">>> import psutil\n"
 ">>> m = psutil.virtual_memory()\n"
@@ -579,9 +615,12 @@ msgid ""
 "False"
 msgstr ""
 
-#: ../../../faq.rst:401
+#: ../../../faq.rst:431
 msgid ""
 "The :field:`available` field already includes this reclaimable memory and is "
 "the best indicator of memory pressure. See :ref:"
 "`faq_virtual_memory_available`."
 msgstr ""
+
+#~ msgid "Memory"
+#~ msgstr "記憶體"
