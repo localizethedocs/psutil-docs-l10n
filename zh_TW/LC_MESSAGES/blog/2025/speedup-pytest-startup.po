@@ -1,0 +1,322 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2026 Giampaolo Rodola
+# This file is distributed under the same license as the psutil package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: psutil 8.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-27 11:50+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:9
+msgid "Speeding up pytest startup"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:12
+msgid "Preface: the migration to pytest"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:14
+msgid ""
+"Last year, after 17 years of :mod:`unittest`, I started adopting pytest in "
+"psutil (see :gh:`2446`). The two advantages I cared about most were plain "
+"``assert`` statements and `pytest-xdist <https://pypi.org/project/pytest-"
+"xdist/>`__'s free parallelism. Tests still inherit from :class:`unittest."
+"TestCase` and there's no ``conftest.py`` or fixture use (rationale in :pr:"
+"`2456`)."
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:21
+msgid ""
+"What I want to focus on here is one of pytest's most frustrating aspects: "
+"slow startup."
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:25
+msgid "pytest invocation is slow"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:27
+msgid ""
+"To measure pytest's startup time, let's run a very `simple test <https://"
+"github.com/giampaolo/psutil/blob/265fcf94a5da4260beb514653a2124915bf2a4f2/"
+"psutil/tests/test_misc.py#L232-L236>`__ where execution time itself is "
+"negligible:"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:31
+msgid ""
+"$ time python3 -m pytest psutil/tests/test_misc.py::TestMisc::test_version\n"
+"1 passed in 0.05s\n"
+"real    0m0,427s"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:37
+msgid ""
+"Almost half a second, which is excessive for something I run repeatedly "
+"during development. For comparison, the same test under :mod:`unittest`:"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:40
+msgid ""
+"$ time python3 -m unittest psutil.tests.test_misc.TestMisc.test_version\n"
+"Ran 1 test in 0.000s\n"
+"real    0m0,204s"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:46
+msgid "Roughly twice as fast. Why?"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:49
+msgid "Where is time being spent?"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:51
+msgid ""
+"A significant portion of pytest's overhead comes from import time, and "
+"there's not much one can do about it:"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:54
+msgid ""
+"$ time python3 -c \"import pytest\"\n"
+"real    0m0,151s\n"
+"\n"
+"$ time python3 -c \"import unittest\"\n"
+"real    0m0,065s\n"
+"\n"
+"$ time python3 -c \"import psutil\"\n"
+"real    0m0,056s"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:66
+msgid "Disable plugin auto loading"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:68
+msgid ""
+"After some research, I discovered that pytest automatically loads all "
+"plugins installed on the system, even if they aren't used. Here's how to "
+"list them (output is cut):"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:72
+msgid ""
+"$ pytest --trace-config --collect-only\n"
+"...\n"
+"active plugins:\n"
+"    ...\n"
+"    setupplan           : ~/.local/lib/python3.12/site-packages/_pytest/"
+"setupplan.py\n"
+"    stepwise            : ~/.local/lib/python3.12/site-packages/_pytest/"
+"stepwise.py\n"
+"    warnings            : ~/.local/lib/python3.12/site-packages/_pytest/"
+"warnings.py\n"
+"    logging             : ~/.local/lib/python3.12/site-packages/_pytest/"
+"logging.py\n"
+"    reports             : ~/.local/lib/python3.12/site-packages/_pytest/"
+"reports.py\n"
+"    python_path         : ~/.local/lib/python3.12/site-packages/_pytest/"
+"python_path.py\n"
+"    unraisableexception : ~/.local/lib/python3.12/site-packages/_pytest/"
+"unraisableexception.py\n"
+"    threadexception     : ~/.local/lib/python3.12/site-packages/_pytest/"
+"threadexception.py\n"
+"    faulthandler        : ~/.local/lib/python3.12/site-packages/_pytest/"
+"faulthandler.py\n"
+"    instafail           : ~/.local/lib/python3.12/site-packages/"
+"pytest_instafail.py\n"
+"    anyio               : ~/.local/lib/python3.12/site-packages/anyio/"
+"pytest_plugin.py\n"
+"    pytest_cov          : ~/.local/lib/python3.12/site-packages/pytest_cov/"
+"plugin.py\n"
+"    subtests            : ~/.local/lib/python3.12/site-packages/"
+"pytest_subtests/plugin.py\n"
+"    xdist               : ~/.local/lib/python3.12/site-packages/xdist/plugin."
+"py\n"
+"    xdist.looponfail    : ~/.local/lib/python3.12/site-packages/xdist/"
+"looponfail.py\n"
+"    ..."
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:95
+msgid ""
+"It turns out ``PYTEST_DISABLE_PLUGIN_AUTOLOAD`` environment variable can be "
+"used to disable them. By running ``PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 pytest --"
+"trace-config --collect-only`` again I can see that the following plugins "
+"disappeared:"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:100
+msgid ""
+"anyio\n"
+"pytest_cov\n"
+"pytest_instafail\n"
+"pytest_subtests\n"
+"xdist\n"
+"xdist.looponfail"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:109
+msgid "Now let's run the test again with ``PYTEST_DISABLE_PLUGIN_AUTOLOAD``:"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:111
+msgid ""
+"$ time PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python3 -m pytest psutil/tests/"
+"test_misc.py::TestMisc::test_version\n"
+"1 passed in 0.05s\n"
+"real    0m0,285s"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:117
+msgid ""
+"We went from 0.427s to 0.285s, a ~40% improvement. Not bad. We now need to "
+"selectively enable only the plugins we actually use, via ``-p``. psutil uses "
+"``pytest-instafail`` and ``pytest-subtests`` (we'll deal with ``pytest-"
+"xdist`` later):"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:122
+msgid ""
+"$ time PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python3 -m pytest -p instafail -p "
+"subtests ...\n"
+"real    0m0,320s"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:127
+msgid ""
+"Time went back up to 0.320s. Quite a slowdown, but still better than the "
+"original 0.427s. Adding ``pytest-xdist``:"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:130
+msgid ""
+"$ time PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python3 -m pytest -p instafail -p "
+"subtests -p xdist ...\n"
+"real    0m0,369s"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:135
+msgid ""
+"0.369s. Not much, but still a pity to pay the price when NOT running tests "
+"in parallel."
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:139
+msgid "Handling pytest-xdist"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:141
+msgid ""
+"If we disable ``pytest-xdist`` psutil tests still run, but we get a warning:"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:143
+msgid ""
+"psutil/tests/test_testutils.py:367\n"
+"  ~/svn/psutil/psutil/tests/test_testutils.py:367: PytestUnknownMarkWarning: "
+"Unknown pytest.mark.xdist_group - is this a typo?  You can register custom "
+"marks to avoid this warning - for details, see https://docs.pytest.org/en/"
+"stable/how-to/mark.html\n"
+"    @pytest.mark.xdist_group(name=\"serial\")"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:149
+msgid ""
+"This warning appears for methods that are intended to run serially, those "
+"decorated with ``@pytest.mark.xdist_group(name=\"serial\")``. However, since "
+"``pytest-xdist`` is now disabled, the decorator no longer exists. To address "
+"this, I implemented the following solution in ``psutil/tests/__init__.py``:"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:154
+msgid ""
+"import pytest, functools\n"
+"\n"
+"PYTEST_PARALLEL = \"PYTEST_XDIST_WORKER\" in os.environ  # True if running "
+"parallel tests\n"
+"\n"
+"if not PYTEST_PARALLEL:\n"
+"    def fake_xdist_group(*_args, **_kwargs):\n"
+"        \"\"\"Mimics `@pytest.mark.xdist_group` decorator. No-op: it just\n"
+"        calls the test method or return the decorated class.\"\"\"\n"
+"        def wrapper(obj):\n"
+"            @functools.wraps(obj)\n"
+"            def inner(*args, **kwargs):\n"
+"                return obj(*args, **kwargs)\n"
+"\n"
+"            return obj if isinstance(obj, type) else inner\n"
+"\n"
+"        return wrapper\n"
+"\n"
+"    pytest.mark.xdist_group = fake_xdist_group  # monkey patch"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:175
+msgid ""
+"With this in place the warning disappears when running tests serially. To "
+"run tests in parallel, we'll manually enable ``xdist``:"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:178
+msgid "$ python3 -m pytest -p xdist -n auto --dist loadgroup"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:183
+msgid "Optimizing test collection time"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:185
+msgid ""
+"By default, pytest searches the entire directory for tests, adding "
+"unnecessary overhead. In ``pyproject.toml`` you can tell pytest where test "
+"files are located, and only to consider ``test_*.py`` files:"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:189
+msgid ""
+"[tool.pytest.ini_options]\n"
+"testpaths = [\"psutil/tests/\"]\n"
+"python_files = [\"test_*.py\"]"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:195
+msgid "Collection time dropped from 0.20s to 0.17s, another ~0.03s shaved off."
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:198
+msgid "Putting it all together"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:200
+msgid ""
+"With these small optimizations, I managed to reduce ``pytest`` startup time "
+"by ~0.12 seconds, bringing it down from 0.42 seconds. While this improvement "
+"is insignificant for full test runs, it makes a noticeable difference (~28% "
+"faster) when repeatedly running individual tests from the command line, "
+"which is something I do frequently during development. Final result is "
+"visible in :pr:`2538`."
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:208
+msgid "Other links which may be useful"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:210
+msgid "https://github.com/zupo/awesome-pytest-speedup"
+msgstr ""
+
+#: ../../../blog/2025/speedup-pytest-startup.rst:211
+msgid "https://projects.gentoo.org/python/guide/pytest.html"
+msgstr ""

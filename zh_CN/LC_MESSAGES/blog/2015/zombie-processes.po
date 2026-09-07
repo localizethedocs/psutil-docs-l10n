@@ -1,0 +1,142 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2026 Giampaolo Rodola
+# This file is distributed under the same license as the psutil package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: psutil 8.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-27 11:50+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../blog/2015/zombie-processes.rst:9
+msgid "Proper zombie process handling"
+msgstr ""
+
+#: ../../../blog/2015/zombie-processes.rst:11
+msgid ""
+"This is part of the psutil 3.0 release (see the full :doc:`release notes </"
+"blog/2015/reimplementing-ifconfig-in-python>`)."
+msgstr ""
+
+#: ../../../blog/2015/zombie-processes.rst:14
+msgid ""
+"Except on Linux and Windows (which does not have them), support for :term:"
+"`zombie processes <zombie process>` was broken. The full story is in :gh:"
+"`428`."
+msgstr ""
+
+#: ../../../blog/2015/zombie-processes.rst:19
+msgid "The problem"
+msgstr ""
+
+#: ../../../blog/2015/zombie-processes.rst:21
+msgid ""
+"Say you create a :term:`zombie process` and instantiate a :class:`~psutil."
+"Process` for it:"
+msgstr ""
+
+#: ../../../blog/2015/zombie-processes.rst:24
+msgid ""
+"import os, time\n"
+"\n"
+"def create_zombie():\n"
+"    pid = os.fork()  # the zombie\n"
+"    if pid == 0:\n"
+"        os._exit(0)  # child exits immediately\n"
+"    else:\n"
+"        time.sleep(1000)  # parent does NOT call wait()\n"
+"\n"
+"pid = create_zombie()\n"
+"p = psutil.Process(pid)"
+msgstr ""
+
+#: ../../../blog/2015/zombie-processes.rst:38
+msgid ""
+"Up until psutil 2.X, every time you tried to query it you'd get a :exc:"
+"`NoSuchProcess` exception:"
+msgstr ""
+
+#: ../../../blog/2015/zombie-processes.rst:41
+msgid ""
+">>> p.name()\n"
+"  File \"psutil/__init__.py\", line 374, in _init\n"
+"    raise NoSuchProcess(pid, None, msg)\n"
+"psutil.NoSuchProcess: no process found with pid 123"
+msgstr ""
+
+#: ../../../blog/2015/zombie-processes.rst:48
+msgid "This was misleading, because the PID technically still existed:"
+msgstr ""
+
+#: ../../../blog/2015/zombie-processes.rst:50
+msgid ""
+">>> psutil.pid_exists(p.pid)\n"
+"True"
+msgstr ""
+
+#: ../../../blog/2015/zombie-processes.rst:55
+msgid ""
+"Depending on the platform, some process information could still be retrieved:"
+msgstr ""
+
+#: ../../../blog/2015/zombie-processes.rst:57
+msgid ""
+">>> p.cmdline()\n"
+"['python']"
+msgstr ""
+
+#: ../../../blog/2015/zombie-processes.rst:62
+msgid ""
+"Worst of all, :func:`psutil.process_iter` didn't return zombies at all. That "
+"was a real problem, because identifying them is a legitimate use case: a "
+"zombie usually indicates a bug where a parent process spawns a child, kills "
+"it, but never calls ``wait()`` to reap it."
+msgstr ""
+
+#: ../../../blog/2015/zombie-processes.rst:68
+msgid "What changed"
+msgstr ""
+
+#: ../../../blog/2015/zombie-processes.rst:70
+msgid ""
+"A new :exc:`ZombieProcess` exception is raised whenever a process cannot be "
+"queried because it is a zombie."
+msgstr ""
+
+#: ../../../blog/2015/zombie-processes.rst:72
+msgid "It replaces :exc:`NoSuchProcess`, which was incorrect and misleading."
+msgstr ""
+
+#: ../../../blog/2015/zombie-processes.rst:73
+msgid ""
+":exc:`ZombieProcess` inherits from :exc:`NoSuchProcess`, so existing code "
+"keeps working."
+msgstr ""
+
+#: ../../../blog/2015/zombie-processes.rst:75
+msgid ""
+":func:`psutil.process_iter` now correctly includes zombie processes, so you "
+"can reliably identify them:"
+msgstr ""
+
+#: ../../../blog/2015/zombie-processes.rst:78
+msgid ""
+"import psutil\n"
+"\n"
+"zombies = []\n"
+"for p in psutil.process_iter():\n"
+"    try:\n"
+"        if p.status() == psutil.STATUS_ZOMBIE:\n"
+"            zombies.append(p)\n"
+"    except psutil.NoSuchProcess:\n"
+"        pass"
+msgstr ""

@@ -1,0 +1,493 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2026 Giampaolo Rodola
+# This file is distributed under the same license as the psutil package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: psutil 8.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-17 09:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../migration.rst:2
+msgid "Migration guide"
+msgstr "遷移指南"
+
+#: ../../../migration.rst:4
+msgid ""
+"This page summarises the breaking changes introduced in each major release "
+"and shows the code changes required to upgrade."
+msgstr ""
+
+#: ../../../migration.rst:8
+msgid ""
+"Minor and patch releases (e.g. 6.1.x, 7.1.x) do not contain breaking "
+"changes. Only major releases are listed here."
+msgstr ""
+
+#: ../../../migration.rst:14
+msgid "Migrating to 8.0"
+msgstr "遷移至 8.0"
+
+#: ../../../migration.rst:16
+msgid "Key breaking changes in 8.0:"
+msgstr ""
+
+#: ../../../migration.rst:18
+msgid ":func:`process_iter` now pre-fetches values."
+msgstr ""
+
+#: ../../../migration.rst:19
+msgid ":attr:`Process.info` is deprecated: use direct methods instead."
+msgstr ""
+
+#: ../../../migration.rst:20
+msgid ""
+"Named tuple field order changed: use attribute access instead of positional "
+"unpacking."
+msgstr ""
+
+#: ../../../migration.rst:22
+msgid "Some return types are now enums instead of strings."
+msgstr ""
+
+#: ../../../migration.rst:23
+msgid ""
+":meth:`Process.memory_full_info` is deprecated: use :meth:`Process."
+"memory_footprint`."
+msgstr ""
+
+#: ../../../migration.rst:25
+msgid ""
+"New :meth:`Process.memory_info_ex` method (unrelated to the old method "
+"deprecated in 4.0 and removed in 7.0)."
+msgstr ""
+
+#: ../../../migration.rst:27
+msgid ""
+"New :attr:`Process.attrs`: :class:`frozenset` of valid attribute names; "
+"``process_iter(attrs=[])`` is deprecated."
+msgstr ""
+
+#: ../../../migration.rst:29
+msgid "Python 3.6 and 3.7 dropped."
+msgstr ""
+
+#: ../../../migration.rst:30
+msgid "Windows < 10 dropped."
+msgstr ""
+
+#: ../../../migration.rst:34
+msgid ""
+"Do not rely on positional unpacking of named tuples. Always use attribute "
+"access (e.g. ``t.rss``)."
+msgstr ""
+
+#: ../../../migration.rst:40
+msgid "process_iter(): p.info is deprecated"
+msgstr ""
+
+#: ../../../migration.rst:42
+msgid ""
+":func:`process_iter` now caches pre-fetched values internally, so normal "
+"method calls can return them without using the :attr:`Process.info` dict. "
+"``p.info`` still works, but raises :exc:`DeprecationWarning`."
+msgstr ""
+
+#: ../../../migration.rst:46
+msgid ""
+"import psutil\n"
+"\n"
+"# before\n"
+"for p in psutil.process_iter(attrs=[\"name\", \"status\"]):\n"
+"    print(p.info[\"name\"], p.info[\"status\"])\n"
+"\n"
+"# after\n"
+"for p in psutil.process_iter(attrs=[\"name\", \"status\"]):\n"
+"    print(p.name(), p.status())  # return cached values, never raise"
+msgstr ""
+
+#: ../../../migration.rst:58
+msgid ""
+"When ``attrs`` are specified, the corresponding method calls return cached "
+"values without extra syscalls. :exc:`AccessDenied` / :exc:`ZombieProcess` "
+"are handled transparently by returning ``ad_value``."
+msgstr ""
+
+#: ../../../migration.rst:62
+msgid ""
+"If you need a dict, use :meth:`Process.as_dict` instead of :attr:`Process."
+"info`."
+msgstr ""
+
+#: ../../../migration.rst:65
+msgid ""
+"import psutil\n"
+"\n"
+"# before\n"
+"for p in psutil.process_iter(attrs=[\"name\", \"status\"]):\n"
+"    print(p.info)\n"
+"\n"
+"# after\n"
+"attrs = [\"name\", \"status\"]\n"
+"for p in psutil.process_iter(attrs=attrs):\n"
+"    print(p.as_dict(attrs))  # return cached values, never raise"
+msgstr ""
+
+#: ../../../migration.rst:79
+msgid ""
+"If ``\"name\"`` was pre-fetched via ``attrs``, ``p.name()`` returns "
+"``ad_value`` instead of raising :exc:`AccessDenied`. If you need the "
+"exception, do not include the method in ``attrs``."
+msgstr ""
+
+#: ../../../migration.rst:86
+msgid "Named tuple field order changed"
+msgstr ""
+
+#: ../../../migration.rst:88
+msgid ""
+":func:`cpu_times`: :field:`user`, :field:`system`, :field:`idle` fields "
+"changed order on Linux, macOS and BSD. They are now always the first 3 "
+"fields on all platforms, with platform-specific fields (e.g. :field:`nice`) "
+"following. Positional access (e.g. ``cpu_times()[3]``) silently returns the "
+"wrong field."
+msgstr ""
+
+#: ../../../migration.rst:94
+msgid ""
+"# before\n"
+"user, nice, system, idle = psutil.cpu_times()\n"
+"\n"
+"# after\n"
+"t = psutil.cpu_times()\n"
+"user, system, idle = t.user, t.system, t.idle"
+msgstr ""
+
+#: ../../../migration.rst:103
+msgid ""
+":meth:`Process.memory_info`: the returned named tuple changed size and field "
+"order."
+msgstr ""
+
+#: ../../../migration.rst:106
+msgid ""
+"Linux: :field:`lib` and :field:`dirty` fields removed (they were always 0 "
+"since Linux 2.6). Aliases returning 0 and emitting :exc:`DeprecationWarning` "
+"are kept."
+msgstr ""
+
+#: ../../../migration.rst:109
+msgid ""
+"macOS: :field:`pfaults` and :field:`pageins` removed with **no aliases**. "
+"Use :meth:`Process.page_faults` instead."
+msgstr ""
+
+#: ../../../migration.rst:111
+msgid ""
+"Windows: old fields were renamed: :field:`wset` → :field:`rss`, :field:"
+"`peak_wset` → :field:`peak_rss`, :field:`pagefile` and :field:`private` → :"
+"field:`vms`, :field:`peak_pagefile` → :field:`peak_vms`, :field:"
+"`num_page_faults` → :meth:`Process.page_faults`. The old names still work "
+"but raise :exc:`DeprecationWarning`. :field:`paged_pool`, :field:"
+"`nonpaged_pool`, :field:`peak_paged_pool`, :field:`peak_nonpaged_pool` moved "
+"to :meth:`Process.memory_info_ex`."
+msgstr ""
+
+#: ../../../migration.rst:118
+msgid "BSD: a new :field:`peak_rss` field was added."
+msgstr ""
+
+#: ../../../migration.rst:120
+msgid ""
+":func:`virtual_memory`: on Windows, new :field:`cached` and :field:`wired` "
+"fields were added."
+msgstr ""
+
+#: ../../../migration.rst:124
+msgid "cpu_times() interrupt renamed to irq on Windows"
+msgstr ""
+
+#: ../../../migration.rst:126
+msgid ""
+"The :field:`interrupt` field of :func:`cpu_times` on Windows was renamed to :"
+"field:`irq` to match Linux and BSD. The old name still works but raises :exc:"
+"`DeprecationWarning`."
+msgstr ""
+
+#: ../../../migration.rst:133
+msgid "Constants and fields are now enums"
+msgstr ""
+
+#: ../../../migration.rst:135
+msgid ""
+"These now yield enum members instead of plain ``str`` / ``int``, and the "
+"matching module constants are members of the same enums:"
+msgstr ""
+
+#: ../../../migration.rst:138
+msgid ":meth:`Process.status` → :class:`ProcessStatus`"
+msgstr ":meth:`Process.status` → :class:`ProcessStatus`"
+
+#: ../../../migration.rst:139
+msgid ""
+":field:`status` field of :meth:`Process.net_connections` and :func:"
+"`net_connections` → :class:`ConnectionStatus`"
+msgstr ""
+
+#: ../../../migration.rst:141
+msgid ":meth:`Process.nice` on Windows → :class:`ProcessPriority`"
+msgstr ""
+
+#: ../../../migration.rst:142
+msgid ""
+":field:`ioclass` field of :meth:`Process.ionice` → :class:`ProcessIOPriority`"
+msgstr ""
+
+#: ../../../migration.rst:143
+msgid ""
+":data:`RLIMIT_* <psutil.RLIMIT_NOFILE>` of :meth:`Process.rlimit` → :class:"
+"`ProcessRlimit`"
+msgstr ""
+
+#: ../../../migration.rst:146
+msgid ""
+"They subclass :class:`enum.StrEnum` / :class:`enum.IntEnum`, so they compare "
+"equal to the values they replace: ``p.status() == psutil.STATUS_RUNNING`` "
+"keeps working. Only code inspecting :func:`repr` or :class:`type` needs "
+"updating."
+msgstr ""
+
+#: ../../../migration.rst:153
+msgid "memory_full_info() is deprecated"
+msgstr "memory_full_info() 已棄用"
+
+#: ../../../migration.rst:155
+msgid ""
+":meth:`Process.memory_full_info` is deprecated. Use :meth:`Process."
+"memory_footprint` instead; it returns the same fields (:field:`uss`, :field:"
+"`pss` and :field:`swap`)."
+msgstr ""
+
+#: ../../../migration.rst:162
+msgid "New memory_info_ex() method"
+msgstr "新的 memory_info_ex() 方法"
+
+#: ../../../migration.rst:164
+msgid ""
+"8.0 introduces a new :meth:`Process.memory_info_ex` method that extends :"
+"meth:`Process.memory_info` with platform-specific metrics. It is "
+"**unrelated** to the old :meth:`Process.memory_info_ex`, deprecated in 4.0 "
+"and removed in 7.0, which later became :meth:`Process.memory_full_info`."
+msgstr ""
+
+#: ../../../migration.rst:169
+msgid ""
+"Linux: :field:`peak_rss`, :field:`peak_vms`, :field:`rss_anon`, :field:"
+"`rss_file`, :field:`rss_shmem`, :field:`swap`, :field:`hugetlb`."
+msgstr ""
+
+#: ../../../migration.rst:171
+msgid ""
+"macOS: :field:`peak_rss`, :field:`rss_anon`, :field:`rss_file`, :field:"
+"`wired`, :field:`compressed`, :field:`phys_footprint`."
+msgstr ""
+
+#: ../../../migration.rst:173
+msgid ""
+"Windows: :field:`virtual`, :field:`peak_virtual`, :field:`paged_pool`, :"
+"field:`nonpaged_pool`, :field:`peak_paged_pool`, :field:`peak_nonpaged_pool`."
+msgstr ""
+
+#: ../../../migration.rst:180
+msgid "New Process.attrs class attribute"
+msgstr "新的 Process.attrs 類別特性"
+
+#: ../../../migration.rst:182
+msgid ""
+":attr:`Process.attrs` is a new :class:`frozenset` containing the valid "
+"attribute names accepted by :meth:`Process.as_dict` and :func:"
+"`process_iter`. It avoids creating a throwaway process just to discover them:"
+msgstr ""
+
+#: ../../../migration.rst:186
+msgid ""
+"# before\n"
+"attrs = list(psutil.Process().as_dict().keys())\n"
+"\n"
+"# after\n"
+"attrs = psutil.Process.attrs"
+msgstr ""
+
+#: ../../../migration.rst:194
+msgid ""
+"It also makes it easy to pass all or a subset of attributes. "
+"``process_iter(attrs=[])`` (empty list meaning \"all\") is now deprecated; "
+"use :attr:`Process.attrs` instead:"
+msgstr ""
+
+#: ../../../migration.rst:198
+msgid ""
+"# all attrs\n"
+"psutil.process_iter(attrs=psutil.Process.attrs)\n"
+"\n"
+"# all except connections\n"
+"psutil.process_iter(attrs=psutil.Process.attrs - {\"net_connections\"})"
+msgstr ""
+
+#: ../../../migration.rst:207
+msgid "Python 3.6 and 3.7 dropped"
+msgstr ""
+
+#: ../../../migration.rst:209
+msgid "The minimum version is now Python 3.8."
+msgstr ""
+
+#: ../../../migration.rst:214
+msgid "Windows < 10 dropped"
+msgstr ""
+
+#: ../../../migration.rst:216
+msgid ""
+"Support for Windows Vista, 7, 8, 8.1 and their server counterparts (Server "
+"2008 to 2012 R2) was removed. The minimum version is now Windows 10 / "
+"Windows Server 2016. The last release supporting older versions is the 7.2.x "
+"series. See :gh:`2893`."
+msgstr ""
+
+#: ../../../migration.rst:224
+msgid "Git tags renamed"
+msgstr "Git 標記已重新命名"
+
+#: ../../../migration.rst:226
+msgid ""
+"Git tags were renamed from ``release-X.Y.Z`` to ``vX.Y.Z`` (e.g. "
+"``release-7.2.2`` → ``v7.2.2``). Old tags remain for backward compatibility. "
+"If your scripts or URLs reference psutil tags, update them to the new "
+"format. See :gh:`2788`."
+msgstr ""
+
+#: ../../../migration.rst:236
+msgid "Migrating to 7.0"
+msgstr "遷移至 7.0"
+
+#: ../../../migration.rst:239
+msgid "Process.memory_info_ex() removed"
+msgstr "Process.memory_info_ex() 已移除"
+
+#: ../../../migration.rst:241
+msgid ""
+":meth:`Process.memory_info_ex`, deprecated since 4.0.0 in 2016, was removed. "
+"Use :meth:`Process.memory_full_info` instead."
+msgstr ""
+
+#: ../../../migration.rst:246
+msgid ""
+"In 8.0, a new :meth:`Process.memory_info_ex` method was introduced with "
+"different semantics. It extends :meth:`Process.memory_info` with platform-"
+"specific metrics and is unrelated to the old method documented here."
+msgstr ""
+
+#: ../../../migration.rst:250
+msgid ""
+"# before\n"
+"p.memory_info_ex()\n"
+"\n"
+"# after\n"
+"p.memory_full_info()"
+msgstr ""
+
+#: ../../../migration.rst:259
+msgid "Python 2.7 dropped"
+msgstr ""
+
+#: ../../../migration.rst:261
+msgid ""
+"Python 2.7 is no longer supported. The last release supporting it is psutil "
+"6.1.x:"
+msgstr ""
+
+#: ../../../migration.rst:264
+msgid "pip2 install \"psutil==6.1.*\""
+msgstr "pip2 install \"psutil==6.1.*\""
+
+#: ../../../migration.rst:273
+msgid "Migrating to 6.0"
+msgstr "遷移至 6.0"
+
+#: ../../../migration.rst:276
+msgid "Process.connections() renamed"
+msgstr "Process.connections() 已重新命名"
+
+#: ../../../migration.rst:278
+msgid ""
+":meth:`Process.connections` was renamed to :meth:`Process.net_connections` "
+"for consistency with the system-level :func:`net_connections`. The old name "
+"raises :exc:`DeprecationWarning` and will be removed in a future release:"
+msgstr ""
+
+#: ../../../migration.rst:282
+msgid ""
+"# before\n"
+"p.connections()\n"
+"p.connections(kind=\"tcp\")\n"
+"\n"
+"# after\n"
+"p.net_connections()\n"
+"p.net_connections(kind=\"tcp\")"
+msgstr ""
+"# 之前\n"
+"p.connections()\n"
+"p.connections(kind=\"tcp\")\n"
+"\n"
+"# 之後\n"
+"p.net_connections()\n"
+"p.net_connections(kind=\"tcp\")"
+
+#: ../../../migration.rst:293
+msgid "disk_partitions() lost two fields"
+msgstr "disk_partitions() 失去兩個欄位"
+
+#: ../../../migration.rst:295
+msgid ""
+"The :field:`maxfile` and :field:`maxpath` fields were removed from the named "
+"tuple returned by :func:`disk_partitions`. Positional unpacking will break:"
+msgstr ""
+
+#: ../../../migration.rst:298
+msgid ""
+"# before (broken)\n"
+"device, mountpoint, fstype, opts, maxfile, maxpath = part\n"
+"\n"
+"# after\n"
+"device, mountpoint, fstype, opts = (\n"
+"    part.device, part.mountpoint, part.fstype, part.opts\n"
+")"
+msgstr ""
+
+#: ../../../migration.rst:309
+msgid "process_iter() no longer checks for PID reuse"
+msgstr ""
+
+#: ../../../migration.rst:311
+msgid ""
+":func:`process_iter` no longer preemptively checks whether yielded PIDs have "
+"been reused, making it ~20× faster. To verify that a process object is still "
+"alive and refers to the same process, use :meth:`Process.is_running` "
+"explicitly:"
+msgstr ""
+
+#: ../../../migration.rst:316
+msgid ""
+"for p in psutil.process_iter([\"name\"]):\n"
+"    if p.is_running():\n"
+"        print(p.pid, p.name())"
+msgstr ""
