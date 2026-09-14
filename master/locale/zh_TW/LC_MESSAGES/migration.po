@@ -485,6 +485,3 @@ msgid ""
 "    if p.is_running():\n"
 "        print(p.pid, p.name())"
 msgstr ""
-
-#~ msgid "New memory_info_ex() method"
-#~ msgstr "新的 memory_info_ex() 方法"

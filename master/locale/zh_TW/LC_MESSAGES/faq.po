@@ -621,6 +621,3 @@ msgid ""
 "the best indicator of memory pressure. See :ref:"
 "`faq_virtual_memory_available`."
 msgstr ""
-
-#~ msgid "Memory"
-#~ msgstr "記憶體"

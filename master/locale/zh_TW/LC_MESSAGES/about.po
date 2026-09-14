@@ -328,9 +328,3 @@ msgid ""
 "This will automatically turn ``psutil.cpu_times`` into a link pointing to "
 "this site."
 msgstr ""
-
-#~ msgid ":kbd:`Ctrl+K`"
-#~ msgstr ":kbd:`Ctrl+K`"
-
-#~ msgid "Open search"
-#~ msgstr "開啟搜尋"
