@@ -1,0 +1,363 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2026 Giampaolo Rodola
+# This file is distributed under the same license as the psutil package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: psutil 8.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-27 11:50+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../alternatives.rst:2
+msgid "Alternatives"
+msgstr "备选方案"
+
+#: ../../../alternatives.rst:4
+msgid ""
+"This page describes Python tools and modules that overlap with psutil, to "
+"help you pick the right tool for the job. See also :doc:`adoption` for "
+"notable projects that use psutil."
+msgstr ""
+
+#: ../../../alternatives.rst:9
+msgid "Python standard library"
+msgstr ""
+
+#: ../../../alternatives.rst:12
+msgid ""
+":doc:`stdlib-equivalents` for a detailed function-by-function comparison."
+msgstr ""
+
+#: ../../../alternatives.rst:15
+msgid "os module"
+msgstr ""
+
+#: ../../../alternatives.rst:17
+msgid ""
+"The :mod:`os` module provides a handful of process-related functions: :func:"
+"`os.getpid`, :func:`os.getppid`, :func:`os.getuid`, :func:`os.cpu_count`, :"
+"func:`os.getloadavg` (UNIX only). These are cheap wrappers around POSIX "
+"syscalls and are perfectly fine when you only need information about the "
+"*current* process and don't need cross-platform code."
+msgstr ""
+
+#: ../../../alternatives.rst:23
+msgid ""
+"psutil goes further in several directions. Its primary goal is to provide a "
+"**single portable interface** for concepts that are traditionally UNIX-only. "
+"Things like process CPU and memory usage, open file descriptors, network "
+"connections, signals, :term:`nice` levels, and I/O counters exist as first-"
+"class OS primitives on Linux and macOS, but have no direct equivalent on "
+"Windows. psutil implements all of them on Windows too (using Win32 APIs, "
+"``NtQuerySystemInformation`` and WMI) so that code written against psutil "
+"runs unmodified on every supported platform. Beyond portability, it also "
+"exposes the same information for *any* process (not just the current one), "
+"and returns structured named tuples instead of raw values."
+msgstr ""
+
+#: ../../../alternatives.rst:35
+msgid "resource module"
+msgstr ""
+
+#: ../../../alternatives.rst:37
+msgid ""
+":mod:`resource` (UNIX only) lets you read and set resource limits "
+"(``RLIMIT_*``) and get basic usage counters (user/system time, page faults, "
+"I/O ops) for the *current* process or its children via :func:`resource."
+"getrusage`. It is the right tool when you specifically want to enforce or "
+"inspect ``ulimit``-style limits."
+msgstr ""
+
+#: ../../../alternatives.rst:43
+msgid ""
+"psutil's :meth:`Process.rlimit` exposes the same interface but extends it to "
+"all processes, not just the caller."
+msgstr ""
+
+#: ../../../alternatives.rst:47
+msgid "subprocess module"
+msgstr ""
+
+#: ../../../alternatives.rst:49
+msgid ""
+"Calling tools like ``ps``, ``top``, ``netstat``, ``vmstat`` via :mod:"
+"`subprocess` and parsing their output is fragile: output formats differ "
+"across OS versions and locales, parsing is error-prone, and spawning a "
+"subprocess per sample is slow. psutil reads the same kernel data sources "
+"directly without spawning any external processes."
+msgstr ""
+
+#: ../../../alternatives.rst:56
+msgid "platform module"
+msgstr ""
+
+#: ../../../alternatives.rst:58
+msgid ""
+":mod:`platform` provides information about the OS and Python runtime, such "
+"as OS name, kernel version, architecture, and machine type. It is useful for "
+"identifying the environment, but does not expose runtime metrics or process "
+"information like psutil. Overlaps with psutil's OS constants (:data:"
+"`LINUX`, :data:`WINDOWS`, :data:`MACOS`, etc.)."
+msgstr ""
+
+#: ../../../alternatives.rst:65
+msgid "/proc filesystem"
+msgstr ""
+
+#: ../../../alternatives.rst:67
+msgid ""
+"On Linux, ``/proc`` exposes process and system information as virtual files. "
+"Reading :proc:`/proc/pid/status` or :proc:`/proc/meminfo` directly is fast "
+"and has no dependencies, which is why some minimal containers or scripts do "
+"this. The downsides are that it is Linux-only, the format may vary across "
+"kernel versions, and you have to parse raw text yourself. psutil parses ``/"
+"proc`` internally, exposes the same information through a consistent cross-"
+"platform API and handles edge cases (invalid format, compatibility with old "
+"kernels, graceful fallbacks, etc.)."
+msgstr ""
+
+#: ../../../alternatives.rst:77
+msgid "Third-party libraries"
+msgstr ""
+
+#: ../../../alternatives.rst:79
+msgid ""
+"Libraries that cover areas psutil does not, or that go deeper on a specific "
+"platform or subsystem."
+msgstr ""
+
+#: ../../../alternatives.rst:87 ../../../alternatives.rst:146
+msgid "Library"
+msgstr ""
+
+#: ../../../alternatives.rst:88 ../../../alternatives.rst:148
+msgid "Focus"
+msgstr ""
+
+#: ../../../alternatives.rst:90
+msgid "`distro <https://github.com/python-distro/distro>`_"
+msgstr ""
+
+#: ../../../alternatives.rst:91
+msgid ""
+"Linux distro info (name, version, codename). psutil does not expose OS "
+"details."
+msgstr ""
+
+#: ../../../alternatives.rst:94
+msgid ""
+"`GPUtil <https://github.com/anderskm/gputil>`_ / `pynvml <https://github.com/"
+"gpuopenanalytics/pynvml>`_"
+msgstr ""
+
+#: ../../../alternatives.rst:96
+msgid "NVIDIA GPU utilization and VRAM usage."
+msgstr ""
+
+#: ../../../alternatives.rst:98
+msgid "`ifaddr <https://github.com/ifaddr/ifaddr>`_"
+msgstr ""
+
+#: ../../../alternatives.rst:99
+msgid ""
+"Network interface address enumeration. Overlaps with :func:`net_if_addrs`."
+msgstr ""
+
+#: ../../../alternatives.rst:102
+msgid "`libvirt-python <https://github.com/libvirt/libvirt-python>`_"
+msgstr ""
+
+#: ../../../alternatives.rst:103
+msgid ""
+"Manage KVM/QEMU/Xen VMs: enumerate guests, query CPU/memory allocation. "
+"Complements psutil's host-level view."
+msgstr ""
+
+#: ../../../alternatives.rst:106
+msgid "`prometheus_client <https://github.com/prometheus/client_python>`_"
+msgstr ""
+
+#: ../../../alternatives.rst:107
+msgid "Export metrics to Prometheus. Use *alongside* psutil."
+msgstr ""
+
+#: ../../../alternatives.rst:109
+msgid "`py-cpuinfo <https://github.com/workhorsy/py-cpuinfo>`_"
+msgstr ""
+
+#: ../../../alternatives.rst:110
+msgid "CPU brand string, micro architecture, feature flags."
+msgstr ""
+
+#: ../../../alternatives.rst:112
+msgid "`pyroute2 <https://github.com/svinota/pyroute2>`_"
+msgstr ""
+
+#: ../../../alternatives.rst:113
+msgid ""
+"Linux netlink (interfaces, routes, connections). Overlaps with :func:"
+"`net_if_addrs`, :func:`net_if_stats`, :func:`net_connections`."
+msgstr ""
+
+#: ../../../alternatives.rst:117
+msgid "`pywifi <https://github.com/awkman/pywifi>`_"
+msgstr ""
+
+#: ../../../alternatives.rst:118
+msgid ""
+"WiFi scanning, signal strength, SSID. Exposes wireless details that :func:"
+"`net_if_addrs` does not."
+msgstr ""
+
+#: ../../../alternatives.rst:121
+msgid "`pySMART <https://github.com/truenas/py-SMART>`_"
+msgstr ""
+
+#: ../../../alternatives.rst:122
+msgid "S.M.A.R.T. disk health data. Complements :func:`disk_io_counters`."
+msgstr ""
+
+#: ../../../alternatives.rst:125
+msgid "`pywin32 <https://github.com/mhammond/pywin32>`_"
+msgstr ""
+
+#: ../../../alternatives.rst:126
+msgid "Win32 API bindings (Windows only)."
+msgstr ""
+
+#: ../../../alternatives.rst:128
+msgid "`setproctitle <https://github.com/dvarrazzo/py-setproctitle>`_"
+msgstr ""
+
+#: ../../../alternatives.rst:129
+msgid ""
+"Set process title shown by ``ps``/``top``. Writes what :meth:`Process.name` "
+"reads."
+msgstr ""
+
+#: ../../../alternatives.rst:132
+msgid "`wmi <https://github.com/tjguk/wmi>`_"
+msgstr ""
+
+#: ../../../alternatives.rst:133
+msgid "WMI interface (Windows only)."
+msgstr ""
+
+#: ../../../alternatives.rst:136
+msgid "Other languages"
+msgstr ""
+
+#: ../../../alternatives.rst:138
+msgid ""
+"Equivalent libraries in other languages providing cross-platform system and "
+"process information."
+msgstr ""
+
+#: ../../../alternatives.rst:147
+msgid "Language"
+msgstr ""
+
+#: ../../../alternatives.rst:150
+msgid "`gopsutil <https://github.com/shirou/gopsutil>`_"
+msgstr ""
+
+#: ../../../alternatives.rst:151
+msgid "Go"
+msgstr ""
+
+#: ../../../alternatives.rst:152
+msgid ""
+"CPU, memory, disk, network, processes. Directly inspired by psutil and "
+"follows a similar API."
+msgstr ""
+
+#: ../../../alternatives.rst:155
+msgid "`heim <https://github.com/heim-rs/heim>`_"
+msgstr ""
+
+#: ../../../alternatives.rst:156 ../../../alternatives.rst:174
+#: ../../../alternatives.rst:178
+msgid "Rust"
+msgstr ""
+
+#: ../../../alternatives.rst:157
+msgid ""
+"Async-first library covering CPU, memory, disk, network, processes and "
+"sensors."
+msgstr ""
+
+#: ../../../alternatives.rst:160
+msgid "`Hardware.Info <https://github.com/Jinjinov/Hardware.Info>`_"
+msgstr ""
+
+#: ../../../alternatives.rst:161
+msgid "C# / .NET"
+msgstr ""
+
+#: ../../../alternatives.rst:162
+msgid "CPU, RAM, GPU, disk, network, battery."
+msgstr ""
+
+#: ../../../alternatives.rst:164
+msgid "`hwinfo <https://github.com/lfreist/hwinfo>`_"
+msgstr ""
+
+#: ../../../alternatives.rst:165
+msgid "C++"
+msgstr ""
+
+#: ../../../alternatives.rst:166
+msgid "CPU, RAM, GPU, disks, mainboard. More hardware-focused."
+msgstr ""
+
+#: ../../../alternatives.rst:168
+msgid "`OSHI <https://github.com/oshi/oshi>`_"
+msgstr ""
+
+#: ../../../alternatives.rst:169
+msgid "Java"
+msgstr ""
+
+#: ../../../alternatives.rst:170
+msgid ""
+"OS and hardware information: CPU, memory, disk, network, processes, sensors, "
+"USB devices."
+msgstr ""
+
+#: ../../../alternatives.rst:173
+msgid "`rust-psutil <https://github.com/rust-psutil/rust-psutil>`_"
+msgstr ""
+
+#: ../../../alternatives.rst:175
+msgid "Directly inspired by psutil and follows a similar API."
+msgstr ""
+
+#: ../../../alternatives.rst:177
+msgid "`sysinfo <https://github.com/GuillaumeGomez/sysinfo>`_"
+msgstr ""
+
+#: ../../../alternatives.rst:179
+msgid "CPU, memory, disk, network, processes, components."
+msgstr ""
+
+#: ../../../alternatives.rst:181
+msgid ""
+"`systeminformation <https://github.com/sebhildebrandt/systeminformation>`_"
+msgstr ""
+
+#: ../../../alternatives.rst:182
+msgid "Node.js"
+msgstr ""
+
+#: ../../../alternatives.rst:183
+msgid "CPU, memory, disk, network, processes, battery, Docker."
+msgstr ""
