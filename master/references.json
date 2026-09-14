@@ -37,9 +37,9 @@
     "branch" : "master",
     "commit" : 
     {
-      "date" : "2026-09-06 10:51:29 +0200",
-      "hash" : "dcccef25416cecdb319d1db2af86d7490757c5ed",
-      "title" : "Doc: better prose / clarifications re. cpu_percent()"
+      "date" : "2026-09-14 15:59:10 +0200",
+      "hash" : "ee99fedc28d640056a1b02b8cd25d38956d30d1c",
+      "title" : "Drop redundant BSD license classifier (#2998)"
     }
   },
   "type" : "branch",
