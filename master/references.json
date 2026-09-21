@@ -37,9 +37,9 @@
     "branch" : "master",
     "commit" : 
     {
-      "date" : "2026-09-06 10:51:29 +0200",
-      "hash" : "dcccef25416cecdb319d1db2af86d7490757c5ed",
-      "title" : "Doc: better prose / clarifications re. cpu_percent()"
+      "date" : "2026-09-14 22:02:11 +0200",
+      "hash" : "76805f580474b5f5766e44ae3dd5aaf2d97cea7f",
+      "title" : "Merge branch 'master' of github.com:giampaolo/psutil"
     }
   },
   "type" : "branch",

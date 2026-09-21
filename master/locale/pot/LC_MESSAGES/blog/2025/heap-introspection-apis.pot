@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-27 11:50+0000\n"
+"POT-Creation-Date: 2026-09-21 15:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,19 +36,19 @@ msgstr ""
 
 #: ../../../blog/2025/heap-introspection-apis.rst:22
 msgid ""
-"psutil 7.2.0 introduces two new APIs for **C :term:`heap` introspection**, "
-"designed specifically to catch these kinds of native leaks. They give you a "
-"window directly into the underlying platform allocator (e.g. glibc's "
-"malloc), letting you track how much memory the C layer actually allocates. "
-"If your :term:`RSS` is flat but your C :term:`heap` usage climbs, you now "
-"have a way to see it."
+"psutil 7.2.0 introduces two new APIs for **C heap introspection**, designed "
+"specifically to catch these kinds of native leaks. They give you a window "
+"directly into the underlying platform allocator (e.g. glibc's malloc), "
+"letting you track how much memory the C layer actually allocates. If your :"
+"term:`RSS` is flat but your C :term:`heap` usage climbs, you now have a way "
+"to see it."
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:30
+#: ../../../blog/2025/heap-introspection-apis.rst:29
 msgid "Why native heap introspection matters"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:32
+#: ../../../blog/2025/heap-introspection-apis.rst:31
 msgid ""
 "Many Python projects rely on C extensions: psutil, NumPy, pandas, PIL, lxml, "
 "psycopg, PyTorch, custom in-house modules, etc. And even CPython itself, "
@@ -57,143 +57,143 @@ msgid ""
 "up in:"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:38
+#: ../../../blog/2025/heap-introspection-apis.rst:37
 msgid "Python reference counts (:func:`sys.getrefcount`)."
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:39
+#: ../../../blog/2025/heap-introspection-apis.rst:38
 msgid ":mod:`tracemalloc` module."
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:40
+#: ../../../blog/2025/heap-introspection-apis.rst:39
 msgid "Python's :mod:`gc` stats."
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:41
+#: ../../../blog/2025/heap-introspection-apis.rst:40
 msgid ""
 ":term:`RSS`, :term:`VMS` or :term:`USS` due to allocator caching, especially "
 "for small objects. This can happen, for example, when you forget to "
 "``Py_DECREF`` a Python object."
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:45
+#: ../../../blog/2025/heap-introspection-apis.rst:44
 msgid ""
 "psutil's new functions let you query the allocator (e.g. glibc) directly, "
 "returning low-level metrics from the platform's native heap."
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:49
+#: ../../../blog/2025/heap-introspection-apis.rst:48
 msgid "heap_info(): direct allocator statistics"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:51
+#: ../../../blog/2025/heap-introspection-apis.rst:50
 msgid ":func:`psutil.heap_info` exposes the following metrics:"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:53
+#: ../../../blog/2025/heap-introspection-apis.rst:52
 msgid ""
 ":field:`heap_used`: total number of bytes currently allocated via "
 "``malloc()`` (small allocations)."
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:55
+#: ../../../blog/2025/heap-introspection-apis.rst:54
 msgid ""
 ":field:`mmap_used`: total number of bytes currently allocated via :manpage:"
 "`mmap(2)` or via large ``malloc()`` allocations."
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:57
+#: ../../../blog/2025/heap-introspection-apis.rst:56
 msgid ""
 ":field:`heap_count`: (Windows only) number of private heaps created via "
 "``HeapCreate()``."
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:60
+#: ../../../blog/2025/heap-introspection-apis.rst:59
 msgid "Example:"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:62
+#: ../../../blog/2025/heap-introspection-apis.rst:61
 msgid ""
 ">>> import psutil\n"
 ">>> psutil.heap_info()\n"
 "pheap(heap_used=5177792, mmap_used=819200)"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:68
+#: ../../../blog/2025/heap-introspection-apis.rst:67
 msgid "Reference for what contributes to each field:"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:73
+#: ../../../blog/2025/heap-introspection-apis.rst:72
 msgid "Platform"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:74
+#: ../../../blog/2025/heap-introspection-apis.rst:73
 msgid "Allocation type"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:75
+#: ../../../blog/2025/heap-introspection-apis.rst:74
 msgid "Field affected"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:76
-#: ../../../blog/2025/heap-introspection-apis.rst:79
+#: ../../../blog/2025/heap-introspection-apis.rst:75
+#: ../../../blog/2025/heap-introspection-apis.rst:78
 msgid "UNIX / Windows"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:77
+#: ../../../blog/2025/heap-introspection-apis.rst:76
 msgid "small ``malloc()`` ≤128 KB without ``free()``"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:78
-#: ../../../blog/2025/heap-introspection-apis.rst:85
+#: ../../../blog/2025/heap-introspection-apis.rst:77
+#: ../../../blog/2025/heap-introspection-apis.rst:84
 msgid ":field:`heap_used`"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:80
+#: ../../../blog/2025/heap-introspection-apis.rst:79
 msgid ""
 "large ``malloc()`` >128 KB without ``free()``, or ``mmap()`` without :"
 "manpage:`munmap(2)` (UNIX)"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:82
-#: ../../../blog/2025/heap-introspection-apis.rst:88
+#: ../../../blog/2025/heap-introspection-apis.rst:81
+#: ../../../blog/2025/heap-introspection-apis.rst:87
 msgid ":field:`mmap_used`"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:83
-#: ../../../blog/2025/heap-introspection-apis.rst:86
-#: ../../../blog/2025/heap-introspection-apis.rst:89
+#: ../../../blog/2025/heap-introspection-apis.rst:82
+#: ../../../blog/2025/heap-introspection-apis.rst:85
+#: ../../../blog/2025/heap-introspection-apis.rst:88
 msgid "Windows"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:84
+#: ../../../blog/2025/heap-introspection-apis.rst:83
 msgid "``HeapAlloc()`` without ``HeapFree()``"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:87
+#: ../../../blog/2025/heap-introspection-apis.rst:86
 msgid "``VirtualAlloc()`` without ``VirtualFree()``"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:90
+#: ../../../blog/2025/heap-introspection-apis.rst:89
 msgid "``HeapCreate()`` without ``HeapDestroy()``"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:91
+#: ../../../blog/2025/heap-introspection-apis.rst:90
 msgid ":field:`heap_count`"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:94
+#: ../../../blog/2025/heap-introspection-apis.rst:93
 msgid "heap_trim(): returning unused heap memory"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:96
+#: ../../../blog/2025/heap-introspection-apis.rst:95
 msgid ""
 ":func:`psutil.heap_trim` provides a cross-platform way to request that the "
 "underlying allocator free any unused memory it's holding in the heap "
 "(typically small ``malloc()`` allocations)."
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:100
+#: ../../../blog/2025/heap-introspection-apis.rst:99
 msgid ""
 "In practice, modern allocators rarely comply, so this is not a general-"
 "purpose memory-reduction tool and won't meaningfully shrink :term:`RSS` in "
@@ -204,31 +204,31 @@ msgid ""
 "fragmentation."
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:109
+#: ../../../blog/2025/heap-introspection-apis.rst:108
 msgid "Real-world use: finding a C extension leak"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:111
+#: ../../../blog/2025/heap-introspection-apis.rst:110
 msgid "The workflow is simple:"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:113
+#: ../../../blog/2025/heap-introspection-apis.rst:112
 msgid "Take a baseline snapshot of the heap."
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:114
+#: ../../../blog/2025/heap-introspection-apis.rst:113
 msgid "Call the C extension hundreds of times."
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:115
+#: ../../../blog/2025/heap-introspection-apis.rst:114
 msgid "Take another snapshot."
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:116
+#: ../../../blog/2025/heap-introspection-apis.rst:115
 msgid "Compare."
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:118
+#: ../../../blog/2025/heap-introspection-apis.rst:117
 msgid ""
 "import psutil\n"
 "\n"
@@ -243,24 +243,24 @@ msgid ""
 "print(\"delta mmap_used =\", after.mmap_used - before.mmap_used)"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:132
+#: ../../../blog/2025/heap-introspection-apis.rst:131
 msgid ""
 "If :field:`heap_used` or :field:`mmap_used` values increase consistently, "
 "you've found a native leak."
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:135
+#: ../../../blog/2025/heap-introspection-apis.rst:134
 msgid ""
 "To reduce false positives, repeat the test multiple times, increasing the "
 "number of calls on each retry. This approach helps distinguish real leaks "
 "from random noise or transient allocations."
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:140
+#: ../../../blog/2025/heap-introspection-apis.rst:139
 msgid "A new tool: psleak"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:142
+#: ../../../blog/2025/heap-introspection-apis.rst:141
 msgid ""
 "The strategy described above is exactly what I implemented in a new PyPI "
 "package, which I called `psleak <https://github.com/giampaolo/psleak>`__. It "
@@ -269,11 +269,11 @@ msgid ""
 "several runs is flagged as a leak."
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:148
+#: ../../../blog/2025/heap-introspection-apis.rst:147
 msgid "A minimal test suite looks like this:"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:150
+#: ../../../blog/2025/heap-introspection-apis.rst:149
 msgid ""
 "from psleak import MemoryLeakTestCase\n"
 "\n"
@@ -282,13 +282,13 @@ msgid ""
 "        self.execute(some_c_function)"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:158
+#: ../../../blog/2025/heap-introspection-apis.rst:157
 msgid ""
 "If the function leaks memory, the test will fail with a descriptive "
 "exception:"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:160
+#: ../../../blog/2025/heap-introspection-apis.rst:159
 msgid ""
 "psleak.MemoryLeakError: memory kept increasing after 10 runs\n"
 "Run # 1: heap=+388160  | uss=+356352  | rss=+327680  | (calls= 200, avg/"
@@ -313,7 +313,7 @@ msgid ""
 "call=+1946)"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:174
+#: ../../../blog/2025/heap-introspection-apis.rst:173
 msgid ""
 "Psleak is now part of the psutil test suite. All psutil APIs are tested (see "
 "`test_memleaks.py <https://github.com/giampaolo/psutil/"
@@ -321,7 +321,7 @@ msgid ""
 "making it a de facto **regression-testing tool**."
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:178
+#: ../../../blog/2025/heap-introspection-apis.rst:177
 msgid ""
 "It's worth noting that without inspecting heap metrics, missing calls in the "
 "C code such as ``Py_CLEAR`` and ``Py_DECREF`` often go unnoticed, because "
@@ -330,73 +330,73 @@ msgid ""
 "essential to reliably detect memory leaks in Python C extensions."
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:185
+#: ../../../blog/2025/heap-introspection-apis.rst:184
 msgid "Under the hood"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:187
+#: ../../../blog/2025/heap-introspection-apis.rst:186
 msgid "For those interested in seeing how I did this in terms of code:"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:189
+#: ../../../blog/2025/heap-introspection-apis.rst:188
 msgid ""
 "`Linux <https://github.com/giampaolo/psutil/blob/d40164f1/psutil/arch/linux/"
 "heap.c>`__: uses glibc's :manpage:`mallinfo2(3)` to report ``uordblks`` "
 "(heap allocations) and ``hblkhd`` (mmap-backed blocks)."
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:192
+#: ../../../blog/2025/heap-introspection-apis.rst:191
 msgid ""
 "`Windows <https://github.com/giampaolo/psutil/blob/d40164f1/psutil/arch/"
 "windows/heap.c>`__: enumerates heaps and aggregates ``HeapAlloc`` / "
 "``VirtualAlloc`` usage."
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:194
+#: ../../../blog/2025/heap-introspection-apis.rst:193
 msgid ""
 "`macOS <https://github.com/giampaolo/psutil/blob/d40164f1/psutil/arch/osx/"
 "heap.c>`__: uses malloc zone statistics."
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:196
+#: ../../../blog/2025/heap-introspection-apis.rst:195
 msgid ""
 "`BSD <https://github.com/giampaolo/psutil/blob/d40164f1/psutil/arch/bsd/heap."
 "c>`__: uses jemalloc's arena and stats interfaces."
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:200
+#: ../../../blog/2025/heap-introspection-apis.rst:199
 msgid "References"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:202
+#: ../../../blog/2025/heap-introspection-apis.rst:201
 msgid ""
 "`psleak <https://github.com/giampaolo/psleak>`__, the new memory leak "
 "testing framework."
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:204
+#: ../../../blog/2025/heap-introspection-apis.rst:203
 msgid ":pr:`2692`, the implementation."
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:205
+#: ../../../blog/2025/heap-introspection-apis.rst:204
 msgid ":gh:`1275`, the original proposal from 8 years earlier."
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:208
+#: ../../../blog/2025/heap-introspection-apis.rst:207
 msgid "Discussion"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:210
+#: ../../../blog/2025/heap-introspection-apis.rst:209
 msgid ""
 "`Reddit <https://www.reddit.com/r/Python/comments/1puqgfg/"
 "detect_memory_leaks_of_c_extensions_with_psutil/>`__"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:211
+#: ../../../blog/2025/heap-introspection-apis.rst:210
 msgid "`Hacker News <https://news.ycombinator.com/item?id=46376608>`__"
 msgstr ""
 
-#: ../../../blog/2025/heap-introspection-apis.rst:212
+#: ../../../blog/2025/heap-introspection-apis.rst:211
 msgid ""
 "`Medium <https://medium.com/@g.rodola/detect-memory-leaks-of-c-extensions-"
 "with-psutil-and-psleak-a0521ba6315f>`__"
