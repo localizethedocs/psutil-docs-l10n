@@ -1,0 +1,198 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2026 Giampaolo Rodola
+# This file is distributed under the same license as the psutil package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: psutil 8.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-27 11:50+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../blog/2017/unicode-internals.rst:10
+msgid "Fixing Unicode across Python 2 and 3"
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:12
+msgid ""
+"This one took a while. Adding proper Unicode support to psutil took four "
+"months of auditing, design decisions, and rewriting nearly every API that "
+"returned a string. The full journey is documented in :gh:`1040`, and what "
+"follows is a summary."
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:17
+msgid ""
+"This can serve as a case study for any Python library with a C extension "
+"that needs to support both Python 2 *and* Python 3, as it will encounter the "
+"exact same set of problems."
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:22
+msgid "What was broken"
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:24
+msgid ""
+"psutil has different APIs returning a string, many of which misbehaved when "
+"it came to unicode. There were three distinctive problems (:gh:`1040`). Each "
+"API could:"
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:28
+msgid "**A**: raise a decoding error for non-ASCII strings (Python 3)."
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:29
+msgid "**B**: return ``unicode`` instead of ``str`` (Python 2)."
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:30
+msgid ""
+"**C**: return incorrect / invalid encoded data for non-ASCII strings (both)."
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:32
+msgid ""
+":meth:`Process.memory_maps` hit all three on various OSes. :func:"
+"`disk_partitions` raised decoding errors on every UNIX except Linux. Windows "
+"service methods leaked ``unicode`` into Python 2 return values. The C "
+"extension had accumulated years of ad-hoc encode/decode decisions, with no "
+"single rule covering all of them."
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:38
+msgid "It was a mess."
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:41
+msgid "Filesystem or locale encoding?"
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:43
+msgid ""
+"First problem was that the C extension was using 2 approaches when it came "
+"to decoding and returning a string: :c:func:`PyUnicode_DecodeFSDefault` "
+"(filesystem encoding) for path-like APIs, and :c:func:"
+"`PyUnicode_DecodeLocale` (user locale) for non-path strings like :meth:"
+"`Process.username`."
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:48
+msgid ""
+"It appeared clear that I had to use :c:func:`PyUnicode_DecodeFSDefault` for "
+"all filesystem-related APIs like :meth:`Process.exe` and :meth:`Process."
+"open_files`."
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:52
+msgid ""
+"It was less clear, though, when to use :c:func:`PyUnicode_DecodeLocale`."
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:54
+msgid ""
+"After some back and forth, I decided to use a single encoding for all APIs: "
+"the **filesystem encoding** (:c:func:`PyUnicode_DecodeFSDefault`). This "
+"makes the encoding choice an implementation detail of psutil, not something "
+"the user has to care about."
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:60
+msgid "Error handling"
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:62
+msgid ""
+"Second question was what to do in case the string cannot be correctly "
+"decoded (because invalid, corrupted or whatever). On Python 3 + UNIX the "
+"natural choice was ``'surrogateescape'``, which is also the default for :c:"
+"func:`PyUnicode_DecodeFSDefault`. On Windows the default is "
+"``'surrogatepass'`` (Python 3.6) or ``'replace'`` as per `PEP 529 <https://"
+"www.python.org/dev/peps/pep-0529/>`__."
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:69
+msgid ""
+"And here come the troubles: Python 2 is different. To correctly handle all "
+"kinds of strings on Python 2 we should return ``unicode`` instead of "
+"``str``, but I didn't want to do that, nor have APIs which return two "
+"different types depending on the circumstance."
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:74
+msgid ""
+"Since unicode support is already broken in Python 2 and its stdlib (see :bpo:"
+"`18695`), I was happy to always return ``str``, use ``'replace'`` as the "
+"error handler, and simply consider unicode support in psutil + Python 2 "
+"broken."
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:79
+msgid "Final behavior"
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:81
+msgid ""
+"Starting from 5.3.0, psutil behaves consistently across all APIs that return "
+"a string. The rules are intentionally simple, even if the underlying "
+"implementation is not."
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:85
+msgid ""
+"The notes below apply to *any* method returning a string such as :meth:"
+"`Process.exe` or :meth:`Process.cwd`, including non-filesystem-related "
+"methods such as :meth:`Process.username`:"
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:89
+msgid ""
+"all strings are encoded using the OS filesystem encoding (:c:func:"
+"`PyUnicode_DecodeFSDefault`), which varies depending on the platform you're "
+"on (e.g. ``'UTF-8'`` on Linux, ``'mbcs'`` on Windows)."
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:92
+msgid "no API call is supposed to crash with :exc:`UnicodeDecodeError`."
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:93
+msgid ""
+"in case of badly encoded data returned by the OS, the following error "
+"handlers are used to replace the bad characters in the string:"
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:96
+msgid "Python 2: ``'replace'``."
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:97
+msgid "Python 3: ``'surrogateescape'`` on POSIX, ``'replace'`` on Windows."
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:99
+msgid "on Python 2 all APIs return bytes (``str`` type), never ``unicode``."
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:100
+msgid "on Python 2 you can go back to unicode by doing:"
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:102
+msgid ">>> unicode(proc.exe(), sys.getdefaultencoding(), errors=\"replace\")"
+msgstr ""
+
+#: ../../../blog/2017/unicode-internals.rst:106
+msgid ""
+"The full journey was implemented in :pr:`1052`, and shipped in 5.3.0 (see "
+"the :ref:`changelog <530>`)."
+msgstr ""

@@ -1,0 +1,214 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2026 Giampaolo Rodola
+# This file is distributed under the same license as the psutil package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: psutil 8.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-27 11:50+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:9
+msgid "Reimplementing ifconfig in Python"
+msgstr ""
+
+#: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:11
+msgid ""
+"Here we are. It's been a long time since my last blog post and my last "
+"psutil release. The reason? I've been travelling! I mean... a lot. I've "
+"spent 3 months in Berlin, 3 weeks in Japan and 2 months in New York City. "
+"While I was there I finally had the chance to meet my friend `Jay Loden "
+"<http://jayloden.com/software.htm>`__ in person. We originally started "
+"working on psutil together `7 years ago <https://groups.google.com/forum/#!"
+"topic/psutil-dev/fj8DQ3lGFH4>`__."
+msgstr ""
+
+#: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:19
+msgid "Jay and I"
+msgstr ""
+
+#: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:24
+msgid ""
+"Back then I didn't know any C (and I'm still a terrible C developer), so he "
+"was crucial in developing the initial psutil skeleton, including macOS and "
+"Windows support. Needless to say that this release builds on that work."
+msgstr ""
+
+#: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:29
+msgid "net_if_addrs()"
+msgstr ""
+
+#: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:31
+msgid ""
+"We're now able to list network interface addresses similarly to the "
+"``ifconfig`` command on UNIX:"
+msgstr ""
+
+#: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:34
+msgid ""
+">>> import psutil\n"
+">>> from pprint import pprint\n"
+">>> pprint(psutil.net_if_addrs())\n"
+"{'ethernet0': [snic(family=<AddressFamily.AF_INET: 2>,\n"
+"                    address='10.0.0.4',\n"
+"                    netmask='255.0.0.0',\n"
+"                    broadcast='10.255.255.255'),\n"
+"               snic(family=<AddressFamily.AF_PACKET: 17>,\n"
+"                    address='9c:eb:e8:0b:05:1f',\n"
+"                    netmask=None,\n"
+"                    broadcast='ff:ff:ff:ff:ff:ff')],\n"
+" 'localhost': [snic(family=<AddressFamily.AF_INET: 2>,\n"
+"                    address='127.0.0.1',\n"
+"                    netmask='255.0.0.0',\n"
+"                    broadcast='127.0.0.1'),\n"
+"               snic(family=<AddressFamily.AF_PACKET: 17>,\n"
+"                    address='00:00:00:00:00:00',\n"
+"                    netmask=None,\n"
+"                    broadcast='00:00:00:00:00:00')]}"
+msgstr ""
+
+#: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:56
+msgid ""
+"This is limited to ``AF_INET`` (IPv4), ``AF_INET6`` (IPv6) and ``AF_LINK`` "
+"(Ethernet) address families. If you want something more powerful (e.g. "
+"``AF_BLUETOOTH``) you can take a look at the `netifaces <https://pypi.python."
+"org/pypi/netifaces/>`__ extension. If you want to see how this is "
+"implemented, here's the code for POSIX and Windows:"
+msgstr ""
+
+#: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:62
+msgid ""
+"`POSIX <https://github.com/giampaolo/psutil/"
+"blob/39161251010503d6b087807c473f4fb648dfcbce/psutil/_psutil_posix.c#L151>`__"
+msgstr ""
+
+#: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:63
+msgid ""
+"`Windows <https://github.com/giampaolo/psutil/"
+"blob/39161251010503d6b087807c473f4fb648dfcbce/psutil/_psutil_windows."
+"c#L2907>`__"
+msgstr ""
+
+#: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:66
+msgid "net_if_stats()"
+msgstr ""
+
+#: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:68
+msgid "This new function returns information about network interface cards:"
+msgstr ""
+
+#: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:70
+msgid ""
+">>> import psutil\n"
+">>> from pprint import pprint\n"
+">>> pprint(psutil.net_if_stats())\n"
+"{'ethernet0': snicstats(isup=True,\n"
+"                        duplex=<NicDuplex.NIC_DUPLEX_FULL: 2>,\n"
+"                        speed=100,\n"
+"                        mtu=1500),\n"
+" 'localhost': snicstats(isup=True,\n"
+"                        duplex=<NicDuplex.NIC_DUPLEX_UNKNOWN: 0>,\n"
+"                        speed=0,\n"
+"                        mtu=65536)}"
+msgstr ""
+
+#: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:84
+msgid "The implementation on each platform:"
+msgstr ""
+
+#: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:86
+msgid ""
+"`Windows <https://github.com/giampaolo/psutil/"
+"blob/39161251010503d6b087807c473f4fb648dfcbce/psutil/_psutil_windows."
+"c#L3057>`__"
+msgstr ""
+
+#: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:87
+msgid ""
+"`Linux <https://github.com/giampaolo/psutil/"
+"blob/39161251010503d6b087807c473f4fb648dfcbce/psutil/_psutil_linux.c#L474>`__"
+msgstr ""
+
+#: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:88
+msgid ""
+"`macOS & FreeBSD <https://github.com/giampaolo/psutil/"
+"blob/39161251010503d6b087807c473f4fb648dfcbce/psutil/_psutil_posix.c#L229>`__"
+msgstr ""
+
+#: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:89
+msgid ""
+"`SunOS <https://github.com/giampaolo/psutil/"
+"blob/39161251010503d6b087807c473f4fb648dfcbce/psutil/_psutil_sunos."
+"c#L1153>`__"
+msgstr ""
+
+#: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:92
+msgid "Also in 3.0"
+msgstr ""
+
+#: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:94
+msgid ""
+"Beyond the network-interface APIs, psutil 3.0 ships a few other notable "
+"changes."
+msgstr ""
+
+#: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:97
+msgid ""
+"Several integer/string constants (``IOPRIO_CLASS_*``, ``NIC_DUPLEX_*``, "
+"``*_PRIORITY_CLASS``) now return :mod:`enum` values on Python 3.4+."
+msgstr ""
+
+#: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:100
+msgid ""
+"Support for :term:`zombie processes <zombie process>` on UNIX was broken. "
+"Covered in a :doc:`separate post </blog/2015/zombie-processes>`."
+msgstr ""
+
+#: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:103
+msgid ""
+"All aliases deprecated in the :doc:`psutil 2.0 porting guide </blog/2014/"
+"porting-to-20>` (January 2014) are gone."
+msgstr ""
+
+#: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:107
+msgid "For a full list of changes see the :ref:`changelog <300>`."
+msgstr ""
+
+#: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:110
+msgid "Final words"
+msgstr ""
+
+#: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:112
+msgid ""
+"I must say I'm pretty satisfied with how psutil is evolving and with the "
+"enjoyment I still get every time I work on it. It now gets almost `800,000 "
+"downloads a month <https://pypi.org/project/psutil/>`__, which is quite "
+"remarkable for a Python library."
+msgstr ""
+
+#: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:117
+msgid ""
+"At this point, I consider psutil almost \"complete\" feature-wise, meaning "
+"I'm starting to run out of ideas for what to add next (see `TODO <https://"
+"github.com/giampaolo/psutil/blob/v3.0.0/TODO>`__). Going forward, "
+"development will likely focus on supporting more exotic platforms (OpenBSD :"
+"gh:`562`, NetBSD :pr:`557`, Android :gh:`355`)."
+msgstr ""
+
+#: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:123
+msgid ""
+"There have also been discussions on the python-ideas mailing list about "
+"`including psutil in the Python stdlib <https://mail.python.org/pipermail//"
+"python-ideas/2014-October/029835.html>`__, but even if that happens, it's "
+"still a long way off, as it would require a significant time investment that "
+"I currently don't have."
+msgstr ""
