@@ -1,0 +1,651 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2026 Giampaolo Rodola
+# This file is distributed under the same license as the psutil package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: psutil 8.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-27 11:50+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../blog/2014/porting-to-20.rst:9
+msgid "Porting your code to psutil 2.0"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:11
+msgid ""
+"This blog post is going to be about psutil 2.0, a major release in which I "
+"decided to reorganize the existing API for the sake of consistency. At the "
+"time of writing, psutil 2.0 is still under development, and the intent of "
+"this blog post is to serve as an official reference that describes how you "
+"should port your existing code base. In doing so, I will also explain why I "
+"decided to make these changes. Even though many APIs will still be available "
+"as aliases pointing to the newer ones, the overall changes are numerous and "
+"many of them are not backward compatible. I'm sure many people will be "
+"sorely bitten, but I think this is for the better and it needed to be done, "
+"hopefully for the first and last time."
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:23
+msgid "Module constants turned into functions"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:25
+#: ../../../blog/2014/porting-to-20.rst:51
+#: ../../../blog/2014/porting-to-20.rst:140
+#: ../../../blog/2014/porting-to-20.rst:187
+msgid "**What changed**"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:28
+#: ../../../blog/2014/porting-to-20.rst:54
+#: ../../../blog/2014/porting-to-20.rst:76
+#: ../../../blog/2014/porting-to-20.rst:120
+#: ../../../blog/2014/porting-to-20.rst:145
+msgid "Old name"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:28
+#: ../../../blog/2014/porting-to-20.rst:54
+#: ../../../blog/2014/porting-to-20.rst:76
+#: ../../../blog/2014/porting-to-20.rst:120
+#: ../../../blog/2014/porting-to-20.rst:145
+msgid "Replacement"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:30
+msgid "``psutil.BOOT_TIME``"
+msgstr "``psutil.BOOT_TIME``"
+
+#: ../../../blog/2014/porting-to-20.rst:30
+#: ../../../blog/2014/porting-to-20.rst:56
+msgid "``psutil.boot_time()``"
+msgstr "``psutil.boot_time()``"
+
+#: ../../../blog/2014/porting-to-20.rst:32
+msgid "``psutil.NUM_CPUS``"
+msgstr "``psutil.NUM_CPUS``"
+
+#: ../../../blog/2014/porting-to-20.rst:32
+msgid "``psutil.cpu_count()``"
+msgstr "``psutil.cpu_count()``"
+
+#: ../../../blog/2014/porting-to-20.rst:34
+msgid "``psutil.TOTAL_PHYMEM``"
+msgstr "``psutil.TOTAL_PHYMEM``"
+
+#: ../../../blog/2014/porting-to-20.rst:34
+msgid "``psutil.virtual_memory().total``"
+msgstr "``psutil.virtual_memory().total``"
+
+#: ../../../blog/2014/porting-to-20.rst:37
+#: ../../../blog/2014/porting-to-20.rst:63
+#: ../../../blog/2014/porting-to-20.rst:131
+#: ../../../blog/2014/porting-to-20.rst:168
+#: ../../../blog/2014/porting-to-20.rst:196
+msgid "**Why I did it**"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:39
+msgid ""
+"I already talked about this more extensively in the previous `Making "
+"constants part of your API is evil <https://gmpy.dev/blog/2013/making-"
+"constants-part-of-your-api-is-evil>`__ blog post. In short: other than "
+"introducing unnecessary slowdowns, calculating a module-level constant at "
+"import time is dangerous because if something goes wrong the whole app will "
+"crash. Also, the represented values may be subject to change (think about "
+"the system clock), but the constant cannot be updated. Thanks to this hack, "
+"accessing the old constants still works and produces a :exc:"
+"`DeprecationWarning`."
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:49
+msgid "Renamed module functions"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:56
+msgid "``psutil.get_boot_time()``"
+msgstr "``psutil.get_boot_time()``"
+
+#: ../../../blog/2014/porting-to-20.rst:58
+msgid "``psutil.get_pid_list()``"
+msgstr "``psutil.get_pid_list()``"
+
+#: ../../../blog/2014/porting-to-20.rst:58
+msgid "``psutil.pids()``"
+msgstr "``psutil.pids()``"
+
+#: ../../../blog/2014/porting-to-20.rst:60
+msgid "``psutil.get_users()``"
+msgstr "``psutil.get_users()``"
+
+#: ../../../blog/2014/porting-to-20.rst:60
+msgid "``psutil.users()``"
+msgstr "``psutil.users()``"
+
+#: ../../../blog/2014/porting-to-20.rst:65
+msgid ""
+"They were the only module-level functions with a ``get_`` prefix. None of "
+"the others had one."
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:69
+msgid "Renamed Process class methods"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:71
+msgid ""
+"All methods lost their ``get_`` and ``set_`` prefixes. A single method can "
+"now be used for both getting and setting (if a value is passed). Assuming "
+"``p = psutil.Process()``:"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:78
+msgid "``p.get_children()``"
+msgstr "``p.get_children()``"
+
+#: ../../../blog/2014/porting-to-20.rst:78
+msgid "``p.children()``"
+msgstr "``p.children()``"
+
+#: ../../../blog/2014/porting-to-20.rst:80
+msgid "``p.get_connections()``"
+msgstr "``p.get_connections()``"
+
+#: ../../../blog/2014/porting-to-20.rst:80
+msgid "``p.connections()``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:82
+msgid "``p.get_cpu_affinity()``"
+msgstr "``p.get_cpu_affinity()``"
+
+#: ../../../blog/2014/porting-to-20.rst:82
+msgid "``p.cpu_affinity()``"
+msgstr "``p.cpu_affinity()``"
+
+#: ../../../blog/2014/porting-to-20.rst:84
+msgid "``p.get_cpu_percent()``"
+msgstr "``p.get_cpu_percent()``"
+
+#: ../../../blog/2014/porting-to-20.rst:84
+msgid "``p.cpu_percent()``"
+msgstr "``p.cpu_percent()``"
+
+#: ../../../blog/2014/porting-to-20.rst:86
+msgid "``p.get_cpu_times()``"
+msgstr "``p.get_cpu_times()``"
+
+#: ../../../blog/2014/porting-to-20.rst:86
+msgid "``p.cpu_times()``"
+msgstr "``p.cpu_times()``"
+
+#: ../../../blog/2014/porting-to-20.rst:88
+msgid "``p.get_io_counters()``"
+msgstr "``p.get_io_counters()``"
+
+#: ../../../blog/2014/porting-to-20.rst:88
+msgid "``p.io_counters()``"
+msgstr "``p.io_counters()``"
+
+#: ../../../blog/2014/porting-to-20.rst:90
+msgid "``p.get_ionice()``"
+msgstr "``p.get_ionice()``"
+
+#: ../../../blog/2014/porting-to-20.rst:90
+msgid "``p.ionice()``"
+msgstr "``p.ionice()``"
+
+#: ../../../blog/2014/porting-to-20.rst:92
+msgid "``p.get_memory_info()``"
+msgstr "``p.get_memory_info()``"
+
+#: ../../../blog/2014/porting-to-20.rst:92
+msgid "``p.memory_info()``"
+msgstr "``p.memory_info()``"
+
+#: ../../../blog/2014/porting-to-20.rst:94
+msgid "``p.get_ext_memory_info()``"
+msgstr "``p.get_ext_memory_info()``"
+
+#: ../../../blog/2014/porting-to-20.rst:94
+msgid "``p.memory_info_ex()``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:96
+msgid "``p.get_memory_maps()``"
+msgstr "``p.get_memory_maps()``"
+
+#: ../../../blog/2014/porting-to-20.rst:96
+msgid "``p.memory_maps()``"
+msgstr "``p.memory_maps()``"
+
+#: ../../../blog/2014/porting-to-20.rst:98
+msgid "``p.get_memory_percent()``"
+msgstr "``p.get_memory_percent()``"
+
+#: ../../../blog/2014/porting-to-20.rst:98
+msgid "``p.memory_percent()``"
+msgstr "``p.memory_percent()``"
+
+#: ../../../blog/2014/porting-to-20.rst:100
+msgid "``p.get_nice()``"
+msgstr "``p.get_nice()``"
+
+#: ../../../blog/2014/porting-to-20.rst:100
+msgid "``p.nice()``"
+msgstr "``p.nice()``"
+
+#: ../../../blog/2014/porting-to-20.rst:102
+msgid "``p.get_num_ctx_switches()``"
+msgstr "``p.get_num_ctx_switches()``"
+
+#: ../../../blog/2014/porting-to-20.rst:102
+msgid "``p.num_ctx_switches()``"
+msgstr "``p.num_ctx_switches()``"
+
+#: ../../../blog/2014/porting-to-20.rst:104
+msgid "``p.get_num_fds()``"
+msgstr "``p.get_num_fds()``"
+
+#: ../../../blog/2014/porting-to-20.rst:104
+msgid "``p.num_fds()``"
+msgstr "``p.num_fds()``"
+
+#: ../../../blog/2014/porting-to-20.rst:106
+msgid "``p.get_num_threads()``"
+msgstr "``p.get_num_threads()``"
+
+#: ../../../blog/2014/porting-to-20.rst:106
+msgid "``p.num_threads()``"
+msgstr "``p.num_threads()``"
+
+#: ../../../blog/2014/porting-to-20.rst:108
+msgid "``p.get_open_files()``"
+msgstr "``p.get_open_files()``"
+
+#: ../../../blog/2014/porting-to-20.rst:108
+msgid "``p.open_files()``"
+msgstr "``p.open_files()``"
+
+#: ../../../blog/2014/porting-to-20.rst:110
+msgid "``p.get_rlimit()``"
+msgstr "``p.get_rlimit()``"
+
+#: ../../../blog/2014/porting-to-20.rst:110
+msgid "``p.rlimit()``"
+msgstr "``p.rlimit()``"
+
+#: ../../../blog/2014/porting-to-20.rst:112
+msgid "``p.get_threads()``"
+msgstr "``p.get_threads()``"
+
+#: ../../../blog/2014/porting-to-20.rst:112
+msgid "``p.threads()``"
+msgstr "``p.threads()``"
+
+#: ../../../blog/2014/porting-to-20.rst:114
+msgid "``p.getcwd()``"
+msgstr "``p.getcwd()``"
+
+#: ../../../blog/2014/porting-to-20.rst:114
+msgid "``p.cwd()``"
+msgstr "``p.cwd()``"
+
+#: ../../../blog/2014/porting-to-20.rst:117
+msgid "...as for ``set_*`` methods:"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:122
+msgid "``p.set_cpu_affinity()``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:122
+msgid "``p.cpu_affinity(cpus)``"
+msgstr "``p.cpu_affinity(cpus)``"
+
+#: ../../../blog/2014/porting-to-20.rst:124
+msgid "``p.set_ionice()``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:124
+msgid "``p.ionice(ioclass, value=None)``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:126
+msgid "``p.set_nice()``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:126
+msgid "``p.nice(value)``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:128
+msgid "``p.set_rlimit()``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:128
+msgid "``p.rlimit(resource, limits=None)``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:133
+msgid ""
+"I wanted to be consistent with system-wide module-level functions, which "
+"have no ``get_`` prefix. After I got rid of the ``get_`` prefixes, removing "
+"``set_`` too seemed natural and helped reduce the number of methods."
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:138
+msgid "Process properties are now methods"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:142
+msgid "Assuming ``p = psutil.Process()``:"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:147
+msgid "``p.cmdline``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:147
+msgid "``p.cmdline()``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:149
+msgid "``p.create_time``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:149
+msgid "``p.create_time()``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:151
+msgid "``p.exe``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:151
+msgid "``p.exe()``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:153
+msgid "``p.gids``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:153
+msgid "``p.gids()``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:155
+msgid "``p.name``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:155
+msgid "``p.name()``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:157
+msgid "``p.parent``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:157
+msgid "``p.parent()``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:159
+msgid "``p.ppid``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:159
+msgid "``p.ppid()``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:161
+msgid "``p.status``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:161
+msgid "``p.status()``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:163
+msgid "``p.uids``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:163
+msgid "``p.uids()``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:165
+msgid "``p.username``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:165
+msgid "``p.username()``"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:170
+msgid "Different reasons:"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:172
+msgid ""
+"Having a mixed API that uses both properties and methods for no particular "
+"reason is confusing and messy, because you don't know whether to use ``()`` "
+"or not."
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:175
+msgid ""
+"A property is usually expected not to perform heavy computations internally, "
+"whereas psutil invokes a function every time it is accessed. This has two "
+"drawbacks:"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:179
+msgid ""
+"You may get an exception just by accessing the property (e.g. ``p.name`` may "
+"raise :exc:`NoSuchProcess` or :exc:`AccessDenied`)."
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:181
+msgid ""
+"You may erroneously think properties are cached, but this is true only for "
+"``name``, ``exe``, and ``create_time``."
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:185
+msgid "CPU percent intervals"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:189
+msgid ""
+"The timeout parameter of ``cpu_percent*`` functions now defaults to 0.0 "
+"instead of 0.1. The functions affected are:"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:192
+msgid ":meth:`Process.cpu_percent`"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:193
+msgid ":func:`psutil.cpu_percent`"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:194
+msgid ":func:`psutil.cpu_times_percent`"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:198
+msgid ""
+"I originally set 0.1 as the default timeout because you need to wait some "
+"time in order to get a meaningful percent value. Having an API that "
+"\"sleeps\" by default is risky, though, because it's easy to forget it does "
+"so. That is particularly problematic when calling :meth:`Process."
+"cpu_percent` for all processes: it's very easy to forget to specify "
+"``timeout=0``, resulting in dramatic slowdowns that are hard to spot. For "
+"example, this code snippet might take a variable number of seconds to "
+"complete depending on the number of active processes:"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:207
+msgid ""
+">>> # this will be slow\n"
+">>> for p in psutil.process_iter():\n"
+"...    print(p.cpu_percent())"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:214
+msgid "Migration strategy"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:216
+msgid ""
+"Except for :class:`Process` properties (:meth:`Process.name`, :meth:`Process."
+"exe`, :meth:`Process.cmdline`, etc.), all the old APIs are still available "
+"as aliases pointing to the newer names and raising :exc:"
+"`DeprecationWarning`. psutil will be very clear on what you should use "
+"instead of the deprecated API, as long as you start the interpreter with the "
+"``-Wd`` option. This will enable deprecation warnings, which were `silenced "
+"in Python 2.7 <http://bugs.python.org/issue7319>`__ (IMHO, from a developer "
+"standpoint this was a bad decision)."
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:227
+msgid ""
+"giampaolo@ubuntu:/tmp$ python -Wd\n"
+"Python 2.7.3 (default, Sep 26 2013, 20:03:06)\n"
+"[GCC 4.6.3] on linux2\n"
+"Type \"help\", \"copyright\", \"credits\" or \"license\" for more "
+"information.\n"
+">>> import psutil\n"
+">>> psutil.get_pid_list()\n"
+"__main__:1: DeprecationWarning: psutil.get_pid_list is deprecated; use "
+"psutil.pids() instead\n"
+"[1, 2, 3, 6, 7, 13, ...]\n"
+">>>\n"
+">>>\n"
+">>> p = psutil.Process()\n"
+">>> p.get_cpu_times()\n"
+"__main__:1: DeprecationWarning: get_cpu_times() is deprecated; use "
+"cpu_times() instead\n"
+"pcputimes(user=0.08, system=0.03)\n"
+">>>"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:243
+msgid ""
+"If you have a solid test suite, you can run tests and fix the warnings one "
+"by one. As for the Process properties that were turned into methods, it's "
+"more difficult because, whereas psutil 1.2.1 returns the actual value, "
+"psutil 2.0.0 returns the bound method:"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:248
+msgid ""
+"# psutil 1.2.1\n"
+">>> psutil.Process().name\n"
+"'python'\n"
+">>>\n"
+"\n"
+"# psutil 2.0.0\n"
+">>> psutil.Process().name\n"
+"<bound method Process.name of psutil.Process(pid=19816, name='python') at "
+"139845631328144>\n"
+">>>"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:260
+msgid ""
+"What I would recommend, if you want to drop support for 1.2.1, is to grep "
+"for ``\".name\"``, ``\".exe\"``, etc. and just replace them with ``\"."
+"exe()\"`` and ``\".name()\"`` one by one. If, on the other hand, you want to "
+"write code that works with both versions, I see two possibilities:"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:265
+msgid "#1 check version info, like this:"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:267
+msgid ""
+">>> PSUTIL2 = psutil.version_info >= (2, 0)\n"
+">>> p = psutil.Process()\n"
+">>> name = p.name() if PSUTIL2 else p.name\n"
+">>> exe = p.exe() if PSUTIL2 else p.exe"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:274
+msgid ""
+"#2 get rid of all ``\".name\"``, ``\".exe\"`` occurrences you have in your "
+"code and use :meth:`Process.as_dict` instead:"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:277
+msgid ""
+">>> p = psutil.Process()\n"
+">>> pinfo = p.as_dict(attrs=[\"name\", \"exe\"])\n"
+">>> pinfo\n"
+"{'exe': '/usr/bin/python2.7', 'name': 'python'}\n"
+">>> name = pinfo['name']\n"
+">>> exe = pinfo['exe']"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:287
+msgid "New features introduced in 2.0.0"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:289
+msgid ""
+"psutil 2.0.0 is not only about code breakage. I also had the chance to "
+"integrate a bunch of interesting features."
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:292
+msgid ""
+":gh:`427`: you're now able to distinguish between the number of :term:"
+"`logical <logical CPU>` and :term:`physical <physical CPU>` CPUs:"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:295
+msgid ""
+">>> psutil.cpu_count()  # logical\n"
+"4\n"
+">>> psutil.cpu_count(logical=False)  # physical cores only\n"
+"2"
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:302
+msgid ""
+":gh:`452`: :class:`Process` instances are now hashable and can be checked "
+"for equality. That means you can use :class:`Process` objects with sets "
+"(finally!)."
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:305
+msgid ""
+":gh:`447`: the ``timeout`` parameter of :func:`psutil.wait_procs` is now "
+"optional."
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:307
+msgid ":gh:`461`: functions returning namedtuples are now picklable."
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:308
+msgid ""
+":gh:`459`: a Makefile is now available to automate repetitive tasks such as "
+"build, install, running tests, etc. There's also a make.bat for Windows."
+msgstr ""
+
+#: ../../../blog/2014/porting-to-20.rst:310
+msgid "Introduced the ``unittest2`` module as a requirement for running tests."
+msgstr ""
