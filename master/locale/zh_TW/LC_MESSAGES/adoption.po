@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-17 09:32+0000\n"
+"POT-Creation-Date: 2026-10-05 17:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,559 +27,552 @@ msgid ""
 "psutil>`__ most-downloaded packages on PyPI, with **390+ million** downloads "
 "per month and **780,000+** `GitHub repositories <https://github.com/"
 "giampaolo/psutil/network/dependents>`__ using it. The projects below are a "
-"small sample of notable software that depends on psutil. See also :doc:"
-"`alternatives` for related Python libraries and equivalents in other "
-"languages."
+"sample of notable software that uses it. They are grouped by how much of the "
+"project depends on psutil, and every usage links to the code that calls "
+"psutil. See also :doc:`alternatives` for related Python libraries and "
+"equivalents in other languages."
 msgstr ""
 
 #: ../../../adoption.rst:17
-msgid "Infrastructure / automation"
-msgstr "基礎設施/自動化"
-
-#: ../../../adoption.rst:23 ../../../adoption.rst:63 ../../../adoption.rst:91
-#: ../../../adoption.rst:119
-msgid "Project"
-msgstr "專案"
-
-#: ../../../adoption.rst:24 ../../../adoption.rst:64 ../../../adoption.rst:92
-#: ../../../adoption.rst:120
-msgid "Description"
-msgstr ""
-
-#: ../../../adoption.rst:25 ../../../adoption.rst:65 ../../../adoption.rst:93
-#: ../../../adoption.rst:121
-msgid "Stars"
-msgstr ""
-
-#: ../../../adoption.rst:26 ../../../adoption.rst:66 ../../../adoption.rst:94
-#: ../../../adoption.rst:122
-msgid "psutil usage"
-msgstr ""
-
-#: ../../../adoption.rst:27
-msgid "`Home Assistant <https://github.com/home-assistant/core>`__"
-msgstr ""
-
-#: ../../../adoption.rst:28
-msgid "Open source home automation platform"
-msgstr ""
-
-#: ../../../adoption.rst:29
-msgid "|homeassistant-stars|"
-msgstr ""
-
-#: ../../../adoption.rst:198
-msgid "homeassistant-stars"
-msgstr ""
-
-#: ../../../adoption.rst:30
-msgid "system monitor integration"
-msgstr ""
-
-#: ../../../adoption.rst:31
-msgid "`Ansible <https://github.com/ansible/ansible>`__"
-msgstr ""
-
-#: ../../../adoption.rst:32
-msgid "IT automation platform"
-msgstr "IT 自動化平臺"
-
-#: ../../../adoption.rst:33
-msgid "|ansible-stars|"
-msgstr ""
-
-#: ../../../adoption.rst:188
-msgid "ansible-stars"
-msgstr ""
-
-#: ../../../adoption.rst:34
-msgid "system fact gathering"
-msgstr ""
-
-#: ../../../adoption.rst:35
-msgid "`Apache Airflow <https://github.com/apache/airflow>`__"
-msgstr ""
-
-#: ../../../adoption.rst:36
-msgid "Workflow orchestration platform"
-msgstr ""
-
-#: ../../../adoption.rst:37
-msgid "|airflow-stars|"
-msgstr ""
-
-#: ../../../adoption.rst:186
-msgid "airflow-stars"
-msgstr ""
-
-#: ../../../adoption.rst:38
-msgid "process supervisor, unit testing"
-msgstr ""
-
-#: ../../../adoption.rst:39
-msgid "`Celery <https://github.com/celery/celery>`__"
-msgstr ""
-
-#: ../../../adoption.rst:40
-msgid "Distributed task queue"
-msgstr ""
-
-#: ../../../adoption.rst:41
-msgid "|celery-stars|"
-msgstr ""
-
-#: ../../../adoption.rst:192
-msgid "celery-stars"
-msgstr ""
-
-#: ../../../adoption.rst:42
-msgid "worker process monitoring, memleak detection"
-msgstr ""
-
-#: ../../../adoption.rst:43
-msgid "`Salt <https://github.com/saltstack/salt>`__"
-msgstr ""
-
-#: ../../../adoption.rst:44
-msgid "Infrastructure automation at scale"
-msgstr ""
-
-#: ../../../adoption.rst:45
-msgid "|salt-stars|"
-msgstr ""
-
-#: ../../../adoption.rst:205
-msgid "salt-stars"
-msgstr ""
-
-#: ../../../adoption.rst:46
-msgid "deep system data collection (grains)"
-msgstr ""
-
-#: ../../../adoption.rst:47
-msgid "`Dask <https://github.com/dask/dask>`__"
-msgstr ""
-
-#: ../../../adoption.rst:48
-msgid "Parallel computing with task scheduling"
-msgstr ""
-
-#: ../../../adoption.rst:49
-msgid "|dask-stars|"
-msgstr ""
-
-#: ../../../adoption.rst:193
-msgid "dask-stars"
-msgstr ""
-
-#: ../../../adoption.rst:50
 msgid ""
-"`metrics dashboard <https://github.com/dask/dask/"
-"blob/0d40a604284e021d098682b71c55d0387a414925/docs/source/dashboard."
-"rst#L147>`__, profiling"
-msgstr ""
-
-#: ../../../adoption.rst:51
-msgid "`Ajenti <https://github.com/ajenti/ajenti>`__"
-msgstr ""
-
-#: ../../../adoption.rst:52
-msgid "Web-based server administration panel"
-msgstr "基於網頁的伺服器管理面板"
-
-#: ../../../adoption.rst:53
-msgid "|ajenti-stars|"
-msgstr ""
-
-#: ../../../adoption.rst:187
-msgid "ajenti-stars"
-msgstr ""
-
-#: ../../../adoption.rst:54
-msgid "monitoring plugins, deep integration"
-msgstr ""
-
-#: ../../../adoption.rst:57
-msgid "AI / machine learning"
-msgstr "AI/機器學習"
-
-#: ../../../adoption.rst:67
-msgid "`TensorFlow <https://github.com/tensorflow/tensorflow>`__"
-msgstr ""
-
-#: ../../../adoption.rst:68
-msgid "Open source machine learning framework by Google"
-msgstr ""
-
-#: ../../../adoption.rst:69
-msgid "|tensorflow-stars|"
-msgstr ""
-
-#: ../../../adoption.rst:209
-msgid "tensorflow-stars"
-msgstr ""
-
-#: ../../../adoption.rst:70
-msgid "unit tests"
-msgstr "單元測試"
-
-#: ../../../adoption.rst:71
-msgid "`PyTorch <https://github.com/pytorch/pytorch>`__"
-msgstr ""
-
-#: ../../../adoption.rst:72
-msgid "Tensors and dynamic neural networks with GPU acceleration"
-msgstr ""
-
-#: ../../../adoption.rst:73
-msgid "|pytorch-stars|"
-msgstr ""
-
-#: ../../../adoption.rst:203
-msgid "pytorch-stars"
-msgstr ""
-
-#: ../../../adoption.rst:74
-msgid "benchmark scripts"
+"<div class=\"adopter-cards\">\n"
+"  <div class=\"adopter-card\">\n"
+"    <div class=\"adopter-head\">\n"
+"      <img src=\"../_static/images/adopters/datadog.png\" alt=\"\">\n"
+"      <a href=\"https://github.com/DataDog/integrations-core\">Datadog</a>\n"
+"    </div>\n"
+"    <div class=\"adopter-what\">Agent checks read processes, disks and "
+"network through psutil.</div>\n"
+"    <div class=\"adopter-links\">\n"
+"      <a href=\"https://github.com/DataDog/integrations-core/"
+"blob/720d4ded9dffb5ea7eb5e5f4feeb0e240f60ae59/process/datadog_checks/process/"
+"process.py#L225\">see the code</a>\n"
+"      <a href=\"https://www.datadoghq.com/blog/agent-developer-mode/\">write-"
+"up</a>\n"
+"    </div>\n"
+"  </div>\n"
+"  <div class=\"adopter-card\">\n"
+"    <div class=\"adopter-head\">\n"
+"      <img src=\"../_static/images/adopters/ray.png\" alt=\"\">\n"
+"      <a href=\"https://github.com/ray-project/ray\">Ray</a>\n"
+"    </div>\n"
+"    <div class=\"adopter-what\">Ships psutil in its own wheel; OOM monitor, "
+"process watcher, autoscaler.</div>\n"
+"    <div class=\"adopter-links\">\n"
+"      <a href=\"https://github.com/ray-project/ray/blob/"
+"d39938f27556e367ca43d8af12a9add0ca952456/python/ray/_private/memory_monitor."
+"py#L12\">see the code</a>\n"
+"    </div>\n"
+"  </div>\n"
+"  <div class=\"adopter-card\">\n"
+"    <div class=\"adopter-head\">\n"
+"      <img src=\"../_static/images/adopters/home-assistant.png\" alt=\"\">\n"
+"      <a href=\"https://github.com/home-assistant/core\">Home Assistant</a>\n"
+"    </div>\n"
+"    <div class=\"adopter-what\">CPU, memory and disk for the system monitor "
+"integration.</div>\n"
+"    <div class=\"adopter-links\">\n"
+"      <a href=\"https://github.com/home-assistant/core/blob/"
+"d49a9c4780080882c634fa9649e6d7ed10307244/homeassistant/components/"
+"systemmonitor/coordinator.py#L165\">see the code</a>\n"
+"    </div>\n"
+"  </div>\n"
+"  <div class=\"adopter-card\">\n"
+"    <div class=\"adopter-head\">\n"
+"      <img src=\"../_static/images/adopters/opentelemetry.png\" alt=\"\">\n"
+"      <a href=\"https://github.com/open-telemetry/opentelemetry-python-"
+"contrib\">OpenTelemetry</a>\n"
+"    </div>\n"
+"    <div class=\"adopter-what\">Its system-metrics instrumentation, which is "
+"how Splunk and Honeycomb users get psutil.</div>\n"
+"    <div class=\"adopter-links\">\n"
+"      <a href=\"https://github.com/open-telemetry/opentelemetry-python-"
+"contrib/blob/f1b9368aa6e2ad4cb0aaa79d341cd19b0b9cd13b/instrumentation/"
+"opentelemetry-instrumentation-system-metrics/src/opentelemetry/"
+"instrumentation/system_metrics/__init__.py#L97\">see the code</a>\n"
+"    </div>\n"
+"  </div>\n"
+"  <div class=\"adopter-card\">\n"
+"    <div class=\"adopter-head\">\n"
+"      <img class=\"logo-on-light\" src=\"../_static/images/adopters/glances."
+"svg\" alt=\"\">\n"
+"      <img class=\"logo-on-dark\" src=\"../_static/images/adopters/glances-"
+"on-dark.svg\" alt=\"\">\n"
+"      <a href=\"https://github.com/nicolargo/glances\">Glances</a>\n"
+"    </div>\n"
+"    <div class=\"adopter-what\">Every metric it displays comes from psutil.</"
+"div>\n"
+"    <div class=\"adopter-links\">\n"
+"      <a href=\"https://github.com/nicolargo/glances/"
+"blob/7a351ac38cff96cf4fedecfba8d85088dd9885ae/glances/plugins/mem/__init__."
+"py#L142\">see the code</a>\n"
+"    </div>\n"
+"  </div>\n"
+"</div>"
 msgstr ""
 
 #: ../../../adoption.rst:75
-msgid "`Ray <https://github.com/ray-project/ray>`__"
-msgstr ""
-
-#: ../../../adoption.rst:76
-msgid "AI compute engine with distributed runtime"
+msgid "Built on psutil"
 msgstr ""
 
 #: ../../../adoption.rst:77
-msgid "|ray-stars|"
+msgid ""
+"psutil is a core dependency of these projects and central to how they work."
 msgstr ""
 
-#: ../../../adoption.rst:204
-msgid "ray-stars"
+#: ../../../adoption.rst:83 ../../../adoption.rst:136 ../../../adoption.rst:205
+msgid "Project"
+msgstr "專案"
+
+#: ../../../adoption.rst:84 ../../../adoption.rst:137 ../../../adoption.rst:206
+msgid "Description"
 msgstr ""
 
-#: ../../../adoption.rst:78
-msgid "metrics dashboard"
+#: ../../../adoption.rst:85 ../../../adoption.rst:138 ../../../adoption.rst:207
+msgid "What it uses psutil for"
 msgstr ""
 
-#: ../../../adoption.rst:79
-msgid "`MLflow <https://github.com/mlflow/mlflow>`__"
+#: ../../../adoption.rst:86
+msgid "`Ray <https://github.com/ray-project/ray>`__"
 msgstr ""
 
-#: ../../../adoption.rst:80
-msgid "AI/ML engineering platform"
-msgstr "AI/ML 工程平臺"
-
-#: ../../../adoption.rst:81
-msgid "|mlflow-stars|"
+#: ../../../adoption.rst:87
+msgid "Distributed runtime for AI and Python workloads"
 msgstr ""
 
-#: ../../../adoption.rst:200
-msgid "mlflow-stars"
+#: ../../../adoption.rst:88
+msgid ""
+"bundled inside the wheel; `OOM monitor <https://github.com/ray-project/ray/"
+"blob/d39938f27556e367ca43d8af12a9add0ca952456/python/ray/_private/"
+"memory_monitor.py#L12>`__, process watcher, autoscaler, dashboard"
 msgstr ""
 
-#: ../../../adoption.rst:82
-msgid "deep system monitoring integration"
-msgstr "深度系統監控整合"
-
-#: ../../../adoption.rst:85
-msgid "Developer tools"
-msgstr "開發者工具"
-
-#: ../../../adoption.rst:95
-msgid "`Sentry <https://github.com/getsentry/sentry>`__"
-msgstr ""
-
-#: ../../../adoption.rst:96
-msgid "Error tracking and performance monitoring"
-msgstr ""
-
-#: ../../../adoption.rst:97
-msgid "|sentry-stars|"
-msgstr ""
-
-#: ../../../adoption.rst:206
-msgid "sentry-stars"
-msgstr ""
-
-#: ../../../adoption.rst:98
-msgid "send telemetry metrics"
-msgstr ""
-
-#: ../../../adoption.rst:99
-msgid "`Locust <https://github.com/locustio/locust>`__"
-msgstr ""
-
-#: ../../../adoption.rst:100
-msgid "Scalable load testing in Python"
-msgstr ""
-
-#: ../../../adoption.rst:101
-msgid "|locust-stars|"
-msgstr ""
-
-#: ../../../adoption.rst:199
-msgid "locust-stars"
-msgstr ""
-
-#: ../../../adoption.rst:102
-msgid "monitoring of the Locust process"
-msgstr ""
-
-#: ../../../adoption.rst:103
-msgid "`Spyder <https://github.com/spyder-ide/spyder>`__"
-msgstr ""
-
-#: ../../../adoption.rst:104
-msgid "Scientific Python IDE"
-msgstr ""
-
-#: ../../../adoption.rst:105
-msgid "|spyder-stars|"
-msgstr ""
-
-#: ../../../adoption.rst:207
-msgid "spyder-stars"
-msgstr ""
-
-#: ../../../adoption.rst:106
-msgid "deep integration, UI stats, process management"
-msgstr ""
-
-#: ../../../adoption.rst:107
-msgid "`psleak <https://github.com/giampaolo/psleak>`__"
-msgstr ""
-
-#: ../../../adoption.rst:108
-msgid "Test framework to detect memory leaks in Python C extensions"
-msgstr ""
-
-#: ../../../adoption.rst:109
-msgid "|psleak-stars|"
-msgstr ""
-
-#: ../../../adoption.rst:202
-msgid "psleak-stars"
-msgstr ""
-
-#: ../../../adoption.rst:110
-msgid "heap process memory (:func:`heap_info()`)"
-msgstr ""
-
-#: ../../../adoption.rst:113
-msgid "System monitoring"
-msgstr "系統監控"
-
-#: ../../../adoption.rst:123
+#: ../../../adoption.rst:90
 msgid "`Glances <https://github.com/nicolargo/glances>`__"
 msgstr ""
 
-#: ../../../adoption.rst:124
+#: ../../../adoption.rst:91
 msgid "System monitoring tool (top/htop alternative)"
 msgstr ""
 
-#: ../../../adoption.rst:125
-msgid "|glances-stars|"
+#: ../../../adoption.rst:92
+msgid ""
+"CPU, `memory <https://github.com/nicolargo/glances/"
+"blob/7a351ac38cff96cf4fedecfba8d85088dd9885ae/glances/plugins/mem/__init__."
+"py#L142>`__, disk, network, sensors, processes"
 msgstr ""
 
-#: ../../../adoption.rst:196
-msgid "glances-stars"
+#: ../../../adoption.rst:94
+msgid "`Salt <https://github.com/saltstack/salt>`__"
 msgstr ""
 
-#: ../../../adoption.rst:126 ../../../adoption.rst:130
-#: ../../../adoption.rst:150
-msgid "core dependency for all metrics"
+#: ../../../adoption.rst:95
+msgid "Infrastructure automation at scale"
 msgstr ""
 
-#: ../../../adoption.rst:127
+#: ../../../adoption.rst:96
+msgid ""
+"master, minion, the `ps execution module <https://github.com/saltstack/salt/"
+"blob/2722040c1da29f474adc5dfe013cca31a0455f5f/salt/modules/ps.py#L2>`__, "
+"beacons, grains"
+msgstr ""
+
+#: ../../../adoption.rst:98
 msgid "`bpytop <https://github.com/aristocratos/bpytop>`__"
 msgstr ""
 
-#: ../../../adoption.rst:128
+#: ../../../adoption.rst:99
 msgid "Terminal resource monitor"
 msgstr ""
 
-#: ../../../adoption.rst:129
-msgid "|bpytop-stars|"
+#: ../../../adoption.rst:100
+msgid ""
+"`CPU, memory, disk, network, processes <https://github.com/aristocratos/"
+"bpytop/blob/2034232931324f7b277b9b970a36277297a9ed43/bpytop.py#L265>`__"
 msgstr ""
 
-#: ../../../adoption.rst:191
-msgid "bpytop-stars"
-msgstr ""
-
-#: ../../../adoption.rst:131
+#: ../../../adoption.rst:102
 msgid "`auto-cpufreq <https://github.com/AdnanHodzic/auto-cpufreq>`__"
 msgstr ""
 
-#: ../../../adoption.rst:132
-msgid "Automatic CPU speed and power optimizer for Linux"
+#: ../../../adoption.rst:103
+msgid "CPU speed and power optimizer for Linux"
 msgstr ""
 
-#: ../../../adoption.rst:133
-msgid "|auto-cpufreq-stars|"
+#: ../../../adoption.rst:104
+msgid ""
+"`CPU load and frequency readings <https://github.com/AdnanHodzic/auto-"
+"cpufreq/blob/57b77f5cf20d02edff1df07c7bbf02467f78f14e/auto_cpufreq/core."
+"py#L276>`__"
 msgstr ""
 
-#: ../../../adoption.rst:190
-msgid "auto-cpufreq-stars"
-msgstr ""
-
-#: ../../../adoption.rst:134
-msgid "core dependency for CPU monitoring"
-msgstr ""
-
-#: ../../../adoption.rst:135
-msgid "`GRR <https://github.com/google/grr>`__"
-msgstr ""
-
-#: ../../../adoption.rst:136
-msgid "Remote live forensics by Google"
-msgstr ""
-
-#: ../../../adoption.rst:137
-msgid "|grr-stars|"
-msgstr ""
-
-#: ../../../adoption.rst:197
-msgid "grr-stars"
-msgstr ""
-
-#: ../../../adoption.rst:138
-msgid "core dependency for system data collection"
-msgstr ""
-
-#: ../../../adoption.rst:139
+#: ../../../adoption.rst:106
 msgid "`s-tui <https://github.com/amanusk/s-tui>`__"
 msgstr ""
 
-#: ../../../adoption.rst:140
+#: ../../../adoption.rst:107
 msgid "Terminal CPU stress and monitoring utility"
 msgstr ""
 
-#: ../../../adoption.rst:141
-msgid "|stui-stars|"
+#: ../../../adoption.rst:108
+msgid ""
+"`CPU, frequency and temperature readings <https://github.com/amanusk/s-tui/"
+"blob/aa3a17194d16e3ff438d5947efe69761b5ac2feb/s_tui/sources/util_source."
+"py#L30>`__"
 msgstr ""
 
-#: ../../../adoption.rst:208
-msgid "stui-stars"
+#: ../../../adoption.rst:110
+msgid "`GRR <https://github.com/google/grr>`__"
 msgstr ""
 
-#: ../../../adoption.rst:142
-msgid "core dependency for metrics"
+#: ../../../adoption.rst:111
+msgid "Remote live forensics by Google"
 msgstr ""
 
-#: ../../../adoption.rst:143
-msgid "`asitop <https://github.com/tlkh/asitop>`__"
+#: ../../../adoption.rst:112
+msgid ""
+"client actions for processes, `network connections <https://github.com/"
+"google/grr/blob/ad7e59c4b1ae7c5cf7121b1ddd7bea765d11c994/grr/client/"
+"grr_response_client/client_actions/network.py#L6>`__ and memory"
 msgstr ""
 
-#: ../../../adoption.rst:144
-msgid "Apple Silicon performance monitoring CLI"
-msgstr "Apple Silicon 效能監控 CLI"
-
-#: ../../../adoption.rst:145
-msgid "|asitop-stars|"
-msgstr ""
-
-#: ../../../adoption.rst:189
-msgid "asitop-stars"
-msgstr ""
-
-#: ../../../adoption.rst:146
-msgid "core dependency for system metrics"
-msgstr ""
-
-#: ../../../adoption.rst:147
+#: ../../../adoption.rst:114
 msgid "`psdash <https://github.com/Jahaja/psdash>`__"
 msgstr ""
 
-#: ../../../adoption.rst:148
+#: ../../../adoption.rst:115
 msgid "Web dashboard using psutil and Flask"
 msgstr ""
 
-#: ../../../adoption.rst:149
-msgid "|psdash-stars|"
+#: ../../../adoption.rst:116
+msgid ""
+"`CPU, memory, disk, network, users, processes <https://github.com/Jahaja/"
+"psdash/blob/b7c3699ff5934fe797799a52958c0299a9fcafe7/psdash/node.py#L74>`__"
 msgstr ""
 
-#: ../../../adoption.rst:201
-msgid "psdash-stars"
+#: ../../../adoption.rst:118
+msgid ""
+"`OpenTelemetry Python <https://github.com/open-telemetry/opentelemetry-"
+"python-contrib>`__"
+msgstr ""
+
+#: ../../../adoption.rst:119
+msgid "Observability instrumentation for Python"
+msgstr ""
+
+#: ../../../adoption.rst:120
+msgid ""
+"the whole `instrumentation-system-metrics <https://github.com/open-telemetry/"
+"opentelemetry-python-contrib/blob/f1b9368aa6e2ad4cb0aaa79d341cd19b0b9cd13b/"
+"instrumentation/opentelemetry-instrumentation-system-metrics/src/"
+"opentelemetry/instrumentation/system_metrics/__init__.py#L97>`__ package; "
+"Splunk, Honeycomb and New Relic users depend on psutil through it"
+msgstr ""
+
+#: ../../../adoption.rst:122
+msgid "`psleak <https://github.com/giampaolo/psleak>`__"
+msgstr ""
+
+#: ../../../adoption.rst:123
+msgid "Test framework to detect memory leaks in Python C extensions"
+msgstr ""
+
+#: ../../../adoption.rst:124
+msgid ""
+"`heap process memory <https://github.com/giampaolo/psleak/"
+"blob/508738ef22b1aedecafed0c8b5e6f03404b09a35/psleak.py#L28>`__ (:func:"
+"`heap_info`)"
+msgstr ""
+
+#: ../../../adoption.rst:128
+msgid "Used for a specific feature"
+msgstr ""
+
+#: ../../../adoption.rst:130
+msgid "In these, psutil backs a single feature rather than the whole project."
+msgstr ""
+
+#: ../../../adoption.rst:139
+msgid "`Home Assistant <https://github.com/home-assistant/core>`__"
+msgstr ""
+
+#: ../../../adoption.rst:140
+msgid "Home automation platform"
+msgstr ""
+
+#: ../../../adoption.rst:141
+msgid ""
+"the `system monitor integration <https://github.com/home-assistant/core/blob/"
+"d49a9c4780080882c634fa9649e6d7ed10307244/homeassistant/components/"
+"systemmonitor/coordinator.py#L165>`__"
+msgstr ""
+
+#: ../../../adoption.rst:143
+msgid "`Ansible <https://github.com/ansible/ansible>`__"
+msgstr ""
+
+#: ../../../adoption.rst:144
+msgid "IT automation platform"
+msgstr "IT 自動化平臺"
+
+#: ../../../adoption.rst:145
+msgid ""
+"`counting active connections <https://github.com/ansible/ansible/blob/"
+"d772fe65b73e3032f88a9915111b58e743af9d9f/lib/ansible/modules/wait_for."
+"py#L308>`__ in the ``wait_for`` module"
+msgstr ""
+
+#: ../../../adoption.rst:147
+msgid "`Apache Airflow <https://github.com/apache/airflow>`__"
+msgstr ""
+
+#: ../../../adoption.rst:148
+msgid "Workflow orchestration platform"
+msgstr ""
+
+#: ../../../adoption.rst:149
+msgid ""
+"`task subprocess lifecycle <https://github.com/apache/airflow/"
+"blob/92290dbd64f52205b516668db29fd437435b7dbe/airflow-core/src/airflow/utils/"
+"process_utils.py#L45>`__"
 msgstr ""
 
 #: ../../../adoption.rst:151
-msgid "`dd-agent <https://github.com/DataDog/dd-agent>`__"
+msgid "`Sentry <https://github.com/getsentry/sentry>`__"
 msgstr ""
 
 #: ../../../adoption.rst:152
-msgid "Original monitoring agent by Datadog"
+msgid "Error tracking and performance monitoring"
 msgstr ""
 
 #: ../../../adoption.rst:153
-msgid "|dd-agent-stars|"
-msgstr ""
-
-#: ../../../adoption.rst:195
-msgid "dd-agent-stars"
-msgstr ""
-
-#: ../../../adoption.rst:154 ../../../adoption.rst:158
-msgid "system metrics collection"
+msgid ""
+"`telemetry metrics <https://github.com/getsentry/sentry/blob/"
+"b30ef5d3d5cf02d07ba9447d913648e89b34893e/src/sentry/tasks/beacon.py#L156>`__"
 msgstr ""
 
 #: ../../../adoption.rst:155
-msgid "`dd-trace-py <https://github.com/DataDog/dd-trace-py>`__"
+msgid "`Celery <https://github.com/celery/celery>`__"
 msgstr ""
 
 #: ../../../adoption.rst:156
-msgid "Python tracing and profiling library"
+msgid "Distributed task queue"
 msgstr ""
 
 #: ../../../adoption.rst:157
-msgid "|ddtrace-stars|"
+msgid ""
+"`memory sampling <https://github.com/celery/celery/blob/"
+"f462a437e3371acb867e94b52c2595b6d0a742d8/celery/utils/debug.py#L13>`__ used "
+"to debug leaks"
 msgstr ""
 
-#: ../../../adoption.rst:194
-msgid "ddtrace-stars"
+#: ../../../adoption.rst:159
+msgid "`MLflow <https://github.com/mlflow/mlflow>`__"
+msgstr ""
+
+#: ../../../adoption.rst:160
+msgid "Machine learning lifecycle platform"
 msgstr ""
 
 #: ../../../adoption.rst:161
-msgid "How this list was compiled"
+msgid ""
+"`system metrics logged with each run <https://github.com/mlflow/mlflow/blob/"
+"a8721e3683f7e3e8bb3885620af04efb5251b405/mlflow/system_metrics/metrics/"
+"cpu_monitor.py#L13>`__"
 msgstr ""
 
 #: ../../../adoption.rst:163
-msgid ""
-"`GitHub dependency graph <https://github.com/giampaolo/psutil/network/"
-"dependents>`__ was used to identify packages and repositories that depend on "
-"psutil."
+msgid "`Locust <https://github.com/locustio/locust>`__"
+msgstr ""
+
+#: ../../../adoption.rst:164
+msgid "Scalable load testing in Python"
 msgstr ""
 
 #: ../../../adoption.rst:165
 msgid ""
-"GitHub code search with query \"psutil in:readme language:Python\", sorted "
-"by stars, was used to find additional projects that mention psutil in their "
-"README."
+"`monitoring its own process <https://github.com/locustio/locust/"
+"blob/15bc3c900d354495cfde3a45e871228ea85f10fd/locust/runners.py#L299>`__"
+msgstr ""
+
+#: ../../../adoption.rst:167
+msgid "`Dask <https://github.com/dask/dask>`__"
 msgstr ""
 
 #: ../../../adoption.rst:168
+msgid "Parallel computing with task scheduling"
+msgstr ""
+
+#: ../../../adoption.rst:169
 msgid ""
-"Each candidate was then manually verified by checking the project's "
-"pyproject.toml, setup.py, setup.cfg or requirements.txt to confirm that "
-"psutil is an actual dependency (direct, build-time, or optional), not just a "
-"passing mention."
+"`worker memory management <https://github.com/dask/distributed/"
+"blob/5fe4b054a711415aa5b85d5b049e2729c958bc36/distributed/worker_memory."
+"py#L401>`__ in ``distributed``"
+msgstr ""
+
+#: ../../../adoption.rst:171
+msgid "`Accelerate <https://github.com/huggingface/accelerate>`__"
 msgstr ""
 
 #: ../../../adoption.rst:172
-msgid ""
-"Projects were excluded if they only mention psutil in documentation or "
-"examples without declaring it as a dependency."
+msgid "Distributed training and inference launcher"
 msgstr ""
 
-#: ../../../adoption.rst:174
+#: ../../../adoption.rst:173
 msgid ""
-"Star counts are pulled dynamically from `shields.io <https://shields.io/>`__ "
-"badges."
-msgstr "星標數為動態擷取自 `shields.io <https://shields.io/>`__ 徽章。"
+"`physical CPU count <https://github.com/huggingface/accelerate/blob/"
+"a68e0d50e7afd7c3e2716ca5c5bad83063c04cdc/src/accelerate/state.py#L271>`__, "
+"available memory, process launching"
+msgstr ""
+
+#: ../../../adoption.rst:175
+msgid "`Spyder <https://github.com/spyder-ide/spyder>`__"
+msgstr ""
 
 #: ../../../adoption.rst:176
-msgid ""
-"The final list was manually curated to include notable projects and "
-"meaningful usages of psutil across different areas of the Python ecosystem."
+msgid "Scientific Python IDE"
 msgstr ""
+
+#: ../../../adoption.rst:177
+msgid ""
+"`memory usage in the status bar <https://github.com/spyder-ide/spyder/blob/"
+"bdfe0b59821951584de3f72768693a151ca8350a/spyder/utils/system.py#L51>`__"
+msgstr ""
+
+#: ../../../adoption.rst:179
+msgid "`Ajenti <https://github.com/ajenti/ajenti>`__"
+msgstr ""
+
+#: ../../../adoption.rst:180
+msgid "Web-based server administration panel"
+msgstr "基於網頁的伺服器管理面板"
+
+#: ../../../adoption.rst:181
+msgid ""
+"`dashboard widgets <https://github.com/ajenti/ajenti/blob/"
+"fc4028020f0d8e7a4af2d476b0146611f9d439b2/plugins/dashboard/widgets/cpu."
+"py#L17>`__ for CPU, memory, uptime and traffic"
+msgstr ""
+
+#: ../../../adoption.rst:183
+msgid "`asitop <https://github.com/tlkh/asitop>`__"
+msgstr ""
+
+#: ../../../adoption.rst:184
+msgid "Apple Silicon performance monitoring CLI"
+msgstr "Apple Silicon 效能監控 CLI"
+
+#: ../../../adoption.rst:185
+msgid ""
+"`memory and swap readings <https://github.com/tlkh/asitop/"
+"blob/74ebe2cbc23d5b1eec874aebb1b9bacfe0e670cd/asitop/utils.py#L5>`__"
+msgstr ""
+
+#: ../../../adoption.rst:187
+msgid "`integrations-core <https://github.com/DataDog/integrations-core>`__"
+msgstr ""
+
+#: ../../../adoption.rst:188
+msgid "Integration checks for the Datadog agent"
+msgstr ""
+
+#: ../../../adoption.rst:189
+msgid ""
+"15 check modules, including `process <https://github.com/DataDog/"
+"integrations-core/blob/720d4ded9dffb5ea7eb5e5f4feeb0e240f60ae59/process/"
+"datadog_checks/process/process.py#L225>`__, disk and network"
+msgstr ""
+
+#: ../../../adoption.rst:191
+msgid "`Elastic APM <https://github.com/elastic/apm-agent-python>`__"
+msgstr ""
+
+#: ../../../adoption.rst:192
+msgid "Application performance monitoring agent"
+msgstr ""
+
+#: ../../../adoption.rst:193
+msgid ""
+"`CPU and memory metrics on Windows and macOS <https://github.com/elastic/apm-"
+"agent-python/blob/519a1078e230187d553669ceb8dd37704990b34c/elasticapm/"
+"metrics/sets/cpu_psutil.py#L34>`__ (its own ``/proc`` parser on Linux)"
+msgstr ""
+
+#: ../../../adoption.rst:197
+msgid "Used in development only"
+msgstr ""
+
+#: ../../../adoption.rst:199
+msgid ""
+"psutil is a test dependency only. Users of these projects never install it."
+msgstr ""
+
+#: ../../../adoption.rst:208
+msgid "`TensorFlow <https://github.com/tensorflow/tensorflow>`__"
+msgstr ""
+
+#: ../../../adoption.rst:209
+msgid "Machine learning framework by Google"
+msgstr ""
+
+#: ../../../adoption.rst:210
+msgid ""
+"`unit tests <https://github.com/tensorflow/tensorflow/"
+"blob/61105a4e3bbb7bde37db1d71344624dcf302bc93/tensorflow/python/checkpoint/"
+"checkpoint_test.py#L1188>`__"
+msgstr ""
+
+#: ../../../adoption.rst:212
+msgid "`PyTorch <https://github.com/pytorch/pytorch>`__"
+msgstr ""
+
+#: ../../../adoption.rst:213
+msgid "Deep learning framework with GPU acceleration"
+msgstr ""
+
+#: ../../../adoption.rst:214
+msgid ""
+"`benchmark scripts <https://github.com/pytorch/pytorch/"
+"blob/6fa3592dc65b15195a145a98f344f0c38517b12f/benchmarks/data/"
+"dataloader_benchmark.py#L38>`__"
+msgstr ""
+
+#: ../../../adoption.rst:218
+msgid "How this list was compiled"
+msgstr ""
+
+#: ../../../adoption.rst:220
+msgid ""
+"Candidates came from the `GitHub dependency graph <https://github.com/"
+"giampaolo/psutil/network/dependents>`__ and from code search. Each one was "
+"then checked against the project's packaging metadata and source, to make "
+"sure psutil is a real dependency and not just a mention. The links in the "
+"last column point at the code doing the work, pinned to a commit so the line "
+"numbers keep matching."
+msgstr ""
+
+#~ msgid "Infrastructure / automation"
+#~ msgstr "基礎設施/自動化"
+
+#~ msgid "AI / machine learning"
+#~ msgstr "AI/機器學習"
+
+#~ msgid "unit tests"
+#~ msgstr "單元測試"
+
+#~ msgid "AI/ML engineering platform"
+#~ msgstr "AI/ML 工程平臺"
+
+#~ msgid "deep system monitoring integration"
+#~ msgstr "深度系統監控整合"
+
+#~ msgid "Developer tools"
+#~ msgstr "開發者工具"
+
+#~ msgid "System monitoring"
+#~ msgstr "系統監控"
+
+#~ msgid ""
+#~ "Star counts are pulled dynamically from `shields.io <https://shields.io/"
+#~ ">`__ badges."
+#~ msgstr "星標數為動態擷取自 `shields.io <https://shields.io/>`__ 徽章。"
