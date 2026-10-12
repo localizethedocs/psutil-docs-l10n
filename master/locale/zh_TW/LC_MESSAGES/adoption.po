@@ -550,29 +550,3 @@ msgid ""
 "last column point at the code doing the work, pinned to a commit so the line "
 "numbers keep matching."
 msgstr ""
-
-#~ msgid "Infrastructure / automation"
-#~ msgstr "基礎設施/自動化"
-
-#~ msgid "AI / machine learning"
-#~ msgstr "AI/機器學習"
-
-#~ msgid "unit tests"
-#~ msgstr "單元測試"
-
-#~ msgid "AI/ML engineering platform"
-#~ msgstr "AI/ML 工程平臺"
-
-#~ msgid "deep system monitoring integration"
-#~ msgstr "深度系統監控整合"
-
-#~ msgid "Developer tools"
-#~ msgstr "開發者工具"
-
-#~ msgid "System monitoring"
-#~ msgstr "系統監控"
-
-#~ msgid ""
-#~ "Star counts are pulled dynamically from `shields.io <https://shields.io/"
-#~ ">`__ badges."
-#~ msgstr "星標數為動態擷取自 `shields.io <https://shields.io/>`__ 徽章。"
