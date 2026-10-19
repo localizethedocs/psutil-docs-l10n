@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html data-content_root="../../" lang="en-US">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Making psutil twice as fast" property="og:title"/>
+<meta content="article" property="og:type"/>
+<meta content="https://psutil.io/blog/2016/500-is-twice-as-fast.html" property="og:url"/>
+<meta content="psutil" property="og:site_name"/>
+<meta content="New Process.oneshot(), caching shared syscalls and halving the cost of multi-field queries" property="og:description"/>
+<meta content="1146" property="og:image:width"/>
+<meta content="600" property="og:image:height"/>
+<meta content="https://psutil.io/_images/social_previews/summary_blog_2016_500-is-twice-as-fast_3e4b5ef5.png" property="og:image"/>
+<meta content="New Process.oneshot(), caching shared syscalls and halving the cost of multi-field queries" property="og:image:alt"/>
+<meta content="New Process.oneshot(), caching shared syscalls and halving the cost of multi-field queries" name="description"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<title>Making psutil twice as fast — psutil</title>
+<link href="../../_static/pygments.css?v=8f2a1f02" rel="stylesheet" type="text/css"/>
+<link href="../../_static/basic.css?v=29da98fa" rel="stylesheet" type="text/css"/>
+<link href="../../_static/sphinx-codeautolink.css?v=b2176991" rel="stylesheet" type="text/css"/>
+<link href="../../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="../../_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/base.css?v=f08856fc" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/fonts.css?v=e753a5f7" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/fontawesome.css?v=b66fcbdb" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/typography.css?v=66ac06b9" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/admonitions.css?v=163ddbc1" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/api-signatures.css?v=f032e3fc" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/blog.css?v=2a308a50" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/code.css?v=0681a11b" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/dev-banner.css?v=6210bb1f" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/doc-icons.css?v=c22d5c40" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/footer.css?v=5d6b8d43" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/layout.css?v=dca717ce" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/left-sidebar.css?v=dd06a93c" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/prev-next.css?v=ca7d359d" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/print.css?v=f9febfdf" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/right-sidebar.css?v=bc13b617" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/search.css?v=bc2ce7bc" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/tables.css?v=c600f876" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/topbar.css?v=d6787661" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/home.css?v=3247c119" rel="stylesheet" type="text/css"/>
+<script src="../../_static/documentation_options.js?v=a914353f"></script>
+<script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+<script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+<script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="../../_static/copybutton.js?v=35a8b989"></script>
+<script src="../../_static/design-tabs.js?v=f930bc37"></script>
+<script defer="defer" src="../../_static/js/back-to-top.js?v=01752a9c"></script>
+<script defer="defer" src="../../_static/js/external-urls.js?v=ea4e66fd"></script>
+<script defer="defer" src="../../_static/js/github-meta.js?v=3335eb90"></script>
+<script defer="defer" src="../../_static/js/highlight-repl.js?v=5a308837"></script>
+<script defer="defer" src="../../_static/js/home-install-copy.js?v=be638b0c"></script>
+<script defer="defer" src="../../_static/js/right-toc.js?v=a13c1536"></script>
+<script defer="defer" src="../../_static/js/search-dim.js?v=b004caf9"></script>
+<script defer="defer" src="../../_static/js/search-shortcuts.js?v=6247adac"></script>
+<script defer="defer" src="../../_static/js/shortcuts-help.js?v=61707f15"></script>
+<script defer="defer" src="../../_static/js/sidebar-mobile.js?v=eb71acbb"></script>
+<script defer="defer" src="../../_static/js/theme-toggle.js?v=f51f1c9b"></script>
+<link href="https://projects.localizethedocs.org/psutil-docs-l10n/blog/2016/500-is-twice-as-fast.html" rel="canonical"/>
+<link href="../../_static/favicon.svg" rel="icon"/>
+<link href="../../about.html" rel="author" title="About these documents"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="../../_static/images/logo-psutil.png" rel="apple-touch-icon"/>
+<script>
+(function() {
+    const html = document.documentElement;
+    html.classList.add('no-transition');
+    const saved = localStorage.getItem('psutil-sphinx-theme');
+    const theme = saved || (
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+    );
+    html.setAttribute('data-theme', theme);
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            html.classList.remove('no-transition');
+        });
+    });
+})();
+</script>
+<script async="" data-goatcounter="https://psutil.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-G7374TFB11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G7374TFB11');
+</script>
+<link href="../../blog/atom.xml" rel="alternate" title="Blog" type="application/atom+xml"/>
+<script src="../../ltd-provenance.js" type="text/javascript"></script>
+<script src="../../ltd-current.js" type="text/javascript"></script>
+<script src="../../../../ltd-config.js" type="text/javascript"></script>
+<script src="../../../../ltd-flyout.js" type="text/javascript"></script>
+</head><body data-page="blog/2016/500-is-twice-as-fast">
+<header class="topbar no-visited" role="banner">
+<div class="topbar-inner">
+<button aria-expanded="false" aria-label="Toggle navigation" class="topbar-hamburger" id="sidebar-toggle" type="button">
+<i aria-hidden="true" class="fa-solid fa-bars"></i>
+</button><a class="topbar-logo" href="../../index.html"><img alt="" src="../../_static/images/logo-psutil.svg"/>
+<span>psutil</span>
+</a>
+<nav aria-label="Site actions" class="topbar-actions">
+<a class="topbar-text" href="../../blog.html">Blog</a>
+<button aria-label="Toggle theme" class="topbar-btn" id="theme-toggle" title="Toggle dark mode (shift+D)" type="button">
+<i aria-hidden="true" class="fa-regular fa-moon"></i>
+</button>
+<a aria-label="GitHub repository" class="topbar-link topbar-github" href="https://github.com/giampaolo/psutil" rel="noopener" target="_blank" title="GitHub">
+<i aria-hidden="true" class="fa-brands fa-github"></i>
+<span class="topbar-stars" data-repo="giampaolo/psutil"></span>
+</a>
+<a aria-label="PyPI release" class="topbar-version" data-repo="giampaolo/psutil" href="https://pypi.org/project/psutil" rel="noopener" target="_blank" title="PyPI"></a>
+</nav>
+</div>
+</header>
+<div class="page">
+<nav aria-label="Main navigation" class="left-sidebar no-visited">
+<div class="search-box">
+<form action="../../search.html" method="get" role="search">
+<input aria-label="Search docs" autocapitalize="off" autocomplete="off" autocorrect="off" id="search-input" name="q" placeholder="Search" spellcheck="false" type="text"/>
+<span aria-hidden="true" class="search-kbd"><kbd>Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+</div>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api-overview.html">API overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../performance.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../recipes.html">Recipes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../shell-equivalents.html">Shell equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stdlib-equivalents.html">Stdlib equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../platform.html">Platform support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migration.html">Migration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../adoption.html">Who uses psutil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../alternatives.html">Alternatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../funding.html">Funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../credits.html">Credits</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../blog.html">Blog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timeline.html">Timeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devguide.html">Development guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">General Index</a></li>
+</ul>
+</nav>
+<main class="main" id="main-content" role="main">
+<div class="dev-banner" role="note">
+  You're reading the <strong>development</strong> version of the psutil
+  docs, which may describe unreleased changes. For the current release
+  see <a href="https://psutil.readthedocs.io/stable/">psutil.readthedocs.io/stable</a>.
+</div>
+<div class="blog-section-banner">
+<div class="blog-section-label">
+<svg aria-hidden="true" class="blog-section-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+<path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+</svg>
+<a class="blog-section-title" href="../../blog.html">Blog</a>
+<div class="blog-section-subtitle">Releases, deep dives, war stories</div>
+</div>
+<a class="blog-rss" href="../atom.xml" title="Subscribe (Atom feed)">
+<span class="rss-icon blog-rss-icon"></span>
+<span>RSS</span>
+</a>
+</div>
+<div class="article-with-toc">
+<div class="article-column">
+<article class="article">
+<section id="making-psutil-twice-as-fast">
+<h1>Making psutil twice as fast<a class="headerlink" href="#making-psutil-twice-as-fast" title="Link to this heading">¶</a></h1>
+<div class="post-meta-banner docutils container">
+<span><a class="post-meta-featured reference internal" href="../tag/featured.html">Featured</a></span><span class="post-meta-author">Giampaolo Rodola</span><span class="post-meta-date">Nov 06, 2016</span><span class="post-meta-readtime">4 min read</span><span class="post-meta-tags"><a class="reference internal" href="../tag/new-api.html">new-api</a><a class="reference internal" href="../tag/performance.html">performance</a><a class="reference internal" href="../tag/release.html">release</a></span></div>
+<p>Starting from psutil 5.0.0 you can query multiple <a class="reference internal" href="../../api.html#psutil.Process" title="psutil.Process"><code class="xref py py-class docutils literal notranslate"><span class="pre">Process</span></code></a> fields
+around twice as fast as before (see <a class="extlink-gh reference external" href="https://github.com/giampaolo/psutil/issues/799">#799</a> and <a class="reference internal" href="../../api.html#psutil.Process.oneshot" title="psutil.Process.oneshot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.oneshot()</span></code></a>). It
+took 7 months, 108 commits, and a massive refactoring of psutil internals
+(<a class="extlink-pr reference external" href="https://github.com/giampaolo/psutil/pull/937">PR-937</a>), and I think it’s one of the best improvements ever shipped in a
+psutil release.</p>
+<section id="the-problem">
+<h2>The problem<a class="headerlink" href="#the-problem" title="Link to this heading">¶</a></h2>
+<p>How process information is retrieved varies by OS. Sometimes it means reading a
+file in /proc (Linux), other times calling C (Windows, BSD, macOS, SunOS), but
+it’s always done differently. Psutil abstracts this away: you call
+<a class="reference internal" href="../../api.html#psutil.Process.name" title="psutil.Process.name"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.name()</span></code></a> without worrying about what happens under the hood or
+which OS you’re on.</p>
+<p>Internally, multiple pieces of process info (e.g. <a class="reference internal" href="../../api.html#psutil.Process.name" title="psutil.Process.name"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.name()</span></code></a>,
+<a class="reference internal" href="../../api.html#psutil.Process.ppid" title="psutil.Process.ppid"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.ppid()</span></code></a>, <a class="reference internal" href="../../api.html#psutil.Process.uids" title="psutil.Process.uids"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.uids()</span></code></a>, <a class="reference internal" href="../../api.html#psutil.Process.create_time" title="psutil.Process.create_time"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.create_time()</span></code></a>) are
+fetched by the same syscall. On Linux we read <a class="proc reference external" href="https://manpages.debian.org/proc_pid_stat(5)"><code class="docutils literal notranslate"><span class="pre">/proc/pid/stat</span></code></a> to get the
+process name, terminal, CPU times, creation time, status and parent PID, but
+only one value is returned: the others are discarded. On Linux this code reads
+<a class="proc reference external" href="https://manpages.debian.org/proc_pid_stat(5)"><code class="docutils literal notranslate"><span class="pre">/proc/pid/stat</span></code></a> 6 times:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../../index.html#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="../../api.html#psutil.Process" title="psutil.Process"><span class="n">p</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../../api.html#psutil.Process" title="psutil.Process"><span class="n">psutil</span><span class="o">.</span><span class="n">Process</span></a><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="../../api.html#psutil.Process.name" title="psutil.Process.name"><span class="n">p</span><span class="o">.</span><span class="n">name</span></a><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="../../api.html#psutil.Process.cpu_times" title="psutil.Process.cpu_times"><span class="n">p</span><span class="o">.</span><span class="n">cpu_times</span></a><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="../../api.html#psutil.Process.create_time" title="psutil.Process.create_time"><span class="n">p</span><span class="o">.</span><span class="n">create_time</span></a><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="../../api.html#psutil.Process.ppid" title="psutil.Process.ppid"><span class="n">p</span><span class="o">.</span><span class="n">ppid</span></a><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="../../api.html#psutil.Process.status" title="psutil.Process.status"><span class="n">p</span><span class="o">.</span><span class="n">status</span></a><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="../../api.html#psutil.Process.terminal" title="psutil.Process.terminal"><span class="n">p</span><span class="o">.</span><span class="n">terminal</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<p>On BSD most process metrics can be fetched with a single <code class="docutils literal notranslate"><span class="pre">sysctl()</span></code>, yet
+psutil was invoking it for each process method (e.g. see
+<a class="reference external" href="https://github.com/giampaolo/psutil/blob/2fe3f456321ca1605aaa2b71a7193de59d93075c/psutil/_psutil_bsd.c#L242-L258">here</a>
+and
+<a class="reference external" href="https://github.com/giampaolo/psutil/blob/2fe3f456321ca1605aaa2b71a7193de59d93075c/psutil/_psutil_bsd.c#L261-L277">here</a>).</p>
+</section>
+<section id="do-it-in-one-shot">
+<h2>Do it in one shot<a class="headerlink" href="#do-it-in-one-shot" title="Link to this heading">¶</a></h2>
+<p>It’s clear that this approach is inefficient, especially in tools like top or
+htop, where process info is continuously fetched in a loop. psutil 5.0.0
+introduces a new <a class="reference internal" href="../../api.html#psutil.Process.oneshot" title="psutil.Process.oneshot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.oneshot()</span></code></a> context manager. Inside it, the
+internal routine runs once (in the example, on the first <a class="reference internal" href="../../api.html#psutil.Process.name" title="psutil.Process.name"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.name()</span></code></a>
+call) and the other values are cached. Subsequent calls sharing the same
+internal routine (read <a class="proc reference external" href="https://manpages.debian.org/proc_pid_stat(5)"><code class="docutils literal notranslate"><span class="pre">/proc/pid/stat</span></code></a>, call <code class="docutils literal notranslate"><span class="pre">sysctl()</span></code> or whatever)
+return the cached value. The code above can now be rewritten like this, and on
+Linux it runs 2.4 times faster:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../../index.html#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="../../api.html#psutil.Process" title="psutil.Process"><span class="n">p</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../../api.html#psutil.Process" title="psutil.Process"><span class="n">psutil</span><span class="o">.</span><span class="n">Process</span></a><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <a class="sphinx-codeautolink-a" href="../../api.html#psutil.Process.oneshot" title="psutil.Process.oneshot"><span class="n">p</span><span class="o">.</span><span class="n">oneshot</span></a><span class="p">():</span>
+<span class="gp">... </span>    <a class="sphinx-codeautolink-a" href="../../api.html#psutil.Process.name" title="psutil.Process.name"><span class="n">p</span><span class="o">.</span><span class="n">name</span></a><span class="p">()</span>
+<span class="gp">... </span>    <a class="sphinx-codeautolink-a" href="../../api.html#psutil.Process.cpu_times" title="psutil.Process.cpu_times"><span class="n">p</span><span class="o">.</span><span class="n">cpu_times</span></a><span class="p">()</span>
+<span class="gp">... </span>    <a class="sphinx-codeautolink-a" href="../../api.html#psutil.Process.create_time" title="psutil.Process.create_time"><span class="n">p</span><span class="o">.</span><span class="n">create_time</span></a><span class="p">()</span>
+<span class="gp">... </span>    <a class="sphinx-codeautolink-a" href="../../api.html#psutil.Process.ppid" title="psutil.Process.ppid"><span class="n">p</span><span class="o">.</span><span class="n">ppid</span></a><span class="p">()</span>
+<span class="gp">... </span>    <a class="sphinx-codeautolink-a" href="../../api.html#psutil.Process.status" title="psutil.Process.status"><span class="n">p</span><span class="o">.</span><span class="n">status</span></a><span class="p">()</span>
+<span class="gp">... </span>    <a class="sphinx-codeautolink-a" href="../../api.html#psutil.Process.terminal" title="psutil.Process.terminal"><span class="n">p</span><span class="o">.</span><span class="n">terminal</span></a><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="implementation">
+<h2>Implementation<a class="headerlink" href="#implementation" title="Link to this heading">¶</a></h2>
+<p>One great thing about psutil’s design is its abstraction. It is divided into 3
+“layers”. Layer 1 is represented by the main
+<a class="reference external" href="https://github.com/giampaolo/psutil/blob/88ea5e0b2cc15c37fdeb3e38857f6dab6fd87d12/psutil/__init__.py#L340">Process class</a>
+(Python), which exposes the high-level API. Layer 2 is the
+<a class="reference external" href="https://github.com/giampaolo/psutil/blob/88ea5e0b2cc15c37fdeb3e38857f6dab6fd87d12/psutil/_pslinux.py#L1097">OS-specific Python module</a>,
+which is a thin wrapper on top of the OS-specific
+<a class="reference external" href="https://github.com/giampaolo/psutil/blob/88ea5e0b2cc15c37fdeb3e38857f6dab6fd87d12/psutil/_psutil_linux.c">C extension module</a>
+(layer 3).</p>
+<p>Because the code was organized this way (modular), the refactoring was
+reasonably smooth. I first refactored those C functions that collect multiple
+pieces of info and grouped them into a single function (e.g. see
+<a class="reference external" href="https://github.com/giampaolo/psutil/blob/88ea5e0b2cc15c37fdeb3e38857f6dab6fd87d12/psutil/_psutil_bsd.c#L198-L338">BSD implementation</a>).
+Then I wrote a
+<a class="reference external" href="https://github.com/giampaolo/psutil/blob/88ea5e0b2cc15c37fdeb3e38857f6dab6fd87d12/psutil/_common.py#L264-L314">decorator</a>
+that enables the cache only when requested (when entering the context manager),
+and decorated the
+<a class="reference external" href="https://github.com/giampaolo/psutil/blob/88ea5e0b2cc15c37fdeb3e38857f6dab6fd87d12/psutil/_psbsd.py#L491">“grouped functions”</a>
+with it. The caching mechanism is controlled by the <a class="reference internal" href="../../api.html#psutil.Process.oneshot" title="psutil.Process.oneshot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.oneshot()</span></code></a>
+context manager, which is the only thing exposed to the end user. Here’s the
+decorator:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">memoize_when_activated</span><span class="p">(</span><span class="n">fun</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""A memoize decorator which is disabled by default. It can be</span>
+<span class="sd">    activated and deactivated on request.</span>
+<span class="sd">    """</span>
+    <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">fun</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wrapper</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">wrapper</span><span class="o">.</span><span class="n">cache_activated</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">fun</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">ret</span> <span class="o">=</span> <span class="n">cache</span><span class="p">[</span><span class="n">fun</span><span class="p">]</span>
+            <span class="k">except</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/exceptions.html#KeyError" title="KeyError"><span class="ne">KeyError</span></a><span class="p">:</span>
+                <span class="n">ret</span> <span class="o">=</span> <span class="n">cache</span><span class="p">[</span><span class="n">fun</span><span class="p">]</span> <span class="o">=</span> <span class="n">fun</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">ret</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">cache_activate</span><span class="p">():</span>
+<span class="w">        </span><span class="sd">"""Activate cache."""</span>
+        <span class="n">wrapper</span><span class="o">.</span><span class="n">cache_activated</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">cache_deactivate</span><span class="p">():</span>
+<span class="w">        </span><span class="sd">"""Deactivate and clear cache."""</span>
+        <span class="n">wrapper</span><span class="o">.</span><span class="n">cache_activated</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">cache</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+    <span class="n">cache</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">wrapper</span><span class="o">.</span><span class="n">cache_activated</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">wrapper</span><span class="o">.</span><span class="n">cache_activate</span> <span class="o">=</span> <span class="n">cache_activate</span>
+    <span class="n">wrapper</span><span class="o">.</span><span class="n">cache_deactivate</span> <span class="o">=</span> <span class="n">cache_deactivate</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+</pre></div>
+</div>
+<p>To measure the speedup I wrote a
+<a class="reference external" href="https://github.com/giampaolo/psutil/blob/b5582380ac70ca8c180344d9b22aacdff73b1e0b/scripts/internal/bench_oneshot.py">benchmark script</a>
+(well,
+<a class="reference external" href="https://github.com/giampaolo/psutil/blob/b5582380ac70ca8c180344d9b22aacdff73b1e0b/scripts/internal/bench_oneshot_2.py">two</a>
+actually), and kept tuning until I was sure the change actually made psutil
+faster. The scripts report the speedup for calling all the “grouped” methods
+together (best-case scenario).</p>
+</section>
+<section id="linux-2-56x-speedup">
+<h2>Linux: +2.56x speedup<a class="headerlink" href="#linux-2-56x-speedup" title="Link to this heading">¶</a></h2>
+<p>The Linux implementation is mostly Python, reading files in <code class="docutils literal notranslate"><span class="pre">/proc</span></code>. These
+files typically expose multiple pieces of info per process;
+<a class="proc reference external" href="https://manpages.debian.org/proc_pid_stat(5)"><code class="docutils literal notranslate"><span class="pre">/proc/pid/stat</span></code></a> and <a class="proc reference external" href="https://manpages.debian.org/proc_pid_status(5)"><code class="docutils literal notranslate"><span class="pre">/proc/pid/status</span></code></a> are the perfect example. We
+aggregate them into three groups. See the relevant code
+<a class="reference external" href="https://github.com/giampaolo/psutil/blob/b5582380ac70ca8c180344d9b22aacdff73b1e0b/psutil/_pslinux.py#L1108-L1153">here</a>.</p>
+</section>
+<section id="windows-from-1-9x-to-6-5x-speedup">
+<h2>Windows: from +1.9x to +6.5x speedup<a class="headerlink" href="#windows-from-1-9x-to-6-5x-speedup" title="Link to this heading">¶</a></h2>
+<p>Windows is an interesting one. For a process owned by our user, we group only
+<a class="reference internal" href="../../api.html#psutil.Process.num_threads" title="psutil.Process.num_threads"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.num_threads()</span></code></a>, <a class="reference internal" href="../../api.html#psutil.Process.num_ctx_switches" title="psutil.Process.num_ctx_switches"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.num_ctx_switches()</span></code></a> and
+<a class="reference internal" href="../../api.html#psutil.Process.num_handles" title="psutil.Process.num_handles"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.num_handles()</span></code></a>, for a +1.9x speedup if we access those methods in
+one shot.</p>
+<p>Windows is special though, because certain methods have a dual implementation
+(<a class="extlink-gh reference external" href="https://github.com/giampaolo/psutil/issues/304">#304</a>): a “fast method” is tried first, but if the process is owned by
+another user it fails with <a class="reference internal" href="../../api.html#psutil.AccessDenied" title="psutil.AccessDenied"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AccessDenied</span></code></a>. psutil then falls back to a
+second, “slower” method (see <a class="reference external" href="https://github.com/giampaolo/psutil/blob/0ccd1373c6e7a189e095df5c436568fb1e8b4d14/psutil/_pswindows.py#L681">here</a>
+for example).</p>
+<p>It’s slower because it
+<a class="reference external" href="https://github.com/giampaolo/psutil/blob/0ccd1373c6e7a189e095df5c436568fb1e8b4d14/psutil/arch/windows/process_info.c#L790">iterates over all PIDs</a>,
+but unlike the “plain” Windows APIs it can still
+<a class="reference external" href="https://github.com/giampaolo/psutil/blob/0ccd1373c6e7a189e095df5c436568fb1e8b4d14/psutil/_psutil_windows.c#L2789">retrieve multiple pieces of information in one shot</a>:
+number of threads, <a class="reference internal" href="../../glossary.html#term-context-switch"><span class="xref std std-term">context switches</span></a>, handles, CPU
+times, create time, and I/O counters.</p>
+<p>That’s why querying processes owned by other users results in an impressive
++6.5x speedup.</p>
+</section>
+<section id="macos-1-92x-speedup">
+<h2>macOS: +1.92x speedup<a class="headerlink" href="#macos-1-92x-speedup" title="Link to this heading">¶</a></h2>
+<p>On macOS we can get 2 groups of information. With
+<a class="reference external" href="https://github.com/giampaolo/psutil/blob/0ccd1373c6e7a189e095df5c436568fb1e8b4d14/psutil/_psutil_osx.c#L129">sysctl()</a>
+we get process parent PID, uids, gids, terminal, create time, name. With
+<a class="reference external" href="https://github.com/giampaolo/psutil/blob/0ccd1373c6e7a189e095df5c436568fb1e8b4d14/psutil/_psutil_osx.c#L183">proc_info()</a>
+we get CPU times (for PIDs owned by another user), memory metrics and ctx
+switches. Not bad.</p>
+</section>
+<section id="bsd-2-18x-speedup">
+<h2>BSD: +2.18x speedup<a class="headerlink" href="#bsd-2-18x-speedup" title="Link to this heading">¶</a></h2>
+<p>On BSD we gather tons of process info just by calling <code class="docutils literal notranslate"><span class="pre">sysctl()</span></code> (see
+<a class="reference external" href="https://github.com/giampaolo/psutil/blob/0ccd1373c6e7a189e095df5c436568fb1e8b4d14/psutil/_psutil_bsd.c#L199">implementation</a>):
+process name, ppid, status, uids, gids, IO counters, CPU and create times,
+terminal and ctx switches.</p>
+</section>
+<section id="sunos-1-37x-speedup">
+<h2>SunOS: +1.37x speedup<a class="headerlink" href="#sunos-1-37x-speedup" title="Link to this heading">¶</a></h2>
+<p>SunOS is like Linux (it reads files in <code class="docutils literal notranslate"><span class="pre">/proc</span></code>), but the code is in C. Here
+too, we group different metrics together (see
+<a class="reference external" href="https://github.com/giampaolo/psutil/blob/b5582380ac70ca8c180344d9b22aacdff73b1e0b/psutil/_psutil_sunos.c#L83-L142">here</a>
+and
+<a class="reference external" href="https://github.com/giampaolo/psutil/blob/b5582380ac70ca8c180344d9b22aacdff73b1e0b/psutil/_psutil_sunos.c#L171-L189">here</a>).</p>
+</section>
+<section id="discussion">
+<h2>Discussion<a class="headerlink" href="#discussion" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.reddit.com/r/Python/comments/5bhn4q/psutil_500_is_around_twice_as_fast/">Reddit</a></p></li>
+</ul>
+</section>
+</section>
+<div class="section ablog__blog_comments">
+<nav aria-label="Previous and next posts" class="prev-next no-visited">
+<a class="prev-next-prev" href="windows-services.html" rel="prev">
+<span aria-hidden="true" class="prev-next-arrow">‹</span>
+<span class="prev-next-block">
+<span class="prev-next-label">Previous</span>
+<span class="prev-next-title">Windows services support</span>
+</span>
+</a>
+<a class="prev-next-next" href="../2017/sensors-support.html" rel="next">
+<span class="prev-next-block">
+<span class="prev-next-label">Next</span>
+<span class="prev-next-title">Sensors: temperatures, battery, CPU frequency</span>
+</span>
+<span aria-hidden="true" class="prev-next-arrow">›</span>
+</a>
+</nav>
+</div>
+</article>
+</div>
+<aside aria-label="On this page" class="right-sidebar">
+<div class="right-sidebar-title">On this page</div>
+<ul>
+<li><a class="reference internal" href="#">Making psutil twice as fast</a><ul>
+<li><a class="reference internal" href="#the-problem">The problem</a></li>
+<li><a class="reference internal" href="#do-it-in-one-shot">Do it in one shot</a></li>
+<li><a class="reference internal" href="#implementation">Implementation</a></li>
+<li><a class="reference internal" href="#linux-2-56x-speedup">Linux: +2.56x speedup</a></li>
+<li><a class="reference internal" href="#windows-from-1-9x-to-6-5x-speedup">Windows: from +1.9x to +6.5x speedup</a></li>
+<li><a class="reference internal" href="#macos-1-92x-speedup">macOS: +1.92x speedup</a></li>
+<li><a class="reference internal" href="#bsd-2-18x-speedup">BSD: +2.18x speedup</a></li>
+<li><a class="reference internal" href="#sunos-1-37x-speedup">SunOS: +1.37x speedup</a></li>
+<li><a class="reference internal" href="#discussion">Discussion</a></li>
+</ul>
+</li>
+</ul>
+</aside>
+</div>
+</main>
+<footer class="footer" role="contentinfo">
+<div class="footer-content">
+<div class="footer-text">
+<span><a class="footer-egg" href="../../404.html" title="🥚">©</a> 2009-2026 Giampaolo Rodola</span>
+<span><a href="../../about.html" title="About this documentation site">About</a></span>
+<span><a href="https://github.com/giampaolo/psutil/edit/master/docs/blog/2016/500-is-twice-as-fast.rst" rel="noopener noreferrer" target="_blank" title="Edit this page on GitHub">Edit on GitHub</a></span>
+</div>
+<div class="footer-icons">
+<a aria-label="psutil on GitHub" class="footer-github" href="https://github.com/giampaolo/psutil" rel="noopener noreferrer" target="_blank" title="psutil on GitHub">
+<i aria-hidden="true" class="fa-brands fa-github"></i>
+</a>
+<a aria-label="psutil on PyPI" class="footer-pypi" href="https://pypi.org/project/psutil/" rel="noopener noreferrer" target="_blank" title="psutil on PyPI">
+<i aria-hidden="true" class="fa-brands fa-python"></i>
+</a>
+<a aria-label="Subscribe to blog" class="footer-rss" href="../atom.xml" title="Subscribe to blog (Atom feed)">
+<span class="rss-icon"></span>
+</a>
+</div>
+</div>
+</footer>
+</div>
+</body>
+</html>
