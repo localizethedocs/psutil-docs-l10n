@@ -1,0 +1,1976 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2026 Giampaolo Rodola
+# This file is distributed under the same license as the psutil package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: psutil 8.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-17 09:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../timeline.rst:2
+msgid "Timeline"
+msgstr "时间线"
+
+#: ../../../timeline.rst:5
+msgid "2026"
+msgstr ""
+
+#: ../../../timeline.rst:11 ../../../timeline.rst:27 ../../../timeline.rst:67
+#: ../../../timeline.rst:95 ../../../timeline.rst:119 ../../../timeline.rst:147
+#: ../../../timeline.rst:163 ../../../timeline.rst:195
+#: ../../../timeline.rst:247 ../../../timeline.rst:283
+#: ../../../timeline.rst:343 ../../../timeline.rst:403
+#: ../../../timeline.rst:455 ../../../timeline.rst:487
+#: ../../../timeline.rst:539 ../../../timeline.rst:567
+#: ../../../timeline.rst:595 ../../../timeline.rst:615
+msgid "Version"
+msgstr ""
+
+#: ../../../timeline.rst:12 ../../../timeline.rst:28 ../../../timeline.rst:68
+#: ../../../timeline.rst:96 ../../../timeline.rst:120 ../../../timeline.rst:148
+#: ../../../timeline.rst:164 ../../../timeline.rst:196
+#: ../../../timeline.rst:248 ../../../timeline.rst:284
+#: ../../../timeline.rst:344 ../../../timeline.rst:404
+#: ../../../timeline.rst:456 ../../../timeline.rst:488
+#: ../../../timeline.rst:540 ../../../timeline.rst:568
+#: ../../../timeline.rst:596 ../../../timeline.rst:616
+msgid "Date"
+msgstr ""
+
+#: ../../../timeline.rst:13 ../../../timeline.rst:29 ../../../timeline.rst:69
+#: ../../../timeline.rst:97 ../../../timeline.rst:121 ../../../timeline.rst:149
+#: ../../../timeline.rst:165 ../../../timeline.rst:197
+#: ../../../timeline.rst:249 ../../../timeline.rst:285
+#: ../../../timeline.rst:345 ../../../timeline.rst:405
+#: ../../../timeline.rst:457 ../../../timeline.rst:489
+#: ../../../timeline.rst:541 ../../../timeline.rst:569
+#: ../../../timeline.rst:597 ../../../timeline.rst:617
+msgid "Notes"
+msgstr ""
+
+#: ../../../timeline.rst:14 ../../../timeline.rst:30 ../../../timeline.rst:70
+#: ../../../timeline.rst:98 ../../../timeline.rst:122 ../../../timeline.rst:150
+#: ../../../timeline.rst:166 ../../../timeline.rst:198
+#: ../../../timeline.rst:250 ../../../timeline.rst:286
+#: ../../../timeline.rst:346 ../../../timeline.rst:406
+#: ../../../timeline.rst:458 ../../../timeline.rst:490
+#: ../../../timeline.rst:542 ../../../timeline.rst:570
+#: ../../../timeline.rst:598 ../../../timeline.rst:618
+msgid "Diff"
+msgstr ""
+
+#: ../../../timeline.rst:15
+msgid ":pypi:`7.2.2`"
+msgstr ""
+
+#: ../../../timeline.rst:16
+msgid "2026-01-28"
+msgstr ""
+
+#: ../../../timeline.rst:17
+msgid ":ref:`what's new <722>`"
+msgstr ""
+
+#: ../../../timeline.rst:18
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-7.2.1..."
+"release-7.2.2#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:21
+msgid "2025"
+msgstr ""
+
+#: ../../../timeline.rst:31
+msgid ":pypi:`7.2.1`"
+msgstr ""
+
+#: ../../../timeline.rst:32
+msgid "2025-12-29"
+msgstr ""
+
+#: ../../../timeline.rst:33
+msgid ":ref:`what's new <721>`"
+msgstr ""
+
+#: ../../../timeline.rst:34
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-7.2.0..."
+"release-7.2.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:35
+msgid ":pypi:`7.2.0`"
+msgstr ""
+
+#: ../../../timeline.rst:36
+msgid "2025-12-23"
+msgstr ""
+
+#: ../../../timeline.rst:37
+msgid ":ref:`what's new <720>`"
+msgstr ""
+
+#: ../../../timeline.rst:38
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-7.1.3..."
+"release-7.2.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:39
+msgid ":pypi:`7.1.3`"
+msgstr ""
+
+#: ../../../timeline.rst:40
+msgid "2025-11-02"
+msgstr ""
+
+#: ../../../timeline.rst:41
+msgid ":ref:`what's new <713>`"
+msgstr ""
+
+#: ../../../timeline.rst:42
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-7.1.2..."
+"release-7.1.3#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:43
+msgid ":pypi:`7.1.2`"
+msgstr ""
+
+#: ../../../timeline.rst:44
+msgid "2025-10-25"
+msgstr ""
+
+#: ../../../timeline.rst:45
+msgid ":ref:`what's new <712>`"
+msgstr ""
+
+#: ../../../timeline.rst:46
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-7.1.1..."
+"release-7.1.2#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:47
+msgid ":pypi:`7.1.1`"
+msgstr ""
+
+#: ../../../timeline.rst:48
+msgid "2025-10-19"
+msgstr ""
+
+#: ../../../timeline.rst:49
+msgid ":ref:`what's new <711>`"
+msgstr ""
+
+#: ../../../timeline.rst:50
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-7.1.0..."
+"release-7.1.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:51
+msgid ":pypi:`7.1.0`"
+msgstr ""
+
+#: ../../../timeline.rst:52
+msgid "2025-09-17"
+msgstr ""
+
+#: ../../../timeline.rst:53
+msgid ":ref:`what's new <710>`"
+msgstr ""
+
+#: ../../../timeline.rst:54
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-7.0.0..."
+"release-7.1.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:55
+msgid ":pypi:`7.0.0`"
+msgstr ""
+
+#: ../../../timeline.rst:56
+msgid "2025-02-13"
+msgstr ""
+
+#: ../../../timeline.rst:57
+msgid ":ref:`what's new <700>`"
+msgstr ""
+
+#: ../../../timeline.rst:58
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-6.1.1..."
+"release-7.0.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:61
+msgid "2024"
+msgstr ""
+
+#: ../../../timeline.rst:71
+msgid ":pypi:`6.1.1`"
+msgstr ""
+
+#: ../../../timeline.rst:72
+msgid "2024-12-19"
+msgstr ""
+
+#: ../../../timeline.rst:73
+msgid ":ref:`what's new <611>`"
+msgstr ""
+
+#: ../../../timeline.rst:74
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-6.1.0..."
+"release-6.1.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:75
+msgid ":pypi:`6.1.0`"
+msgstr ""
+
+#: ../../../timeline.rst:76
+msgid "2024-10-17"
+msgstr ""
+
+#: ../../../timeline.rst:77
+msgid ":ref:`what's new <610>`"
+msgstr ""
+
+#: ../../../timeline.rst:78
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-6.0.0..."
+"release-6.1.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:79
+msgid ":pypi:`6.0.0`"
+msgstr ""
+
+#: ../../../timeline.rst:80
+msgid "2024-06-18"
+msgstr ""
+
+#: ../../../timeline.rst:81
+msgid ":ref:`what's new <600>`"
+msgstr ""
+
+#: ../../../timeline.rst:82
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.9.8..."
+"release-6.0.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:83
+msgid ":pypi:`5.9.8`"
+msgstr ""
+
+#: ../../../timeline.rst:84
+msgid "2024-01-19"
+msgstr ""
+
+#: ../../../timeline.rst:85
+msgid ":ref:`what's new <598>`"
+msgstr ""
+
+#: ../../../timeline.rst:86
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.9.7..."
+"release-5.9.8#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:89
+msgid "2023"
+msgstr ""
+
+#: ../../../timeline.rst:99
+msgid ":pypi:`5.9.7`"
+msgstr ""
+
+#: ../../../timeline.rst:100
+msgid "2023-12-17"
+msgstr ""
+
+#: ../../../timeline.rst:101
+msgid ":ref:`what's new <597>`"
+msgstr ""
+
+#: ../../../timeline.rst:102
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.9.6..."
+"release-5.9.7#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:103
+msgid ":pypi:`5.9.6`"
+msgstr ""
+
+#: ../../../timeline.rst:104
+msgid "2023-10-15"
+msgstr ""
+
+#: ../../../timeline.rst:105
+msgid ":ref:`what's new <596>`"
+msgstr ""
+
+#: ../../../timeline.rst:106
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.9.5..."
+"release-5.9.6#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:107
+msgid ":pypi:`5.9.5`"
+msgstr ""
+
+#: ../../../timeline.rst:108
+msgid "2023-04-17"
+msgstr ""
+
+#: ../../../timeline.rst:109
+msgid ":ref:`what's new <595>`"
+msgstr ""
+
+#: ../../../timeline.rst:110
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.9.4..."
+"release-5.9.5#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:113
+msgid "2022"
+msgstr ""
+
+#: ../../../timeline.rst:123
+msgid ":pypi:`5.9.4`"
+msgstr ""
+
+#: ../../../timeline.rst:124
+msgid "2022-11-07"
+msgstr ""
+
+#: ../../../timeline.rst:125
+msgid ":ref:`what's new <594>`"
+msgstr ""
+
+#: ../../../timeline.rst:126
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.9.3..."
+"release-5.9.4#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:127
+msgid ":pypi:`5.9.3`"
+msgstr ""
+
+#: ../../../timeline.rst:128
+msgid "2022-10-18"
+msgstr ""
+
+#: ../../../timeline.rst:129
+msgid ":ref:`what's new <593>`"
+msgstr ""
+
+#: ../../../timeline.rst:130
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.9.2..."
+"release-5.9.3#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:131
+msgid ":pypi:`5.9.2`"
+msgstr ""
+
+#: ../../../timeline.rst:132
+msgid "2022-09-04"
+msgstr ""
+
+#: ../../../timeline.rst:133
+msgid ":ref:`what's new <592>`"
+msgstr ""
+
+#: ../../../timeline.rst:134
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.9.1..."
+"release-5.9.2#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:135
+msgid ":pypi:`5.9.1`"
+msgstr ""
+
+#: ../../../timeline.rst:136
+msgid "2022-05-20"
+msgstr ""
+
+#: ../../../timeline.rst:137
+msgid ":ref:`what's new <591>`"
+msgstr ""
+
+#: ../../../timeline.rst:138
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.9.0..."
+"release-5.9.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:141
+msgid "2021"
+msgstr ""
+
+#: ../../../timeline.rst:151
+msgid ":pypi:`5.9.0`"
+msgstr ""
+
+#: ../../../timeline.rst:152
+msgid "2021-12-29"
+msgstr ""
+
+#: ../../../timeline.rst:153
+msgid ":ref:`what's new <590>`"
+msgstr ""
+
+#: ../../../timeline.rst:154
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.8.0..."
+"release-5.9.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:157
+msgid "2020"
+msgstr ""
+
+#: ../../../timeline.rst:167
+msgid ":pypi:`5.8.0`"
+msgstr ""
+
+#: ../../../timeline.rst:168
+msgid "2020-12-19"
+msgstr ""
+
+#: ../../../timeline.rst:169
+msgid ":ref:`what's new <580>`"
+msgstr ""
+
+#: ../../../timeline.rst:170
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.7.3..."
+"release-5.8.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:171
+msgid ":pypi:`5.7.3`"
+msgstr ""
+
+#: ../../../timeline.rst:172
+msgid "2020-10-24"
+msgstr ""
+
+#: ../../../timeline.rst:173
+msgid ":ref:`what's new <573>`"
+msgstr ""
+
+#: ../../../timeline.rst:174
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.7.2..."
+"release-5.7.3#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:175
+msgid ":pypi:`5.7.2`"
+msgstr ""
+
+#: ../../../timeline.rst:176 ../../../timeline.rst:180
+msgid "2020-07-15"
+msgstr ""
+
+#: ../../../timeline.rst:177
+msgid ":ref:`what's new <572>`"
+msgstr ""
+
+#: ../../../timeline.rst:178
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.7.1..."
+"release-5.7.2#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:179
+msgid ":pypi:`5.7.1`"
+msgstr ""
+
+#: ../../../timeline.rst:181
+msgid ":ref:`what's new <571>`"
+msgstr ""
+
+#: ../../../timeline.rst:182
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.7.0..."
+"release-5.7.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:183
+msgid ":pypi:`5.7.0`"
+msgstr ""
+
+#: ../../../timeline.rst:184
+msgid "2020-02-18"
+msgstr ""
+
+#: ../../../timeline.rst:185
+msgid ":ref:`what's new <570>`"
+msgstr ""
+
+#: ../../../timeline.rst:186
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.6.7..."
+"release-5.7.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:189
+msgid "2019"
+msgstr ""
+
+#: ../../../timeline.rst:199
+msgid ":pypi:`5.6.7`"
+msgstr ""
+
+#: ../../../timeline.rst:200
+msgid "2019-11-26"
+msgstr ""
+
+#: ../../../timeline.rst:201
+msgid ":ref:`what's new <567>`"
+msgstr ""
+
+#: ../../../timeline.rst:202
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.6.6..."
+"release-5.6.7#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:203
+msgid ":pypi:`5.6.6`"
+msgstr ""
+
+#: ../../../timeline.rst:204
+msgid "2019-11-25"
+msgstr ""
+
+#: ../../../timeline.rst:205
+msgid ":ref:`what's new <566>`"
+msgstr ""
+
+#: ../../../timeline.rst:206
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.6.5..."
+"release-5.6.6#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:207
+msgid ":pypi:`5.6.5`"
+msgstr ""
+
+#: ../../../timeline.rst:208
+msgid "2019-11-06"
+msgstr ""
+
+#: ../../../timeline.rst:209
+msgid ":ref:`what's new <565>`"
+msgstr ""
+
+#: ../../../timeline.rst:210
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.6.4..."
+"release-5.6.5#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:211
+msgid ":pypi:`5.6.4`"
+msgstr ""
+
+#: ../../../timeline.rst:212
+msgid "2019-11-04"
+msgstr ""
+
+#: ../../../timeline.rst:213
+msgid ":ref:`what's new <564>`"
+msgstr ""
+
+#: ../../../timeline.rst:214
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.6.3..."
+"release-5.6.4#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:215
+msgid ":pypi:`5.6.3`"
+msgstr ""
+
+#: ../../../timeline.rst:216
+msgid "2019-06-11"
+msgstr ""
+
+#: ../../../timeline.rst:217
+msgid ":ref:`what's new <563>`"
+msgstr ""
+
+#: ../../../timeline.rst:218
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.6.2..."
+"release-5.6.3#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:219
+msgid ":pypi:`5.6.2`"
+msgstr ""
+
+#: ../../../timeline.rst:220
+msgid "2019-04-26"
+msgstr ""
+
+#: ../../../timeline.rst:221
+msgid ":ref:`what's new <562>`"
+msgstr ""
+
+#: ../../../timeline.rst:222
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.6.1..."
+"release-5.6.2#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:223
+msgid ":pypi:`5.6.1`"
+msgstr ""
+
+#: ../../../timeline.rst:224
+msgid "2019-03-11"
+msgstr ""
+
+#: ../../../timeline.rst:225
+msgid ":ref:`what's new <561>`"
+msgstr ""
+
+#: ../../../timeline.rst:226
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.6.0..."
+"release-5.6.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:227
+msgid ":pypi:`5.6.0`"
+msgstr ""
+
+#: ../../../timeline.rst:228
+msgid "2019-03-05"
+msgstr ""
+
+#: ../../../timeline.rst:229
+msgid ":ref:`what's new <560>`"
+msgstr ""
+
+#: ../../../timeline.rst:230
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.5.1..."
+"release-5.6.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:231
+msgid ":pypi:`5.5.1`"
+msgstr ""
+
+#: ../../../timeline.rst:232
+msgid "2019-02-15"
+msgstr ""
+
+#: ../../../timeline.rst:233
+msgid ":ref:`what's new <551>`"
+msgstr ""
+
+#: ../../../timeline.rst:234
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.5.0..."
+"release-5.5.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:235
+msgid ":pypi:`5.5.0`"
+msgstr ""
+
+#: ../../../timeline.rst:236
+msgid "2019-01-23"
+msgstr ""
+
+#: ../../../timeline.rst:237
+msgid ":ref:`what's new <550>`"
+msgstr ""
+
+#: ../../../timeline.rst:238
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.4.8..."
+"release-5.5.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:241
+msgid "2018"
+msgstr ""
+
+#: ../../../timeline.rst:251
+msgid ":pypi:`5.4.8`"
+msgstr ""
+
+#: ../../../timeline.rst:252
+msgid "2018-10-30"
+msgstr ""
+
+#: ../../../timeline.rst:253
+msgid ":ref:`what's new <548>`"
+msgstr ""
+
+#: ../../../timeline.rst:254
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.4.7..."
+"release-5.4.8#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:255
+msgid ":pypi:`5.4.7`"
+msgstr ""
+
+#: ../../../timeline.rst:256
+msgid "2018-08-14"
+msgstr ""
+
+#: ../../../timeline.rst:257
+msgid ":ref:`what's new <547>`"
+msgstr ""
+
+#: ../../../timeline.rst:258
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.4.6..."
+"release-5.4.7#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:259
+msgid ":pypi:`5.4.6`"
+msgstr ""
+
+#: ../../../timeline.rst:260
+msgid "2018-06-07"
+msgstr ""
+
+#: ../../../timeline.rst:261
+msgid ":ref:`what's new <546>`"
+msgstr ""
+
+#: ../../../timeline.rst:262
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.4.5..."
+"release-5.4.6#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:263
+msgid ":pypi:`5.4.5`"
+msgstr ""
+
+#: ../../../timeline.rst:264 ../../../timeline.rst:268
+msgid "2018-04-13"
+msgstr ""
+
+#: ../../../timeline.rst:265
+msgid ":ref:`what's new <545>`"
+msgstr ""
+
+#: ../../../timeline.rst:266
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.4.4..."
+"release-5.4.5#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:267
+msgid ":pypi:`5.4.4`"
+msgstr ""
+
+#: ../../../timeline.rst:269
+msgid ":ref:`what's new <544>`"
+msgstr ""
+
+#: ../../../timeline.rst:270
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.4.3..."
+"release-5.4.4#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:271
+msgid ":pypi:`5.4.3`"
+msgstr ""
+
+#: ../../../timeline.rst:272
+msgid "2018-01-01"
+msgstr ""
+
+#: ../../../timeline.rst:273
+msgid ":ref:`what's new <543>`"
+msgstr ""
+
+#: ../../../timeline.rst:274
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.4.2..."
+"release-5.4.3#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:277
+msgid "2017"
+msgstr ""
+
+#: ../../../timeline.rst:287
+msgid ":pypi:`5.4.2`"
+msgstr ""
+
+#: ../../../timeline.rst:288
+msgid "2017-12-07"
+msgstr ""
+
+#: ../../../timeline.rst:289
+msgid ":ref:`what's new <542>`"
+msgstr ""
+
+#: ../../../timeline.rst:290
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.4.1..."
+"release-5.4.2#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:291
+msgid ":pypi:`5.4.1`"
+msgstr ""
+
+#: ../../../timeline.rst:292
+msgid "2017-11-08"
+msgstr ""
+
+#: ../../../timeline.rst:293
+msgid ":ref:`what's new <541>`"
+msgstr ""
+
+#: ../../../timeline.rst:294
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.4.0..."
+"release-5.4.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:295
+msgid ":pypi:`5.4.0`"
+msgstr ""
+
+#: ../../../timeline.rst:296
+msgid "2017-10-12"
+msgstr ""
+
+#: ../../../timeline.rst:297
+msgid ":ref:`what's new <540>`"
+msgstr ""
+
+#: ../../../timeline.rst:298
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.3.1..."
+"release-5.4.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:299
+msgid ":pypi:`5.3.1`"
+msgstr ""
+
+#: ../../../timeline.rst:300
+msgid "2017-09-10"
+msgstr ""
+
+#: ../../../timeline.rst:301
+msgid ":ref:`what's new <531>`"
+msgstr ""
+
+#: ../../../timeline.rst:302
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.3.0..."
+"release-5.3.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:303
+msgid ":pypi:`5.3.0`"
+msgstr ""
+
+#: ../../../timeline.rst:304
+msgid "2017-09-01"
+msgstr ""
+
+#: ../../../timeline.rst:305
+msgid ":ref:`what's new <530>`"
+msgstr ""
+
+#: ../../../timeline.rst:306
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.2.2..."
+"release-5.3.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:307
+msgid ":pypi:`5.2.2`"
+msgstr ""
+
+#: ../../../timeline.rst:308
+msgid "2017-04-10"
+msgstr ""
+
+#: ../../../timeline.rst:309
+msgid ":ref:`what's new <522>`"
+msgstr ""
+
+#: ../../../timeline.rst:310
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.2.1..."
+"release-5.2.2#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:311
+msgid ":pypi:`5.2.1`"
+msgstr ""
+
+#: ../../../timeline.rst:312
+msgid "2017-03-24"
+msgstr ""
+
+#: ../../../timeline.rst:313
+msgid ":ref:`what's new <521>`"
+msgstr ""
+
+#: ../../../timeline.rst:314
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.2.0..."
+"release-5.2.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:315
+msgid ":pypi:`5.2.0`"
+msgstr ""
+
+#: ../../../timeline.rst:316
+msgid "2017-03-05"
+msgstr ""
+
+#: ../../../timeline.rst:317
+msgid ":ref:`what's new <520>`"
+msgstr ""
+
+#: ../../../timeline.rst:318
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.1.3..."
+"release-5.2.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:319
+msgid ":pypi:`5.1.3`"
+msgstr ""
+
+#: ../../../timeline.rst:320
+msgid "2017-02-07"
+msgstr ""
+
+#: ../../../timeline.rst:321
+msgid ":ref:`what's new <513>`"
+msgstr ""
+
+#: ../../../timeline.rst:322
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.1.2..."
+"release-5.1.3#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:323
+msgid ":pypi:`5.1.2`"
+msgstr ""
+
+#: ../../../timeline.rst:324 ../../../timeline.rst:328
+msgid "2017-02-03"
+msgstr ""
+
+#: ../../../timeline.rst:325
+msgid ":ref:`what's new <512>`"
+msgstr ""
+
+#: ../../../timeline.rst:326
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.1.1..."
+"release-5.1.2#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:327
+msgid ":pypi:`5.1.1`"
+msgstr ""
+
+#: ../../../timeline.rst:329
+msgid ":ref:`what's new <511>`"
+msgstr ""
+
+#: ../../../timeline.rst:330
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.1.0..."
+"release-5.1.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:331
+msgid ":pypi:`5.1.0`"
+msgstr ""
+
+#: ../../../timeline.rst:332
+msgid "2017-02-01"
+msgstr ""
+
+#: ../../../timeline.rst:333
+msgid ":ref:`what's new <510>`"
+msgstr ""
+
+#: ../../../timeline.rst:334
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.0.1..."
+"release-5.1.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:337
+msgid "2016"
+msgstr ""
+
+#: ../../../timeline.rst:347
+msgid ":pypi:`5.0.1`"
+msgstr ""
+
+#: ../../../timeline.rst:348
+msgid "2016-12-21"
+msgstr ""
+
+#: ../../../timeline.rst:349
+msgid ":ref:`what's new <501>`"
+msgstr ""
+
+#: ../../../timeline.rst:350
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-5.0.0..."
+"release-5.0.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:351
+msgid ":pypi:`5.0.0`"
+msgstr ""
+
+#: ../../../timeline.rst:352
+msgid "2016-11-06"
+msgstr ""
+
+#: ../../../timeline.rst:353
+msgid ":ref:`what's new <500>`"
+msgstr ""
+
+#: ../../../timeline.rst:354
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-4.4.2..."
+"release-5.0.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:355
+msgid ":pypi:`4.4.2`"
+msgstr ""
+
+#: ../../../timeline.rst:356
+msgid "2016-10-26"
+msgstr ""
+
+#: ../../../timeline.rst:357
+msgid ":ref:`what's new <442>`"
+msgstr ""
+
+#: ../../../timeline.rst:358
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-4.4.1..."
+"release-4.4.2#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:359
+msgid ":pypi:`4.4.1`"
+msgstr ""
+
+#: ../../../timeline.rst:360
+msgid "2016-10-25"
+msgstr ""
+
+#: ../../../timeline.rst:361
+msgid ":ref:`what's new <441>`"
+msgstr ""
+
+#: ../../../timeline.rst:362
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-4.4.0..."
+"release-4.4.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:363
+msgid ":pypi:`4.4.0`"
+msgstr ""
+
+#: ../../../timeline.rst:364
+msgid "2016-10-23"
+msgstr ""
+
+#: ../../../timeline.rst:365
+msgid ":ref:`what's new <440>`"
+msgstr ""
+
+#: ../../../timeline.rst:366
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-4.3.1..."
+"release-4.4.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:367
+msgid ":pypi:`4.3.1`"
+msgstr ""
+
+#: ../../../timeline.rst:368
+msgid "2016-09-01"
+msgstr ""
+
+#: ../../../timeline.rst:369
+msgid ":ref:`what's new <431>`"
+msgstr ""
+
+#: ../../../timeline.rst:370
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-4.3.0..."
+"release-4.3.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:371
+msgid ":pypi:`4.3.0`"
+msgstr ""
+
+#: ../../../timeline.rst:372
+msgid "2016-06-18"
+msgstr ""
+
+#: ../../../timeline.rst:373
+msgid ":ref:`what's new <430>`"
+msgstr ""
+
+#: ../../../timeline.rst:374
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-4.2.0..."
+"release-4.3.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:375
+msgid ":pypi:`4.2.0`"
+msgstr ""
+
+#: ../../../timeline.rst:376
+msgid "2016-05-14"
+msgstr ""
+
+#: ../../../timeline.rst:377
+msgid ":ref:`what's new <420>`"
+msgstr ""
+
+#: ../../../timeline.rst:378
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-4.1.0..."
+"release-4.2.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:379
+msgid ":pypi:`4.1.0`"
+msgstr ""
+
+#: ../../../timeline.rst:380
+msgid "2016-03-12"
+msgstr ""
+
+#: ../../../timeline.rst:381
+msgid ":ref:`what's new <410>`"
+msgstr ""
+
+#: ../../../timeline.rst:382
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-4.0.0..."
+"release-4.1.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:383
+msgid ":pypi:`4.0.0`"
+msgstr ""
+
+#: ../../../timeline.rst:384
+msgid "2016-02-17"
+msgstr ""
+
+#: ../../../timeline.rst:385
+msgid ":ref:`what's new <400>`"
+msgstr ""
+
+#: ../../../timeline.rst:386
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-3.4.2..."
+"release-4.0.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:387
+msgid ":pypi:`3.4.2`"
+msgstr ""
+
+#: ../../../timeline.rst:388
+msgid "2016-01-20"
+msgstr ""
+
+#: ../../../timeline.rst:389
+msgid ":ref:`what's new <342>`"
+msgstr ""
+
+#: ../../../timeline.rst:390
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-3.4.1..."
+"release-3.4.2#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:391
+msgid ":pypi:`3.4.1`"
+msgstr ""
+
+#: ../../../timeline.rst:392
+msgid "2016-01-15"
+msgstr ""
+
+#: ../../../timeline.rst:393
+msgid ":ref:`what's new <341>`"
+msgstr ""
+
+#: ../../../timeline.rst:394
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-3.3.0..."
+"release-3.4.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:397
+msgid "2015"
+msgstr ""
+
+#: ../../../timeline.rst:407
+msgid ":pypi:`3.3.0`"
+msgstr ""
+
+#: ../../../timeline.rst:408
+msgid "2015-11-25"
+msgstr ""
+
+#: ../../../timeline.rst:409
+msgid ":ref:`what's new <330>`"
+msgstr ""
+
+#: ../../../timeline.rst:410
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-3.2.2..."
+"release-3.3.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:411
+msgid ":pypi:`3.2.2`"
+msgstr ""
+
+#: ../../../timeline.rst:412
+msgid "2015-10-04"
+msgstr ""
+
+#: ../../../timeline.rst:413
+msgid ":ref:`what's new <322>`"
+msgstr ""
+
+#: ../../../timeline.rst:414
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-3.2.1..."
+"release-3.2.2#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:415
+msgid ":pypi:`3.2.1`"
+msgstr ""
+
+#: ../../../timeline.rst:416
+msgid "2015-09-03"
+msgstr ""
+
+#: ../../../timeline.rst:417
+msgid ":ref:`what's new <321>`"
+msgstr ""
+
+#: ../../../timeline.rst:418
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-3.2.0..."
+"release-3.2.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:419
+msgid ":pypi:`3.2.0`"
+msgstr ""
+
+#: ../../../timeline.rst:420
+msgid "2015-09-02"
+msgstr ""
+
+#: ../../../timeline.rst:421
+msgid ":ref:`what's new <320>`"
+msgstr ""
+
+#: ../../../timeline.rst:422
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-3.1.1..."
+"release-3.2.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:423
+msgid ":pypi:`3.1.1`"
+msgstr ""
+
+#: ../../../timeline.rst:424 ../../../timeline.rst:428
+msgid "2015-07-15"
+msgstr ""
+
+#: ../../../timeline.rst:425
+msgid ":ref:`what's new <311>`"
+msgstr ""
+
+#: ../../../timeline.rst:426
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-3.1.0..."
+"release-3.1.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:427
+msgid ":pypi:`3.1.0`"
+msgstr ""
+
+#: ../../../timeline.rst:429
+msgid ":ref:`what's new <310>`"
+msgstr ""
+
+#: ../../../timeline.rst:430
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-3.0.1..."
+"release-3.1.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:431
+msgid ":pypi:`3.0.1`"
+msgstr ""
+
+#: ../../../timeline.rst:432
+msgid "2015-06-18"
+msgstr ""
+
+#: ../../../timeline.rst:433
+msgid ":ref:`what's new <301>`"
+msgstr ""
+
+#: ../../../timeline.rst:434
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-3.0.0..."
+"release-3.0.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:435
+msgid ":pypi:`3.0.0`"
+msgstr ""
+
+#: ../../../timeline.rst:436
+msgid "2015-06-13"
+msgstr ""
+
+#: ../../../timeline.rst:437
+msgid ":ref:`what's new <300>`"
+msgstr ""
+
+#: ../../../timeline.rst:438
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-2.2.1..."
+"release-3.0.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:439
+msgid ":pypi:`2.2.1`"
+msgstr ""
+
+#: ../../../timeline.rst:440
+msgid "2015-02-02"
+msgstr ""
+
+#: ../../../timeline.rst:441
+msgid ":ref:`what's new <221>`"
+msgstr ""
+
+#: ../../../timeline.rst:442
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-2.2.0..."
+"release-2.2.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:443
+msgid ":pypi:`2.2.0`"
+msgstr ""
+
+#: ../../../timeline.rst:444
+msgid "2015-01-06"
+msgstr ""
+
+#: ../../../timeline.rst:445
+msgid ":ref:`what's new <220>`"
+msgstr ""
+
+#: ../../../timeline.rst:446
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-2.1.3..."
+"release-2.2.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:449
+msgid "2014"
+msgstr ""
+
+#: ../../../timeline.rst:459
+msgid ":pypi:`2.1.3`"
+msgstr ""
+
+#: ../../../timeline.rst:460
+msgid "2014-09-26"
+msgstr ""
+
+#: ../../../timeline.rst:461
+msgid ":ref:`what's new <213>`"
+msgstr ""
+
+#: ../../../timeline.rst:462
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-2.1.2..."
+"release-2.1.3#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:463
+msgid ":pypi:`2.1.2`"
+msgstr ""
+
+#: ../../../timeline.rst:464
+msgid "2014-09-21"
+msgstr ""
+
+#: ../../../timeline.rst:465
+msgid ":ref:`what's new <212>`"
+msgstr ""
+
+#: ../../../timeline.rst:466
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-2.1.1..."
+"release-2.1.2#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:467
+msgid ":pypi:`2.1.1`"
+msgstr ""
+
+#: ../../../timeline.rst:468
+msgid "2014-04-30"
+msgstr ""
+
+#: ../../../timeline.rst:469
+msgid ":ref:`what's new <211>`"
+msgstr ""
+
+#: ../../../timeline.rst:470
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-2.1.0..."
+"release-2.1.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:471
+msgid ":pypi:`2.1.0`"
+msgstr ""
+
+#: ../../../timeline.rst:472
+msgid "2014-04-08"
+msgstr ""
+
+#: ../../../timeline.rst:473
+msgid ":ref:`what's new <210>`"
+msgstr ""
+
+#: ../../../timeline.rst:474
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-2.0.0..."
+"release-2.1.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:475
+msgid ":pypi:`2.0.0`"
+msgstr ""
+
+#: ../../../timeline.rst:476
+msgid "2014-03-10"
+msgstr ""
+
+#: ../../../timeline.rst:477
+msgid ":ref:`what's new <200>`"
+msgstr ""
+
+#: ../../../timeline.rst:478
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-1.2.1..."
+"release-2.0.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:481
+msgid "2013"
+msgstr ""
+
+#: ../../../timeline.rst:491
+msgid ":pypi:`1.2.1`"
+msgstr ""
+
+#: ../../../timeline.rst:492
+msgid "2013-11-25"
+msgstr ""
+
+#: ../../../timeline.rst:493
+msgid ":ref:`what's new <121>`"
+msgstr ""
+
+#: ../../../timeline.rst:494
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-1.2.0..."
+"release-1.2.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:495
+msgid ":pypi:`1.2.0`"
+msgstr ""
+
+#: ../../../timeline.rst:496
+msgid "2013-11-20"
+msgstr ""
+
+#: ../../../timeline.rst:497
+msgid ":ref:`what's new <120>`"
+msgstr ""
+
+#: ../../../timeline.rst:498
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/2f69cb22..."
+"release-1.2.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:499
+msgid ":pypi:`1.1.3`"
+msgstr ""
+
+#: ../../../timeline.rst:500
+msgid "2013-11-07"
+msgstr ""
+
+#: ../../../timeline.rst:501
+msgid ":ref:`what's new <113>`"
+msgstr ""
+
+#: ../../../timeline.rst:502
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/"
+"release-1.1.2...2f69cb22#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:503
+msgid ":pypi:`1.1.2`"
+msgstr ""
+
+#: ../../../timeline.rst:504
+msgid "2013-10-22"
+msgstr ""
+
+#: ../../../timeline.rst:505
+msgid ":ref:`what's new <112>`"
+msgstr ""
+
+#: ../../../timeline.rst:506
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-1.1.1..."
+"release-1.1.2#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:507
+msgid ":pypi:`1.1.1`"
+msgstr ""
+
+#: ../../../timeline.rst:508
+msgid "2013-10-08"
+msgstr ""
+
+#: ../../../timeline.rst:509
+msgid ":ref:`what's new <111>`"
+msgstr ""
+
+#: ../../../timeline.rst:510
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-1.1.0..."
+"release-1.1.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:511
+msgid ":pypi:`1.1.0`"
+msgstr ""
+
+#: ../../../timeline.rst:512
+msgid "2013-09-28"
+msgstr ""
+
+#: ../../../timeline.rst:513
+msgid ":ref:`what's new <110>`"
+msgstr ""
+
+#: ../../../timeline.rst:514
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-1.0.1..."
+"release-1.1.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:515
+msgid ":pypi:`1.0.1`"
+msgstr ""
+
+#: ../../../timeline.rst:516
+msgid "2013-07-12"
+msgstr ""
+
+#: ../../../timeline.rst:517
+msgid ":ref:`what's new <101>`"
+msgstr ""
+
+#: ../../../timeline.rst:518
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-1.0.0..."
+"release-1.0.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:519
+msgid ":pypi:`1.0.0`"
+msgstr ""
+
+#: ../../../timeline.rst:520
+msgid "2013-07-10"
+msgstr ""
+
+#: ../../../timeline.rst:521
+msgid ":ref:`what's new <100>`"
+msgstr ""
+
+#: ../../../timeline.rst:522
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-0.7.1..."
+"release-1.0.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:523
+msgid ":pypi:`0.7.1`"
+msgstr ""
+
+#: ../../../timeline.rst:524
+msgid "2013-05-03"
+msgstr ""
+
+#: ../../../timeline.rst:525
+msgid ":ref:`what's new <071>`"
+msgstr ""
+
+#: ../../../timeline.rst:526
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-0.7.0..."
+"release-0.7.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:527
+msgid ":pypi:`0.7.0`"
+msgstr ""
+
+#: ../../../timeline.rst:528
+msgid "2013-04-12"
+msgstr ""
+
+#: ../../../timeline.rst:529
+msgid ":ref:`what's new <070>`"
+msgstr ""
+
+#: ../../../timeline.rst:530
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-0.6.1..."
+"release-0.7.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:533
+msgid "2012"
+msgstr ""
+
+#: ../../../timeline.rst:543
+msgid ":pypi:`0.6.1`"
+msgstr ""
+
+#: ../../../timeline.rst:544
+msgid "2012-08-16"
+msgstr ""
+
+#: ../../../timeline.rst:545
+msgid ":ref:`what's new <061>`"
+msgstr ""
+
+#: ../../../timeline.rst:546
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-0.6.0..."
+"release-0.6.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:547
+msgid ":pypi:`0.6.0`"
+msgstr ""
+
+#: ../../../timeline.rst:548
+msgid "2012-08-13"
+msgstr ""
+
+#: ../../../timeline.rst:549
+msgid ":ref:`what's new <060>`"
+msgstr ""
+
+#: ../../../timeline.rst:550
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-0.5.1..."
+"release-0.6.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:551
+msgid ":pypi:`0.5.1`"
+msgstr ""
+
+#: ../../../timeline.rst:552
+msgid "2012-06-29"
+msgstr ""
+
+#: ../../../timeline.rst:553
+msgid ":ref:`what's new <051>`"
+msgstr ""
+
+#: ../../../timeline.rst:554
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-0.5.0..."
+"release-0.5.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:555
+msgid ":pypi:`0.5.0`"
+msgstr ""
+
+#: ../../../timeline.rst:556
+msgid "2012-06-27"
+msgstr ""
+
+#: ../../../timeline.rst:557
+msgid ":ref:`what's new <050>`"
+msgstr ""
+
+#: ../../../timeline.rst:558
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-0.4.1..."
+"release-0.5.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:561
+msgid "2011"
+msgstr ""
+
+#: ../../../timeline.rst:571
+msgid ":pypi:`0.4.1`"
+msgstr ""
+
+#: ../../../timeline.rst:572
+msgid "2011-12-14"
+msgstr ""
+
+#: ../../../timeline.rst:573
+msgid ":ref:`what's new <041>`"
+msgstr ""
+
+#: ../../../timeline.rst:574
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-0.4.0..."
+"release-0.4.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:575
+msgid ":pypi:`0.4.0`"
+msgstr ""
+
+#: ../../../timeline.rst:576
+msgid "2011-10-29"
+msgstr ""
+
+#: ../../../timeline.rst:577
+msgid ":ref:`what's new <040>`"
+msgstr ""
+
+#: ../../../timeline.rst:578
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-0.3.0..."
+"release-0.4.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:579
+msgid ":pypi:`0.3.0`"
+msgstr ""
+
+#: ../../../timeline.rst:580
+msgid "2011-07-08"
+msgstr ""
+
+#: ../../../timeline.rst:581
+msgid ":ref:`what's new <030>`"
+msgstr ""
+
+#: ../../../timeline.rst:582
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-0.2.1..."
+"release-0.3.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:583
+msgid ":pypi:`0.2.1`"
+msgstr ""
+
+#: ../../../timeline.rst:584
+msgid "2011-03-20"
+msgstr ""
+
+#: ../../../timeline.rst:585
+msgid ":ref:`what's new <021>`"
+msgstr ""
+
+#: ../../../timeline.rst:586
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-0.2.0..."
+"release-0.2.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:589
+msgid "2010"
+msgstr ""
+
+#: ../../../timeline.rst:599
+msgid ":pypi:`0.2.0`"
+msgstr ""
+
+#: ../../../timeline.rst:600
+msgid "2010-11-13"
+msgstr ""
+
+#: ../../../timeline.rst:601
+msgid ":ref:`what's new <020>`"
+msgstr ""
+
+#: ../../../timeline.rst:602
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-0.1.3..."
+"release-0.2.0#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:603
+msgid ":pypi:`0.1.3`"
+msgstr ""
+
+#: ../../../timeline.rst:604
+msgid "2010-03-02"
+msgstr ""
+
+#: ../../../timeline.rst:605
+msgid ":ref:`what's new <013>`"
+msgstr ""
+
+#: ../../../timeline.rst:606
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-0.1.2..."
+"release-0.1.3#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:609
+msgid "2009"
+msgstr ""
+
+#: ../../../timeline.rst:619
+msgid ":pypi:`0.1.2`"
+msgstr ""
+
+#: ../../../timeline.rst:620
+msgid "2009-05-06"
+msgstr ""
+
+#: ../../../timeline.rst:621
+msgid ":ref:`what's new <012>`"
+msgstr ""
+
+#: ../../../timeline.rst:622
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-0.1.1..."
+"release-0.1.2#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:623
+msgid ":pypi:`0.1.1`"
+msgstr ""
+
+#: ../../../timeline.rst:624
+msgid "2009-03-06"
+msgstr ""
+
+#: ../../../timeline.rst:625
+msgid ":ref:`what's new <011>`"
+msgstr ""
+
+#: ../../../timeline.rst:626
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/release-0.1.0..."
+"release-0.1.1#files_bucket>`__"
+msgstr ""
+
+#: ../../../timeline.rst:627
+msgid ":pypi:`0.1.0`"
+msgstr ""
+
+#: ../../../timeline.rst:628
+msgid "2009-01-27"
+msgstr ""
+
+#: ../../../timeline.rst:629
+msgid ":ref:`what's new <010>`"
+msgstr ""
+
+#: ../../../timeline.rst:630
+msgid ""
+"`diff <https://github.com/giampaolo/psutil/compare/d84cc9a7..."
+"release-0.1.0#files_bucket>`__"
+msgstr ""
