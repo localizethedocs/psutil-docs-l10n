@@ -1,0 +1,87 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="980"
+  height="210"
+  viewBox="0 0 980 210"
+>
+  <style>
+    .contributor { cursor: pointer; }
+    .name {
+      font-size: 14px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-weight: bold;
+      fill: #6B6B6C;
+      text-anchor: middle;
+    }
+    .username {
+      font-size: 14px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-weight: bold;
+      fill: #6B6B6C;
+      text-anchor: middle;
+    }
+    .words {
+      font-size: 14px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-weight: bold;
+      fill: #6B6B6C;
+      text-anchor: middle;
+    }
+    .languages {
+      font-size: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      fill: #6B6B6C;
+      text-anchor: middle;
+    }
+    .project-link {
+      font-size: 14px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      fill: #3b82f6;
+      text-anchor: middle;
+    }
+    .project-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+  
+    <g class="contributor">
+      <defs>
+        <clipPath id="clip-90">
+          <circle cx="70" cy="70" r="50"/>
+        </clipPath>
+      </defs>
+      <title>LeonSong-DM</title>
+      <image 
+        x="20" 
+        y="20" 
+        width="100" 
+        height="100" 
+        xlink:href="data:image/jpeg;base64,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"
+        clip-path="url(#clip-90)"
+        preserveAspectRatio="xMidYMid slice"
+      />
+      <text x="70" y="150" class="name">LeonSong-DM</text>
+      <text x="70" y="170" class="words">2,169 words</text>
+    </g>
+    <g class="contributor">
+      <defs>
+        <clipPath id="clip-2">
+          <circle cx="210" cy="70" r="50"/>
+        </clipPath>
+      </defs>
+      <title>Haowei Hsu (hwhsu1231)</title>
+      <image 
+        x="160" 
+        y="20" 
+        width="100" 
+        height="100" 
+        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAA7EAAAOxAGVKw4bAAACv0lEQVR42u2dsU4yQRRGv5lQ0FgQ4vaU0FiRbeAVlMre1poYnsFYk2wsTCyt1MYH0EZKi6XcHrPZwoYEM/NXFmbXQp39QTgnoVmSe2HOztybLDMYSV6wNixDgAAEAAIQAAhAACAAAYAABAACEAAIQAAgAAFQL42QwYwxMsZs9YB57+W93zwBxhhdXV2p1+tttYA0TXVychJMQlABvV5P/X5/65cNY0wwAdQAijACAAG0obUyn8/1+PgYJFYURTo8PJS1n+8d55zu7++1WCyC5BkOh+p2u/+ntQ3xstb62Wzmq0iSxIfKE8exX61WpRyr1crHcRwsT5Ikld9lNpt5a22wPCxB1AAEAALogtZj31q1Wq1SRyNJb29vWi6XQfI0m03t7e2VrjvnVBSFnHO7KaDVaunp6Untdrv03ng81vX1dZA8x8fHuri4KF3P81yDwUB5nu/uDGi329rf36+8a0PRbDYrc3x8BmoARRgQgADYuSL8E7Is0+npaenZs/deWZYhoG4Wi4UuLy9ZggABCAAE0AXVRafTURzHwWIh4JucnZ1pPB6HmebWIuAng7bJA0cNQAAggC6oPpxzwR4VbnI92VgB5+fnur29DRJrNBppMpkg4DtkWabn5+cgsQ4ODqgBgAAEAAIowr8liiIdHR1VPpK8u7sLtj8AAV/Q6XQ0nU7VaHz+6O/v73p5eflzAliCEIAAQABd0Fpwzn350/BQewM+Yr2+vpau53m+1r0BaxdQFIUGg8GXGzRCcXNzo4eHh8oboCgKZkDdLJfLoDOKGkARBgQgAP5MER4Oh0qSJEisKIoquyZrrSaTSdDDOrZGQLfbrf3kEWutRqMRSxAgAAGAgN3rgrz3StN06wcsTdOgJ+caBfwzT44uXrMAoAYgABCAAEAAAgABCAAEIAAQgABAAAIAAQgABGwc/wBRjl+W9J6jBgAAAABJRU5ErkJggg=="
+        clip-path="url(#clip-2)"
+        preserveAspectRatio="xMidYMid slice"
+      />
+      <text x="210" y="150" class="name">Haowei Hsu</text>
+      <text x="210" y="170" class="username">(hwhsu1231)</text>
+      <text x="210" y="190" class="words">1,581 words</text>
+    </g>
+</svg>
