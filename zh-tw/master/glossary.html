@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta property="og:title" content="Glossary" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://psutil.io/glossary.html" />
+<meta property="og:site_name" content="psutil" />
+<meta property="og:description" content="anonymous memory, RAM used by the program that is not associated with any file (unlike the page cache), such as the heap, the stack, and other memory allocat..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://psutil.io/_images/social_previews/summary_glossary_7a02c396.png" />
+<meta property="og:image:alt" content="anonymous memory, RAM used by the program that is not associated with any file (unlike the page cache), such as the heap, the stack, and other memory allocat..." />
+<meta name="description" content="anonymous memory, RAM used by the program that is not associated with any file (unlike the page cache), such as the heap, the stack, and other memory allocat..." />
+<meta name="twitter:card" content="summary_large_image" />
+
+    <title>Glossary &#8212; psutil</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=29da98fa" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-codeautolink.css?v=b2176991" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/css/base.css?v=f08856fc" />
+    <link rel="stylesheet" type="text/css" href="_static/css/fonts.css?v=e753a5f7" />
+    <link rel="stylesheet" type="text/css" href="_static/css/fontawesome.css?v=b66fcbdb" />
+    <link rel="stylesheet" type="text/css" href="_static/css/typography.css?v=66ac06b9" />
+    <link rel="stylesheet" type="text/css" href="_static/css/admonitions.css?v=163ddbc1" />
+    <link rel="stylesheet" type="text/css" href="_static/css/api-signatures.css?v=f032e3fc" />
+    <link rel="stylesheet" type="text/css" href="_static/css/blog.css?v=2a308a50" />
+    <link rel="stylesheet" type="text/css" href="_static/css/code.css?v=0681a11b" />
+    <link rel="stylesheet" type="text/css" href="_static/css/dev-banner.css?v=6210bb1f" />
+    <link rel="stylesheet" type="text/css" href="_static/css/doc-icons.css?v=c22d5c40" />
+    <link rel="stylesheet" type="text/css" href="_static/css/footer.css?v=5d6b8d43" />
+    <link rel="stylesheet" type="text/css" href="_static/css/layout.css?v=dca717ce" />
+    <link rel="stylesheet" type="text/css" href="_static/css/left-sidebar.css?v=dd06a93c" />
+    <link rel="stylesheet" type="text/css" href="_static/css/prev-next.css?v=ca7d359d" />
+    <link rel="stylesheet" type="text/css" href="_static/css/print.css?v=f9febfdf" />
+    <link rel="stylesheet" type="text/css" href="_static/css/right-sidebar.css?v=bc13b617" />
+    <link rel="stylesheet" type="text/css" href="_static/css/search.css?v=bc2ce7bc" />
+    <link rel="stylesheet" type="text/css" href="_static/css/tables.css?v=c600f876" />
+    <link rel="stylesheet" type="text/css" href="_static/css/topbar.css?v=d6787661" />
+    <link rel="stylesheet" type="text/css" href="_static/css/home.css?v=3247c119" />
+    <script src="_static/documentation_options.js?v=685c57cb"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=35a8b989"></script>
+    <script src="_static/translations.js?v=cbf116e0"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script defer="defer" src="_static/js/back-to-top.js?v=01752a9c"></script>
+    <script defer="defer" src="_static/js/external-urls.js?v=ea4e66fd"></script>
+    <script defer="defer" src="_static/js/github-meta.js?v=3335eb90"></script>
+    <script defer="defer" src="_static/js/highlight-repl.js?v=5a308837"></script>
+    <script defer="defer" src="_static/js/home-install-copy.js?v=be638b0c"></script>
+    <script defer="defer" src="_static/js/right-toc.js?v=a13c1536"></script>
+    <script defer="defer" src="_static/js/search-dim.js?v=b004caf9"></script>
+    <script defer="defer" src="_static/js/search-shortcuts.js?v=6247adac"></script>
+    <script defer="defer" src="_static/js/shortcuts-help.js?v=61707f15"></script>
+    <script defer="defer" src="_static/js/sidebar-mobile.js?v=eb71acbb"></script>
+    <script defer="defer" src="_static/js/theme-toggle.js?v=f51f1c9b"></script>
+    <link rel="canonical" href="https://projects.localizethedocs.org/psutil-docs-l10n/glossary.html" />
+    <link rel="icon" href="_static/favicon.svg"/>
+    <link rel="author" title="關於這些文件" href="about.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜尋" href="search.html" />
+    <link rel="next" title="平臺支援" href="platform.html" />
+    <link rel="prev" title="Stdlib equivalents" href="stdlib-equivalents.html" />
+ 
+ 
+
+
+
+
+<link rel="apple-touch-icon" href="_static/images/logo-psutil.png">
+
+<script>
+(function() {
+    const html = document.documentElement;
+    html.classList.add('no-transition');
+    const saved = localStorage.getItem('psutil-sphinx-theme');
+    const theme = saved || (
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+    );
+    html.setAttribute('data-theme', theme);
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            html.classList.remove('no-transition');
+        });
+    });
+})();
+</script>
+
+
+<script data-goatcounter="https://psutil.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G7374TFB11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G7374TFB11');
+</script>
+ 
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  href="blog/atom.xml"
+  title="Blog"
+/>
+  
+<script type="text/javascript" src="ltd-provenance.js"></script>
+<script type="text/javascript" src="ltd-current.js"></script>
+<script type="text/javascript" src="../../ltd-config.js"></script>
+<script type="text/javascript" src="../../ltd-flyout.js"></script>
+
+  </head><body data-page="glossary">
+<header class="topbar no-visited" role="banner">
+  <div class="topbar-inner">
+    <button class="topbar-hamburger" id="sidebar-toggle"
+            type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button><a class="topbar-logo" href="index.html"><img src="_static/images/logo-psutil.svg" alt="">
+      <span>psutil</span>
+    </a>
+    <nav class="topbar-actions" aria-label="Site actions">
+      <a class="topbar-text" href="blog.html">Blog</a>
+      <button class="topbar-btn" id="theme-toggle"
+              type="button" title="Toggle dark mode (shift+D)" aria-label="Toggle theme">
+        <i class="fa-regular fa-moon" aria-hidden="true"></i>
+      </button>
+      <a class="topbar-link topbar-github"
+         href="https://github.com/giampaolo/psutil"
+         target="_blank" rel="noopener" title="GitHub" aria-label="GitHub repository">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+        <span class="topbar-stars" data-repo="giampaolo/psutil"></span>
+      </a>
+      <a class="topbar-version" data-repo="giampaolo/psutil"
+         href="https://pypi.org/project/psutil"
+         target="_blank" rel="noopener" title="PyPI" aria-label="PyPI release"></a>
+    </nav>
+  </div>
+</header>
+
+<div class="page">
+  <nav class="left-sidebar no-visited" aria-label="Main navigation">
+  <div class="search-box">
+    <form action="search.html" method="get" role="search">
+      <input id="search-input" type="text" name="q"
+             placeholder="搜尋" aria-label="Search docs"
+             autocomplete="off" autocorrect="off"
+             autocapitalize="off" spellcheck="false">
+      <span class="search-kbd" aria-hidden="true"><kbd>Ctrl</kbd>+<kbd>K</kbd></span>
+    </form>
+  </div>
+  
+<p class="caption" role="heading"><span class="caption-text">文件</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">安裝</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-overview.html">API 概覽</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API 參考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">常見問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">效能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recipes.html">Recipes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">參考</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="shell-equivalents.html">Shell equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stdlib-equivalents.html">Stdlib equivalents</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">詞彙表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platform.html">平臺支援</a></li>
+<li class="toctree-l1"><a class="reference internal" href="migration.html">遷移</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">關於</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adoption.html">誰在使用 psutil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alternatives.html">Alternatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funding.html">Funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">專案</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="blog.html">網誌</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">變更日誌</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timeline.html">時間線</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devguide.html">開發指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="genindex.html">General Index</a></li>
+</ul>
+
+</nav>
+  <main class="main" id="main-content" role="main">
+    
+    <div class="dev-banner" role="note">
+  You're reading the <strong>development</strong> version of the psutil
+  docs, which may describe unreleased changes. For the current release
+  see <a href="https://psutil.readthedocs.io/stable/">psutil.readthedocs.io/stable</a>.
+</div>
+    
+    <div class="article-with-toc">
+      <div class="article-column">
+        <article class="article">
+           <section id="glossary">
+<h1>Glossary<a class="headerlink" href="#glossary" title="連結到這個標頭">¶</a></h1>
+<dl class="glossary">
+<dt id="term-anonymous-memory">anonymous memory<a class="headerlink" href="#term-anonymous-memory" title="連結到這個項目">¶</a></dt><dd><p>RAM used by the program that is not associated with any file (unlike the
+<a class="reference internal" href="#term-page-cache"><span class="xref std std-term">page cache</span></a>), such as the <a class="reference internal" href="#term-heap"><span class="xref std std-term">heap</span></a>, the stack, and other
+memory allocated directly by the program (e.g. via <code class="docutils literal notranslate"><span class="pre">malloc()</span></code>).
+Anonymous pages have no on-disk counterpart and must be written to
+<a class="reference internal" href="#term-swap-memory"><span class="xref std std-term">swap memory</span></a> if evicted. Exposed by psutil via the <code class="ntuple-field docutils literal notranslate"><span class="pre">rss_anon</span></code>
+field of <a class="reference internal" href="api.html#psutil.Process.memory_info_ex" title="psutil.Process.memory_info_ex"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.memory_info_ex()</span></code></a> (total resident anonymous pages)
+and the <code class="ntuple-field docutils literal notranslate"><span class="pre">anonymous</span></code> field of <a class="reference internal" href="api.html#psutil.Process.memory_maps" title="psutil.Process.memory_maps"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.memory_maps()</span></code></a> (per
+mapping). Anonymous regions are also visible in the <code class="ntuple-field docutils literal notranslate"><span class="pre">path</span></code> column
+of <a class="reference internal" href="api.html#psutil.Process.memory_maps" title="psutil.Process.memory_maps"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.memory_maps()</span></code></a> as <code class="docutils literal notranslate"><span class="pre">&quot;[heap]&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;[stack]&quot;</span></code>, or an
+empty string.</p>
+</dd>
+<dt id="term-available-memory">available memory<a class="headerlink" href="#term-available-memory" title="連結到這個項目">¶</a></dt><dd><p>The amount of RAM that can be given to processes without the system going
+into <a class="reference internal" href="#term-swap-memory"><span class="xref std std-term">swap</span></a>. This is the right field to watch for
+memory pressure, not <code class="ntuple-field docutils literal notranslate"><span class="pre">free</span></code>. <code class="ntuple-field docutils literal notranslate"><span class="pre">free</span></code> is often deceptively low
+because the OS keeps recently freed pages as reclaimable cache; those pages
+are counted in <code class="ntuple-field docutils literal notranslate"><span class="pre">available</span></code> but not in <code class="ntuple-field docutils literal notranslate"><span class="pre">free</span></code>.
+A monitoring alert should fire on <code class="ntuple-field docutils literal notranslate"><span class="pre">available</span></code> (or <code class="ntuple-field docutils literal notranslate"><span class="pre">percent</span></code>)
+falling below a threshold, not on <code class="ntuple-field docutils literal notranslate"><span class="pre">free</span></code>. See <a class="reference internal" href="api.html#psutil.virtual_memory" title="psutil.virtual_memory"><code class="xref py py-func docutils literal notranslate"><span class="pre">virtual_memory()</span></code></a>.</p>
+</dd>
+<dt id="term-buffers">buffers<a class="headerlink" href="#term-buffers" title="連結到這個項目">¶</a></dt><dd><p>Kernel memory used to cache filesystem metadata such as
+superblocks, inodes, and directory entries. Distinct from the
+<a class="reference internal" href="#term-page-cache"><span class="xref std std-term">page cache</span></a>, which caches file <em>contents</em>.
+Like the page cache, buffer memory is reclaimable: the OS can
+free it under memory pressure.
+Reported as the <code class="ntuple-field docutils literal notranslate"><span class="pre">buffers</span></code> field of <a class="reference internal" href="api.html#psutil.virtual_memory" title="psutil.virtual_memory"><code class="xref py py-func docutils literal notranslate"><span class="pre">virtual_memory()</span></code></a>
+(Linux, BSD).</p>
+</dd>
+<dt id="term-busy_time">busy_time<a class="headerlink" href="#term-busy_time" title="連結到這個項目">¶</a></dt><dd><p>A <a class="reference internal" href="#term-cumulative-counter"><span class="xref std std-term">cumulative counter</span></a> (milliseconds) tracking the time a disk
+device spent actually performing I/O, as reported in the <code class="ntuple-field docutils literal notranslate"><span class="pre">busy_time</span></code>
+field of <a class="reference internal" href="api.html#psutil.disk_io_counters" title="psutil.disk_io_counters"><code class="xref py py-func docutils literal notranslate"><span class="pre">disk_io_counters()</span></code></a> (Linux and FreeBSD only). To use it,
+sample twice and divide the delta by elapsed time to get a utilization
+percentage (analogous to CPU percent but for disks). A value close to
+100% means the disk is saturated.</p>
+<div class="admonition seealso">
+<p class="admonition-title">請參閱</p>
+<p><a class="reference internal" href="recipes.html#recipe-disk-io-percent"><span class="std std-ref">Real-time disk I/O percent recipe</span></a></p>
+</div>
+</dd>
+<dt id="term-context-switch">context switch<a class="headerlink" href="#term-context-switch" title="連結到這個項目">¶</a></dt><dd><p>Occurs when the CPU stops executing one process or thread for another.
+Frequent switching can indicate high system
+load or thread contention. See <a class="reference internal" href="api.html#psutil.Process.num_ctx_switches" title="psutil.Process.num_ctx_switches"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.num_ctx_switches()</span></code></a>
+and <a class="reference internal" href="api.html#psutil.cpu_stats" title="psutil.cpu_stats"><code class="xref py py-func docutils literal notranslate"><span class="pre">cpu_stats()</span></code></a> (<code class="ntuple-field docutils literal notranslate"><span class="pre">ctx_switches</span></code> field).
+A <code class="ntuple-field docutils literal notranslate"><span class="pre">voluntary</span></code> context switch occurs when a process gives up the
+CPU, usually because it's waiting for something (I/O, a sleep, a mutex
+lock). High rates are normal for I/O-bound workloads (e.g. a web server)
+and usually point to I/O or locking as the bottleneck.
+An <code class="ntuple-field docutils literal notranslate"><span class="pre">involuntary</span></code> context switch occurs when the OS forcibly takes
+the CPU from the process. High rates mean the process has more work to do
+but is being kicked off the core. This usually indicates too many active
+threads/processes competing for too few CPU cores.</p>
+</dd>
+<dt id="term-CPU-affinity">CPU affinity<a class="headerlink" href="#term-CPU-affinity" title="連結到這個項目">¶</a></dt><dd><p>A property of a process (or thread) that restricts which
+<a class="reference internal" href="#term-logical-CPU"><span class="xref std std-term">logical CPUs</span></a> it is allowed to run on. For example,
+pinning a process to CPU 0 and CPU 1 prevents the OS scheduler from
+moving it to other cores. This could be useful, e.g., for benchmarking.
+See <a class="reference internal" href="api.html#psutil.Process.cpu_affinity" title="psutil.Process.cpu_affinity"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.cpu_affinity()</span></code></a>.</p>
+</dd>
+<dt id="term-cumulative-counter">cumulative counter<a class="headerlink" href="#term-cumulative-counter" title="連結到這個項目">¶</a></dt><dd><p>A field whose value only increases over time (since boot or process
+creation) and never resets. Examples include <a class="reference internal" href="api.html#psutil.cpu_times" title="psutil.cpu_times"><code class="xref py py-func docutils literal notranslate"><span class="pre">cpu_times()</span></code></a>,
+<a class="reference internal" href="api.html#psutil.disk_io_counters" title="psutil.disk_io_counters"><code class="xref py py-func docutils literal notranslate"><span class="pre">disk_io_counters()</span></code></a>, <a class="reference internal" href="api.html#psutil.net_io_counters" title="psutil.net_io_counters"><code class="xref py py-func docutils literal notranslate"><span class="pre">net_io_counters()</span></code></a>,
+<a class="reference internal" href="api.html#psutil.Process.io_counters" title="psutil.Process.io_counters"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.io_counters()</span></code></a>, and <a class="reference internal" href="api.html#psutil.Process.num_ctx_switches" title="psutil.Process.num_ctx_switches"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.num_ctx_switches()</span></code></a>.
+The raw value is rarely useful on its own; divide the delta between
+two samples by the elapsed time to get a meaningful rate (e.g.
+bytes per second, context switches per second).</p>
+</dd>
+<dt id="term-file-descriptor">file descriptor<a class="headerlink" href="#term-file-descriptor" title="連結到這個項目">¶</a></dt><dd><p>An integer handle used by UNIX processes to reference open files,
+sockets, pipes, and other I/O resources. On Windows the equivalent
+are <a class="reference internal" href="#term-handle"><span class="xref std std-term">handles</span></a>. Leaking file descriptors (opening without
+closing) eventually causes <code class="docutils literal notranslate"><span class="pre">EMFILE</span></code> / <code class="docutils literal notranslate"><span class="pre">Too</span> <span class="pre">many</span> <span class="pre">open</span> <span class="pre">files</span></code> errors.
+See <a class="reference internal" href="api.html#psutil.Process.num_fds" title="psutil.Process.num_fds"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.num_fds()</span></code></a> and <a class="reference internal" href="api.html#psutil.Process.open_files" title="psutil.Process.open_files"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.open_files()</span></code></a>.</p>
+</dd>
+<dt id="term-handle">handle<a class="headerlink" href="#term-handle" title="連結到這個項目">¶</a></dt><dd><p>On Windows, an opaque reference to a kernel object such as a file,
+thread, process, event or mutex. Handles are the Windows equivalent of
+UNIX <a class="reference internal" href="#term-file-descriptor"><span class="xref std std-term">file descriptors</span></a>. Each open handle
+consumes a small amount of kernel memory. Leaking / unclosed
+handles eventually causes <code class="docutils literal notranslate"><span class="pre">ERROR_NO_MORE_FILES</span></code> or similar errors. See
+<a class="reference internal" href="api.html#psutil.Process.num_handles" title="psutil.Process.num_handles"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.num_handles()</span></code></a>.</p>
+</dd>
+<dt id="term-hardware-interrupt">hardware interrupt<a class="headerlink" href="#term-hardware-interrupt" title="連結到這個項目">¶</a></dt><dd><p>A signal sent by a hardware device (disk controller, <a class="reference internal" href="#term-NIC"><span class="xref std std-term">NIC</span></a>, keyboard)
+to the CPU to request attention. Each interrupt briefly preempts
+whatever the CPU was doing. Reported as the <code class="ntuple-field docutils literal notranslate"><span class="pre">interrupts</span></code> field of
+<a class="reference internal" href="api.html#psutil.cpu_stats" title="psutil.cpu_stats"><code class="xref py py-func docutils literal notranslate"><span class="pre">cpu_stats()</span></code></a> and <code class="ntuple-field docutils literal notranslate"><span class="pre">irq</span></code> field of <a class="reference internal" href="api.html#psutil.cpu_times" title="psutil.cpu_times"><code class="xref py py-func docutils literal notranslate"><span class="pre">cpu_times()</span></code></a>.
+A very high rate may indicate a misbehaving device driver or a heavily
+loaded <a class="reference internal" href="#term-NIC"><span class="xref std std-term">NIC</span></a>. Also see <a class="reference internal" href="#term-soft-interrupt"><span class="xref std std-term">soft interrupt</span></a>.</p>
+</dd>
+<dt id="term-heap">heap<a class="headerlink" href="#term-heap" title="連結到這個項目">¶</a></dt><dd><p>The memory region managed by the platform's native C allocator
+(e.g. glibc's <code class="docutils literal notranslate"><span class="pre">malloc</span></code> on Linux, <code class="docutils literal notranslate"><span class="pre">jemalloc</span></code> on FreeBSD,
+<code class="docutils literal notranslate"><span class="pre">HeapAlloc</span></code> on Windows). When a C extension calls <code class="docutils literal notranslate"><span class="pre">malloc()</span></code>
+and never calls <code class="docutils literal notranslate"><span class="pre">free()</span></code>, the leaked bytes show up here but
+are not always visible to Python's memory tracking tools
+(<a class="reference external" href="https://docs.python.org/3/library/tracemalloc.html#module-tracemalloc" title="(in Python v3.14)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tracemalloc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/sys.html#sys.getsizeof" title="(in Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">sys.getsizeof()</span></code></a>) or <a class="reference internal" href="#term-RSS"><span class="xref std std-term">RSS</span></a> / <a class="reference internal" href="#term-VMS"><span class="xref std std-term">VMS</span></a>.
+<a class="reference internal" href="api.html#psutil.heap_info" title="psutil.heap_info"><code class="xref py py-func docutils literal notranslate"><span class="pre">heap_info()</span></code></a> exposes the current state of the heap, and
+<a class="reference internal" href="api.html#psutil.heap_trim" title="psutil.heap_trim"><code class="xref py py-func docutils literal notranslate"><span class="pre">heap_trim()</span></code></a> asks the allocator to release unused portions
+of it. Together they provide a way to detect memory leaks in C
+extensions that standard process-level metrics would otherwise miss.</p>
+</dd>
+<dt id="term-involuntary-context-switch">involuntary context switch<a class="headerlink" href="#term-involuntary-context-switch" title="連結到這個項目">¶</a></dt><dd><p>See <a class="reference internal" href="#term-context-switch"><span class="xref std std-term">context switch</span></a>.</p>
+</dd>
+<dt id="term-ionice">ionice<a class="headerlink" href="#term-ionice" title="連結到這個項目">¶</a></dt><dd><p>An I/O scheduling priority that controls how much disk bandwidth a
+process receives. On Linux three scheduling classes are supported:
+<a class="reference internal" href="api.html#psutil.IOPRIO_CLASS_RT" title="psutil.IOPRIO_CLASS_RT"><code class="xref py py-data docutils literal notranslate"><span class="pre">IOPRIO_CLASS_RT</span></code></a> (real-time), <a class="reference internal" href="api.html#psutil.IOPRIO_CLASS_BE" title="psutil.IOPRIO_CLASS_BE"><code class="xref py py-data docutils literal notranslate"><span class="pre">IOPRIO_CLASS_BE</span></code></a>
+(best-effort, the default), and <a class="reference internal" href="api.html#psutil.IOPRIO_CLASS_IDLE" title="psutil.IOPRIO_CLASS_IDLE"><code class="xref py py-data docutils literal notranslate"><span class="pre">IOPRIO_CLASS_IDLE</span></code></a>. See
+<a class="reference internal" href="api.html#psutil.Process.ionice" title="psutil.Process.ionice"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.ionice()</span></code></a>.</p>
+</dd>
+<dt id="term-iowait">iowait<a class="headerlink" href="#term-iowait" title="連結到這個項目">¶</a></dt><dd><p>A CPU time field (Linux, SunOS, AIX) measuring time spent by the CPU
+waiting for I/O operations to complete. High iowait indicates a
+disk or network bottleneck. It is reported as part of
+<a class="reference internal" href="api.html#psutil.cpu_times" title="psutil.cpu_times"><code class="xref py py-func docutils literal notranslate"><span class="pre">cpu_times()</span></code></a> but is <em>not</em> included in the idle counter.
+To get it as a percentage: <code class="docutils literal notranslate"><span class="pre">psutil.cpu_times_percent(interval=1).iowait</span></code>.
+Note that this is a CPU metric, not a disk metric: it measures how much
+CPU time is wasted waiting, not how busy the disk is. See also
+<a class="reference internal" href="#term-busy_time"><span class="xref std std-term">busy_time</span></a> for actual disk utilization.</p>
+</dd>
+<dt id="term-logical-CPU">logical CPU<a class="headerlink" href="#term-logical-CPU" title="連結到這個項目">¶</a></dt><dd><p>A CPU as seen by the operating system scheduler. On systems with
+<em>hyper-threading</em> each physical core exposes two logical CPUs, so a
+4-core hyper-threaded chip has 8 logical CPUs. This is the count
+returned by <a class="reference internal" href="api.html#psutil.cpu_count" title="psutil.cpu_count"><code class="xref py py-func docutils literal notranslate"><span class="pre">cpu_count()</span></code></a> (the default) and the number of
+entries returned by <code class="docutils literal notranslate"><span class="pre">cpu_percent(percpu=True)</span></code>. See also
+<a class="reference internal" href="#term-physical-CPU"><span class="xref std std-term">physical CPU</span></a>.</p>
+</dd>
+<dt id="term-mapped-memory">mapped memory<a class="headerlink" href="#term-mapped-memory" title="連結到這個項目">¶</a></dt><dd><p>A region of a process's virtual address space typically created via
+<code class="docutils literal notranslate"><span class="pre">mmap()</span></code>. Mappings can be file-backed (e.g. shared libraries,
+memory-mapped files) or <a class="reference internal" href="#term-anonymous-memory"><span class="xref std std-term">anonymous</span></a>.
+Each mapping has its own permissions and memory accounting fields
+(<a class="reference internal" href="#term-RSS"><span class="xref std std-term">RSS</span></a>, <a class="reference internal" href="#term-PSS"><span class="xref std std-term">PSS</span></a>, private / shared pages).
+See <a class="reference internal" href="api.html#psutil.Process.memory_maps" title="psutil.Process.memory_maps"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.memory_maps()</span></code></a>.</p>
+</dd>
+<dt id="term-NIC">NIC<a class="headerlink" href="#term-NIC" title="連結到這個項目">¶</a></dt><dd><p><em>Network Interface Card</em>, a hardware or virtual network interface.
+psutil uses this term when referring to per-interface network
+statistics. See <a class="reference internal" href="api.html#psutil.net_if_addrs" title="psutil.net_if_addrs"><code class="xref py py-func docutils literal notranslate"><span class="pre">net_if_addrs()</span></code></a> and <a class="reference internal" href="api.html#psutil.net_if_stats" title="psutil.net_if_stats"><code class="xref py py-func docutils literal notranslate"><span class="pre">net_if_stats()</span></code></a>.</p>
+</dd>
+<dt id="term-nice">nice<a class="headerlink" href="#term-nice" title="連結到這個項目">¶</a></dt><dd><p>A process priority value that influences how much CPU time the OS
+scheduler gives to a process. Lower nice values mean higher priority. The
+range is −20 (highest priority) to 19 (lowest) on UNIX; on Windows the
+concept maps to <a class="reference internal" href="api.html#const-proc-prio"><span class="std std-ref">priority constants</span></a>. See
+<a class="reference internal" href="api.html#psutil.Process.nice" title="psutil.Process.nice"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.nice()</span></code></a>.</p>
+</dd>
+<dt id="term-page-cache">page cache<a class="headerlink" href="#term-page-cache" title="連結到這個項目">¶</a></dt><dd><p>RAM used to cache data of regular files on disk.
+When a process reads a file, the data stays in the page cache, and when
+it writes, the data is first stored in the cache before being written to
+disk. Subsequent reads or writes can be served from RAM without disk I/O,
+making access fast. The OS reclaims page cache automatically under memory
+pressure, so a large cache is healthy. Shown as the <code class="ntuple-field docutils literal notranslate"><span class="pre">cached</span></code> field
+of <a class="reference internal" href="api.html#psutil.virtual_memory" title="psutil.virtual_memory"><code class="xref py py-func docutils literal notranslate"><span class="pre">virtual_memory()</span></code></a> on Linux/BSD.</p>
+</dd>
+<dt id="term-page-fault">page fault<a class="headerlink" href="#term-page-fault" title="連結到這個項目">¶</a></dt><dd><p>An event that occurs when a process accesses a virtual memory page that
+is not currently mapped in physical RAM. A <code class="ntuple-field docutils literal notranslate"><span class="pre">minor</span></code> fault occurs
+when a page is already in physical RAM (e.g., in the <a class="reference internal" href="#term-page-cache"><span class="xref std std-term">page cache</span></a>
+or other <a class="reference internal" href="#term-shared-memory"><span class="xref std std-term">shared memory</span></a>), but it's not yet mapped into the
+process's virtual address space, so no disk I/O is required (fast). A
+<code class="ntuple-field docutils literal notranslate"><span class="pre">major</span></code> fault requires reading the page from disk, and is
+significantly more expensive. Many major faults may indicate memory
+pressure or excessive swapping. See <a class="reference internal" href="api.html#psutil.Process.page_faults" title="psutil.Process.page_faults"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.page_faults()</span></code></a>.</p>
+</dd>
+<dt id="term-peak_rss">peak_rss<a class="headerlink" href="#term-peak_rss" title="連結到這個項目">¶</a></dt><dd><p>The highest <a class="reference internal" href="#term-RSS"><span class="xref std std-term">RSS</span></a> value a process has ever reached since it
+started (memory high-water mark). Available via
+<a class="reference internal" href="api.html#psutil.Process.memory_info" title="psutil.Process.memory_info"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.memory_info()</span></code></a> (BSD, Windows) and
+<a class="reference internal" href="api.html#psutil.Process.memory_info_ex" title="psutil.Process.memory_info_ex"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.memory_info_ex()</span></code></a> (Linux, macOS). Useful for capacity
+planning and leak detection: if <code class="ntuple-field docutils literal notranslate"><span class="pre">peak_rss</span></code> keeps growing across
+successive runs or over time, the process is likely leaking memory.
+See also <a class="reference internal" href="#term-peak_vms"><span class="xref std std-term">peak_vms</span></a>.</p>
+</dd>
+<dt id="term-peak_vms">peak_vms<a class="headerlink" href="#term-peak_vms" title="連結到這個項目">¶</a></dt><dd><p>The highest <a class="reference internal" href="#term-VMS"><span class="xref std std-term">VMS</span></a> value a process has ever reached since it
+started. Available via <a class="reference internal" href="api.html#psutil.Process.memory_info_ex" title="psutil.Process.memory_info_ex"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.memory_info_ex()</span></code></a> (Linux) and
+<a class="reference internal" href="api.html#psutil.Process.memory_info" title="psutil.Process.memory_info"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.memory_info()</span></code></a> (Windows). On Windows this maps to
+<code class="docutils literal notranslate"><span class="pre">PeakPagefileUsage</span></code> (peak <a class="reference internal" href="#term-private-memory"><span class="xref std std-term">private</span></a> committed
+memory), which is not the same as UNIX VMS. See also <a class="reference internal" href="#term-peak_rss"><span class="xref std std-term">peak_rss</span></a>.</p>
+</dd>
+<dt id="term-physical-CPU">physical CPU<a class="headerlink" href="#term-physical-CPU" title="連結到這個項目">¶</a></dt><dd><p>An actual hardware CPU core on the motherboard, as opposed to a
+<a class="reference internal" href="#term-logical-CPU"><span class="xref std std-term">logical CPU</span></a>. A single physical core may appear as multiple
+logical CPUs when hyper-threading is enabled. The physical count is
+returned by <code class="docutils literal notranslate"><span class="pre">cpu_count(logical=False)</span></code>.</p>
+</dd>
+<dt id="term-private-memory">private memory<a class="headerlink" href="#term-private-memory" title="連結到這個項目">¶</a></dt><dd><p>Memory pages not shared with any other process, such as the
+<a class="reference internal" href="#term-heap"><span class="xref std std-term">heap</span></a>, the stack, and other allocations made directly by the
+program, e.g. via <code class="docutils literal notranslate"><span class="pre">malloc()</span></code>.
+<a class="reference internal" href="#term-USS"><span class="xref std std-term">USS</span></a>, returned by <a class="reference internal" href="api.html#psutil.Process.memory_footprint" title="psutil.Process.memory_footprint"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.memory_footprint()</span></code></a>, measures
+exactly the private memory of a process, that is the bytes that would be
+freed if the process exited. At a per-mapping level, the
+<code class="ntuple-field docutils literal notranslate"><span class="pre">private_clean</span></code> and <code class="ntuple-field docutils literal notranslate"><span class="pre">private_dirty</span></code> fields of
+<a class="reference internal" href="api.html#psutil.Process.memory_maps" title="psutil.Process.memory_maps"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.memory_maps()</span></code></a> (Linux) and the <code class="ntuple-field docutils literal notranslate"><span class="pre">private</span></code> field (FreeBSD)
+break it down further.</p>
+</dd>
+<dt id="term-PSS">PSS<a class="headerlink" href="#term-PSS" title="連結到這個項目">¶</a></dt><dd><p><em>Proportional Set Size</em>, the amount of RAM used by a process,
+where <a class="reference internal" href="#term-shared-memory"><span class="xref std std-term">shared memory</span></a> pages are divided proportionally among all
+processes that map them. PSS gives a fairer per-process memory estimate
+than <a class="reference internal" href="#term-RSS"><span class="xref std std-term">RSS</span></a> when shared libraries are involved. Available on Linux
+via <a class="reference internal" href="api.html#psutil.Process.memory_footprint" title="psutil.Process.memory_footprint"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.memory_footprint()</span></code></a>.</p>
+</dd>
+<dt id="term-resource-limit">resource limit<a class="headerlink" href="#term-resource-limit" title="連結到這個項目">¶</a></dt><dd><p>A per-process cap on a system resource enforced by the kernel (POSIX
+<a class="reference internal" href="api.html#psutil.RLIM_INFINITY" title="psutil.RLIM_INFINITY"><code class="xref py py-data docutils literal notranslate"><span class="pre">RLIMIT_*</span></code></a> constants).
+Each limit has a <em>soft</em> value (the current enforcement threshold, which
+the process may raise up to the hard limit) and a <em>hard</em> value
+(the ceiling, settable only by root).
+Common limits include <a class="reference internal" href="api.html#psutil.RLIM_INFINITY" title="psutil.RLIM_INFINITY"><code class="xref py py-data docutils literal notranslate"><span class="pre">RLIM_INFINITY</span></code></a> (open file descriptors),
+<a class="reference internal" href="api.html#psutil.RLIMIT_AS" title="psutil.RLIMIT_AS"><code class="xref py py-data docutils literal notranslate"><span class="pre">RLIMIT_AS</span></code></a> (virtual address space), and <a class="reference internal" href="api.html#psutil.RLIMIT_CPU" title="psutil.RLIMIT_CPU"><code class="xref py py-data docutils literal notranslate"><span class="pre">RLIMIT_CPU</span></code></a>
+(CPU time in seconds). See <a class="reference internal" href="api.html#psutil.Process.rlimit" title="psutil.Process.rlimit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.rlimit()</span></code></a>.</p>
+</dd>
+<dt id="term-RSS">RSS<a class="headerlink" href="#term-RSS" title="連結到這個項目">¶</a></dt><dd><p><em>Resident Set Size</em>, the amount of physical RAM currently used by a
+process. This includes <a class="reference internal" href="#term-shared-memory"><span class="xref std std-term">shared memory</span></a> pages. It is the most
+commonly reported memory metric (shown as <code class="docutils literal notranslate"><span class="pre">RES</span></code> in <code class="docutils literal notranslate"><span class="pre">top</span></code>), but can be
+misleading because <a class="reference internal" href="#term-shared-memory"><span class="xref std std-term">shared memory</span></a> is counted in full for each
+process that maps it.
+See <a class="reference internal" href="api.html#psutil.Process.memory_info" title="psutil.Process.memory_info"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.memory_info()</span></code></a>.</p>
+</dd>
+<dt id="term-shared-memory">shared memory<a class="headerlink" href="#term-shared-memory" title="連結到這個項目">¶</a></dt><dd><p>Memory pages mapped by more than one process at the same time. The most
+common example is shared libraries (e.g. <code class="docutils literal notranslate"><span class="pre">libc.so</span></code>): the OS loads them
+once and lets every process that needs them map the same physical pages,
+saving RAM. Shared pages are counted in full in <a class="reference internal" href="#term-RSS"><span class="xref std std-term">RSS</span></a> for every
+process that maps them. <a class="reference internal" href="#term-PSS"><span class="xref std std-term">PSS</span></a> corrects for this by splitting each
+shared page proportionally among the processes that use it.
+See also <a class="reference internal" href="#term-private-memory"><span class="xref std std-term">private memory</span></a>.</p>
+<p>Exposed by psutil as the <code class="ntuple-field docutils literal notranslate"><span class="pre">shared</span></code> field of <a class="reference internal" href="api.html#psutil.virtual_memory" title="psutil.virtual_memory"><code class="xref py py-func docutils literal notranslate"><span class="pre">virtual_memory()</span></code></a> and
+<a class="reference internal" href="api.html#psutil.Process.memory_info" title="psutil.Process.memory_info"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.memory_info()</span></code></a> (Linux), the <code class="ntuple-field docutils literal notranslate"><span class="pre">rss_shmem</span></code> field of
+<a class="reference internal" href="api.html#psutil.Process.memory_info_ex" title="psutil.Process.memory_info_ex"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.memory_info_ex()</span></code></a> (Linux), and the <code class="ntuple-field docutils literal notranslate"><span class="pre">shared_clean</span></code> /
+<code class="ntuple-field docutils literal notranslate"><span class="pre">shared_dirty</span></code> fields of <a class="reference internal" href="api.html#psutil.Process.memory_maps" title="psutil.Process.memory_maps"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.memory_maps()</span></code></a> (Linux).</p>
+</dd>
+<dt id="term-soft-interrupt">soft interrupt<a class="headerlink" href="#term-soft-interrupt" title="連結到這個項目">¶</a></dt><dd><p>Deferred work scheduled by a <a class="reference internal" href="#term-hardware-interrupt"><span class="xref std std-term">hardware interrupt</span></a> handler to
+run later in a less time-critical context (e.g. network packet
+processing, block I/O completion). Using soft interrupts lets the
+hardware interrupt return quickly while the heavier processing
+happens shortly after. Reported as the <code class="ntuple-field docutils literal notranslate"><span class="pre">soft_interrupts</span></code> field of
+<a class="reference internal" href="api.html#psutil.cpu_stats" title="psutil.cpu_stats"><code class="xref py py-func docutils literal notranslate"><span class="pre">cpu_stats()</span></code></a>. A high rate usually points to heavy network or
+disk I/O throughput rather than a hardware problem.</p>
+</dd>
+<dt id="term-swap-memory">swap memory<a class="headerlink" href="#term-swap-memory" title="連結到這個項目">¶</a></dt><dd><p>Disk space used as an extension of physical RAM. When the OS runs out of
+RAM, it moves memory to disk to free space (<a class="reference internal" href="#term-swap-out"><span class="xref std std-term">swap-out</span></a>), and moves
+it back into RAM (<a class="reference internal" href="#term-swap-in"><span class="xref std std-term">swap-in</span></a>) when a process needs it. If RAM is
+full, the OS may first swap out other pages to make room. Swap prevents
+out-of-memory crashes, but is much slower than RAM, so heavy swapping can
+significantly degrade performance. See <a class="reference internal" href="api.html#psutil.swap_memory" title="psutil.swap_memory"><code class="xref py py-func docutils literal notranslate"><span class="pre">swap_memory()</span></code></a> and
+<a class="reference internal" href="recipes.html#recipe-swap-activity"><span class="std std-ref">swap activity recipe</span></a>.</p>
+</dd>
+<dt id="term-swap-in">swap-in<a class="headerlink" href="#term-swap-in" title="連結到這個項目">¶</a></dt><dd><p>Memory moved from disk (<a class="reference internal" href="#term-swap-memory"><span class="xref std std-term">swap</span></a>) back into RAM.
+Reported as the <code class="ntuple-field docutils literal notranslate"><span class="pre">sin</span></code> <a class="reference internal" href="#term-cumulative-counter"><span class="xref std std-term">cumulative counter</span></a> of
+<a class="reference internal" href="api.html#psutil.swap_memory" title="psutil.swap_memory"><code class="xref py py-func docutils literal notranslate"><span class="pre">swap_memory()</span></code></a>. A non-zero <code class="ntuple-field docutils literal notranslate"><span class="pre">sin</span></code> rate usually means the system
+is bringing memory back into RAM for processes to use. See also
+<a class="reference internal" href="#term-swap-out"><span class="xref std std-term">swap-out</span></a>.</p>
+</dd>
+<dt id="term-swap-out">swap-out<a class="headerlink" href="#term-swap-out" title="連結到這個項目">¶</a></dt><dd><p>Memory moved from RAM to disk (<a class="reference internal" href="#term-swap-memory"><span class="xref std std-term">swap</span></a>).
+Reported as the <code class="ntuple-field docutils literal notranslate"><span class="pre">sout</span></code> <a class="reference internal" href="#term-cumulative-counter"><span class="xref std std-term">cumulative counter</span></a> of
+<a class="reference internal" href="api.html#psutil.swap_memory" title="psutil.swap_memory"><code class="xref py py-func docutils literal notranslate"><span class="pre">swap_memory()</span></code></a>.  A non-zero <code class="ntuple-field docutils literal notranslate"><span class="pre">sout</span></code> rate indicates memory
+pressure: the system is running low on RAM and must move data to disk,
+which can slow performance. See also <a class="reference internal" href="#term-swap-in"><span class="xref std std-term">swap-in</span></a>.</p>
+<div class="admonition seealso">
+<p class="admonition-title">請參閱</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="recipes.html#recipe-swap-activity"><span class="std std-ref">swap activity recipe</span></a></p></li>
+<li><p><a class="reference internal" href="#term-thrashing"><span class="xref std std-term">thrashing</span></a></p></li>
+</ul>
+</div>
+</dd>
+<dt id="term-thrashing">thrashing<a class="headerlink" href="#term-thrashing" title="連結到這個項目">¶</a></dt><dd><p>A condition where the system spends more time moving memory between RAM
+and disk (<a class="reference internal" href="#term-swap-memory"><span class="xref std std-term">swap</span></a>) than doing actual work, because memory
+demand exceeds available RAM. The symptom is high and sustained rates on
+both <code class="ntuple-field docutils literal notranslate"><span class="pre">sin</span></code> and <code class="ntuple-field docutils literal notranslate"><span class="pre">sout</span></code> from <a class="reference internal" href="api.html#psutil.swap_memory" title="psutil.swap_memory"><code class="xref py py-func docutils literal notranslate"><span class="pre">swap_memory()</span></code></a>.
+As a result, the system becomes very slow or unresponsive. CPU utilization
+may look low while everything is waiting on disk I/O.</p>
+</dd>
+<dt id="term-USS">USS<a class="headerlink" href="#term-USS" title="連結到這個項目">¶</a></dt><dd><p><em>Unique Set Size</em>, the <a class="reference internal" href="#term-private-memory"><span class="xref std std-term">private memory</span></a> of a process, that belongs
+exclusively to it, and which would be freed if it exited. It excludes
+<a class="reference internal" href="#term-shared-memory"><span class="xref std std-term">shared memory</span></a> pages entirely, making it the most accurate
+single-process memory metric. Available on Linux, macOS, and Windows via
+<a class="reference internal" href="api.html#psutil.Process.memory_footprint" title="psutil.Process.memory_footprint"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.memory_footprint()</span></code></a>.</p>
+</dd>
+<dt id="term-VMS">VMS<a class="headerlink" href="#term-VMS" title="連結到這個項目">¶</a></dt><dd><p><em>Virtual Memory Size</em>, the total virtual address space reserved by a
+process, including mapped files, <a class="reference internal" href="#term-shared-memory"><span class="xref std std-term">shared memory</span></a>, stack, and
+<a class="reference internal" href="#term-heap"><span class="xref std std-term">heap</span></a>, regardless of whether those pages are currently in RAM or
+in <a class="reference internal" href="#term-swap-memory"><span class="xref std std-term">swap memory</span></a>. VMS is almost always much larger than <a class="reference internal" href="#term-RSS"><span class="xref std std-term">RSS</span></a>
+because most virtual pages are never actually loaded into RAM. See
+<a class="reference internal" href="api.html#psutil.Process.memory_info" title="psutil.Process.memory_info"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.memory_info()</span></code></a>.</p>
+</dd>
+<dt id="term-voluntary-context-switch">voluntary context switch<a class="headerlink" href="#term-voluntary-context-switch" title="連結到這個項目">¶</a></dt><dd><p>See <a class="reference internal" href="#term-context-switch"><span class="xref std std-term">context switch</span></a>.</p>
+</dd>
+<dt id="term-zombie-process">zombie process<a class="headerlink" href="#term-zombie-process" title="連結到這個項目">¶</a></dt><dd><p>A process that has exited but whose entry remains in the process
+table until its parent calls <code class="docutils literal notranslate"><span class="pre">wait()</span></code>. Zombies hold a PID but consume
+no CPU or memory.</p>
+<div class="admonition seealso">
+<p class="admonition-title">請參閱</p>
+<p><a class="reference internal" href="faq.html#faq-zombie-process"><span class="std std-ref">What is a zombie process?</span></a></p>
+</div>
+</dd>
+</dl>
+</section>
+
+<div class="section ablog__blog_comments">
+   
+</div>
+
+        </article>
+        
+<nav class="prev-next no-visited" aria-label="Previous and next pages">
+  
+  <a class="prev-next-prev" href="stdlib-equivalents.html" rel="prev">
+    <span class="prev-next-arrow" aria-hidden="true">&lsaquo;</span>
+    <span class="prev-next-block">
+      <span class="prev-next-label">Previous</span>
+      <span class="prev-next-title">Stdlib equivalents</span>
+    </span>
+  </a>
+  
+  
+  <a class="prev-next-next" href="platform.html" rel="next">
+    <span class="prev-next-block">
+      <span class="prev-next-label">Next</span>
+      <span class="prev-next-title">平臺支援</span>
+    </span>
+    <span class="prev-next-arrow" aria-hidden="true">&rsaquo;</span>
+  </a>
+  
+</nav>
+
+      </div>
+
+      <aside class="right-sidebar right-sidebar--glossary"
+       data-toc-mode="glossary"
+       aria-label="On this page">
+  <div class="right-sidebar-title">On this page</div>
+  <ul class="glossary-toc">
+    <li><a href="#term-anonymous-memory">anonymous memory</a></li>
+    <li><a href="#term-available-memory">available memory</a></li>
+    <li><a href="#term-buffers">buffers</a></li>
+    <li><a href="#term-busy_time">busy_time</a></li>
+    <li><a href="#term-context-switch">context switch</a></li>
+    <li><a href="#term-CPU-affinity">CPU affinity</a></li>
+    <li><a href="#term-cumulative-counter">cumulative counter</a></li>
+    <li><a href="#term-file-descriptor">file descriptor</a></li>
+    <li><a href="#term-handle">handle</a></li>
+    <li><a href="#term-hardware-interrupt">hardware interrupt</a></li>
+    <li><a href="#term-heap">heap</a></li>
+    <li><a href="#term-involuntary-context-switch">involuntary context switch</a></li>
+    <li><a href="#term-ionice">ionice</a></li>
+    <li><a href="#term-iowait">iowait</a></li>
+    <li><a href="#term-logical-CPU">logical CPU</a></li>
+    <li><a href="#term-mapped-memory">mapped memory</a></li>
+    <li><a href="#term-NIC">NIC</a></li>
+    <li><a href="#term-nice">nice</a></li>
+    <li><a href="#term-page-cache">page cache</a></li>
+    <li><a href="#term-page-fault">page fault</a></li>
+    <li><a href="#term-peak_rss">peak_rss</a></li>
+    <li><a href="#term-peak_vms">peak_vms</a></li>
+    <li><a href="#term-physical-CPU">physical CPU</a></li>
+    <li><a href="#term-private-memory">private memory</a></li>
+    <li><a href="#term-PSS">PSS</a></li>
+    <li><a href="#term-resource-limit">resource limit</a></li>
+    <li><a href="#term-RSS">RSS</a></li>
+    <li><a href="#term-shared-memory">shared memory</a></li>
+    <li><a href="#term-soft-interrupt">soft interrupt</a></li>
+    <li><a href="#term-swap-memory">swap memory</a></li>
+    <li><a href="#term-swap-in">swap-in</a></li>
+    <li><a href="#term-swap-out">swap-out</a></li>
+    <li><a href="#term-thrashing">thrashing</a></li>
+    <li><a href="#term-USS">USS</a></li>
+    <li><a href="#term-VMS">VMS</a></li>
+    <li><a href="#term-voluntary-context-switch">voluntary context switch</a></li>
+    <li><a href="#term-zombie-process">zombie process</a></li>
+  </ul>
+</aside>
+    </div>
+  </main>
+
+  
+  <footer class="footer" role="contentinfo">
+  <div class="footer-content">
+    <div class="footer-text">
+      <span><a class="footer-egg" href="404.html" title="🥚">&copy;</a> 2009-2026 Giampaolo Rodola</span>
+      <span><a href="about.html"
+               title="About this documentation site">About</a></span>
+      <span><a href="https://github.com/giampaolo/psutil/edit/master/docs/glossary.rst"
+               rel="noopener noreferrer" target="_blank"
+               title="Edit this page on GitHub">Edit on GitHub</a></span>
+    </div>
+    <div class="footer-icons">
+      <a class="footer-github" href="https://github.com/giampaolo/psutil"
+         title="psutil on GitHub" aria-label="psutil on GitHub"
+         rel="noopener noreferrer" target="_blank">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+      </a>
+      <a class="footer-pypi" href="https://pypi.org/project/psutil/"
+         title="psutil on PyPI" aria-label="psutil on PyPI"
+         rel="noopener noreferrer" target="_blank">
+        <i class="fa-brands fa-python" aria-hidden="true"></i>
+      </a>
+      <a class="footer-rss" href="blog/atom.xml"
+         title="Subscribe to blog (Atom feed)" aria-label="Subscribe to blog">
+        <span class="rss-icon"></span>
+      </a>
+    </div>
+  </div>
+</footer>
+</div>
+
+  </body>
+</html>
