@@ -34,7 +34,7 @@ msgstr ""
 
 #: ../../../shell-equivalents.rst:10
 msgid ":doc:`alternatives`"
-msgstr ""
+msgstr ":doc:`alternatives`"
 
 #: ../../../shell-equivalents.rst:13
 msgid "System-wide functions"

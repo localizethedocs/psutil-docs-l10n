@@ -180,6 +180,13 @@ msgid ""
 "except (psutil.NoSuchProcess, psutil.AccessDenied):\n"
 "    pass"
 msgstr ""
+"import psutil\n"
+"\n"
+"try:\n"
+"    p = psutil.Process(pid)\n"
+"    print(p.name(), p.status())\n"
+"except (psutil.NoSuchProcess, psutil.AccessDenied):\n"
+"    pass"
 
 #: ../../../faq.rst:125
 msgid ""

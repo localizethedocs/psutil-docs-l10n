@@ -32,11 +32,11 @@ msgstr ""
 
 #: ../../../stdlib-equivalents.rst:11
 msgid ":doc:`shell-equivalents`"
-msgstr ""
+msgstr ":doc:`shell-equivalents`"
 
 #: ../../../stdlib-equivalents.rst:12
 msgid ":doc:`alternatives`"
-msgstr ""
+msgstr ":doc:`alternatives`"
 
 #: ../../../stdlib-equivalents.rst:15
 msgid "System-wide functions"

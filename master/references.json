@@ -16,9 +16,9 @@
       "branch" : "master",
       "commit" : 
       {
-        "date" : "2026-10-05 12:38:57 +0200",
-        "hash" : "da3d2be3b91368968332aa15c9c08acf28b84124",
-        "title" : "Doc: update adoptions page"
+        "date" : "2026-10-08 16:05:25 +0200",
+        "hash" : "482856954e42496499730ded1b1b264039cf6afc",
+        "title" : "[FreeBSD, OpenBSD] net_io_counters() dropout is no longer always 0 (#3023)"
       }
     },
     "zh_TW" : 
@@ -26,9 +26,9 @@
       "branch" : "master",
       "commit" : 
       {
-        "date" : "2026-10-05 12:38:57 +0200",
-        "hash" : "da3d2be3b91368968332aa15c9c08acf28b84124",
-        "title" : "Doc: update adoptions page"
+        "date" : "2026-10-08 16:05:25 +0200",
+        "hash" : "482856954e42496499730ded1b1b264039cf6afc",
+        "title" : "[FreeBSD, OpenBSD] net_io_counters() dropout is no longer always 0 (#3023)"
       }
     }
   },
