@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-05 17:28+0000\n"
+"POT-Creation-Date: 2026-10-26 15:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -105,18 +105,18 @@ msgid ""
 "import psutil\n"
 "\n"
 "for p in psutil.process_iter([\"name\", \"status\"]):\n"
-"    print(p.pid, p.name(), p.status())  # return cached values, never raise"
+"    print(p.pid, p.snapshot.name, p.snapshot.status)  # no try/except needed"
 msgstr ""
 
 #: ../../../performance.rst:77
 msgid ""
 ":func:`process_iter(attrs=...) <psutil.process_iter>` is effectively "
-"equivalent to using :meth:`Process.oneshot` on each process. Using :func:"
-"`process_iter` also saves you from **race conditions** (e.g. if a process "
-"disappears while iterating), since :exc:`NoSuchProcess` and :exc:"
-"`AccessDenied` exceptions are handled internally. A typical use case is to "
-"fetch all process attrs except the slow ones (see :ref:`perf-api-speed` "
-"table below):"
+"equivalent to using :meth:`Process.oneshot` on each process. "
+"Using :func:`process_iter` also saves you from **race conditions** (e.g. if "
+"a process disappears while iterating), since :exc:`NoSuchProcess` "
+"and :exc:`AccessDenied` exceptions are handled internally. A typical use "
+"case is to fetch all process attrs except the slow ones (see :ref:`perf-api-"
+"speed` table below):"
 msgstr ""
 
 #: ../../../performance.rst:84
@@ -134,9 +134,9 @@ msgstr ""
 
 #: ../../../performance.rst:96
 msgid ""
-"Here's a list of method groups for each platform which can benefit from :"
-"meth:`Process.oneshot`. Methods in each group (in the same comma-separated "
-"list) share the same underlying system call."
+"Here's a list of method groups for each platform which can benefit "
+"from :meth:`Process.oneshot`. Methods in each group (in the same comma-"
+"separated list) share the same underlying system call."
 msgstr ""
 
 #: ../../../performance.rst:100
@@ -150,10 +150,10 @@ msgstr ""
 msgid ""
 "Additionally, some methods are computed from other methods, so on every "
 "platform :meth:`Process.oneshot` also speeds up :meth:`~Process.cpu_percent` "
-"(from :meth:`~Process.cpu_times`), :meth:`~Process.memory_percent` (from :"
-"meth:`~Process.memory_info`), :meth:`~Process.parent` and :meth:`~Process."
-"parents` (from :meth:`~Process.ppid`) and, on POSIX, :meth:`~Process."
-"username` (from :meth:`~Process.uids`)."
+"(from :meth:`~Process.cpu_times`), :meth:`~Process.memory_percent` "
+"(from :meth:`~Process.memory_info`), :meth:`~Process.parent` "
+"and :meth:`~Process.parents` (from :meth:`~Process.ppid`) and, on "
+"POSIX, :meth:`~Process.username` (from :meth:`~Process.uids`)."
 msgstr ""
 
 #: ../../../performance.rst:111
@@ -161,16 +161,11 @@ msgid "Linux"
 msgstr ""
 
 #: ../../../performance.rst:113
-msgid ""
-":meth:`~Process.cpu_num`, :meth:`~Process.cpu_times`, :meth:`~Process."
-"create_time`, :meth:`~Process.name`, :meth:`~Process.page_faults`, :meth:"
-"`~Process.ppid`, :meth:`~Process.status`, :meth:`~Process.terminal`"
+msgid ":meth:`~Process.cpu_num`, :meth:`~Process.cpu_times`, :meth:`~Process.create_time`, :meth:`~Process.name`, :meth:`~Process.page_faults`, :meth:`~Process.ppid`, :meth:`~Process.status`, :meth:`~Process.terminal`"
 msgstr ""
 
 #: ../../../performance.rst:118
-msgid ""
-":meth:`~Process.gids`, :meth:`~Process.memory_extras`, :meth:`~Process."
-"num_ctx_switches`, :meth:`~Process.num_threads`, :meth:`~Process.uids`"
+msgid ":meth:`~Process.gids`, :meth:`~Process.memory_extras`, :meth:`~Process.num_ctx_switches`, :meth:`~Process.num_threads`, :meth:`~Process.uids`"
 msgstr ""
 
 #: ../../../performance.rst:122
@@ -186,11 +181,7 @@ msgid "Windows"
 msgstr ""
 
 #: ../../../performance.rst:129
-msgid ""
-":meth:`~Process.cpu_times`, :meth:`~Process.io_counters`, :meth:`~Process."
-"memory_info`, :meth:`~Process.memory_extras`, :meth:`~Process."
-"num_ctx_switches`, :meth:`~Process.num_handles`, :meth:`~Process."
-"num_threads`, :meth:`~Process.page_faults`, :meth:`~Process.status`"
+msgid ":meth:`~Process.cpu_times`, :meth:`~Process.io_counters`, :meth:`~Process.memory_info`, :meth:`~Process.memory_extras`, :meth:`~Process.num_ctx_switches`, :meth:`~Process.num_handles`, :meth:`~Process.num_threads`, :meth:`~Process.page_faults`, :meth:`~Process.status`"
 msgstr ""
 
 #: ../../../performance.rst:135
@@ -212,16 +203,11 @@ msgid "macOS"
 msgstr ""
 
 #: ../../../performance.rst:145
-msgid ""
-":meth:`~Process.cpu_times`, :meth:`~Process.memory_info`, :meth:`~Process."
-"num_ctx_switches`, :meth:`~Process.num_threads`, :meth:`~Process.page_faults`"
+msgid ":meth:`~Process.cpu_times`, :meth:`~Process.memory_info`, :meth:`~Process.num_ctx_switches`, :meth:`~Process.num_threads`, :meth:`~Process.page_faults`"
 msgstr ""
 
 #: ../../../performance.rst:149
-msgid ""
-":meth:`~Process.create_time`, :meth:`~Process.gids`, :meth:`~Process.name`, :"
-"meth:`~Process.ppid`, :meth:`~Process.status`, :meth:`~Process.terminal`, :"
-"meth:`~Process.uids`"
+msgid ":meth:`~Process.create_time`, :meth:`~Process.gids`, :meth:`~Process.name`, :meth:`~Process.ppid`, :meth:`~Process.status`, :meth:`~Process.terminal`, :meth:`~Process.uids`"
 msgstr ""
 
 #: ../../../performance.rst:153
@@ -233,13 +219,7 @@ msgid "BSD"
 msgstr ""
 
 #: ../../../performance.rst:158
-msgid ""
-":meth:`~Process.cpu_num`, :meth:`~Process.cpu_times`, :meth:`~Process."
-"create_time`, :meth:`~Process.gids`, :meth:`~Process.io_counters`, :meth:"
-"`~Process.memory_info`, :meth:`~Process.name`, :meth:`~Process.nice`, :meth:"
-"`~Process.num_ctx_switches`, :meth:`~Process.page_faults`, :meth:`~Process."
-"ppid`, :meth:`~Process.status`, :meth:`~Process.terminal`, :meth:`~Process."
-"uids`"
+msgid ":meth:`~Process.cpu_num`, :meth:`~Process.cpu_times`, :meth:`~Process.create_time`, :meth:`~Process.gids`, :meth:`~Process.io_counters`, :meth:`~Process.memory_info`, :meth:`~Process.name`, :meth:`~Process.nice`, :meth:`~Process.num_ctx_switches`, :meth:`~Process.page_faults`, :meth:`~Process.ppid`, :meth:`~Process.status`, :meth:`~Process.terminal`, :meth:`~Process.uids`"
 msgstr ""
 
 #: ../../../performance.rst:166
@@ -253,8 +233,8 @@ msgstr ""
 #: ../../../performance.rst:173
 msgid ""
 ":src:`scripts/internal/bench_oneshot.py` measures :meth:`Process.oneshot` "
-"speedup. It also shows which APIs share the same internal kernel routines. E."
-"g. on Linux:"
+"speedup. It also shows which APIs share the same internal kernel routines. "
+"E.g. on Linux:"
 msgstr ""
 
 #: ../../../performance.rst:177
@@ -293,8 +273,8 @@ msgstr ""
 #: ../../../performance.rst:209
 msgid ""
 ":src:`scripts/internal/print/api_speed.py` shows the relative cost of each "
-"API call. This helps you understand which operations are more expensive. E."
-"g. on Linux:"
+"API call. This helps you understand which operations are more expensive. "
+"E.g. on Linux:"
 msgstr ""
 
 #: ../../../performance.rst:213

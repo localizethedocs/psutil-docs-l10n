@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-07 14:38+0000\n"
+"POT-Creation-Date: 2026-10-26 15:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -79,8 +79,9 @@ msgstr ""
 
 #: ../../../faq.rst:44
 msgid ""
-"calling certain methods like :meth:`Process.memory_maps`, :meth:`Process."
-"open_files` or :meth:`Process.net_connections` for privileged processes"
+"calling certain methods "
+"like :meth:`Process.memory_maps`, :meth:`Process.open_files` "
+"or :meth:`Process.net_connections` for privileged processes"
 msgstr ""
 
 #: ../../../faq.rst:48
@@ -106,24 +107,25 @@ msgstr ""
 msgid ""
 "Option 2: use :func:`process_iter` with a list of attribute names to pre-"
 "fetch. Both :exc:`AccessDenied` and :exc:`NoSuchProcess` are handled "
-"internally: the corresponding method returns ``None`` (or ``ad_value``) "
-"instead of raising. This also avoids the race condition where a process "
-"disappears between iteration and method call:"
+"internally: if fetching an attribute raises :exc:`AccessDenied`, its value "
+"in ``p.snapshot`` is set to ``None`` (or to the ``ad_value`` argument, if "
+"specified). This also avoids the race condition where a process disappears "
+"between iteration and method call:"
 msgstr ""
 
-#: ../../../faq.rst:68
+#: ../../../faq.rst:69
 msgid ""
 "import psutil\n"
 "\n"
 "for p in psutil.process_iter([\"name\", \"username\"], ad_value=\"N/A\"):\n"
-"    print(p.name(), p.username())  # no try/except needed"
+"    print(p.snapshot.name, p.snapshot.username)  # no try/except needed"
 msgstr ""
 
-#: ../../../faq.rst:78
+#: ../../../faq.rst:79
 msgid "Why do I get NoSuchProcess?"
 msgstr ""
 
-#: ../../../faq.rst:80
+#: ../../../faq.rst:81
 msgid ""
 ":exc:`NoSuchProcess` is raised when a process no longer exists. The most "
 "common cause is a race condition: a process can die between the moment its "
@@ -131,7 +133,7 @@ msgid ""
 "patterns are racy:"
 msgstr ""
 
-#: ../../../faq.rst:85
+#: ../../../faq.rst:86
 msgid ""
 "import psutil\n"
 "\n"
@@ -140,7 +142,7 @@ msgid ""
 "    print(p.name())  # may raise NoSuchProcess"
 msgstr ""
 
-#: ../../../faq.rst:93
+#: ../../../faq.rst:94
 msgid ""
 "import psutil\n"
 "\n"
@@ -149,28 +151,28 @@ msgid ""
 "    print(p.name())  # may raise NoSuchProcess"
 msgstr ""
 
-#: ../../../faq.rst:101
+#: ../../../faq.rst:102
 msgid ""
-"The correct approach is to use :func:`process_iter`, which handles :exc:"
-"`NoSuchProcess` internally and skips processes that disappear during "
-"iteration:"
+"The correct approach is to use :func:`process_iter`, which "
+"handles :exc:`NoSuchProcess` internally and skips processes that disappear "
+"during iteration:"
 msgstr ""
 
-#: ../../../faq.rst:105
+#: ../../../faq.rst:106
 msgid ""
 "import psutil\n"
 "\n"
 "for p in psutil.process_iter([\"name\"]):\n"
-"    print(p.name())"
+"    print(p.snapshot.name)"
 msgstr ""
 
-#: ../../../faq.rst:112
+#: ../../../faq.rst:113
 msgid ""
 "If you have a specific PID (e.g. a known child process), wrap the call in a "
 "try/except:"
 msgstr ""
 
-#: ../../../faq.rst:115
+#: ../../../faq.rst:116
 msgid ""
 "import psutil\n"
 "\n"
@@ -181,13 +183,13 @@ msgid ""
 "    pass"
 msgstr ""
 
-#: ../../../faq.rst:125
+#: ../../../faq.rst:126
 msgid ""
-"You can also catch :exc:`Error`, which implies both :exc:`AccessDenied` and :"
-"exc:`NoSuchProcess`:"
+"You can also catch :exc:`Error`, which implies both :exc:`AccessDenied` "
+"and :exc:`NoSuchProcess`:"
 msgstr ""
 
-#: ../../../faq.rst:128
+#: ../../../faq.rst:129
 msgid ""
 "import psutil\n"
 "\n"
@@ -198,57 +200,57 @@ msgid ""
 "    pass"
 msgstr ""
 
-#: ../../../faq.rst:139
+#: ../../../faq.rst:140
 msgid "Processes"
 msgstr ""
 
-#: ../../../faq.rst:144
+#: ../../../faq.rst:145
 msgid "PID reuse"
 msgstr ""
 
-#: ../../../faq.rst:146
+#: ../../../faq.rst:147
 msgid ""
 "Operating systems recycle PIDs. A :class:`Process` object obtained now may "
 "later refer to a different process if the original one terminated and a new "
 "one was assigned the same PID."
 msgstr ""
 
-#: ../../../faq.rst:150
+#: ../../../faq.rst:151
 msgid "**How psutil handles this:**"
 msgstr ""
 
-#: ../../../faq.rst:152
+#: ../../../faq.rst:153
 msgid ""
-"*Most read-only methods* (e.g. :meth:`Process.name`, :meth:`Process."
-"cpu_percent`) do **not** check for PID reuse and instead query whatever "
-"process currently holds that PID."
+"*Most read-only methods* "
+"(e.g. :meth:`Process.name`, :meth:`Process.cpu_percent`) do **not** check "
+"for PID reuse and instead query whatever process currently holds that PID."
 msgstr ""
 
-#: ../../../faq.rst:156
+#: ../../../faq.rst:157
 msgid ""
-"*Signal methods* (e.g. :meth:`Process.send_signal`, :meth:`Process."
-"suspend`, :meth:`Process.resume`, :meth:`Process.terminate`, :meth:`Process."
-"kill`) **do** check for PID reuse (via PID + creation time) before acting, "
+"*Signal methods* "
+"(e.g. :meth:`Process.send_signal`, :meth:`Process.suspend`, :meth:`Process.resume`, :meth:`Process.terminate`, :meth:`Process.kill`) "
+"**do** check for PID reuse (via PID + creation time) before acting, "
 "raising :exc:`NoSuchProcess` if the PID was recycled. This prevents "
 "accidentally killing the wrong process (:bpo:`6973`)."
 msgstr ""
 
-#: ../../../faq.rst:162
+#: ../../../faq.rst:163
 msgid ""
-"*Set methods* :meth:`Process.nice` (set), :meth:`Process.ionice` (set), :"
-"meth:`Process.cpu_affinity` (set), and :meth:`Process.rlimit` (set) also "
-"perform this check before applying changes."
+"*Set methods* :meth:`Process.nice` (set), :meth:`Process.ionice` "
+"(set), :meth:`Process.cpu_affinity` (set), and :meth:`Process.rlimit` (set) "
+"also perform this check before applying changes."
 msgstr ""
 
-#: ../../../faq.rst:166
+#: ../../../faq.rst:167
 msgid ""
-":meth:`Process.is_running` is the recommended way to verify whether a :class:"
-"`Process` instance still refers to the same process. It compares PID and "
-"creation time, and returns ``False`` if the PID was reused. Prefer it over :"
-"func:`pid_exists`."
+":meth:`Process.is_running` is the recommended way to verify whether "
+"a :class:`Process` instance still refers to the same process. It compares "
+"PID and creation time, and returns ``False`` if the PID was reused. Prefer "
+"it over :func:`pid_exists`."
 msgstr ""
 
-#: ../../../faq.rst:173
+#: ../../../faq.rst:174
 msgid ""
 "On FreeBSD, OpenBSD, SunOS and AIX the PID reuse check is disabled, and "
 "process identity is based on the PID alone. That's because on these "
@@ -257,11 +259,11 @@ msgid ""
 "exceptions for processes which were still alive (:gh:`2888`)."
 msgstr ""
 
-#: ../../../faq.rst:182
+#: ../../../faq.rst:183
 msgid "What is a zombie process?"
 msgstr ""
 
-#: ../../../faq.rst:184
+#: ../../../faq.rst:185
 msgid ""
 "A :term:`zombie process` is a process that has finished execution but whose "
 "entry remains in the process table until the parent calls ``wait()``. When "
@@ -269,50 +271,51 @@ msgid ""
 "subclass of :exc:`NoSuchProcess`."
 msgstr ""
 
-#: ../../../faq.rst:189
+#: ../../../faq.rst:190
 msgid "**Behavior:**"
 msgstr ""
 
-#: ../../../faq.rst:191
+#: ../../../faq.rst:192
 msgid ""
 "A zombie process can be instantiated via :class:`Process` (pid) without "
 "error."
 msgstr ""
 
-#: ../../../faq.rst:193
+#: ../../../faq.rst:194
 msgid ":meth:`Process.status` always returns :data:`STATUS_ZOMBIE`."
 msgstr ""
 
-#: ../../../faq.rst:194
+#: ../../../faq.rst:195
 msgid ":meth:`Process.is_running` and :func:`pid_exists` return ``True``."
 msgstr ""
 
-#: ../../../faq.rst:195
+#: ../../../faq.rst:196
 msgid "The zombie appears in :func:`process_iter` and :func:`pids`."
 msgstr ""
 
-#: ../../../faq.rst:196
+#: ../../../faq.rst:197
 msgid ""
 "Sending signals (:meth:`Process.terminate`, :meth:`Process.kill`, etc.) has "
 "no effect."
 msgstr ""
 
-#: ../../../faq.rst:198
+#: ../../../faq.rst:199
 msgid ""
-"Most methods (:meth:`Process.cmdline`, :meth:`Process.exe`, :meth:`Process."
-"memory_maps`, etc.) may raise :exc:`ZombieProcess`, return a meaningful "
-"value, or return a null/empty value depending on the platform."
+"Most methods "
+"(:meth:`Process.cmdline`, :meth:`Process.exe`, :meth:`Process.memory_maps`, "
+"etc.) may raise :exc:`ZombieProcess`, return a meaningful value, or return a "
+"null/empty value depending on the platform."
 msgstr ""
 
-#: ../../../faq.rst:201
+#: ../../../faq.rst:202
 msgid ":meth:`Process.as_dict` will not crash."
 msgstr ""
 
-#: ../../../faq.rst:203
+#: ../../../faq.rst:204
 msgid "**How to create a zombie:**"
 msgstr ""
 
-#: ../../../faq.rst:205
+#: ../../../faq.rst:206
 msgid ""
 "import os, time\n"
 "\n"
@@ -323,24 +326,24 @@ msgid ""
 "    time.sleep(1000)  # parent does NOT call wait()"
 msgstr ""
 
-#: ../../../faq.rst:215
+#: ../../../faq.rst:216
 msgid "**How to detect zombies:**"
 msgstr ""
 
-#: ../../../faq.rst:217
+#: ../../../faq.rst:218
 msgid ""
 "import psutil\n"
 "\n"
 "for p in psutil.process_iter([\"status\"]):\n"
-"    if p.status() == psutil.STATUS_ZOMBIE:\n"
+"    if p.snapshot.status == psutil.STATUS_ZOMBIE:\n"
 "        print(f\"zombie: pid={p.pid}\")"
 msgstr ""
 
-#: ../../../faq.rst:225
+#: ../../../faq.rst:226
 msgid "**How to get rid of a zombie:**"
 msgstr ""
 
-#: ../../../faq.rst:227
+#: ../../../faq.rst:228
 msgid ""
 "The only way is to have its parent process call ``wait()`` (or "
 "``waitpid()``). If the parent never does this, killing the parent will cause "
@@ -348,44 +351,45 @@ msgid ""
 "automatically."
 msgstr ""
 
-#: ../../../faq.rst:234
+#: ../../../faq.rst:235
 msgid "Why does open_files() not return all files on Windows?"
 msgstr ""
 
-#: ../../../faq.rst:236
+#: ../../../faq.rst:237
 msgid ""
 ":meth:`Process.open_files` on Windows is not guaranteed to enumerate all "
 "regular file handles. The underlying Windows API may hang when retrieving "
 "certain :term:`handle` names, so psutil spawns a thread to query each handle "
 "and kills it if it doesn't respond within 100 ms. This means some entries "
 "can be missed. This is a known OS-level limitation shared by tools like "
-"Process Hacker (see `issue 597 <https://github.com/giampaolo/psutil/"
-"pull/597>`_)."
+"Process Hacker (see `issue 597 <https://github.com/giampaolo/psutil/pull/"
+"597>`_)."
 msgstr ""
 
-#: ../../../faq.rst:246
+#: ../../../faq.rst:247
 msgid "What is the difference between pid_exists() and Process.is_running()?"
 msgstr ""
 
-#: ../../../faq.rst:248
+#: ../../../faq.rst:249
 msgid ""
-":func:`pid_exists` checks whether a PID is present in the process list. :"
-"meth:`Process.is_running` does the same, but also detects :ref:`PID reuse "
-"<faq_pid_reuse>` by comparing the process creation time. Use :func:"
-"`pid_exists` when you have a bare PID and don't need to guard against reuse "
-"(it's faster). Use :meth:`Process.is_running` when you hold a :class:"
-"`Process` object and want to confirm it still refers to the same process."
+":func:`pid_exists` checks whether a PID is present in the process "
+"list. :meth:`Process.is_running` does the same, but also detects :ref:`PID "
+"reuse <faq_pid_reuse>` by comparing the process creation time. "
+"Use :func:`pid_exists` when you have a bare PID and don't need to guard "
+"against reuse (it's faster). Use :meth:`Process.is_running` when you hold "
+"a :class:`Process` object and want to confirm it still refers to the same "
+"process."
 msgstr ""
 
-#: ../../../faq.rst:257
+#: ../../../faq.rst:258
 msgid "CPU"
 msgstr ""
 
-#: ../../../faq.rst:262
+#: ../../../faq.rst:263
 msgid "Why does cpu_percent() return 0.0 on first call?"
 msgstr ""
 
-#: ../../../faq.rst:264
+#: ../../../faq.rst:265
 msgid ""
 ":func:`cpu_percent` (and :meth:`Process.cpu_percent`) measures CPU usage "
 "*between two calls*. The very first call has no prior sample to compare "
@@ -394,7 +398,7 @@ msgid ""
 "short sleep:"
 msgstr ""
 
-#: ../../../faq.rst:270
+#: ../../../faq.rst:271
 msgid ""
 "import time\n"
 "import psutil\n"
@@ -404,19 +408,19 @@ msgid ""
 "print(psutil.cpu_percent())   # meaningful value"
 msgstr ""
 
-#: ../../../faq.rst:279
+#: ../../../faq.rst:280
 msgid "Alternatively, pass ``interval`` to make it block internally:"
 msgstr ""
 
-#: ../../../faq.rst:281
+#: ../../../faq.rst:282
 msgid "print(psutil.cpu_percent(interval=0.5))"
 msgstr ""
 
-#: ../../../faq.rst:285
+#: ../../../faq.rst:286
 msgid "The same applies to :meth:`Process.cpu_percent`:"
 msgstr ""
 
-#: ../../../faq.rst:287
+#: ../../../faq.rst:288
 msgid ""
 "p = psutil.Process()\n"
 "p.cpu_percent()               # discard\n"
@@ -424,21 +428,21 @@ msgid ""
 "print(p.cpu_percent())        # meaningful value"
 msgstr ""
 
-#: ../../../faq.rst:297
+#: ../../../faq.rst:298
 msgid "Can Process.cpu_percent() return a value higher than 100%?"
 msgstr ""
 
-#: ../../../faq.rst:299
+#: ../../../faq.rst:300
 msgid ""
 "Yes. On a multi-core system a process can run threads on several CPUs at the "
 "same time. The maximum value is ``psutil.cpu_count() * 100``. For example, "
 "on a machine with 4 :term:`logical CPUs <logical CPU>`, a fully-loaded "
-"process can reach 400%. The system-wide :func:`cpu_percent` (without a :"
-"class:`Process`) always stays in the 0-100% range because it averages across "
-"all cores."
+"process can reach 400%. The system-wide :func:`cpu_percent` (without "
+"a :class:`Process`) always stays in the 0-100% range because it averages "
+"across all cores."
 msgstr ""
 
-#: ../../../faq.rst:305
+#: ../../../faq.rst:306
 msgid ""
 "The returned value is explicitly *not* split evenly between all available "
 "CPUs. This is consistent with the ``top`` UNIX utility: a busy loop on a "
@@ -447,64 +451,66 @@ msgid ""
 "50%). To emulate that: ``p.cpu_percent() / psutil.cpu_count()``."
 msgstr ""
 
-#: ../../../faq.rst:314
+#: ../../../faq.rst:315
 msgid ""
 "What is the difference between psutil, os, and multiprocessing cpu_count()?"
 msgstr ""
 
-#: ../../../faq.rst:316
+#: ../../../faq.rst:317
 msgid ""
 ":func:`os.cpu_count` returns the number of :term:`logical CPUs <logical "
-"CPU>` (including hyperthreads). It is the same as ``psutil."
-"cpu_count(logical=True)``, but psutil does not honour :envvar:"
-"`PYTHON_CPU_COUNT` environment variable introduced in Python 3.13."
+"CPU>` (including hyperthreads). It is the same as "
+"``psutil.cpu_count(logical=True)``, but psutil does not "
+"honour :envvar:`PYTHON_CPU_COUNT` environment variable introduced in Python "
+"3.13."
 msgstr ""
 
-#: ../../../faq.rst:320
+#: ../../../faq.rst:321
 msgid ""
 ":func:`os.process_cpu_count` (Python 3.13+) returns the number of CPUs the "
 "calling process is **allowed to use** (respects :term:`CPU affinity` and "
 "cgroups). The psutil equivalent is ``len(psutil.Process().cpu_affinity())``."
 msgstr ""
 
-#: ../../../faq.rst:323
+#: ../../../faq.rst:324
 msgid ""
-":func:`multiprocessing.cpu_count` returns the same value as :func:`os."
-"process_cpu_count` (Python 3.13+)."
+":func:`multiprocessing.cpu_count` returns the same value "
+"as :func:`os.process_cpu_count` (Python 3.13+)."
 msgstr ""
 
-#: ../../../faq.rst:325
+#: ../../../faq.rst:326
 msgid ""
-":func:`psutil.cpu_count` with ``logical=False`` returns the number of :term:"
-"`physical cores <physical CPU>`, which has no stdlib equivalent."
+":func:`psutil.cpu_count` with ``logical=False`` returns the number "
+"of :term:`physical cores <physical CPU>`, which has no stdlib equivalent."
 msgstr ""
 
-#: ../../../faq.rst:329
+#: ../../../faq.rst:330
 msgid "Process memory"
 msgstr ""
 
-#: ../../../faq.rst:334
+#: ../../../faq.rst:335
 msgid "What is the difference between virtual_memory() available and free?"
 msgstr ""
 
-#: ../../../faq.rst:336
+#: ../../../faq.rst:337
 msgid ""
 ":func:`virtual_memory` returns both :field:`free` and :field:`available`, "
 "but they measure different things:"
 msgstr ""
 
-#: ../../../faq.rst:339
+#: ../../../faq.rst:340
 msgid ":field:`free`: memory that is not being used at all."
 msgstr ""
 
-#: ../../../faq.rst:340
+#: ../../../faq.rst:341
 msgid ""
-":field:`available`: how much memory can be given to processes without :term:"
-"`swapping <swap memory>`. This includes reclaimable :term:`caches <page "
-"cache>` and :term:`buffers` that the OS can reclaim under pressure."
+":field:`available`: how much memory can be given to processes "
+"without :term:`swapping <swap memory>`. This includes "
+"reclaimable :term:`caches <page cache>` and :term:`buffers` that the OS can "
+"reclaim under pressure."
 msgstr ""
 
-#: ../../../faq.rst:345
+#: ../../../faq.rst:346
 msgid ""
 "In practice, :field:`available` is almost always the metric you want when "
 "monitoring memory. :field:`free` can be misleadingly low on systems where "
@@ -512,17 +518,17 @@ msgid ""
 "Windows, :field:`free` and :field:`available` are the same value."
 msgstr ""
 
-#: ../../../faq.rst:353
+#: ../../../faq.rst:354
 msgid "What is the difference between RSS and VMS?"
 msgstr ""
 
-#: ../../../faq.rst:355
+#: ../../../faq.rst:356
 msgid ""
 ":field:`rss` (:term:`Resident Set Size <RSS>`) is the amount of physical "
 "memory (RAM) currently mapped into the process."
 msgstr ""
 
-#: ../../../faq.rst:357
+#: ../../../faq.rst:358
 msgid ""
 ":field:`vms` (:term:`Virtual Memory Size <VMS>`) is the total virtual "
 "address space of the process, including memory that has been :term:`swapped "
@@ -530,21 +536,21 @@ msgid ""
 "memory>`."
 msgstr ""
 
-#: ../../../faq.rst:362
+#: ../../../faq.rst:363
 msgid ""
 ":field:`rss` is generally the most useful metric for answering \"how much "
 "RAM is this process using?\". Note that it includes :term:`shared memory`, "
-"so it may overestimate actual usage when compared across processes. :field:"
-"`vms` is generally larger and can be misleadingly high, as it includes "
-"memory that is not resident in physical RAM. Both values are portable across "
-"platforms and are returned by :meth:`Process.memory_info`."
+"so it may overestimate actual usage when compared across "
+"processes. :field:`vms` is generally larger and can be misleadingly high, as "
+"it includes memory that is not resident in physical RAM. Both values are "
+"portable across platforms and are returned by :meth:`Process.memory_info`."
 msgstr ""
 
-#: ../../../faq.rst:372
+#: ../../../faq.rst:373
 msgid "When should I use memory_footprint() vs memory_info()?"
 msgstr ""
 
-#: ../../../faq.rst:374
+#: ../../../faq.rst:375
 msgid ""
 ":meth:`Process.memory_info` returns :field:`rss` (:term:`Resident Set Size "
 "<RSS>`), which includes :term:`shared libraries <shared memory>` counted in "
@@ -552,62 +558,64 @@ msgid ""
 "processes map it, each process includes those 2 MB in its :field:`rss`."
 msgstr ""
 
-#: ../../../faq.rst:380
+#: ../../../faq.rst:381
 msgid ""
 ":meth:`Process.memory_footprint` returns :field:`uss` (:term:`Unique Set "
 "Size <USS>`), i.e. :term:`private memory` of the process. It represents the "
 "amount of memory that would be freed if the process were terminated right "
 "now. It is more accurate than :term:`RSS`, but substantially slower and may "
-"require higher privileges. It also returns :field:`shared`, and on Linux :"
-"field:`pss` (:term:`Proportional Set Size <PSS>`) and :term:`swap <swap "
-"memory>`."
+"require higher privileges. It also returns :field:`shared`, and on "
+"Linux :field:`pss` (:term:`Proportional Set Size <PSS>`) and :term:`swap "
+"<swap memory>`."
 msgstr ""
 
-#: ../../../faq.rst:391
+#: ../../../faq.rst:392
 msgid ""
 "Why do memory_info() and memory_footprint() report different shared values?"
 msgstr ""
 
-#: ../../../faq.rst:393
+#: ../../../faq.rst:394
 msgid ""
-"Because they measure different things. :meth:`Process.memory_info`'s :field:"
-"`shared` counts resident memory that *could* be shared, meaning file-backed "
-"pages and shmem, no matter if other processes map it or not. This is what "
-"``top`` shows in the SHR column. :meth:`Process.memory_footprint`'s :field:"
-"`shared` only counts pages that are mapped more than once. That usually "
-"means \"mapped by another process\", but multiple mappings by the same "
-"process also count. It reads the page tables instead of a counter, so it's "
-"exact in that regard, but slower."
+"Because they measure different "
+"things. :meth:`Process.memory_info`'s :field:`shared` counts resident memory "
+"that *could* be shared, meaning file-backed pages and shmem, no matter if "
+"other processes map it or not. This is what ``top`` shows in the SHR "
+"column. :meth:`Process.memory_footprint`'s :field:`shared` only counts pages "
+"that are mapped more than once. That usually means \"mapped by another "
+"process\", but multiple mappings by the same process also count. It reads "
+"the page tables instead of a counter, so it's exact in that regard, but "
+"slower."
 msgstr ""
 
-#: ../../../faq.rst:405
+#: ../../../faq.rst:406
 msgid "Why do swap_anon and memory_footprint()'s swap differ?"
 msgstr ""
 
-#: ../../../faq.rst:407
+#: ../../../faq.rst:408
 msgid ""
-":meth:`Process.memory_extras`'s :field:`swap_anon` counts swapped-out :term:"
-"`anonymous memory` only, so it misses swapped shmem / tmpfs memory. :meth:"
-"`Process.memory_footprint`'s :field:`swap` includes that too, but it has to "
-"walk the whole process address space, which is a lot slower and may require "
-"root. If you don't care about shmem, prefer :field:`swap_anon`."
+":meth:`Process.memory_extras`'s :field:`swap_anon` counts swapped-"
+"out :term:`anonymous memory` only, so it misses swapped shmem / tmpfs "
+"memory. :meth:`Process.memory_footprint`'s :field:`swap` includes that too, "
+"but it has to walk the whole process address space, which is a lot slower "
+"and may require root. If you don't care about shmem, "
+"prefer :field:`swap_anon`."
 msgstr ""
 
-#: ../../../faq.rst:414
+#: ../../../faq.rst:415
 msgid "System memory"
 msgstr ""
 
-#: ../../../faq.rst:419
+#: ../../../faq.rst:420
 msgid "Why does virtual_memory() used + free != total?"
 msgstr ""
 
-#: ../../../faq.rst:421
+#: ../../../faq.rst:422
 msgid ""
 "Because some memory (like :term:`page cache` and :term:`buffers`) is "
 "reclaimable and accounted separately:"
 msgstr ""
 
-#: ../../../faq.rst:424
+#: ../../../faq.rst:425
 msgid ""
 ">>> import psutil\n"
 ">>> m = psutil.virtual_memory()\n"
@@ -615,9 +623,9 @@ msgid ""
 "False"
 msgstr ""
 
-#: ../../../faq.rst:431
+#: ../../../faq.rst:432
 msgid ""
 "The :field:`available` field already includes this reclaimable memory and is "
-"the best indicator of memory pressure. See :ref:"
-"`faq_virtual_memory_available`."
+"the best indicator of memory pressure. "
+"See :ref:`faq_virtual_memory_available`."
 msgstr ""

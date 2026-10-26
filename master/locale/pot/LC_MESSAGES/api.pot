@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-12 18:03+0000\n"
+"POT-Creation-Date: 2026-10-26 15:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -89,8 +89,8 @@ msgstr ""
 
 #: ../../../api.rst:50
 msgid ""
-":field:`irq` *(Linux, Windows, BSD)*: time spent for servicing :term:"
-"`hardware interrupts <hardware interrupt>`."
+":field:`irq` *(Linux, Windows, BSD)*: time spent for "
+"servicing :term:`hardware interrupts <hardware interrupt>`."
 msgstr ""
 
 #: ../../../api.rst:53
@@ -151,16 +151,17 @@ msgstr ""
 
 #: ../../../api.rst:86
 msgid ""
-"Windows: :field:`interrupt` field was renamed to :field:`irq`; :field:"
-"`interrupt` still works but raises :exc:`DeprecationWarning`."
+"Windows: :field:`interrupt` field was renamed "
+"to :field:`irq`; :field:`interrupt` still works but "
+"raises :exc:`DeprecationWarning`."
 msgstr ""
 
 #: ../../../api.rst:90
 msgid ""
 "field order was standardized: :field:`user`, :field:`system`, :field:`idle` "
 "are now always the first three fields. Previously on Linux, macOS, and BSD "
-"the first three were :field:`user`, :field:`nice`, :field:`system`. See :ref:"
-"`migration guide <migration-8.0>`."
+"the first three were :field:`user`, :field:`nice`, :field:`system`. "
+"See :ref:`migration guide <migration-8.0>`."
 msgstr ""
 
 #: ../../../api.rst:98
@@ -189,14 +190,15 @@ msgstr ""
 
 #: ../../../api.rst:114
 msgid ""
-"If *percpu* is ``True``, returns a list of floats representing each :term:"
-"`logical CPU`. The list is ordered by CPU index and consistent across calls."
+"If *percpu* is ``True``, returns a list of floats representing "
+"each :term:`logical CPU`. The list is ordered by CPU index and consistent "
+"across calls."
 msgstr ""
 
 #: ../../../api.rst:118
 msgid ""
-"This function is thread-safe. It maintains an internal map of thread IDs (:"
-"func:`threading.get_ident`) so that independent results are returned when "
+"This function is thread-safe. It maintains an internal map of thread IDs "
+"(:func:`threading.get_ident`) so that independent results are returned when "
 "called from different threads at different intervals."
 msgstr ""
 
@@ -215,7 +217,7 @@ msgid ""
 ">>>"
 msgstr ""
 
-#: ../../../api.rst:137 ../../../api.rst:151 ../../../api.rst:1592
+#: ../../../api.rst:137 ../../../api.rst:151 ../../../api.rst:1586
 msgid ":ref:`faq_cpu_percent`"
 msgstr ""
 
@@ -232,9 +234,9 @@ msgstr ""
 msgid ""
 "Similar to :func:`cpu_percent`, but provides utilization percentages for "
 "each specific CPU time. *interval* and *percpu* arguments have the same "
-"meaning as in :func:`cpu_percent`. On Linux, :field:`guest` and :field:"
-"`guest_nice` percentages are not accounted in :field:`user` and :field:"
-"`user_nice`."
+"meaning as in :func:`cpu_percent`. On Linux, :field:`guest` "
+"and :field:`guest_nice` percentages are not accounted in :field:`user` "
+"and :field:`nice`."
 msgstr ""
 
 #: ../../../api.rst:153
@@ -244,9 +246,9 @@ msgstr ""
 #: ../../../api.rst:158
 msgid ""
 "Return the number of :term:`logical CPUs <logical CPU>` in the system (same "
-"as :func:`os.cpu_count`), or ``None`` if undetermined. Unlike :func:`os."
-"cpu_count`, this is not influenced by the :envvar:`PYTHON_CPU_COUNT` "
-"environment variable (Python 3.13+)."
+"as :func:`os.cpu_count`), or ``None`` if undetermined. "
+"Unlike :func:`os.cpu_count`, this is not influenced by "
+"the :envvar:`PYTHON_CPU_COUNT` environment variable (Python 3.13+)."
 msgstr ""
 
 #: ../../../api.rst:163
@@ -365,20 +367,20 @@ msgid ""
 " scpufreq(current=1754.289, min=800.0, max=3500.0)]"
 msgstr ""
 
-#: ../../../api.rst:239 ../../../api.rst:816 ../../../api.rst:836
-#: ../../../api.rst:870 ../../../api.rst:1352 ../../../api.rst:1360
-#: ../../../api.rst:1367 ../../../api.rst:1421 ../../../api.rst:1451
-#: ../../../api.rst:1491 ../../../api.rst:1509 ../../../api.rst:1516
-#: ../../../api.rst:1618 ../../../api.rst:1631 ../../../api.rst:1789
-#: ../../../api.rst:1835 ../../../api.rst:1938 ../../../api.rst:2275
-#: ../../../api.rst:2295 ../../../api.rst:2309 ../../../api.rst:2316
-#: ../../../api.rst:2388 ../../../api.rst:2415 ../../../api.rst:2427
-#: ../../../api.rst:2436 ../../../api.rst:2577 ../../../api.rst:2640
-#: ../../../api.rst:2759
+#: ../../../api.rst:239 ../../../api.rst:817 ../../../api.rst:837
+#: ../../../api.rst:871 ../../../api.rst:1346 ../../../api.rst:1354
+#: ../../../api.rst:1361 ../../../api.rst:1415 ../../../api.rst:1445
+#: ../../../api.rst:1485 ../../../api.rst:1503 ../../../api.rst:1510
+#: ../../../api.rst:1612 ../../../api.rst:1625 ../../../api.rst:1783
+#: ../../../api.rst:1829 ../../../api.rst:1934 ../../../api.rst:2311
+#: ../../../api.rst:2331 ../../../api.rst:2345 ../../../api.rst:2352
+#: ../../../api.rst:2424 ../../../api.rst:2451 ../../../api.rst:2463
+#: ../../../api.rst:2472 ../../../api.rst:2621 ../../../api.rst:2684
+#: ../../../api.rst:2803
 msgid "Availability"
 msgstr ""
 
-#: ../../../api.rst:241 ../../../api.rst:818 ../../../api.rst:1453
+#: ../../../api.rst:241 ../../../api.rst:819 ../../../api.rst:1447
 msgid "added FreeBSD support."
 msgstr ""
 
@@ -432,8 +434,8 @@ msgstr ""
 msgid ""
 ":field:`available`: memory that can be given instantly to processes without "
 "the system going into :term:`swap <swap memory>`. This is the recommended "
-"field for monitoring actual memory usage in a cross-platform fashion. See :"
-"term:`available memory`."
+"field for monitoring actual memory usage in a cross-platform fashion. "
+"See :term:`available memory`."
 msgstr ""
 
 #: ../../../api.rst:284
@@ -476,24 +478,25 @@ msgstr ""
 
 #: ../../../api.rst:302
 msgid ""
-":field:`buffers` *(Linux, BSD)*: see :term:`buffers`. On OpenBSD :field:"
-"`buffers` and :field:`cached` are aliases."
+":field:`buffers` *(Linux, BSD)*: see :term:`buffers`. On "
+"OpenBSD :field:`buffers` and :field:`cached` are aliases."
 msgstr ""
 
 #: ../../../api.rst:304
 msgid ""
 ":field:`cached` *(Linux, BSD, Windows)*: RAM used by the kernel to cache "
-"file contents (data read from or written to disk). On OpenBSD :field:"
-"`buffers` and :field:`cached` are aliases. See :term:`page cache`."
+"file contents (data read from or written to disk). On "
+"OpenBSD :field:`buffers` and :field:`cached` are aliases. See :term:`page "
+"cache`."
 msgstr ""
 
 #: ../../../api.rst:307
 msgid ""
 ":field:`shared` *(Linux, BSD)*: :term:`shared memory` accessible by multiple "
 "processes simultaneously, such as in-memory ``tmpfs`` and POSIX shared "
-"memory objects (``shm_open``). On Linux this corresponds to ``Shmem`` in :"
-"proc:`/proc/meminfo` and is already counted within :field:`active` / :field:"
-"`inactive`."
+"memory objects (``shm_open``). On Linux this corresponds to ``Shmem`` "
+"in :proc:`/proc/meminfo` and is already counted "
+"within :field:`active` / :field:`inactive`."
 msgstr ""
 
 #: ../../../api.rst:312
@@ -521,22 +524,22 @@ msgstr ""
 msgid "Field"
 msgstr ""
 
-#: ../../../api.rst:329 ../../../api.rst:1640 ../../../api.rst:1729
-#: ../../../api.rst:1876
+#: ../../../api.rst:329 ../../../api.rst:1634 ../../../api.rst:1723
+#: ../../../api.rst:1872
 msgid "Linux"
 msgstr ""
 
-#: ../../../api.rst:330 ../../../api.rst:1640 ../../../api.rst:1729
+#: ../../../api.rst:330 ../../../api.rst:1634 ../../../api.rst:1723
 msgid "macOS"
 msgstr ""
 
-#: ../../../api.rst:331 ../../../api.rst:1640 ../../../api.rst:1729
-#: ../../../api.rst:1876 ../../../api.rst:2268 ../../../api.rst:2270
-#: ../../../api.rst:2272
+#: ../../../api.rst:331 ../../../api.rst:1634 ../../../api.rst:1723
+#: ../../../api.rst:1872 ../../../api.rst:2304 ../../../api.rst:2306
+#: ../../../api.rst:2308
 msgid "Windows"
 msgstr ""
 
-#: ../../../api.rst:332 ../../../api.rst:1876
+#: ../../../api.rst:332 ../../../api.rst:1872
 msgid "FreeBSD"
 msgstr ""
 
@@ -676,7 +679,7 @@ msgstr ""
 msgid "``sysctl() vm.stats.vm.v_cache_count``"
 msgstr ""
 
-#: ../../../api.rst:373 ../../../api.rst:1646
+#: ../../../api.rst:373 ../../../api.rst:1640
 msgid "shared"
 msgstr ""
 
@@ -712,7 +715,7 @@ msgstr ""
 msgid "``sysctl() vm.stats.vm.v_wire_count``"
 msgstr ""
 
-#: ../../../api.rst:389 ../../../api.rst:1692 ../../../api.rst:1821
+#: ../../../api.rst:389 ../../../api.rst:1686 ../../../api.rst:1815
 msgid "Example on Linux:"
 msgstr ""
 
@@ -740,8 +743,8 @@ msgstr ""
 
 #: ../../../api.rst:407
 msgid ""
-"On macOS, :field:`free`, :field:`active`, :field:`inactive`, and :field:"
-"`wired` match ``vm_stat`` command."
+"On macOS, :field:`free`, :field:`active`, :field:`inactive`, "
+"and :field:`wired` match ``vm_stat`` command."
 msgstr ""
 
 #: ../../../api.rst:409
@@ -752,8 +755,8 @@ msgstr ""
 
 #: ../../../api.rst:411
 msgid ""
-"On Windows, :field:`total`, :field:`used` (\"In use\"), and :field:"
-"`available` match the Task Manager (Performance > Memory tab)."
+"On Windows, :field:`total`, :field:`used` (\"In use\"), "
+"and :field:`available` match the Task Manager (Performance > Memory tab)."
 msgstr ""
 
 #: ../../../api.rst:415
@@ -811,9 +814,9 @@ msgstr ""
 
 #: ../../../api.rst:440
 msgid ""
-":field:`sout`: number of bytes the system has moved from RAM to disk (:term:"
-"`swap <swap memory>`). A continuously increasing :field:`sout` rate is a "
-"sign of memory pressure. See :term:`swap-out`."
+":field:`sout`: number of bytes the system has moved from RAM to disk "
+"(:term:`swap <swap memory>`). A continuously increasing :field:`sout` rate "
+"is a sign of memory pressure. See :term:`swap-out`."
 msgstr ""
 
 #: ../../../api.rst:444
@@ -884,8 +887,8 @@ msgstr ""
 msgid ""
 ">>> import psutil\n"
 ">>> psutil.disk_partitions()\n"
-"[sdiskpart(device='/dev/sda3', mountpoint='/', fstype='ext4', opts='rw,"
-"errors=remount-ro'),\n"
+"[sdiskpart(device='/dev/sda3', mountpoint='/', fstype='ext4', "
+"opts='rw,errors=remount-ro'),\n"
 " sdiskpart(device='/dev/sda7', mountpoint='/home', fstype='ext4', opts='rw')]"
 msgstr ""
 
@@ -904,10 +907,11 @@ msgstr ""
 #: ../../../api.rst:503
 msgid ""
 "Return disk usage statistics for the partition containing *path*. Values are "
-"expressed in bytes and include :field:`total`, :field:`used` and :field:"
-"`free` space, plus the :field:`percentage` usage. On UNIX, *path* must point "
-"to a path within a **mounted** filesystem partition. This function was later "
-"incorporated in Python 3.3 as :func:`shutil.disk_usage` (see :bpo:`12442`)."
+"expressed in bytes and include :field:`total`, :field:`used` "
+"and :field:`free` space, plus the :field:`percent` usage. On UNIX, *path* "
+"must point to a path within a **mounted** filesystem partition. This "
+"function was later incorporated in Python 3.3 as :func:`shutil.disk_usage` "
+"(see :bpo:`12442`)."
 msgstr ""
 
 #: ../../../api.rst:510
@@ -920,10 +924,11 @@ msgstr ""
 
 #: ../../../api.rst:517
 msgid ""
-"UNIX typically reserves 5% of disk space for root. :field:`total` and :field:"
-"`used` refer to overall space, while :field:`free` and :field:`percent` "
-"reflect unprivileged user usage. As a result, :field:`percent` may appear "
-"~5% higher than expected. All values match the ``df`` command line utility."
+"UNIX typically reserves 5% of disk space for root. :field:`total` "
+"and :field:`used` refer to overall space, while :field:`free` "
+"and :field:`percent` reflect unprivileged user usage. As a "
+"result, :field:`percent` may appear ~5% higher than expected. All values "
+"match the ``df`` command line utility."
 msgstr ""
 
 #: ../../../api.rst:528
@@ -1115,11 +1120,11 @@ msgid ""
 "dropout=0)}"
 msgstr ""
 
-#: ../../../api.rst:623 ../../../api.rst:745 ../../../api.rst:772
+#: ../../../api.rst:623 ../../../api.rst:746 ../../../api.rst:773
 msgid ":src:`scripts/nettop.py`"
 msgstr ""
 
-#: ../../../api.rst:624 ../../../api.rst:746 ../../../api.rst:773
+#: ../../../api.rst:624 ../../../api.rst:747 ../../../api.rst:774
 msgid ":src:`scripts/ifconfig.py`"
 msgstr ""
 
@@ -1141,14 +1146,16 @@ msgstr ""
 
 #: ../../../api.rst:636
 msgid ""
-":field:`family`: the address family, either :data:`socket.AF_INET`, :data:"
-"`socket.AF_INET6` or :data:`socket.AF_UNIX`."
+":field:`family`: the address family, "
+"either :data:`socket.AF_INET`, :data:`socket.AF_INET6` "
+"or :data:`socket.AF_UNIX`."
 msgstr ""
 
 #: ../../../api.rst:638
 msgid ""
-":field:`type`: the address type, either :data:`socket.SOCK_STREAM`, :data:"
-"`socket.SOCK_DGRAM` or :data:`socket.SOCK_SEQPACKET`."
+":field:`type`: the address type, "
+"either :data:`socket.SOCK_STREAM`, :data:`socket.SOCK_DGRAM` "
+"or :data:`socket.SOCK_SEQPACKET`."
 msgstr ""
 
 #: ../../../api.rst:640
@@ -1282,30 +1289,31 @@ msgstr ""
 msgid ""
 ">>> import psutil\n"
 ">>> psutil.net_connections()\n"
-"[pconn(fd=115, family=<AddressFamily.AF_INET: 2>, type=<SocketType."
-"SOCK_STREAM: 1>, laddr=addr(ip='10.0.0.1', port=48776), "
-"raddr=addr(ip='93.186.135.91', port=80), status=<ConnectionStatus."
-"CONN_ESTABLISHED: 'ESTABLISHED'>, pid=1254),\n"
-" pconn(fd=117, family=<AddressFamily.AF_INET: 2>, type=<SocketType."
-"SOCK_STREAM: 1>, laddr=addr(ip='10.0.0.1', port=43761), "
-"raddr=addr(ip='72.14.234.100', port=80), status=<ConnectionStatus."
-"CONN_CLOSING: 'CLOSING'>, pid=2987),\n"
-" pconn(fd=-1, family=<AddressFamily.AF_INET: 2>, type=<SocketType."
-"SOCK_STREAM: 1>, laddr=addr(ip='10.0.0.1', port=60759), "
-"raddr=addr(ip='72.14.234.104', port=80), status=<ConnectionStatus."
-"CONN_ESTABLISHED: 'ESTABLISHED'>, pid=None),\n"
-" pconn(fd=-1, family=<AddressFamily.AF_INET: 2>, type=<SocketType."
-"SOCK_STREAM: 1>, laddr=addr(ip='10.0.0.1', port=51314), "
-"raddr=addr(ip='72.14.234.83', port=443), status=<ConnectionStatus."
-"CONN_SYN_SENT: 'SYN_SENT'>, pid=None)\n"
+"[sconn(fd=115, family=<AddressFamily.AF_INET: 2>, "
+"type=<SocketType.SOCK_STREAM: 1>, laddr=addr(ip='10.0.0.1', port=48776), "
+"raddr=addr(ip='93.186.135.91', port=80), "
+"status=<ConnectionStatus.CONN_ESTABLISHED: 'ESTABLISHED'>, pid=1254),\n"
+" sconn(fd=117, family=<AddressFamily.AF_INET: 2>, "
+"type=<SocketType.SOCK_STREAM: 1>, laddr=addr(ip='10.0.0.1', port=43761), "
+"raddr=addr(ip='72.14.234.100', port=80), "
+"status=<ConnectionStatus.CONN_CLOSING: 'CLOSING'>, pid=2987),\n"
+" sconn(fd=-1, family=<AddressFamily.AF_INET: 2>, "
+"type=<SocketType.SOCK_STREAM: 1>, laddr=addr(ip='10.0.0.1', port=60759), "
+"raddr=addr(ip='72.14.234.104', port=80), "
+"status=<ConnectionStatus.CONN_ESTABLISHED: 'ESTABLISHED'>, pid=None),\n"
+" sconn(fd=-1, family=<AddressFamily.AF_INET: 2>, "
+"type=<SocketType.SOCK_STREAM: 1>, laddr=addr(ip='10.0.0.1', port=51314), "
+"raddr=addr(ip='72.14.234.83', port=443), "
+"status=<ConnectionStatus.CONN_SYN_SENT: 'SYN_SENT'>, pid=None)\n"
 " ...]"
 msgstr ""
 
 #: ../../../api.rst:692
 msgid ""
 "on Linux, retrieving some connections requires root privileges. If psutil is "
-"not run as root, those connections are silently skipped instead of raising :"
-"exc:`PermissionError`. That means the returned list may be incomplete."
+"not run as root, those connections are silently skipped instead of "
+"raising :exc:`PermissionError`. That means the returned list may be "
+"incomplete."
 msgstr ""
 
 #: ../../../api.rst:698
@@ -1353,9 +1361,9 @@ msgstr ""
 
 #: ../../../api.rst:723
 msgid ""
-":field:`family`: the address family, either :data:`socket.AF_INET` (IPv4), :"
-"data:`socket.AF_INET6` (IPv6), :data:`socket.AF_UNSPEC` (a virtual or "
-"unconfigured NIC), or :data:`AF_LINK` (a MAC address)."
+":field:`family`: the address family, either :data:`socket.AF_INET` "
+"(IPv4), :data:`socket.AF_INET6` (IPv6), :data:`socket.AF_UNSPEC` (a virtual "
+"or unconfigured NIC), or :data:`AF_LINK` (a MAC address)."
 msgstr ""
 
 #: ../../../api.rst:726
@@ -1367,16 +1375,18 @@ msgid ":field:`netmask`: the netmask address."
 msgstr ""
 
 #: ../../../api.rst:728
-msgid ":field:`broadcast`: the broadcast address; always ``None`` on Windows."
+msgid ""
+":field:`broadcast`: the broadcast address; on Windows it is calculated from "
+"the netmask."
 msgstr ""
 
-#: ../../../api.rst:729
+#: ../../../api.rst:730
 msgid ""
 ":field:`ptp`: a \"point to point\" address (typically a VPN); always "
 "``None`` on Windows."
 msgstr ""
 
-#: ../../../api.rst:732
+#: ../../../api.rst:733
 msgid ""
 ">>> import psutil\n"
 ">>> psutil.net_if_addrs()\n"
@@ -1391,50 +1401,50 @@ msgid ""
 " 'wlan0': [snicaddr(family=<AddressFamily.AF_INET: 2>, "
 "address='192.168.1.3', netmask='255.255.255.0', broadcast='192.168.1.255', "
 "ptp=None),\n"
-"           snicaddr(family=<AddressFamily.AF_INET6: 10>, address='fe80::"
-"c685:8ff:fe45:641%wlan0', netmask='ffff:ffff:ffff:ffff::', broadcast=None, "
-"ptp=None),\n"
+"           snicaddr(family=<AddressFamily.AF_INET6: 10>, "
+"address='fe80::c685:8ff:fe45:641%wlan0', netmask='ffff:ffff:ffff:ffff::', "
+"broadcast=None, ptp=None),\n"
 "           snicaddr(family=<AddressFamily.AF_LINK: 17>, "
 "address='c4:85:08:45:06:41', netmask=None, broadcast='ff:ff:ff:ff:ff:ff', "
 "ptp=None)]}\n"
 ">>>"
 msgstr ""
 
-#: ../../../api.rst:748
+#: ../../../api.rst:749
 msgid ""
 "Windows: added support for :field:`broadcast` field, which is no longer "
 "``None``."
 msgstr ""
 
-#: ../../../api.rst:754
+#: ../../../api.rst:755
 msgid "Return a dictionary mapping each :term:`NIC` to its stats:"
 msgstr ""
 
-#: ../../../api.rst:756
+#: ../../../api.rst:757
 msgid ":field:`isup`: whether the NIC is up and running (bool)."
 msgstr ""
 
-#: ../../../api.rst:757
+#: ../../../api.rst:758
 msgid ""
-":field:`duplex`: :data:`NIC_DUPLEX_FULL`, :data:`NIC_DUPLEX_HALF` or :data:"
-"`NIC_DUPLEX_UNKNOWN`."
-msgstr ""
-
-#: ../../../api.rst:759
-msgid ":field:`speed`: NIC speed in megabits (Mbps); ``0`` if undetermined."
+":field:`duplex`: :data:`NIC_DUPLEX_FULL`, :data:`NIC_DUPLEX_HALF` "
+"or :data:`NIC_DUPLEX_UNKNOWN`."
 msgstr ""
 
 #: ../../../api.rst:760
-msgid ":field:`mtu`: maximum transmission unit in bytes."
+msgid ":field:`speed`: NIC speed in megabits (Mbps); ``0`` if undetermined."
 msgstr ""
 
 #: ../../../api.rst:761
-msgid ""
-":field:`flags`: a comma-separated string of interface flags (e.g. ``\"up,"
-"broadcast,running,multicast\"``); may be an empty string."
+msgid ":field:`mtu`: maximum transmission unit in bytes."
 msgstr ""
 
-#: ../../../api.rst:764
+#: ../../../api.rst:762
+msgid ""
+":field:`flags`: a comma-separated string of interface flags (e.g. "
+"``\"up,broadcast,running,multicast\"``); may be an empty string."
+msgstr ""
+
+#: ../../../api.rst:765
 msgid ""
 ">>> import psutil\n"
 ">>> psutil.net_if_stats()\n"
@@ -1444,51 +1454,51 @@ msgid ""
 "speed=0, mtu=65536, flags='up,loopback,running')}"
 msgstr ""
 
-#: ../../../api.rst:775
+#: ../../../api.rst:776
 msgid "UNIX: :field:`isup` also reflects whether the :term:`NIC` is running."
 msgstr ""
 
-#: ../../../api.rst:778
+#: ../../../api.rst:779
 msgid "added :field:`flags` field."
 msgstr ""
 
-#: ../../../api.rst:782
+#: ../../../api.rst:783
 msgid "Sensors"
 msgstr ""
 
-#: ../../../api.rst:786
+#: ../../../api.rst:787
 msgid ""
 "Return hardware temperatures. Each entry represents a sensor (CPU, disk, "
 "etc.). Values are in Celsius unless *fahrenheit* is ``True``. If "
 "unsupported, an empty dict is returned. Each entry includes:"
 msgstr ""
 
-#: ../../../api.rst:790
+#: ../../../api.rst:791
 msgid ""
 ":field:`label`: string label for the sensor, if available, else ``\"\"``."
 msgstr ""
 
-#: ../../../api.rst:791
+#: ../../../api.rst:792
 msgid ""
 ":field:`current`: current temperature reading (changing), or ``None`` if "
 "unavailable."
 msgstr ""
 
-#: ../../../api.rst:793
+#: ../../../api.rst:794
 msgid ""
 ":field:`high`: sensor-specified high temperature threshold (fixed), or "
 "``None`` if unavailable. Typically indicates when hardware may start "
 "throttling to reduce heat."
 msgstr ""
 
-#: ../../../api.rst:796
+#: ../../../api.rst:797
 msgid ""
 ":field:`critical`: sensor-specified critical temperature threshold (fixed), "
 "or ``None`` if unavailable. Typically indicates when hardware considers "
 "itself at risk; behavior may include throttling, fan ramp-up, or shutdown."
 msgstr ""
 
-#: ../../../api.rst:800
+#: ../../../api.rst:801
 msgid ""
 ">>> import psutil\n"
 ">>> psutil.sensors_temperatures()\n"
@@ -1506,56 +1516,56 @@ msgid ""
 "critical=100.0)]}"
 msgstr ""
 
-#: ../../../api.rst:813
+#: ../../../api.rst:814
 msgid ":src:`scripts/temperatures.py`"
 msgstr ""
 
-#: ../../../api.rst:814 ../../../api.rst:834 ../../../api.rst:868
+#: ../../../api.rst:815 ../../../api.rst:835 ../../../api.rst:869
 msgid ":src:`scripts/sensors.py`"
 msgstr ""
 
-#: ../../../api.rst:823
+#: ../../../api.rst:824
 msgid ""
 "Return hardware fan speeds in RPM (revolutions per minute). If unsupported, "
 "return an empty dict."
 msgstr ""
 
-#: ../../../api.rst:826
+#: ../../../api.rst:827
 msgid ""
 ">>> import psutil\n"
 ">>> psutil.sensors_fans()\n"
 "{'asus': [sfan(label='cpu_fan', current=3200)]}"
 msgstr ""
 
-#: ../../../api.rst:833
+#: ../../../api.rst:834
 msgid ":src:`scripts/fans.py`"
 msgstr ""
 
-#: ../../../api.rst:840
+#: ../../../api.rst:841
 msgid ""
 "Return battery status information. If no battery is installed or metrics "
 "can't be determined ``None`` is returned."
 msgstr ""
 
-#: ../../../api.rst:843
+#: ../../../api.rst:844
 msgid ":field:`percent`: battery power left as a percentage."
 msgstr ""
 
-#: ../../../api.rst:844
+#: ../../../api.rst:845
 msgid ""
 ":field:`secsleft`: a rough approximation of how many seconds are left before "
 "the battery runs out of power. If the AC power cable is connected this is "
-"set to :data:`POWER_TIME_UNLIMITED`. If it can't be determined it is set to :"
-"data:`POWER_TIME_UNKNOWN`."
+"set to :data:`POWER_TIME_UNLIMITED`. If it can't be determined it is set "
+"to :data:`POWER_TIME_UNKNOWN`."
 msgstr ""
 
-#: ../../../api.rst:848
+#: ../../../api.rst:849
 msgid ""
 ":field:`power_plugged`: ``True`` if the AC power cable is connected, "
 "``False`` if not, or ``None`` if it can't be determined."
 msgstr ""
 
-#: ../../../api.rst:851
+#: ../../../api.rst:852
 msgid ""
 ">>> import psutil\n"
 ">>>\n"
@@ -1572,15 +1582,15 @@ msgid ""
 "charge = 93%, time left = 4:37:08"
 msgstr ""
 
-#: ../../../api.rst:867
+#: ../../../api.rst:868
 msgid ":src:`scripts/battery.py`"
 msgstr ""
 
-#: ../../../api.rst:875
+#: ../../../api.rst:876
 msgid "Other system info"
 msgstr ""
 
-#: ../../../api.rst:879
+#: ../../../api.rst:880
 msgid ""
 "Return the system boot time expressed in seconds since the epoch (seconds "
 "since January 1, 1970, at midnight UTC). The return value is based on the "
@@ -1588,7 +1598,7 @@ msgid ""
 "adjustments or time synchronization (e.g. NTP)."
 msgstr ""
 
-#: ../../../api.rst:884
+#: ../../../api.rst:885
 msgid ""
 ">>> import psutil, datetime\n"
 ">>> psutil.boot_time()\n"
@@ -1598,41 +1608,41 @@ msgid ""
 "'2014-01-12 22:51:00'"
 msgstr ""
 
-#: ../../../api.rst:894
+#: ../../../api.rst:895
 msgid ""
 "Return users currently connected on the system as a list. Each entry "
 "includes:"
 msgstr ""
 
-#: ../../../api.rst:897
+#: ../../../api.rst:898
 msgid ":field:`name`: the name of the user."
 msgstr ""
 
-#: ../../../api.rst:898
+#: ../../../api.rst:899
 msgid ""
 ":field:`terminal`: the tty or pseudo-tty associated with the user, if any, "
 "else ``None``."
 msgstr ""
 
-#: ../../../api.rst:900
+#: ../../../api.rst:901
 msgid ""
 ":field:`host`: the host name associated with the entry, if any (for example, "
 "the remote host in an SSH session), else ``None``."
 msgstr ""
 
-#: ../../../api.rst:902
+#: ../../../api.rst:903
 msgid ""
 ":field:`started`: the creation time as a floating point number expressed in "
 "seconds since the epoch."
 msgstr ""
 
-#: ../../../api.rst:904
+#: ../../../api.rst:905
 msgid ""
 ":field:`pid`: the PID of the login process (like sshd for remote logins, "
 "tmux, etc.). On Windows and OpenBSD this is always ``None``."
 msgstr ""
 
-#: ../../../api.rst:907
+#: ../../../api.rst:908
 msgid ""
 ">>> import psutil\n"
 ">>> psutil.users()\n"
@@ -1642,82 +1652,76 @@ msgid ""
 "started=1340737792.0, pid=1788)]"
 msgstr ""
 
-#: ../../../api.rst:915
+#: ../../../api.rst:916
 msgid ""
 "On UNIX this reads the ``utmp`` database, and returns an empty list if "
 "nothing maintains it, e.g. on musl libc (Alpine Linux), which doesn't "
 "implement it. ``who`` is empty too in that case."
 msgstr ""
 
-#: ../../../api.rst:922
+#: ../../../api.rst:923
 msgid "Processes"
 msgstr ""
 
-#: ../../../api.rst:925
+#: ../../../api.rst:926
 msgid "Functions"
 msgstr ""
 
-#: ../../../api.rst:929
+#: ../../../api.rst:930
 msgid ""
 "Return a sorted list of currently running PIDs. To iterate over all "
-"processes and avoid race conditions :func:`process_iter` is preferred, see :"
-"ref:`perf-process-iter`."
+"processes and avoid race conditions :func:`process_iter` is preferred, "
+"see :ref:`perf-process-iter`."
 msgstr ""
 
-#: ../../../api.rst:933
+#: ../../../api.rst:934
 msgid ""
 ">>> import psutil\n"
 ">>> psutil.pids()\n"
 "[1, 2, 3, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, ..., 32498]"
 msgstr ""
 
-#: ../../../api.rst:939
+#: ../../../api.rst:940
 msgid "PIDs are returned in sorted order."
 msgstr ""
 
-#: ../../../api.rst:944
+#: ../../../api.rst:945
 msgid ""
 "Return an iterator yielding a :class:`Process` instance for all running "
 "processes. This should be preferred over :func:`psutil.pids` to iterate over "
 "processes, as retrieving info is safe from race conditions."
 msgstr ""
 
-#: ../../../api.rst:948
+#: ../../../api.rst:949
 msgid ""
 "Every :class:`Process` instance is only created once, and then cached for "
 "the next time :func:`psutil.process_iter` is called (if PID is still alive). "
 "Cache can optionally be cleared via ``process_iter.cache_clear()``."
 msgstr ""
 
-#: ../../../api.rst:952
+#: ../../../api.rst:953
 msgid ""
 "*attrs* and *ad_value* have the same meaning as in :meth:`Process.as_dict`."
 msgstr ""
 
-#: ../../../api.rst:954
+#: ../../../api.rst:955
 msgid ""
-"If *attrs* is specified, :meth:`Process.as_dict` is called internally, and "
-"the results are cached so that subsequent method calls (e.g. ``p.name()``, "
-"``p.status()``) return the cached values instead of issuing new system "
-"calls. See :attr:`Process.attrs` for a list of valid *attrs* names."
+"If *attrs* is specified, the collected values are exposed as "
+"a :class:`ProcessSnapshot` via the :attr:`Process.snapshot` attribute of the "
+"returned :class:`Process` instances. See :attr:`Process.attrs` for a list of "
+"valid *attrs* names."
 msgstr ""
 
-#: ../../../api.rst:959
-msgid ""
-"If a method raises :exc:`AccessDenied` during pre-fetch, it will return "
-"*ad_value* (default ``None``) instead of raising."
-msgstr ""
-
-#: ../../../api.rst:962
+#: ../../../api.rst:960
 msgid "Processes are returned sorted by PID."
 msgstr ""
 
-#: ../../../api.rst:964
+#: ../../../api.rst:962
 msgid ""
 ">>> import psutil\n"
 ">>> for proc in psutil.process_iter(['pid', 'name', 'username']):\n"
-"...     print(proc.pid, proc.name(), proc.username())  # return cached "
-"values, never raise\n"
+"...     print(proc.snapshot.pid, proc.snapshot.name, "
+"proc.snapshot.username)\n"
 "...\n"
 "1 systemd root\n"
 "2 kthreadd root\n"
@@ -1725,106 +1729,96 @@ msgid ""
 "..."
 msgstr ""
 
-#: ../../../api.rst:975
+#: ../../../api.rst:973
 msgid "All process *attrs* except slow ones:"
 msgstr ""
 
-#: ../../../api.rst:977
+#: ../../../api.rst:975
 msgid ""
 ">>> for p in psutil.process_iter(psutil.Process.attrs - {'memory_footprint', "
 "'memory_maps'}):\n"
 "...     print(p)"
 msgstr ""
 
-#: ../../../api.rst:982
+#: ../../../api.rst:980
 msgid "Clear internal cache:"
 msgstr ""
 
-#: ../../../api.rst:984
+#: ../../../api.rst:982
 msgid ">>> psutil.process_iter.cache_clear()"
 msgstr ""
 
-#: ../../../api.rst:990
-msgid ""
-"since :class:`Process` instances are reused across calls, a subsequent :func:"
-"`process_iter` call will overwrite or clear any previously pre-fetched "
-"values. Do not rely on cached values from a prior iteration."
-msgstr ""
-
-#: ../../../api.rst:995
+#: ../../../api.rst:987
 msgid ":ref:`perf-process-iter`"
 msgstr ""
 
-#: ../../../api.rst:999
+#: ../../../api.rst:991
 msgid "No longer checks whether each yielded process PID has been reused."
 msgstr ""
 
-#: ../../../api.rst:1000
+#: ../../../api.rst:992
 msgid "Added ``psutil.process_iter.cache_clear()`` API."
 msgstr ""
 
-#: ../../../api.rst:1004
+#: ../../../api.rst:996
 msgid ""
-"When *attrs* is specified, the pre-fetched values are cached directly on "
-"the :class:`Process` instance, so that subsequent method calls (e.g. ``p."
-"name()``, ``p.status()``) return the cached values instead of making new "
-"system calls. The :attr:`Process.info` dict is deprecated in favor of this "
-"new approach."
+"Collected attributes are exposed via :attr:`Process.snapshot`; "
+"``Process.info`` is deprecated."
 msgstr ""
 
-#: ../../../api.rst:1009
+#: ../../../api.rst:998
 msgid ""
 "Passing an empty list (``attrs=[]``) to mean \"all attributes\" is "
 "deprecated; use :attr:`Process.attrs` instead."
 msgstr ""
 
-#: ../../../api.rst:1014
+#: ../../../api.rst:1003
 msgid ""
 "Check whether the given PID exists in the current process list. This is "
 "faster than doing ``pid in psutil.pids()``, and should be preferred."
 msgstr ""
 
-#: ../../../api.rst:1018 ../../../api.rst:2062
+#: ../../../api.rst:1007 ../../../api.rst:2058
 msgid ":ref:`faq_pid_exists_vs_isrunning`"
 msgstr ""
 
-#: ../../../api.rst:1022
+#: ../../../api.rst:1011
 msgid ""
 "Bulk operation that waits for a list of :class:`Process` instances to "
 "terminate. Return a ``(gone, alive)`` tuple. The ``gone`` processes will "
 "have a new ``returncode`` attribute set by :meth:`Process.wait`."
 msgstr ""
 
-#: ../../../api.rst:1026
+#: ../../../api.rst:1015
 msgid ""
 "*callback* is called with a :class:`Process` instance whenever a process "
 "terminates."
 msgstr ""
 
-#: ../../../api.rst:1029
+#: ../../../api.rst:1018
 msgid ""
 "Returns as soon as all processes terminate or *timeout* (seconds) expires. "
 "Unlike :meth:`Process.wait`, it does not raise :exc:`TimeoutExpired` on "
 "timeout."
 msgstr ""
 
-#: ../../../api.rst:1033
+#: ../../../api.rst:1022
 msgid "Typical usage:"
 msgstr ""
 
-#: ../../../api.rst:1035
+#: ../../../api.rst:1024
 msgid "send SIGTERM to a list of processes"
 msgstr ""
 
-#: ../../../api.rst:1036
+#: ../../../api.rst:1025
 msgid "wait a short time"
 msgstr ""
 
-#: ../../../api.rst:1037
+#: ../../../api.rst:1026
 msgid "send SIGKILL to any still alive"
 msgstr ""
 
-#: ../../../api.rst:1039
+#: ../../../api.rst:1028
 msgid ""
 "import psutil\n"
 "\n"
@@ -1840,15 +1834,15 @@ msgid ""
 "    p.kill()"
 msgstr ""
 
-#: ../../../api.rst:1055
+#: ../../../api.rst:1044
 msgid "Exceptions"
 msgstr ""
 
-#: ../../../api.rst:1059
+#: ../../../api.rst:1048
 msgid "Base exception class. All other exceptions inherit from this one."
 msgstr ""
 
-#: ../../../api.rst:1063
+#: ../../../api.rst:1052
 msgid ""
 "Raised by :class:`Process` class or its methods when a process with the "
 "given *pid* is not found, no longer exists, or its PID has been reused. "
@@ -1856,105 +1850,125 @@ msgid ""
 "process disappeared."
 msgstr ""
 
-#: ../../../api.rst:1069
+#: ../../../api.rst:1058
 msgid ":ref:`faq_no_such_process`"
 msgstr ""
 
-#: ../../../api.rst:1073
+#: ../../../api.rst:1062
 msgid ""
 "Subclass of :exc:`NoSuchProcess`. Raised by :class:`Process` methods when "
 "encountering a :term:`zombie process` on UNIX (Windows does not have "
-"zombies). *name* and *ppid* attributes are set if :meth:`Process.name` or :"
-"meth:`Process.ppid` were called before the process became a zombie."
+"zombies). *name* and *ppid* attributes are set if :meth:`Process.name` "
+"or :meth:`Process.ppid` were called before the process became a zombie."
 msgstr ""
 
-#: ../../../api.rst:1078
+#: ../../../api.rst:1067
 msgid ""
 "If you do not need to detect zombies, you can ignore this exception and just "
 "catch :exc:`NoSuchProcess`."
 msgstr ""
 
-#: ../../../api.rst:1082
+#: ../../../api.rst:1071
 msgid ":ref:`faq_zombie_process`"
 msgstr ""
 
-#: ../../../api.rst:1086
+#: ../../../api.rst:1075
 msgid ""
 "Raised by :class:`Process` methods when an action is denied due to "
 "insufficient privileges. *name* is set if :meth:`Process.name` was called "
 "before the exception was raised."
 msgstr ""
 
-#: ../../../api.rst:1091
+#: ../../../api.rst:1080
 msgid ":ref:`faq_access_denied`"
 msgstr ""
 
-#: ../../../api.rst:1095
+#: ../../../api.rst:1084
 msgid ""
 "Raised by :meth:`Process.wait` method if timeout expires and the process is "
 "still alive. *name* attribute is set if :meth:`Process.name` was previously "
 "called."
 msgstr ""
 
-#: ../../../api.rst:1100
+#: ../../../api.rst:1089
 msgid "Process class"
 msgstr ""
 
-#: ../../../api.rst:1104
+#: ../../../api.rst:1093
 msgid ""
 "Represents an OS process with the given *pid*. If *pid* is omitted, the "
-"current process *pid* (:func:`os.getpid`) is used. Raises :exc:"
-"`NoSuchProcess` if *pid* does not exist."
+"current process *pid* (:func:`os.getpid`) is used. "
+"Raises :exc:`NoSuchProcess` if *pid* does not exist."
 msgstr ""
 
-#: ../../../api.rst:1108
+#: ../../../api.rst:1097
 msgid ""
 "On Linux, *pid* can also refer to a thread ID (the :field:`id` field "
 "returned by :meth:`threads`)."
 msgstr ""
 
-#: ../../../api.rst:1111
+#: ../../../api.rst:1100
 msgid ""
-"When calling methods of this class, always be prepared to catch :exc:"
-"`NoSuchProcess` and :exc:`AccessDenied` exceptions. Instances can be "
-"compared for equality and used in a :class:`set` or as :class:`dict` keys: "
-"two instances are equal if they have the same PID and creation time. If the "
-"creation time of either instance is unknown (e.g. on :exc:`AccessDenied`, or "
-"for zombie processes), identity falls back on the PID alone. The same "
-"applies on the platforms where creation time is not part of process identity "
-"(see :ref:`faq_pid_reuse`)."
+"When calling methods of this class, always be prepared to "
+"catch :exc:`NoSuchProcess` and :exc:`AccessDenied` exceptions. Instances can "
+"be compared for equality and used in a :class:`set` or as :class:`dict` "
+"keys: two instances are equal if they have the same PID and creation time. "
+"If the creation time of either instance is unknown (e.g. "
+"on :exc:`AccessDenied`, or for zombie processes), identity falls back on the "
+"PID alone. The same applies on the platforms where creation time is not part "
+"of process identity (see :ref:`faq_pid_reuse`)."
 msgstr ""
 
-#: ../../../api.rst:1122
+#: ../../../api.rst:1111
 msgid ""
 "This class is bound to a process via its **PID**. If the process terminates "
 "and the OS reuses its PID, you may accidentally interact with another "
 "process. To prevent this, use :meth:`is_running` first. Some methods (e.g., "
 "setters and signal-related methods) perform an additional check using PID + "
 "creation time, and will raise :exc:`NoSuchProcess` if the PID has been "
-"reused. This check is not available on all platforms. See :ref:"
-"`faq_pid_reuse` for details."
+"reused. This check is not available on all platforms. "
+"See :ref:`faq_pid_reuse` for details."
 msgstr ""
 
-#: ../../../api.rst:1132
+#: ../../../api.rst:1121
 msgid ""
 "To fetch multiple attributes efficiently, use the :meth:`oneshot` context "
 "manager or the :meth:`as_dict` utility method."
 msgstr ""
 
-#: ../../../api.rst:1137
+#: ../../../api.rst:1126
 msgid "The process PID as a read-only property."
 msgstr ""
 
-#: ../../../api.rst:1141
+#: ../../../api.rst:1130
+msgid ""
+"A :class:`ProcessSnapshot` holding the attributes collected by the "
+"last :func:`process_iter(attrs=...) <psutil.process_iter>` call. It is empty "
+"for a :class:`Process` created directly or yielded by :func:`process_iter` "
+"without *attrs*."
+msgstr ""
+
+#: ../../../api.rst:1139
+msgid ""
+"The attributes collected by :func:`process_iter(attrs=...) "
+"<psutil.process_iter>` as a dictionary."
+msgstr ""
+
+#: ../../../api.rst:1142
+msgid ""
+"use :meth:`snapshot.as_dict() <ProcessSnapshot.as_dict>` instead. "
+"See :ref:`migration guide <migration-8.0-snapshot>`."
+msgstr ""
+
+#: ../../../api.rst:1148
 msgid ""
 "A :class:`frozenset` of strings representing the valid attribute names "
 "accepted by :meth:`as_dict` and :func:`process_iter`. It defaults to all "
-"read-only :class:`Process` method names, minus the utility methods such as :"
-"meth:`as_dict`, :meth:`children`, etc."
+"read-only :class:`Process` method names, minus the utility methods such "
+"as :meth:`as_dict`, :meth:`children`, etc."
 msgstr ""
 
-#: ../../../api.rst:1146
+#: ../../../api.rst:1153
 msgid ""
 ">>> import psutil\n"
 ">>> psutil.Process.attrs\n"
@@ -1965,29 +1979,16 @@ msgid ""
 ">>> psutil.process_iter(attrs=psutil.Process.attrs - {\"net_connections\"})"
 msgstr ""
 
-#: ../../../api.rst:1160
-msgid ""
-"A dict containing pre-fetched process info, set by :func:`process_iter` when "
-"called with ``attrs`` argument. Accessing this attribute is deprecated and "
-"raises :exc:`DeprecationWarning`. Use method calls instead (e.g. ``p."
-"name()`` instead of ``p.info['name']``) or :func:`process_iter` + :meth:"
-"`Process.as_dict` if you need a dict structure."
-msgstr ""
-
 #: ../../../api.rst:1167
-msgid ":ref:`migration guide <migration-8.0>`"
+msgid ""
+"Context manager that speeds up retrieval of multiple process attributes. "
+"Internally, many attributes "
+"(e.g. :meth:`name`, :meth:`ppid`, :meth:`uids`, :meth:`create_time`, ...) "
+"share the same underlying system call; within this context, those calls are "
+"executed once and results are cached, avoiding redundant syscalls."
 msgstr ""
 
 #: ../../../api.rst:1173
-msgid ""
-"Context manager that speeds up retrieval of multiple process attributes. "
-"Internally, many attributes (e.g. :meth:`name`, :meth:`ppid`, :meth:`uids`, :"
-"meth:`create_time`, ...) share the same underlying system call; within this "
-"context, those calls are executed once and results are cached, avoiding "
-"redundant syscalls."
-msgstr ""
-
-#: ../../../api.rst:1179
 msgid ""
 ">>> import psutil\n"
 ">>> p = psutil.Process()\n"
@@ -2001,32 +2002,32 @@ msgid ""
 ">>>"
 msgstr ""
 
-#: ../../../api.rst:1192
+#: ../../../api.rst:1186
 msgid ""
 "Which methods share a syscall, and therefore get cached, depends on the "
 "platform, so the example above is indicative. See :ref:`perf-oneshot-"
 "methods` for the full list."
 msgstr ""
 
-#: ../../../api.rst:1197
+#: ../../../api.rst:1191
 msgid ":doc:`performance`"
 msgstr ""
 
-#: ../../../api.rst:1198
+#: ../../../api.rst:1192
 msgid ":doc:`/blog/2016/500-is-twice-as-fast`"
 msgstr ""
 
-#: ../../../api.rst:1202
+#: ../../../api.rst:1196
 msgid ""
 "The process name. On Windows the return value is cached after first call. "
 "Not on POSIX because the process name may change."
 msgstr ""
 
-#: ../../../api.rst:1206
+#: ../../../api.rst:1200
 msgid ":ref:`Find process by name recipe <recipe_find_process_by_name>`"
 msgstr ""
 
-#: ../../../api.rst:1210
+#: ../../../api.rst:1204
 msgid ""
 "The process executable as an absolute path. On some systems, if exe cannot "
 "be determined for some internal reason (e.g. system process or path no "
@@ -2034,33 +2035,33 @@ msgid ""
 "first call."
 msgstr ""
 
-#: ../../../api.rst:1215
+#: ../../../api.rst:1209
 msgid ""
 ">>> import psutil\n"
 ">>> psutil.Process().exe()\n"
 "'/usr/bin/python3'"
 msgstr ""
 
-#: ../../../api.rst:1223
+#: ../../../api.rst:1217
 msgid ""
 "The command line used to start this process, as a list of strings. The "
 "return value is not cached because the cmdline of a process may change."
 msgstr ""
 
-#: ../../../api.rst:1226
+#: ../../../api.rst:1220
 msgid ""
 ">>> import psutil\n"
 ">>> psutil.Process().cmdline()\n"
 "['python3', 'manage.py', 'runserver']"
 msgstr ""
 
-#: ../../../api.rst:1234
+#: ../../../api.rst:1228
 msgid ""
 "The environment variables of the process as a dict. Note: this might not "
 "reflect changes made after the process started."
 msgstr ""
 
-#: ../../../api.rst:1237
+#: ../../../api.rst:1231
 msgid ""
 ">>> import psutil\n"
 ">>> psutil.Process().environ()\n"
@@ -2070,14 +2071,14 @@ msgid ""
 "starting', 'GNOME_KEYRING_PID': '', 'XDG_VTNR': '7', 'QT_IM_MODULE': 'ibus', "
 "'LOGNAME': 'giampaolo', 'USER': 'giampaolo', 'PATH': '/home/giampaolo/bin:/"
 "usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/"
-"local/games:/snap/bin:/home/giampaolo/svn/sysconf/bin', 'LC_PAPER': 'it_IT."
-"UTF-8', 'GNOME_KEYRING_CONTROL': '', 'GTK_IM_MODULE': 'ibus', 'DISPLAY': "
-"':0', 'LANG': 'en_US.UTF-8', 'LESS_TERMCAP_se': '\\x1b[0m', 'TERM': "
-"'xterm-256color', 'SHELL': '/bin/bash', 'XDG_SESSION_PATH': '/org/"
-"freedesktop/DisplayManager/Session0', 'XAUTHORITY': '/home/giampaolo/."
-"Xauthority', 'LANGUAGE': 'en_US', 'COMPIZ_CONFIG_PROFILE': 'ubuntu', "
-"'LC_MONETARY': 'it_IT.UTF-8', 'QT_LINUX_ACCESSIBILITY_ALWAYS_ON': '1', "
-"'LESS_TERMCAP_me': '\\x1b[0m', 'LESS_TERMCAP_md': '\\x1b[01;38;5;74m', "
+"local/games:/snap/bin:/home/giampaolo/svn/sysconf/bin', 'LC_PAPER': "
+"'it_IT.UTF-8', 'GNOME_KEYRING_CONTROL': '', 'GTK_IM_MODULE': 'ibus', "
+"'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'LESS_TERMCAP_se': '\\x1b[0m', "
+"'TERM': 'xterm-256color', 'SHELL': '/bin/bash', 'XDG_SESSION_PATH': '/org/"
+"freedesktop/DisplayManager/Session0', 'XAUTHORITY': '/home/"
+"giampaolo/.Xauthority', 'LANGUAGE': 'en_US', 'COMPIZ_CONFIG_PROFILE': "
+"'ubuntu', 'LC_MONETARY': 'it_IT.UTF-8', 'QT_LINUX_ACCESSIBILITY_ALWAYS_ON': "
+"'1', 'LESS_TERMCAP_me': '\\x1b[0m', 'LESS_TERMCAP_md': '\\x1b[01;38;5;74m', "
 "'LESS_TERMCAP_mb': '\\x1b[01;31m', 'HISTSIZE': '100000', 'UPSTART_INSTANCE': "
 "'', 'CLUTTER_IM_MODULE': 'xim', 'WINDOWID': '58786407', 'EDITOR': 'vim', "
 "'SESSIONTYPE': 'gnome-session', 'XMODIFIERS': '@im=ibus', 'GPG_AGENT_INFO': "
@@ -2086,28 +2087,29 @@ msgid ""
 "scrollbar', 'XDG_SESSION_DESKTOP': 'ubuntu', 'SHLVL': '1', "
 "'XDG_RUNTIME_DIR': '/run/user/1000', 'INSTANCE': 'Unity', 'LC_ADDRESS': "
 "'it_IT.UTF-8', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'VTE_VERSION': "
-"'4205', 'GDMSESSION': 'ubuntu', 'MANDATORY_PATH': '/usr/share/gconf/ubuntu."
-"mandatory.path', 'VISUAL': 'vim', 'DESKTOP_SESSION': 'ubuntu', "
+"'4205', 'GDMSESSION': 'ubuntu', 'MANDATORY_PATH': '/usr/share/gconf/"
+"ubuntu.mandatory.path', 'VISUAL': 'vim', 'DESKTOP_SESSION': 'ubuntu', "
 "'QT_ACCESSIBILITY': '1', 'XDG_SEAT_PATH': '/org/freedesktop/DisplayManager/"
 "Seat0', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LESSOPEN': '| /usr/bin/"
-"lesspipe %s', 'XDG_SESSION_ID': 'c2', 'DBUS_SESSION_BUS_ADDRESS': 'unix:"
-"abstract=/tmp/dbus-9GAJpvnt8r', '_': '/usr/bin/python', 'DEFAULTS_PATH': '/"
-"usr/share/gconf/ubuntu.default.path', 'LC_IDENTIFICATION': 'it_IT.UTF-8', "
-"'LESS_TERMCAP_ue': '\\x1b[0m', 'UPSTART_SESSION': 'unix:abstract=/com/ubuntu/"
-"upstart-session/1000/1294', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/usr/"
-"share/upstart/xdg:/etc/xdg', 'GTK_MODULES': 'gail:atk-bridge:unity-gtk-"
-"module', 'XDG_SESSION_TYPE': 'x11', 'PYTHONSTARTUP': '/home/giampaolo/."
-"pythonstart', 'LC_NAME': 'it_IT.UTF-8', 'OLDPWD': '/home/giampaolo/svn/"
-"curio_giampaolo/tests', 'GDM_LANG': 'en_US', 'LC_TELEPHONE': 'it_IT.UTF-8', "
-"'HISTCONTROL': 'ignoredups:erasedups', 'LC_MEASUREMENT': 'it_IT.UTF-8', "
-"'PWD': '/home/giampaolo/svn/curio_giampaolo', 'JOB': 'gnome-session', "
-"'LESS_TERMCAP_us': '\\x1b[04;38;5;146m', 'UPSTART_JOB': 'unity-settings-"
-"daemon', 'LC_TIME': 'it_IT.UTF-8', 'LESS_TERMCAP_so': '\\x1b[38;5;246m', "
-"'PAGER': 'less', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/"
-"local/share/:/usr/share/:/var/lib/snapd/desktop', 'XDG_SEAT': 'seat0'}"
+"lesspipe %s', 'XDG_SESSION_ID': 'c2', 'DBUS_SESSION_BUS_ADDRESS': "
+"'unix:abstract=/tmp/dbus-9GAJpvnt8r', '_': '/usr/bin/python', "
+"'DEFAULTS_PATH': '/usr/share/gconf/ubuntu.default.path', "
+"'LC_IDENTIFICATION': 'it_IT.UTF-8', 'LESS_TERMCAP_ue': '\\x1b[0m', "
+"'UPSTART_SESSION': 'unix:abstract=/com/ubuntu/upstart-session/1000/1294', "
+"'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg', "
+"'GTK_MODULES': 'gail:atk-bridge:unity-gtk-module', 'XDG_SESSION_TYPE': "
+"'x11', 'PYTHONSTARTUP': '/home/giampaolo/.pythonstart', 'LC_NAME': "
+"'it_IT.UTF-8', 'OLDPWD': '/home/giampaolo/svn/curio_giampaolo/tests', "
+"'GDM_LANG': 'en_US', 'LC_TELEPHONE': 'it_IT.UTF-8', 'HISTCONTROL': "
+"'ignoredups:erasedups', 'LC_MEASUREMENT': 'it_IT.UTF-8', 'PWD': '/home/"
+"giampaolo/svn/curio_giampaolo', 'JOB': 'gnome-session', 'LESS_TERMCAP_us': "
+"'\\x1b[04;38;5;146m', 'UPSTART_JOB': 'unity-settings-daemon', 'LC_TIME': "
+"'it_IT.UTF-8', 'LESS_TERMCAP_so': '\\x1b[38;5;246m', 'PAGER': 'less', "
+"'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/"
+"share/:/var/lib/snapd/desktop', 'XDG_SEAT': 'seat0'}"
 msgstr ""
 
-#: ../../../api.rst:1244
+#: ../../../api.rst:1238
 msgid ""
 "on macOS Big Sur this function returns something meaningful only for the "
 "current process or in `other specific circumstances <https://github.com/"
@@ -2115,15 +2117,15 @@ msgid ""
 "kern_sysctl.c#L1315-L1321>`_."
 msgstr ""
 
-#: ../../../api.rst:1248
+#: ../../../api.rst:1242
 msgid "added AIX support."
 msgstr ""
 
-#: ../../../api.rst:1251
+#: ../../../api.rst:1245
 msgid "added BSD support."
 msgstr ""
 
-#: ../../../api.rst:1256
+#: ../../../api.rst:1250
 msgid ""
 "The process creation time as a floating point number expressed in seconds "
 "since the epoch (seconds since January 1, 1970, at midnight UTC). The return "
@@ -2132,7 +2134,7 @@ msgid ""
 "synchronization (e.g. NTP)."
 msgstr ""
 
-#: ../../../api.rst:1262
+#: ../../../api.rst:1256
 msgid ""
 ">>> import psutil, datetime\n"
 ">>> p = psutil.Process()\n"
@@ -2143,37 +2145,37 @@ msgid ""
 "'2011-03-05 18:03:52'"
 msgstr ""
 
-#: ../../../api.rst:1273
+#: ../../../api.rst:1267
 msgid "Utility method returning multiple process information as a dictionary."
 msgstr ""
 
-#: ../../../api.rst:1275
+#: ../../../api.rst:1269
 msgid ""
 "If *attrs* is specified, it must be a collection of strings reflecting "
-"available :class:`Process` class's attribute names. If not passed all :attr:"
-"`Process.attrs` names are assumed."
+"available :class:`Process` class's attribute names. If not passed "
+"all :attr:`Process.attrs` names are assumed."
 msgstr ""
 
-#: ../../../api.rst:1279
+#: ../../../api.rst:1273
 msgid ""
-"*ad_value* is the value which gets assigned to a dict key in case :exc:"
-"`AccessDenied` or :exc:`ZombieProcess` exception is raised when retrieving "
-"that particular process information (default ``None``)."
+"*ad_value* is the value which gets assigned to a dict key in "
+"case :exc:`AccessDenied` or :exc:`ZombieProcess` exception is raised when "
+"retrieving that particular process information (default ``None``)."
 msgstr ""
 
-#: ../../../api.rst:1283
+#: ../../../api.rst:1277
 msgid ""
-"The ``'net_connections'`` attribute is retrieved by calling :meth:`Process."
-"net_connections` with ``kind=\"inet\"``."
+"The ``'net_connections'`` attribute is retrieved by "
+"calling :meth:`Process.net_connections` with ``kind=\"inet\"``."
 msgstr ""
 
-#: ../../../api.rst:1286
+#: ../../../api.rst:1280
 msgid ""
 "Internally, :meth:`as_dict` uses :meth:`oneshot` context manager so there's "
 "no need you use it also."
 msgstr ""
 
-#: ../../../api.rst:1289
+#: ../../../api.rst:1283
 msgid ""
 ">>> import psutil\n"
 ">>> p = psutil.Process()\n"
@@ -2185,29 +2187,29 @@ msgid ""
 ">>>"
 msgstr ""
 
-#: ../../../api.rst:1302
+#: ../../../api.rst:1296
 msgid ""
 "The process parent PID. On Windows the return value is cached after the "
 "first call. On POSIX it is not cached because it may change if the process "
-"becomes a :term:`zombie <zombie process>`. See also :meth:`parent` and :meth:"
-"`parents` methods."
+"becomes a :term:`zombie <zombie process>`. See also :meth:`parent` "
+"and :meth:`parents` methods."
 msgstr ""
 
-#: ../../../api.rst:1309
+#: ../../../api.rst:1303
 msgid ""
 "Utility method which returns the parent process as a :class:`Process` "
 "object, preemptively checking whether PID has been reused. If no parent PID "
 "is known return ``None``. See also :meth:`ppid` and :meth:`parents` methods."
 msgstr ""
 
-#: ../../../api.rst:1316
+#: ../../../api.rst:1310
 msgid ""
-"Utility method which returns the parents of this process as a list of :class:"
-"`Process` instances. If no parents are known return an empty list. See also :"
-"meth:`ppid` and :meth:`parent` methods."
+"Utility method which returns the parents of this process as a list "
+"of :class:`Process` instances. If no parents are known return an empty list. "
+"See also :meth:`ppid` and :meth:`parent` methods."
 msgstr ""
 
-#: ../../../api.rst:1322
+#: ../../../api.rst:1316
 msgid ""
 "The current process status as a :class:`ProcessStatus` enum member. The "
 "returned value is one of the :data:`STATUS_* <psutil.STATUS_RUNNING>` "
@@ -2215,57 +2217,57 @@ msgid ""
 "process>` (``p.status() == psutil.STATUS_ZOMBIE``)."
 msgstr ""
 
-#: ../../../api.rst:1328
+#: ../../../api.rst:1322
 msgid ""
 "return value is now a :class:`ProcessStatus` enum member instead of a plain "
 "``str``. See :ref:`migration guide <migration-8.0>`."
 msgstr ""
 
-#: ../../../api.rst:1334
+#: ../../../api.rst:1328
 msgid ""
 "The process current working directory as an absolute path. If it cannot be "
 "determined (e.g. a system process or directory no longer exists) it returns "
 "an empty string."
 msgstr ""
 
-#: ../../../api.rst:1338
+#: ../../../api.rst:1332
 msgid "added support for NetBSD."
 msgstr ""
 
-#: ../../../api.rst:1343
+#: ../../../api.rst:1337
 msgid ""
 "The name of the user that owns the process. On UNIX this is calculated by "
 "using the :field:`real` process UID from :meth:`uids`."
 msgstr ""
 
-#: ../../../api.rst:1348
+#: ../../../api.rst:1342
 msgid ""
 "The :field:`real`, :field:`effective` and :field:`saved` user ID of this "
 "process as a named tuple. This is the same as :func:`os.getresuid`, but can "
 "be used for any process PID."
 msgstr ""
 
-#: ../../../api.rst:1356
+#: ../../../api.rst:1350
 msgid ""
 "The :field:`real`, :field:`effective` and :field:`saved` group ID of this "
 "process as a named tuple. This is the same as :func:`os.getresgid`, but can "
 "be used for any process PID."
 msgstr ""
 
-#: ../../../api.rst:1364
+#: ../../../api.rst:1358
 msgid ""
 "The terminal associated with this process, if any, else ``None``. This is "
 "similar to ``tty`` command but can be used for any process PID."
 msgstr ""
 
-#: ../../../api.rst:1371
+#: ../../../api.rst:1365
 msgid ""
 "Get or set process :term:`niceness <nice>` (priority). On UNIX this is a "
 "number which goes from ``-20`` to ``20``. The higher the nice value, the "
 "lower the priority of the process."
 msgstr ""
 
-#: ../../../api.rst:1375
+#: ../../../api.rst:1369
 msgid ""
 ">>> import psutil\n"
 ">>> p = psutil.Process()\n"
@@ -2275,42 +2277,42 @@ msgid ""
 ">>>"
 msgstr ""
 
-#: ../../../api.rst:1384
+#: ../../../api.rst:1378
 msgid ""
 "On Windows *value* is one of the :ref:`*_PRIORITY_CLASS <const-proc-prio>` "
 "constants:"
 msgstr ""
 
-#: ../../../api.rst:1387
+#: ../../../api.rst:1381
 msgid ""
 ">>> p.nice(psutil.HIGH_PRIORITY_CLASS)  # set higher priority\n"
 ">>> p.nice()  # get\n"
 "<ProcessPriority.HIGH_PRIORITY_CLASS: 32768>"
 msgstr ""
 
-#: ../../../api.rst:1393
+#: ../../../api.rst:1387
 msgid ""
 "This method was later incorporated in Python 3.3 as :func:`os.getpriority` "
 "and :func:`os.setpriority` (see :bpo:`10784`)."
 msgstr ""
 
-#: ../../../api.rst:1396
+#: ../../../api.rst:1390
 msgid ""
 "on Windows, the return value is now a :class:`ProcessPriority` enum member. "
 "See :ref:`migration guide <migration-8.0>`."
 msgstr ""
 
-#: ../../../api.rst:1402
+#: ../../../api.rst:1396
 msgid ""
 "Get or set process :term:`I/O niceness <ionice>` (priority). Called with no "
 "arguments (get), returns a ``(ioclass, value)`` named tuple on Linux or an "
-"*ioclass* integer on Windows. Called with *ioclass* (one of the :ref:"
-"`IOPRIO_* <const-proc-ioprio>` constants), sets the I/O priority. On Linux, "
-"an additional *value* ranging from ``0`` to ``7`` can be specified to "
-"further adjust the priority level specified by *ioclass*."
+"*ioclass* integer on Windows. Called with *ioclass* (one of "
+"the :ref:`IOPRIO_* <const-proc-ioprio>` constants), sets the I/O priority. "
+"On Linux, an additional *value* ranging from ``0`` to ``7`` can be specified "
+"to further adjust the priority level specified by *ioclass*."
 msgstr ""
 
-#: ../../../api.rst:1409
+#: ../../../api.rst:1403
 msgid ""
 ">>> import psutil\n"
 ">>> p = psutil.Process()\n"
@@ -2323,17 +2325,17 @@ msgid ""
 "pionice(ioclass=<ProcessIOPriority.IOPRIO_CLASS_RT: 1>, value=7)"
 msgstr ""
 
-#: ../../../api.rst:1423
+#: ../../../api.rst:1417
 msgid "Windows: accept new :data:`IOPRIO_* <psutil.IOPRIO_VERYLOW>` constants."
 msgstr ""
 
-#: ../../../api.rst:1426
+#: ../../../api.rst:1420
 msgid ""
-"*ioclass* is now a :class:`ProcessIOPriority` enum member. See :ref:"
-"`migration guide <migration-8.0>`."
+"*ioclass* is now a :class:`ProcessIOPriority` enum member. "
+"See :ref:`migration guide <migration-8.0>`."
 msgstr ""
 
-#: ../../../api.rst:1432
+#: ../../../api.rst:1426
 msgid ""
 "Get or set process :term:`resource limits <resource limit>`. *resource* must "
 "be one of the :ref:`RLIMIT_* <const-proc-rlimit>` constants. *limits* is an "
@@ -2343,7 +2345,7 @@ msgid ""
 "used for any process PID."
 msgstr ""
 
-#: ../../../api.rst:1439
+#: ../../../api.rst:1433
 msgid ""
 ">>> import psutil\n"
 ">>> p = psutil.Process()\n"
@@ -2354,71 +2356,71 @@ msgid ""
 "(1024, 1024)"
 msgstr ""
 
-#: ../../../api.rst:1449
+#: ../../../api.rst:1443
 msgid ":src:`scripts/procinfo.py`"
 msgstr ""
 
-#: ../../../api.rst:1458
+#: ../../../api.rst:1452
 msgid ""
 "Return process I/O statistics. All fields are :term:`cumulative counters "
 "<cumulative counter>` since process creation."
 msgstr ""
 
-#: ../../../api.rst:1461
+#: ../../../api.rst:1455
 msgid ""
-":field:`read_count`: number of read syscalls (e.g., :manpage:`read(2)`, :"
-"manpage:`pread(2)`)."
+":field:`read_count`: number of read syscalls "
+"(e.g., :manpage:`read(2)`, :manpage:`pread(2)`)."
 msgstr ""
 
-#: ../../../api.rst:1463
+#: ../../../api.rst:1457
 msgid ""
-":field:`write_count`: number of write syscalls (e.g., :manpage:`write(2)`, :"
-"manpage:`pwrite(2)`)."
+":field:`write_count`: number of write syscalls "
+"(e.g., :manpage:`write(2)`, :manpage:`pwrite(2)`)."
 msgstr ""
 
-#: ../../../api.rst:1465
+#: ../../../api.rst:1459
 msgid ":field:`read_bytes`: bytes read (``-1`` on BSD)."
 msgstr ""
 
-#: ../../../api.rst:1466
+#: ../../../api.rst:1460
 msgid ":field:`write_bytes`: bytes written (``-1`` on BSD)."
 msgstr ""
 
-#: ../../../api.rst:1468 ../../../api.rst:2660
+#: ../../../api.rst:1462 ../../../api.rst:2704
 msgid "Linux specific:"
 msgstr ""
 
-#: ../../../api.rst:1470
+#: ../../../api.rst:1464
 msgid ""
 ":field:`read_chars` *(Linux)*: bytes read via ``read()`` and ``pread()`` "
 "syscalls. Unlike :field:`read_bytes`, this includes tty I/O and counts bytes "
-"regardless of whether actual disk I/O occurred (e.g. reads served from :term:"
-"`page cache` are included)."
+"regardless of whether actual disk I/O occurred (e.g. reads served "
+"from :term:`page cache` are included)."
 msgstr ""
 
-#: ../../../api.rst:1474
+#: ../../../api.rst:1468
 msgid ""
 ":field:`write_chars` *(Linux)*: bytes written via ``write()`` and "
 "``pwrite()`` syscalls. Same caveats as :field:`read_chars`."
 msgstr ""
 
-#: ../../../api.rst:1477
+#: ../../../api.rst:1471
 msgid "Windows specific:"
 msgstr ""
 
-#: ../../../api.rst:1479
+#: ../../../api.rst:1473
 msgid ""
 ":field:`other_count` *(Windows)*: the number of I/O operations performed "
 "other than read and write operations."
 msgstr ""
 
-#: ../../../api.rst:1481
+#: ../../../api.rst:1475
 msgid ""
 ":field:`other_bytes` *(Windows)*: the number of bytes transferred during "
 "operations other than read and write operations."
 msgstr ""
 
-#: ../../../api.rst:1484
+#: ../../../api.rst:1478
 msgid ""
 ">>> import psutil\n"
 ">>> p = psutil.Process()\n"
@@ -2427,92 +2429,92 @@ msgid ""
 "read_chars=769931, write_chars=203)"
 msgstr ""
 
-#: ../../../api.rst:1495
+#: ../../../api.rst:1489
 msgid ""
 "The number of :term:`context switches <context switch>` performed by this "
 "process as a ``(voluntary, involuntary)`` named tuple (:term:`cumulative "
 "counter`)."
 msgstr ""
 
-#: ../../../api.rst:1500
+#: ../../../api.rst:1494
 msgid ""
-"(Windows, macOS) :field:`involuntary` value is always set to 0, while :field:"
-"`voluntary` value reflects the total number of context switches (voluntary + "
-"involuntary). This is a limitation of the OS."
+"(Windows, macOS) :field:`involuntary` value is always set to 0, "
+"while :field:`voluntary` value reflects the total number of context switches "
+"(voluntary + involuntary). This is a limitation of the OS."
 msgstr ""
 
-#: ../../../api.rst:1506
+#: ../../../api.rst:1500
 msgid ""
 "The number of :term:`file descriptors <file descriptor>` currently opened by "
 "this process (non cumulative)."
 msgstr ""
 
-#: ../../../api.rst:1513
+#: ../../../api.rst:1507
 msgid ""
 "The number of :term:`handles <handle>` currently used by this process (non "
 "cumulative)."
 msgstr ""
 
-#: ../../../api.rst:1520
+#: ../../../api.rst:1514
 msgid "The number of threads currently used by this process (non cumulative)."
 msgstr ""
 
-#: ../../../api.rst:1524
+#: ../../../api.rst:1518
 msgid ""
 "Return a list of threads spawned by this process. On OpenBSD, root "
 "privileges are required. Each entry includes:"
 msgstr ""
 
-#: ../../../api.rst:1527
+#: ../../../api.rst:1521
 msgid ""
 ":field:`id`: native thread ID assigned by the kernel. If :attr:`pid` refers "
 "to the current process, this matches :attr:`threading.Thread.native_id`, and "
 "can be used to reference individual Python threads in your app."
 msgstr ""
 
-#: ../../../api.rst:1531
+#: ../../../api.rst:1525
 msgid ":field:`user_time`: time spent in user mode."
 msgstr ""
 
-#: ../../../api.rst:1532
+#: ../../../api.rst:1526
 msgid ":field:`system_time`: time spent in kernel mode."
 msgstr ""
 
-#: ../../../api.rst:1536
+#: ../../../api.rst:1530
 msgid ""
 "Return accumulated process CPU times as :term:`cumulative counters "
 "<cumulative counter>` expressed in seconds. Same as :func:`os.times`, but "
 "works for any process PID."
 msgstr ""
 
-#: ../../../api.rst:1540
+#: ../../../api.rst:1534
 msgid ":field:`user`: time spent in user mode."
 msgstr ""
 
-#: ../../../api.rst:1541
+#: ../../../api.rst:1535
 msgid ":field:`system`: time spent in kernel mode."
 msgstr ""
 
-#: ../../../api.rst:1542
+#: ../../../api.rst:1536
 msgid ""
 ":field:`children_user`: user time of all child processes (always ``0`` on "
 "Windows and macOS)."
 msgstr ""
 
-#: ../../../api.rst:1544
+#: ../../../api.rst:1538
 msgid ""
 ":field:`children_system`: system time of all child processes (always ``0`` "
 "on Windows and macOS)."
 msgstr ""
 
-#: ../../../api.rst:1546
+#: ../../../api.rst:1540
 msgid ""
-":field:`iowait`: (Linux) time spent waiting for blocking I/O to complete. (:"
-"term:`iowait`). Excluded from :field:`user` and :field:`system` times count "
-"(because the CPU is idle)."
+":field:`iowait`: (Linux) time spent waiting for blocking I/O to complete. "
+"(:term:`iowait`). Excluded from :field:`user` and :field:`system` times "
+"count (because the CPU is idle)."
 msgstr ""
 
-#: ../../../api.rst:1550
+#: ../../../api.rst:1544
 msgid ""
 ">>> import psutil\n"
 ">>> p = psutil.Process()\n"
@@ -2523,17 +2525,17 @@ msgid ""
 "0.70"
 msgstr ""
 
-#: ../../../api.rst:1559
+#: ../../../api.rst:1553
 msgid "Linux: added :field:`iowait` field."
 msgstr ""
 
-#: ../../../api.rst:1564
+#: ../../../api.rst:1558
 msgid ""
 "Return process CPU utilization as a percentage. Values can exceed ``100.0`` "
 "if the process runs multiple threads on different CPUs."
 msgstr ""
 
-#: ../../../api.rst:1567
+#: ../../../api.rst:1561
 msgid ""
 "*interval* is expressed in seconds. If *interval* is > ``0.0``, measures CPU "
 "times before and after the interval (blocking). If ``0.0`` or ``None``, "
@@ -2544,7 +2546,7 @@ msgid ""
 "seconds between calls."
 msgstr ""
 
-#: ../../../api.rst:1575
+#: ../../../api.rst:1569
 msgid ""
 ">>> import psutil\n"
 ">>> p = psutil.Process()\n"
@@ -2556,18 +2558,18 @@ msgid ""
 "2.9"
 msgstr ""
 
-#: ../../../api.rst:1587
+#: ../../../api.rst:1581
 msgid ""
 "the returned value is *not* split evenly between all available CPUs "
-"(differently from :func:`psutil.cpu_percent`). To emulate Windows ``taskmgr."
-"exe`` behavior: ``p.cpu_percent() / psutil.cpu_count()``."
+"(differently from :func:`psutil.cpu_percent`). To emulate Windows "
+"``taskmgr.exe`` behavior: ``p.cpu_percent() / psutil.cpu_count()``."
 msgstr ""
 
-#: ../../../api.rst:1593
+#: ../../../api.rst:1587
 msgid ":ref:`faq_cpu_percent_gt_100`"
 msgstr ""
 
-#: ../../../api.rst:1597
+#: ../../../api.rst:1591
 msgid ""
 "Get or set process :term:`CPU affinity` (the set of CPUs the process is "
 "allowed to run on). If no argument is passed, return the current affinity as "
@@ -2575,7 +2577,7 @@ msgid ""
 "empty list sets affinity to all eligible CPUs."
 msgstr ""
 
-#: ../../../api.rst:1602
+#: ../../../api.rst:1596
 msgid ""
 ">>> import psutil\n"
 ">>> psutil.cpu_count()\n"
@@ -2592,81 +2594,81 @@ msgid ""
 ">>> p.cpu_affinity([])"
 msgstr ""
 
-#: ../../../api.rst:1622
+#: ../../../api.rst:1616
 msgid ""
 "Return what CPU this process is currently running on. The returned number "
 "should be ``<=`` :func:`psutil.cpu_count`. On FreeBSD certain kernel process "
-"may return ``-1``. It may be used in conjunction with ``psutil."
-"cpu_percent(percpu=True)`` to observe the system workload distributed across "
-"multiple CPUs."
+"may return ``-1``. It may be used in conjunction with "
+"``psutil.cpu_percent(percpu=True)`` to observe the system workload "
+"distributed across multiple CPUs."
 msgstr ""
 
-#: ../../../api.rst:1629
+#: ../../../api.rst:1623
 msgid ":src:`scripts/cpu_distribution.py`"
 msgstr ""
 
-#: ../../../api.rst:1635
+#: ../../../api.rst:1629
 msgid ""
 "Return memory information about the process. Fields vary by platform (all "
-"values in bytes). The portable fields available on all platforms are :field:"
-"`rss` and :field:`vms`."
+"values in bytes). The portable fields available on all platforms "
+"are :field:`rss` and :field:`vms`."
 msgstr ""
 
-#: ../../../api.rst:1640
+#: ../../../api.rst:1634
 msgid "BSD"
 msgstr ""
 
-#: ../../../api.rst:1640 ../../../api.rst:1876
+#: ../../../api.rst:1634 ../../../api.rst:1872
 msgid "Solaris"
 msgstr ""
 
-#: ../../../api.rst:1640
+#: ../../../api.rst:1634
 msgid "AIX"
 msgstr ""
 
-#: ../../../api.rst:1642 ../../../api.rst:1878
+#: ../../../api.rst:1636 ../../../api.rst:1874
 msgid "rss"
 msgstr ""
 
-#: ../../../api.rst:1644
+#: ../../../api.rst:1638
 msgid "vms"
 msgstr ""
 
-#: ../../../api.rst:1646 ../../../api.rst:1648
+#: ../../../api.rst:1640 ../../../api.rst:1642
 msgid "text"
 msgstr ""
 
-#: ../../../api.rst:1648 ../../../api.rst:1650
+#: ../../../api.rst:1642 ../../../api.rst:1644
 msgid "data"
 msgstr ""
 
-#: ../../../api.rst:1650
+#: ../../../api.rst:1644
 msgid "stack"
 msgstr ""
 
-#: ../../../api.rst:1652 ../../../api.rst:1731
+#: ../../../api.rst:1646 ../../../api.rst:1725
 msgid "peak_rss"
 msgstr ""
 
-#: ../../../api.rst:1654 ../../../api.rst:1733
+#: ../../../api.rst:1648 ../../../api.rst:1727
 msgid "peak_vms"
 msgstr ""
 
-#: ../../../api.rst:1657
+#: ../../../api.rst:1651
 msgid ""
 ":field:`rss`: aka :term:`RSS`. On UNIX matches the ``top`` RES column. On "
 "Windows maps to ``WorkingSetSize``."
 msgstr ""
 
-#: ../../../api.rst:1660
+#: ../../../api.rst:1654
 msgid ""
 ":field:`vms`: aka :term:`VMS`. On UNIX matches the ``top`` VIRT column. On "
 "Windows maps to ``PrivateUsage`` (private committed pages only), which "
-"differs from the UNIX definition; use :field:`virtual` from :meth:"
-"`memory_extras` for the true virtual address space size."
+"differs from the UNIX definition; use :field:`virtual` "
+"from :meth:`memory_extras` for the true virtual address space size."
 msgstr ""
 
-#: ../../../api.rst:1665
+#: ../../../api.rst:1659
 msgid ""
 ":field:`shared` *(Linux)*: :term:`shared memory` that *could* be shared with "
 "other processes (shared libraries, :term:`memory-mapped files <mapped "
@@ -2674,14 +2676,14 @@ msgid ""
 "``top``'s SHR column."
 msgstr ""
 
-#: ../../../api.rst:1670
+#: ../../../api.rst:1664
 msgid ""
 ":field:`text` *(Linux, BSD)*: aka TRS (Text Resident Set). Resident memory "
 "devoted to executable code. This memory is read-only and typically shared "
 "across all processes running the same binary. Matches ``top``'s CODE column."
 msgstr ""
 
-#: ../../../api.rst:1675
+#: ../../../api.rst:1669
 msgid ""
 ":field:`data` *(Linux, BSD)*: aka DRS (Data Resident Set). On Linux this "
 "covers the data **and** stack segments combined (from :proc:`/proc/pid/"
@@ -2689,30 +2691,30 @@ msgid ""
 "Matches ``top``'s DATA column."
 msgstr ""
 
-#: ../../../api.rst:1680
+#: ../../../api.rst:1674
 msgid ""
 ":field:`stack` *(BSD)*: size of the process stack segment. Reported "
 "separately from :field:`data` (unlike Linux where both are combined)."
 msgstr ""
 
-#: ../../../api.rst:1683
+#: ../../../api.rst:1677
 msgid ""
 ":field:`peak_rss` *(BSD, Windows)*: see :term:`peak_rss`. On BSD may be "
 "``0`` for kernel PIDs. On Windows maps to ``PeakWorkingSetSize``."
 msgstr ""
 
-#: ../../../api.rst:1686
+#: ../../../api.rst:1680
 msgid ""
 ":field:`peak_vms` *(Windows)*: see :term:`peak_vms`. Maps to "
 "``PeakPagefileUsage``."
 msgstr ""
 
-#: ../../../api.rst:1689
+#: ../../../api.rst:1683
 msgid ""
 "For the full definitions of Windows fields see `PROCESS_MEMORY_COUNTERS_EX`_."
 msgstr ""
 
-#: ../../../api.rst:1694
+#: ../../../api.rst:1688
 msgid ""
 ">>> import psutil\n"
 ">>> p = psutil.Process()\n"
@@ -2720,208 +2722,209 @@ msgid ""
 "pmem(rss=15491072, vms=84025344, shared=5206016, text=2555904, data=9891840)"
 msgstr ""
 
-#: ../../../api.rst:1702
+#: ../../../api.rst:1696
 msgid ":ref:`faq_memory_rss_vs_vms`"
 msgstr ""
 
-#: ../../../api.rst:1703 ../../../api.rst:1832
+#: ../../../api.rst:1697 ../../../api.rst:1826
 msgid ":ref:`faq_memory_footprint`"
 msgstr ""
 
-#: ../../../api.rst:1704
+#: ../../../api.rst:1698
 msgid ":ref:`faq_memory_shared`"
 msgstr ""
 
-#: ../../../api.rst:1706
+#: ../../../api.rst:1700
 msgid "(see :ref:`migration guide <migration-8.0>`)"
 msgstr ""
 
-#: ../../../api.rst:1708
+#: ../../../api.rst:1702
 msgid ""
 "*Linux*: :field:`lib` and :field:`dirty` removed (always 0 since Linux 2.6). "
 "Deprecated aliases returning 0 and emitting :exc:`DeprecationWarning` are "
 "kept."
 msgstr ""
 
-#: ../../../api.rst:1711
+#: ../../../api.rst:1705
 msgid ""
 "*macOS*: removed :field:`pfaults` and :field:`pageins` fields with no "
 "backward-compatible aliases. Use :meth:`page_faults` instead."
 msgstr ""
 
-#: ../../../api.rst:1713
+#: ../../../api.rst:1707
 msgid ""
-"*Windows*: eliminated old aliases: :field:`wset` → :field:`rss`, :field:"
-"`peak_wset` → :field:`peak_rss`, :field:`pagefile` and :field:`private` → :"
-"field:`vms`, :field:`peak_pagefile` → :field:`peak_vms`, :field:"
-"`num_page_faults` → :meth:`page_faults` method. At the same time :field:"
-"`paged_pool`, :field:`nonpaged_pool`, :field:`peak_paged_pool`, :field:"
-"`peak_nonpaged_pool` were moved to :meth:`memory_extras`. All these old "
-"names still work but raise :exc:`DeprecationWarning`."
+"*Windows*: eliminated old aliases: :field:`wset` "
+"→ :field:`rss`, :field:`peak_wset` → :field:`peak_rss`, :field:`pagefile` "
+"and :field:`private` → :field:`vms`, :field:`peak_pagefile` "
+"→ :field:`peak_vms`, :field:`num_page_faults` → :meth:`page_faults` method. "
+"At the same "
+"time :field:`paged_pool`, :field:`nonpaged_pool`, :field:`peak_paged_pool`, :field:`peak_nonpaged_pool` "
+"were moved to :meth:`memory_extras`. All these old names still work but "
+"raise :exc:`DeprecationWarning`."
 msgstr ""
 
-#: ../../../api.rst:1721
+#: ../../../api.rst:1715
 msgid "*BSD*: added :field:`peak_rss` field."
 msgstr ""
 
-#: ../../../api.rst:1725
+#: ../../../api.rst:1719
 msgid ""
-"Return extra platform-specific memory metrics, complementing :meth:"
-"`memory_info` (all values in bytes)."
+"Return extra platform-specific memory metrics, "
+"complementing :meth:`memory_info` (all values in bytes)."
 msgstr ""
 
-#: ../../../api.rst:1731
+#: ../../../api.rst:1725
 msgid "phys_footprint"
 msgstr ""
 
-#: ../../../api.rst:1731
+#: ../../../api.rst:1725
 msgid "virtual"
 msgstr ""
 
-#: ../../../api.rst:1733
+#: ../../../api.rst:1727
 msgid "peak_footprint"
 msgstr ""
 
-#: ../../../api.rst:1733
+#: ../../../api.rst:1727
 msgid "peak_virtual"
 msgstr ""
 
-#: ../../../api.rst:1735
+#: ../../../api.rst:1729
 msgid "rss_anon"
 msgstr ""
 
-#: ../../../api.rst:1735
+#: ../../../api.rst:1729
 msgid "paged_pool"
 msgstr ""
 
-#: ../../../api.rst:1737
+#: ../../../api.rst:1731
 msgid "rss_file"
 msgstr ""
 
-#: ../../../api.rst:1737
+#: ../../../api.rst:1731
 msgid "nonpaged_pool"
 msgstr ""
 
-#: ../../../api.rst:1739
+#: ../../../api.rst:1733
 msgid "rss_shmem"
 msgstr ""
 
-#: ../../../api.rst:1739
+#: ../../../api.rst:1733
 msgid "peak_paged_pool"
 msgstr ""
 
-#: ../../../api.rst:1741
+#: ../../../api.rst:1735
 msgid "swap_anon"
 msgstr ""
 
-#: ../../../api.rst:1741
+#: ../../../api.rst:1735
 msgid "peak_nonpaged_pool"
 msgstr ""
 
-#: ../../../api.rst:1743 ../../../api.rst:1882
+#: ../../../api.rst:1737 ../../../api.rst:1878
 msgid "locked"
 msgstr ""
 
-#: ../../../api.rst:1746
+#: ../../../api.rst:1740
 msgid "Linux:"
 msgstr ""
 
-#: ../../../api.rst:1748
+#: ../../../api.rst:1742
 msgid ":field:`peak_rss`: see :term:`peak_rss`."
 msgstr ""
 
-#: ../../../api.rst:1749
+#: ../../../api.rst:1743
 msgid ":field:`peak_vms`: see :term:`peak_vms`."
 msgstr ""
 
-#: ../../../api.rst:1750
+#: ../../../api.rst:1744
 msgid ""
 ":field:`rss_anon`: resident :term:`anonymous memory` (:term:`heap`, stack, "
 "private mappings) not backed by any file. Set to 0 on Linux < 4.5."
 msgstr ""
 
-#: ../../../api.rst:1752
+#: ../../../api.rst:1746
 msgid ""
-":field:`rss_file`: resident file-backed memory mapped from files (:term:"
-"`shared libraries <shared memory>`, :term:`memory-mapped files <mapped "
-"memory>`). Set to 0 on Linux < 4.5."
+":field:`rss_file`: resident file-backed memory mapped from files "
+"(:term:`shared libraries <shared memory>`, :term:`memory-mapped files "
+"<mapped memory>`). Set to 0 on Linux < 4.5."
 msgstr ""
 
-#: ../../../api.rst:1755
+#: ../../../api.rst:1749
 msgid ""
 ":field:`rss_shmem`: resident :term:`shared memory` (``tmpfs``, "
 "``shm_open``). ``rss_anon + rss_file + rss_shmem`` equals :field:`rss`. Set "
 "to 0 on Linux < 4.5."
 msgstr ""
 
-#: ../../../api.rst:1758
+#: ../../../api.rst:1752
 msgid ""
 ":field:`swap_anon`: :term:`anonymous memory` currently in :term:`swap <swap "
-"memory>`. Cheaper than :meth:`memory_footprint`'s :field:`swap` (it reads :"
-"proc:`/proc/pid/status` instead of smaps) but does not count shmem swap "
-"(see :ref:`faq_memory_swap`). Set to 0 on Linux < 2.6.34."
+"memory>`. Cheaper than :meth:`memory_footprint`'s :field:`swap` (it "
+"reads :proc:`/proc/pid/status` instead of smaps) but does not count shmem "
+"swap (see :ref:`faq_memory_swap`). Set to 0 on Linux < 2.6.34."
 msgstr ""
 
-#: ../../../api.rst:1763
+#: ../../../api.rst:1757
 msgid ""
 ":field:`locked`: locked memory that cannot be :term:`swapped out <swap-"
 "out>`. Typically locked via :manpage:`mlock(2)`."
 msgstr ""
 
-#: ../../../api.rst:1766
+#: ../../../api.rst:1760
 msgid "macOS:"
 msgstr ""
 
-#: ../../../api.rst:1768
+#: ../../../api.rst:1762
 msgid ""
 ":field:`phys_footprint`: memory footprint attributed to the process, "
 "including compressed memory. This corresponds to the main memory usage "
 "reported by macOS Activity Monitor. Prefer it over :field:`rss`."
 msgstr ""
 
-#: ../../../api.rst:1771
+#: ../../../api.rst:1765
 msgid ""
 ":field:`peak_footprint`: the highest :field:`phys_footprint` reached over "
 "the process lifetime. Set to 0 on macOS < 10.13."
 msgstr ""
 
-#: ../../../api.rst:1774
+#: ../../../api.rst:1768
 msgid "Windows (see `PROCESS_MEMORY_COUNTERS_EX`_):"
 msgstr ""
 
-#: ../../../api.rst:1776
+#: ../../../api.rst:1770
 msgid ""
 ":field:`virtual`: true virtual address space size, including reserved-but-"
 "uncommitted regions (unlike :field:`vms` in :meth:`memory_info`)."
 msgstr ""
 
-#: ../../../api.rst:1779
+#: ../../../api.rst:1773
 msgid ":field:`peak_virtual`: peak virtual address space size."
 msgstr ""
 
-#: ../../../api.rst:1780
+#: ../../../api.rst:1774
 msgid ""
 ":field:`paged_pool`: kernel memory used for objects created by this process "
 "(open file handles, registry keys, etc.) that the OS may swap to disk under "
 "memory pressure."
 msgstr ""
 
-#: ../../../api.rst:1783
+#: ../../../api.rst:1777
 msgid ""
 ":field:`nonpaged_pool`: kernel memory used for objects that must stay in RAM "
 "at all times (I/O request packets, device driver buffers, etc.). A large or "
 "growing value may indicate a driver memory leak."
 msgstr ""
 
-#: ../../../api.rst:1786
+#: ../../../api.rst:1780
 msgid ":field:`peak_paged_pool`: peak paged-pool usage."
 msgstr ""
 
-#: ../../../api.rst:1787
+#: ../../../api.rst:1781
 msgid ":field:`peak_nonpaged_pool`: peak non-paged-pool usage."
 msgstr ""
 
-#: ../../../api.rst:1795
+#: ../../../api.rst:1789
 msgid ""
 "Return :field:`uss`, :field:`pss`, :field:`swap` and :field:`shared` memory "
 "metrics. These give a more accurate picture of actual memory consumption "
@@ -2929,27 +2932,27 @@ msgid ""
 "slower than :meth:`memory_info` and may require higher privileges."
 msgstr ""
 
-#: ../../../api.rst:1800
+#: ../../../api.rst:1794
 msgid ""
 ":field:`uss` *(Linux, macOS, Windows)*: aka :term:`USS`; the :term:`private "
 "memory` of the process, which would be freed if the process were terminated "
 "right now."
 msgstr ""
 
-#: ../../../api.rst:1804
+#: ../../../api.rst:1798
 msgid ""
 ":field:`pss` *(Linux)*: aka :term:`PSS`; shared memory divided evenly among "
 "the processes sharing it. I.e. if a process has 10 MBs all to itself, and 10 "
 "MBs shared with another process, its PSS will be 15 MBs."
 msgstr ""
 
-#: ../../../api.rst:1808
+#: ../../../api.rst:1802
 msgid ""
 ":field:`swap` *(Linux)*: process memory currently in :term:`swap <swap "
 "memory>`, counted per-mapping."
 msgstr ""
 
-#: ../../../api.rst:1811
+#: ../../../api.rst:1805
 msgid ""
 ":field:`shared` *(Linux, macOS, Windows)*: resident memory shared with other "
 "processes. On Linux this counts pages mapped more than once, usually by "
@@ -2961,7 +2964,7 @@ msgid ""
 "shared with at least another process."
 msgstr ""
 
-#: ../../../api.rst:1823
+#: ../../../api.rst:1817
 msgid ""
 ">>> import psutil\n"
 ">>> p = psutil.Process()\n"
@@ -2969,56 +2972,58 @@ msgid ""
 "pfootprint(uss=6545408, pss=6872064, swap=0, shared=4341760)"
 msgstr ""
 
-#: ../../../api.rst:1831
+#: ../../../api.rst:1825
 msgid ":src:`scripts/procsmem.py`"
 msgstr ""
 
-#: ../../../api.rst:1833
+#: ../../../api.rst:1827
 msgid ":doc:`/blog/2016/real-process-memory-in-python`"
 msgstr ""
 
-#: ../../../api.rst:1841
+#: ../../../api.rst:1835
 msgid ""
 "This deprecated method returns the same information as :meth:`memory_info` "
-"plus :meth:`memory_footprint`'s :field:`uss`, :field:`pss` and :field:`swap` "
-"in a single named tuple."
+"plus :meth:`memory_footprint`'s :field:`uss` (and, on Linux, "
+"also :field:`pss` and :field:`swap`) in a single named tuple. On BSD, SunOS "
+"and AIX no footprint field is added, so the result is "
+"just :meth:`memory_info`'s."
 msgstr ""
 
-#: ../../../api.rst:1845
+#: ../../../api.rst:1841
 msgid ""
 "use :meth:`memory_footprint` instead. See :ref:`migration guide "
 "<migration-8.0>`."
 msgstr ""
 
-#: ../../../api.rst:1851
+#: ../../../api.rst:1847
 msgid ""
 "Return process memory usage as a percentage of total physical memory. Same "
 "as:"
 msgstr ""
 
-#: ../../../api.rst:1854
+#: ../../../api.rst:1850
 msgid "Process().memory_info().rss / virtual_memory().total * 100"
 msgstr ""
 
-#: ../../../api.rst:1858
+#: ../../../api.rst:1854
 msgid ""
-"*memtype* selects which memory field to use and can be any attribute from :"
-"meth:`memory_info`, :meth:`memory_extras`, or :meth:`memory_footprint` "
+"*memtype* selects which memory field to use and can be any attribute "
+"from :meth:`memory_info`, :meth:`memory_extras`, or :meth:`memory_footprint` "
 "(default is ``\"rss\"``). The divisor is always total physical memory, "
 "regardless of *memtype*. The result is rounded to 2 decimal places."
 msgstr ""
 
-#: ../../../api.rst:1863
+#: ../../../api.rst:1859
 msgid "the result is rounded to 2 decimal places."
 msgstr ""
 
-#: ../../../api.rst:1867
+#: ../../../api.rst:1863
 msgid ""
 "Return the process's :term:`memory-mapped <mapped memory>` file regions as a "
 "list. Fields vary by platform (all values in bytes)."
 msgstr ""
 
-#: ../../../api.rst:1870
+#: ../../../api.rst:1866
 msgid ""
 "If *grouped* is ``True``, regions with the same *path* are merged and their "
 "numeric fields summed. If *grouped* is ``False``, each region is listed "
@@ -3026,130 +3031,130 @@ msgid ""
 "(permission string, e.g., ``\"r-xp\"``)."
 msgstr ""
 
-#: ../../../api.rst:1880
+#: ../../../api.rst:1876
 msgid "size"
 msgstr ""
 
-#: ../../../api.rst:1880
+#: ../../../api.rst:1876
 msgid "private"
 msgstr ""
 
-#: ../../../api.rst:1880 ../../../api.rst:1894
+#: ../../../api.rst:1876 ../../../api.rst:1890
 msgid "anonymous"
 msgstr ""
 
-#: ../../../api.rst:1882
+#: ../../../api.rst:1878
 msgid "pss"
 msgstr ""
 
-#: ../../../api.rst:1882
+#: ../../../api.rst:1878
 msgid "ref_count"
 msgstr ""
 
-#: ../../../api.rst:1884
+#: ../../../api.rst:1880
 msgid "shared_clean"
 msgstr ""
 
-#: ../../../api.rst:1884
+#: ../../../api.rst:1880
 msgid "shadow_count"
 msgstr ""
 
-#: ../../../api.rst:1886
+#: ../../../api.rst:1882
 msgid "shared_dirty"
 msgstr ""
 
-#: ../../../api.rst:1888
+#: ../../../api.rst:1884
 msgid "private_clean"
 msgstr ""
 
-#: ../../../api.rst:1890
+#: ../../../api.rst:1886
 msgid "private_dirty"
 msgstr ""
 
-#: ../../../api.rst:1892
+#: ../../../api.rst:1888
 msgid "referenced"
 msgstr ""
 
-#: ../../../api.rst:1896
+#: ../../../api.rst:1892
 msgid "swap"
 msgstr ""
 
-#: ../../../api.rst:1899
+#: ../../../api.rst:1895
 msgid "Linux fields (from :proc:`/proc/pid/smaps`):"
 msgstr ""
 
-#: ../../../api.rst:1901
+#: ../../../api.rst:1897
 msgid ":field:`rss`: :term:`RSS` for this mapping."
 msgstr ""
 
-#: ../../../api.rst:1902
+#: ../../../api.rst:1898
 msgid ""
 ":field:`size`: total virtual size; may far exceed :field:`rss` if parts have "
 "never been accessed."
 msgstr ""
 
-#: ../../../api.rst:1904
+#: ../../../api.rst:1900
 msgid ""
 ":field:`pss`: :term:`PSS` for this mapping, that is :field:`rss` split "
 "proportionally among all processes sharing it."
 msgstr ""
 
-#: ../../../api.rst:1906
+#: ../../../api.rst:1902
 msgid ""
 ":field:`shared_clean`: :term:`shared memory` not written to since loaded "
 "(clean); can be discarded and reloaded from disk for free."
 msgstr ""
 
-#: ../../../api.rst:1908
+#: ../../../api.rst:1904
 msgid ""
 ":field:`shared_dirty`: :term:`shared memory` that has been written to "
 "(dirty)."
 msgstr ""
 
-#: ../../../api.rst:1910
+#: ../../../api.rst:1906
 msgid ":field:`private_clean`: :term:`private memory` not written to (clean)."
 msgstr ""
 
-#: ../../../api.rst:1911
+#: ../../../api.rst:1907
 msgid ""
 ":field:`private_dirty`: :term:`private memory` that has been written to "
 "(dirty); must be saved to swap before it can be freed. The key indicator of "
 "real memory cost."
 msgstr ""
 
-#: ../../../api.rst:1914
+#: ../../../api.rst:1910
 msgid ":field:`referenced`: bytes recently accessed."
 msgstr ""
 
-#: ../../../api.rst:1915
+#: ../../../api.rst:1911
 msgid ""
 ":field:`anonymous`: :term:`anonymous memory` in this mapping (:term:`heap`, "
 "stack)."
 msgstr ""
 
-#: ../../../api.rst:1917
+#: ../../../api.rst:1913
 msgid ""
 ":field:`swap`: bytes from this mapping currently in :term:`swap <swap "
 "memory>`."
 msgstr ""
 
-#: ../../../api.rst:1920
+#: ../../../api.rst:1916
 msgid "FreeBSD fields:"
 msgstr ""
 
-#: ../../../api.rst:1922
+#: ../../../api.rst:1918
 msgid ":field:`private`: :term:`private memory` in this mapping."
 msgstr ""
 
-#: ../../../api.rst:1923
+#: ../../../api.rst:1919
 msgid ":field:`ref_count`: reference count on the underlying memory object."
 msgstr ""
 
-#: ../../../api.rst:1924
+#: ../../../api.rst:1920
 msgid ":field:`shadow_count`: depth of the copy-on-write chain."
 msgstr ""
 
-#: ../../../api.rst:1926
+#: ../../../api.rst:1922
 msgid ""
 ">>> import psutil\n"
 ">>> p = psutil.Process()\n"
@@ -3164,22 +3169,22 @@ msgid ""
 " ...]"
 msgstr ""
 
-#: ../../../api.rst:1936
+#: ../../../api.rst:1932
 msgid ":src:`scripts/pmap.py`"
 msgstr ""
 
-#: ../../../api.rst:1940
+#: ../../../api.rst:1936
 msgid "removed macOS support because inherently broken (see issue :gh:`1291`)"
 msgstr ""
 
-#: ../../../api.rst:1945
+#: ../../../api.rst:1941
 msgid ""
 "Return the children of this process as a list of :class:`Process` instances. "
 "If *recursive* is ``True``, return all descendants. Pseudo-code example "
 "(assuming A is this process):"
 msgstr ""
 
-#: ../../../api.rst:1949
+#: ../../../api.rst:1945
 msgid ""
 "A ─┐\n"
 "   │\n"
@@ -3190,7 +3195,7 @@ msgid ""
 "   └─ D (child)"
 msgstr ""
 
-#: ../../../api.rst:1959
+#: ../../../api.rst:1955
 msgid ""
 ">>> p.children()\n"
 "B, C, D\n"
@@ -3198,28 +3203,28 @@ msgid ""
 "B, X, Y, C, D"
 msgstr ""
 
-#: ../../../api.rst:1966
+#: ../../../api.rst:1962
 msgid ""
 "Note: if a process in the tree disappears (e.g., X), its descendants (Y) "
 "won’t be returned since the reference to the parent is lost. This concept is "
 "well illustrated by this `unit test <https://github.com/giampaolo/psutil/"
-"blob/65a52341b55faaab41f68ebc4ed31f18f0929754/psutil/tests/test_process."
-"py#L1064-L1075>`_."
+"blob/65a52341b55faaab41f68ebc4ed31f18f0929754/psutil/tests/"
+"test_process.py#L1064-L1075>`_."
 msgstr ""
 
-#: ../../../api.rst:1972 ../../../api.rst:2077 ../../../api.rst:2101
-#: ../../../api.rst:2111
+#: ../../../api.rst:1968 ../../../api.rst:2073 ../../../api.rst:2097
+#: ../../../api.rst:2107
 msgid ":ref:`Kill process tree recipe <recipe_kill_proc_tree>`"
 msgstr ""
 
-#: ../../../api.rst:1976
+#: ../../../api.rst:1972
 msgid ""
 "Return the number of :term:`page faults <page fault>` for this process as a "
 "``(minor, major)`` named tuple. Both are :term:`cumulative counters "
 "<cumulative counter>` since process creation."
 msgstr ""
 
-#: ../../../api.rst:1980
+#: ../../../api.rst:1976
 msgid ""
 ">>> import psutil\n"
 ">>> p = psutil.Process()\n"
@@ -3227,29 +3232,29 @@ msgid ""
 "ppagefaults(minor=5905, major=3)"
 msgstr ""
 
-#: ../../../api.rst:1991
+#: ../../../api.rst:1987
 msgid "Return regular files opened by process as a list. Each entry includes:"
 msgstr ""
 
-#: ../../../api.rst:1993
+#: ../../../api.rst:1989
 msgid ":field:`path`: the absolute file name."
 msgstr ""
 
-#: ../../../api.rst:1994
+#: ../../../api.rst:1990
 msgid ""
 ":field:`fd`: the :term:`file descriptor` number; on Windows this is always "
 "``-1``."
 msgstr ""
 
-#: ../../../api.rst:1997
+#: ../../../api.rst:1993
 msgid "Linux only:"
 msgstr ""
 
-#: ../../../api.rst:1999
+#: ../../../api.rst:1995
 msgid ":field:`position` (*Linux*): the file position (offset)."
 msgstr ""
 
-#: ../../../api.rst:2000
+#: ../../../api.rst:1996
 msgid ""
 ":field:`mode` (*Linux*): a string indicating how the file was opened, "
 "similarly to :func:`open` builtin *mode* argument. Possible values are "
@@ -3257,14 +3262,14 @@ msgid ""
 "between files opened in binary or text mode (``\"b\"`` or ``\"t\"``)."
 msgstr ""
 
-#: ../../../api.rst:2004
+#: ../../../api.rst:2000
 msgid ""
-":field:`flags` (*Linux*): the flags which were passed to the underlying :"
-"func:`os.open` C call when the file was opened (e.g. :data:`os.O_RDONLY`, :"
-"data:`os.O_TRUNC`, etc)."
+":field:`flags` (*Linux*): the flags which were passed to the "
+"underlying :func:`os.open` C call when the file was opened "
+"(e.g. :data:`os.O_RDONLY`, :data:`os.O_TRUNC`, etc)."
 msgstr ""
 
-#: ../../../api.rst:2008
+#: ../../../api.rst:2004
 msgid ""
 ">>> import psutil\n"
 ">>> f = open('file.ext', 'w')\n"
@@ -3274,92 +3279,92 @@ msgid ""
 "mode='w', flags=32769)]"
 msgstr ""
 
-#: ../../../api.rst:2017
+#: ../../../api.rst:2013
 msgid ""
-"Windows: this is not guaranteed to enumerate all file handles (see :ref:"
-"`faq_open_files_windows`)"
+"Windows: this is not guaranteed to enumerate all file handles "
+"(see :ref:`faq_open_files_windows`)"
 msgstr ""
 
-#: ../../../api.rst:2019
+#: ../../../api.rst:2015
 msgid ""
 "NetBSD, OpenBSD: :field:`path` is always an empty string. The kernel doesn't "
 "expose it (there's no path field in ``struct kinfo_file``)."
 msgstr ""
 
-#: ../../../api.rst:2021
+#: ../../../api.rst:2017
 msgid "FreeBSD: :field:`path` can be an empty string (:gh:`595`)."
 msgstr ""
 
-#: ../../../api.rst:2025
+#: ../../../api.rst:2021
 msgid ""
 "Same as :func:`psutil.net_connections` but for this process only (the "
 "returned named tuples have no :field:`pid` field). The *kind* parameter and "
 "the same limitations apply (root may be needed on some platforms)."
 msgstr ""
 
-#: ../../../api.rst:2029
+#: ../../../api.rst:2025
 msgid ""
 ">>> import psutil\n"
 ">>> p = psutil.Process(1694)\n"
 ">>> p.name()\n"
 "'firefox'\n"
 ">>> p.net_connections()\n"
-"[pconn(fd=115, family=<AddressFamily.AF_INET: 2>, type=<SocketType."
-"SOCK_STREAM: 1>, laddr=addr(ip='10.0.0.1', port=48776), "
-"raddr=addr(ip='93.186.135.91', port=80), status=<ConnectionStatus."
-"CONN_ESTABLISHED: 'ESTABLISHED'>),\n"
-" pconn(fd=117, family=<AddressFamily.AF_INET: 2>, type=<SocketType."
-"SOCK_STREAM: 1>, laddr=addr(ip='10.0.0.1', port=43761), "
-"raddr=addr(ip='72.14.234.100', port=80), status=<ConnectionStatus."
-"CONN_CLOSING: 'CLOSING'>),\n"
-" pconn(fd=119, family=<AddressFamily.AF_INET: 2>, type=<SocketType."
-"SOCK_STREAM: 1>, laddr=addr(ip='10.0.0.1', port=60759), "
-"raddr=addr(ip='72.14.234.104', port=80), status=<ConnectionStatus."
-"CONN_ESTABLISHED: 'ESTABLISHED'>),\n"
-" pconn(fd=123, family=<AddressFamily.AF_INET: 2>, type=<SocketType."
-"SOCK_STREAM: 1>, laddr=addr(ip='10.0.0.1', port=51314), "
-"raddr=addr(ip='72.14.234.83', port=443), status=<ConnectionStatus."
-"CONN_SYN_SENT: 'SYN_SENT'>)]"
+"[pconn(fd=115, family=<AddressFamily.AF_INET: 2>, "
+"type=<SocketType.SOCK_STREAM: 1>, laddr=addr(ip='10.0.0.1', port=48776), "
+"raddr=addr(ip='93.186.135.91', port=80), "
+"status=<ConnectionStatus.CONN_ESTABLISHED: 'ESTABLISHED'>),\n"
+" pconn(fd=117, family=<AddressFamily.AF_INET: 2>, "
+"type=<SocketType.SOCK_STREAM: 1>, laddr=addr(ip='10.0.0.1', port=43761), "
+"raddr=addr(ip='72.14.234.100', port=80), "
+"status=<ConnectionStatus.CONN_CLOSING: 'CLOSING'>),\n"
+" pconn(fd=119, family=<AddressFamily.AF_INET: 2>, "
+"type=<SocketType.SOCK_STREAM: 1>, laddr=addr(ip='10.0.0.1', port=60759), "
+"raddr=addr(ip='72.14.234.104', port=80), "
+"status=<ConnectionStatus.CONN_ESTABLISHED: 'ESTABLISHED'>),\n"
+" pconn(fd=123, family=<AddressFamily.AF_INET: 2>, "
+"type=<SocketType.SOCK_STREAM: 1>, laddr=addr(ip='10.0.0.1', port=51314), "
+"raddr=addr(ip='72.14.234.83', port=443), "
+"status=<ConnectionStatus.CONN_SYN_SENT: 'SYN_SENT'>)]"
 msgstr ""
 
-#: ../../../api.rst:2043
+#: ../../../api.rst:2039
 msgid "Same as :meth:`net_connections` (deprecated)."
 msgstr ""
 
-#: ../../../api.rst:2045
+#: ../../../api.rst:2041
 msgid "use :meth:`net_connections` instead."
+msgstr ""
+
+#: ../../../api.rst:2046
+msgid ""
+"Return whether the current process is running. Differently from "
+"``psutil.pid_exists(p.pid)``, this is reliable also in case the process is "
+"gone and its PID reused by another process."
 msgstr ""
 
 #: ../../../api.rst:2050
 msgid ""
-"Return whether the current process is running. Differently from ``psutil."
-"pid_exists(p.pid)``, this is reliable also in case the process is gone and "
-"its PID reused by another process."
+"If PID has been reused, this method will also remove the process "
+"from :func:`process_iter` internal cache."
 msgstr ""
 
-#: ../../../api.rst:2054
-msgid ""
-"If PID has been reused, this method will also remove the process from :func:"
-"`process_iter` internal cache."
-msgstr ""
-
-#: ../../../api.rst:2057
+#: ../../../api.rst:2053
 msgid ""
 "This will return ``True`` also if the process is a :term:`zombie process` "
 "(``p.status() == psutil.STATUS_ZOMBIE``)."
 msgstr ""
 
-#: ../../../api.rst:2061
+#: ../../../api.rst:2057
 msgid ":ref:`faq_pid_reuse`"
 msgstr ""
 
-#: ../../../api.rst:2064
+#: ../../../api.rst:2060
 msgid ""
 "automatically remove process from :func:`process_iter` internal cache if PID "
 "has been reused by another process."
 msgstr ""
 
-#: ../../../api.rst:2070
+#: ../../../api.rst:2066
 msgid ""
 "Send signal *sig* to process (see :mod:`signal` module constants), "
 "preemptively checking whether PID has been reused. On UNIX this is the same "
@@ -3368,41 +3373,41 @@ msgid ""
 "alias for :meth:`kill`."
 msgstr ""
 
-#: ../../../api.rst:2081
+#: ../../../api.rst:2077
 msgid ""
 "Suspend process execution with ``SIGSTOP`` signal, preemptively checking "
 "whether PID has been reused. On UNIX this is the same as ``os.kill(pid, "
 "signal.SIGSTOP)``. On Windows this is done by suspending all process threads."
 msgstr ""
 
-#: ../../../api.rst:2088
+#: ../../../api.rst:2084
 msgid ""
 "Resume process execution with ``SIGCONT`` signal, preemptively checking "
 "whether PID has been reused. On UNIX this is the same as ``os.kill(pid, "
 "signal.SIGCONT)``. On Windows this is done by resuming all process threads."
 msgstr ""
 
-#: ../../../api.rst:2095
+#: ../../../api.rst:2091
 msgid ""
 "Terminate the process with ``SIGTERM`` signal, preemptively checking whether "
-"PID has been reused. On UNIX this is the same as ``os.kill(pid, signal."
-"SIGTERM)``. On Windows this is an alias for :meth:`kill`."
+"PID has been reused. On UNIX this is the same as ``os.kill(pid, "
+"signal.SIGTERM)``. On Windows this is an alias for :meth:`kill`."
 msgstr ""
 
-#: ../../../api.rst:2105
+#: ../../../api.rst:2101
 msgid ""
 "Kill the current process by using ``SIGKILL`` signal, preemptively checking "
 "whether PID has been reused. On UNIX this is the same as ``os.kill(pid, "
 "signal.SIGKILL)``. On Windows this is done by using `TerminateProcess`_."
 msgstr ""
 
-#: ../../../api.rst:2115
+#: ../../../api.rst:2111
 msgid ""
 "Wait for a process PID to terminate. The details about the return value "
 "differ on UNIX and Windows."
 msgstr ""
 
-#: ../../../api.rst:2118
+#: ../../../api.rst:2114
 msgid ""
 "*On UNIX*: if the process terminated normally, the return value is an "
 "integer >= 0 indicating the exit code. If the process was terminated by a "
@@ -3412,25 +3417,25 @@ msgid ""
 "PID does not exist return ``None`` immediately."
 msgstr ""
 
-#: ../../../api.rst:2125
+#: ../../../api.rst:2121
 msgid "*On Windows*: always return the exit code via `GetExitCodeProcess`_."
 msgstr ""
 
-#: ../../../api.rst:2127
+#: ../../../api.rst:2123
 msgid ""
 "*timeout* is expressed in seconds. If specified, and the process is still "
 "alive, raise :exc:`TimeoutExpired`. ``timeout=0`` can be used in non-"
-"blocking apps: it will either return immediately or raise :exc:"
-"`TimeoutExpired`."
+"blocking apps: it will either return immediately or "
+"raise :exc:`TimeoutExpired`."
 msgstr ""
 
-#: ../../../api.rst:2132
+#: ../../../api.rst:2128
 msgid ""
-"The return value is cached. To wait for multiple processes use :func:`psutil."
-"wait_procs`."
+"The return value is cached. To wait for multiple processes "
+"use :func:`psutil.wait_procs`."
 msgstr ""
 
-#: ../../../api.rst:2135
+#: ../../../api.rst:2131
 msgid ""
 ">>> import psutil\n"
 ">>> p = psutil.Process(9891)\n"
@@ -3439,82 +3444,83 @@ msgid ""
 "<NegSignal.SIGTERM: -15>"
 msgstr ""
 
-#: ../../../api.rst:2144
+#: ../../../api.rst:2140
 msgid ":doc:`/blog/2026/event-driven-process-waiting`"
 msgstr ""
 
-#: ../../../api.rst:2148
+#: ../../../api.rst:2144
 msgid ""
 "when *timeout* is not ``None`` and the platform supports it, an efficient "
 "event-driven mechanism is used to wait for process termination:"
 msgstr ""
 
-#: ../../../api.rst:2151
+#: ../../../api.rst:2147
 msgid ""
-"Linux >= 5.3 with Python >= 3.9 uses :func:`os.pidfd_open` + :func:`select."
-"poll`"
+"Linux >= 5.3 with Python >= 3.9 uses :func:`os.pidfd_open` "
+"+ :func:`select.poll`"
 msgstr ""
 
-#: ../../../api.rst:2153
+#: ../../../api.rst:2149
 msgid ""
 "macOS and other BSD variants use :func:`select.kqueue` + ``KQ_FILTER_PROC`` "
 "+ ``KQ_NOTE_EXIT``"
 msgstr ""
 
-#: ../../../api.rst:2155
+#: ../../../api.rst:2151
 msgid "Windows uses `WaitForSingleObject`_"
 msgstr ""
 
-#: ../../../api.rst:2157
+#: ../../../api.rst:2153
 msgid ""
 "If none of these mechanisms are available, the function falls back to a busy "
 "loop (non-blocking call and short sleeps)."
 msgstr ""
 
-#: ../../../api.rst:2160
+#: ../../../api.rst:2156
 msgid ""
 "Functionality also ported to the :mod:`subprocess` module in Python 3.15, "
 "see :cpy-pr:`144047`."
 msgstr ""
 
-#: ../../../api.rst:2163
+#: ../../../api.rst:2159
 msgid ""
 "if *timeout* is not ``None``, use efficient event-driven implementation on "
 "Linux >= 5.3 and macOS / BSD."
 msgstr ""
 
-#: ../../../api.rst:2167
+#: ../../../api.rst:2163
 msgid "return value is cached (instead of returning ``None``)."
 msgstr ""
 
-#: ../../../api.rst:2170
+#: ../../../api.rst:2166
 msgid ""
 "POSIX: if the signal is negative, return it as a human readable :mod:`enum`."
 msgstr ""
 
-#: ../../../api.rst:2174
+#: ../../../api.rst:2170
 msgid ""
 "on Linux >= 5.3 + Python >= 3.9 and macOS/BSD, use :func:`os.pidfd_open` "
 "and :func:`select.kqueue` respectively, instead of less efficient busy-loop "
 "polling."
 msgstr ""
 
-#: ../../../api.rst:2182
+#: ../../../api.rst:2178
 msgid "Popen class"
 msgstr ""
 
-#: ../../../api.rst:2186
+#: ../../../api.rst:2182
 msgid ""
-"Same as :class:`subprocess.Popen`, but in addition it provides all :class:"
-"`psutil.Process` methods in a single class. For the following methods, which "
-"are common to both classes, psutil implementation takes precedence: :meth:"
-"`send_signal() <psutil.Process.send_signal()>`, :meth:`terminate() <psutil."
-"Process.terminate()>`, :meth:`kill() <psutil.Process.kill()>`. This is done "
-"to avoid killing another process if its PID has been reused, fixing :bpo:"
-"`6973`."
+"Same as :class:`subprocess.Popen`, but in addition it provides "
+"all :class:`psutil.Process` methods in a single class. For the following "
+"methods, which are common to both classes, psutil implementation takes "
+"precedence: :meth:`send_signal() "
+"<psutil.Process.send_signal()>`, :meth:`terminate() "
+"<psutil.Process.terminate()>`, :meth:`kill() <psutil.Process.kill()>`. This "
+"is done to avoid killing another process if its PID has been reused, "
+"fixing :bpo:`6973`."
 msgstr ""
 
-#: ../../../api.rst:2194
+#: ../../../api.rst:2190
 msgid ""
 ">>> import psutil\n"
 ">>> from subprocess import PIPE\n"
@@ -3532,22 +3538,67 @@ msgid ""
 ">>>"
 msgstr ""
 
+#: ../../../api.rst:2209
+msgid "ProcessSnapshot class"
+msgstr ""
+
 #: ../../../api.rst:2213
+msgid ""
+"A read-only object holding the process attributes collected "
+"by :func:`process_iter(attrs=...) <psutil.process_iter>`, available "
+"as :attr:`Process.snapshot`. It is not supposed to be instantiated directly."
+msgstr ""
+
+#: ../../../api.rst:2217
+msgid ""
+"Each requested attribute is exposed as a plain attribute named after the "
+"corresponding :class:`Process` method, holding the value it returned when "
+"the process was scanned (or *ad_value* if it raised :exc:`AccessDenied`). "
+"Accessing an attribute that was not requested raises :exc:`AttributeError`. "
+"Values are never refreshed: call the :class:`Process` method to get a live "
+"one."
+msgstr ""
+
+#: ../../../api.rst:2224
+msgid ""
+">>> import psutil\n"
+">>> for p in psutil.process_iter([\"pid\", \"name\", \"cpu_percent\"]):\n"
+"...     if p.snapshot.cpu_percent > 50:\n"
+"...         print(p.snapshot)\n"
+"...\n"
+"ProcessSnapshot(pid=4821, name='python3', cpu_percent=72.3)\n"
+">>> p.snapshot.exe\n"
+"Traceback (most recent call last):\n"
+"  ...\n"
+"AttributeError: 'exe' was not requested in process_iter(attrs=...)"
+msgstr ""
+
+#: ../../../api.rst:2237
+msgid ""
+"Snapshots support ``==``, are false when empty, and can be pickled and "
+"copied."
+msgstr ""
+
+#: ../../../api.rst:2242
+msgid "Return the collected attributes as a new dictionary."
+msgstr ""
+
+#: ../../../api.rst:2249
 msgid "C heap introspection"
 msgstr ""
 
-#: ../../../api.rst:2215
+#: ../../../api.rst:2251
 msgid ""
-"The following functions provide direct access to the platform's native :term:"
-"`heap` allocator (such as glibc's ``malloc`` on Linux or ``jemalloc`` on "
-"BSD). They are low-level interfaces intended for detecting memory leaks in C "
-"extensions, which are usually not revealed via standard :term:`RSS` / :term:"
-"`VMS` metrics. These functions do not reflect Python object memory; they "
-"operate solely on allocations made in C via :manpage:`malloc(3)`, :manpage:"
-"`free(3)`, and related calls."
+"The following functions provide direct access to the platform's "
+"native :term:`heap` allocator (such as glibc's ``malloc`` on Linux or "
+"``jemalloc`` on FreeBSD and NetBSD). They are low-level interfaces intended "
+"for detecting memory leaks in C extensions, which are usually not revealed "
+"via standard :term:`RSS` / :term:`VMS` metrics. These functions do not "
+"reflect Python object memory; they operate solely on allocations made in C "
+"via :manpage:`malloc(3)`, :manpage:`free(3)`, and related calls."
 msgstr ""
 
-#: ../../../api.rst:2223
+#: ../../../api.rst:2259
 msgid ""
 "The general idea behind these functions is straightforward: capture the "
 "state of the :term:`heap` before and after repeatedly invoking a function "
@@ -3557,116 +3608,117 @@ msgid ""
 "way to spot native leaks that Python's memory tracking misses."
 msgstr ""
 
-#: ../../../api.rst:2232
+#: ../../../api.rst:2268
 msgid ":doc:`/blog/2025/heap-introspection-apis`"
 msgstr ""
 
-#: ../../../api.rst:2236
+#: ../../../api.rst:2272
 msgid ""
 "Check out `psleak`_ project to see a practical example of how these APIs can "
 "be used to detect memory leaks in C extensions."
 msgstr ""
 
-#: ../../../api.rst:2241
+#: ../../../api.rst:2277
 msgid ""
 "Return low-level heap statistics from the system's C allocator. On Linux, "
-"this exposes ``uordblks`` and ``hblkhd`` fields from glibc :manpage:"
-"`mallinfo2(3)`."
+"this exposes ``uordblks`` and ``hblkhd`` fields from "
+"glibc :manpage:`mallinfo2(3)`."
 msgstr ""
 
-#: ../../../api.rst:2245
+#: ../../../api.rst:2281
 msgid ""
 "``heap_used``: total number of bytes currently allocated via ``malloc()`` "
 "(small allocations)."
 msgstr ""
 
-#: ../../../api.rst:2247
+#: ../../../api.rst:2283
 msgid ""
-"``mmap_used``: total number of bytes currently allocated via :manpage:"
-"`mmap(2)` or via large ``malloc()`` allocations. Always set to 0 on macOS."
+"``mmap_used``: total number of bytes currently allocated "
+"via :manpage:`mmap(2)` or via large ``malloc()`` allocations. Always set to "
+"0 on macOS."
 msgstr ""
 
-#: ../../../api.rst:2250
+#: ../../../api.rst:2286
 msgid ""
 "``heap_count``: (Windows only) number of private heaps created via "
 "``HeapCreate()``."
 msgstr ""
 
-#: ../../../api.rst:2253
+#: ../../../api.rst:2289
 msgid ""
 ">>> import psutil\n"
 ">>> psutil.heap_info()\n"
 "pheap(heap_used=5177792, mmap_used=819200)"
 msgstr ""
 
-#: ../../../api.rst:2259
+#: ../../../api.rst:2295
 msgid "These fields reflect how unreleased C allocations affect the heap:"
 msgstr ""
 
-#: ../../../api.rst:2262
+#: ../../../api.rst:2298
 msgid "Platform"
 msgstr ""
 
-#: ../../../api.rst:2262
+#: ../../../api.rst:2298
 msgid "Allocation type"
 msgstr ""
 
-#: ../../../api.rst:2262
+#: ../../../api.rst:2298
 msgid "Affected field"
 msgstr ""
 
-#: ../../../api.rst:2264 ../../../api.rst:2266
+#: ../../../api.rst:2300 ../../../api.rst:2302
 msgid "UNIX / glibc"
 msgstr ""
 
-#: ../../../api.rst:2264
+#: ../../../api.rst:2300
 msgid "small ``malloc()`` ≤128KB without ``free()``"
 msgstr ""
 
-#: ../../../api.rst:2264 ../../../api.rst:2268
+#: ../../../api.rst:2300 ../../../api.rst:2304
 msgid "``heap_used``"
 msgstr ""
 
-#: ../../../api.rst:2266
+#: ../../../api.rst:2302
 msgid ""
 "large ``malloc()`` >128KB without ``free()`` , or ``mmap()`` without "
 "``munmap()``"
 msgstr ""
 
-#: ../../../api.rst:2266 ../../../api.rst:2270
+#: ../../../api.rst:2302 ../../../api.rst:2306
 msgid "``mmap_used``"
 msgstr ""
 
-#: ../../../api.rst:2268
+#: ../../../api.rst:2304
 msgid "``HeapAlloc()`` without ``HeapFree()``"
 msgstr ""
 
-#: ../../../api.rst:2270
+#: ../../../api.rst:2306
 msgid "``VirtualAlloc()`` without ``VirtualFree()``"
 msgstr ""
 
-#: ../../../api.rst:2272
+#: ../../../api.rst:2308
 msgid "``HeapCreate()`` without ``HeapDestroy()``"
 msgstr ""
 
-#: ../../../api.rst:2272
+#: ../../../api.rst:2308
 msgid "``heap_count``"
 msgstr ""
 
-#: ../../../api.rst:2281
+#: ../../../api.rst:2317
 msgid ""
 "Request that the underlying allocator free any unused memory it's holding in "
 "the :term:`heap` (typically small ``malloc()`` allocations)."
 msgstr ""
 
-#: ../../../api.rst:2284
+#: ../../../api.rst:2320
 msgid ""
 "In practice, modern allocators rarely comply, so this is not a general-"
 "purpose memory-reduction tool and won't meaningfully shrink :term:`RSS` in "
 "real programs. Its primary value is in **leak detection tools**."
 msgstr ""
 
-#: ../../../api.rst:2289
+#: ../../../api.rst:2325
 msgid ""
 "Calling ``heap_trim()`` before taking measurements helps reduce allocator "
 "noise, giving you a cleaner baseline so that changes in ``heap_used`` come "
@@ -3675,80 +3727,79 @@ msgid ""
 "fragmentation patterns."
 msgstr ""
 
-#: ../../../api.rst:2302
+#: ../../../api.rst:2338
 msgid "Windows services"
 msgstr ""
 
-#: ../../../api.rst:2306
+#: ../../../api.rst:2342
 msgid ""
 "Return an iterator yielding :class:`WindowsService` instances for all "
 "installed Windows services."
 msgstr ""
 
-#: ../../../api.rst:2313
+#: ../../../api.rst:2349
 msgid ""
 "Get a Windows service by name, returning a :class:`WindowsService` instance. "
 "Raise :exc:`NoSuchProcess` if no service with such name exists."
 msgstr ""
 
-#: ../../../api.rst:2320
+#: ../../../api.rst:2356
 msgid ""
 "Represents a Windows service with the given *name*. This class is returned "
 "by :func:`win_service_iter` and :func:`win_service_get` functions, and it's "
 "not supposed to be instantiated directly."
 msgstr ""
 
-#: ../../../api.rst:2326
+#: ../../../api.rst:2362
 msgid ""
 "The service name. This string is how a service is referenced, and can be "
 "passed to :func:`win_service_get` to get a new :class:`WindowsService` "
 "instance."
 msgstr ""
 
-#: ../../../api.rst:2332
+#: ../../../api.rst:2368
 msgid ""
 "The service display name. The value is cached when this class is "
 "instantiated."
 msgstr ""
 
-#: ../../../api.rst:2337
+#: ../../../api.rst:2373
 msgid ""
 "The fully qualified path to the service binary/exe file as a string, "
 "including command line arguments."
 msgstr ""
 
-#: ../../../api.rst:2342
+#: ../../../api.rst:2378
 msgid "The name of the user that owns this service."
 msgstr ""
 
-#: ../../../api.rst:2346
+#: ../../../api.rst:2382
 msgid ""
-"A string which can either be either ``'automatic'``, ``'manual'`` or "
-"``'disabled'``."
+"A string which can either be ``'automatic'``, ``'manual'`` or ``'disabled'``."
 msgstr ""
 
-#: ../../../api.rst:2351
+#: ../../../api.rst:2387
 msgid ""
-"The process PID, if any, else ``None``. This can be passed to :class:"
-"`Process` class to control the service's process."
+"The process PID, if any, else ``None``. This can be passed "
+"to :class:`Process` class to control the service's process."
 msgstr ""
 
-#: ../../../api.rst:2356
+#: ../../../api.rst:2392
 msgid ""
 "Service status as a string, which can be either ``'running'``, ``'paused'``, "
 "``'start_pending'``, ``'pause_pending'``, ``'continue_pending'``, "
 "``'stop_pending'`` or ``'stopped'``."
 msgstr ""
 
-#: ../../../api.rst:2362
+#: ../../../api.rst:2398
 msgid "Service long description."
 msgstr ""
 
-#: ../../../api.rst:2366
+#: ../../../api.rst:2402
 msgid "Utility method retrieving all the information above as a dictionary."
 msgstr ""
 
-#: ../../../api.rst:2368
+#: ../../../api.rst:2404
 msgid ""
 ">>> import psutil\n"
 ">>> list(psutil.win_service_iter())\n"
@@ -3774,146 +3825,159 @@ msgid ""
 " 'username': 'NT AUTHORITY\\\\LocalService'}"
 msgstr ""
 
-#: ../../../api.rst:2393
+#: ../../../api.rst:2429
 msgid "Constants"
 msgstr ""
 
-#: ../../../api.rst:2395
+#: ../../../api.rst:2431
 msgid ""
 "The following enum classes group related constants, and are useful for type "
-"annotations and introspection. The individual constants (e.g. :data:"
-"`STATUS_RUNNING`) are also accessible directly from the psutil namespace as "
-"aliases for the enum members, and should be preferred over accessing them "
-"via the enum class (e.g. prefer ``psutil.STATUS_RUNNING`` over ``psutil."
-"ProcessStatus.STATUS_RUNNING``)."
+"annotations and introspection. The individual constants "
+"(e.g. :data:`STATUS_RUNNING`) are also accessible directly from the psutil "
+"namespace as aliases for the enum members, and should be preferred over "
+"accessing them via the enum class (e.g. prefer ``psutil.STATUS_RUNNING`` "
+"over ``psutil.ProcessStatus.STATUS_RUNNING``)."
 msgstr ""
 
-#: ../../../api.rst:2404
+#: ../../../api.rst:2440
 msgid ""
 ":class:`enum.StrEnum` collection of :data:`STATUS_* <psutil.STATUS_RUNNING>` "
 "constants. Returned by :meth:`Process.status`."
 msgstr ""
 
-#: ../../../api.rst:2411
+#: ../../../api.rst:2447
 msgid ""
-":class:`enum.IntEnum` collection of :data:`*_PRIORITY_CLASS <psutil."
-"ABOVE_NORMAL_PRIORITY_CLASS>` constants for :meth:`Process.nice` on Windows."
+":class:`enum.IntEnum` collection of :data:`*_PRIORITY_CLASS "
+"<psutil.ABOVE_NORMAL_PRIORITY_CLASS>` constants for :meth:`Process.nice` on "
+"Windows."
 msgstr ""
 
-#: ../../../api.rst:2421
+#: ../../../api.rst:2457
 msgid ""
-":class:`enum.IntEnum` collection of I/O priority constants for :meth:"
-"`Process.ionice`."
+":class:`enum.IntEnum` collection of I/O priority constants "
+"for :meth:`Process.ionice`."
 msgstr ""
 
-#: ../../../api.rst:2424
+#: ../../../api.rst:2460
 msgid ""
 ":data:`IOPRIO_CLASS_* <psutil.IOPRIO_CLASS_NONE>` on Linux, :data:`IOPRIO_* "
 "<psutil.IOPRIO_VERYLOW>` on Windows."
 msgstr ""
 
-#: ../../../api.rst:2433
+#: ../../../api.rst:2469
 msgid ""
 ":class:`enum.IntEnum` collection of :data:`RLIMIT_* <psutil.RLIMIT_NOFILE>` "
 "constants for :meth:`Process.rlimit`."
 msgstr ""
 
-#: ../../../api.rst:2442
+#: ../../../api.rst:2478
 msgid ""
 ":class:`enum.StrEnum` collection of :data:`CONN_* <psutil.CONN_ESTABLISHED>` "
-"constants. Returned in the :field:`status` field of :func:`psutil."
-"net_connections` and :meth:`Process.net_connections`."
+"constants. Returned in the :field:`status` field "
+"of :func:`psutil.net_connections` and :meth:`Process.net_connections`."
 msgstr ""
 
-#: ../../../api.rst:2450
+#: ../../../api.rst:2486
 msgid ""
-":class:`enum.IntEnum` collection of :data:`NIC_DUPLEX_* <psutil."
-"NIC_DUPLEX_FULL>` constants. Returned in the *duplex* field of :func:`psutil."
-"net_if_stats`."
+":class:`enum.IntEnum` collection of :data:`NIC_DUPLEX_* "
+"<psutil.NIC_DUPLEX_FULL>` constants. Returned in the *duplex* field "
+"of :func:`psutil.net_if_stats`."
 msgstr ""
 
-#: ../../../api.rst:2456
+#: ../../../api.rst:2492
 msgid ""
-":class:`enum.IntEnum` collection of :data:`POWER_TIME_* <psutil."
-"POWER_TIME_UNKNOWN>` constants. May appear in the *secsleft* field of :func:"
-"`psutil.sensors_battery`."
+":class:`enum.IntEnum` collection of :data:`POWER_TIME_* "
+"<psutil.POWER_TIME_UNKNOWN>` constants. May appear in the *secsleft* field "
+"of :func:`psutil.sensors_battery`."
 msgstr ""
 
-#: ../../../api.rst:2463
+#: ../../../api.rst:2499
 msgid "Operating system constants"
 msgstr ""
 
-#: ../../../api.rst:2465
+#: ../../../api.rst:2501
 msgid ""
 "``bool`` constants which define what platform you're on. ``True`` if on the "
 "platform, ``False`` otherwise."
 msgstr ""
 
-#: ../../../api.rst:2480
-msgid "Alias for :data:`MACOS`."
+#: ../../../api.rst:2506
+msgid ""
+"``True`` on all supported platforms except Windows. Throughout this "
+"documentation, \"Availability: POSIX\" refers to these platforms."
 msgstr ""
 
-#: ../../../api.rst:2482
+#: ../../../api.rst:2511
+msgid ""
+"``True`` on FreeBSD, NetBSD, and OpenBSD. Throughout this documentation, "
+"\"Availability: BSD\" refers to these platforms."
+msgstr ""
+
+#: ../../../api.rst:2524
+msgid "Alias for :data:`MACOS`, retained for backward compatibility."
+msgstr ""
+
+#: ../../../api.rst:2526
 msgid "use :data:`MACOS` instead."
 msgstr ""
 
-#: ../../../api.rst:2488
+#: ../../../api.rst:2532
 msgid "Process status constants"
 msgstr ""
 
-#: ../../../api.rst:2490
+#: ../../../api.rst:2534
 msgid ""
-"Represent the current status of a process. Returned by :meth:`Process."
-"status`."
+"Represent the current status of a process. Returned "
+"by :meth:`Process.status`."
 msgstr ""
 
-#: ../../../api.rst:2492
+#: ../../../api.rst:2536
 msgid ""
 "constants are now :class:`ProcessStatus` enum members (were plain strings). "
 "See :ref:`migration guide <migration-8.0>`."
 msgstr ""
 
-#: ../../../api.rst:2498
+#: ../../../api.rst:2542
 msgid "The process is running or ready to run (e.g. ``while True: pass``)."
 msgstr ""
 
-#: ../../../api.rst:2502
+#: ../../../api.rst:2546
 msgid ""
-"The process is dormant (e.g. during ``time.sleep()``) but can be woken up, e."
-"g. via a signal."
+"The process is dormant (e.g. during ``time.sleep()``) but can be woken up, "
+"e.g. via a signal."
 msgstr ""
 
-#: ../../../api.rst:2507
+#: ../../../api.rst:2551
 msgid ""
 "The process is waiting for disk I/O to complete. The kernel usually ignores "
 "signals in this state to prevent data corruption. E.g. ``os.read(fd, 1024)`` "
 "on a slow / blocked device can produce this state."
 msgstr ""
 
-#: ../../../api.rst:2513
+#: ../../../api.rst:2557
 msgid ""
 "The process is stopped (e.g., by ``SIGSTOP`` or ``SIGTSTP``, which is sent "
 "on Ctrl+Z) and will not run until resumed (e.g., via ``SIGCONT``)."
 msgstr ""
 
-#: ../../../api.rst:2518
+#: ../../../api.rst:2562
 msgid ""
 "The process is temporarily halted because it is being inspected by a "
 "debugger (e.g. via ``strace -p <pid>``)."
 msgstr ""
 
-#: ../../../api.rst:2523
+#: ../../../api.rst:2567
 msgid ""
 "The process has finished execution and released its resources, but it "
 "remains in the process table until the parent reaps it via ``wait()``. See "
 "also :ref:`faq_zombie_process`."
 msgstr ""
 
-#: ../../../api.rst:2529
+#: ../../../api.rst:2573
 msgid "The process is about to disappear (final state before it is gone)."
 msgstr ""
 
-#: ../../../api.rst:2533
+#: ../../../api.rst:2577
 msgid ""
 "(Linux only) A variant of :data:`STATUS_DISK_SLEEP` where the process can be "
 "awakened by ``SIGKILL``. Used for tasks which might otherwise remain blocked "
@@ -3921,169 +3985,169 @@ msgid ""
 "``open(\"/mnt/nfs_hung/file\").read()``."
 msgstr ""
 
-#: ../../../api.rst:2540
+#: ../../../api.rst:2584
 msgid ""
-"(Linux only) A transient state right before the process becomes runnable (:"
-"data:`STATUS_RUNNING`)."
+"(Linux only) A transient state right before the process becomes runnable "
+"(:data:`STATUS_RUNNING`)."
 msgstr ""
 
-#: ../../../api.rst:2545
+#: ../../../api.rst:2589
 msgid ""
 "(Linux only) A dormant state for kernel threads tied to a specific CPU. "
 "These threads are \"parked\" when a CPU core is taken offline and will "
 "remain inactive until the core is re-enabled."
 msgstr ""
 
-#: ../../../api.rst:2551
+#: ../../../api.rst:2595
 msgid "(Linux, macOS, FreeBSD) A sleep for kernel threads waiting for work."
 msgstr ""
 
-#: ../../../api.rst:2555
+#: ../../../api.rst:2599
 msgid ""
 "(FreeBSD only) The process is blocked specifically waiting for a kernel-"
 "level synchronization primitive (e.g. a mutex)."
 msgstr ""
 
-#: ../../../api.rst:2560
+#: ../../../api.rst:2604
 msgid ""
 "(FreeBSD only) The process is waiting in a kernel sleep queue for a specific "
 "system event to occur."
 msgstr ""
 
-#: ../../../api.rst:2565
+#: ../../../api.rst:2609
 msgid ""
 "(NetBSD only) The process has been explicitly paused, similar to the stopped "
 "state but managed by the NetBSD scheduler."
 msgstr ""
 
-#: ../../../api.rst:2571
+#: ../../../api.rst:2615
 msgid "Process priority constants"
 msgstr ""
 
-#: ../../../api.rst:2573
+#: ../../../api.rst:2617
 msgid ""
 "Represent the priority of a process on Windows (see `SetPriorityClass`_ "
 "doc). They can be used in conjunction with :meth:`Process.nice` to get or "
 "set process priority."
 msgstr ""
 
-#: ../../../api.rst:2579
+#: ../../../api.rst:2623
 msgid ""
 "constants are now :class:`ProcessPriority` enum members (were plain "
 "integers). See :ref:`migration guide <migration-8.0>`."
 msgstr ""
 
-#: ../../../api.rst:2597
+#: ../../../api.rst:2641
 msgid "Process I/O priority constants"
 msgstr ""
 
-#: ../../../api.rst:2599
+#: ../../../api.rst:2643
 msgid ""
 "Represent the I/O priority class of a process (Linux and Windows only). They "
 "can be used in conjunction with :meth:`Process.ionice` (*ioclass* argument)."
 msgstr ""
 
-#: ../../../api.rst:2602
+#: ../../../api.rst:2646
 msgid "Linux (see :manpage:`ioprio_get(2)`):"
 msgstr ""
 
-#: ../../../api.rst:2606
+#: ../../../api.rst:2650
 msgid "Highest priority."
 msgstr ""
 
-#: ../../../api.rst:2610
+#: ../../../api.rst:2654
 msgid "Normal priority."
 msgstr ""
 
-#: ../../../api.rst:2614
+#: ../../../api.rst:2658
 msgid "Lowest priority."
 msgstr ""
 
-#: ../../../api.rst:2618
+#: ../../../api.rst:2662
 msgid "No priority set (default; treated as :data:`IOPRIO_CLASS_BE`)."
 msgstr ""
 
-#: ../../../api.rst:2620
+#: ../../../api.rst:2664
 msgid "Windows:"
 msgstr ""
 
-#: ../../../api.rst:2627
+#: ../../../api.rst:2671
 msgid ""
-"constants are now :class:`ProcessIOPriority` enum members. See :ref:"
-"`migration guide <migration-8.0>`."
+"constants are now :class:`ProcessIOPriority` enum members. "
+"See :ref:`migration guide <migration-8.0>`."
 msgstr ""
 
-#: ../../../api.rst:2634
+#: ../../../api.rst:2678
 msgid "Process resource constants"
 msgstr ""
 
-#: ../../../api.rst:2636
+#: ../../../api.rst:2680
 msgid ""
 "Constants for getting or setting process resource limits, to be used in in "
 "conjunction with :meth:`Process.rlimit`. The meaning of each constant is "
 "explained in :func:`resource.getrlimit` documentation."
 msgstr ""
 
-#: ../../../api.rst:2642
+#: ../../../api.rst:2686
 msgid ""
 "these constants are now :class:`ProcessRlimit` enum members (were plain "
 "integers). See :ref:`migration guide <migration-8.0>`."
 msgstr ""
 
-#: ../../../api.rst:2646
+#: ../../../api.rst:2690
 msgid "Linux / FreeBSD:"
 msgstr ""
 
-#: ../../../api.rst:2669
+#: ../../../api.rst:2713
 msgid "FreeBSD specific:"
 msgstr ""
 
-#: ../../../api.rst:2687
+#: ../../../api.rst:2731
 msgid "Connections constants"
 msgstr ""
 
-#: ../../../api.rst:2689
+#: ../../../api.rst:2733
 msgid ""
 ":class:`enum.StrEnum` constants representing the status of a TCP connection. "
-"Returned by :meth:`Process.net_connections` and :func:`psutil."
-"net_connections` (:field:`status` field)."
+"Returned by :meth:`Process.net_connections` "
+"and :func:`psutil.net_connections` (:field:`status` field)."
 msgstr ""
 
-#: ../../../api.rst:2693
+#: ../../../api.rst:2737
 msgid ""
 "constants are now :class:`ConnectionStatus` enum members (were plain "
 "strings). See :ref:`migration guide <migration-8.0>`."
 msgstr ""
 
-#: ../../../api.rst:2714
+#: ../../../api.rst:2758
 msgid "Hardware constants"
 msgstr ""
 
-#: ../../../api.rst:2720
+#: ../../../api.rst:2764
 msgid ""
-"Identifies a MAC address associated with a network interface. Returned by :"
-"func:`psutil.net_if_addrs` (:field:`family` field)."
+"Identifies a MAC address associated with a network interface. Returned "
+"by :func:`psutil.net_if_addrs` (:field:`family` field)."
 msgstr ""
 
-#: ../../../api.rst:2729
+#: ../../../api.rst:2773
 msgid ""
 "Identifies whether a :term:`NIC` operates in full, half, or unknown duplex "
 "mode. FULL allows simultaneous send/receive, HALF allows only one at a time. "
 "Returned by :func:`psutil.net_if_stats` (:field:`duplex` field)."
 msgstr ""
 
-#: ../../../api.rst:2738
+#: ../../../api.rst:2782
 msgid ""
 "Whether the remaining time of a battery cannot be determined or is "
-"unlimited. May be assigned to :func:`psutil.sensors_battery`'s :field:"
-"`secsleft` field."
+"unlimited. May be assigned "
+"to :func:`psutil.sensors_battery`'s :field:`secsleft` field."
 msgstr ""
 
-#: ../../../api.rst:2742
+#: ../../../api.rst:2786
 msgid "Other constants"
 msgstr ""
 
-#: ../../../api.rst:2748
+#: ../../../api.rst:2792
 msgid ""
 "The path of the ``/proc`` filesystem on Linux, Solaris and AIX (defaults to "
 "``'/proc'``). You may want to re-set this constant right after importing "
@@ -4093,22 +4157,22 @@ msgid ""
 "more info)."
 msgstr ""
 
-#: ../../../api.rst:2755
+#: ../../../api.rst:2799
 msgid ""
 "It must be noted that this trick works only for APIs which rely on ``/proc`` "
 "filesystem (e.g. memory-related APIs and many (but not all) :class:`Process` "
 "class methods)."
 msgstr ""
 
-#: ../../../api.rst:2762
+#: ../../../api.rst:2806
 msgid "Utilities"
 msgstr ""
 
-#: ../../../api.rst:2766
+#: ../../../api.rst:2810
 msgid "Convert *n* bytes to a human-readable string."
 msgstr ""
 
-#: ../../../api.rst:2768
+#: ../../../api.rst:2812
 msgid ""
 ">>> import psutil\n"
 ">>> psutil.bytes2human(10000)\n"
@@ -4117,22 +4181,22 @@ msgid ""
 "'95.4M'"
 msgstr ""
 
-#: ../../../api.rst:2782
+#: ../../../api.rst:2826
 msgid "A tuple to check psutil installed version."
 msgstr ""
 
-#: ../../../api.rst:2784
+#: ../../../api.rst:2828
 msgid ""
 ">>> import psutil\n"
 ">>> if psutil.version_info >= (4, 5):\n"
 "...    pass"
 msgstr ""
 
-#: ../../../api.rst:2791
+#: ../../../api.rst:2835
 msgid "Environment variables"
 msgstr ""
 
-#: ../../../api.rst:2795
+#: ../../../api.rst:2839
 msgid ""
 "If set, psutil will print debug messages to stderr. This is useful for "
 "troubleshooting internal errors or understanding the library's behavior at a "
@@ -4141,17 +4205,17 @@ msgid ""
 "programmatically at runtime via ``psutil._set_debug(True)``."
 msgstr ""
 
-#: ../../../api.rst:2801
+#: ../../../api.rst:2845
 msgid "$ PSUTIL_DEBUG=1 python3 script.py"
 msgstr ""
 
-#: ../../../api.rst:2807
+#: ../../../api.rst:2851
 msgid ""
 "By default, psutil compiles its C source files in parallel, using one job "
 "per CPU, which makes installing from source 2x to 3.6x faster. Set this "
 "variable to change the number of jobs, or to 1 to compile serially."
 msgstr ""
 
-#: ../../../api.rst:2811
+#: ../../../api.rst:2855
 msgid "$ PSUTIL_BUILD_JOBS=1 python3 -m pip install --no-binary=psutil psutil"
 msgstr ""

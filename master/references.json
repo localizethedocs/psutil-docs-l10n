@@ -37,9 +37,9 @@
     "branch" : "master",
     "commit" : 
     {
-      "date" : "2026-10-08 16:05:25 +0200",
-      "hash" : "482856954e42496499730ded1b1b264039cf6afc",
-      "title" : "[FreeBSD, OpenBSD] net_io_counters() dropout is no longer always 0 (#3023)"
+      "date" : "2026-10-25 12:32:43 +0100",
+      "hash" : "f8b0a6191085f55dc71f7a877c55dce0e4b6feb9",
+      "title" : "README badge: fetch download stats from clickhouse.com"
     }
   },
   "type" : "branch",

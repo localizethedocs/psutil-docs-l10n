@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-05 17:28+0000\n"
+"POT-Creation-Date: 2026-10-26 15:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,8 +24,8 @@ msgstr ""
 #: ../../../adoption.rst:8
 msgid ""
 "psutil is among the `top 100 <https://clickpy.clickhouse.com/dashboard/"
-"psutil>`__ most-downloaded packages on PyPI, with **390+ million** downloads "
-"per month and **780,000+** `GitHub repositories <https://github.com/"
+"psutil>`__ most-downloaded packages on PyPI, with **320+ million** downloads "
+"per month and **790,000+** `GitHub repositories <https://github.com/"
 "giampaolo/psutil/network/dependents>`__ using it. The projects below are a "
 "sample of notable software that uses it. They are grouped by how much of the "
 "project depends on psutil, and every usage links to the code that calls "
@@ -44,8 +44,8 @@ msgid ""
 "    <div class=\"adopter-what\">Agent checks read processes, disks and "
 "network through psutil.</div>\n"
 "    <div class=\"adopter-links\">\n"
-"      <a href=\"https://github.com/DataDog/integrations-core/"
-"blob/720d4ded9dffb5ea7eb5e5f4feeb0e240f60ae59/process/datadog_checks/process/"
+"      <a href=\"https://github.com/DataDog/integrations-core/blob/"
+"720d4ded9dffb5ea7eb5e5f4feeb0e240f60ae59/process/datadog_checks/process/"
 "process.py#L225\">see the code</a>\n"
 "      <a href=\"https://www.datadoghq.com/blog/agent-developer-mode/\">write-"
 "up</a>\n"
@@ -60,8 +60,8 @@ msgid ""
 "process watcher, autoscaler.</div>\n"
 "    <div class=\"adopter-links\">\n"
 "      <a href=\"https://github.com/ray-project/ray/blob/"
-"d39938f27556e367ca43d8af12a9add0ca952456/python/ray/_private/memory_monitor."
-"py#L12\">see the code</a>\n"
+"d39938f27556e367ca43d8af12a9add0ca952456/python/ray/_private/"
+"memory_monitor.py#L12\">see the code</a>\n"
 "    </div>\n"
 "  </div>\n"
 "  <div class=\"adopter-card\">\n"
@@ -94,8 +94,8 @@ msgid ""
 "  </div>\n"
 "  <div class=\"adopter-card\">\n"
 "    <div class=\"adopter-head\">\n"
-"      <img class=\"logo-on-light\" src=\"../_static/images/adopters/glances."
-"svg\" alt=\"\">\n"
+"      <img class=\"logo-on-light\" src=\"../_static/images/adopters/"
+"glances.svg\" alt=\"\">\n"
 "      <img class=\"logo-on-dark\" src=\"../_static/images/adopters/glances-"
 "on-dark.svg\" alt=\"\">\n"
 "      <a href=\"https://github.com/nicolargo/glances\">Glances</a>\n"
@@ -103,9 +103,9 @@ msgid ""
 "    <div class=\"adopter-what\">Every metric it displays comes from psutil.</"
 "div>\n"
 "    <div class=\"adopter-links\">\n"
-"      <a href=\"https://github.com/nicolargo/glances/"
-"blob/7a351ac38cff96cf4fedecfba8d85088dd9885ae/glances/plugins/mem/__init__."
-"py#L142\">see the code</a>\n"
+"      <a href=\"https://github.com/nicolargo/glances/blob/"
+"7a351ac38cff96cf4fedecfba8d85088dd9885ae/glances/plugins/mem/"
+"__init__.py#L142\">see the code</a>\n"
 "    </div>\n"
 "  </div>\n"
 "</div>"
@@ -157,9 +157,9 @@ msgstr ""
 
 #: ../../../adoption.rst:92
 msgid ""
-"CPU, `memory <https://github.com/nicolargo/glances/"
-"blob/7a351ac38cff96cf4fedecfba8d85088dd9885ae/glances/plugins/mem/__init__."
-"py#L142>`__, disk, network, sensors, processes"
+"CPU, `memory <https://github.com/nicolargo/glances/blob/"
+"7a351ac38cff96cf4fedecfba8d85088dd9885ae/glances/plugins/mem/"
+"__init__.py#L142>`__, disk, network, sensors, processes"
 msgstr ""
 
 #: ../../../adoption.rst:94
@@ -202,8 +202,8 @@ msgstr ""
 #: ../../../adoption.rst:104
 msgid ""
 "`CPU load and frequency readings <https://github.com/AdnanHodzic/auto-"
-"cpufreq/blob/57b77f5cf20d02edff1df07c7bbf02467f78f14e/auto_cpufreq/core."
-"py#L276>`__"
+"cpufreq/blob/57b77f5cf20d02edff1df07c7bbf02467f78f14e/auto_cpufreq/"
+"core.py#L276>`__"
 msgstr ""
 
 #: ../../../adoption.rst:106
@@ -217,8 +217,8 @@ msgstr ""
 #: ../../../adoption.rst:108
 msgid ""
 "`CPU, frequency and temperature readings <https://github.com/amanusk/s-tui/"
-"blob/aa3a17194d16e3ff438d5947efe69761b5ac2feb/s_tui/sources/util_source."
-"py#L30>`__"
+"blob/aa3a17194d16e3ff438d5947efe69761b5ac2feb/s_tui/sources/"
+"util_source.py#L30>`__"
 msgstr ""
 
 #: ../../../adoption.rst:110
@@ -279,9 +279,9 @@ msgstr ""
 
 #: ../../../adoption.rst:124
 msgid ""
-"`heap process memory <https://github.com/giampaolo/psleak/"
-"blob/508738ef22b1aedecafed0c8b5e6f03404b09a35/psleak.py#L28>`__ (:func:"
-"`heap_info`)"
+"`heap process memory <https://github.com/giampaolo/psleak/blob/"
+"508738ef22b1aedecafed0c8b5e6f03404b09a35/psleak.py#L28>`__ "
+"(:func:`heap_info`)"
 msgstr ""
 
 #: ../../../adoption.rst:128
@@ -318,8 +318,8 @@ msgstr ""
 #: ../../../adoption.rst:145
 msgid ""
 "`counting active connections <https://github.com/ansible/ansible/blob/"
-"d772fe65b73e3032f88a9915111b58e743af9d9f/lib/ansible/modules/wait_for."
-"py#L308>`__ in the ``wait_for`` module"
+"d772fe65b73e3032f88a9915111b58e743af9d9f/lib/ansible/modules/"
+"wait_for.py#L308>`__ in the ``wait_for`` module"
 msgstr ""
 
 #: ../../../adoption.rst:147
@@ -332,8 +332,8 @@ msgstr ""
 
 #: ../../../adoption.rst:149
 msgid ""
-"`task subprocess lifecycle <https://github.com/apache/airflow/"
-"blob/92290dbd64f52205b516668db29fd437435b7dbe/airflow-core/src/airflow/utils/"
+"`task subprocess lifecycle <https://github.com/apache/airflow/blob/"
+"92290dbd64f52205b516668db29fd437435b7dbe/airflow-core/src/airflow/utils/"
 "process_utils.py#L45>`__"
 msgstr ""
 
@@ -391,8 +391,8 @@ msgstr ""
 
 #: ../../../adoption.rst:165
 msgid ""
-"`monitoring its own process <https://github.com/locustio/locust/"
-"blob/15bc3c900d354495cfde3a45e871228ea85f10fd/locust/runners.py#L299>`__"
+"`monitoring its own process <https://github.com/locustio/locust/blob/"
+"15bc3c900d354495cfde3a45e871228ea85f10fd/locust/runners.py#L299>`__"
 msgstr ""
 
 #: ../../../adoption.rst:167
@@ -405,9 +405,9 @@ msgstr ""
 
 #: ../../../adoption.rst:169
 msgid ""
-"`worker memory management <https://github.com/dask/distributed/"
-"blob/5fe4b054a711415aa5b85d5b049e2729c958bc36/distributed/worker_memory."
-"py#L401>`__ in ``distributed``"
+"`worker memory management <https://github.com/dask/distributed/blob/"
+"5fe4b054a711415aa5b85d5b049e2729c958bc36/distributed/"
+"worker_memory.py#L401>`__ in ``distributed``"
 msgstr ""
 
 #: ../../../adoption.rst:171
@@ -450,8 +450,8 @@ msgstr ""
 #: ../../../adoption.rst:181
 msgid ""
 "`dashboard widgets <https://github.com/ajenti/ajenti/blob/"
-"fc4028020f0d8e7a4af2d476b0146611f9d439b2/plugins/dashboard/widgets/cpu."
-"py#L17>`__ for CPU, memory, uptime and traffic"
+"fc4028020f0d8e7a4af2d476b0146611f9d439b2/plugins/dashboard/widgets/"
+"cpu.py#L17>`__ for CPU, memory, uptime and traffic"
 msgstr ""
 
 #: ../../../adoption.rst:183
@@ -464,8 +464,8 @@ msgstr ""
 
 #: ../../../adoption.rst:185
 msgid ""
-"`memory and swap readings <https://github.com/tlkh/asitop/"
-"blob/74ebe2cbc23d5b1eec874aebb1b9bacfe0e670cd/asitop/utils.py#L5>`__"
+"`memory and swap readings <https://github.com/tlkh/asitop/blob/"
+"74ebe2cbc23d5b1eec874aebb1b9bacfe0e670cd/asitop/utils.py#L5>`__"
 msgstr ""
 
 #: ../../../adoption.rst:187
@@ -517,8 +517,8 @@ msgstr ""
 
 #: ../../../adoption.rst:210
 msgid ""
-"`unit tests <https://github.com/tensorflow/tensorflow/"
-"blob/61105a4e3bbb7bde37db1d71344624dcf302bc93/tensorflow/python/checkpoint/"
+"`unit tests <https://github.com/tensorflow/tensorflow/blob/"
+"61105a4e3bbb7bde37db1d71344624dcf302bc93/tensorflow/python/checkpoint/"
 "checkpoint_test.py#L1188>`__"
 msgstr ""
 
@@ -532,8 +532,8 @@ msgstr ""
 
 #: ../../../adoption.rst:214
 msgid ""
-"`benchmark scripts <https://github.com/pytorch/pytorch/"
-"blob/6fa3592dc65b15195a145a98f344f0c38517b12f/benchmarks/data/"
+"`benchmark scripts <https://github.com/pytorch/pytorch/blob/"
+"6fa3592dc65b15195a145a98f344f0c38517b12f/benchmarks/data/"
 "dataloader_benchmark.py#L38>`__"
 msgstr ""
 
