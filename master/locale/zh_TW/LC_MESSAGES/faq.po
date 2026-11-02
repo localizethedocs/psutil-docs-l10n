@@ -86,11 +86,11 @@ msgstr ""
 
 #: ../../../faq.rst:48
 msgid "You have two options to deal with it."
-msgstr ""
+msgstr "有兩種選項可以處理這個問題。"
 
 #: ../../../faq.rst:50
 msgid "Option 1: call the method directly and catch the exception:"
-msgstr ""
+msgstr "選項 1：直接呼叫方法並捕捉例外："
 
 #: ../../../faq.rst:52
 msgid ""
@@ -156,6 +156,8 @@ msgid ""
 "handles :exc:`NoSuchProcess` internally and skips processes that disappear "
 "during iteration:"
 msgstr ""
+"正確的做法是使用 :func:`process_iter`，它會在內部處理 :exc:`NoSuchProcess`，"
+"並略過在疊代期間消失的進程："
 
 #: ../../../faq.rst:105
 msgid ""
@@ -194,6 +196,8 @@ msgid ""
 "You can also catch :exc:`Error`, which implies both :exc:`AccessDenied` "
 "and :exc:`NoSuchProcess`:"
 msgstr ""
+"你也可以捕捉 :exc:`Error`，因為它同時包含 :exc:`AccessDenied` "
+"和 :exc:`NoSuchProcess`："
 
 #: ../../../faq.rst:128
 msgid ""
@@ -212,7 +216,7 @@ msgstr "進程"
 
 #: ../../../faq.rst:144
 msgid "PID reuse"
-msgstr ""
+msgstr "PID 重複使用"
 
 #: ../../../faq.rst:146
 msgid ""
@@ -220,6 +224,8 @@ msgid ""
 "later refer to a different process if the original one terminated and a new "
 "one was assigned the same PID."
 msgstr ""
+"作業系統會重複使用 PID。現在取得的 :class:`Process` 物件之後可能會指向不同的"
+"進程；這是因為原本的進程已終止，而新進程被指派了相同的 PID。"
 
 #: ../../../faq.rst:150
 msgid "**How psutil handles this:**"
@@ -267,7 +273,7 @@ msgstr ""
 
 #: ../../../faq.rst:182
 msgid "What is a zombie process?"
-msgstr ""
+msgstr "什麼是殭屍進程？"
 
 #: ../../../faq.rst:184
 msgid ""
@@ -279,7 +285,7 @@ msgstr ""
 
 #: ../../../faq.rst:189
 msgid "**Behavior:**"
-msgstr ""
+msgstr "**行為：**"
 
 #: ../../../faq.rst:191
 msgid ""

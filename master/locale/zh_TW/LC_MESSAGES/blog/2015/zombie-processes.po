@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../blog/2015/zombie-processes.rst:9
 msgid "Proper zombie process handling"
-msgstr ""
+msgstr "合適的殭屍進程處理"
 
 #: ../../../blog/2015/zombie-processes.rst:11
 msgid ""
@@ -72,6 +72,10 @@ msgid ""
 "    raise NoSuchProcess(pid, None, msg)\n"
 "psutil.NoSuchProcess: no process found with pid 123"
 msgstr ""
+">>> p.name()\n"
+"  File \"psutil/__init__.py\", line 374, in _init\n"
+"    raise NoSuchProcess(pid, None, msg)\n"
+"psutil.NoSuchProcess: no process found with pid 123"
 
 #: ../../../blog/2015/zombie-processes.rst:48
 msgid "This was misleading, because the PID technically still existed:"
@@ -82,6 +86,8 @@ msgid ""
 ">>> psutil.pid_exists(p.pid)\n"
 "True"
 msgstr ""
+">>> psutil.pid_exists(p.pid)\n"
+"True"
 
 #: ../../../blog/2015/zombie-processes.rst:55
 msgid ""
@@ -93,6 +99,8 @@ msgid ""
 ">>> p.cmdline()\n"
 "['python']"
 msgstr ""
+">>> p.cmdline()\n"
+"['python']"
 
 #: ../../../blog/2015/zombie-processes.rst:62
 msgid ""

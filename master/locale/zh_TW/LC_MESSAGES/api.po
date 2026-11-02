@@ -1890,7 +1890,7 @@ msgstr ""
 
 #: ../../../api.rst:1082
 msgid ":ref:`faq_zombie_process`"
-msgstr ""
+msgstr ":ref:`faq_zombie_process`"
 
 #: ../../../api.rst:1086
 msgid ""
@@ -3860,7 +3860,7 @@ msgstr ""
 
 #: ../../../api.rst:2463
 msgid "Operating system constants"
-msgstr ""
+msgstr "作業系統約束"
 
 #: ../../../api.rst:2465
 msgid ""

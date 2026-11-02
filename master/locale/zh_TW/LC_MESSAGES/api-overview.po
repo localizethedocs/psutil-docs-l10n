@@ -30,7 +30,7 @@ msgstr ""
 
 #: ../../../api-overview.rst:9
 msgid "System related functions"
-msgstr ""
+msgstr "系統相關函數"
 
 #: ../../../api-overview.rst:14
 msgid "CPU"

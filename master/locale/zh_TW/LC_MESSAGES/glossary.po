@@ -551,4 +551,4 @@ msgstr ""
 
 #: ../../../glossary.rst:363
 msgid ":ref:`faq_zombie_process`"
-msgstr ""
+msgstr ":ref:`faq_zombie_process`"
