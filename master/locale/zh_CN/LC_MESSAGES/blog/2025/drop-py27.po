@@ -23,8 +23,8 @@ msgstr ""
 
 #: ../../../blog/2025/drop-py27.rst:12
 msgid ""
-"About dropping Python 2.7 support in psutil, 3 years ago I stated (:gh:"
-"`2014`):"
+"About dropping Python 2.7 support in psutil, 3 years ago I stated "
+"(:gh:`2014`):"
 msgstr ""
 
 #: ../../../blog/2025/drop-py27.rst:14

@@ -65,8 +65,8 @@ msgstr ""
 
 #: ../../../blog/2017/process-iter-attrs.rst:43
 msgid ""
-"5.3.0 adds ``attrs`` and ``ad_value`` parameters to :func:`psutil."
-"process_iter`. With these, the loop body becomes:"
+"5.3.0 adds ``attrs`` and ``ad_value`` parameters "
+"to :func:`psutil.process_iter`. With these, the loop body becomes:"
 msgstr ""
 
 #: ../../../blog/2017/process-iter-attrs.rst:46
@@ -82,11 +82,11 @@ msgstr ""
 
 #: ../../../blog/2017/process-iter-attrs.rst:56
 msgid ""
-"Internally, :func:`process_iter` attach an ``info`` dict to the :class:"
-"`Process` instance. The attributes are pre-fetched in one shot. Processes "
-"that disappear during iteration are silently skipped, and attributes that "
-"would raise :exc:`AccessDenied` gets assigned ``ad_value`` , which defaults "
-"to ``None``:"
+"Internally, :func:`process_iter` attach an ``info`` dict to "
+"the :class:`Process` instance. The attributes are pre-fetched in one shot. "
+"Processes that disappear during iteration are silently skipped, and "
+"attributes that would raise :exc:`AccessDenied` gets assigned ``ad_value`` , "
+"which defaults to ``None``:"
 msgstr ""
 
 #: ../../../blog/2017/process-iter-attrs.rst:62

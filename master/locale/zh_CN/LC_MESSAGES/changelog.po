@@ -58,11 +58,11 @@ msgstr ""
 
 #: ../../../changelog.rst:37
 msgid ""
-":gh:`2798`, :label:`breaking`: new :attr:`Process.attrs` class attribute, a :"
-"class:`frozenset` of the attribute names accepted by :meth:`Process.as_dict` "
-"and :func:`process_iter`. Passing ``attrs=[]`` to :func:`process_iter` to "
-"mean \"retrieve all attributes\" is deprecated. See :ref:`migration guide "
-"<migration-8.0-attrs>`."
+":gh:`2798`, :label:`breaking`: new :attr:`Process.attrs` class attribute, "
+"a :class:`frozenset` of the attribute names accepted "
+"by :meth:`Process.as_dict` and :func:`process_iter`. Passing ``attrs=[]`` "
+"to :func:`process_iter` to mean \"retrieve all attributes\" is deprecated. "
+"See :ref:`migration guide <migration-8.0-attrs>`."
 msgstr ""
 
 #: ../../../changelog.rst:42
@@ -103,21 +103,21 @@ msgstr ""
 
 #: ../../../changelog.rst:54
 msgid ""
-":gh:`1109`, [Linux]: :meth:`Process.memory_extras` returns a new :field:"
-"`locked` field: locked virtual memory (:manpage:`mlock(2)`)."
+":gh:`1109`, [Linux]: :meth:`Process.memory_extras` returns a "
+"new :field:`locked` field: locked virtual memory (:manpage:`mlock(2)`)."
 msgstr ""
 
 #: ../../../changelog.rst:56
 msgid ""
-":gh:`1452`, :gh:`2993`, [Linux, macOS, Windows]: :meth:`Process."
-"memory_footprint` returns a new :field:`shared` field: resident memory "
-"shared with other processes."
+":gh:`1452`, :gh:`2993`, [Linux, macOS, "
+"Windows]: :meth:`Process.memory_footprint` returns a new :field:`shared` "
+"field: resident memory shared with other processes."
 msgstr ""
 
 #: ../../../changelog.rst:60
 msgid ""
-"Reorganization of process memory APIs (:gh:`2731`, :gh:`2736`, :gh:`2733`, :"
-"gh:`2988`)."
+"Reorganization of process memory APIs "
+"(:gh:`2731`, :gh:`2736`, :gh:`2733`, :gh:`2988`)."
 msgstr ""
 
 #: ../../../changelog.rst:63
@@ -129,9 +129,9 @@ msgstr ""
 
 #: ../../../changelog.rst:67
 msgid ""
-"New :meth:`Process.memory_footprint` method, which returns :field:`uss`, :"
-"field:`pss` and :field:`swap` metrics (what :meth:`Process.memory_full_info` "
-"used to return)."
+"New :meth:`Process.memory_footprint` method, which "
+"returns :field:`uss`, :field:`pss` and :field:`swap` metrics "
+"(what :meth:`Process.memory_full_info` used to return)."
 msgstr ""
 
 #: ../../../changelog.rst:71
@@ -145,10 +145,10 @@ msgstr ""
 msgid ""
 ":label:`breaking`: :meth:`Process.memory_info` named tuple changed on all "
 "platforms: fields were added, removed and renamed. Most old names still work "
-"but raise :exc:`DeprecationWarning`; on macOS :field:`pfaults` and :field:"
-"`pageins` were removed with **no backward-compatible aliases**, use :meth:"
-"`Process.page_faults` instead. See :ref:`migration guide <migration-8.0-"
-"namedtuples>`."
+"but raise :exc:`DeprecationWarning`; on macOS :field:`pfaults` "
+"and :field:`pageins` were removed with **no backward-compatible aliases**, "
+"use :meth:`Process.page_faults` instead. See :ref:`migration guide "
+"<migration-8.0-namedtuples>`."
 msgstr ""
 
 #: ../../../changelog.rst:82
@@ -157,29 +157,29 @@ msgstr ""
 
 #: ../../../changelog.rst:84
 msgid ""
-":gh:`2753`, :label:`breaking`: Introduce enum classes (:class:"
-"`ProcessStatus`, :class:`ConnectionStatus`, :class:`ProcessIOPriority`, :"
-"class:`ProcessPriority`, :class:`ProcessRlimit`) grouping related constants. "
-"The top-level constants (e.g. :data:`STATUS_RUNNING`) remain the primary "
-"API, and are now aliases for the corresponding enum members. See :ref:"
-"`migration guide <migration-8.0-enums>`."
+":gh:`2753`, :label:`breaking`: Introduce enum classes "
+"(:class:`ProcessStatus`, :class:`ConnectionStatus`, :class:`ProcessIOPriority`, :class:`ProcessPriority`, :class:`ProcessRlimit`) "
+"grouping related constants. The top-level constants "
+"(e.g. :data:`STATUS_RUNNING`) remain the primary API, and are now aliases "
+"for the corresponding enum members. See :ref:`migration guide <migration-8.0-"
+"enums>`."
 msgstr ""
 
 #: ../../../changelog.rst:90
 msgid ""
-":gh:`1946`: Add inline type hints to all public APIs in ``psutil/__init__."
-"py``. Editors and checkers that read inline annotations (pyright, Pylance) "
-"pick them up automatically. mypy ignores them until we ship a ``py.typed`` "
-"marker, so it still relies on the third-party ``types-psutil`` stubs. No "
-"runtime behavior is changed."
+":gh:`1946`: Add inline type hints to all public APIs in ``psutil/"
+"__init__.py``. Editors and checkers that read inline annotations (pyright, "
+"Pylance) pick them up automatically. mypy ignores them until we ship a "
+"``py.typed`` marker, so it still relies on the third-party ``types-psutil`` "
+"stubs. No runtime behavior is changed."
 msgstr ""
 
 #: ../../../changelog.rst:95
 msgid ""
-":gh:`2751`: Convert all named tuples from :func:`collections.namedtuple` to :"
-"class:`typing.NamedTuple` classes with **type annotations**. This makes the "
-"classes self-documenting, effectively turning this module into a readable "
-"API reference."
+":gh:`2751`: Convert all named tuples from :func:`collections.namedtuple` "
+"to :class:`typing.NamedTuple` classes with **type annotations**. This makes "
+"the classes self-documenting, effectively turning this module into a "
+"readable API reference."
 msgstr ""
 
 #: ../../../changelog.rst:100
@@ -197,16 +197,16 @@ msgstr ""
 msgid ""
 ":gh:`2747`, :label:`breaking`: the field order of the named tuple returned "
 "by :func:`cpu_times` has been normalized on all platforms, and the first 3 "
-"fields are now always :field:`user`, :field:`system`, :field:`idle`. See :"
-"ref:`migration guide <migration-8.0-namedtuples>`."
+"fields are now always :field:`user`, :field:`system`, :field:`idle`. "
+"See :ref:`migration guide <migration-8.0-namedtuples>`."
 msgstr ""
 
 #: ../../../changelog.rst:108
 msgid ""
-":gh:`2772`, [Windows], :label:`breaking`: :func:`cpu_times` :field:"
-"`interrupt` field renamed to :field:`irq` to match the field name used on "
-"Linux and BSD. :field:`interrupt` still works but raises :exc:"
-"`DeprecationWarning`."
+":gh:`2772`, "
+"[Windows], :label:`breaking`: :func:`cpu_times` :field:`interrupt` field "
+"renamed to :field:`irq` to match the field name used on Linux and "
+"BSD. :field:`interrupt` still works but raises :exc:`DeprecationWarning`."
 msgstr ""
 
 #: ../../../changelog.rst:112
@@ -222,10 +222,11 @@ msgstr ""
 msgid ""
 ":gh:`2889`, [Windows], :label:`breaking`: 32-bit psutil can no longer "
 "inspect 64-bit processes. This relied on the undocumented ``NtWow64*`` APIs "
-"and stopped being tested when 32-bit wheels were dropped in 7.1.2 (:gh:"
-"`2657`). :meth:`Process.cwd` now raises :exc:`AccessDenied` in that case; :"
-"meth:`Process.cmdline` and :meth:`Process.environ` are unaffected. The "
-"opposite direction (64-bit psutil inspecting 32-bit processes) still works."
+"and stopped being tested when 32-bit wheels were dropped in 7.1.2 "
+"(:gh:`2657`). :meth:`Process.cwd` now raises :exc:`AccessDenied` in that "
+"case; :meth:`Process.cmdline` and :meth:`Process.environ` are unaffected. "
+"The opposite direction (64-bit psutil inspecting 32-bit processes) still "
+"works."
 msgstr ""
 
 #: ../../../changelog.rst:123
@@ -242,10 +243,10 @@ msgstr ""
 
 #: ../../../changelog.rst:127
 msgid ""
-":gh:`2805`, [BSD]: remove ``procfs`` dependency on NetBSD for :func:"
-"`cpu_stats` and :func:`virtual_memory`; values are now retrieved via the "
-"``sysctl(9)`` and ``uvm(9)`` kernel APIs instead. (patch by :user:`Santhosh "
-"Raju <fraggerfox>`)"
+":gh:`2805`, [BSD]: remove ``procfs`` dependency on NetBSD "
+"for :func:`cpu_stats` and :func:`virtual_memory`; values are now retrieved "
+"via the ``sysctl(9)`` and ``uvm(9)`` kernel APIs instead. (patch "
+"by :user:`Santhosh Raju <fraggerfox>`)"
 msgstr ""
 
 #: ../../../changelog.rst:131
@@ -301,11 +302,11 @@ msgstr ""
 
 #: ../../../changelog.rst:155
 msgid ""
-":gh:`2923`, [Windows]: :meth:`Process.status` is now part of the :meth:"
-"`Process.oneshot` group, so within that context (also used by :meth:`Process."
-"as_dict`) it no longer costs an extra system-wide query. Reading 4 methods "
-"of that group in one :meth:`Process.oneshot` block is now around **3.9x "
-"faster** than reading them without it, up from 2x."
+":gh:`2923`, [Windows]: :meth:`Process.status` is now part of "
+"the :meth:`Process.oneshot` group, so within that context (also used "
+"by :meth:`Process.as_dict`) it no longer costs an extra system-wide query. "
+"Reading 4 methods of that group in one :meth:`Process.oneshot` block is now "
+"around **3.9x faster** than reading them without it, up from 2x."
 msgstr ""
 
 #: ../../../changelog.rst:160
@@ -348,8 +349,8 @@ msgstr ""
 #: ../../../changelog.rst:175
 msgid ""
 ":gh:`2788`, :label:`breaking`: git tags renamed from ``release-X.Y.Z`` to "
-"``vX.Y.Z``. Old tags are kept for backward compatibility. See :ref:"
-"`migration guide <migration-8.0-git-tags>`."
+"``vX.Y.Z``. Old tags are kept for backward compatibility. "
+"See :ref:`migration guide <migration-8.0-git-tags>`."
 msgstr ""
 
 #: ../../../changelog.rst:178
@@ -382,8 +383,8 @@ msgstr ""
 
 #: ../../../changelog.rst:190
 msgid ""
-":gh:`2766`: remove remaining Python 2.7 compatibility shims from ``setup."
-"py``, simplifying the build infrastructure."
+":gh:`2766`: remove remaining Python 2.7 compatibility shims from "
+"``setup.py``, simplifying the build infrastructure."
 msgstr ""
 
 #: ../../../changelog.rst:192
@@ -428,17 +429,17 @@ msgstr ""
 #: ../../../changelog.rst:208
 msgid ""
 ":gh:`2757`, :gh:`2760`: split docs from a single HTML file into multiple new "
-"sections: :doc:`/about <about>`, :doc:`/adoption <adoption>` (:gh:`2763`), :"
-"doc:`/alternatives <alternatives>` (:gh:`2775`), :doc:`/api-overview <api-"
-"overview>`, :doc:`/credits <credits>` (:gh:`2764`), :doc:`/faq <faq>` (:gh:"
-"`2769`), :doc:`/funding <funding>` (:gh:`2797`), :ref:`/genindex <genindex>` "
-"(:gh:`2808`), :doc:`/glossary <glossary>` (:gh:`2774`), :doc:`/install "
-"<install>`, :doc:`/migration <migration>` (:gh:`2771`), :doc:`/performance "
-"<performance>` (:gh:`2787`), :doc:`/platform <platform>`, :doc:`/recipes "
-"<recipes>` (:gh:`2761`), :doc:`/shell-equivalents <shell-equivalents>` (:gh:"
-"`2768`), :doc:`/stdlib-equivalents <stdlib-equivalents>` (:gh:`2781`). The "
-"old ``INSTALL.rst`` and ``CREDITS`` files, which lived in the root dir, "
-"moved there as well."
+"sections: :doc:`/about <about>`, :doc:`/adoption <adoption>` "
+"(:gh:`2763`), :doc:`/alternatives <alternatives>` (:gh:`2775`), :doc:`/api-"
+"overview <api-overview>`, :doc:`/credits <credits>` (:gh:`2764`), :doc:`/faq "
+"<faq>` (:gh:`2769`), :doc:`/funding <funding>` (:gh:`2797`), :ref:`/genindex "
+"<genindex>` (:gh:`2808`), :doc:`/glossary <glossary>` (:gh:`2774`), :doc:`/"
+"install <install>`, :doc:`/migration <migration>` (:gh:`2771`), :doc:`/"
+"performance <performance>` (:gh:`2787`), :doc:`/platform <platform>`, :doc:`/"
+"recipes <recipes>` (:gh:`2761`), :doc:`/shell-equivalents <shell-"
+"equivalents>` (:gh:`2768`), :doc:`/stdlib-equivalents <stdlib-equivalents>` "
+"(:gh:`2781`). The old ``INSTALL.rst`` and ``CREDITS`` files, which lived in "
+"the root dir, moved there as well."
 msgstr ""
 
 #: ../../../changelog.rst:222
@@ -460,15 +461,15 @@ msgstr ""
 
 #: ../../../changelog.rst:233
 msgid ""
-"Usability: right TOC sidebar (:gh:`2828`), a COPY button on code snippets (:"
-"gh:`2761`), a \"copy page\" button copying the page's RsT source (:gh:"
-"`2981`), a \"back to top\" button, the ``psutil.`` prefix shown for all "
+"Usability: right TOC sidebar (:gh:`2828`), a COPY button on code snippets "
+"(:gh:`2761`), a \"copy page\" button copying the page's RsT source "
+"(:gh:`2981`), a \"back to top\" button, the ``psutil.`` prefix shown for all "
 "APIs, and search results styled as cards. Identifiers in code blocks (e.g. "
 "``psutil.Process()``, ``p.cpu_percent()``) are now clickable and link to "
 "their API reference entry, via `sphinx-codeautolink <https://sphinx-"
 "codeautolink.readthedocs.io/>`__ (:gh:`2826`). Doc clarity was improved and "
-"long sentences shortened (:gh:`2745`, :gh:`2801`). New keyboard shortcuts (:"
-"gh:`2820`): ``?`` shows the helper, ``Shift+D`` toggles dark/light mode, "
+"long sentences shortened (:gh:`2745`, :gh:`2801`). New keyboard shortcuts "
+"(:gh:`2820`): ``?`` shows the helper, ``Shift+D`` toggles dark/light mode, "
 "``Ctrl+K`` focuses the search box, ``Up``/``Down`` navigate the search "
 "results and ``Enter`` opens the selected one."
 msgstr ""
@@ -492,19 +493,19 @@ msgstr ""
 msgid ""
 "Hosting: doc is no longer hosted on Read the Docs. It's now self-hosted on "
 "GitHub Pages under a new domain, https://psutil.io, and URLs no longer carry "
-"the ``/en`` language and version prefixes, e.g. https://psutil.io/faq/ (:gh:"
-"`2790`). It's rebuilt and deployed automatically on every push to ``master`` "
-"(:gh:`2739`). Past releases are also served, e.g. https://psutil.io/7.2/, "
-"with a version selector in the top bar (:gh:`2980`)."
+"the ``/en`` language and version prefixes, e.g. https://psutil.io/faq/ "
+"(:gh:`2790`). It's rebuilt and deployed automatically on every push to "
+"``master`` (:gh:`2739`). Past releases are also served, e.g. https://"
+"psutil.io/7.2/, with a version selector in the top bar (:gh:`2980`)."
 msgstr ""
 
 #: ../../../changelog.rst:262
 msgid ""
 "Misc: doc is built as part of CI (fails on error), all ``.rst`` files are "
-"wrapped to 79 characters via https://github.com/giampaolo/rstwrap (:gh:"
-"`2823`), and ``/sitemap.xml`` was added to help search engine discovery. New "
-"custom 404 page (:gh:`2829`): hovering over the © copyright in the footer "
-"reveals an easter egg which takes you there."
+"wrapped to 79 characters via https://github.com/giampaolo/rstwrap "
+"(:gh:`2823`), and ``/sitemap.xml`` was added to help search engine "
+"discovery. New custom 404 page (:gh:`2829`): hovering over the © copyright "
+"in the footer reveals an easter egg which takes you there."
 msgstr ""
 
 #: ../../../changelog.rst:268 ../../../changelog.rst:697
@@ -553,11 +554,11 @@ msgstr ""
 
 #: ../../../changelog.rst:285
 msgid ""
-":gh:`2895`: :class:`Process` methods could wrongly raise :exc:"
-"`NoSuchProcess` (\"PID has been reused\") when the process creation time "
-"could not be determined, e.g. for zombies on NetBSD / OpenBSD or on :exc:"
-"`AccessDenied` on Windows. An unknown creation time is no longer treated as "
-"proof of PID reuse."
+":gh:`2895`: :class:`Process` methods could wrongly "
+"raise :exc:`NoSuchProcess` (\"PID has been reused\") when the process "
+"creation time could not be determined, e.g. for zombies on NetBSD / OpenBSD "
+"or on :exc:`AccessDenied` on Windows. An unknown creation time is no longer "
+"treated as proof of PID reuse."
 msgstr ""
 
 #: ../../../changelog.rst:289
@@ -573,12 +574,12 @@ msgstr ""
 
 #: ../../../changelog.rst:295
 msgid ""
-":gh:`2860`, :gh:`2966`, [Linux], :label:`critical`: :meth:`Process."
-"cpu_affinity` could crash the interpreter with a segfault when "
-"``PyLong_FromLong()`` returned NULL under memory pressure (the NULL is now "
-"checked and a proper :exc:`MemoryError` is raised instead), and on Python <= "
-"3.11 it over-decref'ed the CPU numbers it returned, corrupting CPython's "
-"small integer cache."
+":gh:`2860`, :gh:`2966`, "
+"[Linux], :label:`critical`: :meth:`Process.cpu_affinity` could crash the "
+"interpreter with a segfault when ``PyLong_FromLong()`` returned NULL under "
+"memory pressure (the NULL is now checked and a proper :exc:`MemoryError` is "
+"raised instead), and on Python <= 3.11 it over-decref'ed the CPU numbers it "
+"returned, corrupting CPython's small integer cache."
 msgstr ""
 
 #: ../../../changelog.rst:301
@@ -613,9 +614,9 @@ msgstr ""
 
 #: ../../../changelog.rst:315
 msgid ""
-":gh:`2770`, [Linux]: fix :func:`cpu_count` (``logical=False``) raising :exc:"
-"`ValueError` on s390x architecture, where :proc:`/proc/cpuinfo` uses spaces "
-"before the colon separator instead of a tab."
+":gh:`2770`, [Linux]: fix :func:`cpu_count` (``logical=False``) "
+"raising :exc:`ValueError` on s390x architecture, where :proc:`/proc/cpuinfo` "
+"uses spaces before the colon separator instead of a tab."
 msgstr ""
 
 #: ../../../changelog.rst:318
@@ -638,8 +639,9 @@ msgstr ""
 msgid ""
 ":gh:`2871`, [Linux]: :meth:`Process.rlimit` returned ``RLIM_INFINITY`` as "
 "the unsigned ``2**64-1`` instead of ``-1`` on Python 3.15+, which changed "
-"``resource.prlimit()`` accordingly. psutil now maps it back to :data:`psutil."
-"RLIM_INFINITY` so the value stays consistent across Python versions."
+"``resource.prlimit()`` accordingly. psutil now maps it back "
+"to :data:`psutil.RLIM_INFINITY` so the value stays consistent across Python "
+"versions."
 msgstr ""
 
 #: ../../../changelog.rst:331
@@ -681,11 +683,11 @@ msgstr ""
 
 #: ../../../changelog.rst:351
 msgid ""
-":gh:`2859`, [Windows], :label:`critical`: :func:`net_connections` / :meth:"
-"`Process.net_connections` could crash with an invalid ``Py_DECREF(NULL)`` "
-"when argument parsing failed before the result list was allocated. The error "
-"path now uses ``Py_XDECREF`` (including the temporary address-family / "
-"socket-type objects)."
+":gh:`2859`, "
+"[Windows], :label:`critical`: :func:`net_connections` / :meth:`Process.net_connections` "
+"could crash with an invalid ``Py_DECREF(NULL)`` when argument parsing failed "
+"before the result list was allocated. The error path now uses ``Py_XDECREF`` "
+"(including the temporary address-family / socket-type objects)."
 msgstr ""
 
 #: ../../../changelog.rst:356
@@ -728,8 +730,8 @@ msgstr ""
 
 #: ../../../changelog.rst:374
 msgid ""
-":gh:`2972`, [Windows], :label:`critical`: on systems with more than 64 CPUs :"
-"func:`cpu_times` with ``percpu=True`` and :func:`cpu_stats` read "
+":gh:`2972`, [Windows], :label:`critical`: on systems with more than 64 "
+"CPUs :func:`cpu_times` with ``percpu=True`` and :func:`cpu_stats` read "
 "uninitialized memory: the kernel only returns entries for the calling "
 "thread's processor group, but the entries for the remaining CPUs were used "
 "as well."
@@ -746,9 +748,10 @@ msgstr ""
 
 #: ../../../changelog.rst:384
 msgid ""
-":gh:`2935`, [Windows], :label:`memleak`: :meth:`Process.kill` and :meth:"
-"`Process.terminate` leaked a process handle when ``TerminateProcess()`` "
-"failed with an error other than ``ERROR_ACCESS_DENIED``."
+":gh:`2935`, [Windows], :label:`memleak`: :meth:`Process.kill` "
+"and :meth:`Process.terminate` leaked a process handle when "
+"``TerminateProcess()`` failed with an error other than "
+"``ERROR_ACCESS_DENIED``."
 msgstr ""
 
 #: ../../../changelog.rst:387
@@ -795,17 +798,17 @@ msgstr ""
 
 #: ../../../changelog.rst:409
 msgid ""
-":gh:`2875`, [Windows]: :func:`sensors_battery` never returned :data:"
-"`POWER_TIME_UNKNOWN` when the remaining battery time was unknown; it "
-"returned ``4294967295`` instead of ``-1`` due to ``BatteryLifeTime`` being "
-"passed as an unsigned integer."
+":gh:`2875`, [Windows]: :func:`sensors_battery` never "
+"returned :data:`POWER_TIME_UNKNOWN` when the remaining battery time was "
+"unknown; it returned ``4294967295`` instead of ``-1`` due to "
+"``BatteryLifeTime`` being passed as an unsigned integer."
 msgstr ""
 
 #: ../../../changelog.rst:413
 msgid ""
-":gh:`2938`, [Windows]: :func:`disk_partitions` returned a different :field:"
-"`opts` string for volume mount points than for the drive they live on: the "
-"drive type (``fixed``, ``cdrom``, ...) was missing."
+":gh:`2938`, [Windows]: :func:`disk_partitions` returned a "
+"different :field:`opts` string for volume mount points than for the drive "
+"they live on: the drive type (``fixed``, ``cdrom``, ...) was missing."
 msgstr ""
 
 #: ../../../changelog.rst:416
@@ -819,15 +822,15 @@ msgstr ""
 msgid ""
 "[Windows]: :meth:`Process.send_signal` with ``CTRL_C_EVENT`` or "
 "``CTRL_BREAK_EVENT`` on PID 0 delivered the event to every process attached "
-"to the caller's console, the caller included. It now raises :exc:"
-"`AccessDenied`, as ``SIGTERM`` already did for PID 0."
+"to the caller's console, the caller included. It now "
+"raises :exc:`AccessDenied`, as ``SIGTERM`` already did for PID 0."
 msgstr ""
 
 #: ../../../changelog.rst:423
 msgid ""
-":gh:`3019`, [Windows]: :meth:`Process.memory_maps` returned a truncated :"
-"field:`rss` for memory regions of 4 GiB or larger, because the region size "
-"was passed through a 32-bit integer."
+":gh:`3019`, [Windows]: :meth:`Process.memory_maps` returned a "
+"truncated :field:`rss` for memory regions of 4 GiB or larger, because the "
+"region size was passed through a 32-bit integer."
 msgstr ""
 
 #: ../../../changelog.rst:426
@@ -843,10 +846,11 @@ msgstr ""
 
 #: ../../../changelog.rst:432
 msgid ""
-":gh:`2885`, [macOS], :label:`critical`: :meth:`Process.memory_full_info`, :"
-"meth:`Process.memory_footprint` and :meth:`Process.threads` no longer use "
-"``task_for_pid()`` syscall, which can hang forever on headless VMs (e.g. CI "
-"runners). They now use ``proc_pidinfo()``, which is more permissive and so "
+":gh:`2885`, "
+"[macOS], :label:`critical`: :meth:`Process.memory_full_info`, :meth:`Process.memory_footprint` "
+"and :meth:`Process.threads` no longer use ``task_for_pid()`` syscall, which "
+"can hang forever on headless VMs (e.g. CI runners). They now use "
+"``proc_pidinfo()``, which is more permissive and so "
 "raises :exc:`AccessDenied` less often."
 msgstr ""
 
@@ -861,9 +865,9 @@ msgstr ""
 
 #: ../../../changelog.rst:442
 msgid ""
-":gh:`2411`, [macOS]: :meth:`Process.cpu_times` and :meth:`Process."
-"cpu_percent` calculation on macOS x86_64 (arm64 is fine) was highly "
-"inaccurate (41.67x lower)."
+":gh:`2411`, [macOS]: :meth:`Process.cpu_times` "
+"and :meth:`Process.cpu_percent` calculation on macOS x86_64 (arm64 is fine) "
+"was highly inaccurate (41.67x lower)."
 msgstr ""
 
 #: ../../../changelog.rst:445
@@ -911,14 +915,15 @@ msgstr ""
 
 #: ../../../changelog.rst:467
 msgid ""
-":gh:`2744`, [NetBSD], :label:`critical`: fix possible double ``free()`` in :"
-"func:`swap_memory`."
+":gh:`2744`, [NetBSD], :label:`critical`: fix possible double ``free()`` "
+"in :func:`swap_memory`."
 msgstr ""
 
 #: ../../../changelog.rst:469
 msgid ""
-":gh:`2848`, [BSD], :label:`critical`: fix a stack buffer overflow in :func:"
-"`net_io_counters` when the kernel reports an unusually long interface name."
+":gh:`2848`, [BSD], :label:`critical`: fix a stack buffer overflow "
+"in :func:`net_io_counters` when the kernel reports an unusually long "
+"interface name."
 msgstr ""
 
 #: ../../../changelog.rst:472
@@ -930,16 +935,16 @@ msgstr ""
 
 #: ../../../changelog.rst:475
 msgid ""
-":gh:`1801`, [FreeBSD]: :func:`cpu_freq` could raise :exc:"
-"`UnicodeDecodeError` when the ``dev.cpu.N.freq_levels`` sysctl returned "
-"bytes which are not valid UTF-8."
+":gh:`1801`, [FreeBSD]: :func:`cpu_freq` could "
+"raise :exc:`UnicodeDecodeError` when the ``dev.cpu.N.freq_levels`` sysctl "
+"returned bytes which are not valid UTF-8."
 msgstr ""
 
 #: ../../../changelog.rst:478
 msgid ""
-":gh:`2746`, [FreeBSD]: :meth:`Process.memory_maps`, :field:`rss` and :field:"
-"`private` fields are erroneously reported in memory pages instead of bytes. "
-"Other platforms (Linux, macOS, Windows) return bytes."
+":gh:`2746`, [FreeBSD]: :meth:`Process.memory_maps`, :field:`rss` "
+"and :field:`private` fields are erroneously reported in memory pages instead "
+"of bytes. Other platforms (Linux, macOS, Windows) return bytes."
 msgstr ""
 
 #: ../../../changelog.rst:481
@@ -981,8 +986,8 @@ msgstr ""
 #: ../../../changelog.rst:498
 msgid ""
 ":gh:`2822`, [BSD]: :meth:`Process.cmdline` on NetBSD could raise ``OSError: "
-"[Errno 14] Bad address`` if the process about to exit. It now raises :exc:"
-"`NoSuchProcess` instead."
+"[Errno 14] Bad address`` if the process about to exit. It now "
+"raises :exc:`NoSuchProcess` instead."
 msgstr ""
 
 #: ../../../changelog.rst:501
@@ -1010,29 +1015,29 @@ msgstr ""
 
 #: ../../../changelog.rst:512
 msgid ""
-":gh:`2905`, [FreeBSD], [OpenBSD], [NetBSD]: the ``saved`` field of :meth:"
-"`Process.gids` mistakenly reported the process saved *user* ID instead of "
-"the saved group ID. Bug existed since 2011."
+":gh:`2905`, [FreeBSD], [OpenBSD], [NetBSD]: the ``saved`` field "
+"of :meth:`Process.gids` mistakenly reported the process saved *user* ID "
+"instead of the saved group ID. Bug existed since 2011."
 msgstr ""
 
 #: ../../../changelog.rst:515
 msgid ""
 ":gh:`2907`, [NetBSD]: a process which is exiting, but is not a zombie yet, "
-"was not recognized as such. :class:`Process` methods raised :exc:"
-"`NoSuchProcess` instead of :exc:`ZombieProcess`, and :meth:`Process.status` "
-"returned ``\"sleeping\"`` or ``\"?\"``. Also, :data:`STATUS_SUSPENDED` was "
-"never returned by :meth:`Process.status`, despite being documented as NetBSD "
-"only, and :meth:`Process.environ` raised ``OSError`` with ``EINVAL`` / "
-"``EFAULT`` / ``EBUSY`` for a process which is exiting or is a zombie (it now "
-"returns an empty dict, or raises :exc:`NoSuchProcess` if the process is "
-"gone)."
+"was not recognized as such. :class:`Process` methods "
+"raised :exc:`NoSuchProcess` instead of :exc:`ZombieProcess`, "
+"and :meth:`Process.status` returned ``\"sleeping\"`` or ``\"?\"``. "
+"Also, :data:`STATUS_SUSPENDED` was never returned by :meth:`Process.status`, "
+"despite being documented as NetBSD only, and :meth:`Process.environ` raised "
+"``OSError`` with ``EINVAL`` / ``EFAULT`` / ``EBUSY`` for a process which is "
+"exiting or is a zombie (it now returns an empty dict, or "
+"raises :exc:`NoSuchProcess` if the process is gone)."
 msgstr ""
 
 #: ../../../changelog.rst:524
 msgid ""
 ":gh:`2929`, [NetBSD], [OpenBSD]: :meth:`Process.num_fds` returned a wrong, "
-"system-wide number which didn't change when the process opened a file, and :"
-"meth:`Process.open_files` always returned an empty list."
+"system-wide number which didn't change when the process opened a file, "
+"and :meth:`Process.open_files` always returned an empty list."
 msgstr ""
 
 #: ../../../changelog.rst:527
@@ -1046,9 +1051,9 @@ msgstr ""
 msgid ""
 ":gh:`2952`, [OpenBSD]: :meth:`Process.environ` raised ``OSError(EINVAL)`` "
 "for a process which started exiting, e.g. mid-way to becoming a zombie. "
-"Also, for consistency, :meth:`Process.environ` for a zombie now raises :exc:"
-"`ZombieProcess` on all BSDs (NetBSD used to return an empty dict, see :gh:"
-"`2911`)."
+"Also, for consistency, :meth:`Process.environ` for a zombie now "
+"raises :exc:`ZombieProcess` on all BSDs (NetBSD used to return an empty "
+"dict, see :gh:`2911`)."
 msgstr ""
 
 #: ../../../changelog.rst:535
@@ -1062,9 +1067,9 @@ msgstr ""
 #: ../../../changelog.rst:539
 msgid ""
 ":gh:`3020`, [FreeBSD]: :meth:`Process.memory_maps` returned the kernel's "
-"internal names for non-file mappings as plain strings, such as ``sys:"
-"vm_anon``, ``rtld:bss`` or ``pvclock``. They are now bracketed like the "
-"other pseudo paths, e.g. ``[sys:vm_anon]``."
+"internal names for non-file mappings as plain strings, such as "
+"``sys:vm_anon``, ``rtld:bss`` or ``pvclock``. They are now bracketed like "
+"the other pseudo paths, e.g. ``[sys:vm_anon]``."
 msgstr ""
 
 #: ../../../changelog.rst:543
@@ -1109,10 +1114,10 @@ msgstr ""
 msgid ""
 ":gh:`2778`, [UNIX]: :func:`net_if_addrs` skips interfaces with no addresses, "
 "which are typically virtual IPv4/IPv6 tunnel interfaces. Now they are "
-"included in the returned dict with :field:`family` == :data:`socket."
-"AF_UNSPEC` and an empty list of addresses. Main reason: it creates an "
-"inconsistency with :func:`net_io_counters` and :func:`net_if_stats` which do "
-"return these interface names."
+"included in the returned dict with :field:`family` "
+"== :data:`socket.AF_UNSPEC` and an empty list of addresses. Main reason: it "
+"creates an inconsistency with :func:`net_io_counters` "
+"and :func:`net_if_stats` which do return these interface names."
 msgstr ""
 
 #: ../../../changelog.rst:566
@@ -1136,8 +1141,8 @@ msgid ""
 ":gh:`3015`, [POSIX]: :meth:`Process.nice` called on PID 0 with a value "
 "changed the niceness of the calling process instead, because "
 "``setpriority(2)`` treats PID 0 as the caller. On macOS and AIX the getter "
-"returned the caller's niceness for the same reason. Both now raise :exc:"
-"`AccessDenied`."
+"returned the caller's niceness for the same reason. Both now "
+"raise :exc:`AccessDenied`."
 msgstr ""
 
 #: ../../../changelog.rst:579
@@ -1295,8 +1300,8 @@ msgstr ""
 
 #: ../../../changelog.rst:641
 msgid ""
-":gh:`2691`, [Windows], :label:`memleak`: fix memory leak in :func:"
-"`net_if_stats` due to missing ``Py_CLEAR``."
+":gh:`2691`, [Windows], :label:`memleak`: fix memory leak "
+"in :func:`net_if_stats` due to missing ``Py_CLEAR``."
 msgstr ""
 
 #: ../../../changelog.rst:645
@@ -1356,14 +1361,15 @@ msgstr ""
 #: ../../../changelog.rst:663
 msgid ""
 ":gh:`2674`, [Windows]: :func:`disk_usage` could truncate values on 32-bit "
-"platforms, potentially reporting incorrect :field:`total`, :field:`free`, :"
-"field:`used` space for drives larger than 4GB."
+"platforms, potentially reporting "
+"incorrect :field:`total`, :field:`free`, :field:`used` space for drives "
+"larger than 4GB."
 msgstr ""
 
 #: ../../../changelog.rst:666
 msgid ""
-":gh:`2675`, [macOS]: :meth:`Process.status` incorrectly returns :data:"
-"`STATUS_RUNNING` for 99% of the processes."
+":gh:`2675`, [macOS]: :meth:`Process.status` incorrectly "
+"returns :data:`STATUS_RUNNING` for 99% of the processes."
 msgstr ""
 
 #: ../../../changelog.rst:670
@@ -1379,14 +1385,15 @@ msgstr ""
 
 #: ../../../changelog.rst:677
 msgid ""
-":gh:`2565`: produce wheels for free-thread cPython 3.13 and 3.14. (patch by :"
-"user:`Lysandros Nikolaou <lysnikolaou>`)"
+":gh:`2565`: produce wheels for free-thread cPython 3.13 and 3.14. (patch "
+"by :user:`Lysandros Nikolaou <lysnikolaou>`)"
 msgstr ""
 
 #: ../../../changelog.rst:682
 msgid ""
-":gh:`2658`, [macOS], :label:`critical`: double ``free()`` in :meth:`Process."
-"environ` when it fails internally. This posed a risk of segfault."
+":gh:`2658`, [macOS], :label:`critical`: double ``free()`` "
+"in :meth:`Process.environ` when it fails internally. This posed a risk of "
+"segfault."
 msgstr ""
 
 #: ../../../changelog.rst:685
@@ -1472,9 +1479,9 @@ msgstr ""
 
 #: ../../../changelog.rst:735
 msgid ""
-":gh:`2494`, [Windows]: :meth:`Process.memory_maps`, :meth:`Process.exe` and :"
-"meth:`Process.open_files` now properly handle UNC paths (e.g. ``\\\\??\\\\C:"
-"\\\\Windows\\\\Temp`` → ``C:\\\\Windows\\\\Temp``). (patch by :user:`Ben "
+":gh:`2494`, [Windows]: :meth:`Process.memory_maps`, :meth:`Process.exe` "
+"and :meth:`Process.open_files` now properly handle UNC paths (e.g. ``\\\\??\\"
+"\\C:\\\\Windows\\\\Temp`` → ``C:\\\\Windows\\\\Temp``). (patch by :user:`Ben "
 "Peddell <klightspeed>`)"
 msgstr ""
 
@@ -1486,8 +1493,8 @@ msgstr ""
 
 #: ../../../changelog.rst:741
 msgid ""
-":gh:`2514`, [Linux]: :meth:`Process.cwd` sometimes fail with :exc:"
-"`FileNotFoundError` due to a race condition."
+":gh:`2514`, [Linux]: :meth:`Process.cwd` sometimes fail "
+"with :exc:`FileNotFoundError` due to a race condition."
 msgstr ""
 
 #: ../../../changelog.rst:743
@@ -1499,8 +1506,8 @@ msgstr ""
 
 #: ../../../changelog.rst:746
 msgid ""
-":gh:`2528`, [Linux]: :meth:`Process.children` may raise :exc:"
-"`PermissionError`. It will now raise :exc:`AccessDenied` instead."
+":gh:`2528`, [Linux]: :meth:`Process.children` may "
+"raise :exc:`PermissionError`. It will now raise :exc:`AccessDenied` instead."
 msgstr ""
 
 #: ../../../changelog.rst:748
@@ -1511,14 +1518,14 @@ msgstr ""
 
 #: ../../../changelog.rst:750
 msgid ""
-":gh:`2541`, :gh:`2570`, :gh:`2578`, [Linux], [macOS], [NetBSD]: :meth:"
-"`Process.create_time` does not reflect system clock updates."
+":gh:`2541`, :gh:`2570`, :gh:`2578`, [Linux], [macOS], "
+"[NetBSD]: :meth:`Process.create_time` does not reflect system clock updates."
 msgstr ""
 
 #: ../../../changelog.rst:752
 msgid ""
-":gh:`2542`: if system clock is updated :meth:`Process.children` and :meth:"
-"`Process.parent` may not be able to return the right information."
+":gh:`2542`: if system clock is updated :meth:`Process.children` "
+"and :meth:`Process.parent` may not be able to return the right information."
 msgstr ""
 
 #: ../../../changelog.rst:754
@@ -1529,9 +1536,9 @@ msgstr ""
 
 #: ../../../changelog.rst:756
 msgid ""
-":gh:`2560`, [Linux]: :meth:`Process.memory_maps` may crash with :exc:"
-"`IndexError` on RISCV64 due to a malformed :proc:`/proc/pid/smaps` file. "
-"(patch by :user:`Julien Stephan <justeph>`)"
+":gh:`2560`, [Linux]: :meth:`Process.memory_maps` may crash "
+"with :exc:`IndexError` on RISCV64 due to a malformed :proc:`/proc/pid/smaps` "
+"file. (patch by :user:`Julien Stephan <justeph>`)"
 msgstr ""
 
 #: ../../../changelog.rst:759
@@ -1559,8 +1566,8 @@ msgstr ""
 
 #: ../../../changelog.rst:772
 msgid ""
-":gh:`669`, [Windows]: :func:`net_if_addrs` also returns the :field:"
-"`broadcast` address instead of ``None``."
+":gh:`669`, [Windows]: :func:`net_if_addrs` also returns "
+"the :field:`broadcast` address instead of ``None``."
 msgstr ""
 
 #: ../../../changelog.rst:775 ../../../changelog.rst:848
@@ -1587,9 +1594,9 @@ msgstr ""
 
 #: ../../../changelog.rst:777
 msgid ""
-":gh:`2490`, :label:`breaking`: remove long deprecated ``Process."
-"memory_info_ex()`` (deprecated since 4.0.0). Use :meth:`Process."
-"memory_full_info` instead."
+":gh:`2490`, :label:`breaking`: remove long deprecated "
+"``Process.memory_info_ex()`` (deprecated since 4.0.0). "
+"Use :meth:`Process.memory_full_info` instead."
 msgstr ""
 
 #: ../../../changelog.rst:783
@@ -1600,8 +1607,9 @@ msgstr ""
 
 #: ../../../changelog.rst:788
 msgid ""
-":gh:`2496`, [Linux], :label:`critical`: Avoid segfault (a cPython bug) on :"
-"meth:`Process.memory_maps` for processes that use hundreds of GBs of memory."
+":gh:`2496`, [Linux], :label:`critical`: Avoid segfault (a cPython bug) "
+"on :meth:`Process.memory_maps` for processes that use hundreds of GBs of "
+"memory."
 msgstr ""
 
 #: ../../../changelog.rst:790
@@ -1642,8 +1650,8 @@ msgstr ""
 
 #: ../../../changelog.rst:814
 msgid ""
-":gh:`2457`, [AIX]: significantly improve the speed of :meth:`Process."
-"open_files` for some edge cases."
+":gh:`2457`, [AIX]: significantly improve the speed "
+"of :meth:`Process.open_files` for some edge cases."
 msgstr ""
 
 #: ../../../changelog.rst:819
@@ -1685,9 +1693,9 @@ msgstr ""
 
 #: ../../../changelog.rst:836
 msgid ""
-":gh:`2460`, [OpenBSD]: :meth:`Process.num_fds` and :meth:`Process."
-"open_files` may fail with :exc:`NoSuchProcess` for PID 0. Instead, we now "
-"return \"null\" values (``0`` and ``[]`` respectively)."
+":gh:`2460`, [OpenBSD]: :meth:`Process.num_fds` "
+"and :meth:`Process.open_files` may fail with :exc:`NoSuchProcess` for PID 0. "
+"Instead, we now return \"null\" values (``0`` and ``[]`` respectively)."
 msgstr ""
 
 #: ../../../changelog.rst:841
@@ -1696,28 +1704,28 @@ msgstr ""
 
 #: ../../../changelog.rst:845
 msgid ""
-":gh:`2396`: a new ``process_iter.cache_clear()`` API can be used to clear :"
-"func:`process_iter` internal cache."
+":gh:`2396`: a new ``process_iter.cache_clear()`` API can be used to "
+"clear :func:`process_iter` internal cache."
 msgstr ""
 
 #: ../../../changelog.rst:850
 msgid ""
-":gh:`2109`, :label:`breaking`: the named tuple returned by :func:"
-"`disk_partitions` no longer has the :field:`maxfile` and :field:`maxpath` "
-"fields (they can be very slow to retrieve on NFS)."
+":gh:`2109`, :label:`breaking`: the named tuple returned "
+"by :func:`disk_partitions` no longer has the :field:`maxfile` "
+"and :field:`maxpath` fields (they can be very slow to retrieve on NFS)."
 msgstr ""
 
 #: ../../../changelog.rst:853
 msgid ""
-":gh:`2407`, :label:`breaking`: rename :meth:`Process.connections` to :meth:"
-"`Process.net_connections`. Old name still works but is deprecated."
+":gh:`2407`, :label:`breaking`: rename :meth:`Process.connections` "
+"to :meth:`Process.net_connections`. Old name still works but is deprecated."
 msgstr ""
 
 #: ../../../changelog.rst:858
 msgid ""
 ":gh:`2396`, :label:`breaking`: :func:`process_iter` no longer preemptively "
-"checks whether PIDs have been reused, making it around **20x faster**. Use :"
-"meth:`Process.is_running` on yielded instances instead (it also removes "
+"checks whether PIDs have been reused, making it around **20x faster**. "
+"Use :meth:`Process.is_running` on yielded instances instead (it also removes "
 "reused PIDs from the internal cache)."
 msgstr ""
 
@@ -1735,8 +1743,8 @@ msgstr ""
 
 #: ../../../changelog.rst:869
 msgid ""
-":gh:`2401`, Support building with free-threaded CPython 3.13. (patch by :"
-"user:`Sam Gross <colesbury>`)"
+":gh:`2401`, Support building with free-threaded CPython 3.13. (patch "
+"by :user:`Sam Gross <colesbury>`)"
 msgstr ""
 
 #: ../../../changelog.rst:871
@@ -1783,8 +1791,8 @@ msgstr ""
 
 #: ../../../changelog.rst:891
 msgid ""
-":gh:`2254`, [Linux]: offline cpus raise :exc:`NotImplementedError` in :func:"
-"`cpu_freq` (patch by :user:`Shade Gladden <shadeyg56>`)"
+":gh:`2254`, [Linux]: offline cpus raise :exc:`NotImplementedError` "
+"in :func:`cpu_freq` (patch by :user:`Shade Gladden <shadeyg56>`)"
 msgstr ""
 
 #: ../../../changelog.rst:893
@@ -1823,9 +1831,9 @@ msgstr ""
 
 #: ../../../changelog.rst:914
 msgid ""
-":gh:`930`, [NetBSD], :label:`critical`, :label:`memleak`: :func:"
-"`net_connections` implementation was broken. It could either leak memory or "
-"core dump."
+":gh:`930`, "
+"[NetBSD], :label:`critical`, :label:`memleak`: :func:`net_connections` "
+"implementation was broken. It could either leak memory or core dump."
 msgstr ""
 
 #: ../../../changelog.rst:917
@@ -1842,8 +1850,8 @@ msgstr ""
 
 #: ../../../changelog.rst:921
 msgid ""
-":gh:`2222`, [macOS]: :func:`cpu_freq` now returns fixed values for :field:"
-"`min` and :field:`max` frequencies in all Apple Silicon chips."
+":gh:`2222`, [macOS]: :func:`cpu_freq` now returns fixed values "
+"for :field:`min` and :field:`max` frequencies in all Apple Silicon chips."
 msgstr ""
 
 #: ../../../changelog.rst:925
@@ -1880,9 +1888,9 @@ msgstr ""
 
 #: ../../../changelog.rst:947
 msgid ""
-":gh:`2266`: if :class:`Process` class is passed a very high PID, raise :exc:"
-"`NoSuchProcess` instead of :exc:`OverflowError`. (patch by :user:`Xuehai Pan "
-"<XuehaiPan>`)"
+":gh:`2266`: if :class:`Process` class is passed a very high PID, "
+"raise :exc:`NoSuchProcess` instead of :exc:`OverflowError`. (patch "
+"by :user:`Xuehai Pan <XuehaiPan>`)"
 msgstr ""
 
 #: ../../../changelog.rst:950
@@ -1897,8 +1905,8 @@ msgstr ""
 
 #: ../../../changelog.rst:959
 msgid ""
-":gh:`2246`, :label:`breaking`: drop python 3.4 & 3.5 support. (patch by :"
-"user:`Matthieu Darbois <mayeut>`)"
+":gh:`2246`, :label:`breaking`: drop python 3.4 & 3.5 support. (patch "
+"by :user:`Matthieu Darbois <mayeut>`)"
 msgstr ""
 
 #: ../../../changelog.rst:964
@@ -1909,15 +1917,15 @@ msgstr ""
 
 #: ../../../changelog.rst:966
 msgid ""
-":gh:`2195`, [Linux]: no longer print exception at import time in case :proc:"
-"`/proc/stat` can't be read due to permission error. Redirect it to :envvar:"
-"`PSUTIL_DEBUG` instead."
+":gh:`2195`, [Linux]: no longer print exception at import time in "
+"case :proc:`/proc/stat` can't be read due to permission error. Redirect it "
+"to :envvar:`PSUTIL_DEBUG` instead."
 msgstr ""
 
 #: ../../../changelog.rst:969
 msgid ""
-":gh:`2245`, [Windows]: fix var unbound error on possibly in :func:"
-"`swap_memory` (patch by :user:`student_2333 <lgc2333>`)"
+":gh:`2245`, [Windows]: fix var unbound error on possibly "
+"in :func:`swap_memory` (patch by :user:`student_2333 <lgc2333>`)"
 msgstr ""
 
 #: ../../../changelog.rst:971
@@ -1934,9 +1942,9 @@ msgstr ""
 
 #: ../../../changelog.rst:975
 msgid ""
-":gh:`2284`, [Linux]: :meth:`Process.memory_full_info` may incorrectly raise :"
-"exc:`ZombieProcess` if it's determined via ``/proc/pid/smaps_rollup``. "
-"Instead we now fallback on reading :proc:`/proc/pid/smaps`."
+":gh:`2284`, [Linux]: :meth:`Process.memory_full_info` may incorrectly "
+"raise :exc:`ZombieProcess` if it's determined via ``/proc/pid/"
+"smaps_rollup``. Instead we now fallback on reading :proc:`/proc/pid/smaps`."
 msgstr ""
 
 #: ../../../changelog.rst:978
@@ -1948,23 +1956,23 @@ msgstr ""
 
 #: ../../../changelog.rst:981
 msgid ""
-":gh:`2288`, [Linux]: correctly raise :exc:`ZombieProcess` on :meth:`Process."
-"exe`, :meth:`Process.cmdline` and :meth:`Process.memory_maps` instead of "
-"returning a \"null\" value."
+":gh:`2288`, [Linux]: correctly raise :exc:`ZombieProcess` "
+"on :meth:`Process.exe`, :meth:`Process.cmdline` "
+"and :meth:`Process.memory_maps` instead of returning a \"null\" value."
 msgstr ""
 
 #: ../../../changelog.rst:984
 msgid ""
 ":gh:`2290`: differently from what stated in the doc, PID reuse is not "
 "preemptively checked for :meth:`Process.nice` (set), :meth:`Process.ionice`, "
-"(set), :meth:`Process.cpu_affinity` (set), :meth:`Process.rlimit` (set), :"
-"meth:`Process.parent`."
+"(set), :meth:`Process.cpu_affinity` (set), :meth:`Process.rlimit` "
+"(set), :meth:`Process.parent`."
 msgstr ""
 
 #: ../../../changelog.rst:988
 msgid ""
-":gh:`2308`, [OpenBSD]: :meth:`Process.threads` always fail with :exc:"
-"`AccessDenied` (also as root)."
+":gh:`2308`, [OpenBSD]: :meth:`Process.threads` always fail "
+"with :exc:`AccessDenied` (also as root)."
 msgstr ""
 
 #: ../../../changelog.rst:992
@@ -1986,9 +1994,10 @@ msgstr ""
 
 #: ../../../changelog.rst:1001
 msgid ""
-":gh:`2239`, [UNIX]: for zombie processes, return the truncated :meth:"
-"`Process.name` (15 chars) instead of raising :exc:`ZombieProcess` when the "
-"full name can't be determined from :meth:`Process.cmdline`."
+":gh:`2239`, [UNIX]: for zombie processes, return the "
+"truncated :meth:`Process.name` (15 chars) instead of "
+"raising :exc:`ZombieProcess` when the full name can't be determined "
+"from :meth:`Process.cmdline`."
 msgstr ""
 
 #: ../../../changelog.rst:1007
@@ -1999,8 +2008,8 @@ msgstr ""
 
 #: ../../../changelog.rst:1009
 msgid ""
-":gh:`2217`: print the full traceback when a :exc:`DeprecationWarning` or :"
-"exc:`UserWarning` is raised."
+":gh:`2217`: print the full traceback when a :exc:`DeprecationWarning` "
+"or :exc:`UserWarning` is raised."
 msgstr ""
 
 #: ../../../changelog.rst:1011
@@ -2028,17 +2037,17 @@ msgstr ""
 
 #: ../../../changelog.rst:1021
 msgid ""
-":gh:`1915`, [Linux]: on certain kernels, ``\"MemAvailable\"`` field from :"
-"proc:`/proc/meminfo` returns ``0`` (possibly a kernel bug), in which case we "
-"calculate an approximation for :field:`available` memory which matches "
-"\"free\" CLI utility."
+":gh:`1915`, [Linux]: on certain kernels, ``\"MemAvailable\"`` field "
+"from :proc:`/proc/meminfo` returns ``0`` (possibly a kernel bug), in which "
+"case we calculate an approximation for :field:`available` memory which "
+"matches \"free\" CLI utility."
 msgstr ""
 
 #: ../../../changelog.rst:1025
 msgid ""
-":gh:`2191`, [Linux]: :func:`disk_partitions`: do not unnecessarily read :"
-"proc:`/proc/filesystems` and raise :exc:`AccessDenied` unless user specified "
-"``all=False`` argument."
+":gh:`2191`, [Linux]: :func:`disk_partitions`: do not unnecessarily "
+"read :proc:`/proc/filesystems` and raise :exc:`AccessDenied` unless user "
+"specified ``all=False`` argument."
 msgstr ""
 
 #: ../../../changelog.rst:1028
@@ -2055,8 +2064,9 @@ msgstr ""
 
 #: ../../../changelog.rst:1032
 msgid ""
-":gh:`2229`, [OpenBSD]: unable to properly recognize zombie processes. :exc:"
-"`NoSuchProcess` may be raised instead of :exc:`ZombieProcess`."
+":gh:`2229`, [OpenBSD]: unable to properly recognize zombie "
+"processes. :exc:`NoSuchProcess` may be raised instead "
+"of :exc:`ZombieProcess`."
 msgstr ""
 
 #: ../../../changelog.rst:1034
@@ -2067,21 +2077,22 @@ msgstr ""
 
 #: ../../../changelog.rst:1036
 msgid ""
-":gh:`2234`, [NetBSD]: :func:`virtual_memory` metrics are wrong: :field:"
-"`available` and :field:`used` are too high. We now match values shown by "
-"*htop* CLI utility."
+":gh:`2234`, [NetBSD]: :func:`virtual_memory` metrics are "
+"wrong: :field:`available` and :field:`used` are too high. We now match "
+"values shown by *htop* CLI utility."
 msgstr ""
 
 #: ../../../changelog.rst:1039
 msgid ""
-":gh:`2236`, [NetBSD]: :meth:`Process.num_threads` and :meth:`Process."
-"threads` return threads that are already terminated."
+":gh:`2236`, [NetBSD]: :meth:`Process.num_threads` "
+"and :meth:`Process.threads` return threads that are already terminated."
 msgstr ""
 
 #: ../../../changelog.rst:1041
 msgid ""
-":gh:`2237`, [OpenBSD], [NetBSD]: :meth:`Process.cwd` may raise :exc:"
-"`FileNotFoundError` if cwd no longer exists. Return an empty string instead."
+":gh:`2237`, [OpenBSD], [NetBSD]: :meth:`Process.cwd` may "
+"raise :exc:`FileNotFoundError` if cwd no longer exists. Return an empty "
+"string instead."
 msgstr ""
 
 #: ../../../changelog.rst:1046
@@ -2097,15 +2108,15 @@ msgstr ""
 #: ../../../changelog.rst:1055
 msgid ""
 ":gh:`2156`, [Linux], :label:`build-fail`: compilation may fail on very old "
-"gcc compilers due to missing ``SPEED_UNKNOWN`` definition. (patch by :user:"
-"`Amir Rossert <arossert>`)"
+"gcc compilers due to missing ``SPEED_UNKNOWN`` definition. (patch "
+"by :user:`Amir Rossert <arossert>`)"
 msgstr ""
 
 #: ../../../changelog.rst:1058
 msgid ""
 ":gh:`2010`, [macOS], :label:`build-fail`: on MacOS, arm64 ``IFM_1000_TX`` "
-"and ``IFM_1000_T`` are the same value, causing a build failure. (patch by :"
-"user:`Lawrence D'Anna <smoofra>`)"
+"and ``IFM_1000_T`` are the same value, causing a build failure. (patch "
+"by :user:`Lawrence D'Anna <smoofra>`)"
 msgstr ""
 
 #: ../../../changelog.rst:1061
@@ -2132,15 +2143,16 @@ msgstr ""
 
 #: ../../../changelog.rst:1076
 msgid ""
-":gh:`2153`, [macOS] Fix race condition in ``test_posix.TestProcess."
-"test_cmdline``. (patch by :user:`Matthieu Darbois <mayeut>`)"
+":gh:`2153`, [macOS] Fix race condition in "
+"``test_posix.TestProcess.test_cmdline``. (patch by :user:`Matthieu Darbois "
+"<mayeut>`)"
 msgstr ""
 
 #: ../../../changelog.rst:1082
 msgid ""
 ":gh:`2135`, [macOS], :label:`critical`: :meth:`Process.environ` may contain "
-"garbage data. Fix out-of-bounds read around ``sysctl_procargs``. (patch by :"
-"user:`Bernhard Urban-Forster <lewurm>`)"
+"garbage data. Fix out-of-bounds read around ``sysctl_procargs``. (patch "
+"by :user:`Bernhard Urban-Forster <lewurm>`)"
 msgstr ""
 
 #: ../../../changelog.rst:1085
@@ -2162,8 +2174,8 @@ msgstr ""
 
 #: ../../../changelog.rst:1090
 msgid ""
-":gh:`2147`, [macOS] Fix disk usage report on macOS 12+. (patch by :user:"
-"`Matthieu Darbois <mayeut>`)"
+":gh:`2147`, [macOS] Fix disk usage report on macOS 12+. (patch "
+"by :user:`Matthieu Darbois <mayeut>`)"
 msgstr ""
 
 #: ../../../changelog.rst:1092
@@ -2197,8 +2209,8 @@ msgstr ""
 
 #: ../../../changelog.rst:1107
 msgid ""
-":gh:`2128`, [NetBSD]: :func:`swap_memory` was miscalculated. (patch by :user:"
-"`Thomas Klausner <0-wiz-0>`)"
+":gh:`2128`, [NetBSD]: :func:`swap_memory` was miscalculated. (patch "
+"by :user:`Thomas Klausner <0-wiz-0>`)"
 msgstr ""
 
 #: ../../../changelog.rst:1111
@@ -2355,8 +2367,8 @@ msgstr ""
 
 #: ../../../changelog.rst:1192
 msgid ""
-":gh:`1913`, [Linux]: :func:`wait_procs` should catch :exc:`subprocess."
-"TimeoutExpired` exception."
+":gh:`1913`, [Linux]: :func:`wait_procs` should "
+"catch :exc:`subprocess.TimeoutExpired` exception."
 msgstr ""
 
 #: ../../../changelog.rst:1194
@@ -2386,15 +2398,15 @@ msgstr ""
 
 #: ../../../changelog.rst:1203
 msgid ""
-":gh:`1980`, [Windows]: 32bit / WoW64 processes fails to read :meth:`Process."
-"name` longer than 128 characters. (patch by :user:`PetrPospisil "
-"<PetrPospisil>`)"
+":gh:`1980`, [Windows]: 32bit / WoW64 processes fails to "
+"read :meth:`Process.name` longer than 128 characters. (patch "
+"by :user:`PetrPospisil <PetrPospisil>`)"
 msgstr ""
 
 #: ../../../changelog.rst:1206
 msgid ""
-":gh:`1991`: :func:`process_iter` is not thread safe and can raise :exc:"
-"`TypeError` if invoked from multiple threads."
+":gh:`1991`: :func:`process_iter` is not thread safe and can "
+"raise :exc:`TypeError` if invoked from multiple threads."
 msgstr ""
 
 #: ../../../changelog.rst:1208
@@ -2441,16 +2453,17 @@ msgstr ""
 
 #: ../../../changelog.rst:1238
 msgid ""
-":gh:`1839`, [Windows]: always raise :exc:`AccessDenied` instead of :exc:"
-"`WindowsError` when failing to query 64 processes from 32 bit ones by using "
-"``NtWoW64`` APIs."
+":gh:`1839`, [Windows]: always raise :exc:`AccessDenied` instead "
+"of :exc:`WindowsError` when failing to query 64 processes from 32 bit ones "
+"by using ``NtWoW64`` APIs."
 msgstr ""
 
 #: ../../../changelog.rst:1241
 msgid ""
-":gh:`1866`, [Windows]: :meth:`Process.exe`, :meth:`Process.cmdline`, :meth:"
-"`Process.environ` may raise \"[WinError 998] Invalid access to memory "
-"location\" on Python 3.9 / VS 2019."
+":gh:`1866`, "
+"[Windows]: :meth:`Process.exe`, :meth:`Process.cmdline`, :meth:`Process.environ` "
+"may raise \"[WinError 998] Invalid access to memory location\" on Python "
+"3.9 / VS 2019."
 msgstr ""
 
 #: ../../../changelog.rst:1244
@@ -2475,8 +2488,8 @@ msgstr ""
 #: ../../../changelog.rst:1251
 msgid ""
 ":gh:`1887`, [Windows]: ``OpenProcess`` may fail with \"[WinError 0] The "
-"operation completed successfully\".\" Turn it into :exc:`AccessDenied` or :"
-"exc:`NoSuchProcess` depending on whether the PID is alive."
+"operation completed successfully\".\" Turn it into :exc:`AccessDenied` "
+"or :exc:`NoSuchProcess` depending on whether the PID is alive."
 msgstr ""
 
 #: ../../../changelog.rst:1254
@@ -2493,8 +2506,8 @@ msgstr ""
 
 #: ../../../changelog.rst:1262
 msgid ""
-":gh:`893`, [BSD]: add support for :meth:`Process.environ` (patch by :user:"
-"`Armin Gruner <ArminGruner>`)"
+":gh:`893`, [BSD]: add support for :meth:`Process.environ` (patch "
+"by :user:`Armin Gruner <ArminGruner>`)"
 msgstr ""
 
 #: ../../../changelog.rst:1267
@@ -2615,8 +2628,8 @@ msgstr ""
 
 #: ../../../changelog.rst:1332
 msgid ""
-":gh:`1766`, [macOS]: :exc:`NoSuchProcess` may be raised instead of :exc:"
-"`ZombieProcess`."
+":gh:`1766`, [macOS]: :exc:`NoSuchProcess` may be raised instead "
+"of :exc:`ZombieProcess`."
 msgstr ""
 
 #: ../../../changelog.rst:1336
@@ -2647,15 +2660,15 @@ msgstr ""
 
 #: ../../../changelog.rst:1350
 msgid ""
-":gh:`1693`, [Windows]: :func:`boot_time`, :meth:`Process.create_time` and :"
-"func:`users`'s login time now have 1 micro second precision (before the "
+":gh:`1693`, [Windows]: :func:`boot_time`, :meth:`Process.create_time` "
+"and :func:`users`'s login time now have 1 micro second precision (before the "
 "precision was of 1 second)."
 msgstr ""
 
 #: ../../../changelog.rst:1356
 msgid ""
-":gh:`1679`, [Windows]: :func:`net_connections` and :meth:`Process."
-"connections` are **10% faster**."
+":gh:`1679`, [Windows]: :func:`net_connections` "
+"and :meth:`Process.connections` are **10% faster**."
 msgstr ""
 
 #: ../../../changelog.rst:1361
@@ -2682,14 +2695,14 @@ msgstr ""
 #: ../../../changelog.rst:1375
 msgid ""
 ":gh:`1695`, [Linux], :label:`build-fail`: could not compile on kernels <= "
-"2.6.13 due to ``PSUTIL_HAS_IOPRIO`` not being defined. (patch by :user:"
-"`Anselm Kruis <akruis>`)"
+"2.6.13 due to ``PSUTIL_HAS_IOPRIO`` not being defined. (patch "
+"by :user:`Anselm Kruis <akruis>`)"
 msgstr ""
 
 #: ../../../changelog.rst:1378
 msgid ""
-":gh:`1538`, [NetBSD]: :meth:`Process.cwd` may return ``ENOENT`` instead of :"
-"exc:`NoSuchProcess`."
+":gh:`1538`, [NetBSD]: :meth:`Process.cwd` may return ``ENOENT`` instead "
+"of :exc:`NoSuchProcess`."
 msgstr ""
 
 #: ../../../changelog.rst:1380
@@ -2699,14 +2712,14 @@ msgstr ""
 
 #: ../../../changelog.rst:1381
 msgid ""
-":gh:`1642`, [SunOS]: querying basic info for PID 0 results in :exc:"
-"`FileNotFoundError`."
+":gh:`1642`, [SunOS]: querying basic info for PID 0 results "
+"in :exc:`FileNotFoundError`."
 msgstr ""
 
 #: ../../../changelog.rst:1383
 msgid ""
-":gh:`1656`, [Windows]: :meth:`Process.memory_full_info` raises :exc:"
-"`AccessDenied` even for the current user and :func:`os.getpid`."
+":gh:`1656`, [Windows]: :meth:`Process.memory_full_info` "
+"raises :exc:`AccessDenied` even for the current user and :func:`os.getpid`."
 msgstr ""
 
 #: ../../../changelog.rst:1385
@@ -2765,9 +2778,9 @@ msgstr ""
 #: ../../../changelog.rst:1412
 msgid ""
 ":gh:`1616`, :label:`critical`: use of ``Py_DECREF`` instead of ``Py_CLEAR`` "
-"will result in double ``free()`` and segfault (`CVE-2019-18874 <https://cve."
-"mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-18874>`__). (patch by Riccardo "
-"Schirone)"
+"will result in double ``free()`` and segfault (`CVE-2019-18874 <https://"
+"cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-18874>`__). (patch by "
+"Riccardo Schirone)"
 msgstr ""
 
 #: ../../../changelog.rst:1416
@@ -2829,21 +2842,21 @@ msgstr ""
 
 #: ../../../changelog.rst:1451
 msgid ""
-":gh:`875`, [Windows]: :meth:`Process.cmdline`, :meth:`Process.environ` or :"
-"meth:`Process.cwd` may occasionally fail with ``ERROR_PARTIAL_COPY`` which "
-"now gets translated to :exc:`AccessDenied`."
+":gh:`875`, [Windows]: :meth:`Process.cmdline`, :meth:`Process.environ` "
+"or :meth:`Process.cwd` may occasionally fail with ``ERROR_PARTIAL_COPY`` "
+"which now gets translated to :exc:`AccessDenied`."
 msgstr ""
 
 #: ../../../changelog.rst:1454
 msgid ""
-":gh:`1535`: :field:`type` and :field:`family` fields returned by :func:"
-"`net_connections` are not always turned into enums."
+":gh:`1535`: :field:`type` and :field:`family` fields returned "
+"by :func:`net_connections` are not always turned into enums."
 msgstr ""
 
 #: ../../../changelog.rst:1456
 msgid ""
-":gh:`1536`, [NetBSD]: :meth:`Process.cmdline` erroneously raise :exc:"
-"`ZombieProcess` error if cmdline has non encodable chars."
+":gh:`1536`, [NetBSD]: :meth:`Process.cmdline` erroneously "
+"raise :exc:`ZombieProcess` error if cmdline has non encodable chars."
 msgstr ""
 
 #: ../../../changelog.rst:1458
@@ -2878,14 +2891,14 @@ msgstr ""
 
 #: ../../../changelog.rst:1472
 msgid ""
-":gh:`1494`, [AIX]: added support for :meth:`Process.environ`. (patch by :"
-"user:`Arnon Yaari <wiggin15>`)"
+":gh:`1494`, [AIX]: added support for :meth:`Process.environ`. (patch "
+"by :user:`Arnon Yaari <wiggin15>`)"
 msgstr ""
 
 #: ../../../changelog.rst:1477
 msgid ""
-":gh:`1276`, [AIX]: can't get whole :meth:`Process.cmdline`. (patch by :user:"
-"`Arnon Yaari <wiggin15>`)"
+":gh:`1276`, [AIX]: can't get whole :meth:`Process.cmdline`. (patch "
+"by :user:`Arnon Yaari <wiggin15>`)"
 msgstr ""
 
 #: ../../../changelog.rst:1479
@@ -2897,8 +2910,8 @@ msgstr ""
 
 #: ../../../changelog.rst:1482
 msgid ""
-":gh:`1526`, [NetBSD]: :meth:`Process.cmdline` could raise :exc:"
-"`MemoryError`. (patch by :user:`Kamil Rytarowski <krytarowski>`)"
+":gh:`1526`, [NetBSD]: :meth:`Process.cmdline` could "
+"raise :exc:`MemoryError`. (patch by :user:`Kamil Rytarowski <krytarowski>`)"
 msgstr ""
 
 #: ../../../changelog.rst:1486
@@ -2915,8 +2928,8 @@ msgstr ""
 #: ../../../changelog.rst:1493
 msgid ""
 ":gh:`1476`, [Windows]: :meth:`Process.ionice` can now set high I/O priority. "
-"New constants: :data:`IOPRIO_VERYLOW`, :data:`IOPRIO_LOW`, :data:"
-"`IOPRIO_NORMAL`, :data:`IOPRIO_HIGH`."
+"New "
+"constants: :data:`IOPRIO_VERYLOW`, :data:`IOPRIO_LOW`, :data:`IOPRIO_NORMAL`, :data:`IOPRIO_HIGH`."
 msgstr ""
 
 #: ../../../changelog.rst:1499
@@ -2972,9 +2985,9 @@ msgstr ""
 
 #: ../../../changelog.rst:1525
 msgid ""
-":gh:`1456`, [Linux]: :func:`cpu_freq` returns ``None`` instead of 0.0 when :"
-"field:`min` and :field:`max` fields can't be determined. (patch by :user:"
-"`Alex Manuskin <amanusk>`)"
+":gh:`1456`, [Linux]: :func:`cpu_freq` returns ``None`` instead of 0.0 "
+"when :field:`min` and :field:`max` fields can't be determined. (patch "
+"by :user:`Alex Manuskin <amanusk>`)"
 msgstr ""
 
 #: ../../../changelog.rst:1528
@@ -3016,8 +3029,8 @@ msgstr ""
 
 #: ../../../changelog.rst:1542
 msgid ""
-":gh:`1486`, [AIX], [SunOS]: :exc:`AttributeError` when interacting with :"
-"class:`Process` methods involved into :meth:`Process.oneshot` context."
+":gh:`1486`, [AIX], [SunOS]: :exc:`AttributeError` when interacting "
+"with :class:`Process` methods involved into :meth:`Process.oneshot` context."
 msgstr ""
 
 #: ../../../changelog.rst:1544
@@ -3060,8 +3073,9 @@ msgstr ""
 
 #: ../../../changelog.rst:1569
 msgid ""
-":gh:`1291`, [macOS], :label:`critical`, :label:`breaking`: :meth:`Process."
-"memory_maps` was removed because inherently broken (segfault) for years."
+":gh:`1291`, "
+"[macOS], :label:`critical`, :label:`breaking`: :meth:`Process.memory_maps` "
+"was removed because inherently broken (segfault) for years."
 msgstr ""
 
 #: ../../../changelog.rst:1572
@@ -3111,8 +3125,8 @@ msgstr ""
 
 #: ../../../changelog.rst:1596
 msgid ""
-":gh:`1353`: :func:`process_iter` is now thread safe (it rarely raised :exc:"
-"`TypeError`)."
+":gh:`1353`: :func:`process_iter` is now thread safe (it rarely "
+"raised :exc:`TypeError`)."
 msgstr ""
 
 #: ../../../changelog.rst:1598
@@ -3125,9 +3139,9 @@ msgstr ""
 
 #: ../../../changelog.rst:1602
 msgid ""
-":gh:`1419`, [Windows]: :meth:`Process.environ` raises :exc:"
-"`NotImplementedError` when querying a 64-bit process in 32-bit-WoW mode. Now "
-"it raises :exc:`AccessDenied`."
+":gh:`1419`, [Windows]: :meth:`Process.environ` "
+"raises :exc:`NotImplementedError` when querying a 64-bit process in 32-bit-"
+"WoW mode. Now it raises :exc:`AccessDenied`."
 msgstr ""
 
 #: ../../../changelog.rst:1605
@@ -3157,9 +3171,9 @@ msgstr ""
 
 #: ../../../changelog.rst:1614
 msgid ""
-":gh:`1447`: original exception wasn't turned into :exc:`NoSuchProcess` / :"
-"exc:`AccessDenied` exceptions when using :meth:`Process.oneshot` context "
-"manager."
+":gh:`1447`: original exception wasn't turned "
+"into :exc:`NoSuchProcess` / :exc:`AccessDenied` exceptions when "
+"using :meth:`Process.oneshot` context manager."
 msgstr ""
 
 #: ../../../changelog.rst:1619
@@ -3203,8 +3217,8 @@ msgstr ""
 
 #: ../../../changelog.rst:1643
 msgid ""
-":gh:`1352`, [FreeBSD]: added support for :func:`cpu_freq`. (patch by :user:"
-"`Alex Manuskin <amanusk>`)"
+":gh:`1352`, [FreeBSD]: added support for :func:`cpu_freq`. (patch "
+"by :user:`Alex Manuskin <amanusk>`)"
 msgstr ""
 
 #: ../../../changelog.rst:1648
@@ -3218,8 +3232,9 @@ msgstr ""
 
 #: ../../../changelog.rst:1650
 msgid ""
-":gh:`1357`, [Linux]: :meth:`Process.memory_maps` and :meth:`Process."
-"io_counters` methods are no longer exposed if not supported by the kernel."
+":gh:`1357`, [Linux]: :meth:`Process.memory_maps` "
+"and :meth:`Process.io_counters` methods are no longer exposed if not "
+"supported by the kernel."
 msgstr ""
 
 #: ../../../changelog.rst:1653
@@ -3243,8 +3258,8 @@ msgstr ""
 #: ../../../changelog.rst:1659
 msgid ""
 ":gh:`1376`, [Windows]: ``OpenProcess`` now uses "
-"``PROCESS_QUERY_LIMITED_INFORMATION`` where possible, reducing :exc:"
-"`AccessDenied` for system processes."
+"``PROCESS_QUERY_LIMITED_INFORMATION`` where possible, "
+"reducing :exc:`AccessDenied` for system processes."
 msgstr ""
 
 #: ../../../changelog.rst:1662
@@ -3302,8 +3317,8 @@ msgstr ""
 
 #: ../../../changelog.rst:1691
 msgid ""
-":gh:`1307`, [Linux]: :func:`disk_partitions` does not honour :data:"
-"`PROCFS_PATH`."
+":gh:`1307`, [Linux]: :func:`disk_partitions` does not "
+"honour :data:`PROCFS_PATH`."
 msgstr ""
 
 #: ../../../changelog.rst:1693
@@ -3331,14 +3346,14 @@ msgstr ""
 
 #: ../../../changelog.rst:1706
 msgid ""
-":gh:`1309`, [Linux]: added :data:`STATUS_PARKED` constant for :meth:`Process."
-"status`."
+":gh:`1309`, [Linux]: added :data:`STATUS_PARKED` constant "
+"for :meth:`Process.status`."
 msgstr ""
 
 #: ../../../changelog.rst:1711
 msgid ""
-":gh:`1286`, [macOS]: :data:`OSX` constant is now deprecated in favor of new :"
-"data:`MACOS`."
+":gh:`1286`, [macOS]: :data:`OSX` constant is now deprecated in favor of "
+"new :data:`MACOS`."
 msgstr ""
 
 #: ../../../changelog.rst:1713
@@ -3369,8 +3384,8 @@ msgstr ""
 
 #: ../../../changelog.rst:1726
 msgid ""
-":gh:`1294`, [Windows]: :meth:`Process.connections` may sometime fail with :"
-"exc:`MemoryError`. (patch by :user:`sylvainduchesne`)"
+":gh:`1294`, [Windows]: :meth:`Process.connections` may sometime fail "
+"with :exc:`MemoryError`. (patch by :user:`sylvainduchesne`)"
 msgstr ""
 
 #: ../../../changelog.rst:1728
@@ -3381,8 +3396,8 @@ msgstr ""
 
 #: ../../../changelog.rst:1730
 msgid ""
-":gh:`1309`, [Linux]: :meth:`Process.status` is unable to recognize :field:"
-"`idle` and :field:`parked` statuses (returns ``\"?\"``)."
+":gh:`1309`, [Linux]: :meth:`Process.status` is unable to "
+"recognize :field:`idle` and :field:`parked` statuses (returns ``\"?\"``)."
 msgstr ""
 
 #: ../../../changelog.rst:1732
@@ -3393,8 +3408,8 @@ msgstr ""
 
 #: ../../../changelog.rst:1734
 msgid ""
-":gh:`1323`, [Linux]: :func:`sensors_temperatures` may fail with :exc:"
-"`ValueError`."
+":gh:`1323`, [Linux]: :func:`sensors_temperatures` may fail "
+"with :exc:`ValueError`."
 msgstr ""
 
 #: ../../../changelog.rst:1738
@@ -3436,8 +3451,8 @@ msgstr ""
 
 #: ../../../changelog.rst:1766
 msgid ""
-":gh:`1239`, [Linux]: expose kernel :field:`slab` memory field for :func:"
-"`virtual_memory`. (patch by :user:`Maxime Mouial <hush-hush>`)"
+":gh:`1239`, [Linux]: expose kernel :field:`slab` memory field "
+"for :func:`virtual_memory`. (patch by :user:`Maxime Mouial <hush-hush>`)"
 msgstr ""
 
 #: ../../../changelog.rst:1771
@@ -3449,8 +3464,8 @@ msgstr ""
 
 #: ../../../changelog.rst:1777
 msgid ""
-":gh:`1194`, [SunOS], :label:`critical`: fix double ``free()`` in :meth:"
-"`Process.cpu_num`. (patch by Georg Sauthoff)"
+":gh:`1194`, [SunOS], :label:`critical`: fix double ``free()`` "
+"in :meth:`Process.cpu_num`. (patch by Georg Sauthoff)"
 msgstr ""
 
 #: ../../../changelog.rst:1779
@@ -3508,8 +3523,8 @@ msgstr ""
 
 #: ../../../changelog.rst:1800
 msgid ""
-":gh:`1216`, [Windows]: fix compatibility with Python 2.6 (patch by :user:"
-"`Dan Vinakovsky <hexaclock>`)"
+":gh:`1216`, [Windows]: fix compatibility with Python 2.6 (patch "
+"by :user:`Dan Vinakovsky <hexaclock>`)"
 msgstr ""
 
 #: ../../../changelog.rst:1802
@@ -3521,8 +3536,8 @@ msgstr ""
 
 #: ../../../changelog.rst:1804
 msgid ""
-":gh:`1224`, [Windows]: :meth:`Process.wait` may erroneously raise :exc:"
-"`TimeoutExpired`."
+":gh:`1224`, [Windows]: :meth:`Process.wait` may erroneously "
+"raise :exc:`TimeoutExpired`."
 msgstr ""
 
 #: ../../../changelog.rst:1806
@@ -3539,8 +3554,8 @@ msgstr ""
 
 #: ../../../changelog.rst:1810
 msgid ""
-":gh:`1245`, [Linux]: :func:`sensors_temperatures` may fail with :exc:"
-"`IOError` \"no such file\"."
+":gh:`1245`, [Linux]: :func:`sensors_temperatures` may fail "
+"with :exc:`IOError` \"no such file\"."
 msgstr ""
 
 #: ../../../changelog.rst:1812
@@ -3671,9 +3686,9 @@ msgstr ""
 
 #: ../../../changelog.rst:1897
 msgid ""
-":gh:`1127`, [macOS], :label:`critical`: invalid reference counting in :meth:"
-"`Process.open_files` may lead to segfault. (patch by :user:`Jakub Bacic "
-"<jakub-bacic>`)"
+":gh:`1127`, [macOS], :label:`critical`: invalid reference counting "
+"in :meth:`Process.open_files` may lead to segfault. (patch by :user:`Jakub "
+"Bacic <jakub-bacic>`)"
 msgstr ""
 
 #: ../../../changelog.rst:1900
@@ -3690,14 +3705,14 @@ msgstr ""
 
 #: ../../../changelog.rst:1904
 msgid ""
-":gh:`1009`, [Linux]: :func:`sensors_temperatures` may crash with :exc:"
-"`IOError`."
+":gh:`1009`, [Linux]: :func:`sensors_temperatures` may crash "
+"with :exc:`IOError`."
 msgstr ""
 
 #: ../../../changelog.rst:1906
 msgid ""
-":gh:`1012`, [Windows]: :func:`disk_io_counters` :field:`read_time` and :"
-"field:`write_time` were expressed in tens of micro seconds instead of "
+":gh:`1012`, [Windows]: :func:`disk_io_counters` :field:`read_time` "
+"and :field:`write_time` were expressed in tens of micro seconds instead of "
 "milliseconds."
 msgstr ""
 
@@ -3763,16 +3778,17 @@ msgstr ""
 
 #: ../../../changelog.rst:1943
 msgid ""
-":gh:`1091`, [SunOS]: implemented :meth:`Process.environ`. (patch by :user:"
-"`Oleksii Shevchuk <alxchk>`)"
+":gh:`1091`, [SunOS]: implemented :meth:`Process.environ`. (patch "
+"by :user:`Oleksii Shevchuk <alxchk>`)"
 msgstr ""
 
 #: ../../../changelog.rst:1948
 msgid ""
-":gh:`1039`, :label:`breaking`: returned types consolidation. 1) Windows / :"
-"meth:`Process.cpu_times`: fields #3 and #4 were int instead of float. 2) "
-"Linux / FreeBSD / OpenBSD: :meth:`Process.connections` :field:`raddr` is now "
-"set to ``\"\"`` instead of ``None`` when retrieving UNIX sockets."
+":gh:`1039`, :label:`breaking`: returned types consolidation. 1) "
+"Windows / :meth:`Process.cpu_times`: fields #3 and #4 were int instead of "
+"float. 2) Linux / FreeBSD / "
+"OpenBSD: :meth:`Process.connections` :field:`raddr` is now set to ``\"\"`` "
+"instead of ``None`` when retrieving UNIX sockets."
 msgstr ""
 
 #: ../../../changelog.rst:1952
@@ -3784,16 +3800,16 @@ msgstr ""
 #: ../../../changelog.rst:1954
 msgid ""
 ":gh:`1040`, :label:`breaking`: the following Windows APIs on Python 2 now "
-"return a string instead of unicode: :meth:`Process.memory_maps`'s :field:"
-"`path` field, :meth:`WindowsService.binpath`, :meth:`WindowsService."
-"description`, :meth:`WindowsService.display_name`, :meth:`WindowsService."
-"username`."
+"return a string instead of "
+"unicode: :meth:`Process.memory_maps`'s :field:`path` "
+"field, :meth:`WindowsService.binpath`, :meth:`WindowsService.description`, :meth:`WindowsService.display_name`, :meth:`WindowsService.username`."
 msgstr ""
 
 #: ../../../changelog.rst:1959
 msgid ""
-":gh:`928`: :func:`net_connections` and :meth:`Process.connections` :field:"
-"`laddr` and :field:`raddr` are now named tuples."
+":gh:`928`: :func:`net_connections` "
+"and :meth:`Process.connections` :field:`laddr` and :field:`raddr` are now "
+"named tuples."
 msgstr ""
 
 #: ../../../changelog.rst:1961
@@ -3835,9 +3851,9 @@ msgstr ""
 
 #: ../../../changelog.rst:1982
 msgid ""
-":gh:`1033`, [macOS], [FreeBSD], :label:`memleak`: memory leak for :func:"
-"`net_connections` and :meth:`Process.connections` when retrieving UNIX "
-"sockets (``kind='unix'``)."
+":gh:`1033`, [macOS], [FreeBSD], :label:`memleak`: memory leak "
+"for :func:`net_connections` and :meth:`Process.connections` when retrieving "
+"UNIX sockets (``kind='unix'``)."
 msgstr ""
 
 #: ../../../changelog.rst:1985
@@ -3900,9 +3916,9 @@ msgstr ""
 
 #: ../../../changelog.rst:2004
 msgid ""
-":gh:`1021`, [Linux]: :meth:`Process.open_files` may erroneously raise :exc:"
-"`NoSuchProcess` instead of skipping a file which gets deleted while open "
-"files are retrieved."
+":gh:`1021`, [Linux]: :meth:`Process.open_files` may erroneously "
+"raise :exc:`NoSuchProcess` instead of skipping a file which gets deleted "
+"while open files are retrieved."
 msgstr ""
 
 #: ../../../changelog.rst:2007
@@ -3914,14 +3930,15 @@ msgstr ""
 
 #: ../../../changelog.rst:2010
 msgid ""
-":gh:`1040`: fixed many unicode related issues such as :exc:"
-"`UnicodeDecodeError` on Python 3 + POSIX and invalid encoded data on Windows."
+":gh:`1040`: fixed many unicode related issues such "
+"as :exc:`UnicodeDecodeError` on Python 3 + POSIX and invalid encoded data on "
+"Windows."
 msgstr ""
 
 #: ../../../changelog.rst:2013
 msgid ""
-":gh:`1044`, [macOS]: different :class:`Process` methods incorrectly raise :"
-"exc:`AccessDenied` for zombie processes."
+":gh:`1044`, [macOS]: different :class:`Process` methods incorrectly "
+"raise :exc:`AccessDenied` for zombie processes."
 msgstr ""
 
 #: ../../../changelog.rst:2015
@@ -3948,8 +3965,8 @@ msgstr ""
 
 #: ../../../changelog.rst:2022
 msgid ""
-":gh:`1062`: :func:`disk_io_counters` and :func:`net_io_counters` raise :exc:"
-"`TypeError` if no disks or NICs are installed on the system."
+":gh:`1062`: :func:`disk_io_counters` and :func:`net_io_counters` "
+"raise :exc:`TypeError` if no disks or NICs are installed on the system."
 msgstr ""
 
 #: ../../../changelog.rst:2024
@@ -4036,8 +4053,8 @@ msgstr ""
 
 #: ../../../changelog.rst:2050
 msgid ""
-":gh:`1099`, [Windows]: :meth:`Process.terminate` may raise :exc:"
-"`AccessDenied` even if the process already died."
+":gh:`1099`, [Windows]: :meth:`Process.terminate` may "
+"raise :exc:`AccessDenied` even if the process already died."
 msgstr ""
 
 #: ../../../changelog.rst:2052
@@ -4086,8 +4103,8 @@ msgstr ""
 
 #: ../../../changelog.rst:2076
 msgid ""
-":gh:`993`, [Windows]: :meth:`Process.memory_maps` on Python 3 may raise :exc:"
-"`UnicodeDecodeError`."
+":gh:`993`, [Windows]: :meth:`Process.memory_maps` on Python 3 may "
+"raise :exc:`UnicodeDecodeError`."
 msgstr ""
 
 #: ../../../changelog.rst:2078
@@ -4108,26 +4125,27 @@ msgstr ""
 
 #: ../../../changelog.rst:2088
 msgid ""
-":gh:`974`, [Linux]: Add :func:`sensors_fans` function. (patch by :user:"
-"`Nicolas Hennion <nicolargo>`)"
+":gh:`974`, [Linux]: Add :func:`sensors_fans` function. (patch "
+"by :user:`Nicolas Hennion <nicolargo>`)"
 msgstr ""
 
 #: ../../../changelog.rst:2090
 msgid ""
-":gh:`976`, [Windows]: :meth:`Process.io_counters` has 2 new fields: :field:"
-"`other_count` and :field:`other_bytes`."
+":gh:`976`, [Windows]: :meth:`Process.io_counters` has 2 new "
+"fields: :field:`other_count` and :field:`other_bytes`."
 msgstr ""
 
 #: ../../../changelog.rst:2092
 msgid ""
-":gh:`976`, [Linux]: :meth:`Process.io_counters` has 2 new fields: :field:"
-"`read_chars` and :field:`write_chars`."
+":gh:`976`, [Linux]: :meth:`Process.io_counters` has 2 new "
+"fields: :field:`read_chars` and :field:`write_chars`."
 msgstr ""
 
 #: ../../../changelog.rst:2097
 msgid ""
-":gh:`985`, [Windows], :label:`critical`: Fix a crash in :meth:`Process."
-"open_files` when the worker thread for ``NtQueryObject`` times out."
+":gh:`985`, [Windows], :label:`critical`: Fix a crash "
+"in :meth:`Process.open_files` when the worker thread for ``NtQueryObject`` "
+"times out."
 msgstr ""
 
 #: ../../../changelog.rst:2100
@@ -4201,8 +4219,8 @@ msgstr ""
 
 #: ../../../changelog.rst:2139
 msgid ""
-":gh:`966`, [Linux]: :func:`sensors_battery` may fail with :exc:"
-"`FileNotFoundError`."
+":gh:`966`, [Linux]: :func:`sensors_battery` may fail "
+"with :exc:`FileNotFoundError`."
 msgstr ""
 
 #: ../../../changelog.rst:2141
@@ -4304,8 +4322,8 @@ msgstr ""
 #: ../../../changelog.rst:2185
 msgid ""
 ":gh:`940`, [Linux]: :func:`cpu_percent` and :func:`cpu_times_percent` was "
-"calculated incorrectly as :field:`iowait`, :field:`guest` and :field:"
-"`guest_nice` times were not properly taken into account."
+"calculated incorrectly as :field:`iowait`, :field:`guest` "
+"and :field:`guest_nice` times were not properly taken into account."
 msgstr ""
 
 #: ../../../changelog.rst:2188
@@ -4364,15 +4382,15 @@ msgstr ""
 
 #: ../../../changelog.rst:2227
 msgid ""
-":gh:`874`, [Windows]: make :func:`net_if_addrs` also return the :field:"
-"`netmask`."
+":gh:`874`, [Windows]: make :func:`net_if_addrs` also return "
+"the :field:`netmask`."
 msgstr ""
 
 #: ../../../changelog.rst:2232
 msgid ""
-":gh:`887`, [Linux]: :func:`virtual_memory` :field:`available` and :field:"
-"`used` are more precise and match ``free`` utility. Also handles LXC "
-"containers."
+":gh:`887`, [Linux]: :func:`virtual_memory` :field:`available` "
+"and :field:`used` are more precise and match ``free`` utility. Also handles "
+"LXC containers."
 msgstr ""
 
 #: ../../../changelog.rst:2238
@@ -4396,8 +4414,8 @@ msgstr ""
 
 #: ../../../changelog.rst:2248
 msgid ""
-":gh:`783`, [macOS]: :meth:`Process.status` may erroneously return :data:"
-"`STATUS_RUNNING` for zombie processes."
+":gh:`783`, [macOS]: :meth:`Process.status` may erroneously "
+"return :data:`STATUS_RUNNING` for zombie processes."
 msgstr ""
 
 #: ../../../changelog.rst:2250
@@ -4419,8 +4437,8 @@ msgstr ""
 
 #: ../../../changelog.rst:2255
 msgid ""
-":gh:`885`: :exc:`ValueError` is raised if a negative integer is passed to :"
-"func:`cpu_percent` functions."
+":gh:`885`: :exc:`ValueError` is raised if a negative integer is passed "
+"to :func:`cpu_percent` functions."
 msgstr ""
 
 #: ../../../changelog.rst:2257
@@ -4445,15 +4463,15 @@ msgstr ""
 #: ../../../changelog.rst:2264
 msgid ""
 ":gh:`908`, [macOS], [BSD]: different process methods could errounesuly mask "
-"the real error for high-privileged PIDs and raise :exc:`NoSuchProcess` and :"
-"exc:`AccessDenied` instead of :exc:`OSError` and :exc:`RuntimeError`."
+"the real error for high-privileged PIDs and raise :exc:`NoSuchProcess` "
+"and :exc:`AccessDenied` instead of :exc:`OSError` and :exc:`RuntimeError`."
 msgstr ""
 
 #: ../../../changelog.rst:2267
 msgid ""
-":gh:`909`, [macOS]: :meth:`Process.open_files` and :meth:`Process."
-"connections` methods may raise :exc:`OSError` with no exception set if "
-"process is gone."
+":gh:`909`, [macOS]: :meth:`Process.open_files` "
+"and :meth:`Process.connections` methods may raise :exc:`OSError` with no "
+"exception set if process is gone."
 msgstr ""
 
 #: ../../../changelog.rst:2270
@@ -4482,16 +4500,17 @@ msgstr ""
 
 #: ../../../changelog.rst:2285
 msgid ""
-":gh:`857`, [SunOS]: :meth:`Process.cpu_times`, :meth:`Process.cpu_percent`, :"
-"meth:`Process.threads` and :meth:`Process.memory_maps` may raise :exc:"
-"`RuntimeError` if attempting to query a 64bit process with a 32bit Python. "
-"\"Null\" values are returned as a fallback."
+":gh:`857`, "
+"[SunOS]: :meth:`Process.cpu_times`, :meth:`Process.cpu_percent`, :meth:`Process.threads` "
+"and :meth:`Process.memory_maps` may raise :exc:`RuntimeError` if attempting "
+"to query a 64bit process with a 32bit Python. \"Null\" values are returned "
+"as a fallback."
 msgstr ""
 
 #: ../../../changelog.rst:2289
 msgid ""
-":gh:`858`: :meth:`Process.as_dict` should not call ``Process."
-"memory_info_ex()`` because it's deprecated."
+":gh:`858`: :meth:`Process.as_dict` should not call "
+"``Process.memory_info_ex()`` because it's deprecated."
 msgstr ""
 
 #: ../../../changelog.rst:2291
@@ -4550,8 +4569,8 @@ msgstr ""
 
 #: ../../../changelog.rst:2318
 msgid ""
-":gh:`795`, [Windows]: new APIs to deal with Windows services: :func:"
-"`win_service_iter` and :func:`win_service_get`."
+":gh:`795`, [Windows]: new APIs to deal with Windows "
+"services: :func:`win_service_iter` and :func:`win_service_get`."
 msgstr ""
 
 #: ../../../changelog.rst:2320
@@ -4591,22 +4610,23 @@ msgstr ""
 
 #: ../../../changelog.rst:2343
 msgid ""
-":gh:`779`: :meth:`Process.cpu_times` returns two new fields, :field:"
-"`children_user` and :field:`children_system` (always set to 0 on macOS and "
-"Windows)."
+":gh:`779`: :meth:`Process.cpu_times` returns two new "
+"fields, :field:`children_user` and :field:`children_system` (always set to 0 "
+"on macOS and Windows)."
 msgstr ""
 
 #: ../../../changelog.rst:2346
 msgid ""
-":gh:`789`, [Windows]: :func:`cpu_times` return two new fields: :field:"
-"`interrupt` and :field:`dpc`. Same for :func:`cpu_times_percent`."
+":gh:`789`, [Windows]: :func:`cpu_times` return two new "
+"fields: :field:`interrupt` and :field:`dpc`. Same "
+"for :func:`cpu_times_percent`."
 msgstr ""
 
 #: ../../../changelog.rst:2348
 msgid ""
-":gh:`792`: new :func:`cpu_stats` function returning number of CPU :field:"
-"`ctx_switches`, :field:`interrupts`, :field:`soft_interrupts` and :field:"
-"`syscalls`."
+":gh:`792`: new :func:`cpu_stats` function returning number of "
+"CPU :field:`ctx_switches`, :field:`interrupts`, :field:`soft_interrupts` "
+"and :field:`syscalls`."
 msgstr ""
 
 #: ../../../changelog.rst:2354
@@ -4628,8 +4648,8 @@ msgstr ""
 
 #: ../../../changelog.rst:2359
 msgid ""
-":gh:`776`, [Linux]: :meth:`Process.cpu_affinity` may erroneously raise :exc:"
-"`NoSuchProcess`. (patch by :user:`wxwright`)"
+":gh:`776`, [Linux]: :meth:`Process.cpu_affinity` may erroneously "
+"raise :exc:`NoSuchProcess`. (patch by :user:`wxwright`)"
 msgstr ""
 
 #: ../../../changelog.rst:2361
@@ -4638,8 +4658,8 @@ msgstr ""
 
 #: ../../../changelog.rst:2362
 msgid ""
-":gh:`788`, [NetBSD]: :func:`virtual_memory` :field:`buffers` and :field:"
-"`shared` values were set to 0."
+":gh:`788`, [NetBSD]: :func:`virtual_memory` :field:`buffers` "
+"and :field:`shared` values were set to 0."
 msgstr ""
 
 #: ../../../changelog.rst:2366
@@ -4648,8 +4668,8 @@ msgstr ""
 
 #: ../../../changelog.rst:2370
 msgid ""
-":gh:`523`, [Linux], [FreeBSD]: :func:`disk_io_counters` return a new :field:"
-"`busy_time` field."
+":gh:`523`, [Linux], [FreeBSD]: :func:`disk_io_counters` return a "
+"new :field:`busy_time` field."
 msgstr ""
 
 #: ../../../changelog.rst:2372
@@ -4674,8 +4694,8 @@ msgstr ""
 
 #: ../../../changelog.rst:2378
 msgid ""
-":gh:`756`, [Linux]: :func:`disk_io_counters` return 2 new fields: :field:"
-"`read_merged_count` and :field:`write_merged_count`."
+":gh:`756`, [Linux]: :func:`disk_io_counters` return 2 new "
+"fields: :field:`read_merged_count` and :field:`write_merged_count`."
 msgstr ""
 
 #: ../../../changelog.rst:2383
@@ -4722,11 +4742,11 @@ msgstr ""
 
 #: ../../../changelog.rst:2401
 msgid ""
-":gh:`734`: on Python 3 invalid UTF-8 data is not correctly handled for :meth:"
-"`Process.name`, :meth:`Process.cwd`, :meth:`Process.exe`, :meth:`Process."
-"cmdline` and :meth:`Process.open_files` methods resulting in :exc:"
-"`UnicodeDecodeError` exceptions. ``'surrogateescape'`` error handler is now "
-"used as a workaround for replacing the corrupted data."
+":gh:`734`: on Python 3 invalid UTF-8 data is not correctly handled "
+"for :meth:`Process.name`, :meth:`Process.cwd`, :meth:`Process.exe`, :meth:`Process.cmdline` "
+"and :meth:`Process.open_files` methods resulting "
+"in :exc:`UnicodeDecodeError` exceptions. ``'surrogateescape'`` error handler "
+"is now used as a workaround for replacing the corrupted data."
 msgstr ""
 
 #: ../../../changelog.rst:2406
@@ -4806,14 +4826,14 @@ msgstr ""
 #: ../../../changelog.rst:2448
 msgid ""
 ":gh:`708`, [Linux]: :func:`net_connections` and :meth:`Process.connections` "
-"on Python 2 can be up to **3x faster** in case of many connections. Also :"
-"meth:`Process.memory_maps` is slightly faster."
+"on Python 2 can be up to **3x faster** in case of many connections. "
+"Also :meth:`Process.memory_maps` is slightly faster."
 msgstr ""
 
 #: ../../../changelog.rst:2454
 msgid ""
-":gh:`715`, :label:`critical`: don't crash at import time if :func:"
-"`cpu_times` fail for some reason."
+":gh:`715`, :label:`critical`: don't crash at import time "
+"if :func:`cpu_times` fail for some reason."
 msgstr ""
 
 #: ../../../changelog.rst:2456
@@ -4830,8 +4850,9 @@ msgstr ""
 
 #: ../../../changelog.rst:2460
 msgid ""
-":gh:`722`, [Linux]: :func:`swap_memory` no longer crashes if :field:`sin` / :"
-"field:`sout` can't be determined due to missing :proc:`/proc/vmstat`."
+":gh:`722`, [Linux]: :func:`swap_memory` no longer crashes "
+"if :field:`sin` / :field:`sout` can't be determined due to missing :proc:`/"
+"proc/vmstat`."
 msgstr ""
 
 #: ../../../changelog.rst:2462
@@ -4936,8 +4957,8 @@ msgstr ""
 #: ../../../changelog.rst:2522
 msgid ""
 ":gh:`655`, [Windows]: fix various unicode handling issues. On Python 2, "
-"string APIs now return encoded strings using :func:`sys."
-"getfilesystemencoding`."
+"string APIs now return encoded strings "
+"using :func:`sys.getfilesystemencoding`."
 msgstr ""
 
 #: ../../../changelog.rst:2528
@@ -5053,8 +5074,8 @@ msgstr ""
 
 #: ../../../changelog.rst:2584
 msgid ""
-":gh:`627`, [Windows]: :meth:`Process.name` no longer raises :exc:"
-"`AccessDenied` for pids owned by another user."
+":gh:`627`, [Windows]: :meth:`Process.name` no longer "
+"raises :exc:`AccessDenied` for pids owned by another user."
 msgstr ""
 
 #: ../../../changelog.rst:2586
@@ -5122,8 +5143,8 @@ msgstr ""
 
 #: ../../../changelog.rst:2615
 msgid ""
-":gh:`250`: new :func:`net_if_stats` returning NIC statistics (:field:"
-"`isup`, :field:`duplex`, :field:`speed`, :field:`mtu`)."
+":gh:`250`: new :func:`net_if_stats` returning NIC statistics "
+"(:field:`isup`, :field:`duplex`, :field:`speed`, :field:`mtu`)."
 msgstr ""
 
 #: ../../../changelog.rst:2617
@@ -5145,8 +5166,9 @@ msgstr ""
 
 #: ../../../changelog.rst:2626
 msgid ""
-":gh:`582`: connection constants returned by :func:`net_connections` and :"
-"meth:`Process.connections` were turned from int to enums on Python > 3.4."
+":gh:`582`: connection constants returned by :func:`net_connections` "
+"and :meth:`Process.connections` were turned from int to enums on Python > "
+"3.4."
 msgstr ""
 
 #: ../../../changelog.rst:2628
@@ -5312,8 +5334,8 @@ msgstr ""
 
 #: ../../../changelog.rst:2703
 msgid ""
-":gh:`551`, [Windows]: get rid of the unicode hack for :func:"
-"`net_io_counters` NIC names."
+":gh:`551`, [Windows]: get rid of the unicode hack "
+"for :func:`net_io_counters` NIC names."
 msgstr ""
 
 #: ../../../changelog.rst:2705
@@ -5328,21 +5350,22 @@ msgstr ""
 
 #: ../../../changelog.rst:2708
 msgid ""
-":gh:`565`, [Windows]: use proper encoding for :meth:`Process.username` and :"
-"func:`users`. (patch by :user:`Sylvain Mouquet <sylvainmouquet>`)"
+":gh:`565`, [Windows]: use proper encoding for :meth:`Process.username` "
+"and :func:`users`. (patch by :user:`Sylvain Mouquet <sylvainmouquet>`)"
 msgstr ""
 
 #: ../../../changelog.rst:2710
 msgid ""
-":gh:`567`, [Linux]: in the alternative implementation of :meth:`Process."
-"cpu_affinity` ``PyList_Append`` and ``Py_BuildValue`` return values are not "
-"checked."
+":gh:`567`, [Linux]: in the alternative implementation "
+"of :meth:`Process.cpu_affinity` ``PyList_Append`` and ``Py_BuildValue`` "
+"return values are not checked."
 msgstr ""
 
 #: ../../../changelog.rst:2713
 msgid ""
-":gh:`571`, [Linux]: :meth:`Process.open_files` might swallow :exc:"
-"`AccessDenied` exceptions and return an incomplete list of open files."
+":gh:`571`, [Linux]: :meth:`Process.open_files` might "
+"swallow :exc:`AccessDenied` exceptions and return an incomplete list of open "
+"files."
 msgstr ""
 
 #: ../../../changelog.rst:2717
@@ -5392,9 +5415,10 @@ msgstr ""
 
 #: ../../../changelog.rst:2744
 msgid ""
-":gh:`503`, [Linux]: in rare conditions :meth:`Process.exe`, :meth:`Process."
-"open_files` and :meth:`Process.connections` can raise ``OSError(ESRCH)`` "
-"instead of :exc:`NoSuchProcess`."
+":gh:`503`, [Linux]: in rare "
+"conditions :meth:`Process.exe`, :meth:`Process.open_files` "
+"and :meth:`Process.connections` can raise ``OSError(ESRCH)`` instead "
+"of :exc:`NoSuchProcess`."
 msgstr ""
 
 #: ../../../changelog.rst:2747
@@ -5413,9 +5437,9 @@ msgstr ""
 
 #: ../../../changelog.rst:2751
 msgid ""
-":gh:`529`, [Windows]: :meth:`Process.exe` may raise unhandled :exc:"
-"`WindowsError` exception for PIDs 0 and 4. (patch by :user:`Jeff Tang "
-"<mrjefftang>`)"
+":gh:`529`, [Windows]: :meth:`Process.exe` may raise "
+"unhandled :exc:`WindowsError` exception for PIDs 0 and 4. (patch "
+"by :user:`Jeff Tang <mrjefftang>`)"
 msgstr ""
 
 #: ../../../changelog.rst:2754
@@ -5446,8 +5470,8 @@ msgstr ""
 
 #: ../../../changelog.rst:2767
 msgid ""
-":gh:`497`, [Linux]: :func:`net_connections` exceptions. (patch by :user:"
-"`Alexander Grothe <agrethe>`)"
+":gh:`497`, [Linux]: :func:`net_connections` exceptions. (patch "
+"by :user:`Alexander Grothe <agrethe>`)"
 msgstr ""
 
 #: ../../../changelog.rst:2771
@@ -5456,8 +5480,8 @@ msgstr ""
 
 #: ../../../changelog.rst:2775
 msgid ""
-":gh:`387`: system-wide open connections a-la ``netstat`` (add :func:"
-"`net_connections`)."
+":gh:`387`: system-wide open connections a-la ``netstat`` "
+"(add :func:`net_connections`)."
 msgstr ""
 
 #: ../../../changelog.rst:2780
@@ -5491,8 +5515,8 @@ msgstr ""
 #: ../../../changelog.rst:2797
 msgid ""
 "For the sake of consistency a lot of psutil APIs have been renamed. In most "
-"cases accessing the old names will work but it will cause a :exc:"
-"`DeprecationWarning`."
+"cases accessing the old names will work but it will cause "
+"a :exc:`DeprecationWarning`."
 msgstr ""
 
 #: ../../../changelog.rst:2801
@@ -5857,9 +5881,9 @@ msgstr ""
 
 #: ../../../changelog.rst:2918
 msgid ""
-":class:`Process` instances' ``retcode`` attribute returned by :func:"
-"`wait_procs` has been renamed to ``returncode`` for consistency with :class:"
-"`subprocess.Popen`."
+":class:`Process` instances' ``retcode`` attribute returned "
+"by :func:`wait_procs` has been renamed to ``returncode`` for consistency "
+"with :class:`subprocess.Popen`."
 msgstr ""
 
 #: ../../../changelog.rst:2924
@@ -5899,8 +5923,8 @@ msgstr ""
 
 #: ../../../changelog.rst:2946
 msgid ""
-":gh:`448`, [Windows], :label:`memleak`: :meth:`Process.children` and :meth:"
-"`Process.ppid` memory leak (patch by Ulrich Klank)."
+":gh:`448`, [Windows], :label:`memleak`: :meth:`Process.children` "
+"and :meth:`Process.ppid` memory leak (patch by Ulrich Klank)."
 msgstr ""
 
 #: ../../../changelog.rst:2948 ../../../changelog.rst:3329
@@ -5911,8 +5935,8 @@ msgstr ""
 
 #: ../../../changelog.rst:2950
 msgid ""
-":gh:`443`, [Linux]: fix a potential overflow issue for :meth:`Process."
-"cpu_affinity` (set) on systems with more than 64 CPUs."
+":gh:`443`, [Linux]: fix a potential overflow issue "
+"for :meth:`Process.cpu_affinity` (set) on systems with more than 64 CPUs."
 msgstr ""
 
 #: ../../../changelog.rst:2952
@@ -5955,8 +5979,8 @@ msgstr ""
 
 #: ../../../changelog.rst:2963
 msgid ""
-":gh:`476`, [Linux]: encoding error for :meth:`Process.name` and :meth:"
-"`Process.cmdline`."
+":gh:`476`, [Linux]: encoding error for :meth:`Process.name` "
+"and :meth:`Process.cmdline`."
 msgstr ""
 
 #: ../../../changelog.rst:2967
@@ -5993,8 +6017,8 @@ msgstr ""
 
 #: ../../../changelog.rst:2988
 msgid ""
-":gh:`439`: assume :func:`os.getpid` if no argument is passed to :class:"
-"`Process` class constructor."
+":gh:`439`: assume :func:`os.getpid` if no argument is passed "
+"to :class:`Process` class constructor."
 msgstr ""
 
 #: ../../../changelog.rst:2993
@@ -6143,8 +6167,9 @@ msgstr ""
 
 #: ../../../changelog.rst:3079
 msgid ""
-":meth:`Process.connections` :field:`local_address` and :field:"
-"`remote_address` fields renamed to :field:`laddr` and :field:`raddr`."
+":meth:`Process.connections` :field:`local_address` "
+"and :field:`remote_address` fields renamed to :field:`laddr` "
+"and :field:`raddr`."
 msgstr ""
 
 #: ../../../changelog.rst:3081
@@ -6181,8 +6206,8 @@ msgstr ""
 
 #: ../../../changelog.rst:3096
 msgid ""
-":gh:`394`, [macOS]: :term:`mapped memory` regions of :meth:`Process."
-"memory_maps` report incorrect file name."
+":gh:`394`, [macOS]: :term:`mapped memory` regions "
+"of :meth:`Process.memory_maps` report incorrect file name."
 msgstr ""
 
 #: ../../../changelog.rst:3100
@@ -6197,8 +6222,8 @@ msgstr ""
 
 #: ../../../changelog.rst:3106
 msgid ""
-":gh:`370`, [BSD]: :meth:`Process.connections` requires root. (patch by :user:"
-"`John Baldwin <bsdjhb>`)"
+":gh:`370`, [BSD]: :meth:`Process.connections` requires root. (patch "
+"by :user:`John Baldwin <bsdjhb>`)"
 msgstr ""
 
 #: ../../../changelog.rst:3108
@@ -6223,9 +6248,9 @@ msgstr ""
 
 #: ../../../changelog.rst:3119
 msgid ""
-":gh:`361`, [Linux]: :func:`cpu_times` now includes new :field:`steal`, :"
-"field:`guest` and :field:`guest_nice` fields available on recent Linux "
-"kernels. Also, :func:`cpu_percent` is more accurate."
+":gh:`361`, [Linux]: :func:`cpu_times` now includes "
+"new :field:`steal`, :field:`guest` and :field:`guest_nice` fields available "
+"on recent Linux kernels. Also, :func:`cpu_percent` is more accurate."
 msgstr ""
 
 #: ../../../changelog.rst:3122
@@ -6244,10 +6269,10 @@ msgstr ""
 
 #: ../../../changelog.rst:3135
 msgid ""
-":gh:`313`, [Linux], :label:`critical`: :func:`virtual_memory` and :func:"
-"`swap_memory` can crash on certain exotic Linux flavors having an incomplete "
-"``/proc`` interface. If that's the case we now set the unretrievable stats "
-"to ``0`` and raise :exc:`RuntimeWarning` instead."
+":gh:`313`, [Linux], :label:`critical`: :func:`virtual_memory` "
+"and :func:`swap_memory` can crash on certain exotic Linux flavors having an "
+"incomplete ``/proc`` interface. If that's the case we now set the "
+"unretrievable stats to ``0`` and raise :exc:`RuntimeWarning` instead."
 msgstr ""
 
 #: ../../../changelog.rst:3139
@@ -6258,8 +6283,8 @@ msgstr ""
 
 #: ../../../changelog.rst:3141
 msgid ""
-":gh:`333`, [macOS], :label:`memleak`: leak of Mach ports (patch by :user:"
-"`rsesek`)"
+":gh:`333`, [macOS], :label:`memleak`: leak of Mach ports (patch "
+"by :user:`rsesek`)"
 msgstr ""
 
 #: ../../../changelog.rst:3143
@@ -6316,9 +6341,9 @@ msgstr ""
 #: ../../../changelog.rst:3159
 msgid ""
 ":gh:`337`, [Linux]: :class:`Process` methods not working because of a poor "
-"``/proc`` implementation will raise :exc:`NotImplementedError` rather than :"
-"exc:`RuntimeError` and :meth:`Process.as_dict` will not blow up. (patch by "
-"Curtin1060)"
+"``/proc`` implementation will raise :exc:`NotImplementedError` rather "
+"than :exc:`RuntimeError` and :meth:`Process.as_dict` will not blow up. "
+"(patch by Curtin1060)"
 msgstr ""
 
 #: ../../../changelog.rst:3163
@@ -6357,9 +6382,10 @@ msgstr ""
 
 #: ../../../changelog.rst:3175
 msgid ""
-":gh:`366`, [FreeBSD]: :meth:`Process.memory_maps`, :meth:`Process.num_fds`, :"
-"meth:`Process.open_files` and :meth:`Process.cwd` methods raise :exc:"
-"`RuntimeError` instead of :exc:`AccessDenied`."
+":gh:`366`, "
+"[FreeBSD]: :meth:`Process.memory_maps`, :meth:`Process.num_fds`, :meth:`Process.open_files` "
+"and :meth:`Process.cwd` methods raise :exc:`RuntimeError` instead "
+"of :exc:`AccessDenied`."
 msgstr ""
 
 #: ../../../changelog.rst:3180
@@ -6374,8 +6400,8 @@ msgstr ""
 
 #: ../../../changelog.rst:3186
 msgid ""
-":meth:`Process.exe` can now return an empty string instead of raising :exc:"
-"`AccessDenied`."
+":meth:`Process.exe` can now return an empty string instead of "
+"raising :exc:`AccessDenied`."
 msgstr ""
 
 #: ../../../changelog.rst:3191
@@ -6410,14 +6436,15 @@ msgstr ""
 #: ../../../changelog.rst:3203
 msgid ""
 ":gh:`311`: add :func:`virtual_memory` and :func:`swap_memory`. Old memory-"
-"related functions are deprecated. New example scripts: :src:`scripts/free."
-"py` and :src:`scripts/meminfo.py`."
+"related functions are deprecated. New example scripts: :src:`scripts/"
+"free.py` and :src:`scripts/meminfo.py`."
 msgstr ""
 
 #: ../../../changelog.rst:3206
 msgid ""
-":gh:`312`: :func:`net_io_counters` adds 4 new fields: :field:`errin`, :field:"
-"`errout`, :field:`dropin` and :field:`dropout`."
+":gh:`312`: :func:`net_io_counters` adds 4 new "
+"fields: :field:`errin`, :field:`errout`, :field:`dropin` "
+"and :field:`dropout`."
 msgstr ""
 
 #: ../../../changelog.rst:3211
@@ -6428,10 +6455,10 @@ msgstr ""
 
 #: ../../../changelog.rst:3213
 msgid ""
-":gh:`297`, [macOS]: :meth:`Process.name`, :meth:`Process.memory_info`, :meth:"
-"`Process.memory_percent`, :meth:`Process.cpu_times`, :meth:`Process."
-"cpu_percent`, :meth:`Process.num_threads` no longer raise :exc:"
-"`AccessDenied` for other users' processes and are **2.5x faster**."
+":gh:`297`, "
+"[macOS]: :meth:`Process.name`, :meth:`Process.memory_info`, :meth:`Process.memory_percent`, :meth:`Process.cpu_times`, :meth:`Process.cpu_percent`, :meth:`Process.num_threads` "
+"no longer raise :exc:`AccessDenied` for other users' processes and are "
+"**2.5x faster**."
 msgstr ""
 
 #: ../../../changelog.rst:3217
@@ -6441,10 +6468,9 @@ msgstr ""
 
 #: ../../../changelog.rst:3218
 msgid ""
-":gh:`304`, [Windows]: :meth:`Process.create_time`, :meth:`Process."
-"cpu_times`, :meth:`Process.cpu_percent`, :meth:`Process.memory_info`, :meth:"
-"`Process.memory_percent`, :meth:`Process.num_handles`, :meth:`Process."
-"io_counters` no longer raise :exc:`AccessDenied` for other users' processes."
+":gh:`304`, "
+"[Windows]: :meth:`Process.create_time`, :meth:`Process.cpu_times`, :meth:`Process.cpu_percent`, :meth:`Process.memory_info`, :meth:`Process.memory_percent`, :meth:`Process.num_handles`, :meth:`Process.io_counters` "
+"no longer raise :exc:`AccessDenied` for other users' processes."
 msgstr ""
 
 #: ../../../changelog.rst:3223
@@ -6457,14 +6483,14 @@ msgstr ""
 
 #: ../../../changelog.rst:3225
 msgid ""
-"[Linux]: ``psutil.phymem_buffers()`` is deprecated (use :func:"
-"`virtual_memory`)"
+"[Linux]: ``psutil.phymem_buffers()`` is deprecated "
+"(use :func:`virtual_memory`)"
 msgstr ""
 
 #: ../../../changelog.rst:3227
 msgid ""
-"[Linux]: ``psutil.cached_phymem()`` is deprecated (use :func:"
-"`virtual_memory`)"
+"[Linux]: ``psutil.cached_phymem()`` is deprecated "
+"(use :func:`virtual_memory`)"
 msgstr ""
 
 #: ../../../changelog.rst:3232
@@ -6483,8 +6509,8 @@ msgstr ""
 
 #: ../../../changelog.rst:3242
 msgid ""
-":gh:`303`, [Windows], :label:`critical`: potential heap corruption in :meth:"
-"`Process.num_threads` and :meth:`Process.status` methods."
+":gh:`303`, [Windows], :label:`critical`: potential heap corruption "
+"in :meth:`Process.num_threads` and :meth:`Process.status` methods."
 msgstr ""
 
 #: ../../../changelog.rst:3244
@@ -6502,8 +6528,8 @@ msgstr ""
 
 #: ../../../changelog.rst:3249
 msgid ""
-":gh:`298`, [macOS], [BSD], :label:`memleak`: memory leak in :meth:`Process."
-"num_fds`."
+":gh:`298`, [macOS], [BSD], :label:`memleak`: memory leak "
+"in :meth:`Process.num_fds`."
 msgstr ""
 
 #: ../../../changelog.rst:3251
@@ -6543,8 +6569,8 @@ msgstr ""
 
 #: ../../../changelog.rst:3271
 msgid ""
-":gh:`292`, [Linux]: race condition in process :meth:`Process.open_files`, :"
-"meth:`Process.connections`, :meth:`Process.threads`."
+":gh:`292`, [Linux]: race condition in "
+"process :meth:`Process.open_files`, :meth:`Process.connections`, :meth:`Process.threads`."
 msgstr ""
 
 #: ../../../changelog.rst:3273
@@ -6599,10 +6625,10 @@ msgstr ""
 
 #: ../../../changelog.rst:3295
 msgid ""
-":gh:`281`: :meth:`Process.ppid`, :meth:`Process.name`, :meth:`Process.exe`, :"
-"meth:`Process.cmdline` and :meth:`Process.create_time` are now cached after "
-"first access, so :exc:`NoSuchProcess` is no longer raised if the process is "
-"gone in the meantime."
+":gh:`281`: :meth:`Process.ppid`, :meth:`Process.name`, :meth:`Process.exe`, :meth:`Process.cmdline` "
+"and :meth:`Process.create_time` are now cached after first access, "
+"so :exc:`NoSuchProcess` is no longer raised if the process is gone in the "
+"meantime."
 msgstr ""
 
 #: ../../../changelog.rst:3299
@@ -6657,8 +6683,8 @@ msgstr ""
 
 #: ../../../changelog.rst:3327
 msgid ""
-":gh:`240`, [macOS], :label:`critical`: incorrect use of ``free()`` for :meth:"
-"`Process.connections`."
+":gh:`240`, [macOS], :label:`critical`: incorrect use of ``free()`` "
+"for :meth:`Process.connections`."
 msgstr ""
 
 #: ../../../changelog.rst:3331
@@ -6674,9 +6700,9 @@ msgstr ""
 
 #: ../../../changelog.rst:3334
 msgid ""
-":gh:`252`, [Windows]: :meth:`Process.cwd` erroneously raise :exc:"
-"`NoSuchProcess` for processes owned by another user. It now raises :exc:"
-"`AccessDenied` instead."
+":gh:`252`, [Windows]: :meth:`Process.cwd` erroneously "
+"raise :exc:`NoSuchProcess` for processes owned by another user. It now "
+"raises :exc:`AccessDenied` instead."
 msgstr ""
 
 #: ../../../changelog.rst:3337
@@ -6700,9 +6726,9 @@ msgstr ""
 
 #: ../../../changelog.rst:3344
 msgid ""
-":gh:`275`, [Linux]: :meth:`Process.io_counters` erroneously raise :exc:"
-"`NoSuchProcess` on old Linux versions. Where not available it now raises :"
-"exc:`NotImplementedError`."
+":gh:`275`, [Linux]: :meth:`Process.io_counters` erroneously "
+"raise :exc:`NoSuchProcess` on old Linux versions. Where not available it now "
+"raises :exc:`NotImplementedError`."
 msgstr ""
 
 #: ../../../changelog.rst:3347
@@ -6721,15 +6747,15 @@ msgstr ""
 
 #: ../../../changelog.rst:3356
 msgid ""
-":gh:`230`, [Windows], [macOS], :label:`memleak`: fix memory leak in :meth:"
-"`Process.connections`."
+":gh:`230`, [Windows], [macOS], :label:`memleak`: fix memory leak "
+"in :meth:`Process.connections`."
 msgstr ""
 
 #: ../../../changelog.rst:3358
 msgid ""
-":gh:`236`, [Windows], :label:`memleak`: fix memory/handle leak in :meth:"
-"`Process.memory_info`, :meth:`Process.suspend` and :meth:`Process.resume` "
-"methods."
+":gh:`236`, [Windows], :label:`memleak`: fix memory/handle leak "
+"in :meth:`Process.memory_info`, :meth:`Process.suspend` "
+"and :meth:`Process.resume` methods."
 msgstr ""
 
 #: ../../../changelog.rst:3361
@@ -6748,8 +6774,8 @@ msgstr ""
 
 #: ../../../changelog.rst:3370
 msgid ""
-":gh:`150`: add :func:`net_io_counters` (macOS and Windows patch by :user:"
-"`Jeremy Whitlock <whitlockjc>`)"
+":gh:`150`: add :func:`net_io_counters` (macOS and Windows patch "
+"by :user:`Jeremy Whitlock <whitlockjc>`)"
 msgstr ""
 
 #: ../../../changelog.rst:3372
@@ -6758,8 +6784,8 @@ msgstr ""
 
 #: ../../../changelog.rst:3373
 msgid ""
-":gh:`206`: add :func:`disk_io_counters`). (macOS and Windows patch by :user:"
-"`Jeremy Whitlock <whitlockjc>`)"
+":gh:`206`: add :func:`disk_io_counters`). (macOS and Windows patch "
+"by :user:`Jeremy Whitlock <whitlockjc>`)"
 msgstr ""
 
 #: ../../../changelog.rst:3375
@@ -6848,8 +6874,8 @@ msgstr ""
 
 #: ../../../changelog.rst:3416
 msgid ""
-":gh:`211`: :class:`Process` instance can unexpectedly raise :exc:"
-"`NoSuchProcess` if tested for equality with another object."
+":gh:`211`: :class:`Process` instance can unexpectedly "
+"raise :exc:`NoSuchProcess` if tested for equality with another object."
 msgstr ""
 
 #: ../../../changelog.rst:3420
@@ -6918,9 +6944,9 @@ msgstr ""
 
 #: ../../../changelog.rst:3447
 msgid ""
-":gh:`180`, [Windows]: :meth:`Process.num_threads` and :meth:`Process."
-"threads` methods can raise :exc:`NoSuchProcess` exception while process "
-"still exists."
+":gh:`180`, [Windows]: :meth:`Process.num_threads` "
+"and :meth:`Process.threads` methods can raise :exc:`NoSuchProcess` exception "
+"while process still exists."
 msgstr ""
 
 #: ../../../changelog.rst:3451
@@ -6961,8 +6987,8 @@ msgstr ""
 
 #: ../../../changelog.rst:3463
 msgid ""
-":gh:`148`: add :class:`Popen` class combining :class:`subprocess.Popen` and :"
-"class:`Process` in a single interface."
+":gh:`148`: add :class:`Popen` class combining :class:`subprocess.Popen` "
+"and :class:`Process` in a single interface."
 msgstr ""
 
 #: ../../../changelog.rst:3468
@@ -7002,8 +7028,9 @@ msgstr ""
 
 #: ../../../changelog.rst:3486
 msgid ""
-":gh:`145`, [Windows]: :exc:`WindowsError` was raised instead of :exc:"
-"`AccessDenied` when using :meth:`Process.resume` or :meth:`Process.suspend`."
+":gh:`145`, [Windows]: :exc:`WindowsError` was raised instead "
+"of :exc:`AccessDenied` when using :meth:`Process.resume` "
+"or :meth:`Process.suspend`."
 msgstr ""
 
 #: ../../../changelog.rst:3489
@@ -7086,8 +7113,8 @@ msgstr ""
 
 #: ../../../changelog.rst:3522
 msgid ""
-":gh:`113`: exception messages now include :meth:`Process.name` and :attr:"
-"`Process.pid`."
+":gh:`113`: exception messages now include :meth:`Process.name` "
+"and :attr:`Process.pid`."
 msgstr ""
 
 #: ../../../changelog.rst:3524
@@ -7143,8 +7170,8 @@ msgstr ""
 
 #: ../../../changelog.rst:3547
 msgid ""
-":gh:`94`: :meth:`Process.suspend` raises :exc:`OSError` instead of :exc:"
-"`AccessDenied`."
+":gh:`94`: :meth:`Process.suspend` raises :exc:`OSError` instead "
+"of :exc:`AccessDenied`."
 msgstr ""
 
 #: ../../../changelog.rst:3549
@@ -7165,8 +7192,7 @@ msgstr ""
 
 #: ../../../changelog.rst:3554
 msgid ""
-":gh:`126`: :meth:`Process.ppid`, :meth:`Process.uids`, :meth:`Process."
-"gids`, :meth:`Process.name`, :meth:`Process.exe`, :meth:`Process.cmdline` "
+":gh:`126`: :meth:`Process.ppid`, :meth:`Process.uids`, :meth:`Process.gids`, :meth:`Process.name`, :meth:`Process.exe`, :meth:`Process.cmdline` "
 "and :meth:`Process.create_time` properties are no longer cached and "
 "correctly raise :exc:`NoSuchProcess` exception if the process disappears."
 msgstr ""
@@ -7239,8 +7265,9 @@ msgstr ""
 
 #: ../../../changelog.rst:3591
 msgid ""
-":gh:`58`: :meth:`Process.is_running` is now called before :meth:`Process."
-"kill` to make sure we are going to kill the correct process."
+":gh:`58`: :meth:`Process.is_running` is now called "
+"before :meth:`Process.kill` to make sure we are going to kill the correct "
+"process."
 msgstr ""
 
 #: ../../../changelog.rst:3593
@@ -7307,8 +7334,8 @@ msgstr ""
 
 #: ../../../changelog.rst:3618
 msgid ""
-":gh:`42`, [Windows]: :meth:`Process.memory_percent` raises :exc:"
-"`AccessDenied`."
+":gh:`42`, [Windows]: :meth:`Process.memory_percent` "
+"raises :exc:`AccessDenied`."
 msgstr ""
 
 #: ../../../changelog.rst:3622
@@ -7324,8 +7351,8 @@ msgstr ""
 #: ../../../changelog.rst:3628
 msgid ""
 ":gh:`11`: per-process parent object: :meth:`Process.parent` property returns "
-"a :class:`Process` object representing the parent process, and :meth:"
-"`Process.ppid` returns the parent PID."
+"a :class:`Process` object representing the parent process, "
+"and :meth:`Process.ppid` returns the parent PID."
 msgstr ""
 
 #: ../../../changelog.rst:3631
@@ -7337,8 +7364,8 @@ msgstr ""
 
 #: ../../../changelog.rst:3634
 msgid ""
-":gh:`26`: :func:`process_iter` function to iterate over processes as :class:"
-"`Process` objects with a generator."
+":gh:`26`: :func:`process_iter` function to iterate over processes "
+"as :class:`Process` objects with a generator."
 msgstr ""
 
 #: ../../../changelog.rst:3639
@@ -7366,8 +7393,8 @@ msgstr ""
 
 #: ../../../changelog.rst:3653
 msgid ""
-":gh:`17`: ``get_process_list()`` ignores :exc:`NoSuchProcess` and :exc:"
-"`AccessDenied` exceptions during building of the list."
+":gh:`17`: ``get_process_list()`` ignores :exc:`NoSuchProcess` "
+"and :exc:`AccessDenied` exceptions during building of the list."
 msgstr ""
 
 #: ../../../changelog.rst:3655
@@ -7384,8 +7411,8 @@ msgstr ""
 
 #: ../../../changelog.rst:3659
 msgid ""
-":gh:`24`, [Windows]: :meth:`Process.kill` for PID 0 now raises :exc:"
-"`AccessDenied` exception instead of :exc:`WindowsError`."
+":gh:`24`, [Windows]: :meth:`Process.kill` for PID 0 now "
+"raises :exc:`AccessDenied` exception instead of :exc:`WindowsError`."
 msgstr ""
 
 #: ../../../changelog.rst:3661

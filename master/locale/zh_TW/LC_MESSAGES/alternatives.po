@@ -43,11 +43,11 @@ msgstr ""
 
 #: ../../../alternatives.rst:17
 msgid ""
-"The :mod:`os` module provides a handful of process-related functions: :func:"
-"`os.getpid`, :func:`os.getppid`, :func:`os.getuid`, :func:`os.cpu_count`, :"
-"func:`os.getloadavg` (UNIX only). These are cheap wrappers around POSIX "
-"syscalls and are perfectly fine when you only need information about the "
-"*current* process and don't need cross-platform code."
+"The :mod:`os` module provides a handful of process-related "
+"functions: :func:`os.getpid`, :func:`os.getppid`, :func:`os.getuid`, :func:`os.cpu_count`, :func:`os.getloadavg` "
+"(UNIX only). These are cheap wrappers around POSIX syscalls and are "
+"perfectly fine when you only need information about the *current* process "
+"and don't need cross-platform code."
 msgstr ""
 
 #: ../../../alternatives.rst:23
@@ -72,9 +72,9 @@ msgstr ""
 msgid ""
 ":mod:`resource` (UNIX only) lets you read and set resource limits "
 "(``RLIMIT_*``) and get basic usage counters (user/system time, page faults, "
-"I/O ops) for the *current* process or its children via :func:`resource."
-"getrusage`. It is the right tool when you specifically want to enforce or "
-"inspect ``ulimit``-style limits."
+"I/O ops) for the *current* process or its children "
+"via :func:`resource.getrusage`. It is the right tool when you specifically "
+"want to enforce or inspect ``ulimit``-style limits."
 msgstr ""
 
 #: ../../../alternatives.rst:43
@@ -89,10 +89,10 @@ msgstr ""
 
 #: ../../../alternatives.rst:49
 msgid ""
-"Calling tools like ``ps``, ``top``, ``netstat``, ``vmstat`` via :mod:"
-"`subprocess` and parsing their output is fragile: output formats differ "
-"across OS versions and locales, parsing is error-prone, and spawning a "
-"subprocess per sample is slow. psutil reads the same kernel data sources "
+"Calling tools like ``ps``, ``top``, ``netstat``, ``vmstat`` "
+"via :mod:`subprocess` and parsing their output is fragile: output formats "
+"differ across OS versions and locales, parsing is error-prone, and spawning "
+"a subprocess per sample is slow. psutil reads the same kernel data sources "
 "directly without spawning any external processes."
 msgstr ""
 
@@ -105,8 +105,8 @@ msgid ""
 ":mod:`platform` provides information about the OS and Python runtime, such "
 "as OS name, kernel version, architecture, and machine type. It is useful for "
 "identifying the environment, but does not expose runtime metrics or process "
-"information like psutil. Overlaps with psutil's OS constants (:data:"
-"`LINUX`, :data:`WINDOWS`, :data:`MACOS`, etc.)."
+"information like psutil. Overlaps with psutil's OS constants "
+"(:data:`LINUX`, :data:`WINDOWS`, :data:`MACOS`, etc.)."
 msgstr ""
 
 #: ../../../alternatives.rst:65
@@ -204,8 +204,8 @@ msgstr ""
 
 #: ../../../alternatives.rst:113
 msgid ""
-"Linux netlink (interfaces, routes, connections). Overlaps with :func:"
-"`net_if_addrs`, :func:`net_if_stats`, :func:`net_connections`."
+"Linux netlink (interfaces, routes, connections). Overlaps "
+"with :func:`net_if_addrs`, :func:`net_if_stats`, :func:`net_connections`."
 msgstr ""
 
 #: ../../../alternatives.rst:117
@@ -214,8 +214,8 @@ msgstr ""
 
 #: ../../../alternatives.rst:118
 msgid ""
-"WiFi scanning, signal strength, SSID. Exposes wireless details that :func:"
-"`net_if_addrs` does not."
+"WiFi scanning, signal strength, SSID. Exposes wireless details "
+"that :func:`net_if_addrs` does not."
 msgstr ""
 
 #: ../../../alternatives.rst:121

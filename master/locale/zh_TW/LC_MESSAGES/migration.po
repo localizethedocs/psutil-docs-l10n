@@ -61,8 +61,8 @@ msgstr ""
 
 #: ../../../migration.rst:23
 msgid ""
-":meth:`Process.memory_full_info` is deprecated: use :meth:`Process."
-"memory_footprint`."
+":meth:`Process.memory_full_info` is deprecated: "
+"use :meth:`Process.memory_footprint`."
 msgstr ""
 
 #: ../../../migration.rst:25
@@ -128,8 +128,8 @@ msgstr ""
 
 #: ../../../migration.rst:63
 msgid ""
-"If you need a dict, use :meth:`Process.as_dict` instead of :attr:`Process."
-"info`."
+"If you need a dict, use :meth:`Process.as_dict` instead "
+"of :attr:`Process.info`."
 msgstr ""
 
 #: ../../../migration.rst:66
@@ -197,13 +197,13 @@ msgstr ""
 
 #: ../../../migration.rst:112
 msgid ""
-"Windows: old fields were renamed: :field:`wset` → :field:`rss`, :field:"
-"`peak_wset` → :field:`peak_rss`, :field:`pagefile` and :field:`private` → :"
-"field:`vms`, :field:`peak_pagefile` → :field:`peak_vms`, :field:"
-"`num_page_faults` → :meth:`Process.page_faults`. The old names still work "
-"but raise :exc:`DeprecationWarning`. :field:`paged_pool`, :field:"
-"`nonpaged_pool`, :field:`peak_paged_pool`, :field:`peak_nonpaged_pool` moved "
-"to :meth:`Process.memory_extras`."
+"Windows: old fields were renamed: :field:`wset` "
+"→ :field:`rss`, :field:`peak_wset` → :field:`peak_rss`, :field:`pagefile` "
+"and :field:`private` → :field:`vms`, :field:`peak_pagefile` "
+"→ :field:`peak_vms`, :field:`num_page_faults` → :meth:`Process.page_faults`. "
+"The old names still work but "
+"raise :exc:`DeprecationWarning`. :field:`paged_pool`, :field:`nonpaged_pool`, :field:`peak_paged_pool`, :field:`peak_nonpaged_pool` "
+"moved to :meth:`Process.memory_extras`."
 msgstr ""
 
 #: ../../../migration.rst:119
@@ -222,9 +222,9 @@ msgstr ""
 
 #: ../../../migration.rst:127
 msgid ""
-"The :field:`interrupt` field of :func:`cpu_times` on Windows was renamed to :"
-"field:`irq` to match Linux and BSD. The old name still works but raises :exc:"
-"`DeprecationWarning`."
+"The :field:`interrupt` field of :func:`cpu_times` on Windows was renamed "
+"to :field:`irq` to match Linux and BSD. The old name still works but "
+"raises :exc:`DeprecationWarning`."
 msgstr ""
 
 #: ../../../migration.rst:134
@@ -243,8 +243,8 @@ msgstr ":meth:`Process.status` → :class:`ProcessStatus`"
 
 #: ../../../migration.rst:140
 msgid ""
-":field:`status` field of :meth:`Process.net_connections` and :func:"
-"`net_connections` → :class:`ConnectionStatus`"
+":field:`status` field of :meth:`Process.net_connections` "
+"and :func:`net_connections` → :class:`ConnectionStatus`"
 msgstr ""
 
 #: ../../../migration.rst:142
@@ -258,8 +258,8 @@ msgstr ""
 
 #: ../../../migration.rst:144
 msgid ""
-":data:`RLIMIT_* <psutil.RLIMIT_NOFILE>` of :meth:`Process.rlimit` → :class:"
-"`ProcessRlimit`"
+":data:`RLIMIT_* <psutil.RLIMIT_NOFILE>` of :meth:`Process.rlimit` "
+"→ :class:`ProcessRlimit`"
 msgstr ""
 
 #: ../../../migration.rst:147
@@ -276,9 +276,10 @@ msgstr "memory_full_info() 已棄用"
 
 #: ../../../migration.rst:156
 msgid ""
-":meth:`Process.memory_full_info` is deprecated. Use :meth:`Process."
-"memory_footprint` instead; it returns the same fields (:field:`uss`, :field:"
-"`pss` and :field:`swap`), plus a new :field:`shared` field."
+":meth:`Process.memory_full_info` is deprecated. "
+"Use :meth:`Process.memory_footprint` instead; it returns the same fields "
+"(:field:`uss`, :field:`pss` and :field:`swap`), plus a new :field:`shared` "
+"field."
 msgstr ""
 
 #: ../../../migration.rst:164
@@ -288,14 +289,12 @@ msgstr ""
 #: ../../../migration.rst:166
 msgid ""
 "8.0 introduces a new :meth:`Process.memory_extras` method, returning extra "
-"platform-specific memory metrics which complement :meth:`Process."
-"memory_info`:"
+"platform-specific memory metrics which "
+"complement :meth:`Process.memory_info`:"
 msgstr ""
 
 #: ../../../migration.rst:169
-msgid ""
-"Linux: :field:`peak_rss`, :field:`peak_vms`, :field:`rss_anon`, :field:"
-"`rss_file`, :field:`rss_shmem`, :field:`swap_anon`, :field:`locked`."
+msgid "Linux: :field:`peak_rss`, :field:`peak_vms`, :field:`rss_anon`, :field:`rss_file`, :field:`rss_shmem`, :field:`swap_anon`, :field:`locked`."
 msgstr ""
 
 #: ../../../migration.rst:171
@@ -303,9 +302,7 @@ msgid "macOS: :field:`phys_footprint`, :field:`peak_footprint`."
 msgstr ""
 
 #: ../../../migration.rst:172
-msgid ""
-"Windows: :field:`virtual`, :field:`peak_virtual`, :field:`paged_pool`, :"
-"field:`nonpaged_pool`, :field:`peak_paged_pool`, :field:`peak_nonpaged_pool`."
+msgid "Windows: :field:`virtual`, :field:`peak_virtual`, :field:`paged_pool`, :field:`nonpaged_pool`, :field:`peak_paged_pool`, :field:`peak_nonpaged_pool`."
 msgstr ""
 
 #: ../../../migration.rst:179
@@ -315,8 +312,9 @@ msgstr "新的 Process.attrs 類別特性"
 #: ../../../migration.rst:181
 msgid ""
 ":attr:`Process.attrs` is a new :class:`frozenset` containing the valid "
-"attribute names accepted by :meth:`Process.as_dict` and :func:"
-"`process_iter`. It avoids creating a throwaway process just to discover them:"
+"attribute names accepted by :meth:`Process.as_dict` "
+"and :func:`process_iter`. It avoids creating a throwaway process just to "
+"discover them:"
 msgstr ""
 
 #: ../../../migration.rst:185

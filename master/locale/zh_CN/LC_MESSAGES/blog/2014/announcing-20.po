@@ -59,8 +59,8 @@ msgstr ""
 
 #: ../../../blog/2014/announcing-20.rst:35
 msgid ""
-"You're now able to distinguish between :term:`logical <logical CPU>` and :"
-"term:`physical <physical CPU>` CPUs. The full story is in :gh:`427`."
+"You're now able to distinguish between :term:`logical <logical CPU>` "
+"and :term:`physical <physical CPU>` CPUs. The full story is in :gh:`427`."
 msgstr ""
 
 #: ../../../blog/2014/announcing-20.rst:38

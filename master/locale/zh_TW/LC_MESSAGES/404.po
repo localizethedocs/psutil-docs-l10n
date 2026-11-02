@@ -31,8 +31,8 @@ msgstr ""
 
 #: ../../../404.rst:13
 msgid ""
-"The page you're looking for doesn't exist. Or it does, as a :class:`~psutil."
-"ZombieProcess` we can't reap."
+"The page you're looking for doesn't exist. Or it does, as "
+"a :class:`~psutil.ZombieProcess` we can't reap."
 msgstr ""
 
 #: ../../../404.rst:17
@@ -45,8 +45,8 @@ msgstr ""
 
 #: ../../../404.rst:20
 msgid ""
-"Jump to the :doc:`install guide <install>`, :doc:`API reference <api>`, :doc:"
-"`FAQ <faq>` or :doc:`recipes <recipes>`."
+"Jump to the :doc:`install guide <install>`, :doc:`API reference "
+"<api>`, :doc:`FAQ <faq>` or :doc:`recipes <recipes>`."
 msgstr ""
 
 #: ../../../404.rst:22

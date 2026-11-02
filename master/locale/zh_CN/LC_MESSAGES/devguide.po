@@ -56,8 +56,8 @@ msgstr ""
 
 #: ../../../devguide.rst:24
 msgid ""
-"On macOS, AIX and Windows there's no such target, see :ref:"
-"`install_from_source`. Then, everywhere:"
+"On macOS, AIX and Windows there's no such target, "
+"see :ref:`install_from_source`. Then, everywhere:"
 msgstr ""
 
 #: ../../../devguide.rst:27
@@ -270,8 +270,8 @@ msgstr ""
 
 #: ../../../devguide.rst:168
 msgid ""
-"Implement it for each applicable platform in ``psutil/_ps{platform}.py`` (e."
-"g. :src:`psutil/_pslinux.py`)."
+"Implement it for each applicable platform in ``psutil/_ps{platform}.py`` "
+"(e.g. :src:`psutil/_pslinux.py`)."
 msgstr ""
 
 #: ../../../devguide.rst:170

@@ -80,22 +80,21 @@ msgstr ""
 msgid ""
 "This is limited to ``AF_INET`` (IPv4), ``AF_INET6`` (IPv6) and ``AF_LINK`` "
 "(Ethernet) address families. If you want something more powerful (e.g. "
-"``AF_BLUETOOTH``) you can take a look at the `netifaces <https://pypi.python."
-"org/pypi/netifaces/>`__ extension. If you want to see how this is "
-"implemented, here's the code for POSIX and Windows:"
+"``AF_BLUETOOTH``) you can take a look at the `netifaces <https://"
+"pypi.python.org/pypi/netifaces/>`__ extension. If you want to see how this "
+"is implemented, here's the code for POSIX and Windows:"
 msgstr ""
 
 #: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:62
 msgid ""
-"`POSIX <https://github.com/giampaolo/psutil/"
-"blob/39161251010503d6b087807c473f4fb648dfcbce/psutil/_psutil_posix.c#L151>`__"
+"`POSIX <https://github.com/giampaolo/psutil/blob/"
+"39161251010503d6b087807c473f4fb648dfcbce/psutil/_psutil_posix.c#L151>`__"
 msgstr ""
 
 #: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:63
 msgid ""
-"`Windows <https://github.com/giampaolo/psutil/"
-"blob/39161251010503d6b087807c473f4fb648dfcbce/psutil/_psutil_windows."
-"c#L2907>`__"
+"`Windows <https://github.com/giampaolo/psutil/blob/"
+"39161251010503d6b087807c473f4fb648dfcbce/psutil/_psutil_windows.c#L2907>`__"
 msgstr ""
 
 #: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:66
@@ -127,28 +126,26 @@ msgstr ""
 
 #: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:86
 msgid ""
-"`Windows <https://github.com/giampaolo/psutil/"
-"blob/39161251010503d6b087807c473f4fb648dfcbce/psutil/_psutil_windows."
-"c#L3057>`__"
+"`Windows <https://github.com/giampaolo/psutil/blob/"
+"39161251010503d6b087807c473f4fb648dfcbce/psutil/_psutil_windows.c#L3057>`__"
 msgstr ""
 
 #: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:87
 msgid ""
-"`Linux <https://github.com/giampaolo/psutil/"
-"blob/39161251010503d6b087807c473f4fb648dfcbce/psutil/_psutil_linux.c#L474>`__"
+"`Linux <https://github.com/giampaolo/psutil/blob/"
+"39161251010503d6b087807c473f4fb648dfcbce/psutil/_psutil_linux.c#L474>`__"
 msgstr ""
 
 #: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:88
 msgid ""
-"`macOS & FreeBSD <https://github.com/giampaolo/psutil/"
-"blob/39161251010503d6b087807c473f4fb648dfcbce/psutil/_psutil_posix.c#L229>`__"
+"`macOS & FreeBSD <https://github.com/giampaolo/psutil/blob/"
+"39161251010503d6b087807c473f4fb648dfcbce/psutil/_psutil_posix.c#L229>`__"
 msgstr ""
 
 #: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:89
 msgid ""
-"`SunOS <https://github.com/giampaolo/psutil/"
-"blob/39161251010503d6b087807c473f4fb648dfcbce/psutil/_psutil_sunos."
-"c#L1153>`__"
+"`SunOS <https://github.com/giampaolo/psutil/blob/"
+"39161251010503d6b087807c473f4fb648dfcbce/psutil/_psutil_sunos.c#L1153>`__"
 msgstr ""
 
 #: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:92
@@ -200,8 +197,8 @@ msgid ""
 "At this point, I consider psutil almost \"complete\" feature-wise, meaning "
 "I'm starting to run out of ideas for what to add next (see `TODO <https://"
 "github.com/giampaolo/psutil/blob/v3.0.0/TODO>`__). Going forward, "
-"development will likely focus on supporting more exotic platforms (OpenBSD :"
-"gh:`562`, NetBSD :pr:`557`, Android :gh:`355`)."
+"development will likely focus on supporting more exotic platforms "
+"(OpenBSD :gh:`562`, NetBSD :pr:`557`, Android :gh:`355`)."
 msgstr ""
 
 #: ../../../blog/2015/reimplementing-ifconfig-in-python.rst:123

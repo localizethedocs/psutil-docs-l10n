@@ -79,8 +79,9 @@ msgstr ""
 
 #: ../../../blog/2016/netbsd-support.rst:39
 msgid ""
-":gh:`708`: [Linux] :func:`psutil.net_connections` and :meth:`Process."
-"connections` can be up to 3x faster when there are many connections."
+":gh:`708`: [Linux] :func:`psutil.net_connections` "
+"and :meth:`Process.connections` can be up to 3x faster when there are many "
+"connections."
 msgstr ""
 
 #: ../../../blog/2016/netbsd-support.rst:42

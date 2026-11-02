@@ -114,8 +114,8 @@ msgstr ""
 
 #: ../../../platform.rst:39
 msgid ""
-"last version supporting it is `psutil 6.1.1 <https://pypi.org/project/"
-"psutil/6.1.1/>`_ (Dec 2024)"
+"last version supporting it is `psutil 6.1.1 <https://pypi.org/project/psutil/"
+"6.1.1/>`_ (Dec 2024)"
 msgstr ""
 
 #: ../../../platform.rst:43
@@ -322,8 +322,8 @@ msgstr ""
 
 #: ../../../platform.rst:145
 msgid ""
-"Occasional manual testing is done on the `GCC compile farm <https://portal."
-"cfarm.net/>`_, which provides free shell access to uncommon hardware."
+"Occasional manual testing is done on the `GCC compile farm <https://"
+"portal.cfarm.net/>`_, which provides free shell access to uncommon hardware."
 msgstr ""
 
 #: ../../../platform.rst:149

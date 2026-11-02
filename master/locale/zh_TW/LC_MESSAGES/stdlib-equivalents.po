@@ -324,8 +324,8 @@ msgstr ""
 
 #: ../../../stdlib-equivalents.rst:181
 msgid ""
-"POSIX only; psutil also supports Windows. Added to CPython 3.3 (:bpo:"
-"`10784`)."
+"POSIX only; psutil also supports Windows. Added to CPython 3.3 "
+"(:bpo:`10784`)."
 msgstr ""
 
 #: ../../../stdlib-equivalents.rst:184
@@ -386,8 +386,8 @@ msgstr ""
 
 #: ../../../stdlib-equivalents.rst:215
 msgid ""
-"Only :term:`peak_rss` (``ru_maxrss``); psutil returns :term:`RSS`, :term:"
-"`VMS`, and more."
+"Only :term:`peak_rss` (``ru_maxrss``); psutil "
+"returns :term:`RSS`, :term:`VMS`, and more."
 msgstr ""
 
 #: ../../../stdlib-equivalents.rst:216
@@ -456,8 +456,9 @@ msgstr ":func:`os.kill`"
 
 #: ../../../stdlib-equivalents.rst:268
 msgid ""
-"Same on POSIX; limited on Windows. psutil adds :exc:`NoSuchProcess` / :exc:"
-"`AccessDenied` and avoids killing reused PIDs."
+"Same on POSIX; limited on Windows. psutil "
+"adds :exc:`NoSuchProcess` / :exc:`AccessDenied` and avoids killing reused "
+"PIDs."
 msgstr ""
 
 #: ../../../stdlib-equivalents.rst:271

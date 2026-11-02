@@ -24,8 +24,8 @@ msgstr ""
 #: ../../../blog/2019/announcing-560.rst:11
 msgid ""
 "psutil 5.6.0 is out. Highlights: a new :meth:`Process.parents` method, "
-"several important Windows improvements, and the removal of :meth:`Process."
-"memory_maps` on macOS."
+"several important Windows improvements, and the removal "
+"of :meth:`Process.memory_maps` on macOS."
 msgstr ""
 
 #: ../../../blog/2019/announcing-560.rst:16
@@ -34,8 +34,9 @@ msgstr ""
 
 #: ../../../blog/2019/announcing-560.rst:18
 msgid ""
-"The new method returns the parents of a process as a list of :class:"
-"`Process` instances. If no parents are known, an empty list is returned."
+"The new method returns the parents of a process as a list "
+"of :class:`Process` instances. If no parents are known, an empty list is "
+"returned."
 msgstr ""
 
 #: ../../../blog/2019/announcing-560.rst:21
@@ -51,10 +52,10 @@ msgstr ""
 
 #: ../../../blog/2019/announcing-560.rst:30
 msgid ""
-"Nothing fundamentally new here, since this is a convenience wrapper around :"
-"meth:`Process.parent`, but it's still nice to have it built in. It pairs "
-"well with :meth:`Process.children` when working with process trees. The idea "
-"was proposed by Ghislain Le Meur."
+"Nothing fundamentally new here, since this is a convenience wrapper "
+"around :meth:`Process.parent`, but it's still nice to have it built in. It "
+"pairs well with :meth:`Process.children` when working with process trees. "
+"The idea was proposed by Ghislain Le Meur."
 msgstr ""
 
 #: ../../../blog/2019/announcing-560.rst:36
@@ -74,8 +75,8 @@ msgid ""
 "all process threads via ``CreateToolhelp32Snapshot()``, which was unorthodox "
 "and broke when the process had been suspended by Process Hacker. They now "
 "call the undocumented ``NtSuspendProcess()`` / ``NtResumeProcess()`` NT "
-"APIs, same as Process Hacker and Sysinternals tools. Discussed in :gh:"
-"`1379`, implemented in :pr:`1435`."
+"APIs, same as Process Hacker and Sysinternals tools. Discussed "
+"in :gh:`1379`, implemented in :pr:`1435`."
 msgstr ""
 
 #: ../../../blog/2019/announcing-560.rst:49
@@ -109,8 +110,8 @@ msgid ""
 "bug reports whose tracebacks did not indicate which syscall had actually "
 "failed. This was especially painful on Windows, where a single routine may "
 "invoke multiple Windows APIs. Now the :exc:`OSError` (or ``WindowsError``) "
-"exception includes the syscall from which the error originated. See :pr:"
-"`1428`."
+"exception includes the syscall from which the error originated. "
+"See :pr:`1428`."
 msgstr ""
 
 #: ../../../blog/2019/announcing-560.rst:72

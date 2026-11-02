@@ -194,14 +194,14 @@ msgstr ""
 
 #: ../../../install.rst:121
 msgid ""
-"export PKG_PATH=\"https://cdn.netbsd.org/pub/pkgsrc/packages/NetBSD/`uname -"
-"m`/`uname -r`/All\"\n"
+"export PKG_PATH=\"https://cdn.netbsd.org/pub/pkgsrc/packages/NetBSD/`uname "
+"-m`/`uname -r`/All\"\n"
 "pkg_add -v pkgin\n"
 "pkgin update\n"
 "pkgin install python314"
 msgstr ""
-"export PKG_PATH=\"https://cdn.netbsd.org/pub/pkgsrc/packages/NetBSD/`uname -"
-"m`/`uname -r`/All\"\n"
+"export PKG_PATH=\"https://cdn.netbsd.org/pub/pkgsrc/packages/NetBSD/`uname "
+"-m`/`uname -r`/All\"\n"
 "pkg_add -v pkgin\n"
 "pkgin update\n"
 "pkgin install python314"
@@ -216,8 +216,8 @@ msgstr "pkg install developer/gcc"
 
 #: ../../../install.rst:135
 msgid ""
-"If ``cc`` is unavailable, set ``CC=gcc`` when running the commands in :ref:"
-"`build_and_install`."
+"If ``cc`` is unavailable, set ``CC=gcc`` when running the commands "
+"in :ref:`build_and_install`."
 msgstr ""
 
 #: ../../../install.rst:139
@@ -255,8 +255,8 @@ msgstr ""
 #: ../../../install.rst:161
 msgid ""
 "By default C source files are compiled in parallel, one job per CPU, which "
-"makes building from source 2x to 3.6x faster. Use :envvar:"
-"`PSUTIL_BUILD_JOBS` to change the number of jobs."
+"makes building from source 2x to 3.6x faster. "
+"Use :envvar:`PSUTIL_BUILD_JOBS` to change the number of jobs."
 msgstr ""
 
 #: ../../../install.rst:166

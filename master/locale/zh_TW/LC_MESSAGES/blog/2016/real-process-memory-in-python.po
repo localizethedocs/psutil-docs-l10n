@@ -34,14 +34,14 @@ msgstr ""
 #: ../../../blog/2016/real-process-memory-in-python.rst:18
 msgid ""
 "Determining how much memory a process **really** uses is not an easy matter "
-"(see `this <https://lwn.net/Articles/230975/>`__ and `this <http://bmaurer."
-"blogspot.it/2006/03/memory-usage-with-smaps.html>`__). :term:`RSS` (Resident "
-"Set Size), which most people rely on, is misleading because it includes both "
-"memory unique to the process and memory shared with others. What's more "
-"interesting for profiling is the memory that would be freed if the process "
-"were terminated **right now**. In the Linux world this is called :term:`USS` "
-"(Unique Set Size), the major feature introduced in psutil 4.0.0 (not only "
-"for Linux but also for Windows and macOS)."
+"(see `this <https://lwn.net/Articles/230975/>`__ and `this <http://"
+"bmaurer.blogspot.it/2006/03/memory-usage-with-smaps.html>`__). :term:`RSS` "
+"(Resident Set Size), which most people rely on, is misleading because it "
+"includes both memory unique to the process and memory shared with others. "
+"What's more interesting for profiling is the memory that would be freed if "
+"the process were terminated **right now**. In the Linux world this is "
+"called :term:`USS` (Unique Set Size), the major feature introduced in psutil "
+"4.0.0 (not only for Linux but also for Windows and macOS)."
 msgstr ""
 
 #: ../../../blog/2016/real-process-memory-in-python.rst:29
@@ -71,8 +71,8 @@ msgstr ""
 
 #: ../../../blog/2016/real-process-memory-in-python.rst:46
 msgid ""
-"On Linux there are two additional metrics that can also be determined via :"
-"proc:`/proc/pid/smaps`: :term:`PSS` and :term:`swap <swap memory>`."
+"On Linux there are two additional metrics that can also be determined "
+"via :proc:`/proc/pid/smaps`: :term:`PSS` and :term:`swap <swap memory>`."
 msgstr ""
 
 #: ../../../blog/2016/real-process-memory-in-python.rst:49
@@ -138,31 +138,30 @@ msgid ""
 "To get these values (:field:`uss`, :field:`pss` and :field:`swap`) we need "
 "to walk the whole process address space. This usually requires higher "
 "privileges and is considerably slower than :meth:`Process.memory_info`, "
-"which is probably why tools like ``ps`` and ``top`` show :term:`RSS`/:term:"
-"`VMS` instead of :term:`USS`. A big thanks goes to the Mozilla team for "
-"figuring this out on Windows and macOS, and to `Eric Rahm <https://github."
-"com/EricRahm>`_ who put the psutil PRs together (see :pr:`744`, :pr:`745` "
-"and :pr:`746`). If you don't use Python and want to port the code to another "
-"language, here are the interesting parts:"
+"which is probably why tools like ``ps`` and ``top`` "
+"show :term:`RSS`/:term:`VMS` instead of :term:`USS`. A big thanks goes to "
+"the Mozilla team for figuring this out on Windows and macOS, and to `Eric "
+"Rahm <https://github.com/EricRahm>`_ who put the psutil PRs together "
+"(see :pr:`744`, :pr:`745` and :pr:`746`). If you don't use Python and want "
+"to port the code to another language, here are the interesting parts:"
 msgstr ""
 
 #: ../../../blog/2016/real-process-memory-in-python.rst:95
 msgid ""
-"`Linux <https://github.com/giampaolo/psutil/"
-"blob/42b34049cf96e845b6423db91f991849a2f87578/psutil/_pslinux.py#L1026>`__"
+"`Linux <https://github.com/giampaolo/psutil/blob/"
+"42b34049cf96e845b6423db91f991849a2f87578/psutil/_pslinux.py#L1026>`__"
 msgstr ""
 
 #: ../../../blog/2016/real-process-memory-in-python.rst:96
 msgid ""
-"`macOS <https://github.com/giampaolo/psutil/"
-"blob/50fd31a4eaca3e24905b96d587fd08bcf313fc6b/psutil/_psutil_osx.c#L568>`__"
+"`macOS <https://github.com/giampaolo/psutil/blob/"
+"50fd31a4eaca3e24905b96d587fd08bcf313fc6b/psutil/_psutil_osx.c#L568>`__"
 msgstr ""
 
 #: ../../../blog/2016/real-process-memory-in-python.rst:97
 msgid ""
-"`Windows <https://github.com/giampaolo/psutil/"
-"blob/50fd31a4eaca3e24905b96d587fd08bcf313fc6b/psutil/_psutil_windows."
-"c#L811>`__"
+"`Windows <https://github.com/giampaolo/psutil/blob/"
+"50fd31a4eaca3e24905b96d587fd08bcf313fc6b/psutil/_psutil_windows.c#L811>`__"
 msgstr ""
 
 #: ../../../blog/2016/real-process-memory-in-python.rst:100
@@ -213,9 +212,9 @@ msgstr ""
 msgid ""
 "Process environ was a long-standing issue (:gh:`52`, from 2009) that I gave "
 "up on because the Windows implementation only worked for the current "
-"process. `Frank Benkstein <https://github.com/fbenkstein>`_ solved that (:pr:"
-"`747`), and it now works on Linux, Windows and macOS for all processes (you "
-"may still hit :exc:`AccessDenied` for processes owned by another user):"
+"process. `Frank Benkstein <https://github.com/fbenkstein>`_ solved that "
+"(:pr:`747`), and it now works on Linux, Windows and macOS for all processes "
+"(you may still hit :exc:`AccessDenied` for processes owned by another user):"
 msgstr ""
 
 #: ../../../blog/2016/real-process-memory-in-python.rst:139
@@ -242,15 +241,15 @@ msgstr ""
 
 #: ../../../blog/2016/real-process-memory-in-python.rst:157
 msgid ""
-"`Linux <https://github.com/giampaolo/psutil/"
-"blob/50fd31a4eaca3e24905b96d587fd08bcf313fc6b/psutil/_pslinux.py#L928>`_"
+"`Linux <https://github.com/giampaolo/psutil/blob/"
+"50fd31a4eaca3e24905b96d587fd08bcf313fc6b/psutil/_pslinux.py#L928>`_"
 msgstr ""
 
 #: ../../../blog/2016/real-process-memory-in-python.rst:158
 msgid ""
-"`macOS <https://github.com/giampaolo/psutil/"
-"blob/50fd31a4eaca3e24905b96d587fd08bcf313fc6b/psutil/arch/osx/process_info."
-"c#L241>`_"
+"`macOS <https://github.com/giampaolo/psutil/blob/"
+"50fd31a4eaca3e24905b96d587fd08bcf313fc6b/psutil/arch/osx/"
+"process_info.c#L241>`_"
 msgstr ""
 
 #: ../../../blog/2016/real-process-memory-in-python.rst:159
@@ -291,8 +290,8 @@ msgstr ""
 #: ../../../blog/2016/real-process-memory-in-python.rst:178
 msgid ""
 "Given the growing number of platform-specific metrics, I added a set of "
-"constants to tell which platform you're on: :data:`psutil.LINUX`, :data:"
-"`psutil.WINDOWS`, etc."
+"constants to tell which platform you're "
+"on: :data:`psutil.LINUX`, :data:`psutil.WINDOWS`, etc."
 msgstr ""
 
 #: ../../../blog/2016/real-process-memory-in-python.rst:183
@@ -316,26 +315,26 @@ msgstr ""
 
 #: ../../../blog/2016/real-process-memory-in-python.rst:193
 msgid ""
-":meth:`Process.memory_info` no longer returns just an (:field:`rss`, :field:"
-"`vms`) namedtuple. It returns a variable-length namedtuple that varies by "
-"platform (:field:`rss` and :field:`vms` are always present, even on "
-"Windows). Essentially the same result as the old ``Process."
-"memory_info_ex()``. This shouldn't break your code unless you were doing "
-"``rss, vms = p.memory_info()``."
+":meth:`Process.memory_info` no longer returns just an "
+"(:field:`rss`, :field:`vms`) namedtuple. It returns a variable-length "
+"namedtuple that varies by platform (:field:`rss` and :field:`vms` are always "
+"present, even on Windows). Essentially the same result as the old "
+"``Process.memory_info_ex()``. This shouldn't break your code unless you were "
+"doing ``rss, vms = p.memory_info()``."
 msgstr ""
 
 #: ../../../blog/2016/real-process-memory-in-python.rst:199
 msgid ""
-"``Process.memory_info_ex()`` is deprecated. It still works as an alias for :"
-"meth:`Process.memory_info`, issuing a :exc:`DeprecationWarning`."
+"``Process.memory_info_ex()`` is deprecated. It still works as an alias "
+"for :meth:`Process.memory_info`, issuing a :exc:`DeprecationWarning`."
 msgstr ""
 
 #: ../../../blog/2016/real-process-memory-in-python.rst:201
 msgid ""
-":func:`psutil.disk_io_counters` on NetBSD and OpenBSD no longer returns :"
-"field:`write_count` and :field:`read_count` because the kernel doesn't "
-"provide them (we were returning the busy time instead). Should be a small "
-"issue given NetBSD and OpenBSD support is very recent."
+":func:`psutil.disk_io_counters` on NetBSD and OpenBSD no longer "
+"returns :field:`write_count` and :field:`read_count` because the kernel "
+"doesn't provide them (we were returning the busy time instead). Should be a "
+"small issue given NetBSD and OpenBSD support is very recent."
 msgstr ""
 
 #: ../../../blog/2016/real-process-memory-in-python.rst:207

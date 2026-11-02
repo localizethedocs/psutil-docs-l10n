@@ -74,8 +74,8 @@ msgstr ""
 
 #: ../../../blog/2017/sensors-support.rst:42
 msgid ""
-"Battery status information is now available on Linux, Windows and FreeBSD (:"
-"pr:`963`)."
+"Battery status information is now available on Linux, Windows and FreeBSD "
+"(:pr:`963`)."
 msgstr ""
 
 #: ../../../blog/2017/sensors-support.rst:45
@@ -124,10 +124,10 @@ msgstr ""
 
 #: ../../../blog/2017/sensors-support.rst:81
 msgid ""
-"Tells you which CPU a process is currently running on, somewhat related to :"
-"meth:`Process.cpu_affinity` (:pr:`954`). It's interesting for visualizing "
-"how the OS scheduler keeps evenly reassigning processes across CPUs (see "
-"the :src:`scripts/cpu_distribution.py` script)."
+"Tells you which CPU a process is currently running on, somewhat related "
+"to :meth:`Process.cpu_affinity` (:pr:`954`). It's interesting for "
+"visualizing how the OS scheduler keeps evenly reassigning processes across "
+"CPUs (see the :src:`scripts/cpu_distribution.py` script)."
 msgstr ""
 
 #: ../../../blog/2017/sensors-support.rst:87

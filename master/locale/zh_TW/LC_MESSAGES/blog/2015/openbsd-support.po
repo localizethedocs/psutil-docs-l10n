@@ -116,9 +116,9 @@ msgstr ""
 #: ../../../blog/2015/openbsd-support.rst:59
 msgid ""
 "There are still two more BSD variants worth supporting: NetBSD and "
-"DragonFlyBSD (in this order). About a year ago, someone provided a patch (:"
-"gh:`429`) adding basic NetBSD support, so that will likely happen sooner or "
-"later."
+"DragonFlyBSD (in this order). About a year ago, someone provided a patch "
+"(:gh:`429`) adding basic NetBSD support, so that will likely happen sooner "
+"or later."
 msgstr ""
 
 #: ../../../blog/2015/openbsd-support.rst:64

@@ -56,10 +56,10 @@ msgstr ""
 #: ../../../blog/2017/aix-support.rst:31
 msgid ""
 "Besides AIX support, release 5.4.0 also includes a couple of important bug "
-"fixes for :func:`psutil.sensors_temperatures` and :func:`psutil."
-"sensors_fans` on Linux, and a fix for a bug on macOS that could cause a "
-"segmentation fault when using :meth:`Process.open_files`. The complete list "
-"of bug fixes is in the :ref:`changelog <540>`."
+"fixes for :func:`psutil.sensors_temperatures` "
+"and :func:`psutil.sensors_fans` on Linux, and a fix for a bug on macOS that "
+"could cause a segmentation fault when using :meth:`Process.open_files`. The "
+"complete list of bug fixes is in the :ref:`changelog <540>`."
 msgstr ""
 
 #: ../../../blog/2017/aix-support.rst:38
@@ -70,8 +70,8 @@ msgstr ""
 msgid ""
 "Looking ahead at other exotic, still-unsupported platforms, two "
 "contributions are worth mentioning: a (still incomplete) PR for Cygwin which "
-"looks promising (:pr:`998`), and Mingw32 compiler support on Windows (:pr:"
-"`845`)."
+"looks promising (:pr:`998`), and Mingw32 compiler support on Windows "
+"(:pr:`845`)."
 msgstr ""
 
 #: ../../../blog/2017/aix-support.rst:44
