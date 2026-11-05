@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-07 14:38+0000\n"
+"POT-Creation-Date: 2026-11-02 18:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -140,7 +140,7 @@ msgid "Browse blog"
 msgstr ""
 
 #: ../../../_templates/toc.html:20 ../../../_templates/toc.html:21
-#: ../../../_templates/topbar.html:67 ../../../_templates/topbar.html:68
+#: ../../../_templates/topbar.html:80 ../../../_templates/topbar.html:81
 msgid "On this page"
 msgstr ""
 
@@ -172,7 +172,7 @@ msgstr ""
 msgid "GitHub repository"
 msgstr ""
 
-#: ../../../_templates/topbar.html:41 ../../../_templates/topbar.html:42
+#: ../../../_templates/topbar.html:54 ../../../_templates/topbar.html:55
 msgid "Switch documentation version"
 msgstr ""
 
@@ -3625,8 +3625,8 @@ msgstr ""
 
 #: ext/apidoc/_cli.py:91
 msgid ""
-"follow symbolic links. Powerful when combined with collective.recipe."
-"omelette."
+"follow symbolic links. Powerful when combined with "
+"collective.recipe.omelette."
 msgstr ""
 
 #: ext/apidoc/_cli.py:99
