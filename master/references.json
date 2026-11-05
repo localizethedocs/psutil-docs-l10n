@@ -16,9 +16,9 @@
       "branch" : "master",
       "commit" : 
       {
-        "date" : "2026-10-08 16:05:25 +0200",
-        "hash" : "482856954e42496499730ded1b1b264039cf6afc",
-        "title" : "[FreeBSD, OpenBSD] net_io_counters() dropout is no longer always 0 (#3023)"
+        "date" : "2026-11-01 23:40:47 +0100",
+        "hash" : "c7e6eb945a525f57c3843284e8f66ef4701af02c",
+        "title" : "CI: move the GitHub bots' API code into a shared ghlib.py (#3097)"
       }
     },
     "zh_TW" : 
@@ -26,9 +26,9 @@
       "branch" : "master",
       "commit" : 
       {
-        "date" : "2026-10-08 16:05:25 +0200",
-        "hash" : "482856954e42496499730ded1b1b264039cf6afc",
-        "title" : "[FreeBSD, OpenBSD] net_io_counters() dropout is no longer always 0 (#3023)"
+        "date" : "2026-11-01 23:40:47 +0100",
+        "hash" : "c7e6eb945a525f57c3843284e8f66ef4701af02c",
+        "title" : "CI: move the GitHub bots' API code into a shared ghlib.py (#3097)"
       }
     }
   },
