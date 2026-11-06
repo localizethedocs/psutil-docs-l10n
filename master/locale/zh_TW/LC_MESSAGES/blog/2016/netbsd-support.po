@@ -94,7 +94,7 @@ msgstr ""
 
 #: ../../../blog/2016/netbsd-support.rst:47
 msgid "Discussion"
-msgstr ""
+msgstr "討論"
 
 #: ../../../blog/2016/netbsd-support.rst:49
 msgid ""

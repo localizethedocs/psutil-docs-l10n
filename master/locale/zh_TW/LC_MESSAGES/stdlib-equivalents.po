@@ -181,7 +181,7 @@ msgstr "進程方法"
 
 #: ../../../stdlib-equivalents.rst:99
 msgid "Assuming ``p = psutil.Process()``."
-msgstr ""
+msgstr "假設 ``p = psutil.Process()``。"
 
 #: ../../../stdlib-equivalents.rst:102
 msgid "Identity"
@@ -233,7 +233,7 @@ msgstr ":data:`sys.executable`"
 
 #: ../../../stdlib-equivalents.rst:127
 msgid "Python interpreter path only."
-msgstr ""
+msgstr "僅 Python 直譯器路徑。"
 
 #: ../../../stdlib-equivalents.rst:128
 msgid ":meth:`p.cmdline() <Process.cmdline>`"
@@ -245,11 +245,11 @@ msgstr ":data:`sys.argv`"
 
 #: ../../../stdlib-equivalents.rst:130
 msgid "Python process only."
-msgstr ""
+msgstr "僅 Python 進程。"
 
 #: ../../../stdlib-equivalents.rst:133
 msgid "Credentials"
-msgstr ""
+msgstr "認證"
 
 #: ../../../stdlib-equivalents.rst:143
 msgid ":meth:`p.uids() <Process.uids>`"
@@ -281,7 +281,7 @@ msgstr ""
 
 #: ../../../stdlib-equivalents.rst:158
 msgid "CPU / scheduling"
-msgstr ""
+msgstr "CPU/排程"
 
 #: ../../../stdlib-equivalents.rst:168 ../../../stdlib-equivalents.rst:172
 msgid ":meth:`p.cpu_times() <Process.cpu_times>`"
@@ -366,7 +366,7 @@ msgstr ""
 
 #: ../../../stdlib-equivalents.rst:197
 msgid ":meth:`p.rlimit() <Process.rlimit>`"
-msgstr ""
+msgstr ":meth:`p.rlimit() <Process.rlimit>`"
 
 #: ../../../stdlib-equivalents.rst:198
 msgid ":func:`resource.getrlimit`, :func:`resource.setrlimit`"
@@ -382,7 +382,7 @@ msgstr "記憶體"
 
 #: ../../../stdlib-equivalents.rst:213
 msgid ":meth:`p.memory_info() <Process.memory_info>`"
-msgstr ""
+msgstr ":meth:`p.memory_info() <Process.memory_info>`"
 
 #: ../../../stdlib-equivalents.rst:215
 msgid ""
@@ -392,11 +392,11 @@ msgstr ""
 
 #: ../../../stdlib-equivalents.rst:216
 msgid ":meth:`p.page_faults() <Process.page_faults>`"
-msgstr ""
+msgstr ":meth:`p.page_faults() <Process.page_faults>`"
 
 #: ../../../stdlib-equivalents.rst:218
 msgid "Current process only."
-msgstr ""
+msgstr "僅目前進程。"
 
 #: ../../../stdlib-equivalents.rst:221
 msgid "I/O"
@@ -404,7 +404,7 @@ msgstr ""
 
 #: ../../../stdlib-equivalents.rst:231
 msgid ":meth:`p.io_counters() <Process.io_counters>`"
-msgstr ""
+msgstr ":meth:`p.io_counters() <Process.io_counters>`"
 
 #: ../../../stdlib-equivalents.rst:233
 msgid ""
@@ -471,7 +471,7 @@ msgstr ":func:`os.kill` + :data:`signal.SIGSTOP`"
 
 #: ../../../stdlib-equivalents.rst:273 ../../../stdlib-equivalents.rst:276
 msgid "Same as above."
-msgstr ""
+msgstr "同上。"
 
 #: ../../../stdlib-equivalents.rst:274
 msgid ":meth:`p.resume() <Process.resume>`"
@@ -491,7 +491,7 @@ msgstr ":func:`os.kill` + :data:`signal.SIGTERM`"
 
 #: ../../../stdlib-equivalents.rst:279 ../../../stdlib-equivalents.rst:282
 msgid "Same as above. On Windows uses ``TerminateProcess()``."
-msgstr ""
+msgstr "同上。 在 Windows 上使用 ``TerminateProcess()``。"
 
 #: ../../../stdlib-equivalents.rst:280
 msgid ":meth:`p.kill() <Process.kill>`"

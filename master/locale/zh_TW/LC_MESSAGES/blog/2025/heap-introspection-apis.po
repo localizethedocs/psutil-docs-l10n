@@ -63,7 +63,7 @@ msgstr ""
 
 #: ../../../blog/2025/heap-introspection-apis.rst:38
 msgid ":mod:`tracemalloc` module."
-msgstr ""
+msgstr ":mod:`tracemalloc` 模組。"
 
 #: ../../../blog/2025/heap-introspection-apis.rst:39
 msgid "Python's :mod:`gc` stats."
@@ -384,7 +384,7 @@ msgstr ""
 
 #: ../../../blog/2025/heap-introspection-apis.rst:207
 msgid "Discussion"
-msgstr ""
+msgstr "討論"
 
 #: ../../../blog/2025/heap-introspection-apis.rst:209
 msgid ""

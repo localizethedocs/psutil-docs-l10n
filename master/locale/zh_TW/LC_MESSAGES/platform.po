@@ -39,7 +39,7 @@ msgstr ""
 
 #: ../../../platform.rst:14
 msgid "Minimum Python version"
-msgstr ""
+msgstr "最低 Python 版本"
 
 #: ../../../platform.rst:15
 msgid "3.8"
@@ -128,7 +128,7 @@ msgstr ""
 
 #: ../../../platform.rst:50
 msgid "Minimum version"
-msgstr ""
+msgstr "最低版本"
 
 #: ../../../platform.rst:51
 msgid "Released"
@@ -260,11 +260,11 @@ msgstr ""
 
 #: ../../../platform.rst:102
 msgid "Architectures"
-msgstr ""
+msgstr "架構"
 
 #: ../../../platform.rst:108
 msgid "Architecture"
-msgstr ""
+msgstr "架構"
 
 #: ../../../platform.rst:110
 msgid "Prebuilt wheels"
@@ -348,11 +348,11 @@ msgstr ""
 
 #: ../../../platform.rst:166
 msgid "Version"
-msgstr ""
+msgstr "版本"
 
 #: ../../../platform.rst:167
 msgid "Date"
-msgstr ""
+msgstr "日期"
 
 #: ../../../platform.rst:168
 msgid "Change"

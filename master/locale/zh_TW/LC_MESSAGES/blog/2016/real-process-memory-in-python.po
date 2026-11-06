@@ -285,7 +285,7 @@ msgstr ""
 
 #: ../../../blog/2016/real-process-memory-in-python.rst:176
 msgid "OS constants"
-msgstr ""
+msgstr "作業系統常數"
 
 #: ../../../blog/2016/real-process-memory-in-python.rst:178
 msgid ""
@@ -339,7 +339,7 @@ msgstr ""
 
 #: ../../../blog/2016/real-process-memory-in-python.rst:207
 msgid "Discussion"
-msgstr ""
+msgstr "討論"
 
 #: ../../../blog/2016/real-process-memory-in-python.rst:209
 msgid ""

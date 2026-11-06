@@ -133,7 +133,7 @@ msgstr ""
 
 #: ../../../blog/2015/openbsd-support.rst:70
 msgid "Discussion"
-msgstr ""
+msgstr "討論"
 
 #: ../../../blog/2015/openbsd-support.rst:72
 msgid ""

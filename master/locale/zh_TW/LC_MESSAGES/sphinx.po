@@ -174,7 +174,7 @@ msgstr ""
 
 #: ../../../_templates/topbar.html:54 ../../../_templates/topbar.html:55
 msgid "Switch documentation version"
-msgstr ""
+msgstr "切換文件版本"
 
 #: roles.py:205
 #, python-format
@@ -2105,7 +2105,7 @@ msgstr ""
 
 #: cmd/quickstart.py:332
 msgid "Project language"
-msgstr ""
+msgstr "專案語言"
 
 #: cmd/quickstart.py:340
 msgid ""

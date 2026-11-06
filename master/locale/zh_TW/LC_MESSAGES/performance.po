@@ -23,7 +23,7 @@ msgstr "效能"
 
 #: ../../../performance.rst:4
 msgid "This page describes how to use psutil efficiently."
-msgstr ""
+msgstr "本頁說明如何有效率地使用 psutil。"
 
 #: ../../../performance.rst:9
 msgid "Use oneshot() when reading multiple process attributes"
@@ -37,10 +37,14 @@ msgid ""
 "attributes at once, which :meth:`Process.oneshot` caches for subsequent "
 "calls."
 msgstr ""
+"如果要處理單一個 :class:`Process` 實體，並且需要取得多個進程特性，請使"
+"用 :meth:`Process.oneshot`\\ 。每次呼叫方法都會發出一次獨立的系統呼叫，但作業"
+"系統通常會一次回傳多個特性，而 :meth:`Process.oneshot` 會將這些特性快取，以供"
+"後續呼叫使用。"
 
 #: ../../../performance.rst:16 ../../../performance.rst:56
 msgid "Slow:"
-msgstr ""
+msgstr "緩慢："
 
 #: ../../../performance.rst:18
 msgid ""
@@ -62,7 +66,7 @@ msgstr ""
 
 #: ../../../performance.rst:28 ../../../performance.rst:68
 msgid "Fast:"
-msgstr ""
+msgstr "快速："
 
 #: ../../../performance.rst:30
 msgid ""
@@ -75,6 +79,14 @@ msgid ""
 "    p.memory_info()  # from cache\n"
 "    p.status()       # from cache"
 msgstr ""
+"import psutil\n"
+"\n"
+"p = psutil.Process()\n"
+"with p.oneshot():\n"
+"    p.name()         # 一次系統呼叫，造成快取\n"
+"    p.cpu_times()    # 來自快取\n"
+"    p.memory_info()  # 來自快取\n"
+"    p.status()       # 來自快取"
 
 #: ../../../performance.rst:41
 msgid ""
@@ -137,7 +149,7 @@ msgstr ""
 
 #: ../../../performance.rst:94
 msgid "Methods sped up by oneshot()"
-msgstr ""
+msgstr "透過 oneshot() 加速的方法"
 
 #: ../../../performance.rst:96
 msgid ""
@@ -181,7 +193,7 @@ msgstr ""
 
 #: ../../../performance.rst:124
 msgid "*Speedup: +1.7×*"
-msgstr ""
+msgstr "*加速：+1.7×*"
 
 #: ../../../performance.rst:127
 msgid "Windows"
@@ -203,7 +215,7 @@ msgstr ""
 
 #: ../../../performance.rst:140
 msgid "*Speedup: +1.8× / +6.5×*"
-msgstr ""
+msgstr "*加速：+1.8× / +6.5×*"
 
 #: ../../../performance.rst:143
 msgid "macOS"
@@ -219,11 +231,11 @@ msgstr ""
 
 #: ../../../performance.rst:153
 msgid "*Speedup: +1.6×*"
-msgstr ""
+msgstr "*加速：+1.6×*"
 
 #: ../../../performance.rst:156
 msgid "BSD"
-msgstr ""
+msgstr "BSD"
 
 #: ../../../performance.rst:158
 msgid ":meth:`~Process.cpu_num`, :meth:`~Process.cpu_times`, :meth:`~Process.create_time`, :meth:`~Process.gids`, :meth:`~Process.io_counters`, :meth:`~Process.memory_info`, :meth:`~Process.name`, :meth:`~Process.nice`, :meth:`~Process.num_ctx_switches`, :meth:`~Process.page_faults`, :meth:`~Process.ppid`, :meth:`~Process.status`, :meth:`~Process.terminal`, :meth:`~Process.uids`"
@@ -231,11 +243,11 @@ msgstr ""
 
 #: ../../../performance.rst:166
 msgid "*Speedup: +2.7×*"
-msgstr ""
+msgstr "*加速：+2.7×*"
 
 #: ../../../performance.rst:171
 msgid "Measuring oneshot() speedup"
-msgstr ""
+msgstr "測量 oneshot() 加速"
 
 #: ../../../performance.rst:173
 msgid ""
@@ -272,10 +284,35 @@ msgid ""
 "oneshot:  1.499 secs\n"
 "speedup:  +1.73x"
 msgstr ""
+"$ python3 scripts/internal/bench_oneshot.py --times 10000\n"
+"17 methods pre-fetched by oneshot() on platform 'linux' (10,000 times, "
+"psutil 8.0.0):\n"
+"\n"
+"  cpu_num\n"
+"  cpu_percent\n"
+"  cpu_times\n"
+"  gids\n"
+"  memory_extras\n"
+"  memory_info\n"
+"  memory_percent\n"
+"  name\n"
+"  num_ctx_switches\n"
+"  num_threads\n"
+"  page_faults\n"
+"  parent\n"
+"  ppid\n"
+"  status\n"
+"  terminal\n"
+"  uids\n"
+"  username\n"
+"\n"
+"regular:  2.600 secs\n"
+"oneshot:  1.499 secs\n"
+"speedup:  +1.73x"
 
 #: ../../../performance.rst:207
 msgid "Measuring APIs speed"
-msgstr ""
+msgstr "測量 API 速度"
 
 #: ../../../performance.rst:209
 msgid ""

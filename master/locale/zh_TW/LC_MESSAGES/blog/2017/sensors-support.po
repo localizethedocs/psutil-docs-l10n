@@ -132,7 +132,7 @@ msgstr ""
 
 #: ../../../blog/2017/sensors-support.rst:87
 msgid "CPU affinity"
-msgstr ""
+msgstr "CPU 親和性（CPU affinity）"
 
 #: ../../../blog/2017/sensors-support.rst:89
 msgid "A new shorthand is available to set affinity against all eligible CPUs:"

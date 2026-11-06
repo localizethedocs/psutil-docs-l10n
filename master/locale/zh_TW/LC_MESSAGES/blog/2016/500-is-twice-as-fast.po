@@ -280,7 +280,7 @@ msgstr ""
 
 #: ../../../blog/2016/500-is-twice-as-fast.rst:202
 msgid "Discussion"
-msgstr ""
+msgstr "討論"
 
 #: ../../../blog/2016/500-is-twice-as-fast.rst:204
 msgid ""

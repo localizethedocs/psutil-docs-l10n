@@ -48,7 +48,7 @@ msgstr ""
 #: ../../../shell-equivalents.rst:118 ../../../shell-equivalents.rst:146
 #: ../../../shell-equivalents.rst:179 ../../../shell-equivalents.rst:207
 msgid "psutil function"
-msgstr ""
+msgstr "psutil 函數"
 
 #: ../../../shell-equivalents.rst:23 ../../../shell-equivalents.rst:86
 #: ../../../shell-equivalents.rst:119 ../../../shell-equivalents.rst:147
@@ -78,7 +78,7 @@ msgstr "macOS"
 #: ../../../shell-equivalents.rst:445 ../../../shell-equivalents.rst:488
 #: ../../../shell-equivalents.rst:511 ../../../shell-equivalents.rst:549
 msgid "BSD"
-msgstr ""
+msgstr "BSD"
 
 #: ../../../shell-equivalents.rst:26 ../../../shell-equivalents.rst:89
 #: ../../../shell-equivalents.rst:122 ../../../shell-equivalents.rst:150
@@ -129,7 +129,7 @@ msgstr ""
 #: ../../../shell-equivalents.rst:568 ../../../shell-equivalents.rst:569
 #: ../../../shell-equivalents.rst:573 ../../../shell-equivalents.rst:574
 msgid "same"
-msgstr ""
+msgstr "相同"
 
 #: ../../../shell-equivalents.rst:32
 msgid ":func:`cpu_count(logical=True) <cpu_count>`"
@@ -214,7 +214,7 @@ msgstr ""
 #: ../../../shell-equivalents.rst:66 ../../../shell-equivalents.rst:94
 #: ../../../shell-equivalents.rst:216
 msgid "``systeminfo``"
-msgstr ""
+msgstr "``systeminfo``"
 
 #: ../../../shell-equivalents.rst:67
 msgid ":func:`cpu_stats`"
@@ -475,7 +475,7 @@ msgstr "進程方法"
 
 #: ../../../shell-equivalents.rst:236
 msgid "Assuming ``p = psutil.Process()``."
-msgstr ""
+msgstr "假設 ``p = psutil.Process()``。"
 
 #: ../../../shell-equivalents.rst:239
 msgid "Identity"
@@ -614,7 +614,7 @@ msgstr ""
 
 #: ../../../shell-equivalents.rst:330
 msgid "Credentials"
-msgstr ""
+msgstr "認證"
 
 #: ../../../shell-equivalents.rst:341
 msgid ":meth:`p.uids() <Process.uids>`"
@@ -654,7 +654,7 @@ msgstr ""
 
 #: ../../../shell-equivalents.rst:363
 msgid "CPU / scheduling"
-msgstr ""
+msgstr "CPU/排程"
 
 #: ../../../shell-equivalents.rst:374
 msgid ":meth:`p.cpu_percent() <Process.cpu_percent>`"
@@ -771,7 +771,7 @@ msgstr ""
 
 #: ../../../shell-equivalents.rst:447
 msgid ":meth:`p.memory_info() <Process.memory_info>`"
-msgstr ""
+msgstr ":meth:`p.memory_info() <Process.memory_info>`"
 
 #: ../../../shell-equivalents.rst:448
 msgid "``ps -o rss,vsz -p PID``"
@@ -819,7 +819,7 @@ msgstr ""
 
 #: ../../../shell-equivalents.rst:472
 msgid ":meth:`p.page_faults() <Process.page_faults>`"
-msgstr ""
+msgstr ":meth:`p.page_faults() <Process.page_faults>`"
 
 #: ../../../shell-equivalents.rst:473
 msgid "``ps -o maj_flt,min_flt -p PID``"
@@ -851,7 +851,7 @@ msgstr ""
 
 #: ../../../shell-equivalents.rst:502
 msgid "Files and connections"
-msgstr ""
+msgstr "檔案與連接"
 
 #: ../../../shell-equivalents.rst:513
 msgid ":meth:`p.net_connections() <Process.net_connections>`"
@@ -883,7 +883,7 @@ msgstr ""
 
 #: ../../../shell-equivalents.rst:523
 msgid ":meth:`p.io_counters() <Process.io_counters>`"
-msgstr ""
+msgstr ":meth:`p.io_counters() <Process.io_counters>`"
 
 #: ../../../shell-equivalents.rst:524
 msgid "``cat /proc/pid/io``"

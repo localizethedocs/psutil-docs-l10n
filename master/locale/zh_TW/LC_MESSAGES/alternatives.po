@@ -30,7 +30,7 @@ msgstr ""
 
 #: ../../../alternatives.rst:9
 msgid "Python standard library"
-msgstr ""
+msgstr "Python 標準程式庫"
 
 #: ../../../alternatives.rst:12
 msgid ""
@@ -39,7 +39,7 @@ msgstr ""
 
 #: ../../../alternatives.rst:15
 msgid "os module"
-msgstr ""
+msgstr "os 模組"
 
 #: ../../../alternatives.rst:17
 msgid ""
@@ -66,7 +66,7 @@ msgstr ""
 
 #: ../../../alternatives.rst:35
 msgid "resource module"
-msgstr ""
+msgstr "resource 模組"
 
 #: ../../../alternatives.rst:37
 msgid ""
@@ -85,7 +85,7 @@ msgstr ""
 
 #: ../../../alternatives.rst:47
 msgid "subprocess module"
-msgstr ""
+msgstr "subprocess 模組"
 
 #: ../../../alternatives.rst:49
 msgid ""
@@ -98,7 +98,7 @@ msgstr ""
 
 #: ../../../alternatives.rst:56
 msgid "platform module"
-msgstr ""
+msgstr "platform 模組"
 
 #: ../../../alternatives.rst:58
 msgid ""
@@ -111,7 +111,7 @@ msgstr ""
 
 #: ../../../alternatives.rst:65
 msgid "/proc filesystem"
-msgstr ""
+msgstr "/proc 檔案系統"
 
 #: ../../../alternatives.rst:67
 msgid ""
@@ -127,7 +127,7 @@ msgstr ""
 
 #: ../../../alternatives.rst:77
 msgid "Third-party libraries"
-msgstr ""
+msgstr "第三方程式庫"
 
 #: ../../../alternatives.rst:79
 msgid ""
@@ -254,7 +254,7 @@ msgstr ""
 
 #: ../../../alternatives.rst:136
 msgid "Other languages"
-msgstr ""
+msgstr "其他語言"
 
 #: ../../../alternatives.rst:138
 msgid ""
@@ -264,7 +264,7 @@ msgstr ""
 
 #: ../../../alternatives.rst:147
 msgid "Language"
-msgstr ""
+msgstr "語言"
 
 #: ../../../alternatives.rst:150
 msgid "`gopsutil <https://github.com/shirou/gopsutil>`_"
@@ -305,7 +305,7 @@ msgstr ""
 
 #: ../../../alternatives.rst:162
 msgid "CPU, RAM, GPU, disk, network, battery."
-msgstr ""
+msgstr "CPU、RAM、GPU、磁碟、網路、電池。"
 
 #: ../../../alternatives.rst:164
 msgid "`hwinfo <https://github.com/lfreist/hwinfo>`_"

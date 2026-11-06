@@ -5283,7 +5283,7 @@ msgstr ""
 
 #: ../../../changelog.rst:2577
 msgid "Renamed ``psutil.*`` functions:"
-msgstr ""
+msgstr "重新命名 ``psutil.*`` 函數："
 
 #: ../../../changelog.rst:2582
 msgid "psutil.get_pid_list()"

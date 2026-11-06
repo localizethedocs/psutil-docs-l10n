@@ -36,11 +36,11 @@ msgstr "進程"
 
 #: ../../../recipes.rst:14
 msgid "Finding processes"
-msgstr ""
+msgstr "尋找進程"
 
 #: ../../../recipes.rst:18
 msgid "Find process by name:"
-msgstr ""
+msgstr "依名稱尋找進程："
 
 #: ../../../recipes.rst:20
 msgid ""
@@ -252,7 +252,7 @@ msgstr ""
 
 #: ../../../recipes.rst:205
 msgid "Monitoring processes"
-msgstr ""
+msgstr "監控進程"
 
 #: ../../../recipes.rst:207
 msgid ""
@@ -283,7 +283,7 @@ msgstr ""
 
 #: ../../../recipes.rst:229
 msgid "Controlling processes"
-msgstr ""
+msgstr "控制進程"
 
 #: ../../../recipes.rst:233
 msgid "Kill a process tree (including grandchildren):"
@@ -458,7 +458,7 @@ msgstr ""
 
 #: ../../../recipes.rst:385
 msgid "System"
-msgstr ""
+msgstr "系統"
 
 #: ../../../recipes.rst:387
 msgid ""
@@ -533,7 +533,7 @@ msgstr "磁碟"
 
 #: ../../../recipes.rst:445
 msgid "Show real-time disk I/O:"
-msgstr ""
+msgstr "顯示即時磁碟 I/O："
 
 #: ../../../recipes.rst:447
 msgid ""
@@ -620,7 +620,7 @@ msgstr ""
 
 #: ../../../recipes.rst:525
 msgid "List all active TCP connections with their status:"
-msgstr ""
+msgstr "列出所有作用中的 TCP 連接及其狀態："
 
 #: ../../../recipes.rst:527
 msgid ""

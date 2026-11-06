@@ -341,7 +341,7 @@ msgstr ""
 
 #: ../../../faq.rst:216
 msgid "**How to detect zombies:**"
-msgstr ""
+msgstr "**如何偵測殭屍進程：**"
 
 #: ../../../faq.rst:218
 msgid ""
@@ -354,7 +354,7 @@ msgstr ""
 
 #: ../../../faq.rst:226
 msgid "**How to get rid of a zombie:**"
-msgstr ""
+msgstr "**如何清除殭屍進程：**"
 
 #: ../../../faq.rst:228
 msgid ""
@@ -366,7 +366,7 @@ msgstr ""
 
 #: ../../../faq.rst:235
 msgid "Why does open_files() not return all files on Windows?"
-msgstr ""
+msgstr "為什麼 open_files() 在 Windows 上不會回傳所有檔案？"
 
 #: ../../../faq.rst:237
 msgid ""
@@ -381,7 +381,7 @@ msgstr ""
 
 #: ../../../faq.rst:247
 msgid "What is the difference between pid_exists() and Process.is_running()?"
-msgstr ""
+msgstr "pid_exists() 和 Process.is_running() 有什麼差異？"
 
 #: ../../../faq.rst:249
 msgid ""
@@ -393,6 +393,12 @@ msgid ""
 "a :class:`Process` object and want to confirm it still refers to the same "
 "process."
 msgstr ""
+":func:`pid_exists` 會檢查 PID 是否出現在進程列表"
+"中。:meth:`Process.is_running` 也會做相同的檢查，但還會比較進程的建立時間，以"
+"偵測是否出現 :ref:`PID 重複使用 <faq_pid_reuse>`。如果您只有 PID，且不需要防"
+"範重複使用，請使用 :func:`pid_exists`（速度較快）。如果您持"
+"有 :class:`Process` 物件，並想確認它仍指向同一個進程，請使"
+"用 :meth:`Process.is_running`。"
 
 #: ../../../faq.rst:258
 msgid "CPU"
@@ -400,7 +406,7 @@ msgstr ""
 
 #: ../../../faq.rst:263
 msgid "Why does cpu_percent() return 0.0 on first call?"
-msgstr ""
+msgstr "為什麼 cpu_percent() 第一次呼叫時會回傳 0.0？"
 
 #: ../../../faq.rst:265
 msgid ""
@@ -410,6 +416,10 @@ msgid ""
 "initialize the baseline, discard the result, then call it again after a "
 "short sleep:"
 msgstr ""
+":func:`cpu_percent`（以及 :meth:`Process.cpu_percent`）會測量\\ *兩次呼叫之間"
+"*\\ 的 CPU 使用率。第一次呼叫時沒有先前的取樣可供比較，因此會回傳沒有意義的 "
+"``0.0`` 。解決方法是先呼叫一次以初始化基準值，捨棄回傳結果，再稍等片刻後呼叫"
+"一次："
 
 #: ../../../faq.rst:271
 msgid ""
@@ -467,7 +477,7 @@ msgstr ""
 #: ../../../faq.rst:315
 msgid ""
 "What is the difference between psutil, os, and multiprocessing cpu_count()?"
-msgstr ""
+msgstr "psutil、os 和 multiprocessing 的 cpu_count() 有什麼差異？"
 
 #: ../../../faq.rst:317
 msgid ""
@@ -503,7 +513,7 @@ msgstr ""
 
 #: ../../../faq.rst:335
 msgid "What is the difference between virtual_memory() available and free?"
-msgstr ""
+msgstr "virtual_memory() 的 available 和 free 有什麼差異？"
 
 #: ../../../faq.rst:337
 msgid ""
@@ -533,7 +543,7 @@ msgstr ""
 
 #: ../../../faq.rst:354
 msgid "What is the difference between RSS and VMS?"
-msgstr ""
+msgstr "RSS 和 VMS 有什麼差異？"
 
 #: ../../../faq.rst:356
 msgid ""
@@ -616,11 +626,11 @@ msgstr ""
 
 #: ../../../faq.rst:415
 msgid "System memory"
-msgstr ""
+msgstr "系統記憶體"
 
 #: ../../../faq.rst:420
 msgid "Why does virtual_memory() used + free != total?"
-msgstr ""
+msgstr "為什麼 virtual_memory() 的 used + free 不等於 total？"
 
 #: ../../../faq.rst:422
 msgid ""

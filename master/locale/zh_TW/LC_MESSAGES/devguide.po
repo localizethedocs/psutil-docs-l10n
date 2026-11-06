@@ -328,7 +328,7 @@ msgstr ""
 
 #: ../../../devguide.rst:189
 msgid "Continuous integration"
-msgstr ""
+msgstr "持續整合"
 
 #: ../../../devguide.rst:191
 msgid ""

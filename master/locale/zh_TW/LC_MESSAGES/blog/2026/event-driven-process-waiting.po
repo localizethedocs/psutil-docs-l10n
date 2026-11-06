@@ -361,7 +361,7 @@ msgstr ""
 
 #: ../../../blog/2026/event-driven-process-waiting.rst:244
 msgid "Links"
-msgstr ""
+msgstr "連結"
 
 #: ../../../blog/2026/event-driven-process-waiting.rst:246
 msgid "Topics related to this:"
@@ -387,7 +387,7 @@ msgstr ""
 
 #: ../../../blog/2026/event-driven-process-waiting.rst:256
 msgid "Discussion"
-msgstr ""
+msgstr "討論"
 
 #: ../../../blog/2026/event-driven-process-waiting.rst:258
 msgid ""

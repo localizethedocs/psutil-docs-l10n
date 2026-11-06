@@ -50,6 +50,7 @@ msgid ""
 "If no wheel is available for your platform or architecture, pip will build "
 "psutil from source (see below)."
 msgstr ""
+"如果沒有適用於您的平台或架構的 wheel，pip 會從來源碼建置 psutil（請見下文）。"
 
 #: ../../../install.rst:27
 msgid "Build psutil from source"
@@ -61,6 +62,9 @@ msgid ""
 "headers. On Linux, FreeBSD, NetBSD, OpenBSD and Solaris, the `install-"
 "sysdeps.sh`_ script can install them for you:"
 msgstr ""
+"從來源碼建置 psutil 需要 C 編譯器和 Python 開發標頭檔。在 Linux、FreeBSD、"
+"NetBSD、OpenBSD 和 Solaris 上，`install-sysdeps.sh`_ 腳本可以協助您安裝這些項"
+"目："
 
 #: ../../../install.rst:33
 msgid ""
@@ -72,7 +76,7 @@ msgstr ""
 
 #: ../../../install.rst:37
 msgid "Alternatively, install them manually as described below."
-msgstr ""
+msgstr "或者，依照下文說明手動安裝。"
 
 #: ../../../install.rst:40
 msgid "Linux"
@@ -88,7 +92,7 @@ msgstr "sudo apt-get install gcc python3-dev"
 
 #: ../../../install.rst:48
 msgid "Red Hat / CentOS:"
-msgstr ""
+msgstr "Red Hat / CentOS："
 
 #: ../../../install.rst:50
 msgid "sudo yum install gcc python3-devel"

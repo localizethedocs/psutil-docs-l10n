@@ -93,7 +93,7 @@ msgstr ""
 
 #: ../../../blog/2017/aix-support.rst:54
 msgid "Discussion"
-msgstr ""
+msgstr "討論"
 
 #: ../../../blog/2017/aix-support.rst:56
 msgid ""

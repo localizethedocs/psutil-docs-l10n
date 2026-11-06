@@ -145,7 +145,7 @@ msgstr ""
 
 #: ../../../blog/2025/wheels-for-free-threaded-python.rst:100
 msgid "Discussion"
-msgstr ""
+msgstr "討論"
 
 #: ../../../blog/2025/wheels-for-free-threaded-python.rst:102
 msgid ""

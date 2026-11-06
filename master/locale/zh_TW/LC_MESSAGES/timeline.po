@@ -34,7 +34,7 @@ msgstr "2026"
 #: ../../../timeline.rst:539 ../../../timeline.rst:567
 #: ../../../timeline.rst:595 ../../../timeline.rst:615
 msgid "Version"
-msgstr ""
+msgstr "版本"
 
 #: ../../../timeline.rst:12 ../../../timeline.rst:28 ../../../timeline.rst:68
 #: ../../../timeline.rst:96 ../../../timeline.rst:120 ../../../timeline.rst:148
@@ -45,7 +45,7 @@ msgstr ""
 #: ../../../timeline.rst:540 ../../../timeline.rst:568
 #: ../../../timeline.rst:596 ../../../timeline.rst:616
 msgid "Date"
-msgstr ""
+msgstr "日期"
 
 #: ../../../timeline.rst:13 ../../../timeline.rst:29 ../../../timeline.rst:69
 #: ../../../timeline.rst:97 ../../../timeline.rst:121 ../../../timeline.rst:149

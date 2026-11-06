@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../credits.rst:2
 msgid "Credits"
-msgstr ""
+msgstr "致謝"
 
 #: ../../../credits.rst:4
 msgid ""
@@ -34,7 +34,7 @@ msgstr ""
 
 #: ../../../credits.rst:10
 msgid "— Giampaolo Rodola"
-msgstr ""
+msgstr "— Giampaolo Rodola"
 
 #: ../../../credits.rst:13
 msgid "Top contributors"
@@ -354,7 +354,7 @@ msgstr ""
 
 #: ../../../credits.rst:105
 msgid "contributors"
-msgstr ""
+msgstr "貢獻者"
 
 #: ../../../credits.rst:110
 msgid "2026"
@@ -458,11 +458,11 @@ msgstr ""
 
 #: ../../../credits.rst:139
 msgid ":user:`Ben Raz <ben9923>` - :gh:`2643`"
-msgstr ""
+msgstr ":user:`Ben Raz <ben9923>` - :gh:`2643`"
 
 #: ../../../credits.rst:140
 msgid ":user:`Eli Wenig <elisw93>` - :gh:`2638`"
-msgstr ""
+msgstr ":user:`Eli Wenig <elisw93>` - :gh:`2638`"
 
 #: ../../../credits.rst:141
 msgid ":user:`Fabien Bousquet <fafanoulele>` - :gh:`2529`"
@@ -501,7 +501,7 @@ msgstr ""
 
 #: ../../../credits.rst:152
 msgid ":user:`Sergey Fedorov <barracuda156>` - :gh:`2694`"
-msgstr ""
+msgstr ":user:`Sergey Fedorov <barracuda156>` - :gh:`2694`"
 
 #: ../../../credits.rst:153
 msgid ":user:`Will Hawes <wdh>` - :gh:`2496`"
@@ -532,11 +532,11 @@ msgstr ""
 
 #: ../../../credits.rst:164
 msgid ":user:`Mayank Jha <maynk27>` - :gh:`2379`"
-msgstr ""
+msgstr ":user:`Mayank Jha <maynk27>` - :gh:`2379`"
 
 #: ../../../credits.rst:165
 msgid ":user:`Oliver Tomé <snom3ad>` - :gh:`2222`"
-msgstr ""
+msgstr ":user:`Oliver Tomé <snom3ad>` - :gh:`2222`"
 
 #: ../../../credits.rst:166
 msgid ""
@@ -810,7 +810,7 @@ msgstr ""
 
 #: ../../../credits.rst:253
 msgid ":user:`Daniel Beer <dbeer1>` - :gh:`1471`"
-msgstr ""
+msgstr ":user:`Daniel Beer <dbeer1>` - :gh:`1471`"
 
 #: ../../../credits.rst:254
 msgid ":user:`David Brochart <davidbrochart>` - :gh:`1493`, :gh:`1496`"

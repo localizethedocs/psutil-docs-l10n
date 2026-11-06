@@ -87,6 +87,7 @@ msgid ""
 "If your company relies on psutil in production, consider becoming a sponsor. "
 "Benefits include:"
 msgstr ""
+"如果您的公司在生產環境中依賴 psutil，不妨考慮成為贊助者。贊助可享有以下好處："
 
 #: ../../../funding.rst:37
 msgid ""

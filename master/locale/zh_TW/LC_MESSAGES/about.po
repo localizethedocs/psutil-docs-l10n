@@ -119,7 +119,7 @@ msgstr "淺色模式"
 
 #: ../../../about.rst:59
 msgid "Documentation versions"
-msgstr ""
+msgstr "文件版本"
 
 #: ../../../about.rst:65
 msgid ""
@@ -133,7 +133,7 @@ msgstr ""
 
 #: ../../../about.rst:68
 msgid "Version selector"
-msgstr ""
+msgstr "版本選取器"
 
 #: ../../../about.rst:75
 msgid ""

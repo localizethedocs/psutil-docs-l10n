@@ -350,7 +350,7 @@ msgstr ""
 
 #: ../../../blog/2014/porting-to-20.rst:142
 msgid "Assuming ``p = psutil.Process()``:"
-msgstr ""
+msgstr "假設 ``p = psutil.Process()``："
 
 #: ../../../blog/2014/porting-to-20.rst:147
 msgid "``p.cmdline``"
@@ -582,6 +582,10 @@ msgid ""
 ">>> name = p.name() if PSUTIL2 else p.name\n"
 ">>> exe = p.exe() if PSUTIL2 else p.exe"
 msgstr ""
+">>> PSUTIL2 = psutil.version_info >= (2, 0)\n"
+">>> p = psutil.Process()\n"
+">>> name = p.name() if PSUTIL2 else p.name\n"
+">>> exe = p.exe() if PSUTIL2 else p.exe"
 
 #: ../../../blog/2014/porting-to-20.rst:274
 msgid ""

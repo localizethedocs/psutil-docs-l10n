@@ -60,14 +60,16 @@ msgid ""
 ":field:`user`: time spent by processes executing in user mode; on Linux this "
 "also includes :field:`guest` time."
 msgstr ""
+":field:`user`：進程以使用者模式執行所花費的時間；在 Linux 上，這也包"
+"含 :field:`guest` 時間。"
 
 #: ../../../api.rst:36
 msgid ":field:`system`: time spent by processes executing in kernel mode."
-msgstr ""
+msgstr ":field:`system`：進程以內核模式執行所花費的時間。"
 
 #: ../../../api.rst:38
 msgid ":field:`idle`: time spent doing nothing."
-msgstr ""
+msgstr ":field:`idle`：閒置時間。"
 
 #: ../../../api.rst:40 ../../../api.rst:536
 msgid "Platform-specific fields:"
@@ -98,6 +100,8 @@ msgid ""
 ":field:`softirq` *(Linux)*: time spent for servicing :term:`soft interrupts "
 "<soft interrupt>`."
 msgstr ""
+":field:`softirq`\\ （Linux）：處理\\ :term:`軟體中斷 <soft interrupt>`\\ 所花"
+"費的時間。"
 
 #: ../../../api.rst:56
 msgid ""
@@ -163,6 +167,10 @@ msgid ""
 "the first three were :field:`user`, :field:`nice`, :field:`system`. "
 "See :ref:`migration guide <migration-8.0>`."
 msgstr ""
+"欄位順序已標準化：\\ :field:`user`\\ 、\\ :field:`system`\\ 、"
+"\\ :field:`idle` 現在一律為前三個欄位。先前在 Linux、macOS 和 BSD 上，前三個"
+"欄位為 :field:`user`\\ 、\\ :field:`nice`\\ 、\\ :field:`system`\\ 。請參閱"
+"\\ :ref:`遷移指南 <migration-8.0>`\\ 。"
 
 #: ../../../api.rst:98
 msgid "Return the current system-wide CPU utilization as a percentage."
@@ -295,6 +303,8 @@ msgid ""
 "Return various CPU statistics. All fields are :term:`cumulative counters "
 "<cumulative counter>` since boot."
 msgstr ""
+"回傳各種 CPU 統計資料。所有欄位都是自開機以來的\\ :term:`累積計數器 "
+"<cumulative counter>`\\ 。"
 
 #: ../../../api.rst:194
 msgid ""
@@ -313,6 +323,8 @@ msgid ""
 ":field:`soft_interrupts`: number of :term:`soft interrupts <soft "
 "interrupt>`; always set to ``0`` on Windows and SunOS."
 msgstr ""
+":field:`soft_interrupts`：\\ :term:`軟體中斷 <soft interrupt>`\\ 次數；在 "
+"Windows 和 SunOS 上始終設定為 ``0``。"
 
 #: ../../../api.rst:201
 msgid ""
@@ -945,31 +957,35 @@ msgstr ""
 
 #: ../../../api.rst:531
 msgid ":field:`read_count`: number of reads."
-msgstr ""
+msgstr ":field:`read_count`：讀取次數。"
 
 #: ../../../api.rst:532
 msgid ":field:`write_count`: number of writes."
-msgstr ""
+msgstr ":field:`write_count`：寫入次數。"
 
 #: ../../../api.rst:533
 msgid ":field:`read_bytes`: number of bytes read."
-msgstr ""
+msgstr ":field:`read_bytes`：讀取的位元組數。"
 
 #: ../../../api.rst:534
 msgid ":field:`write_bytes`: number of bytes written."
-msgstr ""
+msgstr ":field:`write_bytes`：寫入的位元組數。"
 
 #: ../../../api.rst:538
 msgid ""
 ":field:`read_time`: (all except *NetBSD* and *OpenBSD*) time spent reading "
 "from disk (in milliseconds)."
 msgstr ""
+":field:`read_time`：（除了 *NetBSD* 和 *OpenBSD* 以外的所有平台）讀取磁碟所花"
+"費的時間（毫秒）。"
 
 #: ../../../api.rst:540
 msgid ""
 ":field:`write_time`: (all except *NetBSD* and *OpenBSD*) time spent writing "
 "to disk (in milliseconds)."
 msgstr ""
+":field:`write_time`：（除了 *NetBSD* 和 *OpenBSD* 以外的所有平台）寫入磁碟所"
+"花費的時間（毫秒）。"
 
 #: ../../../api.rst:542
 msgid ""
@@ -1055,19 +1071,19 @@ msgstr ""
 
 #: ../../../api.rst:588
 msgid ":field:`bytes_sent`: number of bytes sent."
-msgstr ""
+msgstr ":field:`bytes_sent`：傳送的位元組數。"
 
 #: ../../../api.rst:589
 msgid ":field:`bytes_recv`: number of bytes received."
-msgstr ""
+msgstr ":field:`bytes_recv`：接收的位元組數。"
 
 #: ../../../api.rst:590
 msgid ":field:`packets_sent`: number of packets sent."
-msgstr ""
+msgstr ":field:`packets_sent`：傳送的封包數。"
 
 #: ../../../api.rst:591
 msgid ":field:`packets_recv`: number of packets received."
-msgstr ""
+msgstr ":field:`packets_recv`：接收的封包數。"
 
 #: ../../../api.rst:592
 msgid ":field:`errin`: total number of errors while receiving."
@@ -2114,6 +2130,50 @@ msgid ""
 "'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/"
 "share/:/var/lib/snapd/desktop', 'XDG_SEAT': 'seat0'}"
 msgstr ""
+">>> import psutil\n"
+">>> psutil.Process().environ()\n"
+"{'LC_NUMERIC': 'it_IT.UTF-8', 'QT_QPA_PLATFORMTHEME': 'appmenu-qt5', "
+"'IM_CONFIG_PHASE': '1', 'XDG_GREETER_DATA_DIR': '/var/lib/lightdm-data/"
+"giampaolo', 'XDG_CURRENT_DESKTOP': 'Unity', 'UPSTART_EVENTS': 'started "
+"starting', 'GNOME_KEYRING_PID': '', 'XDG_VTNR': '7', 'QT_IM_MODULE': 'ibus', "
+"'LOGNAME': 'giampaolo', 'USER': 'giampaolo', 'PATH': '/home/giampaolo/bin:/"
+"usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/"
+"local/games:/snap/bin:/home/giampaolo/svn/sysconf/bin', 'LC_PAPER': "
+"'it_IT.UTF-8', 'GNOME_KEYRING_CONTROL': '', 'GTK_IM_MODULE': 'ibus', "
+"'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'LESS_TERMCAP_se': '\\x1b[0m', "
+"'TERM': 'xterm-256color', 'SHELL': '/bin/bash', 'XDG_SESSION_PATH': '/org/"
+"freedesktop/DisplayManager/Session0', 'XAUTHORITY': '/home/"
+"giampaolo/.Xauthority', 'LANGUAGE': 'en_US', 'COMPIZ_CONFIG_PROFILE': "
+"'ubuntu', 'LC_MONETARY': 'it_IT.UTF-8', 'QT_LINUX_ACCESSIBILITY_ALWAYS_ON': "
+"'1', 'LESS_TERMCAP_me': '\\x1b[0m', 'LESS_TERMCAP_md': '\\x1b[01;38;5;74m', "
+"'LESS_TERMCAP_mb': '\\x1b[01;31m', 'HISTSIZE': '100000', 'UPSTART_INSTANCE': "
+"'', 'CLUTTER_IM_MODULE': 'xim', 'WINDOWID': '58786407', 'EDITOR': 'vim', "
+"'SESSIONTYPE': 'gnome-session', 'XMODIFIERS': '@im=ibus', 'GPG_AGENT_INFO': "
+"'/home/giampaolo/.gnupg/S.gpg-agent:0:1', 'HOME': '/home/giampaolo', "
+"'HISTFILESIZE': '100000', 'QT4_IM_MODULE': 'xim', 'GTK2_MODULES': 'overlay-"
+"scrollbar', 'XDG_SESSION_DESKTOP': 'ubuntu', 'SHLVL': '1', "
+"'XDG_RUNTIME_DIR': '/run/user/1000', 'INSTANCE': 'Unity', 'LC_ADDRESS': "
+"'it_IT.UTF-8', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'VTE_VERSION': "
+"'4205', 'GDMSESSION': 'ubuntu', 'MANDATORY_PATH': '/usr/share/gconf/"
+"ubuntu.mandatory.path', 'VISUAL': 'vim', 'DESKTOP_SESSION': 'ubuntu', "
+"'QT_ACCESSIBILITY': '1', 'XDG_SEAT_PATH': '/org/freedesktop/DisplayManager/"
+"Seat0', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LESSOPEN': '| /usr/bin/"
+"lesspipe %s', 'XDG_SESSION_ID': 'c2', 'DBUS_SESSION_BUS_ADDRESS': "
+"'unix:abstract=/tmp/dbus-9GAJpvnt8r', '_': '/usr/bin/python', "
+"'DEFAULTS_PATH': '/usr/share/gconf/ubuntu.default.path', "
+"'LC_IDENTIFICATION': 'it_IT.UTF-8', 'LESS_TERMCAP_ue': '\\x1b[0m', "
+"'UPSTART_SESSION': 'unix:abstract=/com/ubuntu/upstart-session/1000/1294', "
+"'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg', "
+"'GTK_MODULES': 'gail:atk-bridge:unity-gtk-module', 'XDG_SESSION_TYPE': "
+"'x11', 'PYTHONSTARTUP': '/home/giampaolo/.pythonstart', 'LC_NAME': "
+"'it_IT.UTF-8', 'OLDPWD': '/home/giampaolo/svn/curio_giampaolo/tests', "
+"'GDM_LANG': 'en_US', 'LC_TELEPHONE': 'it_IT.UTF-8', 'HISTCONTROL': "
+"'ignoredups:erasedups', 'LC_MEASUREMENT': 'it_IT.UTF-8', 'PWD': '/home/"
+"giampaolo/svn/curio_giampaolo', 'JOB': 'gnome-session', 'LESS_TERMCAP_us': "
+"'\\x1b[04;38;5;146m', 'UPSTART_JOB': 'unity-settings-daemon', 'LC_TIME': "
+"'it_IT.UTF-8', 'LESS_TERMCAP_so': '\\x1b[38;5;246m', 'PAGER': 'less', "
+"'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/"
+"share/:/var/lib/snapd/desktop', 'XDG_SEAT': 'seat0'}"
 
 #: ../../../api.rst:1236
 msgid ""
@@ -2330,6 +2390,15 @@ msgid ""
 ">>> p.ionice()  # get\n"
 "pionice(ioclass=<ProcessIOPriority.IOPRIO_CLASS_RT: 1>, value=7)"
 msgstr ""
+">>> import psutil\n"
+">>> p = psutil.Process()\n"
+">>> if psutil.LINUX:\n"
+"...     p.ionice(psutil.IOPRIO_CLASS_RT, value=7)  # highest\n"
+"... else:\n"
+"...     p.ionice(psutil.IOPRIO_HIGH)\n"
+"...\n"
+">>> p.ionice()  # get\n"
+"pionice(ioclass=<ProcessIOPriority.IOPRIO_CLASS_RT: 1>, value=7)"
 
 #: ../../../api.rst:1415
 msgid "Windows: accept new :data:`IOPRIO_* <psutil.IOPRIO_VERYLOW>` constants."
@@ -2622,7 +2691,7 @@ msgstr ""
 
 #: ../../../api.rst:1632
 msgid "BSD"
-msgstr ""
+msgstr "BSD"
 
 #: ../../../api.rst:1632 ../../../api.rst:1870
 msgid "Solaris"
@@ -3512,7 +3581,7 @@ msgstr ""
 
 #: ../../../api.rst:2176
 msgid "Popen class"
-msgstr ""
+msgstr "Popen 類別"
 
 #: ../../../api.rst:2180
 msgid ""
@@ -3735,7 +3804,7 @@ msgstr ""
 
 #: ../../../api.rst:2332
 msgid "Windows services"
-msgstr ""
+msgstr "Windows 服務"
 
 #: ../../../api.rst:2336
 msgid ""
@@ -3777,7 +3846,7 @@ msgstr ""
 
 #: ../../../api.rst:2372
 msgid "The name of the user that owns this service."
-msgstr ""
+msgstr "擁有此服務的使用者名稱。"
 
 #: ../../../api.rst:2376
 msgid ""
@@ -3799,7 +3868,7 @@ msgstr ""
 
 #: ../../../api.rst:2392
 msgid "Service long description."
-msgstr ""
+msgstr "服務的完整描述。"
 
 #: ../../../api.rst:2396
 msgid "Utility method retrieving all the information above as a dictionary."
@@ -3830,10 +3899,32 @@ msgid ""
 " 'status': 'stopped',\n"
 " 'username': 'NT AUTHORITY\\\\LocalService'}"
 msgstr ""
+">>> import psutil\n"
+">>> list(psutil.win_service_iter())\n"
+"[<WindowsService(name='AeLookupSvc', display_name='Application Experience') "
+"at 38850096>,\n"
+" <WindowsService(name='ALG', display_name='Application Layer Gateway "
+"Service') at 38850128>,\n"
+" <WindowsService(name='APNMCP', display_name='Ask Update Service') at "
+"38850160>,\n"
+" <WindowsService(name='AppIDSvc', display_name='Application Identity') at "
+"38850192>,\n"
+" ...]\n"
+">>> s = psutil.win_service_get('alg')\n"
+">>> s.as_dict()\n"
+"{'binpath': 'C:\\\\Windows\\\\System32\\\\alg.exe',\n"
+" 'description': 'Provides support for 3rd party protocol plug-ins for "
+"Internet Connection Sharing',\n"
+" 'display_name': 'Application Layer Gateway Service',\n"
+" 'name': 'alg',\n"
+" 'pid': None,\n"
+" 'start_type': 'manual',\n"
+" 'status': 'stopped',\n"
+" 'username': 'NT AUTHORITY\\\\LocalService'}"
 
 #: ../../../api.rst:2421
 msgid "Constants"
-msgstr ""
+msgstr "常數"
 
 #: ../../../api.rst:2423
 msgid ""
@@ -3899,13 +3990,15 @@ msgstr ""
 
 #: ../../../api.rst:2491
 msgid "Operating system constants"
-msgstr "作業系統約束"
+msgstr "作業系統常數"
 
 #: ../../../api.rst:2493
 msgid ""
 "``bool`` constants which define what platform you're on. ``True`` if on the "
 "platform, ``False`` otherwise."
 msgstr ""
+"``bool`` 用來定義目前所處平台的常數。若處於該平台則為 ``True``，否則為 "
+"``False``。"
 
 #: ../../../api.rst:2498
 msgid ""
@@ -3942,6 +4035,8 @@ msgid ""
 "constants are now :class:`ProcessStatus` enum members (were plain strings). "
 "See :ref:`migration guide <migration-8.0>`."
 msgstr ""
+"這些常數現在是 :class:`ProcessStatus` 列舉成員（先前是純字串）。請參見"
+"\\ :ref:`遷移指南 <migration-8.0>`\\ 。"
 
 #: ../../../api.rst:2534
 msgid "The process is running or ready to run (e.g. ``while True: pass``)."
@@ -4015,6 +4110,8 @@ msgid ""
 "(FreeBSD only) The process is blocked specifically waiting for a kernel-"
 "level synchronization primitive (e.g. a mutex)."
 msgstr ""
+"（僅限 FreeBSD）進程正特別等待內核層級的同步原語（例如 mutex），因此遭到阻"
+"塞。"
 
 #: ../../../api.rst:2597
 msgid ""
@@ -4027,10 +4124,11 @@ msgid ""
 "(NetBSD only) The process has been explicitly paused, similar to the stopped "
 "state but managed by the NetBSD scheduler."
 msgstr ""
+"（僅限 NetBSD）進程已明確暫停，類似於停止狀態，但由 NetBSD 排程器管理。"
 
 #: ../../../api.rst:2608
 msgid "Process priority constants"
-msgstr ""
+msgstr "進程優先級常數"
 
 #: ../../../api.rst:2610
 msgid ""
@@ -4044,16 +4142,20 @@ msgid ""
 "constants are now :class:`ProcessPriority` enum members (were plain "
 "integers). See :ref:`migration guide <migration-8.0>`."
 msgstr ""
+"這些常數現在是 :class:`ProcessPriority` 列舉成員（先前是純整數）。請參見"
+"\\ :ref:`遷移指南 <migration-8.0>`\\ 。"
 
 #: ../../../api.rst:2634
 msgid "Process I/O priority constants"
-msgstr ""
+msgstr "進程 I/O 優先級常數"
 
 #: ../../../api.rst:2636
 msgid ""
 "Represent the I/O priority class of a process (Linux and Windows only). They "
 "can be used in conjunction with :meth:`Process.ionice` (*ioclass* argument)."
 msgstr ""
+"表示進程的 I/O 優先級類別（僅限 Linux 和 Windows）。可搭"
+"配 :meth:`Process.ionice`\\ （ioclass 引數）使用。"
 
 #: ../../../api.rst:2639
 msgid "Linux (see :manpage:`ioprio_get(2)`):"
@@ -4061,15 +4163,15 @@ msgstr ""
 
 #: ../../../api.rst:2643
 msgid "Highest priority."
-msgstr ""
+msgstr "最高優先級。"
 
 #: ../../../api.rst:2647
 msgid "Normal priority."
-msgstr ""
+msgstr "普通優先級。"
 
 #: ../../../api.rst:2651
 msgid "Lowest priority."
-msgstr ""
+msgstr "最低優先級。"
 
 #: ../../../api.rst:2655
 msgid "No priority set (default; treated as :data:`IOPRIO_CLASS_BE`)."
@@ -4084,6 +4186,8 @@ msgid ""
 "constants are now :class:`ProcessIOPriority` enum members. "
 "See :ref:`migration guide <migration-8.0>`."
 msgstr ""
+"這些常數現在是 :class:`ProcessIOPriority` 列舉成員。請參見\\ :ref:`遷移指南 "
+"<migration-8.0>`\\ 。"
 
 #: ../../../api.rst:2671
 msgid "Process resource constants"
@@ -4126,10 +4230,12 @@ msgid ""
 "constants are now :class:`ConnectionStatus` enum members (were plain "
 "strings). See :ref:`migration guide <migration-8.0>`."
 msgstr ""
+"這些常數現在是 :class:`ConnectionStatus` 列舉成員（先前是純字串）。請參見"
+"\\ :ref:`遷移指南 <migration-8.0>`\\ 。"
 
 #: ../../../api.rst:2751
 msgid "Hardware constants"
-msgstr ""
+msgstr "硬體常數"
 
 #: ../../../api.rst:2757
 msgid ""
@@ -4153,7 +4259,7 @@ msgstr ""
 
 #: ../../../api.rst:2779
 msgid "Other constants"
-msgstr ""
+msgstr "其他常數"
 
 #: ../../../api.rst:2785
 msgid ""
@@ -4199,10 +4305,13 @@ msgid ""
 ">>> if psutil.version_info >= (4, 5):\n"
 "...    pass"
 msgstr ""
+">>> import psutil\n"
+">>> if psutil.version_info >= (4, 5):\n"
+"...    pass"
 
 #: ../../../api.rst:2828
 msgid "Environment variables"
-msgstr ""
+msgstr "環境變數"
 
 #: ../../../api.rst:2832
 msgid ""

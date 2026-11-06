@@ -247,7 +247,7 @@ msgstr ""
 
 #: ../../../migration.rst:146
 msgid "Constants and fields are now enums"
-msgstr ""
+msgstr "這些常數和欄位現在是列舉"
 
 #: ../../../migration.rst:148
 msgid ""
@@ -329,7 +329,7 @@ msgstr ""
 
 #: ../../../migration.rst:191
 msgid "The minimum version is now Python 3.8."
-msgstr ""
+msgstr "最低版本現為 Python 3.8。"
 
 #: ../../../migration.rst:196
 msgid "Windows < 10 dropped"
