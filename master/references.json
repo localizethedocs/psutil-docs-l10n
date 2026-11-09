@@ -37,9 +37,9 @@
     "branch" : "master",
     "commit" : 
     {
-      "date" : "2026-11-01 23:40:47 +0100",
-      "hash" : "c7e6eb945a525f57c3843284e8f66ef4701af02c",
-      "title" : "CI: move the GitHub bots' API code into a shared ghlib.py (#3097)"
+      "date" : "2026-11-09 19:10:43 +0100",
+      "hash" : "5273f588695aff1db87874092551f6c425ce09a4",
+      "title" : "C: drop psutil_ prefix from static functions"
     }
   },
   "type" : "branch",

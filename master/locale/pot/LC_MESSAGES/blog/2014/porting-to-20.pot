@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-27 11:50+0000\n"
+"POT-Creation-Date: 2026-11-09 18:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -104,8 +104,8 @@ msgid ""
 "import time is dangerous because if something goes wrong the whole app will "
 "crash. Also, the represented values may be subject to change (think about "
 "the system clock), but the constant cannot be updated. Thanks to this hack, "
-"accessing the old constants still works and produces a :exc:"
-"`DeprecationWarning`."
+"accessing the old constants still works and produces "
+"a :exc:`DeprecationWarning`."
 msgstr ""
 
 #: ../../../blog/2014/porting-to-20.rst:49
@@ -139,7 +139,7 @@ msgid ""
 msgstr ""
 
 #: ../../../blog/2014/porting-to-20.rst:69
-msgid "Renamed Process class methods"
+msgid "Renamed :class:`Process` class methods"
 msgstr ""
 
 #: ../../../blog/2014/porting-to-20.rst:71
@@ -489,11 +489,11 @@ msgid ""
 "I originally set 0.1 as the default timeout because you need to wait some "
 "time in order to get a meaningful percent value. Having an API that "
 "\"sleeps\" by default is risky, though, because it's easy to forget it does "
-"so. That is particularly problematic when calling :meth:`Process."
-"cpu_percent` for all processes: it's very easy to forget to specify "
-"``timeout=0``, resulting in dramatic slowdowns that are hard to spot. For "
-"example, this code snippet might take a variable number of seconds to "
-"complete depending on the number of active processes:"
+"so. That is particularly problematic when "
+"calling :meth:`Process.cpu_percent` for all processes: it's very easy to "
+"forget to specify ``timeout=0``, resulting in dramatic slowdowns that are "
+"hard to spot. For example, this code snippet might take a variable number of "
+"seconds to complete depending on the number of active processes:"
 msgstr ""
 
 #: ../../../blog/2014/porting-to-20.rst:207
@@ -509,17 +509,17 @@ msgstr ""
 
 #: ../../../blog/2014/porting-to-20.rst:216
 msgid ""
-"Except for :class:`Process` properties (:meth:`Process.name`, :meth:`Process."
-"exe`, :meth:`Process.cmdline`, etc.), all the old APIs are still available "
-"as aliases pointing to the newer names and raising :exc:"
-"`DeprecationWarning`. psutil will be very clear on what you should use "
-"instead of the deprecated API, as long as you start the interpreter with the "
-"``-Wd`` option. This will enable deprecation warnings, which were `silenced "
-"in Python 2.7 <http://bugs.python.org/issue7319>`__ (IMHO, from a developer "
-"standpoint this was a bad decision)."
+"Except for :class:`Process` properties "
+"(:meth:`Process.name`, :meth:`Process.exe`, :meth:`Process.cmdline`, etc.), "
+"all the old APIs are still available as aliases pointing to the newer names "
+"and raising :exc:`DeprecationWarning`. psutil will be very clear on what you "
+"should use instead of the deprecated API, as long as you start the "
+"interpreter with the ``-Wd`` option. This will enable deprecation warnings, "
+"which were `silenced in Python 2.7 <http://bugs.python.org/issue7319>`__ "
+"(IMHO, from a developer standpoint this was a bad decision)."
 msgstr ""
 
-#: ../../../blog/2014/porting-to-20.rst:227
+#: ../../../blog/2014/porting-to-20.rst:225
 msgid ""
 "giampaolo@ubuntu:/tmp$ python -Wd\n"
 "Python 2.7.3 (default, Sep 26 2013, 20:03:06)\n"
@@ -566,8 +566,8 @@ msgstr ""
 #: ../../../blog/2014/porting-to-20.rst:260
 msgid ""
 "What I would recommend, if you want to drop support for 1.2.1, is to grep "
-"for ``\".name\"``, ``\".exe\"``, etc. and just replace them with ``\"."
-"exe()\"`` and ``\".name()\"`` one by one. If, on the other hand, you want to "
+"for ``\".name\"``, ``\".exe\"``, etc. and just replace them with ``\".exe()"
+"\"`` and ``\".name()\"`` one by one. If, on the other hand, you want to "
 "write code that works with both versions, I see two possibilities:"
 msgstr ""
 
@@ -611,8 +611,8 @@ msgstr ""
 
 #: ../../../blog/2014/porting-to-20.rst:292
 msgid ""
-":gh:`427`: you're now able to distinguish between the number of :term:"
-"`logical <logical CPU>` and :term:`physical <physical CPU>` CPUs:"
+":gh:`427`: you're now able to distinguish between the number "
+"of :term:`logical <logical CPU>` and :term:`physical <physical CPU>` CPUs:"
 msgstr ""
 
 #: ../../../blog/2014/porting-to-20.rst:295
