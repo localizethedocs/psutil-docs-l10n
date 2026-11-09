@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-02 18:15+0000\n"
+"POT-Creation-Date: 2026-11-09 18:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -332,8 +332,7 @@ msgid ""
 "often use the stdlib ``os.killpg()`` instead of this recipe. Create the "
 "process with ``process_group=0`` so that it gets its own process group, then "
 "call ``os.killpg(pgid, sig)``. This is simpler, does not require psutil, and "
-"still cleans up all descendants even when an intermediate process has "
-"exited::"
+"still cleans up all descendants even when an intermediate process has exited:"
 msgstr ""
 
 #: ../../../recipes.rst:277
@@ -347,20 +346,20 @@ msgid ""
 "os.killpg(proc.pid, signal.SIGTERM)"
 msgstr ""
 
-#: ../../../recipes.rst:285
+#: ../../../recipes.rst:287
 msgid ""
 "This approach does not work on Windows (``os.killpg`` is not available) and "
 "it only works for PIDs that you started yourself as a new process group. For "
 "arbitrary PIDs, use the psutil recipe above."
 msgstr ""
 
-#: ../../../recipes.rst:291
+#: ../../../recipes.rst:293
 msgid ""
 "Terminate a process gracefully, falling back to ``SIGKILL`` if it does not "
 "exit within the timeout:"
 msgstr ""
 
-#: ../../../recipes.rst:294
+#: ../../../recipes.rst:296
 msgid ""
 "import psutil\n"
 "\n"
@@ -373,11 +372,11 @@ msgid ""
 "        p.kill()"
 msgstr ""
 
-#: ../../../recipes.rst:308
+#: ../../../recipes.rst:310
 msgid "Temporarily pause and resume a process using a context manager:"
 msgstr ""
 
-#: ../../../recipes.rst:310
+#: ../../../recipes.rst:312
 msgid ""
 "import contextlib, psutil\n"
 "\n"
@@ -395,13 +394,13 @@ msgid ""
 "    pass  # process is paused here"
 msgstr ""
 
-#: ../../../recipes.rst:329
+#: ../../../recipes.rst:331
 msgid ""
 "CPU throttle: limit a process's CPU usage to a target percentage by "
 "alternating :meth:`Process.suspend` and :meth:`Process.resume`:"
 msgstr ""
 
-#: ../../../recipes.rst:332
+#: ../../../recipes.rst:334
 msgid ""
 "import time, psutil\n"
 "\n"
@@ -417,11 +416,11 @@ msgid ""
 "            p.resume()"
 msgstr ""
 
-#: ../../../recipes.rst:348
+#: ../../../recipes.rst:350
 msgid "Restart a process automatically if it dies:"
 msgstr ""
 
-#: ../../../recipes.rst:350
+#: ../../../recipes.rst:352
 msgid ""
 "import subprocess, time, psutil\n"
 "\n"
@@ -456,26 +455,26 @@ msgid ""
 "    watchdog([\"python3\", \"script.py\"])"
 msgstr ""
 
-#: ../../../recipes.rst:385
+#: ../../../recipes.rst:387
 msgid "System"
 msgstr ""
 
-#: ../../../recipes.rst:387
+#: ../../../recipes.rst:389
 msgid ""
 "All APIs returning amounts (memory, disk, network I/O) express them in "
 "bytes. The examples below use :func:`psutil.bytes2human` to convert them to "
 "a human-readable string."
 msgstr ""
 
-#: ../../../recipes.rst:392
+#: ../../../recipes.rst:394
 msgid "CPU"
 msgstr ""
 
-#: ../../../recipes.rst:394
+#: ../../../recipes.rst:396
 msgid "Print real-time CPU usage percentage:"
 msgstr ""
 
-#: ../../../recipes.rst:396
+#: ../../../recipes.rst:398
 msgid ""
 "import psutil\n"
 "\n"
@@ -483,18 +482,18 @@ msgid ""
 "    print(\"CPU: {}%\".format(psutil.cpu_percent(interval=1)))"
 msgstr ""
 
-#: ../../../recipes.rst:403
+#: ../../../recipes.rst:405
 msgid ""
 "CPU: 2.1%\n"
 "CPU: 1.4%\n"
 "CPU: 0.9%"
 msgstr ""
 
-#: ../../../recipes.rst:410
+#: ../../../recipes.rst:412
 msgid "Memory"
 msgstr ""
 
-#: ../../../recipes.rst:414
+#: ../../../recipes.rst:416
 msgid ""
 "Show real-time swap activity *(Linux, BSD)*. ``sout`` (:term:`swap-out`) is "
 "the key metric: a non-zero and growing rate means the OS is moving memory "
@@ -504,15 +503,15 @@ msgid ""
 "(:term:`thrashing`)."
 msgstr ""
 
-#: ../../../recipes.rst:420
+#: ../../../recipes.rst:422
 msgid ""
 "import psutil, time\n"
 "\n"
 "def swap_activity(interval=1):\n"
-"    before = psutil.swap_memory()\n"
+"    before = psutil.memory_swap()\n"
 "    while True:\n"
 "        time.sleep(interval)\n"
-"        after = psutil.swap_memory()\n"
+"        after = psutil.memory_swap()\n"
 "        sin  = after.sin  - before.sin\n"
 "        sout = after.sout - before.sout\n"
 "        print(\"swap-in={}/s  swap-out={}/s  used={}%\".format(\n"
@@ -521,21 +520,21 @@ msgid ""
 "        before = after"
 msgstr ""
 
-#: ../../../recipes.rst:435
+#: ../../../recipes.rst:437
 msgid ""
 "swap-in=0.0B/s  swap-out=0.0B/s  used=23%\n"
 "swap-in=0.0B/s  swap-out=1.2M/s  used=24%"
 msgstr ""
 
-#: ../../../recipes.rst:441
+#: ../../../recipes.rst:443
 msgid "Disks"
 msgstr ""
 
-#: ../../../recipes.rst:445
+#: ../../../recipes.rst:447
 msgid "Show real-time disk I/O:"
 msgstr ""
 
-#: ../../../recipes.rst:447
+#: ../../../recipes.rst:449
 msgid ""
 "import psutil, time\n"
 "\n"
@@ -552,17 +551,17 @@ msgid ""
 "        )"
 msgstr ""
 
-#: ../../../recipes.rst:463
+#: ../../../recipes.rst:465
 msgid ""
 "Read: 1.2M/s, Write: 256.0K/s\n"
 "Read: 0.0B/s, Write: 128.0K/s"
 msgstr ""
 
-#: ../../../recipes.rst:472
+#: ../../../recipes.rst:474
 msgid "Show real-time disk utilization percentage *(Linux, FreeBSD)*:"
 msgstr ""
 
-#: ../../../recipes.rst:474
+#: ../../../recipes.rst:476
 msgid ""
 "import psutil, time\n"
 "\n"
@@ -576,21 +575,21 @@ msgid ""
 "        print(\"Disk: {:.1f}%\".format(util))"
 msgstr ""
 
-#: ../../../recipes.rst:487
+#: ../../../recipes.rst:489
 msgid ""
 "Disk: 3.2%\n"
 "Disk: 78.5%"
 msgstr ""
 
-#: ../../../recipes.rst:493
+#: ../../../recipes.rst:495
 msgid "Network"
 msgstr ""
 
-#: ../../../recipes.rst:495
+#: ../../../recipes.rst:497
 msgid "Show real-time network I/O per interface:"
 msgstr ""
 
-#: ../../../recipes.rst:497
+#: ../../../recipes.rst:499
 msgid ""
 "import psutil, time\n"
 "\n"
@@ -612,17 +611,17 @@ msgid ""
 "        print()"
 msgstr ""
 
-#: ../../../recipes.rst:518
+#: ../../../recipes.rst:520
 msgid ""
 "lo         sent=0.0B/s    recv=0.0B/s\n"
 "eth0       sent=12.3K/s   recv=45.6K/s"
 msgstr ""
 
-#: ../../../recipes.rst:525
+#: ../../../recipes.rst:527
 msgid "List all active TCP connections with their status:"
 msgstr ""
 
-#: ../../../recipes.rst:527
+#: ../../../recipes.rst:529
 msgid ""
 "import psutil\n"
 "\n"
@@ -639,7 +638,7 @@ msgid ""
 "        print(templ.format(laddr, raddr, conn.status, conn.pid or \"\"))"
 msgstr ""
 
-#: ../../../recipes.rst:543
+#: ../../../recipes.rst:545
 msgid ""
 "Local             Remote              Status        PID\n"
 ":::1716           -                   LISTEN        223441\n"

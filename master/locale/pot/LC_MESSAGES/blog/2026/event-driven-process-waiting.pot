@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-02 18:15+0000\n"
+"POT-Creation-Date: 2026-11-09 18:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -246,7 +246,7 @@ msgid ""
 "the patch (the busy-loop):"
 msgstr ""
 
-#: ../../../blog/2026/event-driven-process-waiting.rst:171
+#: ../../../blog/2026/event-driven-process-waiting.rst:169
 msgid ""
 "$ /usr/bin/time -v python3 test.py 2>&1 | grep context\n"
 "    Voluntary context switches: 258\n"
@@ -257,7 +257,7 @@ msgstr ""
 msgid "After the patch (the event-driven approach):"
 msgstr ""
 
-#: ../../../blog/2026/event-driven-process-waiting.rst:179
+#: ../../../blog/2026/event-driven-process-waiting.rst:177
 msgid ""
 "$ /usr/bin/time -v python3 test.py 2>&1 | grep context\n"
 "    Voluntary context switches: 2\n"
@@ -294,7 +294,7 @@ msgstr ""
 msgid ":func:`time.sleep`:"
 msgstr ""
 
-#: ../../../blog/2026/event-driven-process-waiting.rst:203
+#: ../../../blog/2026/event-driven-process-waiting.rst:201
 msgid ""
 "$ (python3 -c 'import time; time.sleep(10)' & pid=$!; sleep 0.3; ps -o "
 "pid,stat,comm -p $pid) && fg &>/dev/null\n"
@@ -306,7 +306,7 @@ msgstr ""
 msgid ":func:`select.poll`:"
 msgstr ""
 
-#: ../../../blog/2026/event-driven-process-waiting.rst:211
+#: ../../../blog/2026/event-driven-process-waiting.rst:209
 msgid ""
 "$ (python3 -c 'import os,select; fd = os.pidfd_open(os.getpid(),0); p = "
 "select.poll(); p.register(fd,select.POLLIN); p.poll(10_000)' & pid=$!; sleep "

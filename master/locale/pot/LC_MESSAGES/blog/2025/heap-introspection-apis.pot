@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-05 17:28+0000\n"
+"POT-Creation-Date: 2026-11-09 18:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,11 +27,11 @@ msgid ""
 "at :term:`RSS`, track Python object counts, follow reference graphs, etc. "
 "But leaks inside C extension modules are another story. Traditional memory "
 "metrics such as :term:`RSS` and :term:`VMS` fail to reveal them because "
-"Python's memory allocator (`pymalloc <https://docs.python.org/3/c-api/memory."
-"html#the-pymalloc-allocator>`__) sits above the platform's native :term:"
-"`heap`. If something in an extension calls :manpage:`malloc(3)` without a "
-"corresponding :manpage:`free(3)`, that memory often won't show up in :term:"
-"`RSS` / :term:`VMS`. You have a leak, and you don't know."
+"Python's memory allocator (`pymalloc <https://docs.python.org/3/c-api/"
+"memory.html#the-pymalloc-allocator>`__) sits above the platform's "
+"native :term:`heap`. If something in an extension calls :manpage:`malloc(3)` "
+"without a corresponding :manpage:`free(3)`, that memory often won't show up "
+"in :term:`RSS` / :term:`VMS`. You have a leak, and you don't know."
 msgstr ""
 
 #: ../../../blog/2025/heap-introspection-apis.rst:22
@@ -39,9 +39,9 @@ msgid ""
 "psutil 7.2.0 introduces two new APIs for **C heap introspection**, designed "
 "specifically to catch these kinds of native leaks. They give you a window "
 "directly into the underlying platform allocator (e.g. glibc's malloc), "
-"letting you track how much memory the C layer actually allocates. If your :"
-"term:`RSS` is flat but your C :term:`heap` usage climbs, you now have a way "
-"to see it."
+"letting you track how much memory the C layer actually allocates. If "
+"your :term:`RSS` is flat but your C :term:`heap` usage climbs, you now have "
+"a way to see it."
 msgstr ""
 
 #: ../../../blog/2025/heap-introspection-apis.rst:29
@@ -83,7 +83,7 @@ msgid ""
 msgstr ""
 
 #: ../../../blog/2025/heap-introspection-apis.rst:48
-msgid "heap_info(): direct allocator statistics"
+msgid ":func:`heap_info`: direct allocator statistics"
 msgstr ""
 
 #: ../../../blog/2025/heap-introspection-apis.rst:50
@@ -98,8 +98,8 @@ msgstr ""
 
 #: ../../../blog/2025/heap-introspection-apis.rst:54
 msgid ""
-":field:`mmap_used`: total number of bytes currently allocated via :manpage:"
-"`mmap(2)` or via large ``malloc()`` allocations."
+":field:`mmap_used`: total number of bytes currently allocated "
+"via :manpage:`mmap(2)` or via large ``malloc()`` allocations."
 msgstr ""
 
 #: ../../../blog/2025/heap-introspection-apis.rst:56
@@ -151,8 +151,8 @@ msgstr ""
 
 #: ../../../blog/2025/heap-introspection-apis.rst:79
 msgid ""
-"large ``malloc()`` >128 KB without ``free()``, or ``mmap()`` without :"
-"manpage:`munmap(2)` (UNIX)"
+"large ``malloc()`` >128 KB without ``free()``, or ``mmap()`` "
+"without :manpage:`munmap(2)` (UNIX)"
 msgstr ""
 
 #: ../../../blog/2025/heap-introspection-apis.rst:81
@@ -183,7 +183,7 @@ msgid ":field:`heap_count`"
 msgstr ""
 
 #: ../../../blog/2025/heap-introspection-apis.rst:93
-msgid "heap_trim(): returning unused heap memory"
+msgid ":func:`heap_trim`: returning unused heap memory"
 msgstr ""
 
 #: ../../../blog/2025/heap-introspection-apis.rst:95
@@ -197,11 +197,11 @@ msgstr ""
 msgid ""
 "In practice, modern allocators rarely comply, so this is not a general-"
 "purpose memory-reduction tool and won't meaningfully shrink :term:`RSS` in "
-"real programs. Its primary value is in leak detection tools. Calling :func:"
-"`psutil.heap_trim` before taking measurements helps reduce allocator noise, "
-"giving you a cleaner baseline so that changes in :field:`heap_used` come "
-"from the code you're testing, not from internal allocator caching or "
-"fragmentation."
+"real programs. Its primary value is in leak detection tools. "
+"Calling :func:`psutil.heap_trim` before taking measurements helps reduce "
+"allocator noise, giving you a cleaner baseline so that changes "
+"in :field:`heap_used` come from the code you're testing, not from internal "
+"allocator caching or fragmentation."
 msgstr ""
 
 #: ../../../blog/2025/heap-introspection-apis.rst:108
@@ -316,9 +316,9 @@ msgstr ""
 #: ../../../blog/2025/heap-introspection-apis.rst:173
 msgid ""
 "Psleak is now part of the psutil test suite. All psutil APIs are tested (see "
-"`test_memleaks.py <https://github.com/giampaolo/psutil/"
-"blob/1a946cfe738045cecf031222cd5078da21946af4/tests/test_memleaks.py>`__), "
-"making it a de facto **regression-testing tool**."
+"`test_memleaks.py <https://github.com/giampaolo/psutil/blob/"
+"1a946cfe738045cecf031222cd5078da21946af4/tests/test_memleaks.py>`__), making "
+"it a de facto **regression-testing tool**."
 msgstr ""
 
 #: ../../../blog/2025/heap-introspection-apis.rst:177
@@ -360,8 +360,8 @@ msgstr ""
 
 #: ../../../blog/2025/heap-introspection-apis.rst:195
 msgid ""
-"`BSD <https://github.com/giampaolo/psutil/blob/d40164f1/psutil/arch/bsd/heap."
-"c>`__: uses jemalloc's arena and stats interfaces."
+"`BSD <https://github.com/giampaolo/psutil/blob/d40164f1/psutil/arch/bsd/"
+"heap.c>`__: uses jemalloc's arena and stats interfaces."
 msgstr ""
 
 #: ../../../blog/2025/heap-introspection-apis.rst:199

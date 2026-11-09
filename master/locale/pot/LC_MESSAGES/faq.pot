@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-02 18:15+0000\n"
+"POT-Creation-Date: 2026-11-09 18:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,7 +62,7 @@ msgid "Exceptions"
 msgstr ""
 
 #: ../../../faq.rst:37
-msgid "Why do I get AccessDenied?"
+msgid "Why do I get :exc:`AccessDenied`?"
 msgstr ""
 
 #: ../../../faq.rst:39
@@ -122,7 +122,7 @@ msgid ""
 msgstr ""
 
 #: ../../../faq.rst:79
-msgid "Why do I get NoSuchProcess?"
+msgid "Why do I get :exc:`NoSuchProcess`?"
 msgstr ""
 
 #: ../../../faq.rst:81
@@ -352,7 +352,7 @@ msgid ""
 msgstr ""
 
 #: ../../../faq.rst:235
-msgid "Why does open_files() not return all files on Windows?"
+msgid "Why does :meth:`~Process.open_files` not return all files on Windows?"
 msgstr ""
 
 #: ../../../faq.rst:237
@@ -367,7 +367,9 @@ msgid ""
 msgstr ""
 
 #: ../../../faq.rst:247
-msgid "What is the difference between pid_exists() and Process.is_running()?"
+msgid ""
+"What is the difference between :func:`pid_exists` "
+"and :meth:`Process.is_running`?"
 msgstr ""
 
 #: ../../../faq.rst:249
@@ -386,7 +388,7 @@ msgid "CPU"
 msgstr ""
 
 #: ../../../faq.rst:263
-msgid "Why does cpu_percent() return 0.0 on first call?"
+msgid "Why does :func:`cpu_percent` return 0.0 on first call?"
 msgstr ""
 
 #: ../../../faq.rst:265
@@ -429,7 +431,7 @@ msgid ""
 msgstr ""
 
 #: ../../../faq.rst:298
-msgid "Can Process.cpu_percent() return a value higher than 100%?"
+msgid "Can :meth:`Process.cpu_percent` return a value higher than 100%?"
 msgstr ""
 
 #: ../../../faq.rst:300
@@ -453,7 +455,8 @@ msgstr ""
 
 #: ../../../faq.rst:315
 msgid ""
-"What is the difference between psutil, os, and multiprocessing cpu_count()?"
+"What is the difference between psutil, os, and multiprocessing "
+"``cpu_count()``?"
 msgstr ""
 
 #: ../../../faq.rst:317
@@ -489,12 +492,14 @@ msgid "Process memory"
 msgstr ""
 
 #: ../../../faq.rst:335
-msgid "What is the difference between virtual_memory() available and free?"
+msgid ""
+"What is the difference between :func:`memory_physical` :field:`available` "
+"and :field:`free`?"
 msgstr ""
 
 #: ../../../faq.rst:337
 msgid ""
-":func:`virtual_memory` returns both :field:`free` and :field:`available`, "
+":func:`memory_physical` returns both :field:`free` and :field:`available`, "
 "but they measure different things:"
 msgstr ""
 
@@ -547,7 +552,9 @@ msgid ""
 msgstr ""
 
 #: ../../../faq.rst:373
-msgid "When should I use memory_footprint() vs memory_info()?"
+msgid ""
+"When should I use :meth:`~Process.memory_footprint` "
+"vs :meth:`~Process.memory_info`?"
 msgstr ""
 
 #: ../../../faq.rst:375
@@ -571,7 +578,8 @@ msgstr ""
 
 #: ../../../faq.rst:392
 msgid ""
-"Why do memory_info() and memory_footprint() report different shared values?"
+"Why do :meth:`~Process.memory_info` and :meth:`~Process.memory_footprint` "
+"report different :field:`shared` values?"
 msgstr ""
 
 #: ../../../faq.rst:394
@@ -588,7 +596,9 @@ msgid ""
 msgstr ""
 
 #: ../../../faq.rst:406
-msgid "Why do swap_anon and memory_footprint()'s swap differ?"
+msgid ""
+"Why do :field:`swap_anon` "
+"and :meth:`~Process.memory_footprint`'s :field:`swap` differ?"
 msgstr ""
 
 #: ../../../faq.rst:408
@@ -606,7 +616,9 @@ msgid "System memory"
 msgstr ""
 
 #: ../../../faq.rst:420
-msgid "Why does virtual_memory() used + free != total?"
+msgid ""
+"Why does :func:`memory_physical` :field:`used` + :field:`free` !"
+"= :field:`total`?"
 msgstr ""
 
 #: ../../../faq.rst:422
@@ -618,7 +630,7 @@ msgstr ""
 #: ../../../faq.rst:425
 msgid ""
 ">>> import psutil\n"
-">>> m = psutil.virtual_memory()\n"
+">>> m = psutil.memory_physical()\n"
 ">>> m.used + m.free == m.total\n"
 "False"
 msgstr ""
@@ -627,5 +639,5 @@ msgstr ""
 msgid ""
 "The :field:`available` field already includes this reclaimable memory and is "
 "the best indicator of memory pressure. "
-"See :ref:`faq_virtual_memory_available`."
+"See :ref:`faq_memory_physical_available`."
 msgstr ""

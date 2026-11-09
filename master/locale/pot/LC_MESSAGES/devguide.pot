@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-12 07:48+0000\n"
+"POT-Creation-Date: 2026-11-09 18:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,8 +56,8 @@ msgstr ""
 
 #: ../../../devguide.rst:24
 msgid ""
-"On macOS, AIX and Windows there's no such target, see :ref:"
-"`install_from_source`. Then, everywhere:"
+"On macOS, AIX and Windows there's no such target, "
+"see :ref:`install_from_source`. Then, everywhere:"
 msgstr ""
 
 #: ../../../devguide.rst:27
@@ -186,11 +186,11 @@ msgstr ""
 
 #: ../../../devguide.rst:112
 msgid ""
-"Python: follows `PEP-8`_, formatted and linted with ``black`` and ``ruff``."
+"Python: follows :pep:`8`, formatted and linted with ``black`` and ``ruff``."
 msgstr ""
 
 #: ../../../devguide.rst:113
-msgid "C: generally follows `PEP-7`_, formatted with ``clang-format``."
+msgid "C: generally follows :pep:`7`, formatted with ``clang-format``."
 msgstr ""
 
 #: ../../../devguide.rst:114
@@ -270,8 +270,8 @@ msgstr ""
 
 #: ../../../devguide.rst:168
 msgid ""
-"Implement it for each applicable platform in ``psutil/_ps{platform}.py`` (e."
-"g. :src:`psutil/_pslinux.py`)."
+"Implement it for each applicable platform in ``psutil/_ps{platform}.py`` "
+"(e.g. :src:`psutil/_pslinux.py`)."
 msgstr ""
 
 #: ../../../devguide.rst:170

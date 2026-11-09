@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-27 11:50+0000\n"
+"POT-Creation-Date: 2026-11-09 18:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -93,18 +93,18 @@ msgstr ""
 msgid ""
 "psutil-7.1.2-cp313-cp313t-macosx_10_13_x86_64.whl\n"
 "psutil-7.1.2-cp313-cp313t-macosx_11_0_arm64.whl\n"
-"psutil-7.1.2-cp313-cp313t-manylinux2010_x86_64.manylinux_2_12_x86_64."
-"manylinux_2_28_x86_64.whl\n"
-"psutil-7.1.2-cp313-cp313t-manylinux2014_aarch64.manylinux_2_17_aarch64."
-"manylinux_2_28_aarch64.whl\n"
+"psutil-7.1.2-cp313-cp313t-"
+"manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl\n"
+"psutil-7.1.2-cp313-cp313t-"
+"manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl\n"
 "psutil-7.1.2-cp313-cp313t-win_amd64.whl\n"
 "psutil-7.1.2-cp313-cp313t-win_arm64.whl\n"
 "psutil-7.1.2-cp314-cp314t-macosx_10_15_x86_64.whl\n"
 "psutil-7.1.2-cp314-cp314t-macosx_11_0_arm64.whl\n"
-"psutil-7.1.2-cp314-cp314t-manylinux2010_x86_64.manylinux_2_12_x86_64."
-"manylinux_2_28_x86_64.whl\n"
-"psutil-7.1.2-cp314-cp314t-manylinux2014_aarch64.manylinux_2_17_aarch64."
-"manylinux_2_28_aarch64.whl\n"
+"psutil-7.1.2-cp314-cp314t-"
+"manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl\n"
+"psutil-7.1.2-cp314-cp314t-"
+"manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl\n"
 "psutil-7.1.2-cp314-cp314t-win_amd64.whl\n"
 "psutil-7.1.2-cp314-cp314t-win_arm64.whl"
 msgstr ""
@@ -112,43 +112,41 @@ msgstr ""
 #: ../../../blog/2025/wheels-for-free-threaded-python.rst:76
 msgid ""
 "This also multiplies CI jobs and slows down the test matrix (see `build.yml "
-"<https://github.com/giampaolo/psutil/"
-"blob/7dfd0ed34fe70ffd879ae62d21aabd4a8ed06d6f/.github/workflows/build."
-"yml>`__). A true universal wheel would greatly reduce this overhead, "
-"allowing a single wheel to support multiple Python versions and platforms. "
-"Hopefully, Python 3.15 will simplify this process. Two competing proposals, "
-"`PEP 803 <https://www.python.org/dev/peps/pep-0803/>`__ and `PEP 809 "
-"<https://www.python.org/dev/peps/pep-0809/>`__, aim to standardize wheel "
-"naming and metadata to allow producing a single wheel that covers multiple "
-"Python versions. That would drastically reduce distribution complexity for "
-"library authors, and it's fair to say it's essential for free-threaded "
-"CPython to truly succeed."
+"<https://github.com/giampaolo/psutil/blob/"
+"7dfd0ed34fe70ffd879ae62d21aabd4a8ed06d6f/.github/workflows/build.yml>`__). A "
+"true universal wheel would greatly reduce this overhead, allowing a single "
+"wheel to support multiple Python versions and platforms. Hopefully, Python "
+"3.15 will simplify this process. Two competing proposals, :pep:`803` "
+"and :pep:`809`, aim to standardize wheel naming and metadata to allow "
+"producing a single wheel that covers multiple Python versions. That would "
+"drastically reduce distribution complexity for library authors, and it's "
+"fair to say it's essential for free-threaded CPython to truly succeed."
 msgstr ""
 
-#: ../../../blog/2025/wheels-for-free-threaded-python.rst:89
+#: ../../../blog/2025/wheels-for-free-threaded-python.rst:87
 msgid "How to install free-threaded psutil"
 msgstr ""
 
-#: ../../../blog/2025/wheels-for-free-threaded-python.rst:91
+#: ../../../blog/2025/wheels-for-free-threaded-python.rst:89
 msgid ""
 "You can now install psutil for free-threaded Python directly via ``pip``:"
 msgstr ""
 
-#: ../../../blog/2025/wheels-for-free-threaded-python.rst:93
+#: ../../../blog/2025/wheels-for-free-threaded-python.rst:91
 msgid "pip install psutil --only-binary=:all:"
 msgstr ""
 
-#: ../../../blog/2025/wheels-for-free-threaded-python.rst:97
+#: ../../../blog/2025/wheels-for-free-threaded-python.rst:95
 msgid ""
 "This ensures you get the pre-compiled wheels without triggering a source "
 "build."
 msgstr ""
 
-#: ../../../blog/2025/wheels-for-free-threaded-python.rst:100
+#: ../../../blog/2025/wheels-for-free-threaded-python.rst:98
 msgid "Discussion"
 msgstr ""
 
-#: ../../../blog/2025/wheels-for-free-threaded-python.rst:102
+#: ../../../blog/2025/wheels-for-free-threaded-python.rst:100
 msgid ""
 "`Reddit <https://www.reddit.com/r/Python/comments/1ofrx8v/comment/nllztz6/"
 ">`__"
