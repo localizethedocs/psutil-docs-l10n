@@ -44,7 +44,7 @@ msgstr ""
 msgid ""
 ":user:`Giampaolo Rodola <giampaolo>`: creator, primary author and long-time "
 "maintainer"
-msgstr ""
+msgstr ":user:`Giampaolo Rodola <giampaolo>`：創辦人、主要作者、長期維護者"
 
 #: ../../../credits.rst:17
 msgid ""
@@ -54,7 +54,7 @@ msgstr ""
 
 #: ../../../credits.rst:19
 msgid ":user:`Arnon Yaari <wiggin15>`: AIX implementation"
-msgstr ""
+msgstr ":user:`Arnon Yaari <wiggin15>`：AIX 實現"
 
 #: ../../../credits.rst:20
 msgid ":user:`Landry Breuil <landryb>`: initial OpenBSD implementation"
@@ -65,6 +65,8 @@ msgid ""
 ":user:`Ryo Onodera <ryoon>` and :user:`Thomas Klausner <0-wiz-0>`: initial "
 "NetBSD implementation"
 msgstr ""
+":user:`Ryo Onodera <ryoon>` 和 :user:`Thomas Klausner <0-wiz-0>`：初始 "
+"NetBSD 實現"
 
 #: ../../../credits.rst:25
 msgid "Donations"

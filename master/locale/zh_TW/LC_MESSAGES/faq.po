@@ -416,10 +416,10 @@ msgid ""
 "initialize the baseline, discard the result, then call it again after a "
 "short sleep:"
 msgstr ""
-":func:`cpu_percent`（以及 :meth:`Process.cpu_percent`）會測量\\ *兩次呼叫之間"
-"*\\ 的 CPU 使用率。第一次呼叫時沒有先前的取樣可供比較，因此會回傳沒有意義的 "
-"``0.0`` 。解決方法是先呼叫一次以初始化基準值，捨棄回傳結果，再稍等片刻後呼叫"
-"一次："
+":func:`cpu_percent`\\ （以及 :meth:`Process.cpu_percent`）會測量 *兩次呼叫之"
+"間* 的 CPU 使用率。第一次呼叫時沒有先前的取樣可供比較，因此會回傳沒有意義的 "
+"``0.0``。解決方法是先呼叫一次以初始化基準值，捨棄回傳結果，再稍等片刻後呼叫一"
+"次："
 
 #: ../../../faq.rst:271
 msgid ""
@@ -453,7 +453,7 @@ msgstr ""
 
 #: ../../../faq.rst:298
 msgid "Can Process.cpu_percent() return a value higher than 100%?"
-msgstr ""
+msgstr "Process.cpu_percent() 能夠回傳大於 100% 的值嗎？"
 
 #: ../../../faq.rst:300
 msgid ""

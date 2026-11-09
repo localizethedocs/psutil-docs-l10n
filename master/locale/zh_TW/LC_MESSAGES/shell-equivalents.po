@@ -218,7 +218,7 @@ msgstr "``systeminfo``"
 
 #: ../../../shell-equivalents.rst:67
 msgid ":func:`cpu_stats`"
-msgstr ""
+msgstr ":func:`cpu_stats`"
 
 #: ../../../shell-equivalents.rst:70
 msgid "``vmstat -s``, ``sysctl vm.stats.sys``"
@@ -375,7 +375,7 @@ msgstr ""
 
 #: ../../../shell-equivalents.rst:166
 msgid ":func:`net_if_stats`"
-msgstr ""
+msgstr ":func:`net_if_stats`"
 
 #: ../../../shell-equivalents.rst:167
 msgid "``ifconfig``, ``ip -br link``, ``ip link``"

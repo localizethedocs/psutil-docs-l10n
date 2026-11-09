@@ -134,6 +134,8 @@ msgstr ":func:`disk_partitions`"
 #: ../../../stdlib-equivalents.rst:58
 msgid ":func:`os.listdrives`, :func:`os.listmounts`, :func:`os.listvolumes`"
 msgstr ""
+":func:`os.listdrives`\\ 、\\ :func:`os.listmounts`\\ 、"
+"\\ :func:`os.listvolumes`"
 
 #: ../../../stdlib-equivalents.rst:61
 msgid ""
@@ -258,6 +260,7 @@ msgstr ":meth:`p.uids() <Process.uids>`"
 #: ../../../stdlib-equivalents.rst:144
 msgid ":func:`os.getuid`, :func:`os.geteuid`, :func:`os.getresuid`"
 msgstr ""
+":func:`os.getuid`\\ 、\\ :func:`os.geteuid`\\ 、\\ :func:`os.getresuid`"
 
 #: ../../../stdlib-equivalents.rst:148
 msgid ":meth:`p.gids() <Process.gids>`"
@@ -266,6 +269,7 @@ msgstr ":meth:`p.gids() <Process.gids>`"
 #: ../../../stdlib-equivalents.rst:149
 msgid ":func:`os.getgid`, :func:`os.getegid`, :func:`os.getresgid`"
 msgstr ""
+":func:`os.getgid`\\ 、\\ :func:`os.getegid`\\ 、\\ :func:`os.getresgid`"
 
 #: ../../../stdlib-equivalents.rst:153
 msgid ":meth:`p.username() <Process.username>`"
@@ -273,7 +277,7 @@ msgstr ":meth:`p.username() <Process.username>`"
 
 #: ../../../stdlib-equivalents.rst:154
 msgid ":func:`os.getlogin`, :func:`getpass.getuser`"
-msgstr ""
+msgstr ":func:`os.getlogin`\\ 、\\ :func:`getpass.getuser`"
 
 #: ../../../stdlib-equivalents.rst:155
 msgid "Rough equivalent; not per-process."
@@ -342,7 +346,7 @@ msgstr ""
 
 #: ../../../stdlib-equivalents.rst:187
 msgid ":func:`os.sched_getscheduler`, :func:`os.sched_setscheduler`"
-msgstr ""
+msgstr ":func:`os.sched_getscheduler`\\ 、\\ :func:`os.sched_setscheduler`"
 
 #: ../../../stdlib-equivalents.rst:189
 msgid ""
