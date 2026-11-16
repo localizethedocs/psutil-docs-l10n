@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html data-content_root="../../" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Improved process_iter()" property="og:title"/>
+<meta content="article" property="og:type"/>
+<meta content="https://psutil.io/blog/2017/process-iter-attrs.html" property="og:url"/>
+<meta content="psutil" property="og:site_name"/>
+<meta content="5.3.0 adds attrs and ad_value parameters to process_iter(), letting you pre-fetch attributes in one shot" property="og:description"/>
+<meta content="1146" property="og:image:width"/>
+<meta content="600" property="og:image:height"/>
+<meta content="https://psutil.io/_images/social_previews/summary_blog_2017_process-iter-attrs_6c223d0c.png" property="og:image"/>
+<meta content="5.3.0 adds attrs and ad_value parameters to process_iter(), letting you pre-fetch attributes in one shot" property="og:image:alt"/>
+<meta content="5.3.0 adds attrs and ad_value parameters to process_iter(), letting you pre-fetch attributes in one shot" name="description"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<title>Improved process_iter() — psutil</title>
+<link href="../../_static/pygments.css?v=8f2a1f02" rel="stylesheet" type="text/css"/>
+<link href="../../_static/basic.css?v=29da98fa" rel="stylesheet" type="text/css"/>
+<link href="../../_static/sphinx-codeautolink.css?v=b2176991" rel="stylesheet" type="text/css"/>
+<link href="../../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="../../_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/base.css?v=f08856fc" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/fonts.css?v=e753a5f7" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/fontawesome.css?v=b66fcbdb" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/typography.css?v=66ac06b9" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/admonitions.css?v=163ddbc1" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/api-signatures.css?v=f032e3fc" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/blog.css?v=2a308a50" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/code.css?v=0681a11b" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/dev-banner.css?v=6210bb1f" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/doc-icons.css?v=c22d5c40" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/footer.css?v=5d6b8d43" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/layout.css?v=dca717ce" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/left-sidebar.css?v=dd06a93c" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/prev-next.css?v=ca7d359d" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/print.css?v=f9febfdf" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/right-sidebar.css?v=bc13b617" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/search.css?v=bc2ce7bc" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/tables.css?v=c600f876" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/topbar.css?v=d6787661" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/home.css?v=3247c119" rel="stylesheet" type="text/css"/>
+<script src="../../_static/documentation_options.js?v=1843773c"></script>
+<script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+<script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+<script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="../../_static/copybutton.js?v=35a8b989"></script>
+<script src="../../_static/translations.js?v=540d3cec"></script>
+<script src="../../_static/design-tabs.js?v=f930bc37"></script>
+<script defer="defer" src="../../_static/js/back-to-top.js?v=01752a9c"></script>
+<script defer="defer" src="../../_static/js/external-urls.js?v=ea4e66fd"></script>
+<script defer="defer" src="../../_static/js/github-meta.js?v=3335eb90"></script>
+<script defer="defer" src="../../_static/js/highlight-repl.js?v=5a308837"></script>
+<script defer="defer" src="../../_static/js/home-install-copy.js?v=be638b0c"></script>
+<script defer="defer" src="../../_static/js/right-toc.js?v=a13c1536"></script>
+<script defer="defer" src="../../_static/js/search-dim.js?v=b004caf9"></script>
+<script defer="defer" src="../../_static/js/search-shortcuts.js?v=6247adac"></script>
+<script defer="defer" src="../../_static/js/shortcuts-help.js?v=61707f15"></script>
+<script defer="defer" src="../../_static/js/sidebar-mobile.js?v=eb71acbb"></script>
+<script defer="defer" src="../../_static/js/theme-toggle.js?v=f51f1c9b"></script>
+<link href="https://projects.localizethedocs.org/psutil-docs-l10n/blog/2017/process-iter-attrs.html" rel="canonical"/>
+<link href="../../_static/favicon.svg" rel="icon"/>
+<link href="../../about.html" rel="author" title="关于此文档"/>
+<link href="../../genindex.html" rel="index" title="索引"/>
+<link href="../../search.html" rel="search" title="搜索"/>
+<link href="../../_static/images/logo-psutil.png" rel="apple-touch-icon"/>
+<script>
+(function() {
+    const html = document.documentElement;
+    html.classList.add('no-transition');
+    const saved = localStorage.getItem('psutil-sphinx-theme');
+    const theme = saved || (
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+    );
+    html.setAttribute('data-theme', theme);
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            html.classList.remove('no-transition');
+        });
+    });
+})();
+</script>
+<script async="" data-goatcounter="https://psutil.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-G7374TFB11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G7374TFB11');
+</script>
+<link href="../../blog/atom.xml" rel="alternate" title="Blog" type="application/atom+xml"/>
+<script src="../../ltd-provenance.js" type="text/javascript"></script>
+<script src="../../ltd-current.js" type="text/javascript"></script>
+<script src="../../../../ltd-config.js" type="text/javascript"></script>
+<script src="../../../../ltd-flyout.js" type="text/javascript"></script>
+</head><body data-page="blog/2017/process-iter-attrs">
+<header class="topbar no-visited" role="banner">
+<div class="topbar-inner">
+<button aria-expanded="false" aria-label="Toggle navigation" class="topbar-hamburger" id="sidebar-toggle" type="button">
+<i aria-hidden="true" class="fa-solid fa-bars"></i>
+</button><a class="topbar-logo" href="../../index.html"><img alt="" src="../../_static/images/logo-psutil.svg"/>
+<span>psutil</span>
+</a>
+<nav aria-label="Site actions" class="topbar-actions">
+<a class="topbar-text" href="../../blog.html">Blog</a>
+<button aria-label="Toggle theme" class="topbar-btn" id="theme-toggle" title="Toggle dark mode (shift+D)" type="button">
+<i aria-hidden="true" class="fa-regular fa-moon"></i>
+</button>
+<a aria-label="GitHub repository" class="topbar-link topbar-github" href="https://github.com/giampaolo/psutil" rel="noopener" target="_blank" title="GitHub">
+<i aria-hidden="true" class="fa-brands fa-github"></i>
+<span class="topbar-stars" data-repo="giampaolo/psutil"></span>
+</a>
+<a aria-label="PyPI release" class="topbar-version" data-repo="giampaolo/psutil" href="https://pypi.org/project/psutil" rel="noopener" target="_blank" title="PyPI"></a>
+</nav>
+</div>
+</header>
+<div class="page">
+<nav aria-label="Main navigation" class="left-sidebar no-visited">
+<div class="search-box">
+<form action="../../search.html" method="get" role="search">
+<input aria-label="Search docs" autocapitalize="off" autocomplete="off" autocorrect="off" id="search-input" name="q" placeholder="搜索" spellcheck="false" type="text"/>
+<span aria-hidden="true" class="search-kbd"><kbd>Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+</div>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api-overview.html">API overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../performance.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../recipes.html">Recipes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../shell-equivalents.html">Shell equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stdlib-equivalents.html">Stdlib equivalents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../platform.html">Platform support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migration.html">Migration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../adoption.html">Who uses psutil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../alternatives.html">Alternatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../funding.html">Funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../credits.html">Credits</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../blog.html">Blog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timeline.html">Timeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devguide.html">Development guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">General Index</a></li>
+</ul>
+</nav>
+<main class="main" id="main-content" role="main">
+<div class="dev-banner" role="note">
+  You're reading the <strong>development</strong> version of the psutil
+  docs, which may describe unreleased changes. For the current release
+  see <a href="https://psutil.readthedocs.io/stable/">psutil.readthedocs.io/stable</a>.
+</div>
+<div class="blog-section-banner">
+<div class="blog-section-label">
+<svg aria-hidden="true" class="blog-section-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+<path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+</svg>
+<a class="blog-section-title" href="../../blog.html">Blog</a>
+<div class="blog-section-subtitle">Releases, deep dives, war stories</div>
+</div>
+<a class="blog-rss" href="../atom.xml" title="Subscribe (Atom feed)">
+<span class="rss-icon blog-rss-icon"></span>
+<span>RSS</span>
+</a>
+</div>
+<div class="article-with-toc">
+<div class="article-column">
+<article class="article">
+<section id="improved-process-iter">
+<h1>Improved process_iter()<a class="headerlink" href="#improved-process-iter" title="链接到此标题。">¶</a></h1>
+<div class="post-meta-banner docutils container">
+<span class="post-meta-author">Giampaolo Rodola</span><span class="post-meta-date">Sep 03, 2017</span><span class="post-meta-readtime">2 min read</span><span class="post-meta-tags"><a class="reference internal" href="../tag/api-design.html">api-design</a><a class="reference internal" href="../tag/new-api.html">new-api</a><a class="reference internal" href="../tag/performance.html">performance</a><a class="reference internal" href="../tag/release.html">release</a></span></div>
+<p>This is part of the psutil 5.3.0 release (see the <a class="reference internal" href="../../changelog.html#530"><span class="std std-ref">changelog</span></a> for
+the full list of changes).</p>
+<section id="the-old-pattern">
+<h2>The old pattern<a class="headerlink" href="#the-old-pattern" title="链接到此标题。">¶</a></h2>
+<p>Iterating over processes and collecting attributes requires more boilerplate
+than it should. A process returned by <a class="reference internal" href="../../api.html#psutil.process_iter" title="psutil.process_iter"><code class="xref py py-func docutils literal notranslate"><span class="pre">process_iter()</span></code></a> may disappear before
+you access it, or require elevated privileges, so every lookup has to be
+guarded with a <code class="docutils literal notranslate"><span class="pre">try</span> <span class="pre">/</span> <span class="pre">except</span></code>:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../../index.html#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">proc</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../../api.html#psutil.process_iter" title="psutil.process_iter"><span class="n">psutil</span><span class="o">.</span><span class="n">process_iter</span></a><span class="p">():</span>
+<span class="gp">... </span>    <span class="k">try</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="n">pinfo</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../../api.html#psutil.Process.as_dict" title="psutil.Process.as_dict"><span class="n">proc</span><span class="o">.</span><span class="n">as_dict</span></a><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">[</span><span class="s1">'pid'</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">])</span>
+<span class="gp">... </span>    <span class="k">except</span> <span class="p">(</span><a class="sphinx-codeautolink-a" href="../../api.html#psutil.NoSuchProcess" title="psutil.NoSuchProcess"><span class="n">psutil</span><span class="o">.</span><span class="n">NoSuchProcess</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../../api.html#psutil.AccessDenied" title="psutil.AccessDenied"><span class="n">psutil</span><span class="o">.</span><span class="n">AccessDenied</span></a><span class="p">):</span>
+<span class="gp">... </span>        <span class="k">pass</span>
+<span class="gp">... </span>    <span class="k">else</span><span class="p">:</span>
+<span class="gp">... </span>        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><span class="n">pinfo</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">{'pid': 1, 'name': 'systemd'}</span>
+<span class="go">{'pid': 2, 'name': 'kthreadd'}</span>
+<span class="go">{'pid': 3, 'name': 'ksoftirqd/0'}</span>
+</pre></div>
+</div>
+<p>This is not decorative. It's necessary to avoid the race condition.</p>
+</section>
+<section id="the-new-pattern">
+<h2>The new pattern<a class="headerlink" href="#the-new-pattern" title="链接到此标题。">¶</a></h2>
+<p>5.3.0 adds <code class="docutils literal notranslate"><span class="pre">attrs</span></code> and <code class="docutils literal notranslate"><span class="pre">ad_value</span></code> parameters to
+<a class="reference internal" href="../../api.html#psutil.process_iter" title="psutil.process_iter"><code class="xref py py-func docutils literal notranslate"><span class="pre">psutil.process_iter()</span></code></a>. With these, the loop body becomes:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../../index.html#module-psutil" title="psutil"><span class="nn">psutil</span></a>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">proc</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../../api.html#psutil.process_iter" title="psutil.process_iter"><span class="n">psutil</span><span class="o">.</span><span class="n">process_iter</span></a><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">[</span><span class="s1">'pid'</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">]):</span>
+<span class="gp">... </span>    <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="../../api.html#psutil.Process.info" title="psutil.Process.info"><span class="n">proc</span><span class="o">.</span><span class="n">info</span></a><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">{'pid': 1, 'name': 'systemd'}</span>
+<span class="go">{'pid': 2, 'name': 'kthreadd'}</span>
+<span class="go">{'pid': 3, 'name': 'ksoftirqd/0'}</span>
+</pre></div>
+</div>
+<p>Internally, <a class="reference internal" href="../../api.html#psutil.process_iter" title="psutil.process_iter"><code class="xref py py-func docutils literal notranslate"><span class="pre">process_iter()</span></code></a> attach an <code class="docutils literal notranslate"><span class="pre">info</span></code> dict to the
+<a class="reference internal" href="../../api.html#psutil.Process" title="psutil.Process"><code class="xref py py-class docutils literal notranslate"><span class="pre">Process</span></code></a> instance. The attributes are pre-fetched in one shot.
+Processes that disappear during iteration are silently skipped, and attributes
+that would raise <a class="reference internal" href="../../api.html#psutil.AccessDenied" title="psutil.AccessDenied"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AccessDenied</span></code></a> gets assigned <code class="docutils literal notranslate"><span class="pre">ad_value</span></code> , which
+defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../../api.html#psutil.process_iter" title="psutil.process_iter"><span class="n">psutil</span><span class="o">.</span><span class="n">process_iter</span></a><span class="p">([</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'username'</span><span class="p">],</span> <span class="n">ad_value</span><span class="o">=</span><span class="s2">"N/A"</span><span class="p">):</span>
+    <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="../../api.html#psutil.Process.name" title="psutil.Process.name"><span class="n">p</span><span class="o">.</span><span class="n">name</span></a><span class="p">(),</span> <a class="sphinx-codeautolink-a" href="../../api.html#psutil.Process.username" title="psutil.Process.username"><span class="n">p</span><span class="o">.</span><span class="n">username</span></a><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<section id="performance">
+<h2>Performance<a class="headerlink" href="#performance" title="链接到此标题。">¶</a></h2>
+<p>Beyond the syntactic win, the new syntax is also faster than calling individual
+methods in a loop. <code class="docutils literal notranslate"><span class="pre">process_iter(attrs=[...])</span></code> is equivalent to using
+<a class="reference internal" href="../../api.html#psutil.Process.oneshot" title="psutil.Process.oneshot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.oneshot()</span></code></a> on each process (see
+<a class="reference internal" href="../2016/500-is-twice-as-fast.html"><span class="doc">One shot, twice as fast</span></a> for how that
+works): attributes that share a syscall or a <code class="docutils literal notranslate"><span class="pre">/proc</span></code> file are fetched
+together instead of re-read on every method call, which is a lot faster.</p>
+</section>
+<section id="comprehensions">
+<h2>Comprehensions<a class="headerlink" href="#comprehensions" title="链接到此标题。">¶</a></h2>
+<p>With the exception boilerplate out of the way, comprehensions finally work
+cleanly. E.g. getting processes owned by the current user can be written as:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/getpass.html#module-getpass" title="getpass"><span class="nn">getpass</span></a>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/pprint.html#module-pprint" title="pprint"><span class="nn">pprint</span></a><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/pprint.html#pprint.pprint" title="pprint.pprint"><span class="n">pprint</span></a> <span class="k">as</span> <span class="n">pp</span>
+<span class="gp">&gt;&gt;&gt; </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/pprint.html#pprint.pprint" title="pprint.pprint"><span class="n">pp</span></a><span class="p">([(</span><span class="n">p</span><span class="o">.</span><span class="n">pid</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">'name'</span><span class="p">])</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../../api.html#psutil.process_iter" title="psutil.process_iter"><span class="n">psutil</span><span class="o">.</span><span class="n">process_iter</span></a><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">[</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'username'</span><span class="p">])</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]</span> <span class="o">==</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/getpass.html#getpass.getuser" title="getpass.getuser"><span class="n">getpass</span><span class="o">.</span><span class="n">getuser</span></a><span class="p">()])</span>
+<span class="go">[(16832, 'bash'),</span>
+<span class="go"> (19772, 'ssh'),</span>
+<span class="go"> (20492, 'python')]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<div class="section ablog__blog_comments">
+<nav aria-label="Previous and next posts" class="prev-next no-visited">
+<a class="prev-next-prev" href="unicode-internals.html" rel="prev">
+<span aria-hidden="true" class="prev-next-arrow">‹</span>
+<span class="prev-next-block">
+<span class="prev-next-label">Previous</span>
+<span class="prev-next-title">Fixing Unicode across Python 2 and 3</span>
+</span>
+</a>
+<a class="prev-next-next" href="aix-support.html" rel="next">
+<span class="prev-next-block">
+<span class="prev-next-label">Next</span>
+<span class="prev-next-title">AIX support</span>
+</span>
+<span aria-hidden="true" class="prev-next-arrow">›</span>
+</a>
+</nav>
+</div>
+</article>
+</div>
+<aside aria-label="On this page" class="right-sidebar">
+<div class="right-sidebar-title">On this page</div>
+<ul>
+<li><a class="reference internal" href="#">Improved process_iter()</a><ul>
+<li><a class="reference internal" href="#the-old-pattern">The old pattern</a></li>
+<li><a class="reference internal" href="#the-new-pattern">The new pattern</a></li>
+<li><a class="reference internal" href="#performance">Performance</a></li>
+<li><a class="reference internal" href="#comprehensions">Comprehensions</a></li>
+</ul>
+</li>
+</ul>
+</aside>
+</div>
+</main>
+<footer class="footer" role="contentinfo">
+<div class="footer-content">
+<div class="footer-text">
+<span><a class="footer-egg" href="../../404.html" title="🥚">©</a> 2009-2026 Giampaolo Rodola</span>
+<span><a href="../../about.html" title="About this documentation site">About</a></span>
+<span><a href="https://github.com/giampaolo/psutil/edit/master/docs/blog/2017/process-iter-attrs.rst" rel="noopener noreferrer" target="_blank" title="Edit this page on GitHub">Edit on GitHub</a></span>
+</div>
+<div class="footer-icons">
+<a aria-label="psutil on GitHub" class="footer-github" href="https://github.com/giampaolo/psutil" rel="noopener noreferrer" target="_blank" title="psutil on GitHub">
+<i aria-hidden="true" class="fa-brands fa-github"></i>
+</a>
+<a aria-label="psutil on PyPI" class="footer-pypi" href="https://pypi.org/project/psutil/" rel="noopener noreferrer" target="_blank" title="psutil on PyPI">
+<i aria-hidden="true" class="fa-brands fa-python"></i>
+</a>
+<a aria-label="Subscribe to blog" class="footer-rss" href="../atom.xml" title="Subscribe to blog (Atom feed)">
+<span class="rss-icon"></span>
+</a>
+</div>
+</div>
+</footer>
+</div>
+</body>
+</html>
