@@ -37,9 +37,9 @@
     "branch" : "master",
     "commit" : 
     {
-      "date" : "2026-11-01 23:40:47 +0100",
-      "hash" : "c7e6eb945a525f57c3843284e8f66ef4701af02c",
-      "title" : "CI: move the GitHub bots' API code into a shared ghlib.py (#3097)"
+      "date" : "2026-11-15 22:49:20 +0100",
+      "hash" : "04ffb994682ac8bf5101a21b001683eb266e06a3",
+      "title" : "Doc: provide social preview icon"
     }
   },
   "type" : "branch",
