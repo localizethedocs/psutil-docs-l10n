@@ -102,6 +102,13 @@ msgid ""
 "except (psutil.AccessDenied, psutil.NoSuchProcess):\n"
 "    pass"
 msgstr ""
+"import psutil\n"
+"\n"
+"p = psutil.Process(pid)\n"
+"try:\n"
+"    print(p.memory_maps())\n"
+"except (psutil.AccessDenied, psutil.NoSuchProcess):\n"
+"    pass"
 
 #: ../../../faq.rst:62
 msgid ""
@@ -393,12 +400,12 @@ msgid ""
 "a :class:`Process` object and want to confirm it still refers to the same "
 "process."
 msgstr ""
-":func:`pid_exists` 會檢查 PID 是否出現在進程列表"
-"中。:meth:`Process.is_running` 也會做相同的檢查，但還會比較進程的建立時間，以"
-"偵測是否出現 :ref:`PID 重複使用 <faq_pid_reuse>`。如果您只有 PID，且不需要防"
-"範重複使用，請使用 :func:`pid_exists`（速度較快）。如果您持"
+":func:`pid_exists` 會檢查 PID 是否出現在進程列表中。"
+"\\ :meth:`Process.is_running` 也會做相同的檢查，但還會比較進程的建立時間，以"
+"偵測是否出現 :ref:`PID 重複使用 <faq_pid_reuse>`\\ 。如果您只有 PID，且不需要"
+"防範重複使用，請使用 :func:`pid_exists`\\ （速度較快）。如果您持"
 "有 :class:`Process` 物件，並想確認它仍指向同一個進程，請使"
-"用 :meth:`Process.is_running`。"
+"用 :meth:`Process.is_running`\\ 。"
 
 #: ../../../faq.rst:258
 msgid "CPU"
@@ -416,10 +423,10 @@ msgid ""
 "initialize the baseline, discard the result, then call it again after a "
 "short sleep:"
 msgstr ""
-":func:`cpu_percent`\\ （以及 :meth:`Process.cpu_percent`）會測量 *兩次呼叫之"
-"間* 的 CPU 使用率。第一次呼叫時沒有先前的取樣可供比較，因此會回傳沒有意義的 "
-"``0.0``。解決方法是先呼叫一次以初始化基準值，捨棄回傳結果，再稍等片刻後呼叫一"
-"次："
+":func:`cpu_percent`\\ （以及 :meth:`Process.cpu_percent`\\ ）會測量 *兩次呼叫"
+"之間* 的 CPU 使用率。第一次呼叫時沒有先前的取樣可供比較，因此會回傳沒有意義"
+"的 ``0.0``。解決方法是先呼叫一次以初始化基準值，捨棄回傳結果，再稍等片刻後呼"
+"叫一次："
 
 #: ../../../faq.rst:271
 msgid ""
@@ -437,7 +444,7 @@ msgstr ""
 
 #: ../../../faq.rst:282
 msgid "print(psutil.cpu_percent(interval=0.5))"
-msgstr ""
+msgstr "print(psutil.cpu_percent(interval=0.5))"
 
 #: ../../../faq.rst:286
 msgid "The same applies to :meth:`Process.cpu_percent`:"
@@ -509,7 +516,7 @@ msgstr ""
 
 #: ../../../faq.rst:330
 msgid "Process memory"
-msgstr ""
+msgstr "進程記憶體"
 
 #: ../../../faq.rst:335
 msgid "What is the difference between virtual_memory() available and free?"
@@ -645,6 +652,10 @@ msgid ""
 ">>> m.used + m.free == m.total\n"
 "False"
 msgstr ""
+">>> import psutil\n"
+">>> m = psutil.virtual_memory()\n"
+">>> m.used + m.free == m.total\n"
+"False"
 
 #: ../../../faq.rst:432
 msgid ""

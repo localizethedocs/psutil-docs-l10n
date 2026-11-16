@@ -334,7 +334,7 @@ msgstr ""
 
 #: ../../../glossary.rst:216
 msgid "physical CPU"
-msgstr "物理記憶體（physical CPU）"
+msgstr "物理 CPU（physical CPU）"
 
 #: ../../../glossary.rst:219
 msgid ""
@@ -534,6 +534,11 @@ msgid ""
 "because most virtual pages are never actually loaded into RAM. "
 "See :meth:`Process.memory_info`."
 msgstr ""
+"*虛擬記憶體大小（Virtual Memory Size）*\\ ，是進程保留的總虛擬位址空間，包括"
+"映射檔案、\\ :term:`共享記憶體 <shared memory>`\\ 、堆疊和\\ :term:`堆積 "
+"<heap>`\\ ，無論這些分頁目前是在 RAM 還是\\ :term:`交換記憶體 <swap "
+"memory>`\\ 中。因為大多數虛擬分頁實際上從未載入到 RAM 中，所以 VMS 幾乎總是"
+"比 :term:`RSS` 大得多。請參見 :meth:`Process.memory_info`\\ 。"
 
 #: ../../../glossary.rst:343
 msgid "voluntary context switch"

@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../blog/2025/heap-introspection-apis.rst:9
 msgid "Detecting memory leaks in C extensions with psutil and psleak"
-msgstr ""
+msgstr "使用 psutil 與 psleak 偵測 C 擴充功能中的記憶體洩漏"
 
 #: ../../../blog/2025/heap-introspection-apis.rst:11
 msgid ""
@@ -46,7 +46,7 @@ msgstr ""
 
 #: ../../../blog/2025/heap-introspection-apis.rst:29
 msgid "Why native heap introspection matters"
-msgstr ""
+msgstr "為什麼原生堆疊內省很重要"
 
 #: ../../../blog/2025/heap-introspection-apis.rst:31
 msgid ""
@@ -133,12 +133,12 @@ msgstr ""
 
 #: ../../../blog/2025/heap-introspection-apis.rst:74
 msgid "Field affected"
-msgstr ""
+msgstr "受影響的欄位"
 
 #: ../../../blog/2025/heap-introspection-apis.rst:75
 #: ../../../blog/2025/heap-introspection-apis.rst:78
 msgid "UNIX / Windows"
-msgstr ""
+msgstr "UNIX／Windows"
 
 #: ../../../blog/2025/heap-introspection-apis.rst:76
 msgid "small ``malloc()`` ≤128 KB without ``free()``"
@@ -147,7 +147,7 @@ msgstr ""
 #: ../../../blog/2025/heap-introspection-apis.rst:77
 #: ../../../blog/2025/heap-introspection-apis.rst:84
 msgid ":field:`heap_used`"
-msgstr ""
+msgstr ":field:`heap_used`"
 
 #: ../../../blog/2025/heap-introspection-apis.rst:79
 msgid ""
@@ -158,7 +158,7 @@ msgstr ""
 #: ../../../blog/2025/heap-introspection-apis.rst:81
 #: ../../../blog/2025/heap-introspection-apis.rst:87
 msgid ":field:`mmap_used`"
-msgstr ""
+msgstr ":field:`mmap_used`"
 
 #: ../../../blog/2025/heap-introspection-apis.rst:82
 #: ../../../blog/2025/heap-introspection-apis.rst:85
@@ -180,7 +180,7 @@ msgstr ""
 
 #: ../../../blog/2025/heap-introspection-apis.rst:90
 msgid ":field:`heap_count`"
-msgstr ""
+msgstr ":field:`heap_count`"
 
 #: ../../../blog/2025/heap-introspection-apis.rst:93
 msgid "heap_trim(): returning unused heap memory"
@@ -210,11 +210,11 @@ msgstr ""
 
 #: ../../../blog/2025/heap-introspection-apis.rst:110
 msgid "The workflow is simple:"
-msgstr ""
+msgstr "工作流程非常簡單："
 
 #: ../../../blog/2025/heap-introspection-apis.rst:112
 msgid "Take a baseline snapshot of the heap."
-msgstr ""
+msgstr "擷取堆積的基線快照。"
 
 #: ../../../blog/2025/heap-introspection-apis.rst:113
 msgid "Call the C extension hundreds of times."
@@ -222,11 +222,11 @@ msgstr ""
 
 #: ../../../blog/2025/heap-introspection-apis.rst:114
 msgid "Take another snapshot."
-msgstr ""
+msgstr "擷取另一個快照。"
 
 #: ../../../blog/2025/heap-introspection-apis.rst:115
 msgid "Compare."
-msgstr ""
+msgstr "進行比較。"
 
 #: ../../../blog/2025/heap-introspection-apis.rst:117
 msgid ""
@@ -258,7 +258,7 @@ msgstr ""
 
 #: ../../../blog/2025/heap-introspection-apis.rst:139
 msgid "A new tool: psleak"
-msgstr ""
+msgstr "新工具：psleak"
 
 #: ../../../blog/2025/heap-introspection-apis.rst:141
 msgid ""
@@ -366,7 +366,7 @@ msgstr ""
 
 #: ../../../blog/2025/heap-introspection-apis.rst:199
 msgid "References"
-msgstr ""
+msgstr "參考資料"
 
 #: ../../../blog/2025/heap-introspection-apis.rst:201
 msgid ""

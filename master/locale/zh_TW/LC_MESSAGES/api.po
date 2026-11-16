@@ -3740,7 +3740,7 @@ msgstr ""
 
 #: ../../../api.rst:2294
 msgid "Affected field"
-msgstr ""
+msgstr "受影響的欄位"
 
 #: ../../../api.rst:2296 ../../../api.rst:2298
 msgid "UNIX / glibc"

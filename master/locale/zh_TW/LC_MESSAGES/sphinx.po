@@ -3508,7 +3508,7 @@ msgstr ""
 
 #: ext/napoleon/docstring.py:1011
 msgid "References"
-msgstr ""
+msgstr "參考資料"
 
 #: ext/napoleon/docstring.py:1043
 msgid "Warns"
