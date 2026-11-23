@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-27 11:50+0000\n"
+"POT-Creation-Date: 2026-11-23 20:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../../blog/2017/process-iter-attrs.rst:10
-msgid "Improved process_iter()"
+msgid "Improved :func:`process_iter`"
 msgstr ""
 
 #: ../../../blog/2017/process-iter-attrs.rst:12
@@ -65,8 +65,8 @@ msgstr ""
 
 #: ../../../blog/2017/process-iter-attrs.rst:43
 msgid ""
-"5.3.0 adds ``attrs`` and ``ad_value`` parameters to :func:`psutil."
-"process_iter`. With these, the loop body becomes:"
+"5.3.0 adds ``attrs`` and ``ad_value`` parameters "
+"to :func:`psutil.process_iter`. With these, the loop body becomes:"
 msgstr ""
 
 #: ../../../blog/2017/process-iter-attrs.rst:46
@@ -82,11 +82,11 @@ msgstr ""
 
 #: ../../../blog/2017/process-iter-attrs.rst:56
 msgid ""
-"Internally, :func:`process_iter` attach an ``info`` dict to the :class:"
-"`Process` instance. The attributes are pre-fetched in one shot. Processes "
-"that disappear during iteration are silently skipped, and attributes that "
-"would raise :exc:`AccessDenied` gets assigned ``ad_value`` , which defaults "
-"to ``None``:"
+"Internally, :func:`process_iter` attach an ``info`` dict to "
+"the :class:`Process` instance. The attributes are pre-fetched in one shot. "
+"Processes that disappear during iteration are silently skipped, and "
+"attributes that would raise :exc:`AccessDenied` gets assigned ``ad_value`` , "
+"which defaults to ``None``:"
 msgstr ""
 
 #: ../../../blog/2017/process-iter-attrs.rst:62
@@ -102,11 +102,12 @@ msgstr ""
 #: ../../../blog/2017/process-iter-attrs.rst:70
 msgid ""
 "Beyond the syntactic win, the new syntax is also faster than calling "
-"individual methods in a loop. ``process_iter(attrs=[...])`` is equivalent to "
-"using :meth:`Process.oneshot` on each process (see :doc:`One shot, twice as "
-"fast </blog/2016/500-is-twice-as-fast>` for how that works): attributes that "
-"share a syscall or a ``/proc`` file are fetched together instead of re-read "
-"on every method call, which is a lot faster."
+"individual methods in a loop. :func:`process_iter(attrs=[...]) "
+"<process_iter>` is equivalent to using :meth:`Process.oneshot` on each "
+"process (see :doc:`One shot, twice as fast </blog/2016/500-is-twice-as-"
+"fast>` for how that works): attributes that share a syscall or a ``/proc`` "
+"file are fetched together instead of re-read on every method call, which is "
+"a lot faster."
 msgstr ""
 
 #: ../../../blog/2017/process-iter-attrs.rst:78

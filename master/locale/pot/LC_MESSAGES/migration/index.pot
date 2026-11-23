@@ -1,0 +1,158 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2026 Giampaolo Rodola
+# This file is distributed under the same license as the psutil package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: psutil 8.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-23 20:25+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../migration/index.rst:2
+msgid "Migration guide"
+msgstr ""
+
+#: ../../../migration/index.rst:4
+msgid ""
+"These pages list the breaking changes and deprecations of each release, and "
+"show the code changes required to upgrade."
+msgstr ""
+
+#: ../../../migration/index.rst:10
+msgid "8.0"
+msgstr ""
+
+#: ../../../migration/index.rst:14
+msgid ""
+"A major breaking release. Process memory APIs were reorganized, many names "
+"deprecated, Python 3.6 and 3.7 dropped."
+msgstr ""
+
+#: ../../../migration/index.rst:17
+msgid "7.0"
+msgstr ""
+
+#: ../../../migration/index.rst:21
+msgid "``Process.memory_info_ex()`` removed, Python 2.7 dropped."
+msgstr ""
+
+#: ../../../migration/index.rst:23
+msgid "6.0"
+msgstr ""
+
+#: ../../../migration/index.rst:27
+msgid ""
+"``disk_partitions()`` lost two fields, ``process_iter()`` no longer checks "
+"for PID reuse, ``Process.connections()`` renamed."
+msgstr ""
+
+#: ../../../migration/index.rst:31
+msgid "Other releases"
+msgstr ""
+
+#: ../../../migration/index.rst:37
+msgid "Release"
+msgstr ""
+
+#: ../../../migration/index.rst:38
+msgid "What changed"
+msgstr ""
+
+#: ../../../migration/index.rst:39
+msgid "7.1"
+msgstr ""
+
+#: ../../../migration/index.rst:40
+msgid "FreeBSD 8 and SunOS 10 dropped, 32-bit wheels no longer published."
+msgstr ""
+
+#: ../../../migration/index.rst:41
+msgid "5.9"
+msgstr ""
+
+#: ../../../migration/index.rst:42
+msgid "Python 2.6, 3.4 and 3.5 dropped."
+msgstr ""
+
+#: ../../../migration/index.rst:43
+msgid "5.7"
+msgstr ""
+
+#: ../../../migration/index.rst:44
+msgid "Windows XP and Server 2003 dropped."
+msgstr ""
+
+#: ../../../migration/index.rst:45
+msgid "5.6"
+msgstr ""
+
+#: ../../../migration/index.rst:46
+msgid ""
+":meth:`Process.memory_maps` removed on macOS (see :doc:`/blog/2019/macos-"
+"memory-maps`)."
+msgstr ""
+
+#: ../../../migration/index.rst:48
+msgid "5.4"
+msgstr ""
+
+#: ../../../migration/index.rst:49
+msgid ""
+"``psutil.OSX`` deprecated, ``Process.memory_info_ex()`` "
+"raises :exc:`FutureWarning`, Python 3.3 dropped."
+msgstr ""
+
+#: ../../../migration/index.rst:51
+msgid "5.3"
+msgstr ""
+
+#: ../../../migration/index.rst:52
+msgid ""
+":field:`raddr` of UNIX sockets is ``\"\"`` instead of ``None``, strings use "
+"the OS filesystem encoding (see :doc:`/blog/2017/unicode-internals`), "
+"Windows ``.exe`` installers no longer provided."
+msgstr ""
+
+#: ../../../migration/index.rst:56
+msgid "4.0"
+msgstr ""
+
+#: ../../../migration/index.rst:57
+msgid ""
+":meth:`Process.memory_info` returns more fields, "
+"``Process.memory_info_ex()`` deprecated."
+msgstr ""
+
+#: ../../../migration/index.rst:59
+msgid "3.0"
+msgstr ""
+
+#: ../../../migration/index.rst:60
+msgid "APIs deprecated in 2.0 removed, some constants are enums."
+msgstr ""
+
+#: ../../../migration/index.rst:61
+msgid "2.2"
+msgstr ""
+
+#: ../../../migration/index.rst:62
+msgid "Python 2.4 and 2.5 dropped."
+msgstr ""
+
+#: ../../../migration/index.rst:63
+msgid "2.0"
+msgstr ""
+
+#: ../../../migration/index.rst:64
+msgid ""
+":class:`Process` properties turned into methods, ``get_*`` and ``set_*`` "
+"names renamed (see :doc:`/blog/2014/porting-to-20`)."
+msgstr ""

@@ -1,0 +1,52 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2026 Giampaolo Rodola
+# This file is distributed under the same license as the psutil package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: psutil 8.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-23 20:25+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../migration/7.0.rst:4
+msgid "Migrating to 7.0"
+msgstr ""
+
+#: ../../../migration/7.0.rst:7
+msgid "``Process.memory_info_ex()`` removed"
+msgstr ""
+
+#: ../../../migration/7.0.rst:9
+msgid ""
+"Deprecated since 4.0. Use :meth:`Process.memory_info` instead, which returns "
+"the same fields."
+msgstr ""
+
+#: ../../../migration/7.0.rst:12
+msgid ""
+"# old\n"
+"p.memory_info_ex()  # AttributeError\n"
+"\n"
+"# new\n"
+"p.memory_info()"
+msgstr ""
+
+#: ../../../migration/7.0.rst:21
+msgid "Python 2.7 dropped"
+msgstr ""
+
+#: ../../../migration/7.0.rst:23
+msgid "The last supporting release is 6.1.x. See :doc:`/blog/2025/drop-py27`."
+msgstr ""
+
+#: ../../../migration/7.0.rst:25
+msgid "pip2 install \"psutil==6.1.*\""
+msgstr ""

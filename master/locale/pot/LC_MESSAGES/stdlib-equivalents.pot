@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psutil 8.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-27 11:50+0000\n"
+"POT-Creation-Date: 2026-11-23 20:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -307,7 +307,7 @@ msgid "``ru_utime`` / ``ru_stime`` match; have higher precision."
 msgstr ""
 
 #: ../../../stdlib-equivalents.rst:175
-msgid ":meth:`p.num_ctx_switches() <Process.num_ctx_switches>`"
+msgid ":meth:`p.ctx_switches() <Process.ctx_switches>`"
 msgstr ""
 
 #: ../../../stdlib-equivalents.rst:177
@@ -324,8 +324,8 @@ msgstr ""
 
 #: ../../../stdlib-equivalents.rst:181
 msgid ""
-"POSIX only; psutil also supports Windows. Added to CPython 3.3 (:bpo:"
-"`10784`)."
+"POSIX only; psutil also supports Windows. Added to CPython 3.3 "
+"(:bpo:`10784`)."
 msgstr ""
 
 #: ../../../stdlib-equivalents.rst:184
@@ -386,8 +386,8 @@ msgstr ""
 
 #: ../../../stdlib-equivalents.rst:215
 msgid ""
-"Only :term:`peak_rss` (``ru_maxrss``); psutil returns :term:`RSS`, :term:"
-"`VMS`, and more."
+"Only :term:`peak_rss` (``ru_maxrss``); psutil "
+"returns :term:`RSS`, :term:`VMS`, and more."
 msgstr ""
 
 #: ../../../stdlib-equivalents.rst:216
@@ -456,8 +456,9 @@ msgstr ""
 
 #: ../../../stdlib-equivalents.rst:268
 msgid ""
-"Same on POSIX; limited on Windows. psutil adds :exc:`NoSuchProcess` / :exc:"
-"`AccessDenied` and avoids killing reused PIDs."
+"Same on POSIX; limited on Windows. psutil "
+"adds :exc:`NoSuchProcess` / :exc:`AccessDenied` and avoids killing reused "
+"PIDs."
 msgstr ""
 
 #: ../../../stdlib-equivalents.rst:271

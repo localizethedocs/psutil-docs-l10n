@@ -1,0 +1,525 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2009-2026 Giampaolo Rodola
+# This file is distributed under the same license as the psutil package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: psutil 8.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-23 20:25+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../migration/8.0.rst:4
+msgid "Migrating to 8.0"
+msgstr ""
+
+#: ../../../migration/8.0.rst:6
+msgid ""
+"8.0 is a major breaking release, which reorganized the process memory APIs "
+"and renamed several functions for the sake of consistency. Most of the old "
+"names still work as deprecated aliases."
+msgstr ""
+
+#: ../../../migration/8.0.rst:11
+msgid "Breaking changes"
+msgstr ""
+
+#: ../../../migration/8.0.rst:15
+msgid ""
+"Do not rely on positional unpacking of named tuples, since fields can be "
+"added or reordered. Use attribute access "
+"(see :ref:`faq_named_tuple_unpacking`)."
+msgstr ""
+
+#: ../../../migration/8.0.rst:22
+msgid ":func:`cpu_times` field order changed"
+msgstr ""
+
+#: ../../../migration/8.0.rst:24
+msgid ""
+":field:`user`, :field:`system` and :field:`idle` are now the first 3 fields "
+"on all platforms. On Linux, macOS and BSD positional access silently returns "
+"the wrong field."
+msgstr ""
+
+#: ../../../migration/8.0.rst:28
+msgid ""
+"# old\n"
+"user, nice, system, idle = psutil.cpu_times()[:4]  # wrong field\n"
+"\n"
+"# new\n"
+"t = psutil.cpu_times()\n"
+"user, system, idle = t.user, t.system, t.idle"
+msgstr ""
+
+#: ../../../migration/8.0.rst:40
+msgid ":meth:`Process.memory_info` fields changed"
+msgstr ""
+
+#: ../../../migration/8.0.rst:42
+msgid "Positional unpacking breaks on Linux, macOS, Windows and BSD."
+msgstr ""
+
+#: ../../../migration/8.0.rst:0
+msgid "Linux"
+msgstr ""
+
+#: ../../../migration/8.0.rst:48
+msgid ""
+":field:`lib` and :field:`dirty` are no longer returned (always 0 since Linux "
+"2.6)."
+msgstr ""
+
+#: ../../../migration/8.0.rst:51
+msgid ""
+"# old (ValueError)\n"
+"rss, vms, shared, text, lib, data, dirty = p.memory_info()\n"
+"p.memory_info().dirty  # DeprecationWarning\n"
+"\n"
+"# new\n"
+"m = p.memory_info()\n"
+"m.rss, m.vms, m.shared, m.text, m.data"
+msgstr ""
+
+#: ../../../migration/8.0.rst:0
+msgid "macOS"
+msgstr ""
+
+#: ../../../migration/8.0.rst:63
+msgid ""
+":field:`pfaults` and :field:`pageins` were removed with no aliases. "
+"Use :meth:`Process.page_faults`."
+msgstr ""
+
+#: ../../../migration/8.0.rst:66
+msgid ""
+"# old\n"
+"m = p.memory_info()\n"
+"m.pfaults, m.pageins  # AttributeError\n"
+"\n"
+"# new\n"
+"f = p.page_faults()\n"
+"f.minor + f.major, f.major"
+msgstr ""
+
+#: ../../../migration/8.0.rst:0
+msgid "Windows"
+msgstr ""
+
+#: ../../../migration/8.0.rst:78
+msgid ""
+"The working set and pagefile fields were renamed to :field:`rss` "
+"and :field:`vms`. The ``*_pool`` fields moved "
+"to :meth:`Process.memory_extras`, and :field:`num_page_faults` "
+"to :meth:`Process.page_faults`."
+msgstr ""
+
+#: ../../../migration/8.0.rst:83
+msgid ""
+"# old (DeprecationWarning)\n"
+"m = p.memory_info()\n"
+"m.wset, m.peak_wset\n"
+"m.pagefile, m.private, m.peak_pagefile\n"
+"m.paged_pool\n"
+"m.num_page_faults\n"
+"\n"
+"# new\n"
+"m = p.memory_info()\n"
+"m.rss, m.peak_rss\n"
+"m.vms, m.vms, m.peak_vms\n"
+"p.memory_extras().paged_pool\n"
+"sum(p.page_faults())"
+msgstr ""
+
+#: ../../../migration/8.0.rst:0
+msgid "BSD"
+msgstr ""
+
+#: ../../../migration/8.0.rst:101
+msgid "New :field:`peak_rss` field."
+msgstr ""
+
+#: ../../../migration/8.0.rst:103
+msgid ""
+"# old\n"
+"rss, vms, text, data, stack = p.memory_info()  # ValueError\n"
+"\n"
+"# new\n"
+"m = p.memory_info()\n"
+"m.rss, m.vms, m.text, m.data, m.stack"
+msgstr ""
+
+#: ../../../migration/8.0.rst:115
+msgid ":func:`virtual_memory` has two new fields on Windows"
+msgstr ""
+
+#: ../../../migration/8.0.rst:117
+msgid ""
+":field:`cached` and :field:`wired` were added, so positional unpacking no "
+"longer works."
+msgstr ""
+
+#: ../../../migration/8.0.rst:120
+msgid ""
+"# old (ValueError)\n"
+"total, available, percent, used, free = psutil.virtual_memory()\n"
+"\n"
+"# new\n"
+"m = psutil.virtual_memory()\n"
+"m.total, m.available, m.percent, m.used, m.free"
+msgstr ""
+
+#: ../../../migration/8.0.rst:132
+msgid ":meth:`Process.ionice` returns a named tuple on Windows"
+msgstr ""
+
+#: ../../../migration/8.0.rst:134
+msgid ""
+"It used to return an integer. It now returns ``(ioclass, value)`` like on "
+"Linux, with :field:`value` always ``0``."
+msgstr ""
+
+#: ../../../migration/8.0.rst:137
+msgid ""
+"# old\n"
+"p.ionice() == psutil.IOPRIO_NORMAL  # always False\n"
+"\n"
+"# new\n"
+"p.ionice().ioclass == psutil.IOPRIO_NORMAL"
+msgstr ""
+
+#: ../../../migration/8.0.rst:148
+msgid ":func:`users` no longer reports ``\"localhost\"``"
+msgstr ""
+
+#: ../../../migration/8.0.rst:150
+msgid ""
+"The :field:`host` field used to be ``\"localhost\"`` both when the OS "
+"recorded no host and for an X display (``\":0\"``). It is now ``None`` in "
+"the first case and the display name in the second."
+msgstr ""
+
+#: ../../../migration/8.0.rst:154
+msgid ""
+"# old: now always empty\n"
+"local = [u for u in psutil.users() if u.host == \"localhost\"]\n"
+"\n"
+"# new\n"
+"local = [u for u in psutil.users() if not u.host or u.host.startswith(\":\")]"
+msgstr ""
+
+#: ../../../migration/8.0.rst:163
+msgid "``psutil.OSX`` removed"
+msgstr ""
+
+#: ../../../migration/8.0.rst:165
+msgid "Deprecated since 5.4.7. Use :data:`MACOS` instead."
+msgstr ""
+
+#: ../../../migration/8.0.rst:167
+msgid ""
+"# old\n"
+"if psutil.OSX:  # AttributeError\n"
+"    ...\n"
+"\n"
+"# new\n"
+"if psutil.MACOS:\n"
+"    ..."
+msgstr ""
+
+#: ../../../migration/8.0.rst:178
+msgid "Deprecations"
+msgstr ""
+
+#: ../../../migration/8.0.rst:183
+msgid ":func:`virtual_memory` and :func:`swap_memory` are soft deprecated"
+msgstr ""
+
+#: ../../../migration/8.0.rst:185
+msgid ""
+"Use :func:`memory_physical` and :func:`memory_swap` instead. The old names "
+"keep working as :term:`soft deprecated` aliases, with no warning and no "
+"current plans to remove them."
+msgstr ""
+
+#: ../../../migration/8.0.rst:189
+msgid ""
+"# old\n"
+"psutil.virtual_memory()\n"
+"psutil.swap_memory()\n"
+"\n"
+"# new\n"
+"psutil.memory_physical()\n"
+"psutil.memory_swap()"
+msgstr ""
+
+#: ../../../migration/8.0.rst:202
+msgid ":meth:`Process.memory_full_info` is deprecated"
+msgstr ""
+
+#: ../../../migration/8.0.rst:204
+msgid ""
+"Use :meth:`Process.memory_footprint` for :field:`uss`, :field:`pss` "
+"and :field:`swap`, and :meth:`Process.memory_info` "
+"for :field:`rss`, :field:`vms` and the "
+"rest. :meth:`Process.memory_footprint` is not available on BSD, SunOS and "
+"AIX."
+msgstr ""
+
+#: ../../../migration/8.0.rst:209
+msgid ""
+"# old\n"
+"m = p.memory_full_info()  # DeprecationWarning\n"
+"m.rss, m.uss\n"
+"\n"
+"# new\n"
+"p.memory_info().rss\n"
+"p.memory_footprint().uss"
+msgstr ""
+
+#: ../../../migration/8.0.rst:222
+msgid ":meth:`Process.num_ctx_switches` is deprecated"
+msgstr ""
+
+#: ../../../migration/8.0.rst:224
+msgid ""
+"Use :meth:`Process.ctx_switches` instead. :meth:`Process.as_dict` now "
+"returns a ``ctx_switches`` key."
+msgstr ""
+
+#: ../../../migration/8.0.rst:227
+msgid ""
+"# old\n"
+"p.num_ctx_switches()  # DeprecationWarning\n"
+"p.as_dict()[\"num_ctx_switches\"]  # KeyError\n"
+"\n"
+"# new\n"
+"p.ctx_switches()\n"
+"p.as_dict()[\"ctx_switches\"]"
+msgstr ""
+
+#: ../../../migration/8.0.rst:240
+msgid ":attr:`Process.info` is deprecated"
+msgstr ""
+
+#: ../../../migration/8.0.rst:242
+msgid "Use :attr:`Process.snapshot` instead:"
+msgstr ""
+
+#: ../../../migration/8.0.rst:244
+msgid ""
+"# old\n"
+"for p in psutil.process_iter([\"name\", \"username\"]):\n"
+"    print(p.info[\"name\"], p.info[\"username\"])  # DeprecationWarning\n"
+"\n"
+"# new\n"
+"for p in psutil.process_iter([\"name\", \"username\"]):\n"
+"    print(p.snapshot.name, p.snapshot.username)"
+msgstr ""
+
+#: ../../../migration/8.0.rst:257
+msgid "``process_iter(attrs=[])`` is deprecated"
+msgstr ""
+
+#: ../../../migration/8.0.rst:259
+msgid ""
+"Use the new :attr:`Process.attrs` instead of an empty list meaning \"all\". "
+"It's a :class:`frozenset` of the attribute names accepted "
+"by :meth:`Process.as_dict` and :func:`process_iter`."
+msgstr ""
+
+#: ../../../migration/8.0.rst:263
+msgid ""
+"# old\n"
+"psutil.process_iter(attrs=[])  # DeprecationWarning\n"
+"attrs = list(psutil.Process().as_dict().keys())\n"
+"\n"
+"# new\n"
+"psutil.process_iter(attrs=psutil.Process.attrs)\n"
+"attrs = psutil.Process.attrs\n"
+"\n"
+"# new (all except net_connections)\n"
+"psutil.process_iter(attrs=psutil.Process.attrs - {\"net_connections\"})"
+msgstr ""
+
+#: ../../../migration/8.0.rst:279
+msgid ":func:`cpu_times` :field:`interrupt` renamed to :field:`irq` on Windows"
+msgstr ""
+
+#: ../../../migration/8.0.rst:281
+msgid "The old name still works but raises :exc:`DeprecationWarning`."
+msgstr ""
+
+#: ../../../migration/8.0.rst:283
+msgid ""
+"# old\n"
+"psutil.cpu_times().interrupt  # DeprecationWarning\n"
+"\n"
+"# new\n"
+"psutil.cpu_times().irq"
+msgstr ""
+
+#: ../../../migration/8.0.rst:294
+msgid ":meth:`Process.connections` raises :exc:`FutureWarning`"
+msgstr ""
+
+#: ../../../migration/8.0.rst:296
+msgid ""
+"Use :meth:`Process.net_connections` instead. The old name, deprecated since "
+"6.0 (see :ref:`migration-6.0`), is now reported by default and will be "
+"removed in 9.0."
+msgstr ""
+
+#: ../../../migration/8.0.rst:300
+msgid ""
+"# old\n"
+"p.connections()  # FutureWarning\n"
+"\n"
+"# new\n"
+"p.net_connections()"
+msgstr ""
+
+#: ../../../migration/8.0.rst:309
+msgid "New APIs"
+msgstr ""
+
+#: ../../../migration/8.0.rst:314
+msgid "New :meth:`Process.memory_extras` method"
+msgstr ""
+
+#: ../../../migration/8.0.rst:316
+msgid ""
+"It returns the platform-specific memory metrics "
+"which :meth:`Process.memory_info` doesn't."
+msgstr ""
+
+#: ../../../migration/8.0.rst:319
+msgid "Linux: :field:`peak_rss`, :field:`peak_vms`, :field:`rss_anon`, :field:`rss_file`, :field:`rss_shmem`, :field:`swap_anon`, :field:`locked`."
+msgstr ""
+
+#: ../../../migration/8.0.rst:321
+msgid "macOS: :field:`phys_footprint`, :field:`peak_phys_footprint`."
+msgstr ""
+
+#: ../../../migration/8.0.rst:322
+msgid "Windows: :field:`virtual`, :field:`peak_virtual`, :field:`paged_pool`, :field:`nonpaged_pool`, :field:`peak_paged_pool`, :field:`peak_nonpaged_pool`."
+msgstr ""
+
+#: ../../../migration/8.0.rst:329
+msgid "New :func:`set_procfs_path` function"
+msgstr ""
+
+#: ../../../migration/8.0.rst:331
+msgid ""
+"Use it instead of assigning :data:`PROCFS_PATH`, which still works but "
+"leaves internal caches stale. The :envvar:`PSUTIL_PROCFS_PATH` environment "
+"variable does the same from outside the process."
+msgstr ""
+
+#: ../../../migration/8.0.rst:335
+msgid ""
+"# old\n"
+"psutil.PROCFS_PATH = \"/host/proc\"\n"
+"\n"
+"# new\n"
+"psutil.set_procfs_path(\"/host/proc\")"
+msgstr ""
+
+#: ../../../migration/8.0.rst:346
+msgid "New enum classes for constants"
+msgstr ""
+
+#: ../../../migration/8.0.rst:348
+msgid "They subclass ``str`` / ``int``, so existing comparisons keep working."
+msgstr ""
+
+#: ../../../migration/8.0.rst:350
+msgid ""
+"# old\n"
+"p.status()            # 'running'\n"
+"conn.status           # 'LISTEN'\n"
+"psutil.RLIMIT_NOFILE  # 7\n"
+"\n"
+"# new\n"
+"p.status()            # <ProcessStatus.STATUS_RUNNING: 'running'>\n"
+"conn.status           # <ConnectionStatus.CONN_LISTEN: 'LISTEN'>\n"
+"psutil.RLIMIT_NOFILE  # <ProcessRlimit.RLIMIT_NOFILE: 7>"
+msgstr ""
+
+#: ../../../migration/8.0.rst:363
+msgid "Dropped platforms"
+msgstr ""
+
+#: ../../../migration/8.0.rst:366
+msgid "Python 3.6 and 3.7 dropped"
+msgstr ""
+
+#: ../../../migration/8.0.rst:368
+msgid "The last supporting release is 7.2.x:"
+msgstr ""
+
+#: ../../../migration/8.0.rst:370
+msgid "pip install \"psutil==7.2.*\""
+msgstr ""
+
+#: ../../../migration/8.0.rst:377
+msgid "Windows < 10 dropped"
+msgstr ""
+
+#: ../../../migration/8.0.rst:379
+msgid "The minimum version is now Windows 10 / Windows Server 2016."
+msgstr ""
+
+#: ../../../migration/8.0.rst:382
+msgid "macOS 10.7 and 10.8 dropped"
+msgstr ""
+
+#: ../../../migration/8.0.rst:384
+msgid "The minimum version is now macOS 10.9."
+msgstr ""
+
+#: ../../../migration/8.0.rst:387
+msgid "PyPy < 7.3.14 dropped on Windows"
+msgstr ""
+
+#: ../../../migration/8.0.rst:389
+msgid "The last supporting release is 7.2.x."
+msgstr ""
+
+#: ../../../migration/8.0.rst:392
+msgid "Other changes"
+msgstr ""
+
+#: ../../../migration/8.0.rst:397
+msgid "Git tags renamed"
+msgstr ""
+
+#: ../../../migration/8.0.rst:399
+msgid "From ``release-X.Y.Z`` to ``vX.Y.Z``. The old tags are still there."
+msgstr ""
+
+#: ../../../migration/8.0.rst:401
+msgid ""
+"# old\n"
+"pip install git+https://github.com/giampaolo/psutil@release-7.2.2\n"
+"\n"
+"# new\n"
+"pip install git+https://github.com/giampaolo/psutil@v7.2.2"
+msgstr ""
+
+#: ../../../migration/8.0.rst:410
+msgid "``cp313t`` wheels no longer published"
+msgstr ""
+
+#: ../../../migration/8.0.rst:412
+msgid ""
+"Free-threaded CPython 3.13 was experimental. Only ``cp314t`` wheels are "
+"published."
+msgstr ""
